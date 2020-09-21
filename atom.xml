@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  
-  <subtitle>一个简洁的网站</subtitle>
+  <title>琛</title>
+  <icon>https://www.gravatar.com/avatar/052f076c15d99674d466575f51f5d3ec</icon>
+  <subtitle>学习记录</subtitle>
   <link href="https://zhchen7.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhchen7.github.io/"/>
@@ -11,7 +11,7 @@
   
   <author>
     <name>zhou chen</name>
-    
+    <email>1583741285@qq.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
