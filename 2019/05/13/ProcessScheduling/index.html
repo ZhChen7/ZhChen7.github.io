@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    操作系统进程调度作业 |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-ProcessScheduling"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  操作系统进程调度作业
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/13/ProcessScheduling/" class="article-date">
+  <time datetime="2019-05-13T04:52:54.000Z" itemprop="datePublished">2019-05-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">课程设计</a> / <a class="article-category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E4%BD%9C%E4%B8%9A/">操作系统进程调度作业</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">5.9k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">29 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="操作系统进程调度作业"><a href="#操作系统进程调度作业" class="headerlink" title="操作系统进程调度作业"></a>操作系统进程调度作业</h1><blockquote>
+<p>操作系统进程调度作业</p>
+<p>锻炼下思维！</p>
+</blockquote>
+<h2 id="进程调度-1"><a href="#进程调度-1" class="headerlink" title="进程调度 1"></a>进程调度 1</h2><p><strong>问题描述</strong>：</p>
+<p>​ 要求输入 3 个进程，找出最先执行的那个进程的进程名。（如果遇到优先级一样，按照输入顺序执行。），本题中，优先数数值大的表示优先级比较高。</p>
+<p><strong>输入格式</strong>：</p>
+<p>​ 程序要求输入 3 行，以回车符号作为分隔，每行有 3 个数据，以空格作为分隔。首先输入一个字符串（长度小于等于 10），为进程名，第 2 个数据类型为整型，表示进程的优先数，第 3 个数据类型为整型，表示进程的运行时间。</p>
+<p><strong>输出格式</strong>：</p>
+<p>​ 输出一个字符串，为最先执行进程的进程名。</p>
+<p><em>样例输入 1：</em></p>
+<p>P1 1 1</p>
+<p>P2 2 2</p>
+<p>P3 3 3</p>
+<p>样例输出 1：</p>
+<p>P3</p>
+<p><em>样例输入 2：</em></p>
+<p>P1 130 10</p>
+<p>P2 100 100</p>
+<p>P3 100 100</p>
+<p>样例输出 2：</p>
+<p>P2</p>
+<p><strong>链表实现：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt; //strcpy()</span><br><span class="line">#include &lt;stdlib.h&gt;//malloc()</span><br><span class="line"><span class="keyword">void</span> insertQuestion();</span><br><span class="line"><span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time);</span><br><span class="line"><span class="keyword">void</span> view();</span><br><span class="line"><span class="keyword">void</span> arithmetic();</span><br><span class="line">typedef struct process</span><br><span class="line">&#123;</span><br><span class="line">	char ProcessName[<span class="number">5</span>];</span><br><span class="line">	int Priority;</span><br><span class="line">	int Time;</span><br><span class="line">	struct process *next;</span><br><span class="line">&#125;nodelist;</span><br><span class="line"></span><br><span class="line">nodelist *pHead=NULL;<span class="comment">//存放调度的首节点地址</span></span><br><span class="line"></span><br><span class="line">int main(<span class="keyword">void</span>)&#123;</span><br><span class="line">    insertQuestion();</span><br><span class="line">    arithmetic();</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加问题</span></span><br><span class="line"><span class="keyword">void</span> insertQuestion()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time);</span><br><span class="line">    char ProcessName[<span class="number">5</span>];</span><br><span class="line">	int Priority;</span><br><span class="line">	int Time;</span><br><span class="line">    int i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">	  scanf(<span class="string">&quot;%s&quot;</span>,ProcessName);</span><br><span class="line">	  scanf(<span class="string">&quot;%d&quot;</span>,&amp;Priority);</span><br><span class="line">	  scanf(<span class="string">&quot;%d&quot;</span>,&amp;Time);</span><br><span class="line">	  insertNode(ProcessName,Priority,Time);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将数据插入链表</span></span><br><span class="line"><span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//申请存储空间</span></span><br><span class="line">	nodelist *pNew=(nodelist *)malloc(sizeof(nodelist));</span><br><span class="line">	nodelist *p,*q;</span><br><span class="line">	strcpy(pNew-&gt;ProcessName,ProcessName);</span><br><span class="line">	pNew-&gt;Priority = Priority;</span><br><span class="line">	pNew-&gt;Time = Time;</span><br><span class="line">	pNew-&gt;next=NULL;</span><br><span class="line">	<span class="comment">// printf(&quot;5\n&quot;);</span></span><br><span class="line">		<span class="keyword">if</span>(pHead==NULL) <span class="comment">//插入前链表为空，新插入的节点为头节点</span></span><br><span class="line">		&#123;</span><br><span class="line">			pHead=pNew;</span><br><span class="line">			<span class="comment">//p1=pHead;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			p=pHead;</span><br><span class="line">			<span class="keyword">if</span>(p-&gt;next!=<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">while</span>(p-&gt;next!=<span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">				q=p-&gt;next;</span><br><span class="line">			    p=q;</span><br><span class="line">				&#125;</span><br><span class="line">				p-&gt;next=pNew;</span><br><span class="line">				pNew-&gt;next=NULL;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;next==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				p-&gt;next=pNew;</span><br><span class="line">			    p=pNew;</span><br><span class="line">				pNew-&gt;next=NULL;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//显示链表中的数据</span></span><br><span class="line"><span class="keyword">void</span> view()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">/* 显示所有的结果 */</span></span><br><span class="line">	nodelist *p=pHead;</span><br><span class="line">	<span class="keyword">if</span>(pHead!=NULL)</span><br><span class="line">	&#123;</span><br><span class="line">			<span class="keyword">while</span>(p!=NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				printf(<span class="string">&quot;%s &quot;</span>,p-&gt;ProcessName);</span><br><span class="line">				printf(<span class="string">&quot;%d &quot;</span>,p-&gt;Priority);</span><br><span class="line">				printf(<span class="string">&quot;%d &quot;</span>,p-&gt;Time);</span><br><span class="line">				p=p-&gt;next;</span><br><span class="line">				printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">	  printf(<span class="string">&quot;链表中啥都没有！\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> arithmetic()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//相关算法实现</span></span><br><span class="line">	nodelist *p=pHead;</span><br><span class="line">	int max=p-&gt;Priority;</span><br><span class="line">	int flag=<span class="number">0</span>;</span><br><span class="line">	char firstName[<span class="number">5</span>];</span><br><span class="line">	char ReturnProcessName[<span class="number">5</span>];</span><br><span class="line">	strcpy(firstName,p-&gt;ProcessName);</span><br><span class="line">	<span class="keyword">if</span>(pHead!=NULL)</span><br><span class="line">	&#123;</span><br><span class="line">			<span class="keyword">while</span>(p!=NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>( max &lt; (p-&gt;Priority))&#123;</span><br><span class="line">                    max= p-&gt;Priority;</span><br><span class="line">                    strcpy(ReturnProcessName,p-&gt;ProcessName);</span><br><span class="line">					flag=<span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				p=p-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag==<span class="number">1</span>)&#123;</span><br><span class="line">		printf(<span class="string">&quot;%s\n&quot;</span>,ReturnProcessName);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		printf(<span class="string">&quot;%s\n&quot;</span>,firstName);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190513/liF2w98LPKem.gif" alt="mark"></p>
+<p>​ <img src="http://static.zxinc520.com/blog/20190513/XXOxTOQJ8P0H.gif" alt="mark"></p>
+<h2 id="进程调度-2"><a href="#进程调度-2" class="headerlink" title="进程调度 2"></a>进程调度 2</h2><p><strong>问题描述</strong>：</p>
+<p>​ 要求输入 N 个进程（0&lt;N&lt;=100），找出最后执行的那个进程的进程名。（如果遇到优先级一样，按照输入顺序执行。），本题中，优先数数值较高的优先级也较高。</p>
+<p><strong>输入格式</strong>：</p>
+<p>​ 程序首先要求输入一个整型值 N，接下来输入为 N 行，以回车符号作为分隔，每行有 3 个数据，以空格作为分隔。首先输入一个字符串（长度小于等于 10），该字符串为进程名。第 2 个数据类型为整型，表示进程的优先数。第 3 个数据类型为整型，表示进程的运行时间。</p>
+<p><strong>输出格式：</strong></p>
+<p>​ 输出一个字符串，为最后执行进程的进程名。</p>
+<p><em>样例输入 1：</em></p>
+<p>3</p>
+<p>P1 1 1</p>
+<p>P2 2 2</p>
+<p>P3 3 3</p>
+<p>样例输出 1：</p>
+<p>P3</p>
+<p><em>样例输入 2：</em></p>
+<p>2</p>
+<p>P1 10 10</p>
+<p>P2 100 100</p>
+<p>样例输出 2：</p>
+<p>P2</p>
+<p><strong>源代码：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt; //strcpy()</span><br><span class="line">#include &lt;stdlib.h&gt;//malloc()</span><br><span class="line"><span class="keyword">void</span> insertQuestion();</span><br><span class="line"><span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time);</span><br><span class="line"><span class="keyword">void</span> view();</span><br><span class="line"><span class="keyword">void</span> arithmetic();</span><br><span class="line">typedef struct process</span><br><span class="line">&#123;</span><br><span class="line">	char ProcessName[<span class="number">5</span>];</span><br><span class="line">	int Priority;</span><br><span class="line">	int Time;</span><br><span class="line">	struct process *next;</span><br><span class="line">&#125;nodelist;</span><br><span class="line"></span><br><span class="line">nodelist *pHead=NULL;<span class="comment">//存放调度的首节点地址</span></span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    insertQuestion();</span><br><span class="line">    arithmetic();</span><br><span class="line">    <span class="comment">// view();</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加问题</span></span><br><span class="line"><span class="keyword">void</span> insertQuestion()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time);</span><br><span class="line">    char ProcessName[<span class="number">5</span>];</span><br><span class="line">	int Priority;</span><br><span class="line">	int Time;</span><br><span class="line">    int i=<span class="number">0</span>;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">	  scanf(<span class="string">&quot;%s %d %d&quot;</span>,ProcessName,&amp;Priority,&amp;Time);</span><br><span class="line">	  insertNode(ProcessName,Priority,Time);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将数据插入链表</span></span><br><span class="line"><span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//申请存储空间</span></span><br><span class="line">	nodelist *pNew=(nodelist *)malloc(sizeof(nodelist));</span><br><span class="line">	nodelist *p,*q;</span><br><span class="line">	strcpy(pNew-&gt;ProcessName,ProcessName);</span><br><span class="line">	pNew-&gt;Priority = Priority;</span><br><span class="line">	pNew-&gt;Time = Time;</span><br><span class="line">	pNew-&gt;next=NULL;</span><br><span class="line">	<span class="comment">// printf(&quot;5\n&quot;);</span></span><br><span class="line">		<span class="keyword">if</span>(pHead==NULL) <span class="comment">//插入前链表为空，新插入的节点为头节点</span></span><br><span class="line">		&#123;</span><br><span class="line">			pHead=pNew;</span><br><span class="line">			<span class="comment">//p1=pHead;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//将地址为pNew的节点插入到首地址为pHead的链表的尾部</span></span><br><span class="line">			<span class="comment">/*p1-&gt;next=pNew;</span></span><br><span class="line"><span class="comment">			p1=pNew;</span></span><br><span class="line"><span class="comment">			pNew-&gt;next=NULL;*/</span></span><br><span class="line">			p=pHead;</span><br><span class="line">			<span class="comment">//q=(nodelist *)malloc(sizeof(nodelist));</span></span><br><span class="line">			<span class="keyword">if</span>(p-&gt;next!=<span class="number">0</span>)     <span class="comment">//文件不为空，即pHead后面有数据</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">while</span>(p-&gt;next!=<span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">				q=p-&gt;next;</span><br><span class="line">			    p=q;</span><br><span class="line">				&#125;</span><br><span class="line">				p-&gt;next=pNew;</span><br><span class="line">				pNew-&gt;next=NULL;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;next==<span class="number">0</span>) <span class="comment">//只有头结点，即pHead后面无数据</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//将地址为pNew的节点插入到首地址为pHead的链表的尾部</span></span><br><span class="line">				p-&gt;next=pNew;</span><br><span class="line">			    p=pNew;</span><br><span class="line">				pNew-&gt;next=NULL;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//显示链表中的数据</span></span><br><span class="line"><span class="keyword">void</span> view()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">/* 显示所有的结果 */</span></span><br><span class="line">	nodelist *p=pHead;</span><br><span class="line">	<span class="keyword">if</span>(pHead!=NULL)</span><br><span class="line">	&#123;</span><br><span class="line">			<span class="keyword">while</span>(p!=NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				printf(<span class="string">&quot;%s &quot;</span>,p-&gt;ProcessName);</span><br><span class="line">				printf(<span class="string">&quot;%d &quot;</span>,p-&gt;Priority);</span><br><span class="line">				printf(<span class="string">&quot;%d &quot;</span>,p-&gt;Time);</span><br><span class="line">				p=p-&gt;next;</span><br><span class="line">				printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">	  printf(<span class="string">&quot;链表中啥都没有！\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> arithmetic()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//相关算法实现</span></span><br><span class="line">	nodelist *p=pHead;</span><br><span class="line">	nodelist *q=pHead;</span><br><span class="line">	nodelist *m=pHead;</span><br><span class="line">	int max=p-&gt;Priority;</span><br><span class="line">	int flag=<span class="number">0</span>;</span><br><span class="line">	int i;</span><br><span class="line">	int sum=<span class="number">0</span>;</span><br><span class="line">	char firstName[<span class="number">5</span>];</span><br><span class="line">	char ReturnProcessName[<span class="number">5</span>];</span><br><span class="line">	char FinallProcessName[<span class="number">5</span>];</span><br><span class="line">	strcpy(ReturnProcessName,p-&gt;ProcessName);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(pHead!=NULL)</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(m!=<span class="number">0</span>)&#123;</span><br><span class="line">		sum+=m-&gt;Time;</span><br><span class="line">	    m=m-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; sum; ++i)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">while</span>(p!=NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>( max &lt; (p-&gt;Priority) &amp;&amp; (p-&gt;Time&gt;<span class="number">0</span>))&#123;</span><br><span class="line">                    max= p-&gt;Priority;</span><br><span class="line">                    strcpy(ReturnProcessName,p-&gt;ProcessName);</span><br><span class="line">					flag=<span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				p=p-&gt;next;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">				  	<span class="keyword">while</span>(q!=NULL)</span><br><span class="line">						&#123;</span><br><span class="line">							<span class="keyword">if</span>(strcmp(q-&gt;ProcessName,ReturnProcessName) == <span class="number">0</span>)&#123;</span><br><span class="line">                                strcpy(FinallProcessName,q-&gt;ProcessName);</span><br><span class="line">								q-&gt;Priority--;</span><br><span class="line">								q-&gt;Time--;</span><br><span class="line">							&#125;</span><br><span class="line">							q=q-&gt;next;</span><br><span class="line">						&#125;</span><br><span class="line">					p=pHead;</span><br><span class="line">					q=pHead;</span><br><span class="line">					max=p-&gt;Priority;</span><br><span class="line">					strcpy(ReturnProcessName,p-&gt;ProcessName);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">			printf(<span class="string">&quot;%s\n&quot;</span>,FinallProcessName);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190513/HbsJqnfhPfHR.gif" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190513/Ge7alyBXmauM.gif" alt="mark"></p>
+<h2 id="进程调度-3"><a href="#进程调度-3" class="headerlink" title="进程调度 3"></a>进程调度 3</h2><p><strong>问题描述</strong>：</p>
+<p>​ 要求输入 N 个进程（N 为正整型数，0&lt;N&lt;=25535），输出按照优先级从高到低执行的进程名字符串序列,直至结束。（如果遇到优先级一样，按照输入顺序先后执行。），本题中，优先数数值较高的进程，优先级也较高。</p>
+<p><strong>输入格式</strong>：</p>
+<p>​ 程序首先要求输入一个整型变量 N，接下来输入为 N 行，以回车符号作为分隔，每行有 3 个数据，以空格作为分隔。首先输入一个字符串（长度小于等于 10），该字符串为进程名。第 2 个数据类型为整型，表示进程的优先数。第 3 个数据类型为整型，表示进程的运行时间。</p>
+<p><strong>输出格式</strong>：</p>
+<p>​ 输出 1 行，M 个字符串，字符串之间用空格作为分隔。</p>
+<p>样例输入 1：</p>
+<p>3</p>
+<p>P1 1 1</p>
+<p>P2 2 2</p>
+<p>P3 3 3</p>
+<p>样例输出 1：</p>
+<p>P3 P2 P3 P1 P2 P3</p>
+<p>样例输入 2：</p>
+<p>2</p>
+<p>P1 3 3</p>
+<p>P2 1 1</p>
+<p>样例输出 2：</p>
+<p>P1 P1 P1 P2</p>
+<p>样例输入 3：</p>
+<p>100</p>
+<p>P0 0 1 P1 1 1 P2 2 1 P3 3 1 P4 4 1 P5 5 1 P6 6 1 P7 7 1 P8 8 1 P9 9 1 P10 10 1 P11 11 1 P12 12 1 P13 13 1 P14 14 1 P15 15 1 P16 16 1 P17 17 1 P18 18 1 P19 19 1 P20 20 1 P21 21 1 P22 22 1 P23 23 1 P24 24 1 P25 25 1 P26 26 1 P27 27 1 P28 28 1 P29 29 1 P30 30 1 P31 31 1 P32 32 1 P33 33 1 P34 34 1 P35 35 1 P36 36 1 P37 37 1 P38 38 1 P39 39 1 P40 40 1 P41 41 1 P42 42 1 P43 43 1 P44 44 1 P45 45 1 P46 46 1 P47 47 1 P48 48 1 P49 49 1 P50 50 1 P51 51 1 P52 52 1 P53 53 1 P54 54 1 P55 55 1 P56 56 1 P57 57 1 P58 58 1 P59 59 1 P60 60 1 P61 61 1 P62 62 1 P63 63 1 P64 64 1 P65 65 1 P66 66 1 P67 67 1 P68 68 1 P69 69 1 P70 70 1 P71 71 1 P72 72 1 P73 73 1 P74 74 1 P75 75 1 P76 76 1 P77 77 1 P78 78 1 P79 79 1 P80 80 1 P81 81 1 P82 82 1 P83 83 1 P84 84 1 P85 85 1 P86 86 1 P87 87 1 P88 88 1 P89 89 1 P90 90 1 P91 91 1 P92 92 1 P93 93 1 P94 94 1 P95 95 1 P96 96 1 P97 97 1 P98 98 1 P99 99 1</p>
+<p>样例输出 3：</p>
+<p>P100 P99 P98 P97 P96 P95 P94 P93 P92 P91 P90 P89 P88 P87 P86 P85 P84 P83 P82 P81 P80 P79 P78 P77 P76 P75 P74 P73 P72 P71 P70 P69 P68 P67 P66 P65 P64 P63 P62 P61 P60 P59 P58 P57 P56 P55 P54 P53 P52 P51 P50 P49 P48 P47 P46 P45 P44 P43 P42 P41 P40 P39 P38 P37 P36 P35 P34 P33 P32 P31 P30 P29 P28 P27 P26 P25 P24 P23 P22 P21 P20 P19 P18 P17 P16 P15 P14 P13 P12 P11 P10 P9 P8 P7 P6 P5 P4 P3 P2 P1</p>
+<p><strong>源代码：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt; //strcpy()</span><br><span class="line">#include&lt;stdlib.h&gt;//malloc()</span><br><span class="line"><span class="keyword">void</span> insertQuestion();</span><br><span class="line"><span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time);</span><br><span class="line"><span class="keyword">void</span> view();</span><br><span class="line"><span class="keyword">void</span> arithmetic();</span><br><span class="line">typedef struct process</span><br><span class="line">&#123;</span><br><span class="line">	char ProcessName[<span class="number">5</span>];</span><br><span class="line">	int Priority;</span><br><span class="line">	int Time;</span><br><span class="line">	struct process *next;</span><br><span class="line">&#125;nodelist;</span><br><span class="line"></span><br><span class="line">nodelist *pHead=NULL;<span class="comment">//存放调度的首节点地址</span></span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    insertQuestion();</span><br><span class="line">    arithmetic();</span><br><span class="line">    <span class="comment">// view();</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加问题</span></span><br><span class="line"><span class="keyword">void</span> insertQuestion()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time);</span><br><span class="line">    char ProcessName[<span class="number">5</span>];</span><br><span class="line">	int Priority;</span><br><span class="line">	int Time;</span><br><span class="line">    int i=<span class="number">0</span>;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">	  scanf(<span class="string">&quot;%s %d %d&quot;</span>,ProcessName,&amp;Priority,&amp;Time);</span><br><span class="line">	  insertNode(ProcessName,Priority,Time);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将数据插入链表</span></span><br><span class="line"><span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//申请存储空间</span></span><br><span class="line">	nodelist *pNew=(nodelist *)malloc(sizeof(nodelist));</span><br><span class="line">	nodelist *p,*q;</span><br><span class="line">	strcpy(pNew-&gt;ProcessName,ProcessName);</span><br><span class="line">	pNew-&gt;Priority = Priority;</span><br><span class="line">	pNew-&gt;Time = Time;</span><br><span class="line">	pNew-&gt;next=NULL;</span><br><span class="line">	<span class="comment">// printf(&quot;5\n&quot;);</span></span><br><span class="line">		<span class="keyword">if</span>(pHead==NULL) <span class="comment">//插入前链表为空，新插入的节点为头节点</span></span><br><span class="line">		&#123;</span><br><span class="line">			pHead=pNew;</span><br><span class="line">			<span class="comment">//p1=pHead;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//将地址为pNew的节点插入到首地址为pHead的链表的尾部</span></span><br><span class="line">			<span class="comment">/*p1-&gt;next=pNew;</span></span><br><span class="line"><span class="comment">			p1=pNew;</span></span><br><span class="line"><span class="comment">			pNew-&gt;next=NULL;*/</span></span><br><span class="line">			p=pHead;</span><br><span class="line">			<span class="comment">//q=(nodelist *)malloc(sizeof(nodelist));</span></span><br><span class="line">			<span class="keyword">if</span>(p-&gt;next!=<span class="number">0</span>)     <span class="comment">//文件不为空，即pHead后面有数据</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">while</span>(p-&gt;next!=<span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">				q=p-&gt;next;</span><br><span class="line">			    p=q;</span><br><span class="line">				&#125;</span><br><span class="line">				p-&gt;next=pNew;</span><br><span class="line">				pNew-&gt;next=NULL;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;next==<span class="number">0</span>) <span class="comment">//只有头结点，即pHead后面无数据</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//将地址为pNew的节点插入到首地址为pHead的链表的尾部</span></span><br><span class="line">				p-&gt;next=pNew;</span><br><span class="line">			    p=pNew;</span><br><span class="line">				pNew-&gt;next=NULL;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//显示链表中的数据</span></span><br><span class="line"><span class="keyword">void</span> view()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">/* 显示所有的结果 */</span></span><br><span class="line">	nodelist *p=pHead;</span><br><span class="line">	<span class="keyword">if</span>(pHead!=NULL)</span><br><span class="line">	&#123;</span><br><span class="line">			<span class="keyword">while</span>(p!=NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				printf(<span class="string">&quot;%s &quot;</span>,p-&gt;ProcessName);</span><br><span class="line">				printf(<span class="string">&quot;%d &quot;</span>,p-&gt;Priority);</span><br><span class="line">				printf(<span class="string">&quot;%d &quot;</span>,p-&gt;Time);</span><br><span class="line">				p=p-&gt;next;</span><br><span class="line">				printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">	  printf(<span class="string">&quot;链表中啥都没有！\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> arithmetic()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//相关算法实现</span></span><br><span class="line">	nodelist *p=pHead;</span><br><span class="line">	nodelist *q=pHead;</span><br><span class="line">	nodelist *m=pHead;</span><br><span class="line">	int max=p-&gt;Priority;</span><br><span class="line">	int flag=<span class="number">0</span>;</span><br><span class="line">	int i;</span><br><span class="line">	int sum=<span class="number">0</span>;</span><br><span class="line">	char firstName[<span class="number">5</span>];</span><br><span class="line">	char ReturnProcessName[<span class="number">5</span>];</span><br><span class="line">	strcpy(ReturnProcessName,p-&gt;ProcessName);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(pHead!=NULL)</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(m!=<span class="number">0</span>)&#123;</span><br><span class="line">		sum+=m-&gt;Time;</span><br><span class="line">	    m=m-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// printf(&quot;1\n&quot;);</span></span><br><span class="line">    <span class="comment">// printf(&quot;%d\n&quot;,sum);</span></span><br><span class="line">    <span class="comment">// printf(&quot;2\n&quot;);</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; sum; ++i)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">while</span>(p!=NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>( max &lt; (p-&gt;Priority) &amp;&amp; (p-&gt;Time&gt;<span class="number">0</span>))&#123;</span><br><span class="line">                    max= p-&gt;Priority;</span><br><span class="line">                    strcpy(ReturnProcessName,p-&gt;ProcessName);</span><br><span class="line">					flag=<span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				p=p-&gt;next;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">					<span class="comment">// printf(&quot;ReturnProcessName:%s\n&quot;, ReturnProcessName);</span></span><br><span class="line">                    <span class="comment">//printf(&quot;q-&gt;ProcessName:%s\n&quot;,q-&gt;ProcessName);</span></span><br><span class="line">                    <span class="comment">//printf(&quot;\n&quot;);</span></span><br><span class="line">				  	<span class="keyword">while</span>(q!=NULL)</span><br><span class="line">						&#123;</span><br><span class="line">							 <span class="comment">// printf(&quot;ReturnProcessName:%s\n&quot;, ReturnProcessName);</span></span><br><span class="line">      						 <span class="comment">// printf(&quot;q-&gt;ProcessName:%s\n&quot;,q-&gt;ProcessName);</span></span><br><span class="line">							<span class="keyword">if</span>(strcmp(q-&gt;ProcessName,ReturnProcessName) == <span class="number">0</span>)&#123;</span><br><span class="line">								printf(<span class="string">&quot;%s &quot;</span>,q-&gt;ProcessName);</span><br><span class="line">								q-&gt;Priority--;</span><br><span class="line">								q-&gt;Time--;</span><br><span class="line">							&#125;</span><br><span class="line">							q=q-&gt;next;</span><br><span class="line">						&#125;</span><br><span class="line">					p=pHead;</span><br><span class="line">					q=pHead;</span><br><span class="line">					max=p-&gt;Priority;</span><br><span class="line">					<span class="comment">// printf(&quot;\n&quot;);</span></span><br><span class="line">					<span class="comment">// view();</span></span><br><span class="line">					<span class="comment">// printf(&quot;\n&quot;);</span></span><br><span class="line"></span><br><span class="line">					strcpy(ReturnProcessName,p-&gt;ProcessName);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190513/fWvr6o5WnCac.gif" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190513/UBx2BDfscUbD.gif" alt="mark"></p>
+<h2 id="进程调度-4：时间片轮转"><a href="#进程调度-4：时间片轮转" class="headerlink" title="进程调度 4：时间片轮转"></a>进程调度 4：时间片轮转</h2><p><strong>问题描述</strong>：</p>
+<p>​ 要求输入 N 个进程（0&lt;N&lt;=100），输入时间片 M（0&lt;M〈=5），按照进程输入的顺序以时间片轮转的方法输出指定的第 K 轮（K&gt;0）执行的那个进程的进程名。</p>
+<p><strong>输入格式</strong>：</p>
+<p>​ 程序首先输入一个正整数 M（0&lt;M〈=5）作为时间片，下一行输入一个正整数 N（0&lt;N&lt;=100），接下来输入为 N 行，以回车符号作为分隔，每行有 2 个数据，以空格作为分隔。第一个数据是字符串（长度小于等于 10），该字符串为进程名，第 2 个数据类型为整型，表示该进程需要的运行时间。最后输入一个正整数 K，作为时间片轮转的次数（次数从 1 开始计数）。</p>
+<p><strong>输出格式</strong>：</p>
+<p>​ 输出一个字符串，为最后执行进程的进程名；若无进程运行，则输出“over”（不含双引号，所有字母皆为小写）。</p>
+<p>样例输入 1：</p>
+<p>1</p>
+<p>3</p>
+<p>P1 1</p>
+<p>P2 2</p>
+<p>P3 3</p>
+<p>3</p>
+<p>样例输出 1：P3</p>
+<p>样例输入 2：</p>
+<p>1</p>
+<p>3</p>
+<p>P1 1</p>
+<p>P2 2</p>
+<p>P3 3</p>
+<p>10</p>
+<p>样例输出 2：over</p>
+<p>样例输入 3：</p>
+<p>2</p>
+<p>3</p>
+<p>P1 1</p>
+<p>P2 2</p>
+<p>P3 3</p>
+<p>4</p>
+<p>样例输出 3：P3</p>
+<p><em>代码展示：</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt; //strcpy()</span><br><span class="line">#include&lt;stdlib.h&gt;//malloc()</span><br><span class="line"><span class="keyword">void</span> insertQuestion();</span><br><span class="line"> <span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Time);</span><br><span class="line"><span class="keyword">void</span> view();</span><br><span class="line"><span class="keyword">void</span> arithmetic(int M,int n,int count);</span><br><span class="line">typedef struct process</span><br><span class="line">&#123;</span><br><span class="line">    char ProcessName[<span class="number">5</span>];</span><br><span class="line">    int Priority;</span><br><span class="line">    int Time;</span><br><span class="line">    struct process *next;</span><br><span class="line">&#125;nodelist;</span><br><span class="line"></span><br><span class="line">nodelist *pHead=NULL;<span class="comment">//存放调度的首节点地址</span></span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    insertQuestion();</span><br><span class="line">    <span class="comment">// view();</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加问题</span></span><br><span class="line"><span class="keyword">void</span> insertQuestion()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Time);</span><br><span class="line">	<span class="keyword">void</span> arithmetic(int M,int n,int count);</span><br><span class="line">    char ProcessName[<span class="number">5</span>];</span><br><span class="line">    int Priority;</span><br><span class="line">    int Time;</span><br><span class="line">    int i=<span class="number">0</span>;</span><br><span class="line">    int n;</span><br><span class="line">	int M;</span><br><span class="line">	int count;</span><br><span class="line">	scanf(<span class="string">&quot;%d&quot;</span>,&amp;M);</span><br><span class="line">    scanf(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">      scanf(<span class="string">&quot;%s %d&quot;</span>,ProcessName,&amp;Time);</span><br><span class="line">      insertNode(ProcessName,Time);</span><br><span class="line">    &#125;</span><br><span class="line">	scanf(<span class="string">&quot;%d&quot;</span>,&amp;count);</span><br><span class="line">	arithmetic(M,n,count);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将数据插入链表</span></span><br><span class="line"><span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Time)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//申请存储空间</span></span><br><span class="line">    nodelist *pNew=(nodelist *)malloc(sizeof(nodelist));</span><br><span class="line">    nodelist *p,*q;</span><br><span class="line">    strcpy(pNew-&gt;ProcessName,ProcessName);</span><br><span class="line">    pNew-&gt;Time = Time;</span><br><span class="line">    pNew-&gt;next=NULL;</span><br><span class="line">    <span class="comment">// printf(&quot;5\n&quot;);</span></span><br><span class="line">        <span class="keyword">if</span>(pHead==NULL) <span class="comment">//插入前链表为空，新插入的节点为头节点</span></span><br><span class="line">        &#123;</span><br><span class="line">            pHead=pNew;</span><br><span class="line">            <span class="comment">//p1=pHead;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//将地址为pNew的节点插入到首地址为pHead的链表的尾部</span></span><br><span class="line">            <span class="comment">/*p1-&gt;next=pNew;</span></span><br><span class="line"><span class="comment">            p1=pNew;</span></span><br><span class="line"><span class="comment">            pNew-&gt;next=NULL;*/</span></span><br><span class="line">            p=pHead;</span><br><span class="line">            <span class="comment">//q=(nodelist *)malloc(sizeof(nodelist));</span></span><br><span class="line">            <span class="keyword">if</span>(p-&gt;next!=<span class="number">0</span>)     <span class="comment">//文件不为空，即pHead后面有数据</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">while</span>(p-&gt;next!=<span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                q=p-&gt;next;</span><br><span class="line">                p=q;</span><br><span class="line">                &#125;</span><br><span class="line">                p-&gt;next=pNew;</span><br><span class="line">                pNew-&gt;next=NULL;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;next==<span class="number">0</span>) <span class="comment">//只有头结点，即pHead后面无数据</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//将地址为pNew的节点插入到首地址为pHead的链表的尾部</span></span><br><span class="line">                p-&gt;next=pNew;</span><br><span class="line">                p=pNew;</span><br><span class="line">                pNew-&gt;next=NULL;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//显示链表中的数据</span></span><br><span class="line"><span class="keyword">void</span> view()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 显示所有的结果 */</span></span><br><span class="line">    nodelist *p=pHead;</span><br><span class="line">    <span class="keyword">if</span>(pHead!=NULL)</span><br><span class="line">    &#123;</span><br><span class="line">            <span class="keyword">while</span>(p!=NULL)</span><br><span class="line">            &#123;</span><br><span class="line">                printf(<span class="string">&quot;%s &quot;</span>,p-&gt;ProcessName);</span><br><span class="line">                printf(<span class="string">&quot;%d &quot;</span>,p-&gt;Time);</span><br><span class="line">                p=p-&gt;next;</span><br><span class="line">                printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">      printf(<span class="string">&quot;链表中啥都没有！\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> arithmetic(int M,int n,int count)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//相关算法实现</span></span><br><span class="line">    nodelist *p=pHead;</span><br><span class="line">    int index=<span class="number">0</span>;</span><br><span class="line">    int i=<span class="number">0</span>;</span><br><span class="line">    int forcount=<span class="number">0</span>;</span><br><span class="line">    int Numcount=<span class="number">0</span>;</span><br><span class="line">    int sum=<span class="number">0</span>;</span><br><span class="line">    int flag=<span class="number">0</span>;</span><br><span class="line">    int finallyNum=<span class="number">0</span>;</span><br><span class="line">	 <span class="comment">// printf(&quot;%d %d %d\n&quot;,M,n,count);</span></span><br><span class="line">     <span class="comment">// printf(&quot;%d\n&quot;,count/n);</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(count%n==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        forcount=count/n;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        forcount=count/n+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="comment">// printf(&quot;forcount:%d\n&quot;, forcount);</span></span><br><span class="line">     <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; forcount; i++)</span><br><span class="line">         &#123;</span><br><span class="line">                    <span class="keyword">while</span>(p!=NULL)</span><br><span class="line">                    &#123;</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">if</span>(p-&gt;Time&gt;<span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">                            p-&gt;Time=p-&gt;Time - M;</span><br><span class="line">                            <span class="comment">// printf(&quot;%s\n&quot;,p-&gt;ProcessName);</span></span><br><span class="line">                            <span class="comment">// view();</span></span><br><span class="line">                            <span class="comment">// printf(&quot;\n&quot;);</span></span><br><span class="line">                            Numcount++;</span><br><span class="line">                            <span class="comment">// printf(&quot;%d\n&quot;,Numcount);</span></span><br><span class="line">                            finallyNum=Numcount;</span><br><span class="line">                            <span class="keyword">if</span> (Numcount==count)</span><br><span class="line">                            &#123;</span><br><span class="line">                              printf(<span class="string">&quot;%s\n&quot;</span>,p-&gt;ProcessName);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                         p=p-&gt;next;</span><br><span class="line">                    &#125;</span><br><span class="line">                    p=pHead;</span><br><span class="line">         &#125;</span><br><span class="line"><span class="keyword">if</span>(finallyNum &lt; count)&#123;</span><br><span class="line">   printf(<span class="string">&quot;over\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190522/EE00fbgzk6Ho.gif" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190522/FAQDVGbxoawJ.gif" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190522/ddwSvMe4TwsW.gif" alt="mark"></p>
+<hr>
+<h2 id="存储管理-1"><a href="#存储管理-1" class="headerlink" title="存储管理 1"></a>存储管理 1</h2><p><strong>问题描述</strong>：</p>
+<p>​ 现有一个 8*8 的存储器，要对其空间进行分配。（下标从 0 开始，最后一个内存块下标为 63）。现已有块号为 1、7、13、23、47、59 的几个内存块被占用。现操作系统要求申请 N 块内存空间（0&lt;N&lt;=64），当输入的块数 N 超出其剩余空闲块数的时候，输出为“false”，当输入为合理范围的时候，就输出其以行主序分配的最后一个内存空间的下标。</p>
+<p><strong>输入格式：</strong></p>
+<p>​ 程序要求输入一个整型数 N，表示要申请分配空间的大小。</p>
+<p><strong>输出格式</strong>：</p>
+<p>​ 输出为一个整型数，表示最后一个被分配空间的下标。</p>
+<p>样例输入 1：</p>
+<p>3</p>
+<p>样例输出 1：</p>
+<p>3</p>
+<p>样例输入 2：</p>
+<p>100</p>
+<p>样例输出 2：</p>
+<p>false</p>
+<p>样例输入 3：</p>
+<p>50</p>
+<p>样例输出 3：</p>
+<p>54</p>
+<p>_源代码_：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int arr[<span class="number">64</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    int i=<span class="number">0</span>;</span><br><span class="line">    int n;</span><br><span class="line">    int count=<span class="number">0</span>;</span><br><span class="line">    arr[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">7</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">13</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">23</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">47</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">59</span>]=<span class="number">1</span>;</span><br><span class="line">    scanf(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">if</span> (n&gt;<span class="number">58</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    	printf(<span class="string">&quot;false\n&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    	 <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n+<span class="number">1</span>; i++)</span><br><span class="line">		    &#123;</span><br><span class="line">		    	<span class="keyword">if</span> (arr[i]==<span class="number">1</span>)</span><br><span class="line">		    	&#123;</span><br><span class="line">		    		count++;</span><br><span class="line">		   		&#125;</span><br><span class="line">		 	&#125;</span><br><span class="line"> 	printf(<span class="string">&quot;%d\n&quot;</span>, count+n<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190522/fhJf38dsniWT.gif" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190522/G8b9fg3D0LVM.gif" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190522/cy8XL8vNxJrJ.gif" alt="mark"></p>
+<h2 id="存储管理-2"><a href="#存储管理-2" class="headerlink" title="存储管理 2"></a>存储管理 2</h2><p><strong>问题描述</strong>：</p>
+<p>​ 现有一个 8*8 的存储器，要对其空间进行分配。（下标从 0 开始，最后一个内存块下标为 63）。现已有块号为 2、7、13、23、37、47、59、61 的几个内存块被占用。要求输入需分配的进程数 M（0&lt;M&lt;=56），接下来输入为 M 个整型数，每个数为各个进程需占用的内存块数。当分配到某进程时，其剩余空闲块数可以分配，就输出当前进程分配的最后一个内存空间的下标。当分配到某进程时，其进程块数超出剩余空闲块数无法分配，输出为“false”（不含双引号，且为全小写）。输出的多个下标（或”false”）之间用空格隔开。</p>
+<p><strong>输入格式</strong>：</p>
+<p>​ 程序输入分为两行，第一行要求输入一个整型数 M，表示要所需分配空间的进程数，接下来的第二行输入 M 个整型数，每个数之间用空格隔开，表示 M 个进程每个进程占用的内存空间大小。</p>
+<p><strong>输出格式：</strong></p>
+<p>​ 输出为 M 组整型数（或”false”），每个整型数表示该进程最后一个被分配的内存空间的下标（或”false”），下标（或”false”）之间用空格隔开。</p>
+<p>样例输入 1：</p>
+<p>3</p>
+<p>3 3 3</p>
+<p>样例输出 1：</p>
+<p>3 6 10</p>
+<p>样例输入 2：</p>
+<p>4</p>
+<p>3 3 64 3</p>
+<p>样例输出 2：</p>
+<p>3 6 false 10</p>
+<p><em>源代码：</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">void</span> funsave(int n,int arr[<span class="number">64</span>],int residue);</span><br><span class="line">    int arr[<span class="number">64</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    int num[<span class="number">200</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    int inputnum;</span><br><span class="line">    int i=<span class="number">0</span>;</span><br><span class="line">    int x[<span class="number">64</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    int sumsheng=<span class="number">56</span>;</span><br><span class="line">    char thirdName[<span class="number">10</span>];</span><br><span class="line">    char str[<span class="number">10</span>];</span><br><span class="line">    int getInTStr;</span><br><span class="line">    arr[<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">7</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">13</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">23</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">37</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">41</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">47</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">59</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">61</span>]=<span class="number">1</span>;</span><br><span class="line">    scanf(<span class="string">&quot;%d&quot;</span>,&amp;inputnum);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; inputnum; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(<span class="string">&quot;%d&quot;</span>,&amp;num[i]);</span><br><span class="line">        <span class="keyword">if</span> (sumsheng&gt;num[i])</span><br><span class="line">        &#123;</span><br><span class="line">           sumsheng=sumsheng-num[i];</span><br><span class="line">        &#125;</span><br><span class="line">      x[i]=sumsheng;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; inputnum; i++)</span><br><span class="line">     &#123;</span><br><span class="line">      funsave(num[i],arr,x[i]);</span><br><span class="line">     &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> funsave(int n,int arr[<span class="number">64</span>],int residue)&#123;</span><br><span class="line">    int i=<span class="number">0</span>;</span><br><span class="line">    int count=<span class="number">0</span>;</span><br><span class="line">    int indexI=<span class="number">0</span>;</span><br><span class="line">    int flag=<span class="number">0</span>;</span><br><span class="line">    int arr1[<span class="number">20</span>];</span><br><span class="line">    int arr2[<span class="number">20</span>];</span><br><span class="line">    int finallyIndex=<span class="number">0</span>;</span><br><span class="line">    int arrindex=<span class="number">0</span>;</span><br><span class="line">    int arrindex2=<span class="number">0</span>;</span><br><span class="line">   <span class="comment">// printf(&quot;start n:%d\n&quot;,n);</span></span><br><span class="line">    <span class="comment">// printf(&quot;getInTStr:%d\n&quot;,getInTStr);</span></span><br><span class="line">  <span class="keyword">if</span> (n&gt;residue)</span><br><span class="line">    &#123;</span><br><span class="line">      printf(<span class="string">&quot;false &quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (arr[<span class="number">0</span>]==<span class="number">0</span>)</span><br><span class="line">       &#123;</span><br><span class="line">         <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[i]==<span class="number">1</span>)</span><br><span class="line">          &#123;</span><br><span class="line">            count++;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">       <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; count+n; i++)</span><br><span class="line">         &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i]==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                arr2[arrindex2]=i;</span><br><span class="line">                arrindex2++;</span><br><span class="line">            &#125;</span><br><span class="line">            arr[i]=<span class="number">1</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         printf(<span class="string">&quot;%d &quot;</span>, n+count<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">64</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[i]==<span class="number">0</span>)</span><br><span class="line">          &#123;</span><br><span class="line">            indexI=i;</span><br><span class="line">            goto LOOP;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">       LOOP:<span class="keyword">for</span>(i=indexI;i&lt;indexI+n;i++)&#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[i]==<span class="number">1</span>)</span><br><span class="line">          &#123;</span><br><span class="line">            count++;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (i = indexI; i &lt; indexI+count+n; i++)</span><br><span class="line">         &#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[i]==<span class="number">0</span>)</span><br><span class="line">          &#123;</span><br><span class="line">            finallyIndex=i;</span><br><span class="line">            arr1[arrindex]=i;</span><br><span class="line">          arrindex=arrindex+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line">            arr[i]=<span class="number">1</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         printf(<span class="string">&quot;%d &quot;</span>, finallyIndex);</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190523/iyJhP4Rqt9KS.gif" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190523/ri4eCOgCqxI1.gif" alt="mark"></p>
+<h2 id="储存管理-3"><a href="#储存管理-3" class="headerlink" title="储存管理 3"></a>储存管理 3</h2><p><strong>问题描述：</strong></p>
+<p>​ 现有一个 8*8 的存储器，要对其已分配的空间进行分配及回收。（下标从 0 开始，最后一个内存块下标为 63）。现已有块号为 2、7、13、23、37、41、47、59、61 的几个内存块被占用。要求输入需分配的进程数 M（0&lt;M&lt;=55），接下来输入为 M 个整型数，每个数为各个进程需占用的内存块数。当分配到某进程时，其剩余空闲块数可以分配，就输出当前进程分配的最后一个内存空间的下标。当分配到某进程时，其进程块数超出剩余空闲块数无法分配，输出为“false”（不含双引号，且为全小写）。输出的多个下标（或”false”）之间用空格隔开。以上进程不管是否分配成功，按照输入顺序依次命名为 p1、p2、p3………pM。回收的时候输入进程名 pN，则返回进程名为 pN 的所有占用内存块号下标，如果该进程名不存在或输入的数值为不合理范围，则返回“false”。</p>
+<p><strong>输入格式：</strong></p>
+<p>​ 程序输入分为三行，第一行是一个整型数 M，表示要所需分配空间的进程数，第二行为 M 个整型数，每个数之间用空格隔开，表示 M 个进程每个进程占用的内存空间大小。第三行为需要回收的进程名 pN，p 为小写字母，N 为正整型数。</p>
+<p><strong>输出格式：</strong></p>
+<p>​ 输出为两行，第一行为一组整型数，每个整型数表示该进程最后一个被分配的内存空间的下标，下标之间用空格隔开。第二行为一组整型数，表示被回收的进程的内存块下标，多个下标之间用空格隔开。</p>
+<p>样例输入 1：</p>
+<p>3</p>
+<p>3 3 3</p>
+<p>p3</p>
+<p>样例输出 1：</p>
+<p>3 6 10</p>
+<p>8 9 10</p>
+<p>样例输入 2：</p>
+<p>4</p>
+<p>3 3 64 3</p>
+<p>p3</p>
+<p>样例输出 2：</p>
+<p>3 6 false 10</p>
+<p>false</p>
+<p><em>源代码：</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int *funsave(int n,int arr[<span class="number">64</span>],int residue,int getInTStr,int indexflag,int num[<span class="number">64</span>]);</span><br><span class="line">    int arr[<span class="number">64</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    int num[<span class="number">200</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    int inputnum;</span><br><span class="line">    int i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">    int x[<span class="number">64</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    int sumsheng=<span class="number">56</span>;</span><br><span class="line">    char thirdName[<span class="number">10</span>];</span><br><span class="line">    char str[<span class="number">10</span>];</span><br><span class="line">    int getInTStr;</span><br><span class="line">     int *p;</span><br><span class="line">     int indexflag=<span class="number">0</span>;</span><br><span class="line">    arr[<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">7</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">13</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">23</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">37</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">41</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">47</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">59</span>]=<span class="number">1</span>;</span><br><span class="line">    arr[<span class="number">61</span>]=<span class="number">1</span>;</span><br><span class="line">    scanf(<span class="string">&quot;%d&quot;</span>,&amp;inputnum);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; inputnum; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(<span class="string">&quot;%d&quot;</span>,&amp;num[i]);</span><br><span class="line">        <span class="keyword">if</span> (sumsheng&gt;num[i])</span><br><span class="line">        &#123;</span><br><span class="line">        	 sumsheng=sumsheng-num[i];</span><br><span class="line">        &#125;</span><br><span class="line"> 			x[i]=sumsheng;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    scanf(<span class="string">&quot;%s&quot;</span>,thirdName);</span><br><span class="line"></span><br><span class="line">    strncpy(str, thirdName+<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">	getInTStr=atoi(str);</span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; inputnum; i++)</span><br><span class="line">     &#123;</span><br><span class="line">     	p=funsave(num[i],arr,x[i],getInTStr,indexflag,num);</span><br><span class="line"></span><br><span class="line">     		indexflag=indexflag+<span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// printf(&quot;sumsheng:%d\n&quot;, sumsheng);</span></span><br><span class="line">     <span class="comment">// for(i=0;i&lt;inputnum;i++)&#123;</span></span><br><span class="line">     <span class="comment">//       printf(&quot;%d &quot;,num[i]);</span></span><br><span class="line">     <span class="comment">//   &#125;</span></span><br><span class="line">       <span class="comment">// printf(&quot;\n&quot;);</span></span><br><span class="line">       <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;inputnum;i++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(num[i]&gt;sumsheng&amp;&amp;getInTStr==i+<span class="number">1</span>)&#123;</span><br><span class="line">           		printf(<span class="string">&quot;false\n&quot;</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">       <span class="keyword">if</span> (getInTStr==<span class="number">1</span>)</span><br><span class="line">       &#123;</span><br><span class="line">	       <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; num[<span class="number">0</span>]; i++ )</span><br><span class="line">		   &#123;</span><br><span class="line">		       printf(<span class="string">&quot;%d &quot;</span>, *(p + i));</span><br><span class="line">		   &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int *funsave(int n,int arr[<span class="number">64</span>],int residue,int getInTStr,int indexflag,int num[<span class="number">64</span>])&#123;</span><br><span class="line">    int i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">    int count=<span class="number">0</span>;</span><br><span class="line">    int indexI=<span class="number">0</span>;</span><br><span class="line">    int flag=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">static</span>  int arr1[<span class="number">64</span>][<span class="number">64</span>];</span><br><span class="line">    <span class="keyword">static</span>  int arr2[<span class="number">20</span>];</span><br><span class="line">    int finallyIndex=<span class="number">0</span>;</span><br><span class="line">    int arrindex=<span class="number">0</span>;</span><br><span class="line">    int arrindex2=<span class="number">0</span>;</span><br><span class="line">   <span class="comment">// printf(&quot;start n:%d\n&quot;,n);</span></span><br><span class="line">    <span class="comment">// printf(&quot;getInTStr:%d\n&quot;,getInTStr);</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="comment">// for(i=0;i&lt;10;i++)&#123;</span></span><br><span class="line">    <span class="comment">// 	printf(&quot;%d &quot;, num[i]);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">// printf(&quot;\n&quot;);</span></span><br><span class="line">	<span class="keyword">if</span> (n&gt;residue)</span><br><span class="line">    &#123;</span><br><span class="line">    	printf(<span class="string">&quot;false &quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    	 <span class="keyword">if</span> (arr[<span class="number">0</span>]==<span class="number">0</span>)</span><br><span class="line">    	 &#123;</span><br><span class="line">    	 	 <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		    &#123;</span><br><span class="line">		    	<span class="keyword">if</span> (arr[i]==<span class="number">1</span>)</span><br><span class="line">		    	&#123;</span><br><span class="line">		    		count++;</span><br><span class="line">		   		&#125;</span><br><span class="line">		 	&#125;</span><br><span class="line">		 	 <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; count+n; i++)</span><br><span class="line">			   &#123;</span><br><span class="line">			   	  <span class="keyword">if</span> (arr[i]==<span class="number">0</span>)</span><br><span class="line">			   	  &#123;</span><br><span class="line">			   	      arr2[arrindex2]=i;</span><br><span class="line">			   	      arrindex2++;</span><br><span class="line">			   	  &#125;</span><br><span class="line">			   	  arr[i]=<span class="number">1</span>;</span><br><span class="line">			   &#125;</span><br><span class="line">			   printf(<span class="string">&quot;%d &quot;</span>, n+count<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">    	 &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    	 	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">64</span>; i++)</span><br><span class="line">    	 	&#123;</span><br><span class="line">    	 		<span class="keyword">if</span> (arr[i]==<span class="number">0</span>)</span><br><span class="line">    	 		&#123;</span><br><span class="line">    	 			indexI=i;</span><br><span class="line">    	 			goto LOOP;</span><br><span class="line">    	 		&#125;</span><br><span class="line">    	 	&#125;</span><br><span class="line"></span><br><span class="line">    	 LOOP:<span class="keyword">for</span>(i=indexI;i&lt;indexI+n;i++)&#123;</span><br><span class="line">    	 		<span class="keyword">if</span> (arr[i]==<span class="number">1</span>)</span><br><span class="line">		    	&#123;</span><br><span class="line">		    		count++;</span><br><span class="line">		   		&#125;</span><br><span class="line">    	 	&#125;</span><br><span class="line">    	 	<span class="comment">// printf(&quot;indexflag:%d\n&quot;, indexflag);</span></span><br><span class="line">    	 	<span class="keyword">for</span> (i = indexI; i &lt; indexI+count+n; i++)</span><br><span class="line">			   &#123;</span><br><span class="line">			   	<span class="keyword">if</span> (arr[i]==<span class="number">0</span>)</span><br><span class="line">			   	&#123;</span><br><span class="line">			   		finallyIndex=i;</span><br><span class="line">			   		arr1[indexflag<span class="number">-1</span>][arrindex]=i;</span><br><span class="line">					arrindex=arrindex+<span class="number">1</span>;</span><br><span class="line">			   	&#125;</span><br><span class="line">			   	  arr[i]=<span class="number">1</span>;</span><br><span class="line">			   &#125;</span><br><span class="line">			    printf(<span class="string">&quot;%d &quot;</span>, finallyIndex);</span><br><span class="line">    			&#125;</span><br><span class="line">    	 &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    	 <span class="keyword">if</span> (getInTStr==<span class="number">1</span>)</span><br><span class="line">    	 &#123;</span><br><span class="line">    	 	<span class="keyword">return</span> arr2;</span><br><span class="line">    	 &#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">    	 	<span class="comment">// printf(&quot;getInTStr:%d\n&quot;, getInTStr);</span></span><br><span class="line">       <span class="comment">//       printf(&quot;n:%d\n&quot;,n );</span></span><br><span class="line">       <span class="comment">//       printf(&quot;indexflag:%d\n&quot;,indexflag );</span></span><br><span class="line">    	 	<span class="comment">// for(i=0;i&lt;10;i++)</span></span><br><span class="line">			    <span class="comment">// &#123;</span></span><br><span class="line">			    <span class="comment">//     for(j=0;j&lt; 10;j++)</span></span><br><span class="line">			    <span class="comment">//     &#123;</span></span><br><span class="line">			    <span class="comment">//         printf(&quot;%d\t&quot;,arr1[i][j]);//访问i行j列的二维数组元素</span></span><br><span class="line">			    <span class="comment">//     &#125;</span></span><br><span class="line">			    <span class="comment">//     printf(&quot;\n&quot;);</span></span><br><span class="line">			    <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">             <span class="keyword">if</span> (n&lt;=residue)&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">             	 <span class="keyword">if</span> (indexflag+<span class="number">1</span>&gt;=n)</span><br><span class="line">				 &#123;</span><br><span class="line">				 		printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">				        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;num[getInTStr<span class="number">-1</span>];j++)</span><br><span class="line">				        &#123;</span><br><span class="line">				        	<span class="keyword">if</span>(arr1[getInTStr<span class="number">-2</span>][j]!=<span class="number">0</span>)&#123;</span><br><span class="line"> 									printf(<span class="string">&quot;%d &quot;</span>,arr1[getInTStr<span class="number">-2</span>][j]);<span class="comment">//访问i行j列的二维数组元素</span></span><br><span class="line">				        	&#125;</span><br><span class="line"></span><br><span class="line">				        &#125;</span><br><span class="line">				 &#125;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    	 &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190602/famTkQ0URtAP.gif" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190602/u7GSImrnET42.gif" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190602/upFLuGwWxBsR.gif" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190602/KXkISHw5iD2s.gif" alt="mark"></p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2019/05/13/ProcessScheduling/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%AE%AD/" rel="tag">学习实训</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6/" rel="tag">进程调度</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2019/05/13/Promise/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Promise
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/05/12/ReactLearn03/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">React 学习第三天</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

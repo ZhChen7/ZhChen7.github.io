@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    组件化和 React |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-ReactTheory"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  组件化和 React
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/09/07/ReactTheory/" class="article-date">
+  <time datetime="2019-09-07T14:32:45.000Z" itemprop="datePublished">2019-09-07</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/">框架</a> / <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/React/">React</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">7 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="组件化和-React"><a href="#组件化和-React" class="headerlink" title="组件化和 React"></a>组件化和 React</h1><blockquote>
+<p>本章先带领学生做一个 React 的实例，熟悉 React 开发环境、以及 <strong>组件化</strong> 的概念。然后，通过实例来讲解 React 的 <strong>实现原理</strong>，包括 <strong>JSX 的本质</strong> 、<strong>虚拟 DOM 和 JSX 的结合</strong>、以及 <strong>setState</strong> 。最后，<strong>对比 vue 和 React</strong> ，分析两者的异同。</p>
+<p>组件化和 React 高级面试知识点</p>
+<p>Think great thoughts and you will be great!</p>
+<p>心怀伟大的理想，你将会变得伟大。</p>
+</blockquote>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>是否做过 React 开发？</li>
+<li>React 以及组件化的一些核心概念</li>
+<li>实现流程</li>
+</ul>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
+<li>说一下对组件化的理解</li>
+<li>JSX 本质是什么？</li>
+<li>JSX 和 vdom 的关系？</li>
+<li>说一下 setState 的过程</li>
+<li>阐述一下对 React 和 Vue 的 认识</li>
+</ul>
+<h4 id="回顾-React"><a href="#回顾-React" class="headerlink" title="回顾 React"></a>回顾 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/">React</a></h4><ol>
+<li><p>创建一个基本的 React 应用</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/facebookincubator/create-react-app">Create React App</a> 是一个用于<strong>学习 React</strong> 的舒适环境，也是用 React 创建<strong>新的单页应用</strong>的最佳方式。</p>
+<p>它会配置你的开发环境，以便使你能够使用最新的 JavaScript 特性，提供良好的开发体验，并为生产环境优化你的应用程序。你需要在你的机器上安装 Node &gt;= 8.10 和 npm &gt;= 5.6。要创建项目，请执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br><span class="line">cd my-app</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用 React 实现 <strong>to-do-list</strong> ：</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Todo</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;</span><br><span class="line">      list: [],</span><br><span class="line">      title: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> list = <span class="built_in">this</span>.state.list;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          type=<span class="string">&quot;text&quot;</span></span><br><span class="line">          value=&#123;<span class="built_in">this</span>.state.title&#125;</span><br><span class="line">          onChange=&#123;<span class="built_in">this</span>.changeHandle.bind(<span class="built_in">this</span>)&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="built_in">this</span>.clickHandle.bind(<span class="built_in">this</span>)&#125;&gt;Submit&lt;/button&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &#123;list.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span> &#123;item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>;</span><br><span class="line">          &#125;)&#125;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  changeHandle(e) &#123;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      title: e.target.value,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  addTitle(title) &#123;</span><br><span class="line">    <span class="keyword">const</span> currentList = <span class="built_in">this</span>.state.list;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      list: currentList.concat(title),</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.state.list);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  clickHandle(e) &#123;</span><br><span class="line">    <span class="keyword">const</span> title = <span class="built_in">this</span>.state.title;</span><br><span class="line">    <span class="built_in">this</span>.addTitle(title);</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      title: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Todo;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190907/GRlG7LRoeKp7.gif" alt="mark"></p>
+<h2 id="7-1-说一下对组件化的理解"><a href="#7-1-说一下对组件化的理解" class="headerlink" title="7-1 说一下对组件化的理解"></a>7-1 说一下对组件化的理解</h2><h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>组件的 <strong>封装</strong></li>
+<li>组件的 <strong>复用</strong></li>
+</ul>
+<h4 id="组件的封装"><a href="#组件的封装" class="headerlink" title="组件的封装"></a>组件的封装</h4><ul>
+<li>视图</li>
+<li>数据</li>
+<li>变化逻辑 （ 数据驱动视图变化 ）</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/m1BCsjY31wOd.png?imageslim" alt="mark"></p>
+<h4 id="组件的-复用"><a href="#组件的-复用" class="headerlink" title="组件的 复用"></a>组件的 复用</h4><ul>
+<li>props 传递</li>
+<li>复用</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/dSD9f5yFTKYD.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190907/dig0u7rhRuJi.png?imageslim" alt="mark"></p>
+<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><ul>
+<li>说一下对组件化的理解？<ul>
+<li>组件的封装：封装视图、数据、变化逻辑</li>
+<li>组件的复用：props 传递、复用</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-2-JSX-本质是什么"><a href="#7-2-JSX-本质是什么" class="headerlink" title="7-2 JSX 本质是什么"></a>7-2 JSX 本质是什么</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>JSX 语法</li>
+<li>JSX 解析成 JS</li>
+<li>独立的标准</li>
+</ul>
+<h4 id="JSX-语法"><a href="#JSX-语法" class="headerlink" title="JSX 语法"></a>JSX 语法</h4><ul>
+<li>html 形式</li>
+<li>引入 JS 变量和表达式</li>
+<li>if … else …</li>
+<li>循环</li>
+<li>style 和 className</li>
+<li>事件</li>
+</ul>
+<h4 id="提出疑问"><a href="#提出疑问" class="headerlink" title="提出疑问"></a>提出疑问</h4><ul>
+<li>JSX 语法根本无法被浏览器所解析</li>
+<li>那么它如何在浏览器运行</li>
+</ul>
+<h4 id="JSX-解析"><a href="#JSX-解析" class="headerlink" title="JSX 解析"></a>JSX 解析</h4><ul>
+<li>JSX 其实是语法糖</li>
+<li>开发环境会将 JSX 编译成 JS 代码</li>
+<li>JSX 的写法 大大降低了学习成本和 编码工作量</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/Xy8TYGeoHcWC.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190907/yjXVnlK8oLfk.png?imageslim" alt="mark"></p>
+<h4 id="JSX-独立的标准"><a href="#JSX-独立的标准" class="headerlink" title="JSX 独立的标准"></a>JSX 独立的标准</h4><ul>
+<li>JSX 是 React 引入的，但不是 React 独有的</li>
+<li>React 已经将它作为一个独立的标准开放，其它项目也可用</li>
+<li>React.createElement 是可以自定义修改的</li>
+<li>说明：本身功能已经完备；和其它标准兼容和扩展性没问题</li>
+</ul>
+<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>JSX 本质是什么？<ul>
+<li>JSX 语法（标签、JS 表达式、判断、循环、事件绑定）</li>
+<li>JSX 本质就是语法糖，需被解析成 JS 才能运行</li>
+<li>JSX 是独立的标准，可被其它项目使用</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-3-JSX-和-vdom-的关系"><a href="#7-3-JSX-和-vdom-的关系" class="headerlink" title="7-3 JSX 和 vdom 的关系"></a>7-3 JSX 和 vdom 的关系</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>分析：为何需要 vdom</li>
+<li>React.createElement 和 h</li>
+<li>何时 patch？</li>
+<li>自定义组件的解析</li>
+</ul>
+<h4 id="为何需要-vdom"><a href="#为何需要-vdom" class="headerlink" title="为何需要 vdom"></a>为何需要 vdom</h4><ul>
+<li>vdom 是 React 初次推广开来的，结合 JSX</li>
+<li>JSX 就是模板，最终要渲染成 html</li>
+<li>初次渲染 + 修改 state 后的 re-render</li>
+<li>正好 符合 vdom 的应用场景</li>
+</ul>
+<h4 id="回顾-vdom"><a href="#回顾-vdom" class="headerlink" title="回顾 vdom"></a>回顾 <a target="_blank" rel="noopener" href="http://www.zxinc520.com/lcj/%225d63a1bce9920a5ce05e2c3b%22">vdom</a></h4><ul>
+<li>vdom 如何应用，核心 API 是 什么？<ul>
+<li>如何使用？ 可用 snabbdom 的 用法 来 举例</li>
+<li>核心 函数 ：h 函数，patch 函数</li>
+</ul>
+</li>
+</ul>
+<p><strong>核心 API</strong> ：</p>
+<ul>
+<li>h（’&lt;标签名&gt;’，{ … 属性 … }，[… 子元素 …]）</li>
+<li>h（’&lt;标签名&gt;’，{ … 属性 … }，[ ‘….’]）</li>
+<li>patch（container，vnode）</li>
+<li>patch（vnode，newVnode）</li>
+</ul>
+<h4 id="React-createElement-和-h"><a href="#React-createElement-和-h" class="headerlink" title="React.createElement 和 h"></a>React.createElement 和 h</h4><p><img src="http://static.zxinc520.com/blog/20190907/hro0P4sQFQug.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190907/3N0XehWXEtQa.png?imageslim" alt="mark"></p>
+<h4 id="何时-patch"><a href="#何时-patch" class="headerlink" title="何时 patch"></a>何时 patch</h4><ul>
+<li>初次渲染 - ReactDOM.render (&lt; App /&gt;,container)</li>
+<li>会触发 patch (container,vnode)</li>
+<li>re-render - setState</li>
+<li>会触发 patch (vnode,newVnode)</li>
+</ul>
+<h4 id="自定义组件的解析"><a href="#自定义组件的解析" class="headerlink" title="自定义组件的解析"></a>自定义组件的解析</h4><ul>
+<li>‘div’ - 直接渲染 &lt; div&gt; 即可，vdom 可以做到</li>
+<li>Input 和 List ，是自定义组件 （class），vdom 默认不认识</li>
+<li>因此 Input 和 List 定义的时候 必须声明 render 函数</li>
+<li>根据 props 初始化实例，然后执行实例的 render 函数</li>
+<li>render 函数返回的还是 vnode 对象</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/q3iTc0PViQbi.png?imageslim" alt="mark"></p>
+<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>为何需要 vdom：JSX 需要渲染成 html，数据驱动视图</li>
+<li>React.createElement 和 h ，都生成 vnode</li>
+<li>何时 patch：ReactDOM.render(…) 和 setState</li>
+<li>自定义组件的解析：初始化实例，然后执行 render</li>
+</ul>
+<h2 id="7-4-说一下-setState-的过程"><a href="#7-4-说一下-setState-的过程" class="headerlink" title="7-4 说一下 setState 的过程"></a>7-4 说一下 setState 的过程</h2><h3 id="知识点-4"><a href="#知识点-4" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>setState 的异步</li>
+<li>vue 修改属性也是 异步</li>
+<li>setState 的过程</li>
+</ul>
+<h4 id="setState-的异步"><a href="#setState-的异步" class="headerlink" title="setState 的异步"></a>setState 的异步</h4><p><img src="http://static.zxinc520.com/blog/20190907/z8fAo7IMaYcs.png?imageslim" alt="mark"></p>
+<h4 id="setState-为何需要异步？"><a href="#setState-为何需要异步？" class="headerlink" title="setState 为何需要异步？"></a>setState 为何需要异步？</h4><ul>
+<li>可能会一次执行 多次 setState</li>
+<li>你无法规定、限制用户如何使用 setState</li>
+<li>没必要每次 setState 都重新渲染，考虑性能</li>
+<li>即便是每次重新渲染，用户也看不到中间的效果</li>
+<li>只看到最后的结果即可</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/0E8yvUnt3JOn.png?imageslim" alt="mark"></p>
+<h4 id="vue-修改属性也是异步"><a href="#vue-修改属性也是异步" class="headerlink" title="vue 修改属性也是异步"></a>vue 修改属性也是异步</h4><ul>
+<li>效果、原因和 setState 一样</li>
+<li>对比记忆，印象深刻</li>
+</ul>
+<h4 id="vue-的整个实现流程"><a href="#vue-的整个实现流程" class="headerlink" title="vue 的整个实现流程"></a>vue 的整个实现流程</h4><ul>
+<li>第一步：解析模板成 render 函数</li>
+<li>第二步：响应式开始监听</li>
+<li>第三步：首次渲染，显示页面，且绑定依赖</li>
+<li>第四步：data 属性变化（ <strong>异步</strong> ），触发 rerender</li>
+</ul>
+<h5 id="data-属性变化"><a href="#data-属性变化" class="headerlink" title="data 属性变化"></a>data 属性变化</h5><ul>
+<li>修改属性，被响应式 的 set 监听到</li>
+<li>set 中执行 updataComponent （ <strong>异步</strong> ）</li>
+<li>updataComponent 重新执行 vm.render()</li>
+<li>生成的 vnode 和 prevVnode，通过 patch 进行比较</li>
+<li>渲染到 html 中</li>
+</ul>
+<h4 id="setState-的过程"><a href="#setState-的过程" class="headerlink" title="setState 的过程"></a>setState 的过程</h4><ul>
+<li>每个组件实例，都有 renderComponent 方法</li>
+<li>执行 renderComponent 会重新执行实例的 render</li>
+<li>render 函数返回 newVnode，然后拿到 preVnode</li>
+<li>执行 patch （preVnode，newVnode）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* renderComponent方法 大致模拟*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  renderComponent() &#123;</span><br><span class="line">    <span class="keyword">const</span> preVnode = <span class="built_in">this</span>._vnode;</span><br><span class="line">    <span class="keyword">const</span> newVnode = <span class="built_in">this</span>.render();</span><br><span class="line">    patch(preVnode, newVnode);</span><br><span class="line">    <span class="built_in">this</span>._vnode = newVnode;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>setState 的异步：效果、原因</li>
+<li>vue 修改属性也是异步：效果、原因</li>
+<li>setState 的过程：最终走到 patch(preVnode, newVnode)</li>
+</ul>
+<h1 id="7-5-总结"><a href="#7-5-总结" class="headerlink" title="7-5 总结"></a>7-5 总结</h1><ul>
+<li><p>说一下对组件化的理解？</p>
+<ul>
+<li>组件的封装：封装视图、数据、变化逻辑</li>
+<li>组件的复用：props 传递、复用</li>
+</ul>
+</li>
+<li><p>JSX 本质是什么？</p>
+<ul>
+<li>JSX 语法（标签、JS 表达式、判断、循环、事件绑定）</li>
+<li>JSX 本质就是语法糖，需被解析成 JS 才能运行</li>
+<li>JSX 是独立的标准，可被其它项目使用</li>
+</ul>
+</li>
+<li><p>JSX 和 vdom 的关系？</p>
+<ul>
+<li>为何需要 vdom：JSX 需要渲染成 html，数据驱动视图</li>
+<li>React.createElement 和 h ，都生成 vnode</li>
+<li>何时 patch：ReactDOM.render(…) 和 setState</li>
+<li>自定义组件的解析：初始化实例，然后执行 render</li>
+</ul>
+</li>
+<li><p>说一下 setState 的过程</p>
+<ul>
+<li>setState 的异步：效果、原因</li>
+<li>vue 修改属性也是异步：效果、原因</li>
+<li>setState 的过程：最终走到 patch(preVnode, newVnode)</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-6-React-Vs-vue"><a href="#7-6-React-Vs-vue" class="headerlink" title="7-6 React Vs vue"></a>7-6 React Vs vue</h2><h3 id="知识点-5"><a href="#知识点-5" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>两者的本质区别</li>
+<li>看模板和组件化的区别</li>
+<li>两者共同点</li>
+<li>总结问题的答案</li>
+</ul>
+<h4 id="两者的本质区别"><a href="#两者的本质区别" class="headerlink" title="两者的本质区别"></a>两者的本质区别</h4><ul>
+<li>vue - 本质是 MVVM 框架，由 MVC 发展而来</li>
+<li>React - 本质是前端组件化框架，有后端组件化发展而来</li>
+</ul>
+<h4 id="模板的区别"><a href="#模板的区别" class="headerlink" title="模板的区别"></a>模板的区别</h4><ul>
+<li>vue - 使用模板 （ 最初由 angular 提出）</li>
+<li>React - 使用 JSX</li>
+<li>**模板语法 **上，我更倾向于 JSX</li>
+<li><strong>模板分离</strong> 上，我更加倾向于 vue</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/3TJdcbF6Ud41.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190907/oPnkXYam0Ovp.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190907/O7ONMqnOcIxs.png?imageslim" alt="mark"></p>
+<ul>
+<li>模板应该 和 JS 逻辑分离</li>
+<li>回顾 ”开放封闭原则“</li>
+</ul>
+<h4 id="组件化的区别"><a href="#组件化的区别" class="headerlink" title="组件化的区别"></a>组件化的区别</h4><ul>
+<li>React 本身就是组件化，没有组件化就不是 React</li>
+<li>vue 也支持组件化，不过是在 MVVM 上的扩展</li>
+<li>查阅 vue 组件化的文档，洋洋洒洒很多（ 侧面反映 ）</li>
+<li>对于组件化，我更倾向于 React，做的彻底而清晰</li>
+</ul>
+<h4 id="两者的共同点"><a href="#两者的共同点" class="headerlink" title="两者的共同点"></a>两者的共同点</h4><ul>
+<li>都支持组件化</li>
+<li>都是数据驱动视图</li>
+</ul>
+<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>阐述一下对 React 和 Vue 的 认识<ul>
+<li>国内使用，首推 vue。文档更易读、易学、社区够大</li>
+<li>如果团队水平较高，推荐使用 React。组件化 和 JSX</li>
+</ul>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2019/09/07/ReactTheory/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2019/09/09/AlgorithmForTheInterview01/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            算法面试到底是什么鬼
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/09/05/VueTheory/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">MVVM 和 vue</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

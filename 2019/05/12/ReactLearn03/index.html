@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    React 学习第三天 |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-ReactLearn03"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  React 学习第三天
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/12/ReactLearn03/" class="article-date">
+  <time datetime="2019-05-12T05:10:24.000Z" itemprop="datePublished">2019-05-12</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/">框架</a> / <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/React/">React</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.6k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">12 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="React-第三天学习"><a href="#React-第三天学习" class="headerlink" title="React 第三天学习"></a>React 第三天学习</h2><blockquote>
+<p>在 react 项目中 添加样式</p>
+<p>加载外部 css 样式文件</p>
+<p>css 样式作用域的问题（modules，localIdentName， local 和 global）</p>
+<p>在 React 项目中 使用 bootsrtap（ 使用 sass ）</p>
+<p>React 中 绑定事件</p>
+<p>React 中双向绑定事件（e.target.value 和 this.refs.txt.value）</p>
+<p>React 组件的生命周期</p>
+<p>Dream what you want to dream; go where you want to go; be what you want to be, because you have only one life and one chance to do all the things you want to do！</p>
+<p>做你想做的梦吧，去你想去的地方吧，成为你想成为的人吧，因为你只有一次生命，一个机会去做所有那些你想做的事。</p>
+</blockquote>
+<h2 id="在-react-项目中-添加样式"><a href="#在-react-项目中-添加样式" class="headerlink" title="在 react 项目中 添加样式"></a>在 react 项目中 添加样式</h2><h3 id="第一种方式："><a href="#第一种方式：" class="headerlink" title="第一种方式："></a>第一种方式：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&#123;&#123; <span class="attr">color</span>: <span class="string">&quot;red&quot;</span>, <span class="attr">fontSize</span>: <span class="string">&quot;50px&quot;</span> &#125;&#125;&gt;这是评论列表组件&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第一层封装："><a href="#第一层封装：" class="headerlink" title="第一层封装："></a>第一层封装：</h4><p><strong>将样式对象抽离出来</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cmtStyle=&#123;<span class="attr">color</span>:<span class="string">&#x27;red&#x27;</span>,<span class="attr">fontSize</span>:<span class="string">&#x27;30px&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">&lt;h1 style=&#123;cmtStyle&#125;&gt;这是评论列表组件&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第二层封装："><a href="#第二层封装：" class="headerlink" title="第二层封装："></a>第二层封装：</h4><p><strong>合并成一个大的样式对象</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> styles = &#123;</span><br><span class="line">  Item: &#123; <span class="attr">border</span>: <span class="string">&quot;1px dashed #ccc&quot;</span>, <span class="attr">margin</span>: <span class="string">&quot;10px 10px&quot;</span> &#125;,</span><br><span class="line">  user: &#123; <span class="attr">color</span>: <span class="string">&quot;#333&quot;</span> &#125;,</span><br><span class="line">  content: &#123; <span class="attr">color</span>: <span class="string">&quot;green&quot;</span>, <span class="attr">fontSize</span>: <span class="string">&quot;22px&quot;</span> &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">CmtItem</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div style=&#123;styles.Item&#125;&gt;</span><br><span class="line">      &lt;h3 style=&#123;styles.user&#125;&gt;评论人：&#123;props.user&#125;&lt;/h3&gt;</span><br><span class="line">      &lt;p style=&#123;styles.content&#125;&gt;评论内容：&#123;props.content&#125;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190508/ivSmbt2swrg3.png?imageslim" alt="mark"></p>
+<h4 id="第三层封装"><a href="#第三层封装" class="headerlink" title="第三层封装"></a>第三层封装</h4><p><strong>抽离为单独的 样式表模块</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190508/Gg6ricXHCgO0.png?imageslim" alt="mark"></p>
+<p>_CmtItem.jsx_：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react</span></span><br><span class="line"><span class="string">import styles from &#x27;</span>@/components/styles<span class="string">&#x27;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default function CmtItem(props) &#123;</span></span><br><span class="line"><span class="string">    return &lt;div style=&#123;styles.Item&#125;&gt;</span></span><br><span class="line"><span class="string">        &lt;h3 style=&#123;styles.user&#125;&gt;评论人：&#123;props.user&#125;&lt;/h3&gt;</span></span><br><span class="line"><span class="string">        &lt;p style=&#123;styles.content&#125;&gt;评论内容：&#123;props.content&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>styles.js</em>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  Item: &#123; <span class="attr">border</span>: <span class="string">&quot;1px dashed #ccc&quot;</span>, <span class="attr">margin</span>: <span class="string">&quot;10px 10px&quot;</span> &#125;,</span><br><span class="line">  user: &#123; <span class="attr">color</span>: <span class="string">&quot;#333&quot;</span> &#125;,</span><br><span class="line">  content: &#123; <span class="attr">color</span>: <span class="string">&quot;green&quot;</span>, <span class="attr">fontSize</span>: <span class="string">&quot;22px&quot;</span> &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="加载外部-css-样式文件"><a href="#加载外部-css-样式文件" class="headerlink" title="加载外部 css 样式文件"></a>加载外部 css 样式文件</h2><p><em>index.js</em>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>; <span class="comment">//创建组件，虚拟DOM元素，生命周期</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">&quot;react-dom&quot;</span>; <span class="comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> CmtList <span class="keyword">from</span> <span class="string">&quot;@/components/CmtList&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用 ReactDOM 把虚拟 DOM 渲染到页面上</span></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;CmtList&gt;&lt;/CmtList&gt;</span><br><span class="line">  &lt;/div&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">&quot;app&quot;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>_CmtList.jsx_：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> CmtItem <span class="keyword">from</span> <span class="string">&#x27;@/components/CmtItem&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> cmtStyle = &#123;<span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span>, <span class="attr">fontSize</span>: <span class="string">&#x27;30px&#x27;</span>, <span class="attr">textAlign</span>: <span class="string">&#x27;center&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">import</span> cssobj <span class="keyword">from</span> cmtList.scss</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">CmtList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="built_in">super</span>()</span><br><span class="line">        <span class="built_in">this</span>.state = &#123;</span><br><span class="line">            CommentList: [</span><br><span class="line">                &#123;<span class="attr">id</span>: <span class="number">1</span>, <span class="attr">user</span>: <span class="string">&#x27;张三&#x27;</span>, <span class="attr">content</span>: <span class="string">&#x27;哈哈哈哈哈&#x27;</span>&#125;,</span><br><span class="line">                &#123;<span class="attr">id</span>: <span class="number">2</span>, <span class="attr">user</span>: <span class="string">&#x27;李四&#x27;</span>, <span class="attr">content</span>: <span class="string">&#x27;打游戏&#x27;</span>&#125;,</span><br><span class="line">                &#123;<span class="attr">id</span>: <span class="number">3</span>, <span class="attr">user</span>: <span class="string">&#x27;王五&#x27;</span>, <span class="attr">content</span>: <span class="string">&#x27;唱歌，喝酒&#x27;</span>&#125;,</span><br><span class="line">                &#123;<span class="attr">id</span>: <span class="number">4</span>, <span class="attr">user</span>: <span class="string">&#x27;王麦子&#x27;</span>, <span class="attr">content</span>: <span class="string">&#x27;到处happy&#x27;</span>&#125;,</span><br><span class="line">                &#123;<span class="attr">id</span>: <span class="number">5</span>, <span class="attr">user</span>: <span class="string">&#x27;周琛&#x27;</span>, <span class="attr">content</span>: <span class="string">&#x27;帅的不要不要了！&#x27;</span>&#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是评论列表组件<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="xml">            &#123;this.state.CommentList.map(item =&gt;</span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">CmtItem</span> &#123;<span class="attr">...item</span>&#125; <span class="attr">key</span>=<span class="string">&#123;item.id&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">CmtItem</span>&gt;</span></span></span><br><span class="line"><span class="xml">            )&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>_CmtItem.jsx_：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> styles <span class="keyword">from</span> <span class="string">&quot;@/components/styles&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">CmtItem</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div style=&#123;styles.Item&#125;&gt;</span><br><span class="line">      &lt;h1 style=&#123;styles.user&#125;&gt;评论人：&#123;props.user&#125;&lt;/h1&gt;</span><br><span class="line">      &lt;p&gt;评论内容：&#123;props.content&#125;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>webpack.config.js</em>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&quot;html-webpack-plugin&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> htmlplugin = <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">  template: path.join(__dirname, <span class="string">&quot;src/index.html&quot;</span>),</span><br><span class="line">  filename: <span class="string">&quot;index.html&quot;</span>,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">&quot;production&quot;</span>,</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    open: <span class="literal">true</span>,</span><br><span class="line">    port: <span class="number">3000</span>,</span><br><span class="line">    contentBase: path.join(__dirname, <span class="string">&quot;src&quot;</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [htmlplugin],</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.m?js|jsx$/</span>,</span><br><span class="line">        exclude: <span class="regexp">/(node_modules|bower_components)/</span>,</span><br><span class="line">        use: &#123;</span><br><span class="line">          loader: <span class="string">&quot;babel-loader&quot;</span>,</span><br><span class="line">          options: &#123;</span><br><span class="line">            presets: [</span><br><span class="line">              <span class="string">&quot;@babel/preset-env&quot;</span>,</span><br><span class="line">              [</span><br><span class="line">                <span class="string">&quot;@babel/preset-react&quot;</span>,</span><br><span class="line">                &#123;</span><br><span class="line">                  pragmaFrag: <span class="string">&quot;DomFrag&quot;</span>, <span class="comment">// default is React.Fragment</span></span><br><span class="line">                  throwIfNamespace: <span class="literal">false</span>, <span class="comment">// defaults to true</span></span><br><span class="line">                &#125;,</span><br><span class="line">              ],</span><br><span class="line">            ],</span><br><span class="line">            plugins: [<span class="string">&quot;@babel/plugin-proposal-class-properties&quot;</span>],</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, use: [<span class="string">&quot;style-loader,css-loader&quot;</span>] &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">  resolve: &#123;</span><br><span class="line">    extensions: [<span class="string">&quot;.js&quot;</span>, <span class="string">&quot;.jsx&quot;</span>, <span class="string">&quot;.json&quot;</span>],</span><br><span class="line">    alias: &#123;</span><br><span class="line">      <span class="string">&quot;@&quot;</span>: path.join(__dirname, <span class="string">&quot;./src&quot;</span>), <span class="comment">//这样，@ 就表示 项目根目录中 的src 这一层路径</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置好相应的文件后，但是却意外的发生了错误！"><a href="#配置好相应的文件后，但是却意外的发生了错误！" class="headerlink" title="配置好相应的文件后，但是却意外的发生了错误！"></a>配置好相应的文件后，但是却意外的发生了错误！</h4><p><img src="http://static.zxinc520.com/blog/20190511/GMbDLo9GrxeD.png?imageslim" alt="mark"></p>
+<p>查阅资料：参考 <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/35171288/error-cannot-resolve-module-style-loader"><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/35171288/error-cannot-resolve-module-style-loader">Error: Cannot resolve module ‘style-loader’</a></a></p>
+<p>但是不知咋地，我瞎弄了一下，突然就好了！~</p>
+<p>_结果_：</p>
+<p><img src="http://static.zxinc520.com/blog/20190509/o8CRGPxVP3S2.png?imageslim" alt="mark"></p>
+<h1 id="引出-css-样式作用域的问题"><a href="#引出-css-样式作用域的问题" class="headerlink" title="引出 css 样式作用域的问题"></a>引出 css 样式作用域的问题</h1><h4 id="给普通样式表加模块化"><a href="#给普通样式表加模块化" class="headerlink" title="给普通样式表加模块化"></a>给普通样式表加模块化</h4><blockquote>
+<p>CSS MODULE 是一种 css in javascript 的方式，当我们把一个 css 文件 import 到一个 js 模块时，这个 css 文件会暴露一个对象，这个对象映射所有的本地和全局 css 类名</p>
+</blockquote>
+<p>​ <a target="_blank" rel="noopener" href="https://juejin.im/entry/5826e755c4c9710054313d6e">你真的知道 css-loader 怎么用吗？</a></p>
+<h2 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h2><p><strong>操作</strong>：</p>
+<ul>
+<li>配置 <strong><em>webpack.config.js</em></strong>: 追加参数 _modules_：表示为 普通的 css 样式表，启用模块化。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,use:[<span class="string">&#x27;style-loader&#x27;</span>,<span class="string">&#x27;css-loader?modules&#x27;</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：</p>
+<ul>
+<li>css 模块化，只针对 <strong>类选择器</strong> 和 <strong>Id 选择器</strong>生效。</li>
+<li>css 模块化，不会将 <strong>标签选择器</strong> 模块化。</li>
+</ul>
+<p><strong>使用</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cssobj <span class="keyword">from</span> cmtList.scss</span><br><span class="line"></span><br><span class="line">&lt;h1 className=&#123;cssobj.title&#125;&gt;这是评论列表组件&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190509/uBEiMLCl4Po1.png?imageslim" alt="mark"></p>
+<h2 id="localIdentName"><a href="#localIdentName" class="headerlink" title="localIdentName"></a>localIdentName</h2><blockquote>
+<p>通常 modules 参数还要通过 localIdentName 的配合来设置 css 的类名。在上文中我们看到没有设置 localIdentName 的 css 编译后是一串随机字符串，可读性很差，因此我们还需要对它的类名进行处理，这就用到了 localIdentName。</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190509/LmY7Up6tjWsL.png?imageslim" alt="mark"></p>
+<p>使用 localIdentName 设置 css-modules 模式下 local 类名的命名。</p>
+<p>_例如_：</p>
+<p>【path】：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,use:[<span class="string">&#x27;style-loader&#x27;</span>,<span class="string">&#x27;css-loader?modules&amp;localIdentName=[path]&#x27;</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190511/6kzRvdhhMCya.png?imageslim" alt="mark"></p>
+<p>【path】【name】：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,use:[<span class="string">&#x27;style-loader&#x27;</span>,<span class="string">&#x27;css-loader?modules&amp;localIdentName=[path][name]&#x27;</span>]&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190511/1fSFPLQWlGcr.png?imageslim" alt="mark"></p>
+<p>【path】【name】【local】：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,use:[<span class="string">&#x27;style-loader&#x27;</span>,<span class="string">&#x27;css-loader?modules&amp;localIdentName=[path][name]-[local]&#x27;</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190509/mnElXq2M49y5.png?imageslim" alt="mark"></p>
+<p>【path】【name】【local】【hash】：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,use:[<span class="string">&#x27;style-loader&#x27;</span>,<span class="string">&#x27;css-loader?modules&amp;localIdentName=[path][name]-[local]-[hash]&#x27;</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190511/f0mCgGRosdOV.png?imageslim" alt="mark"></p>
+<h2 id="通过-local-和-global-设置类名是否被模块化"><a href="#通过-local-和-global-设置类名是否被模块化" class="headerlink" title="通过 local 和 global 设置类名是否被模块化"></a>通过 local 和 global 设置类名是否被模块化</h2><blockquote>
+<p>被 <strong>:local()</strong> 包裹起来的类名，会被模块化，默认情况下，所有的类名和 ID 都被模块化了。</p>
+<p>被 :global() 包裹起来的类名，不会被模块化，而会全局生效。</p>
+</blockquote>
+<p><strong>需求</strong>：</p>
+<p><img src="http://static.zxinc520.com/blog/20190511/1nDtTim2qWpX.png?imageslim" alt="mark"></p>
+<p>解决方案： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/23843710">可以参考</a></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:global(.test)</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果</strong> ：</p>
+<ul>
+<li>test 类名 <em>未被模块化</em> ，而是 _全局生效_：</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190509/mxSgHjcOQL7t.png?imageslim" alt="mark"></p>
+<h2 id="在-React-项目中-使用-bootsrtap"><a href="#在-React-项目中-使用-bootsrtap" class="headerlink" title="在 React 项目中 使用 bootsrtap"></a>在 React 项目中 使用 bootsrtap</h2><ol>
+<li>安装 bootstrap 我一般使用 3.3.7 版本</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i bootstrap@3.3.7 -S</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装 相关 路径 图标 加载依赖</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i url-loader file-loader -D</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>配置 webpack-config-js 文件</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.ttf|woff|woff2|eot|svg$/</span>,use:<span class="string">&#x27;url-loader&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>导入 <strong>bootstrap 包</strong> 并且 使用 <em>bootstrap 类</em></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bootcss <span class="keyword">from</span> <span class="string">&quot;bootstrap/dist/css/bootstrap.min.css&quot;</span>;</span><br><span class="line"></span><br><span class="line">&lt;button className=&#123;[bootcss.btn, bootcss[<span class="string">&quot;btn-primary&quot;</span>]].join(<span class="string">&quot; &quot;</span>)&#125;&gt;</span><br><span class="line">  点我</span><br><span class="line">&lt;/button&gt;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190509/AIA3b6TmGWOP.png?imageslim" alt="mark"></p>
+<h3 id="升级："><a href="#升级：" class="headerlink" title="升级："></a>升级：</h3><p>问题：className={[bootcss.btn,bootcss[‘btn-primary’]].join(‘ ‘)} <strong>这样调用太麻烦了</strong></p>
+<blockquote>
+<p>_自己规定_：</p>
+<p><strong>第三方的 样式表</strong>：(例如: bootsrtap 等 )都是以 .css 结尾，这样，我们不要为普通的 .css 启用模块化。</p>
+<p><strong>自己定义样式表</strong>：都要以 .scss 或 .less 结尾，只为 .scss 或 .less 结尾的启用模块化。</p>
+</blockquote>
+<h3 id="使用-sass"><a href="#使用-sass" class="headerlink" title="使用 sass"></a>使用 sass</h3><blockquote>
+<p>​ <a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangpenghui522/p/5467560.html">Sass/Scss、Less 是什么?</a></p>
+</blockquote>
+<ol>
+<li>安装：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i sass-loader node-sass -D</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>配置 <em>webpack.comfig.js</em> :</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,use:[<span class="string">&#x27;style-loader&#x27;</span>,<span class="string">&#x27;css-loader&#x27;</span>]&#125;,</span><br><span class="line"></span><br><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.scss/</span>,use:[<span class="string">&#x27;style-loader&#x27;</span>,<span class="string">&#x27;css-loader?modules&amp;localIdentName=[path][name]-[local]-[hash:5]&#x27;</span>,<span class="string">&#x27;sass-loader&#x27;</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>导入 <strong>bootstrap 包</strong> 并且 使用 <em>bootstrap 类</em> （ <em>只用导入第三方路径即可</em> ）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;bootstrap/dist/css/bootstrap.min.css&quot;</span>;</span><br><span class="line"></span><br><span class="line">&lt;button className=<span class="string">&quot;btn btn-danger&quot;</span>&gt;点我&lt;/button&gt;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190511/nsjoVX1si22z.png?imageslim" alt="mark"></p>
+<h2 id="React-中-绑定事件"><a href="#React-中-绑定事件" class="headerlink" title="React 中 绑定事件"></a>React 中 绑定事件</h2><h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><p><em>BindEvent.jsx</em>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BindEvent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="built_in">super</span>();</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        BindEvent组件</span><br><span class="line">        &lt;hr /&gt;</span><br><span class="line">        &lt;button</span><br><span class="line">          onClick=&#123;<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&quot;ok&quot;</span>);</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        &gt;</span><br><span class="line">          按钮</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190511/QvadnFjsB97L.gif" alt="mark"></p>
+<p>_分离_：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BindEvent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="built_in">super</span>();</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;BindEvent组件！&lt;/h1&gt;</span><br><span class="line">        &lt;hr /&gt;</span><br><span class="line">        &lt;button</span><br><span class="line">          onClick=&#123;<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.myClickHandler();</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        &gt;</span><br><span class="line">          你敢点我吗？</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  myClickHandler = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    alert(<span class="string">&quot;这是myClickHandler方法！&quot;</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190511/9kb9Av4PcP9d.gif" alt="mark"></p>
+<p>_传递参数_：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BindEvent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="built_in">super</span>();</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;BindEvent组件！&lt;/h1&gt;</span><br><span class="line">        &lt;hr /&gt;</span><br><span class="line">        &lt;button</span><br><span class="line">          onClick=&#123;<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.myClickHandler(<span class="string">&quot;哈哈哈哈哈哈！&quot;</span>);</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        &gt;</span><br><span class="line">          你敢点我吗？</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  myClickHandler = <span class="function">(<span class="params">arg1</span>) =&gt;</span> &#123;</span><br><span class="line">    alert(<span class="string">&quot;这是myClickHandler方法！&quot;</span> + arg1);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190511/x9zF0YsaynFo.gif" alt="mark"></p>
+<h3 id="需求：点击按钮，改变-this-state-里面的值"><a href="#需求：点击按钮，改变-this-state-里面的值" class="headerlink" title="需求：点击按钮，改变 this.state 里面的值"></a>需求：点击按钮，改变 <strong>this.state</strong> 里面的值</h3><blockquote>
+<p>this.setState 方法的使用</p>
+<p><strong>注意</strong>：this.setState 方法的执行是 <strong>异步</strong> 的</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190511/1TfoRzRHPm3H.png?imageslim" alt="mark"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BindEvent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="built_in">super</span>();</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;</span><br><span class="line">      msg: <span class="string">&quot;周琛！&quot;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;BindEvent组件！&lt;/h1&gt;</span><br><span class="line">        &lt;hr /&gt;</span><br><span class="line">        &lt;button</span><br><span class="line">          onClick=&#123;<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.myClickHandler(<span class="string">&quot;哈哈哈哈哈哈！&quot;</span>, <span class="string">&quot;大傻瓜！&quot;</span>);</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        &gt;</span><br><span class="line">          你敢点我吗？</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">        &lt;h3&gt;&#123;<span class="built_in">this</span>.state.msg&#125;&lt;/h3&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  myClickHandler = <span class="function">(<span class="params">arg1, arg2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// alert(&#x27;这是myClickHandler方法！&#x27;+arg1+arg2)</span></span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      msg: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190511/AVQprOBiH0De.gif" alt="mark"></p>
+<p><strong>注意</strong>：在执行 this.setState 后，又想立即拿到最新的 state 值，需要使用 this.setState({},callback)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">myClickHandler = <span class="function">(<span class="params">arg1, arg2</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// alert(&#x27;这是myClickHandler方法！&#x27;+arg1+arg2)</span></span><br><span class="line">  <span class="built_in">this</span>.setState(</span><br><span class="line">    &#123;</span><br><span class="line">      msg: <span class="string">&quot;张三&quot;</span> + arg1 + arg2,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.state.msg);</span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="React-中绑定文本框与-State-中的值"><a href="#React-中绑定文本框与-State-中的值" class="headerlink" title="React 中绑定文本框与 State 中的值"></a>React 中绑定文本框与 State 中的值</h2><blockquote>
+<p>类似于 Vue 的双向绑定</p>
+</blockquote>
+<h4 id="第一种双向绑定实现方式"><a href="#第一种双向绑定实现方式" class="headerlink" title="第一种双向绑定实现方式"></a>第一种双向绑定实现方式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;input</span><br><span class="line">  type=<span class="string">&quot;text&quot;</span></span><br><span class="line">  style=&#123;&#123; <span class="attr">width</span>: <span class="string">&quot;100%&quot;</span> &#125;&#125;</span><br><span class="line">  value=&#123;<span class="built_in">this</span>.state.msg&#125;</span><br><span class="line">  onChange=&#123;<span class="function">(<span class="params">e</span>) =&gt;</span> <span class="built_in">this</span>.txtChanged(e)&#125;</span><br><span class="line">/&gt;;</span><br><span class="line"></span><br><span class="line">txtChanged = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">    msg: e.target.value,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190511/k4Pz5wOdvDMe.gif" alt="mark"></p>
+<h3 id="使用-ref-获取-DOM-元素引用"><a href="#使用-ref-获取-DOM-元素引用" class="headerlink" title="使用 ref 获取 DOM 元素引用"></a>使用 ref 获取 DOM 元素引用</h3><blockquote>
+<p>Vue 中，Vue 为页面上的元素提供了 ref 的属性，获取元素引用，则需要使用 <strong>this.$refs</strong> 引用名称</p>
+<p>React 中 获取元素的引用 ：<strong>this.refs</strong></p>
+</blockquote>
+<p>第二种双向绑定实现方式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;input</span><br><span class="line">  type=<span class="string">&quot;text&quot;</span></span><br><span class="line">  style=&#123;&#123; <span class="attr">width</span>: <span class="string">&quot;100%&quot;</span> &#125;&#125;</span><br><span class="line">  value=&#123;<span class="built_in">this</span>.state.msg&#125;</span><br><span class="line">  onChange=&#123;<span class="function">(<span class="params">e</span>) =&gt;</span> <span class="built_in">this</span>.txtChanged(e)&#125;</span><br><span class="line">  ref=<span class="string">&quot;txt&quot;</span></span><br><span class="line">/&gt;;</span><br><span class="line"></span><br><span class="line">txtChanged = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">    msg: <span class="built_in">this</span>.refs.txt.value,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="React-组件的生命周期"><a href="#React-组件的生命周期" class="headerlink" title="React 组件的生命周期"></a>React 组件的生命周期</h2><p><a target="_blank" rel="noopener" href="https://juejin.im/post/5a062fb551882535cd4a4ce3">可以参考</a></p>
+<p><img src="http://static.zxinc520.com/blog/20190512/WR2qsCelssvf.webp" alt="mark"></p>
+<blockquote>
+<p>如图，React 生命周期主要包括三个阶段：初始化阶段、运行中阶段和销毁阶段，在 React 不同的生命周期里，会依次触发不同的钩子函数，下面我们就来详细介绍一下 React 的生命周期函数</p>
+</blockquote>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2019/05/12/ReactLearn03/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2019/05/13/ProcessScheduling/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            操作系统进程调度作业
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/05/06/ReactLearn02/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">React 学习第二天</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

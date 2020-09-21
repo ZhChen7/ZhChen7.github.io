@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    ES6 知识点 |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-getOfferES6"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  ES6 知识点
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/03/23/getOfferES6/" class="article-date">
+  <time datetime="2020-03-23T09:38:45.000Z" itemprop="datePublished">2020-03-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/ES6-%E8%AF%AD%E6%B3%95/">ES6 语法</a> / <a class="article-category-link" href="/categories/Offer/">Offer</a> / <a class="article-category-link" href="/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">6.5k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">24 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="面试专题总结：ES6-知识点"><a href="#面试专题总结：ES6-知识点" class="headerlink" title="面试专题总结：ES6 知识点"></a>面试专题总结：ES6 知识点</h2><blockquote>
+<p>希望读者依此构建自己的知识树（思维导图）</p>
+<p>偷懒一下：可参考我自己总结思维导图 : <a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
+<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
+<p>自己开发的博客地址：<a target="_blank" rel="noopener" href="http://zxinc520.com/">zxinc520.com</a></p>
+<p>github 地址: <a target="_blank" rel="noopener" href="https://github.com/ZhChen7">点击</a></p>
+</blockquote>
+<blockquote>
+<p>此篇 js - 【ES6 知识总结】 知识点： 全部弄懂了，面试很容易。</p>
+</blockquote>
+<blockquote>
+<p>详细可参考： <a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">ECMAScript 6 入门</a></p>
+</blockquote>
+<h3 id="1、es6-是什么"><a href="#1、es6-是什么" class="headerlink" title="1、es6 是什么"></a>1、es6 是什么</h3><p>ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。 ECMA 是标准，Javascript 是 ECMA 的实现。因为 js 也是一种语言，但凡语言都有一套标准，而 ECMA 就是 javascript 的标准。在 2015 年正式发布了 ECMAscript6.0，简称 ES6，又称为 ECMAscript2015。</p>
+<h3 id="2、var、let、const（声明方式）"><a href="#2、var、let、const（声明方式）" class="headerlink" title="2、var、let、const（声明方式）"></a>2、var、let、const（声明方式）</h3><ul>
+<li>类别<ol>
+<li>变量提升</li>
+<li>暂时性死区</li>
+<li>重复声明</li>
+<li>块作用域有效</li>
+<li>初始值</li>
+<li>重新赋值</li>
+</ol>
+</li>
+<li>区别<ol>
+<li>let/const 定义的变量不会出现变量提升，而 var 定义的变量会提升。</li>
+<li>相同作用域中，let 和 const 不允许重复声明，var 允许重复声明。</li>
+<li>const 声明变量时必须设置初始值</li>
+<li>const 声明一个只读的常量，这个常量不可改变</li>
+<li>let/const 声明的变量仅在块级作用域中有效。而 var 声明的变量在块级作用域外仍能访问到。</li>
+<li>顶层作用域中 var 声明的变量挂在 window 上(浏览器环境)</li>
+<li>let/const 有暂时性死区的问题，即 let/const 声明的变量，在定义之前都是不可用的。如果使用会抛出错误。</li>
+</ol>
+</li>
+</ul>
+<h3 id="3、-变量的解构赋值"><a href="#3、-变量的解构赋值" class="headerlink" title="3、 变量的解构赋值"></a>3、 变量的解构赋值</h3><ul>
+<li><p>数组解构赋值</p>
+<p>let [aa, bb, cc] = [0, 1, 2];</p>
+</li>
+<li><p>对象解构赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; cnName, enName &#125; = &#123;</span><br><span class="line">  id: <span class="string">&quot;151521574&quot;</span>,</span><br><span class="line">  cnName: <span class="string">&quot;张生&quot;</span>,</span><br><span class="line">  enName: <span class="string">&quot;Ronnie&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(cnName, enName); <span class="comment">//&#x27;张生&#x27;，&#x27;Ronnie&#x27;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="4、箭头函数"><a href="#4、箭头函数" class="headerlink" title="4、箭头函数"></a>4、箭头函数</h3><blockquote>
+<p>es6 之前的函数的 this 指向调用函数时所在的对象，而箭头函数的 this 指向函数定义时所在的对象</p>
+</blockquote>
+<h4 id="箭头函数及其-this-问题"><a href="#箭头函数及其-this-问题" class="headerlink" title="箭头函数及其 this 问题"></a>箭头函数及其 this 问题</h4><ol>
+<li>this 对象的指向是可变的，但是在箭头函数中，它是固定的。</li>
+<li>this 指向的固定化，并不是因为箭头函数内部有绑定 this 的机制，实际原因是箭头函数根本没有自己的 this，导致内部的 this 就是外层代码块的 this。正是因为它没有 this，所以也就不能用作构造函数。</li>
+<li>箭头函数里面根本没有自己的 this，而是引用外层的 this。</li>
+<li>由于箭头函数没有自己的 this，所以当然也就不能用 call()、apply()、bind()这些方法去改变 this 的指向</li>
+</ol>
+<h3 id="5、Symbol"><a href="#5、Symbol" class="headerlink" title="5、Symbol"></a>5、Symbol</h3><ul>
+<li><p>是什么？</p>
+<p>symbols 是一种无法被重建的基本类型。这时 symbols 有点类似与对象创建的实例互相不相等的情况，但同时 symbols 又是一种无法被改变的基本类型数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s1 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">const</span> s2 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="built_in">console</span>.log(s1 === s2); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>作用</p>
+<ol>
+<li>symbols 作为对象的属性</li>
+<li>阻止对象属性名冲突 （扩展对象属性很有用）</li>
+<li>模拟私有属性</li>
+</ol>
+</li>
+</ul>
+<h3 id="6、Module-模块"><a href="#6、Module-模块" class="headerlink" title="6、Module 模块"></a>6、Module 模块</h3><blockquote>
+<p>可从 IIFE、AMD、CMD、CommonJS、UMD、webpack(require.ensure)、ES Module、&lt;_script type=”module”_ &gt; 这几个角度考虑。</p>
+<p><strong>作用</strong> ：模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。</p>
+</blockquote>
+<h4 id="模块化发展历程"><a href="#模块化发展历程" class="headerlink" title="模块化发展历程"></a>模块化发展历程</h4><ol>
+<li><p>IIFE</p>
+<ul>
+<li><p>使用自执行函数来编写模块化</p>
+</li>
+<li><p>特点：</p>
+<p>在一个单独的函数作用域中执行代码，避免变量冲突。</p>
+</li>
+</ul>
+</li>
+<li><p>AMD</p>
+<ul>
+<li><p>使用 requireJS 来编写模块化</p>
+</li>
+<li><p>特点：依赖必须提前声明好</p>
+</li>
+<li><p>简单实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">&quot;./index.js&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">code</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// code 就是index.js 返回的内容</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>CMD</p>
+<ul>
+<li><p>使用 seaJS 来编写模块化</p>
+</li>
+<li><p>特点：支持动态引入依赖文件</p>
+</li>
+<li><p>简单实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> indexCode = <span class="built_in">require</span>(<span class="string">&quot;./index.js&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>CommonJS</p>
+<ul>
+<li>nodejs 中自带的模块化</li>
+<li>var fs = require(‘fs’);</li>
+</ul>
+</li>
+<li><p>UMD</p>
+<ul>
+<li>兼容 AMD，CommonJS 模块化语法</li>
+</ul>
+</li>
+<li><p>webpack(require.ensure)</p>
+<ul>
+<li>webpack 2.x 版本中的代码分割</li>
+</ul>
+</li>
+<li><p>ES Modules</p>
+<ul>
+<li>ES6 引入的模块化，支持 import 来引入另一个 js</li>
+<li>import a from ‘a’;</li>
+</ul>
+</li>
+</ol>
+<h4 id="6-1、AMD-与-CMD-的比较"><a href="#6-1、AMD-与-CMD-的比较" class="headerlink" title="6.1、AMD 与 CMD 的比较"></a>6.1、AMD 与 CMD 的比较</h4><ul>
+<li><p>定义</p>
+<p>AMD 和 CMD 都是用于浏览器端的模块规范</p>
+</li>
+<li><p>AMD</p>
+<ul>
+<li>AMD 是 RequireJS 在推广过程中对模块定义的规范化产出</li>
+<li>其主要内容就是定义了 define 函数该如何书写，只要你按照这个规范书写模块和依赖，require.js 就能正确的进行解析。</li>
+</ul>
+</li>
+<li><p>CMD</p>
+<ul>
+<li>CMD 其实就是 SeaJS 在推广过程中对模块定义的规范化产出</li>
+<li>主要内容就是描述该如何定义模块，如何引入模块，如何导出模块，只要你按照这个规范书写代码，sea.js 就能正确的进行解析</li>
+</ul>
+</li>
+<li><p>AMD 与 CMD 的区别</p>
+<ol>
+<li>AMD 推崇依赖前置，CMD 推崇依赖就近</li>
+<li>AMD 是提前执行，CMD 是延迟执行。</li>
+</ol>
+</li>
+</ul>
+<h4 id="6-2、CommonJS-与-AMD-的比较"><a href="#6-2、CommonJS-与-AMD-的比较" class="headerlink" title="6.2、CommonJS 与 AMD 的比较"></a>6.2、CommonJS 与 AMD 的比较</h4><blockquote>
+<p>在服务器端比如 node，采用的则是 CommonJS 规范。</p>
+<p>AMD 和 CMD 都是用于浏览器端的模块规范</p>
+</blockquote>
+<ol>
+<li><p>CommonJS 规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。</p>
+</li>
+<li><p>AMD 规范则是非同步加载模块，允许指定回调函数。</p>
+<p>由于 Node.js 主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以 CommonJS 规范比较适用。</p>
+</li>
+<li><p>但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式，因此浏览器端一般采用 AMD 规范。</p>
+</li>
+</ol>
+<h4 id="6-3、ES6-与-CommonJS-的比较"><a href="#6-3、ES6-与-CommonJS-的比较" class="headerlink" title="6.3、ES6 与 CommonJS 的比较"></a>6.3、ES6 与 CommonJS 的比较</h4><blockquote>
+<p>注意！浏览器加载 ES6 模块，也使用 &lt;_script_ &gt; 标签，但是要加入 type=”module” 属性。</p>
+</blockquote>
+<ol>
+<li>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</li>
+<li>CommonJS 模块是运行时加载，ES6 模块是编译时输出接口</li>
+</ol>
+<h3 id="7、异步编程-6-种解决方案"><a href="#7、异步编程-6-种解决方案" class="headerlink" title="7、异步编程 6 种解决方案"></a>7、异步编程 6 种解决方案</h3><ol>
+<li><p>回调函数（Callback）</p>
+<ul>
+<li><p>回调函数是异步操作最基本的方法</p>
+</li>
+<li><p>ajax(url, () =&gt; {</p>
+<p>​ // 处理逻辑</p>
+<p>})</p>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>容易写出回调地狱（Callback hell）</li>
+<li>不能使用 try catch 捕获错误，不能直接 return</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>事件监听</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f1.on(<span class="string">&quot;done&quot;</span>, f2);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发布订阅</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery.subscribe(<span class="string">&quot;done&quot;</span>, f2);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Promise</p>
+<ul>
+<li><p>是什么？</p>
+<ul>
+<li>promise 是目前 JS 异步编程的主流解决方案，遵循 Promises/A+ 方案。Promise 用于异步操作，表示一个还未完成但是预期会完成的操作。</li>
+<li>Promise 是 ES6 引入的一个新的对象，他的主要作用是用来解决 JS 异步机制里，回调机制产生的“回调地狱”。它并不是什么突破性的 API，只是封装了异步回调形式，使得异步回调可以写的更加优雅，可读性更高，而且可以链式调用。</li>
+</ul>
+</li>
+<li><p>剖析</p>
+<ul>
+<li><p>promise 本身相当于一个状态机，拥有三种状态</p>
+<ul>
+<li>pending</li>
+<li>fulfilled</li>
+<li>rejected</li>
+</ul>
+<p>一个 promise 对象初始化时的状态是 pending，调用了 resolve 后会将 promise 的状态扭转为 fulfilled，调用 reject 后会将 promise 的状态扭转为 rejected，这两种扭转一旦发生便不能再扭转该 promise 到其他状态。</p>
+</li>
+</ul>
+</li>
+<li><p>Promise 如何使用</p>
+<p>构造一个 promise 对象，并将要执行的异步函数传入到 promise 的参数中执行，并且在异步执行结束后调用 resolve( ) 函数，就可以在 promise 的 then 方法中获取到异步函数的执行结果</p>
+</li>
+<li><p>Promise 原型上的方法</p>
+<ol>
+<li>Promise.prototype.then(onFulfilled, onRejected)</li>
+<li>Promise.prototype.catch(onRejected)</li>
+<li>Promise.prototype.finally(onFinally)</li>
+</ol>
+</li>
+<li><p>Promise 静态方法</p>
+<ol>
+<li><p>Promise.all()</p>
+<p>Promise.all 接收一个 promise 对象数组作为参数，只有全部的 promise 都已经变为 fulfilled 状态后才会继续后面的处理</p>
+</li>
+<li><p>Promise.race()</p>
+<p>这个函数会在 promises 中第一个 promise 的状态扭转后就开始后面的处理（fulfilled、rejected 均可）</p>
+</li>
+<li><p>Promise.resolve()</p>
+</li>
+<li><p>Promise.reject()</p>
+</li>
+</ol>
+</li>
+<li><p>优点</p>
+<p>将异步操作以同步操作的流程表达出来，promise 链式调用，更好地解决了层层嵌套的回调地狱</p>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>不能取消执行。</li>
+<li>无法获取当前执行的进度信息（比如，要在用户界面展示进度条）。</li>
+<li>外部无法捕捉 Promise 内部抛出的错误</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>generator 函数</p>
+<ul>
+<li><p>是什么</p>
+<ul>
+<li>Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。</li>
+<li>如果说 JavaScript 是 ECMAScript 标准的一种具体实现、Iterator 遍历器是 Iterator 的具体实现，那么 Generator 函数可以说是 Iterator 接口的具体实现方式。</li>
+<li>Generator 函数可以通过配合 Thunk 函数更轻松更优雅的实现异步编程和控制流管理</li>
+</ul>
+</li>
+<li><p>描述</p>
+<ul>
+<li>执行 Generator 函数会返回一个遍历器对象，每一次 Generator 函数里面的 yield 都相当一次遍历器对象的 next()方法，并且可以通过 next(value)方法传入自定义的 value,来改变 Generator 函数的行为。</li>
+</ul>
+</li>
+<li><p>能封装异步任务的根本原因</p>
+<ul>
+<li>最大特点就是可以交出函数的执行权（即暂停执行）。Generator 函数可以暂停执行和恢复执行</li>
+</ul>
+</li>
+<li><p>两个特征</p>
+<ul>
+<li>function 关键字与函数名之间有一个星号</li>
+<li>函数体内部使用 yield 表达式，定义不同的内部状态（yield 在英语里的意思就是“产出”）。</li>
+</ul>
+</li>
+<li><p>过程</p>
+<p>Generator 函数的调用方法与普通函数一样，也是在函数名后面加上一对圆括号。不同的是，调用 Generator 函数后，该函数并不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象，也就是上一章介绍的遍历器对象（Iterator Object）</p>
+</li>
+<li><p>Generator 及其异步方面的应用</p>
+<ul>
+<li>Generator 函数将 JavaScript 异步编程带入了一个全新的阶段</li>
+</ul>
+</li>
+<li><p>总结</p>
+<p>调用 Generator 函数，返回一个遍历器对象，代表 Generator 函数的内部指针。以后，每次调用遍历器对象的 next 方法，就会返回一个有着 value 和 done 两个属性的对象。value 属性表示当前的内部状态的值，是 yield 表达式后面那个表达式的值；done 属性是一个布尔值，表示是否遍历结束。</p>
+</li>
+<li><p>demo</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fetch = <span class="built_in">require</span>(<span class="string">&quot;node-fetch&quot;</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> url = <span class="string">&quot;https://api.github.com/users/github&quot;</span>;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="keyword">yield</span> fetch(url);</span><br><span class="line">  <span class="built_in">console</span>.log(result.bio);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>async 和 await</p>
+<ul>
+<li><p>含义</p>
+<p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
+</li>
+<li><p>是什么？</p>
+<ul>
+<li>一句话，它就是 Generator 函数的语法糖。</li>
+<li>一比较就会发现，async 函数就是将 Generator 函数的星号（*）替换成 async，将 yield 替换成 await，仅此而已。</li>
+<li>async 函数可以理解为内置自动执行器的 Generator 函数语法糖，它配合 ES6 的 Promise 近乎完美的实现了异步编程解决方案。</li>
+</ul>
+</li>
+<li><p>相对于 Promise，优势体现在</p>
+<ol>
+<li>处理 then 的调用链，能够更清晰准确的写出代码</li>
+<li>并且也能优雅地解决回调地狱问题</li>
+</ol>
+</li>
+<li><p>相对 Generator 函数，体现在以下 4 点</p>
+<ol>
+<li>内置执行器。 Generator 函数的执行必须靠执行器，所以才有了 co 函数库，而 async 函数自带执行器。也就是说，async 函数的执行，与普通函数一模一样，只要一行</li>
+<li>更好的语义。 async 和 await，比起星号和 yield，语义更清楚了。async 表示函数里有异步操作，await 表示紧跟在后面的表达式需要等待结果</li>
+<li>更广的适用性。 co 函数库约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面，可以跟 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）</li>
+<li>返回值是 Promise。async 函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用 then 方法指定下一步的操作。</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<p>当然 async/await 函数也存在一些缺点，因为 await 将异步代码改造成了同步代码，如果多个异步代码没有依赖性却使用了 await 会导致性能上的降低，代码没有依赖性的话，完全可以使用 Promise.all 的方式。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li>JS 异步编程进化史：callback -&gt; promise -&gt; generator -&gt; async + await</li>
+<li>async/await 函数的实现，就是将 Generator 函数和自动执行器，包装在一个函数里</li>
+<li>async/await 可以说是异步终极解决方案了</li>
+</ol>
+<h3 id="8、Class"><a href="#8、Class" class="headerlink" title="8、Class"></a>8、Class</h3><blockquote>
+<p>ES6 的 class 可以看作只是一个 ES5 生成实例对象的构造函数的语法糖。它参考了 java 语言，定义了一个类的概念，让对象原型写法更加清晰，对象实例化更像是一种面向对象编程。Class 类可以通过 extends 实现继承。</p>
+</blockquote>
+<ul>
+<li><p>语法</p>
+<ul>
+<li>super 关键字的使用</li>
+<li>static 关键字</li>
+</ul>
+</li>
+<li><p>ES5/ES6 的继承除了写法以外还有什么区别？</p>
+<ol>
+<li>class 声明会提升，但不会初始化赋值。Foo 进入暂时性死区，类似于 let、const 声明变量。</li>
+<li>class 声明内部会启用严格模式</li>
+<li>class 的所有方法（包括静态方法和实例方法）都是不可枚举的</li>
+<li>class 的所有方法（包括静态方法和实例方法）都没有原型对象 prototype，所以也没有[[construct]]，不能使用 new 来调用</li>
+<li>必须使用 new 调用 class</li>
+<li>class 内部无法重写类名</li>
+</ol>
+<p>ES5 的继承，实质是先创造子类的实例对象 this，然后再将父类的方法添加到 this 上面。ES6 的继承机制完全不同，实质是先将父类实例对象的属性和方法，加到 this 上面（所以必须先调用 super 方法），然后再用子类的构造函数修改 this</p>
+</li>
+<li><p>优点</p>
+<p>但是某些时候，我们使用 es6 的类可以让我们的代码的可读性更高</p>
+</li>
+</ul>
+<h3 id="9、Set-和-Map"><a href="#9、Set-和-Map" class="headerlink" title="9、Set 和 Map"></a>9、Set 和 Map</h3><ul>
+<li>Set<ul>
+<li>是什么<ul>
+<li>Set 是一种叫做集合的数据结构</li>
+<li>Set 是 ES6 引入的一种类似 Array 的新的数据结构，Set 实例的成员类似于数组 item 成员，区别是 Set 实例的成员都是唯一，不重复的。这个特性可以轻松地实现数组去重。</li>
+</ul>
+</li>
+<li>应用场景<ul>
+<li>数组去重</li>
+</ul>
+</li>
+<li>特点<ol>
+<li>成员唯一、无序且不重复</li>
+<li>[value, value]，键值与键名是一致的（或者说只有键值，没有键名）</li>
+<li>可以遍历，方法有：add、delete、has</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>WeakSet<ul>
+<li>特点<ol>
+<li>成员都是对象</li>
+<li>成员都是弱引用，可以被垃圾回收机制回收，可以用来保存 DOM 节点，不容易造成内存泄漏</li>
+<li>不能遍历，方法有 add、delete、has</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>是什么<ul>
+<li>Map 是一种叫做字典的数据结构</li>
+<li>Map 是 ES6 引入的一种类似 Object 的新的数据结构，Map 可以理解为是 Object 的超集，打破了以传统键值对形式定义对象，对象的 key 不再局限于字符串，也可以是 Object。可以更加全面的描述对象的属性。</li>
+</ul>
+</li>
+<li>应用场景<ul>
+<li>数据存储</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>本质上是键值对的集合，类似集合</li>
+<li>可以遍历，方法很多可以跟各种数据格式转换</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>WeakMap<ul>
+<li>特点<ul>
+<li>只接受对象作为键名（null 除外），不接受其他类型的值作为键名</li>
+<li>键名是弱引用，键值可以是任意的，键名所指向的对象可以被垃圾回收，此时键名是无效的</li>
+<li>不能遍历，方法有 get、set、has、delete</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Set 和 Map<ul>
+<li>Set 和 Map 主要的应用场景在于数组去重和数据存储</li>
+<li>原来 Set 是一种叫做集合的数据结构，Map 是一种叫做字典的数据结构</li>
+</ul>
+</li>
+<li>Set 与 WeakSet 区别<ol>
+<li>WeakSet 只能存放对象</li>
+<li>WeakSet 不支持遍历, 没有 size 属性</li>
+<li>WeakSet 存放的对象不会计入到对象的引用技术, 因此不会影响 GC 的回收</li>
+<li>WeakSet 存在的对象如果在外界消失了, 那么在 WeakSet 里面也会不存在</li>
+</ol>
+</li>
+<li>Map 与 WeakMap 区别<ol>
+<li>WeakMap 只能接受对象作为键名字(null 除外)</li>
+<li>WeakMap 键名指向对象不会计入对象的引用数</li>
+</ol>
+</li>
+</ul>
+<h3 id="10、ES6-对-String-字符串类型做的常用升级优化"><a href="#10、ES6-对-String-字符串类型做的常用升级优化" class="headerlink" title="10、ES6 对 String 字符串类型做的常用升级优化"></a>10、ES6 对 String 字符串类型做的常用升级优化</h3><ul>
+<li>优化部分<ul>
+<li>ES6 新增了字符串模板，在拼接大段字符串时，用反斜杠(`)取代以往的字符串相加的形式，能保留所有空格和换行，使得字符串拼接看起来更加直观，更加优雅。</li>
+</ul>
+</li>
+<li>升级部分<ul>
+<li>ES6 在 String 原型上新增了 includes()方法，用于取代传统的只能用 indexOf 查找包含字符的方法(indexOf 返回-1 表示没查到不如 includes 方法返回 false 更明确，语义更清晰), 此外还新增了 startsWith(), endsWith(), padStart(),padEnd(),repeat()等方法，可方便的用于查找，补全字符串。</li>
+</ul>
+</li>
+</ul>
+<h3 id="11、ES6-对-Number-数字类型做的常用升级优化"><a href="#11、ES6-对-Number-数字类型做的常用升级优化" class="headerlink" title="11、ES6 对 Number 数字类型做的常用升级优化?"></a>11、ES6 对 Number 数字类型做的常用升级优化?</h3><ul>
+<li>优化部分<ul>
+<li>ES6 在 Number 原型上新增了 isFinite(), isNaN()方法，用来取代传统的全局 isFinite(), isNaN()方法检测数值是否有限、是否是 NaN。ES5 的 isFinite(), isNaN()方法都会先将非数值类型的参数转化为 Number 类型再做判断，这其实是不合理的，最造成 isNaN(‘NaN’) === true 的奇怪行为–’NaN’是一个字符串，但是 isNaN 却说这就是 NaN。而 Number.isFinite()和 Number.isNaN()则不会有此类问题(Number.isNaN(‘NaN’) === false)。</li>
+</ul>
+</li>
+<li>升级部分<ul>
+<li>ES6 在 Math 对象上新增了 Math.cbrt()，trunc()，hypot()等等较多的科学计数法运算方法，可以更加全面的进行立方根、求和立方根等等科学计算。</li>
+</ul>
+</li>
+</ul>
+<h3 id="12、ES6-对-Array-数组类型做的常用升级优化"><a href="#12、ES6-对-Array-数组类型做的常用升级优化" class="headerlink" title="12、ES6 对 Array 数组类型做的常用升级优化"></a>12、ES6 对 Array 数组类型做的常用升级优化</h3><ul>
+<li>优化部分<ul>
+<li>数组解构赋值。ES6 可以直接以 let [a,b,c] = [1,2,3]形式进行变量赋值，在声明较多变量时，不用再写很多 let(var),且映射关系清晰，且支持赋默认值</li>
+<li>扩展运算符。ES6 新增的扩展运算符(…)(重要),可以轻松的实现数组和松散序列的相互转化，可以取代 arguments 对象和 apply 方法，轻松获取未知参数个数情况下的参数集合。（尤其是在 ES5 中，arguments 并不是一个真正的数组，而是一个类数组的对象，但是扩展运算符的逆运算却可以返回一个真正的数组）。扩展运算符还可以轻松方便的实现数组的复制和解构赋值（let a = [2,3,4]; let b = […a]）</li>
+</ul>
+</li>
+<li>升级部分<ul>
+<li>ES6 在 Array 原型上新增了 find()方法，用于取代传统的只能用 indexOf 查找包含数组项目的方法,且修复了 indexOf 查找不到 NaN 的 bug([NaN].indexOf(NaN) === -1).此外还新增了 copyWithin(), includes(), fill(),flat()等方法，可方便的用于字符串的查找，补全,转换等</li>
+</ul>
+</li>
+</ul>
+<h3 id="13、ES6-对-Object-类型做的常用升级优化"><a href="#13、ES6-对-Object-类型做的常用升级优化" class="headerlink" title="13、ES6 对 Object 类型做的常用升级优化"></a>13、ES6 对 Object 类型做的常用升级优化</h3><ul>
+<li><p>优化部分</p>
+<ol>
+<li>对象属性变量式声明。ES6 可以直接以变量形式声明对象属性或者方法，。比传统的键值对形式声明更加简洁，更加方便，语义更加清晰。</li>
+<li>对象的解构赋值</li>
+<li>对象的扩展运算符(…)</li>
+<li>super 关键字。ES6 在 Class 类里新增了类似 this 的关键字 super。同 this 总是指向当前函数所在的对象不同，super 关键字总是指向当前函数所在对象的原型对象。</li>
+</ol>
+</li>
+<li><p>升级部分</p>
+<ol>
+<li><p>ES6 在 Object 原型上新增了 is()方法，做两个目标对象的相等比较，用来完善’===’方法。’===’方法中 NaN === NaN //false 其实是不合理的，Object.is 修复了这个小 bug。(Object.is(NaN, NaN) // true)</p>
+</li>
+<li><p>ES6 在 Object 原型上新增了 assign()方法，用于对象新增属性或者多个对象合并。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> source1 = &#123; <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> source2 = &#123; <span class="attr">c</span>: <span class="number">3</span> &#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(target, source1, source2);</span><br><span class="line">target; <span class="comment">// &#123;a:1, b:2, c:3&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ES6 在 Object 原型上新增了 getOwnPropertyDescriptors()方法，此方法增强了 ES5 中 getOwnPropertyDescriptor()方法，可以获取指定对象所有自身属性的描述对象。结合 defineProperties()方法，可以完美复制对象，包括复制 get 和 set 属性。</p>
+</li>
+<li><p>ES6 在 Object 原型上新增了 getPrototypeOf()和 setPrototypeOf()方法，用来获取或设置当前对象的 prototype 对象。获取或设置当前对象的 prototype 对象时，都应该采用 ES6 新增的标准用法。</p>
+</li>
+<li><p>ES6 在 Object 原型上还新增了 Object.keys()，Object.values()，Object.entries()方法，用来获取对象的所有键、所有值和所有键值对数组。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="14、ES6-对-Function-函数类型做的常用升级优化"><a href="#14、ES6-对-Function-函数类型做的常用升级优化" class="headerlink" title="14、ES6 对 Function 函数类型做的常用升级优化"></a>14、ES6 对 Function 函数类型做的常用升级优化</h3><ul>
+<li><p>优化部分</p>
+<ul>
+<li>箭头函数(核心)。箭头函数里没有自己的 this,这改变了以往 JS 函数中最让人难以理解的 this 运行机制<ol>
+<li>箭头函数内的 this 指向的是函数定义时所在的对象，而不是函数执行时所在的对象。</li>
+<li>箭头函数不能用作构造函数，因为它没有自己的 this，无法实例化。</li>
+<li>也是因为箭头函数没有自己的 this,所以箭头函数 内也不存在 arguments 对象。（可以用扩展运算符代替）</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>升级部分</p>
+<ul>
+<li><p>ES6 新增了双冒号运算符，用来取代以往的 bind，call,和 apply(浏览器暂不支持，Babel 已经支持转码)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">foo::bar;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line">bar.bind(foo);</span><br><span class="line"></span><br><span class="line">foo::bar(...arguments);</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line">bar.apply(foo, <span class="built_in">arguments</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="15、Proxy"><a href="#15、Proxy" class="headerlink" title="15、Proxy"></a>15、Proxy</h3><p>Proxy 是 ES6 新增的一个构造函数，这个词的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”。Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。</p>
+<h3 id="16、Reflect"><a href="#16、Reflect" class="headerlink" title="16、Reflect"></a>16、Reflect</h3><ul>
+<li>是什么<ul>
+<li>Reflect 对象与 Proxy 对象一样，也是 ES6 为了操作对象而提供的新 API</li>
+</ul>
+</li>
+<li>作用<ol>
+<li>一是将原生的一些零散分布在 Object、Function 或者全局函数里的方法(如 apply、delete、get、set 等等)，统一整合到 Reflect 上，这样可以更加方便更加统一的管理一些原生 API。</li>
+<li>其次就是因为 Proxy 可以改写默认的原生 API，如果一旦原生 API 别改写可能就找不到了，所以 Reflect 也可以起到备份原生 API 的作用，使得即使原生 API 被改写了之后，也可以在被改写之后的 API 用上默认的 API。</li>
+</ol>
+</li>
+</ul>
+<h3 id="17、Iterator"><a href="#17、Iterator" class="headerlink" title="17、Iterator"></a>17、Iterator</h3><ul>
+<li>是什么<ul>
+<li>一种设计标准，来统一所有可遍历类型的遍历方式。Iterator 正是这样一种标准。或者说是一种规范理念</li>
+</ul>
+</li>
+<li>解决的问题<ul>
+<li>Set、Map 都不能用 for 循环遍历，解决这个问题有两种方案，一种是为 Set、Map 单独新增一个用来遍历的 API，另一种是为 Set、Map、Array、Object 新增一个统一的遍历 API，显然，第二种更好，ES6 也就顺其自然的需要一种设计标准，来统一所有可遍历类型的遍历方式。</li>
+</ul>
+</li>
+<li>Iterator 标准的具体实现<ul>
+<li>Iterator 标准的具体实现是 Iterator 遍历器。Iterator 标准规定，所有部署了 key 值为[Symbol.iterator]，且[Symbol.iterator]的 value 是标准的 Iterator 接口函数(标准的 Iterator 接口函数: 该函数必须返回一个对象，且对象中包含 next 方法，且执行 next()能返回包含 value/done 属性的 Iterator 对象)的对象，都称之为可遍历对象，next()后返回的 Iterator 对象也就是 Iterator 遍历器。</li>
+</ul>
+</li>
+</ul>
+<h3 id="18、for…in-和-for…of-有什么区别"><a href="#18、for…in-和-for…of-有什么区别" class="headerlink" title="18、for…in 和 for…of 有什么区别"></a>18、for…in 和 for…of 有什么区别</h3><ul>
+<li><p>ES6 规定，有所部署了载了 Iterator 接口的对象(可遍历对象)都可以通过 for…of 去遍历，而 for..in 仅仅可以遍历对象。</p>
+</li>
+<li><p>使用 for…of 的好处</p>
+<ul>
+<li><p>这也就意味着，数组也可以用 for…of 遍历，这极大地方便了数组的取值，且避免了很多程序用 for..in 去遍历数组的恶习。</p>
+<p>上面提到的扩展运算符本质上也就是 for..of 循环的一种实现。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="19、module、export、import"><a href="#19、module、export、import" class="headerlink" title="19、module、export、import"></a>19、module、export、import</h3><ul>
+<li>module、export、import 是 ES6 用来统一前端模块化方案的设计思路和实现方案</li>
+<li>作用<ul>
+<li>export、import 的出现统一了前端模块化的实现方案，整合规范了浏览器/服务端的模块化方法，用来取代传统的 AMD/CMD、requireJS、seaJS、commondJS 等等一系列前端模块不同的实现方案，使前端模块化更加统一规范，JS 也能更加能实现大型的应用程序开发。</li>
+</ul>
+</li>
+<li>注意<ul>
+<li>import 引入的模块是静态加载（编译阶段加载）而不是动态加载（运行时加载）</li>
+<li>import 引入 export 导出的接口值是动态绑定关系，即通过该接口，可以取到模块内部实时的值</li>
+</ul>
+</li>
+</ul>
+<h3 id="20、-Iterator-和-for…of（Iterator-遍历器的实现）"><a href="#20、-Iterator-和-for…of（Iterator-遍历器的实现）" class="headerlink" title="20、 Iterator 和 for…of（Iterator 遍历器的实现）"></a>20、 Iterator 和 for…of（Iterator 遍历器的实现）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自定义迭代器</span></span><br><span class="line"><span class="keyword">let</span> a = makeiterator([<span class="number">1</span>, <span class="number">2</span>]);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeiterator</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> nextindex = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    next: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> nextindex &lt; arr.length</span><br><span class="line">        ? &#123; <span class="attr">value</span>: arr[nextindex++], <span class="attr">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">        : &#123; <span class="attr">value</span>: <span class="literal">undefined</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Symbol.iterator遍历器接口</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>];</span><br><span class="line"><span class="keyword">let</span> iter = arr[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line"></span><br><span class="line">iter.next(); <span class="comment">// &#123; value: &#x27;a&#x27;, done: false &#125;</span></span><br><span class="line">iter.next(); <span class="comment">// &#123; value: &#x27;b&#x27;, done: false &#125;</span></span><br><span class="line">iter.next(); <span class="comment">// &#123; value: &#x27;c&#x27;, done: false &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="21、循环语法比较及使用场景（for、forEach、for…in、for…of）"><a href="#21、循环语法比较及使用场景（for、forEach、for…in、for…of）" class="headerlink" title="21、循环语法比较及使用场景（for、forEach、for…in、for…of）"></a>21、循环语法比较及使用场景（for、forEach、for…in、for…of）</h3><p>for 循环的速度是最快的,是最老的循环,也是优化得最好的,其次是 for-of 这个是 es6 才新增的循环非常好用,最慢是 for-in 我们可以作一下速度排序</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> &gt; <span class="keyword">for</span>-<span class="keyword">of</span> &gt; forEach &gt; filter &gt; map &gt; <span class="keyword">for</span>-<span class="keyword">in</span></span><br></pre></td></tr></table></figure>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2020/03/23/getOfferES6/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/" rel="tag">面试全面总结</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/03/23/getOfferAPI/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            API、数组、跨域、动画、事件
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/03/23/getOfferVariabletypesandcalculations/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">变量类型和计算</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

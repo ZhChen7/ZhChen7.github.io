@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    开发环境 |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-DevelopmentEnvironment"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  开发环境
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/07/19/DevelopmentEnvironment/" class="article-date">
+  <time datetime="2019-07-19T09:57:31.000Z" itemprop="datePublished">2019-07-19</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">开发环境</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">8 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><blockquote>
+<p>讲解在面试过程中，面试官可能会问及的前端开发环境的问题，例如 <strong>IDE</strong> ，<strong>Git</strong> ，<strong>模块化</strong> ，<strong>打包工具</strong> ，<strong>上线流程</strong> ，这些类别的题目。</p>
+<p>知识点：</p>
+<p>7-1 IDE</p>
+<p>7-2 Git</p>
+<p>7-3 模块化</p>
+<p>7-4 构建工具</p>
+<p>7-5 上线和回滚</p>
+</blockquote>
+<h3 id="关于开发环境"><a href="#关于开发环境" class="headerlink" title="关于开发环境"></a>关于开发环境</h3><ul>
+<li>面试官想通过开发环境了解面试者的经验</li>
+<li>开发环境，最能体现工作产出的效率</li>
+<li>会以聊天的形式为主，而不是出具体的问题</li>
+</ul>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><blockquote>
+<p><strong>IDE</strong> ，<strong>Git</strong> ，<strong>JS 模块化</strong> ，<strong>打包工具</strong> ，<strong>上线流程</strong> ，</p>
+</blockquote>
+<ul>
+<li>IDE （ 写代码的效率 ）</li>
+<li>git （ 代码版本管理 ，多人协作开发 ）</li>
+<li>JS 模块化</li>
+<li>打包工具</li>
+<li>上线回滚的流程</li>
+</ul>
+<h2 id="7-1-IDE"><a href="#7-1-IDE" class="headerlink" title="7-1 IDE"></a>7-1 IDE</h2><ul>
+<li>webstorm （ 我平常基本用的就是 <strong>webstorm</strong> ）</li>
+<li>sublime</li>
+<li>vscode</li>
+<li>atom</li>
+<li>插件 插件 插件 ！！！</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190719/MxVs8IUJKDhO.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190719/QNC5aBgIVByU.png?imageslim" alt="mark"></p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>千万不要说你使用 Dreamweaver 或者 notpad ++</li>
+<li>不做 .net 也不要用 Visual Studio</li>
+<li>不做 java 也不要用 eclipse</li>
+</ul>
+<h2 id="7-2-Git"><a href="#7-2-Git" class="headerlink" title="7-2 Git"></a>7-2 Git</h2><blockquote>
+<p>Git 详细介绍：可参考的的博客：<a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d285a027b8c9f7d8dc4f627%22">Git 篇</a></p>
+</blockquote>
+<ul>
+<li>正式项目都需要代码版本管理</li>
+<li>大型项目需要多人协作开发</li>
+<li>Git 和 linux 是一个作者</li>
+</ul>
+<h2 id="7-3-模块化"><a href="#7-3-模块化" class="headerlink" title="7-3 模块化"></a>7-3 模块化</h2><blockquote>
+<p>模块化编程就是通过组合一些<strong>相对独立可复用的模块</strong>来进行功能的实现，其最核心的两部分是<strong>定义模块</strong>和<strong>引入模块</strong>；</p>
+<ul>
+<li>定义模块时，每个模块内部的执行逻辑是不被外部感知的，只是导出（暴露）出部分方法和数据；</li>
+<li>引入模块时，同步 / 异步去加载待引入的代码，执行并获取到其暴露的方法和数据；</li>
+</ul>
+<p><strong>模块化的发展情况</strong> ：无模块化–&gt;CommonJS 规范–&gt;AMD 规范–&gt;CMD 规范–&gt;ES6 模块化</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5b6c222a6fb9a04fde5af4ee">Javascript 模块化指北</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5b4420e7f265da0f4b7a7b27">这一次，我要弄懂 javascript 的模块化</a></p>
+</blockquote>
+<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>不使用模块化的情况</li>
+<li>使用模块化</li>
+<li>AMD</li>
+<li>CommonJS</li>
+</ul>
+<h4 id="无模块化"><a href="#无模块化" class="headerlink" title="无模块化"></a>无模块化</h4><p>script 标签引入 js 文件，相互罗列，但是被依赖的放在前面，否则使用就会报错。如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;jquery.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">&quot;jquery_scroller.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">&quot;main.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">&quot;other1.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">&quot;other2.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">&quot;other3.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​ 即简单的将所有的 js 文件统统放在一起。但是这些文件的顺序还不能出错，比如 jquery 需要先引入，才能引入 jquery 插件，才能在其他的文件中使用 jquery。缺点很明显：</p>
+<ul>
+<li>污染全局作用域</li>
+<li>维护成本高</li>
+<li>依赖关系不明显</li>
+</ul>
+<h3 id="AMD-规范"><a href="#AMD-规范" class="headerlink" title="AMD 规范"></a>AMD 规范</h3><blockquote>
+<p>异步模块定义（<strong>AMD</strong>）API 指定了一种定义模块的机制，以便可以异步加载模块及其依赖项。这特别适用于浏览器环境，其中模块的同步加载会导致性能，可用性，调试和跨域访问问题。</p>
+</blockquote>
+<ul>
+<li>require.js <a target="_blank" rel="noopener" href="https://requirejs.org/">https://requirejs.org/</a></li>
+<li>全局 define 函数</li>
+<li>全局 require 函数</li>
+<li>依赖 JS 会自动、异步加载</li>
+</ul>
+<p>AMD 标准中，定义了下面三个 API：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([<span class="built_in">module</span>], callback);</span><br><span class="line">define(id, [depends], callback);</span><br><span class="line"><span class="built_in">require</span>.config();</span><br></pre></td></tr></table></figure>
+
+<p>即通过 define 来<strong>定义</strong>一个模块，然后使用 require 来<strong>加载</strong>一个模块, 使用 require.config()指定引用路径。</p>
+<h4 id="举例说明："><a href="#举例说明：" class="headerlink" title="举例说明："></a>举例说明：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script</span><br><span class="line">  src=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js&quot;</span></span><br><span class="line">  data-main=<span class="string">&quot;./main.js&quot;</span></span><br><span class="line">&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><em>main.js:</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">&quot;./a.js&quot;</span>], <span class="function"><span class="keyword">function</span> (<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> data = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  a.printDate(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><em>a.js:</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">&quot;./a-util.js&quot;</span>], <span class="function"><span class="keyword">function</span> (<span class="params">aUtil</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = &#123;</span><br><span class="line">    printDate: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(aUtil.aGetFormatDate(data));</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><em>a-util.js:</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">&quot;./util.js&quot;</span>], <span class="function"><span class="keyword">function</span> (<span class="params">util</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> aUtil = &#123;</span><br><span class="line">    aGetFormatDate: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> util.getFormatDate(data, <span class="number">2</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> aUtil;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><em>util.js:</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> util = &#123;</span><br><span class="line">    getFormatDate: <span class="function"><span class="keyword">function</span> (<span class="params">data, type</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (type === <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;2019-07-19&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (type === <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;2019年6月20日&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> util;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190719/tVkLYFlEzrtH.png?imageslim" alt="mark"></p>
+<h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><blockquote>
+<p>2009 年 ry 发布 Node.js 的第一个版本，CommonJS 作为其中最核心的特性之一，适用于服务端下的场景；历年来的考察和时间的洗礼，以及前端工程化对其的充分支持，CommonJS 被广泛运用于 Node.js 和浏览器；</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Core Module</span></span><br><span class="line"><span class="keyword">const</span> cp = <span class="built_in">require</span>(<span class="string">&quot;child_process&quot;</span>);</span><br><span class="line"><span class="comment">// Npm Module</span></span><br><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">&quot;axios&quot;</span>);</span><br><span class="line"><span class="comment">// Custom Module</span></span><br><span class="line"><span class="keyword">const</span> foo = <span class="built_in">require</span>(<span class="string">&quot;./foo&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123; axios &#125;;</span><br><span class="line"><span class="built_in">exports</span>.foo = foo;</span><br></pre></td></tr></table></figure>
+
+<p><strong>规范</strong></p>
+<ul>
+<li>module (Object): 模块本身</li>
+<li>exports (*): 模块的导出部分，即暴露出来的内容</li>
+<li>require (Function): 加载模块的函数，获得目标模块的导出值（基础类型为复制，引用类型为浅拷贝），可以加载内置模块、npm 模块和自定义模块。</li>
+</ul>
+<p><strong>nodejs 模块化规范，现在被大量用前端，原因</strong> ：</p>
+<ul>
+<li>前端开发依赖的插件课库，都可以从 npm 中获取</li>
+<li>构建工具的高度自动化，使得使用 npm 的成本非常低</li>
+<li>CommonJS 不会异步加载 JS ，而是同步一次性加载出来</li>
+</ul>
+<h4 id="使用-CommonJS"><a href="#使用-CommonJS" class="headerlink" title="使用 CommonJS"></a>使用 CommonJS</h4><blockquote>
+<p><strong>module</strong> (Object)、<strong>exports</strong> (*)、<strong>require</strong> (Function)</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//util.ls</span></span><br><span class="line"><span class="built_in">module</span>.export = &#123;</span><br><span class="line">  getFormatDate: <span class="function"><span class="keyword">function</span> (<span class="params">data, type</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (type === <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;2019-07-19&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (type === <span class="number">2</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;2019年6月20日&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//a-util.js</span></span><br><span class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">&quot;util.js&quot;</span>);</span><br><span class="line"><span class="built_in">module</span>.export = &#123;</span><br><span class="line">  aGetFormatDate: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> util.getFormatDate(data, <span class="number">2</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="特性总结"><a href="#特性总结" class="headerlink" title="特性总结"></a>特性总结</h4><ul>
+<li>同步执行模块声明和引入逻辑，分析一些复杂的依赖引用（如循环依赖）时需注意；</li>
+<li>缓存机制，性能更优，同时限制了内存占用；</li>
+<li>Module 模块可供改造的灵活度高，可以实现一些定制需求（如热更新、任意文件类型模块支持）；</li>
+</ul>
+<h4 id="AMD-和-CommonJS-的使用场景"><a href="#AMD-和-CommonJS-的使用场景" class="headerlink" title="AMD 和 CommonJS 的使用场景"></a>AMD 和 CommonJS 的使用场景</h4><ul>
+<li>需要异步加载 JS ，使用 AMD</li>
+<li>使用了 npm 之后建议使用 CommonJS</li>
+</ul>
+<h3 id="重点总结"><a href="#重点总结" class="headerlink" title="重点总结"></a>重点总结</h3><ul>
+<li>AMD</li>
+<li>CommonJS</li>
+<li>两者的区别</li>
+</ul>
+<h2 id="7-4-构建工具"><a href="#7-4-构建工具" class="headerlink" title="7-4 构建工具"></a>7-4 构建工具</h2><blockquote>
+<p>我们一定会感叹前端技术发展之快，各种可以提高开发效率的新思想和框架层出不穷。但是他们都有一个共同特点：源代码无法直接运行，必须通过转换后才能正常运行。</p>
+<p>比如：Grunt 、Gulp、FIS 3、<strong>Webpack</strong> …</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/entry/5ae5c8c9f265da0b9f400d8e">前端构建工具发展及其比较</a></p>
+<p><a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cb181596d3d4a5cb52b65c9%22">webpack 学习可参考我的博客 </a> 和 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cb72a04009ae94788aa0d7f%22">我的另一篇博客</a> 均有 涉及。</p>
+</blockquote>
+<p>构建工具就是做这件事，将源代码转换成可以执行的 JavaScript、CSS、HTML 代码，包括如下内容：</p>
+<ul>
+<li>代码转换：将 TypeScript 编译成 JavaScript、将 SCSS 编译成 CSS 等。</li>
+<li>文件优化：压缩 JavaScript、CSS、HTML 代码，压缩合并图片等。</li>
+<li>代码分割：提取多个页面的公共代码，提取首屏不需要执行部分代码让其异步记在。</li>
+<li>模块合并：在采用模块化的项目里会有很多个模块和文件，需要通过构建功能将模块分类合并成一个文件。</li>
+<li>自动刷新：监听本地源代码变化，自动重新构建、刷新浏览器。</li>
+<li>代码校验：在代码被提交到仓库前需要校验代码是否符合规范，以及单元测试是否通过。</li>
+<li>自动发布：更新代码后，自动构建出线上发布代码并传输给发布系统。</li>
+</ul>
+<p>构建其实是工程化、自动化思想在前端开发中的体现，将一系列流程用代码去实现，让代码自动化地执行这一系列复杂的流程。构建为前端开发注入了更大的活力，解放了我们的生产力。</p>
+<p>历史上先后出现了一系列构建工具，他们各有优缺点。由于前端工程师很熟悉 JavaScript，Node.js 又可以胜任所有构建需求，所以大多数构建工具都是用 Node.js 开发的。</p>
+<h2 id="7-5-上线和回滚"><a href="#7-5-上线和回滚" class="headerlink" title="7-5 上线和回滚"></a>7-5 上线和回滚</h2><ul>
+<li>不会有具体的问题，交流询问的方式</li>
+</ul>
+<h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>上线和回滚的基本流程</li>
+<li>linux 基本命令</li>
+</ul>
+<h4 id="上线和回滚的基本流程"><a href="#上线和回滚的基本流程" class="headerlink" title="上线和回滚的基本流程"></a>上线和回滚的基本流程</h4><ul>
+<li><p>是非常重要的开发环节</p>
+</li>
+<li><p>各个公司的具体流程不同</p>
+</li>
+<li><p>由专门的工具后者系统完成，我们无需关心细节</p>
+</li>
+<li><p>如果你没有参与过，面试时也要说出要点</p>
+</li>
+<li><p>只讲要点，具体实现无法讲解</p>
+</li>
+</ul>
+<h3 id="上线流程要点"><a href="#上线流程要点" class="headerlink" title="上线流程要点"></a>上线流程要点</h3><ul>
+<li>将测试完成的代码提交到 git 版本库的 master 分支</li>
+<li>将当前服务器的代码全部打包并记录版本号，备份</li>
+<li>将 master 分支的代码提交覆盖到线上服务器，生成新版本号</li>
+</ul>
+<h3 id="回滚的流程要点"><a href="#回滚的流程要点" class="headerlink" title="回滚的流程要点"></a>回滚的流程要点</h3><ul>
+<li>将当前服务器的代码打包并记录版本号，备份</li>
+<li>将备份的上一个版本号解压，覆盖到线上服务器，并生成新的版本号</li>
+</ul>
+<h3 id="linux-基本命令"><a href="#linux-基本命令" class="headerlink" title="linux 基本命令"></a>linux 基本命令</h3><ul>
+<li>服务器使用 linux 居多，server 版，只有命令行</li>
+<li>测试环境要匹配线上环境，因此也是 linux</li>
+<li>经常需要登录测试机来自己配置，获取数据</li>
+</ul>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2019/07/19/DevelopmentEnvironment/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IDE/" rel="tag">IDE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%8A%E7%BA%BF%E5%92%8C%E5%9B%9E%E6%BB%9A/" rel="tag">上线和回滚</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" rel="tag">构建工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="tag">模块化</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2019/07/19/OperationEnvironment/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            运行环境
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/07/12/gitLearning/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Git 学习</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

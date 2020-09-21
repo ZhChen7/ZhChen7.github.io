@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    大二数据库实验 |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Database"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  大二数据库实验
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/06/11/Database/" class="article-date">
+  <time datetime="2019-06-11T10:10:52.000Z" itemprop="datePublished">2019-06-11</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%AE%9E%E8%AE%AD/">大学实训</a> / <a class="article-category-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%AE%9E%E8%AE%AD/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">4 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="大二数据库实验"><a href="#大二数据库实验" class="headerlink" title="大二数据库实验"></a>大二数据库实验</h1><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><blockquote>
+<p>数据库课程实验综合小实验（做一个项目实现增删改查功能）</p>
+<p>大二下学期期末大作业！</p>
+</blockquote>
+<h3 id="技术运用："><a href="#技术运用：" class="headerlink" title="技术运用："></a>技术运用：</h3><p>​ <u>运用到的技术</u>：<strong>bootstrap</strong>+ <strong>art-template</strong> + <strong>node.js</strong> + <strong>mysql</strong></p>
+<table>
+<thead>
+<tr>
+<th>课题</th>
+<th>数据库</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>班级</td>
+<td>1701</td>
+</tr>
+<tr>
+<td>作者姓名</td>
+<td>周琛</td>
+</tr>
+<tr>
+<td>学号</td>
+<td>2017115010124</td>
+</tr>
+<tr>
+<td>所在院系</td>
+<td>计算机信息与工程学院</td>
+</tr>
+<tr>
+<td>学科专业名称</td>
+<td>计算机科学与技术</td>
+</tr>
+<tr>
+<td>导师及职称</td>
+<td>童强</td>
+</tr>
+</tbody></table>
+<p>​</p>
+<h2 id="一、实验目的与要求"><a href="#一、实验目的与要求" class="headerlink" title="一、实验目的与要求"></a>一、实验目的与要求</h2><ol>
+<li>用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。</li>
+<li>说明文档中有 node 连接数据库的关键代码说明。</li>
+<li>给了一个实例代码，实现了对一张表的增删改查功能（说明文档中可以看到数据库及表的名称，和有关连接数据库和实现增删改查的关键代码）。</li>
+<li>可以运行，实现对学生课程数据库的操作；</li>
+</ol>
+<h2 id="二-步骤操作"><a href="#二-步骤操作" class="headerlink" title="二.步骤操作"></a>二.步骤操作</h2><h4 id="1-用-node-设计一个应用程序，实现对平时实验数据库的增、删、改、查。"><a href="#1-用-node-设计一个应用程序，实现对平时实验数据库的增、删、改、查。" class="headerlink" title="1. 用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。"></a>1. 用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。</h4><p><strong>效果图:</strong></p>
+<p>用图说话：</p>
+<p><img src="http://static.zxinc520.com/blog/20190525/JWCuqSFLOqbB.png?imageslim" alt="mark"></p>
+<h3 id="视频"><a href="#视频" class="headerlink" title="视频:"></a><img src="http://static.zxinc520.com/blog/20190525/KHUkC8mo5c0L.png?imageslim" alt="mark">视频:</h3><video id="video" controls="" preload="none" poster="http://static.zxinc520.com/blog/20190613/yhdLmF30B7EP.png?imageslim">
+      <source id="mp4" src="http://static.zxinc520.com/bandicam%202019-05-28%2012-50-22-208.mp4" type="video/mp4">
+      </video>
+
+<h3 id="2-说明文档中有-node-连接数据库的关键代码"><a href="#2-说明文档中有-node-连接数据库的关键代码" class="headerlink" title="2. 说明文档中有 node 连接数据库的关键代码"></a>2. 说明文档中有 node 连接数据库的关键代码</h3><blockquote>
+<p>文件 : mysql.js</p>
+<p><strong>作用: 连接数据库,执行数据操作、 封装、暴露方法.</strong></p>
+</blockquote>
+<p><strong>mysql.js</strong>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mysql = <span class="built_in">require</span>(<span class="string">&quot;mysql&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行数据操作、 封装、暴露方法</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  query: <span class="function"><span class="keyword">function</span> (<span class="params">sql, params, callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//1.创建链接</span></span><br><span class="line">    <span class="keyword">const</span> connection = mysql.createConnection(&#123;</span><br><span class="line">      host: <span class="string">&quot;localhost&quot;</span>,</span><br><span class="line">      user: <span class="string">&quot;root&quot;</span>,</span><br><span class="line">      password: <span class="string">&quot;123456&quot;</span>,</span><br><span class="line">      database: <span class="string">&quot;zc&quot;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//每次使用的时候需要创建链接，数据操作完成之后要关闭连接</span></span><br><span class="line">    connection.connect(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;数据库链接失败&quot;</span>);</span><br><span class="line">        <span class="keyword">throw</span> err;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//开始数据操作</span></span><br><span class="line">      <span class="comment">//传入三个参数，第一个参数sql语句，第二个参数sql语句中需要的数据，第三个参数回调函数</span></span><br><span class="line">      connection.query(sql, params, <span class="function"><span class="keyword">function</span> (<span class="params">err, results, fields</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">&quot;数据操作失败&quot;</span>);</span><br><span class="line">          <span class="keyword">throw</span> err;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将查询出来的数据返回给回调函数</span></span><br><span class="line">        callback &amp;&amp; callback(results, fields);</span><br><span class="line">        <span class="comment">//results作为数据操作后的结果，fields作为数据库连接的一些字段</span></span><br><span class="line">        <span class="comment">//停止链接数据库，必须再查询语句后，要不然一调用这个方法，就直接停止链接，数据操作就会失败</span></span><br><span class="line">        connection.end(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&quot;关闭数据库连接失败！&quot;</span>);</span><br><span class="line">            <span class="keyword">throw</span> err;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-实现了对一张表的增删改查功能"><a href="#3-实现了对一张表的增删改查功能" class="headerlink" title="3.实现了对一张表的增删改查功能"></a>3.实现了对一张表的增删改查功能</h2><blockquote>
+<p>给了一个实例代码，实现了对一张表的增删改查功能（说明文档中可以看到数据库及表的名称，和有关连接数据库和实现增删改查的关键代码）。</p>
+</blockquote>
+<h4 id="添加功能实现"><a href="#添加功能实现" class="headerlink" title="添加功能实现:"></a>添加功能实现:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">&quot;/add&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> body = req.body;</span><br><span class="line">  <span class="built_in">console</span>.log(body);</span><br><span class="line">  <span class="keyword">let</span> addSql = <span class="string">&quot;INSERT INTO user(id,username,tel) VALUES(?,?,?)&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> addSqlParams = [body.id, body.username, body.tel];</span><br><span class="line">  db.query(addSql, addSqlParams, <span class="function"><span class="keyword">function</span> (<span class="params">result, fields</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;添加成功&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> res.status(<span class="number">200</span>).json(&#123;</span><br><span class="line">      err_code: <span class="number">0</span>,</span><br><span class="line">      message: <span class="string">&quot;OK&quot;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果图:</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190525/Q4p9PqfySpYr.png?imageslim" alt="mark"></p>
+<h4 id="删除功能实现"><a href="#删除功能实现" class="headerlink" title="删除功能实现 :"></a>删除功能实现 :</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">&quot;/delete&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> deleteSql = <span class="string">&quot;DELETE FROM user  WHERE id = ?&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> deleteSqlParams = req.query.id;</span><br><span class="line">  db.query(deleteSql, deleteSqlParams, <span class="function">(<span class="params">err, results</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;</span><br><span class="line">    res.redirect(<span class="number">302</span>, <span class="string">&quot;/&quot;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果图:</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190611/Gu16nhNmt2FM.png?imageslim" alt="mark"></p>
+<h4 id="修改功能实现"><a href="#修改功能实现" class="headerlink" title="修改功能实现"></a>修改功能实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">&quot;/fix&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  fixsql = <span class="string">&quot;SELECT * FROM user WHERE id = ?&quot;</span>;</span><br><span class="line">  fixSqlParams = req.query.id;</span><br><span class="line">  db.query(fixsql, fixSqlParams, <span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">    res.render(<span class="string">&quot;fix.html&quot;</span>, &#123;</span><br><span class="line">      result: result[<span class="number">0</span>],</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">router.post(<span class="string">&quot;/fix&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.body);</span><br><span class="line">  updatasql = <span class="string">&quot;UPDATE user SET username = ?,tel=? WHERE id = ?&quot;</span>;</span><br><span class="line">  updataSqlParams = [req.body.username, req.body.tel, req.body.id];</span><br><span class="line">  db.query(updatasql, updataSqlParams, <span class="function">(<span class="params">err, results</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res.status(<span class="number">200</span>).json(&#123;</span><br><span class="line">      err_code: <span class="number">0</span>,</span><br><span class="line">      message: <span class="string">&quot;OK&quot;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果图:</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190525/RdNGNjvSnJNF.png?imageslim" alt="mark"></p>
+<h4 id="查找功能实现"><a href="#查找功能实现" class="headerlink" title="查找功能实现"></a>查找功能实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">&quot;/search&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.body);</span><br><span class="line">  arr = [];</span><br><span class="line">  db.query(<span class="string">&quot;select * from user&quot;</span>, [], <span class="function"><span class="keyword">function</span> (<span class="params">result, fields</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">    result.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (</span><br><span class="line">        e.id.indexOf(req.body.value) &gt;= <span class="number">0</span> ||</span><br><span class="line">        e.username.indexOf(req.body.value) &gt;= <span class="number">0</span> ||</span><br><span class="line">        e.tel.indexOf(req.body.value) &gt;= <span class="number">0</span></span><br><span class="line">      ) &#123;</span><br><span class="line">        arr.push(e);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> res.status(<span class="number">200</span>).json(&#123;</span><br><span class="line">      err_code: <span class="number">0</span>,</span><br><span class="line">      message: arr,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果图:</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190611/Ed1NKxGH1I4I.png?imageslim" alt="mark"></p>
+<h2 id="4-运行程序"><a href="#4-运行程序" class="headerlink" title="4. 运行程序"></a>4. 运行程序</h2><p>相关代码源代码以上传至码云,地址为:</p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/zxinc/sophomore_database_experiment">源码地址</a></p>
+<video id="video" controls="" preload="none" poster="http://static.zxinc520.com/blog/20190613/yhdLmF30B7EP.png?imageslim">
+ <source id="mp4" src="http://static.zxinc520.com/bandicam%202019-05-28%2012-50-22-208.mp4" type="video/mp4">
+  </video>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2019/06/11/Database/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7%E4%BA%8C/" rel="tag">大二</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E8%AE%AD/" rel="tag">数据库实训</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2019/06/15/OperatingSystemCourseDesign/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            操作系统课程设计
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/05/13/Promise/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Promise</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

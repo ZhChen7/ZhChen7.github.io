@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    算法面试到底是什么鬼 |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-AlgorithmForTheInterview01"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  算法面试到底是什么鬼
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/09/09/AlgorithmForTheInterview01/" class="article-date">
+  <time datetime="2019-09-09T02:43:24.000Z" itemprop="datePublished">2019-09-09</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%8E%A9%E8%BD%AC%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/">玩转算法面试</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">5 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="算法面试到底是什么鬼"><a href="#算法面试到底是什么鬼" class="headerlink" title="算法面试到底是什么鬼?"></a>算法面试到底是什么鬼?</h1><blockquote>
+<p>玩转算法面试 从真题到思维全面提升算法思维</p>
+<p>为了面试，更为了提升你的算法思维</p>
+<p>一提起算法面试，很多同学就会心有余悸。可其实，大多数企业的算法面试，并没有那么可怕。并不是一定要啃完整本《算法导论》，才能玩儿转算法面试；也并不是只有 ACM 参赛选手，才能笑傲算法面试。恰恰相反，大多数算法面试关注的算法思维，其实很基础。在这一章，和大家聊一聊，算法面试，到底是什么鬼？…</p>
+</blockquote>
+<h2 id="1-1-算法面试不仅仅是正确的回答问题"><a href="#1-1-算法面试不仅仅是正确的回答问题" class="headerlink" title="1-1 算法面试不仅仅是正确的回答问题"></a>1-1 算法面试不仅仅是正确的回答问题</h2><h4 id="算法面试是什么？"><a href="#算法面试是什么？" class="headerlink" title="算法面试是什么？"></a>算法面试是什么？</h4><ul>
+<li>让大家在面对面试中的算法问题时，有一个合理的思考路径<ul>
+<li>不代表能够“正确”回答每一个算法问题，但是合理的思考方向其实更重要，这也是正确完成算法面试问题的前提</li>
+<li>算法面试优秀不意味着技术面试优秀</li>
+<li>技术面试优秀不意味着能够拿到 Offer</li>
+</ul>
+</li>
+</ul>
+<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><h4 id="问题：对一组数据进行排序"><a href="#问题：对一组数据进行排序" class="headerlink" title="问题：对一组数据进行排序"></a>问题：对一组数据进行排序</h4><p>不假思索思考方向：</p>
+<ul>
+<li>快速排序算法 O（nlogn）</li>
+</ul>
+<p><strong>正确的方式</strong>是：应该和面试官探讨（ <strong>思考路径</strong> ）：</p>
+<ul>
+<li>这组数据有什么样的特征？<ul>
+<li>有没有可能包含有大量重复的元素？</li>
+<li>如果有这种可能的话，三路快排是更好的选择。</li>
+</ul>
+</li>
+<li>这组数据有什么样的特征？<ul>
+<li>是否大部分数据距离它正确的位置很近？是否近乎有序？</li>
+<li>如果是这样的话，插入排序是更好的选择</li>
+</ul>
+</li>
+<li>这组数据有什么样的特征？<ul>
+<li>是否数据的取值范围非常有限？比如对学生成绩排序</li>
+<li>如果是这样的话，计数排序是更好的选择</li>
+</ul>
+</li>
+<li>对排序有什么额外的要求？<ul>
+<li>是否需要稳定排序？</li>
+<li>如果是的话，归并排序是更好的选择</li>
+</ul>
+</li>
+<li>数据的存储状况是怎么样的？<ul>
+<li>是否是使用链表存储的？</li>
+<li>如果是的话，归并排序是更好的选择</li>
+</ul>
+</li>
+<li>数据的存储状态是怎样的？<ul>
+<li>数据的大小是否可以装载在内存里？</li>
+<li>数据量很大，或者内存很小，不足以装载在内存里，需要使用外排序算法</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-什么是“正确”的回答一个算法问题"><a href="#1-2-什么是“正确”的回答一个算法问题" class="headerlink" title="1-2 什么是“正确”的回答一个算法问题"></a>1-2 什么是“正确”的回答一个算法问题</h2><p><strong>正确</strong> 还包含对问题的独到见解；优化；代码规范；容错性</p>
+<p>如果是 非常难的问题，对你的竞争对手来说，也是难的。</p>
+<p>关键在于你所表达出的解决问题的思路</p>
+<p>甚至通过表达解题思路的方向，得出结论：这个问题的解决方案，应该在哪一个领域，我可以通过查阅或者进一步学习解决问题</p>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li>项目经历 和 项目中遇到的实际问题</li>
+<li>你遇到的印象最深的 bug 是什么？</li>
+<li>面向对象</li>
+<li>设计模式</li>
+<li>网络相关；安全相关；内存相关；并发相关</li>
+<li>系统设计；scalability</li>
+</ul>
+<p>技术面试只是面试的一部分。面试不仅仅是考察你的技术水平，还是了解你的过去以及形成的思考行为方式</p>
+<p>关于过去：参与项目至关重要</p>
+<h4 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h4><ul>
+<li>本科生<ul>
+<li>毕业设计</li>
+<li>其它课程设计(大作业，大一点的程序设计等等)</li>
+</ul>
+</li>
+<li>如何找到项目？<ul>
+<li>实习</li>
+<li>参与实战课程学习<ul>
+<li>慕课网</li>
+<li>Coursera</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>创建自己的项目<ul>
+<li>自己做小应用：计划表；备忘录；播放器…</li>
+<li>自己解决小问题：爬虫；数据分析；词频统计</li>
+<li>“不是项目” 的项目：一本优秀的技术书籍的代码整理等…</li>
+<li>分享：自己的技术博客；github 等等…</li>
+</ul>
+</li>
+</ul>
+<h4 id="行为类问题"><a href="#行为类问题" class="headerlink" title="行为类问题"></a>行为类问题</h4><p>通过过去了解你的思考行为方式？</p>
+<ul>
+<li>遇到的最大的挑战？</li>
+<li>犯过的错误？</li>
+<li>遭遇的失败？</li>
+<li>最享受的工作内容？</li>
+<li>遇到冲突的处理方式？</li>
+<li>做的最与众不同的事儿？</li>
+</ul>
+<h4 id="准备好合适的问题问面试官"><a href="#准备好合适的问题问面试官" class="headerlink" title="准备好合适的问题问面试官"></a>准备好合适的问题问面试官</h4><ul>
+<li>整个小组的大概运行模式是怎样的？</li>
+<li>整个项目的后续规划是如何的？</li>
+<li>这个产品中的某个问题是如何解决的？</li>
+<li>为什么会选择某些技术？标准？</li>
+<li>我对某个技术很感兴趣，在你的小组中我会有怎样的机会深入这种技术？</li>
+</ul>
+<p><strong>算法面试仍然是非常重要的一部分</strong></p>
+<h2 id="1-3-如何准备算法面试"><a href="#1-3-如何准备算法面试" class="headerlink" title="1-3 如何准备算法面试"></a>1-3 如何准备算法面试</h2><p>准备面试 和 准备算法面试 是两个概念</p>
+<p>算法面试 ，只是面试中的一个环节</p>
+<h2 id="算法面试并没有那么难"><a href="#算法面试并没有那么难" class="headerlink" title="算法面试并没有那么难"></a>算法面试并没有那么难</h2><ul>
+<li>远远不需要啃完一本 《算法导论》<ul>
+<li>过于强调理论证明</li>
+</ul>
+</li>
+<li>高级数据结构 和 算法面试提及的概率很低<ul>
+<li>红黑树</li>
+<li>计算几何</li>
+<li>B - Tree</li>
+<li>数论</li>
+<li>斐波那契堆</li>
+<li>FFT</li>
+</ul>
+</li>
+</ul>
+<p><strong>算法面试远远不需要达到信息学竞赛的水平</strong> 。</p>
+<p><img src="http://static.zxinc520.com/blog/20190908/CNmOn2PupuUn.png?imageslim" alt="mark"></p>
+<h3 id="算法面试的准备范围"><a href="#算法面试的准备范围" class="headerlink" title="算法面试的准备范围"></a>算法面试的准备范围</h3><ul>
+<li>不要轻视基础算法 和 数据结构，而只关注 “有意思” 的题目</li>
+</ul>
+<p>重点关注：</p>
+<ul>
+<li>各种排序算法</li>
+<li>基础数据结构和算法的实现：如堆、二叉树、图….</li>
+<li>基础数据结构的使用：如链表、栈、队列、哈希表、图、Trie、并查集…</li>
+<li>基础算法：深度优先、广度优先、二分查找、递归…</li>
+<li>基本算法思想：递归、分治、回溯搜索、贪心、动态规划…</li>
+</ul>
+<h3 id="选择合适的-OJ"><a href="#选择合适的-OJ" class="headerlink" title="选择合适的 OJ"></a>选择合适的 OJ</h3><blockquote>
+<p>OJ：online judge</p>
+<p>在线判题系统</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190908/iW0zhuflnMIs.png?imageslim" alt="mark"></p>
+<h3 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode-cn.com/">LeetCode</a> （ 源于真实的面试问题 ）</li>
+<li><a target="_blank" rel="noopener" href="https://www.hackerrank.com/">HackerRank</a> （ 对问题分类很详细 ，更难一点，辅助作用）</li>
+</ul>
+<p><strong>注意</strong>： 在学习和实践做题之间，要掌握平衡</p>
+<h2 id="1-4-解决算法面试问题的整体思路"><a href="#1-4-解决算法面试问题的整体思路" class="headerlink" title="1-4 解决算法面试问题的整体思路"></a>1-4 解决算法面试问题的整体思路</h2><h3 id="注意题目中的条件"><a href="#注意题目中的条件" class="headerlink" title="注意题目中的条件"></a>注意题目中的条件</h3><ul>
+<li>给定一个有序数组…<ul>
+<li><strong>有序</strong>： 是不是可以使用二分查找法</li>
+</ul>
+</li>
+<li>有一些题目中的条件本质是暗示：<ul>
+<li>设计一个 O（nlogn）的算法<ul>
+<li>分治法</li>
+</ul>
+</li>
+<li>无需考虑额外的空间<ul>
+<li>开辟额外的空间</li>
+</ul>
+</li>
+<li>数据规模大概是 10000<ul>
+<li>O（n 的二次方）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="当没有思路的时候"><a href="#当没有思路的时候" class="headerlink" title="当没有思路的时候"></a>当没有思路的时候</h3><ul>
+<li>自己给自己几个简单的测试用例，试验一下</li>
+<li>不要忽视暴力解法。暴力解法通常是思考的起点</li>
+</ul>
+<h4 id="不要忽视暴力法"><a href="#不要忽视暴力法" class="headerlink" title="不要忽视暴力法"></a>不要忽视暴力法</h4><p><img src="http://static.zxinc520.com/blog/20190908/4H4HSG2k68nE.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190908/DTm490pyX7Vm.png?imageslim" alt="mark"></p>
+<h2 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h2><h3 id="无头绪的思路"><a href="#无头绪的思路" class="headerlink" title="无头绪的思路"></a>无头绪的思路</h3><ul>
+<li>遍历常见的算法思路</li>
+<li>遍历常见的数据结构</li>
+<li>空间 和 时间的 交换 （ 哈希表 ）</li>
+<li>预处理信息 （ 排序 ）</li>
+<li>在瓶颈处寻找答案：O（nlogn）+ O（n ∧ 2）；O（n∧3）</li>
+</ul>
+<h3 id="实际编写问题"><a href="#实际编写问题" class="headerlink" title="实际编写问题"></a>实际编写问题</h3><ul>
+<li>极端条件的判断<ul>
+<li>数组为空？字符串为空？数量为 0? 指针为 NULL ？</li>
+</ul>
+</li>
+<li>变量名</li>
+<li>模块化，复用性</li>
+</ul>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2019/09/09/AlgorithmForTheInterview01/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/" rel="tag">算法面试</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2019/09/11/ComplexityAnalysis/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            面试中的复杂度分析
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/09/07/ReactTheory/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">组件化和 React</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

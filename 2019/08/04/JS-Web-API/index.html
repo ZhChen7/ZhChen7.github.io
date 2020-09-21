@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    JS-Web-API |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-JS-Web-API"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  JS-Web-API
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/08/04/JS-Web-API/" class="article-date">
+  <time datetime="2019-08-04T08:44:08.000Z" itemprop="datePublished">2019-08-04</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/">JS 三座大山</a> / <a class="article-category-link" href="/categories/JS/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">4.8k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">19 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="JS-Web-API"><a href="#JS-Web-API" class="headerlink" title="JS-Web-API"></a>JS-Web-API</h1><blockquote>
+<p>前端 JS 基础面试技巧 - - <strong>JS-Web-API 上</strong></p>
+<p>讲解 JS 在浏览器中具体应用的面试题。包括 <strong>DOM 操作</strong>，<strong>BOM 操作</strong> ，<strong>事件绑定</strong>，<strong>ajax</strong> 和 <strong>存储</strong> ，这些类别的题目。</p>
+</blockquote>
+<h2 id="从基础知识到-JS-Web-API"><a href="#从基础知识到-JS-Web-API" class="headerlink" title="从基础知识到 JS-Web-API"></a>从基础知识到 JS-Web-API</h2><blockquote>
+<p>从基础知识 <strong>过渡</strong> 到 JS-Web-API</p>
+</blockquote>
+<ul>
+<li>回顾 JS 基础知识</li>
+<li>JS-Web-API</li>
+<li>总结</li>
+</ul>
+<h3 id="回顾-JS-基础知识"><a href="#回顾-JS-基础知识" class="headerlink" title="回顾 JS 基础知识"></a>回顾 JS 基础知识</h3><blockquote>
+<p>特点：表面看来并不能哟用于工作中开发代码</p>
+<p>内置函数：Object，Array，Boolean，String ……</p>
+<p>内置对象：Math，Json …..</p>
+<p>详情请参考：<a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d2df2cdda85353d5ca8b83f%22">原型和原型链，闭包和作用域</a> <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d2eeda9d797f0309cf6ab02%22">异步和单线程</a></p>
+<ul>
+<li>我们连在网页上弹出一句 hello world 都不能实现</li>
+</ul>
+</blockquote>
+<p><strong>知识点</strong> ：</p>
+<ul>
+<li><p>变量类型和计算</p>
+</li>
+<li><p>原型和原型链</p>
+</li>
+<li><p>闭包和作用域</p>
+</li>
+<li><p>异步和单线程</p>
+</li>
+<li><p>其它（如日期，Math，各种常用 API）</p>
+</li>
+<li><p>JS 基础知识：<strong>ECMA 262 标准</strong></p>
+</li>
+<li><p>JS-Web-API ：<strong>W3C 标准</strong></p>
+</li>
+</ul>
+<h3 id="JS-Web-API-1"><a href="#JS-Web-API-1" class="headerlink" title="JS-Web-API"></a>JS-Web-API</h3><blockquote>
+<p>JS-Web-API</p>
+</blockquote>
+<p><strong>W3C 标准中关于 JS 的规定有</strong> ：</p>
+<ul>
+<li>DOM 操作</li>
+<li>BOM 操作</li>
+<li>事件绑定</li>
+<li>ajax 请求（包括 http 协议）</li>
+<li>储存</li>
+</ul>
+<p><strong>页面弹框 window.alert(123) ，浏览器需要做：</strong></p>
+<ul>
+<li>定义一个 window 全局变量 ，对象类型</li>
+<li>给它定义一个 alert 属性，属性值是一个函数</li>
+</ul>
+<p><strong>获取元素 document.getElementById(id)，浏览器需要做：</strong></p>
+<ul>
+<li>定义一个 document 全局变量 ，对象类型</li>
+<li>给它定义一个 getElementById 属性，属性值是一个函数</li>
+</ul>
+<p><strong>W3C 标准：</strong></p>
+<ul>
+<li>W3C 标准没有规定任何 JS 基础相关的东西</li>
+<li>不管什么变量类型，原型，作用域和异步</li>
+<li>只管 定义用于 浏览器中 JS 操作页面的 API 和 全局变量</li>
+</ul>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p><strong>常说的 JS （浏览器执行的 JS ）包含两部分：</strong></p>
+<ul>
+<li>JS 基础知识：<strong>ECMA 262 标准</strong></li>
+<li>JS-Web-API ：<strong>W3C 标准</strong></li>
+</ul>
+<h2 id="5-1-BOM-节点操作"><a href="#5-1-BOM-节点操作" class="headerlink" title="5-1 BOM 节点操作"></a>5-1 BOM 节点操作</h2><blockquote>
+<p>BOM 操作： <strong>Browser</strong>、<strong>Object</strong>、<strong>Model</strong> （ 浏览器对象模型 ）</p>
+<p><strong>BOM 节点操作</strong> 可以理解为：浏览器把拿到的 html 代码，结构化一个 浏览器 能识别并且 js 可操作的一个模型而已 。</p>
+<p>javacsript 是通过 <strong>访问 BOM</strong> （Browser Object Model）对象来 <strong>访问、控制、修改</strong> 客户端(浏览器)，由于 BOM 的 window 包含了 document，<strong>window 对象的属性和方法是直接可以使用而且被感知的</strong> ，因此可以直接使用 window 对象的 document 属性，通过 document 属性就可以访问、检索、修改 XHTML 文档内容与结构。因为 document 对象又是 DOM（Document Object Model）模型的根节点。可以说，<strong>BOM 包含了 DOM(对象)</strong> ，浏览器提供出来给予访问的是 BOM 对象，从 BOM 对象再访问到 DOM 对象，从而 js 可以操作浏览器以及浏览器读取到的文档。</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190718/LLToFChkpany.png?imageslim" alt="mark"></p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
+<li>如何检测浏览器的类型</li>
+<li>拆解 url 的 各部分</li>
+</ul>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>navigator</li>
+<li>screen</li>
+<li>location</li>
+<li>history</li>
+</ul>
+<h4 id="navigator-amp-screen"><a href="#navigator-amp-screen" class="headerlink" title="navigator &amp; screen"></a>navigator &amp; screen</h4><blockquote>
+<p>navigator &amp; screen</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190718/r3iKL9Xukvhh.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190718/HGtIQM9isqCI.png?imageslim" alt="mark"></p>
+<h4 id="location-amp-history"><a href="#location-amp-history" class="headerlink" title="location &amp; history"></a>location &amp; history</h4><blockquote>
+<h6 id="location-amp-history-1"><a href="#location-amp-history-1" class="headerlink" title="location &amp; history"></a>location &amp; history</h6></blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190718/cbYxCVkoLMQu.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190718/wBG2i12YtTmW.png?imageslim" alt="mark"></p>
+<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><ul>
+<li>如何检测浏览器的类型</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190718/TfK1lJ7IAry5.png?imageslim" alt="mark"></p>
+<ul>
+<li>拆解 url 的 各部分</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190718/UzzCgHl1fImg.png?imageslim" alt="mark"></p>
+<h2 id="5-2-DOM-节点操作"><a href="#5-2-DOM-节点操作" class="headerlink" title="5-2 DOM 节点操作"></a>5-2 DOM 节点操作</h2><blockquote>
+<p><strong>DOM 操作的重点：找到节点对节点（元素/文本/属性节点）增删改查</strong></p>
+<p><strong>各方法和属性之间的结合操作才会使得 DOM 文档活跃起来</strong></p>
+<p><code>注意方法与属性的不同。</code> <strong>注意属性的返回值</strong></p>
+<p><strong>注意 javascript 操作样式的可读可写性</strong></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5b16113f5188257d7a49ada7">可参考</a></p>
+</blockquote>
+<h3 id="DOM-节点操作："><a href="#DOM-节点操作：" class="headerlink" title="DOM 节点操作："></a>DOM 节点操作：</h3><ul>
+<li>获取 DOM 节点</li>
+<li>prototype</li>
+<li>Attribute</li>
+</ul>
+<h4 id="获取-DOM-节点"><a href="#获取-DOM-节点" class="headerlink" title="获取 DOM 节点"></a>获取 DOM 节点</h4><blockquote>
+<p>获取 DOM 节点</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&quot;id&quot;</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementByClassName(<span class="string">&quot;classname&quot;</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;tag&quot;</span>);</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;#foo &gt; div.bar&quot;</span>);</span><br><span class="line"><span class="built_in">document</span>.querySelectorAll(<span class="string">&quot;.bar&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190718/TsP71SzkfFU5.png?imageslim" alt="mark"></p>
+<h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h4><blockquote>
+<p>prototype</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190718/nehMbgtKQirx.png?imageslim" alt="mark"></p>
+<h4 id="property"><a href="#property" class="headerlink" title="property"></a>property</h4><blockquote>
+<p>property 只是一个 JS 对象的属性的修改</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190718/3vippb1mnJqF.png?imageslim" alt="mark"></p>
+<h4 id="Attribute"><a href="#Attribute" class="headerlink" title="Attribute"></a>Attribute</h4><blockquote>
+<p>Attribute</p>
+<p>Attribute 是对 html <strong>标签属性</strong> 的修改 （获取）</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190718/B7FUAdLGXAHz.png?imageslim" alt="mark"></p>
+<h3 id="DOM-结构操作"><a href="#DOM-结构操作" class="headerlink" title="DOM 结构操作"></a>DOM 结构操作</h3><blockquote>
+<p>DOM 结构操作</p>
+</blockquote>
+<ul>
+<li>新增节点</li>
+<li>获取父元素</li>
+<li>获取子元素</li>
+<li>删除节点</li>
+</ul>
+<h4 id="新增节点"><a href="#新增节点" class="headerlink" title="新增节点"></a>新增节点</h4><blockquote>
+<p>新增节点</p>
+<p>移动已有 的节点</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;div1&#x27;</span>) p = <span class="built_in">document</span>.createElement(<span class="string">&#x27;p&#x27;</span>)</span><br><span class="line">  p.innerHTML = <span class="string">&#x27;&lt;h3&gt;hello world&lt;/h3&gt;&#x27;</span> div1.appendChild(p) <span class="keyword">var</span> p2 =</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.p2&#x27;</span>) div1.appendChild(p2) <span class="built_in">console</span>.log(div1)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190718/e7UMDpPFqB1d.png?imageslim" alt="mark"></p>
+<h4 id="获取父元素和子元素"><a href="#获取父元素和子元素" class="headerlink" title="获取父元素和子元素"></a>获取父元素和子元素</h4><blockquote>
+<p>获取父元素和子元素</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;div1&quot;</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">&quot;p1&quot;</span>&gt;<span class="built_in">this</span> is p1&lt;/div&gt;</span><br><span class="line">    &lt;div id=<span class="string">&quot;p2&quot;</span>&gt;<span class="built_in">this</span> is p2&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">&quot;div2&quot;</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">&quot;p3&quot;</span>&gt;<span class="built_in">this</span> is p3&lt;/div&gt;</span><br><span class="line">    &lt;div id=<span class="string">&quot;p4&quot;</span>&gt;<span class="built_in">this</span> is p4&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> div1=<span class="built_in">document</span>.getElementById(<span class="string">&#x27;div1&#x27;</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(div1.parentElement)</span><br><span class="line">    <span class="built_in">console</span>.log(div1.childNodes)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(div1.childNodes[<span class="number">0</span>].nodeType)  <span class="comment">//3</span></span><br><span class="line">    <span class="built_in">console</span>.log(div1.childNodes[<span class="number">1</span>].nodeType)  <span class="comment">//1</span></span><br><span class="line">    <span class="built_in">console</span>.log(div1.childNodes[<span class="number">0</span>].nodeName)  <span class="comment">//#text</span></span><br><span class="line">    <span class="built_in">console</span>.log(div1.childNodes[<span class="number">1</span>].nodeName)  <span class="comment">// DIV</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190718/BD4IQWndiCTW.png?imageslim" alt="mark"></p>
+<h4 id="解答-1"><a href="#解答-1" class="headerlink" title="解答"></a>解答</h4><ul>
+<li><p>DOM 是哪种基本的数据结构</p>
+<ul>
+<li>树</li>
+</ul>
+</li>
+<li><p>DOM 操作的常用 API 有哪些</p>
+<ul>
+<li>获取 DOM 节点，以及节点的 property 和 Attribute</li>
+<li>获取父节点，获取子节点</li>
+<li>新增节点，删除节点</li>
+</ul>
+</li>
+<li><p>DOM 节点的 Attribute 和 property 有何区别</p>
+<ul>
+<li>property 只是一个 JS 对象的属性的修改</li>
+<li>Attribute 是对 html 标签属性的修改</li>
+</ul>
+</li>
+</ul>
+<h4 id="重点总结"><a href="#重点总结" class="headerlink" title="重点总结"></a>重点总结</h4><ul>
+<li>DOM 本质</li>
+<li>DOM 节点操作</li>
+<li>DOM 结构操作</li>
+</ul>
+<h2 id="5-3-事件绑定"><a href="#5-3-事件绑定" class="headerlink" title="5-3 事件绑定"></a>5-3 事件绑定</h2><blockquote>
+<p>JavaScript 绑定事件的三种方式</p>
+</blockquote>
+<h3 id="JavaScript-绑定事件的三种方式："><a href="#JavaScript-绑定事件的三种方式：" class="headerlink" title="JavaScript 绑定事件的三种方式："></a>JavaScript 绑定事件的三种方式：</h3><ul>
+<li>使用内联</li>
+<li>使用<code>.onclick</code>的方式</li>
+<li>使用事件监听<code>addEventListener</code>的方式</li>
+</ul>
+<h4 id="内联"><a href="#内联" class="headerlink" title="内联"></a>内联</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;按钮&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(1);&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这种方式就是在一个元素上面直接绑定了一个点击<code>onclick</code>事件，此事件为<a href="https://link.juejin.im/?target=https://baike.baidu.com/item/DOM/50288?fr=aladdin">DOM 0 级标准</a>。同时，这个事件的优先级是最高的。</p>
+<h4 id="使用对象-事件的形式"><a href="#使用对象-事件的形式" class="headerlink" title="使用对象.事件的形式"></a>使用对象.事件的形式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;button&quot;</span> value=<span class="string">&quot;按钮&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> bt = <span class="built_in">document</span>.getElementsBytagname(<span class="string">&quot;input&quot;</span>)[<span class="number">0</span>];</span><br><span class="line">	bt.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="number">2</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用这种形式也是可以给一个 DOM 元素添加上一个事件。这个也是<a href="https://link.juejin.im/?target=https://baike.baidu.com/item/DOM/50288?fr=aladdin">DOM 0 级标准</a>。</p>
+<h4 id="以上的弊端"><a href="#以上的弊端" class="headerlink" title="以上的弊端"></a>以上的弊端</h4><p>以上两种方式都是存在一个弊端的，就是一个元素只能添加一个事件。第一种就不用说了，写在行内就一个属性。至于第二种，有的网友可能会说我可以再写一个，比如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;button&quot;</span> value=<span class="string">&quot;按钮&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> bt = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;input&quot;</span>)[<span class="number">0</span>];</span><br><span class="line">    bt.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="number">2</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    bt.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="number">3</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190718/u7dGQvDbEuTR.gif" alt="mark"></p>
+<p>写是可以这么写。那么我们先来看一看这个写法的意思，这种写法的本质就是在一个对象上添加一个属性，就上面的例子，就是在<code>bt</code>这个对象上添加一个<code>onclick</code>属性。那么，如果在之后的代码中也存在<code>bt.onclcik</code>，只会吧前面的给覆盖了。所以这样的写法也只能添加一个事件。</p>
+<p>那么，问题来了。我要给一个元素（DOM 对象）添加两个甚至是多个事件，使用什么呢？此时，就需要使用<code>addEventListener</code>的方式来添加事件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;button&quot;</span> value=<span class="string">&quot;按钮&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> bt = <span class="built_in">document</span>.getElementsBytagname(<span class="string">&quot;input&quot;</span>)[<span class="number">0</span>];</span><br><span class="line">	bt.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="number">1</span>)</span><br><span class="line">	&#125;)</span><br><span class="line">	bt.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="number">2</span>)</span><br><span class="line">	&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190718/fH7NDlrt0vLr.gif" alt="mark"></p>
+<p>上面的方式就可以给一个 DOM 对象绑定一个或者是多个事件。<strong>强烈推荐使用这一种绑定事件的方式</strong>。 使用<code>addEventListener</code>的方式还可以拥有第三个参数。 <a target="_blank" rel="noopener" href="https://www.runoob.com/jsref/met-element-addeventlistener.html">参看</a></p>
+<p><strong>三个参数</strong> ：</p>
+<ol>
+<li>事件类型，<strong>不需要</strong>添加上<code>on</code></li>
+<li>事件函数</li>
+<li>是否捕获（布尔值），默认是<code>false</code>，即不捕获，那就是冒泡。</li>
+</ol>
+<h3 id="捕获和冒泡"><a href="#捕获和冒泡" class="headerlink" title="捕获和冒泡"></a>捕获和冒泡</h3><h4 id="捕获"><a href="#捕获" class="headerlink" title="捕获"></a>捕获</h4><p><img src="http://static.zxinc520.com/blog/20190718/VLE5T5uzApOX.png?imageslim" alt="mark"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;a&quot;</span>&gt;</span></span><br><span class="line">  a</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;b&quot;</span>&gt;</span></span><br><span class="line">    b</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;c&quot;</span>&gt;</span>c<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> a = <span class="built_in">document</span>.getElementById(<span class="string">&quot;a&quot;</span>);</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> b = <span class="built_in">document</span>.getElementById(<span class="string">&quot;b&quot;</span>);</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> c = <span class="built_in">document</span>.getElementById(<span class="string">&quot;c&quot;</span>);</span></span><br><span class="line"><span class="javascript">  <span class="comment">// 捕获</span></span></span><br><span class="line">  a.addEventListener(</span><br><span class="line"><span class="javascript">    <span class="string">&quot;click&quot;</span>,</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      alert(<span class="string">&quot;b-a&quot;</span>);</span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="javascript">    <span class="literal">true</span></span></span><br><span class="line">  );</span><br><span class="line">  b.addEventListener(</span><br><span class="line"><span class="javascript">    <span class="string">&quot;click&quot;</span>,</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      alert(<span class="string">&quot;b-b&quot;</span>);</span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="javascript">    <span class="literal">true</span></span></span><br><span class="line">  );</span><br><span class="line">  c.addEventListener(</span><br><span class="line"><span class="javascript">    <span class="string">&quot;click&quot;</span>,</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      alert(<span class="string">&quot;b-c&quot;</span>);</span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="javascript">    <span class="literal">true</span></span></span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="comment">//运行结果：点击c时，上面的代码的执行顺序：b-a，b-b，b-c</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="冒泡"><a href="#冒泡" class="headerlink" title="冒泡"></a>冒泡</h4><p><img src="http://static.zxinc520.com/blog/20190718/eVyMTBdrppfb.png?imageslim" alt="mark"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;a&quot;</span>&gt;</span><br><span class="line">    a</span><br><span class="line">    &lt;div id=<span class="string">&quot;b&quot;</span>&gt;</span><br><span class="line">        b</span><br><span class="line">        &lt;div id=<span class="string">&quot;c&quot;</span>&gt;c&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"> 	<span class="keyword">var</span> a = <span class="built_in">document</span>.getElementById(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">document</span>.getElementById(<span class="string">&quot;b&quot;</span>);</span><br><span class="line">    <span class="keyword">var</span> c = <span class="built_in">document</span>.getElementById(<span class="string">&quot;c&quot;</span>);</span><br><span class="line">      <span class="comment">// 冒泡</span></span><br><span class="line">    a.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">&quot;m-a&quot;</span>)</span><br><span class="line">    &#125;,<span class="literal">false</span>)</span><br><span class="line">    b.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">&quot;m-b&quot;</span>)</span><br><span class="line">    &#125;,<span class="literal">false</span>)</span><br><span class="line">    c.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">&quot;m-c&quot;</span>)</span><br><span class="line">    &#125;,<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//运行结果：点击c时，上面的代码的执行顺序：m-c，m-b，m-a</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="停止传播"><a href="#停止传播" class="headerlink" title="停止传播"></a>停止传播</h4><p>使用<code>stopPropagation</code>可以阻止事件的<strong>传播</strong>。不能使用<code>return false</code> ，阻止捕获也是一样，添加之后就不会在继续往下传递了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 阻止冒泡</span></span><br><span class="line">c.addEventListener(</span><br><span class="line">  <span class="string">&quot;click&quot;</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;m-c&quot;</span>);</span><br><span class="line">    e.stopPropagation(); <span class="comment">// 此处阻止传播</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 此时的顺序：b-a,b-c,m-c。不会传递，后面的不会执行了</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="关于使用addEventListener"><a href="#关于使用addEventListener" class="headerlink" title="关于使用addEventListener"></a>关于使用<code>addEventListener</code></h4><p><strong>由于<code>addEventListener</code>单词太长：</strong> 所以封装一下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addEvent</span>(<span class="params">ele, type, fn</span>) </span>&#123;</span><br><span class="line">  ele.addEventListener(type, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    fn(e);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="关于事件代理（委托）"><a href="#关于事件代理（委托）" class="headerlink" title="关于事件代理（委托）"></a>关于事件代理（委托）</h4><p>如果你要给每一个<code>li</code>标签添加一个点击事件，弹出每一个<code>li</code>的索引值</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>list-1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>list-2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>list-3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>list-4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>闭包：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oLis = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;li&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; oLis.length; i++) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">    addEvent(oLis[i], <span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">      alert(i);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为你的<code>li</code>的个数可能发生改变，如果是这样的话，可能会出一些问题。</p>
+<p>事件代理代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oBox = <span class="built_in">document</span>.getElementById(<span class="string">&quot;box&quot;</span>);</span><br><span class="line"></span><br><span class="line">addEvent(oBox, <span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> target = e.target;</span><br><span class="line">  <span class="comment">// 判断点击的是li</span></span><br><span class="line">  <span class="keyword">if</span> (target.nodeName == <span class="string">&quot;LI&quot;</span>) &#123;</span><br><span class="line">    alert(target.innerHTML);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这样也是可以的，不过此时的<code>addEvent</code>函数点击的时候就需要在<code>fn</code>里面判断点击的是哪一个标签。为了更好的使用<code>addEvent</code>，我们可以改进一下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addEvent</span>(<span class="params">ele, type, selector, fn</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 如果只有三个参数，那么3,4互换</span></span><br><span class="line">  <span class="keyword">if</span> (fn == <span class="literal">null</span>) &#123;</span><br><span class="line">    fn = selector;</span><br><span class="line">    selector = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  ele.addEventListener(type, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> target;</span><br><span class="line">    <span class="keyword">if</span> (selector) &#123;</span><br><span class="line">      <span class="comment">//  代理</span></span><br><span class="line">      target = e.target;</span><br><span class="line">      <span class="keyword">if</span> (target.matches(selector)) &#123;</span><br><span class="line">        fn.call(target.e);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 不代理</span></span><br><span class="line">      fn(e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这时点击<code>li</code>弹出 innerHTML 就可以这样实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">addEvent(oBox, <span class="string">&quot;click&quot;</span>, <span class="string">&quot;li&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  alert(<span class="built_in">this</span>.innerHTML);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h4><ol>
+<li><strong>同时 存在捕获与冒泡时</strong> ，<strong>捕获的优先级是高于冒泡的</strong> 。</li>
+<li>没有捕获的时候谁在前面先执行谁</li>
+</ol>
+<p>如果要取消一个使用<code>addEventListener</code>绑定的事件函数，使用<code>removeEventListener</code>可以移除事件。</p>
+<h4 id="解答-2"><a href="#解答-2" class="headerlink" title="解答"></a>解答</h4><ul>
+<li>编写一个通用的事件监听函数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindEvent</span>(<span class="params">elem, type, seletor, fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (fn == <span class="literal">null</span>) &#123;</span><br><span class="line">    fn = selector;</span><br><span class="line">    seletor = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  elem.addEventListener(type, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> target;</span><br><span class="line">    <span class="keyword">if</span> (seletor) &#123;</span><br><span class="line">      target = e.target;</span><br><span class="line">      <span class="keyword">if</span> (target.matches(seletor)) &#123;</span><br><span class="line">        fn.call(target, e);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      fn(e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>描述事件冒泡的流程</p>
+<ul>
+<li>DOM 树形结构</li>
+<li>事件冒泡</li>
+<li>阻止冒泡</li>
+<li>冒泡的应用</li>
+</ul>
+</li>
+<li><p>对于一个无线下拉加载图片的页面，如何给每个图片绑定事件</p>
+<ul>
+<li>使用代理</li>
+<li>知道代理的两个优点</li>
+</ul>
+</li>
+</ul>
+<h4 id="重点总结-1"><a href="#重点总结-1" class="headerlink" title="重点总结"></a>重点总结</h4><ul>
+<li>通用事件绑定</li>
+<li>事件冒泡</li>
+<li>代理</li>
+</ul>
+<h2 id="5-4-Ajax"><a href="#5-4-Ajax" class="headerlink" title="5-4 Ajax"></a>5-4 Ajax</h2><blockquote>
+<p>题目</p>
+<p>知识点</p>
+<p>题目</p>
+</blockquote>
+<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><ul>
+<li>手动编写一个 ajax，不依赖第三方库</li>
+<li>跨域的几种实现方式</li>
+</ul>
+<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>XMLHttpRequest</li>
+<li>状态码说明</li>
+<li>跨域</li>
+</ul>
+<h4 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h4><blockquote>
+<p>使用 XMLHttpRequest (XHR)对象可以与服务器交互。您可以从 URL 获取数据，而无需让整个的页面刷新。这使得 Web 页面可以只更新页面的局部，而不影响用户的操作。XMLHttpRequest 在 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/AJAX">Ajax</a> 编程中被大量使用</p>
+<p>尽管名称如此，XMLHttpRequest 可以用于获取任何类型的数据，而不仅仅是 XML，它还支持 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP">HTTP</a>以外的协议(包括文件和 ftp)。</p>
+<p>如果您的通信需要从服务器接收事件或消息数据，请考虑通过<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventSource"><code>EventSource</code></a>接口使用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events">server-sent events</a>。对于 full-duplex 通信， <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a> 可能是更好的选择。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest">可参考</a></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;/api&quot;</span>, <span class="literal">false</span>); <span class="comment">//false 使用异步</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//这里是函数异步执行，可参考之前 JS 基础中的异步 模块</span></span><br><span class="line">  <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.status == <span class="number">200</span>) &#123;</span><br><span class="line">      alert(xhr.responseText);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="IE-兼容性问题"><a href="#IE-兼容性问题" class="headerlink" title="IE 兼容性问题"></a>IE 兼容性问题</h4><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/mlb2er/3miu1pxk.html">有意向者可参考</a></p>
+</blockquote>
+<ul>
+<li>IE 低版本使用 ActiveXObject，和 W3C 标准不一样</li>
+<li>IE 低版本使用量非常少，很多网站都早已不支持</li>
+<li>建议对 IE 低版本的兼容性：<strong>了解即可，无需深究</strong> 。</li>
+<li>如果遇到对 IE 低版本要求苛刻的面试，果断放弃</li>
+</ul>
+<h4 id="readyState-状态码说明"><a href="#readyState-状态码说明" class="headerlink" title="readyState 状态码说明"></a>readyState 状态码说明</h4><blockquote>
+<p>readyState 是 XMLHttpRequest 对象的一个属性，用来标识当前 XMLHttpRequest 对象处于什么状态。<br>readyState 总共有 5 个状态值，分别为 0~4，每个值代表了不同的含义</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>：未初始化，还没有调用 send()方法</span><br><span class="line"><span class="number">1</span>：载入，已调用send()方法，XMLHttpRequest对象开始发送请求</span><br><span class="line"><span class="number">2</span>：载入完成，send()方法执行完成，已经接收到全部的相应内容</span><br><span class="line"><span class="number">3</span>：交互，正在解析响应内容</span><br><span class="line"><span class="number">4</span>：完成，响应内容解析完成，可以在客户端调用了</span><br></pre></td></tr></table></figure>
+
+<h4 id="status-状态码说明"><a href="#status-状态码说明" class="headerlink" title="status 状态码说明"></a>status 状态码说明</h4><blockquote>
+<p>status 是 XMLHttpRequest 对象的一个属性，表示响应的 HTTP 状态码</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/liu-fei-fei/p/5618782.html">详细参考</a></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>xx：信息响应类，表示接收到请求并且继续处理</span><br><span class="line"><span class="number">2</span>xx：处理成功响应类，表示动作被成功接收、理解和接受</span><br><span class="line"><span class="number">3</span>xx：重定向响应类，为了完成指定的动作，必须接受进一步处理</span><br><span class="line"><span class="number">4</span>xx：客户端错误，客户请求包含语法错误或者是不能正确执行</span><br><span class="line"><span class="number">5</span>xx：服务端错误，服务器不能正确执行一个正确的请求</span><br><span class="line"></span><br><span class="line"><span class="number">200</span>——交易成功</span><br><span class="line"><span class="number">404</span>——没有发现文件、查询或URl</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-5-跨域"><a href="#5-5-跨域" class="headerlink" title="5-5 跨域"></a>5-5 跨域</h2><blockquote>
+<p><strong>定义</strong> ：跨域是指从一个域名的网页去请求另一个域名的资源。比如从<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 页面去请求 <a target="_blank" rel="noopener" href="http://www.google.com/">www.google.com</a> 的资源。但是一般情况下不能这么做，它是由浏览器的同源策略造成的，是浏览器对<a href="https://link.juejin.im/?target=http://lib.csdn.net/base/javascript">JavaScript</a>施加的安全限制。跨域的严格一点的定义是：只要 协议，域名，端口有任何一个的不同，就被当作是跨域</p>
+<p><strong>所谓同源是指，域名，协议，端口均相同。</strong>这里说的 js 跨域是指通过 js 在不同的域之间进行数据传输或通信，比如用 ajax 向一个不同的域请求数据，或者通过 js 获取页面中不同域的框架中(iframe)的数据。</p>
+<p>概念：<strong>只要协议、域名、端口有任何一个不同</strong> ，都被当作是不同的域。算作 跨域。</p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015597029">参考</a></p>
+<p>http 默认端口：80</p>
+<p>https 默认端口：443</p>
+</blockquote>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li>说明什么是跨域</li>
+<li>JSONP</li>
+<li>服务器端设置 http header</li>
+</ul>
+<h4 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h4><p><strong>跨域是</strong>指一个<strong>域</strong>下的文档或脚本试图去请求另一个<strong>域</strong>下的资源，这里<strong>跨域是</strong>广义的。 其实我们通常所说的<strong>跨域是</strong>狭义的，<strong>是</strong>由浏览器同源策略限制的一类请求场景。</p>
+<h4 id="可以跨域的三个标签"><a href="#可以跨域的三个标签" class="headerlink" title="可以跨域的三个标签"></a>可以跨域的三个标签</h4><ul>
+<li>&lt;**img src=xxx** &gt; 用于打点统计，统计网站可能是其它域</li>
+<li>&lt;**link href=xxxx** &gt; 可以使用 CDN,CDN 也是其它域</li>
+<li>&lt;**script src=xxx** &gt; 可以使用 CDN, 可以用于 <strong>JSONP</strong></li>
+</ul>
+<h4 id="跨域注意事项"><a href="#跨域注意事项" class="headerlink" title="跨域注意事项"></a>跨域注意事项</h4><ul>
+<li>所有的跨域请求都必须经过信息提供方允许</li>
+<li>如果未经允许即可获取，那是浏览器同源策略出现漏洞</li>
+</ul>
+<h3 id="JSONP-实现原理"><a href="#JSONP-实现原理" class="headerlink" title="JSONP 实现原理"></a>JSONP 实现原理</h3><blockquote>
+<p>jsonp 是一种跨域通信的手段</p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000007665361">参考 1</a> <a target="_blank" rel="noopener" href="https://github.com/qianlongo/zepto-analysis/issues/4">参考 2</a></p>
+</blockquote>
+<p><strong>jsonp 是一种跨域通信的手段，它的原理其实很简单：</strong></p>
+<ol>
+<li>客户端利用<code>script</code>标签可以跨域请求资源的性质，向网页中动态插入<code>script</code>标签，来向服务端请求数据。</li>
+<li>服务端会解析请求的<code>url</code>,至少拿到一个回调函数(比如<code>callback=myCallback</code>)参数,之后将数据放入其中返回给客户端。</li>
+<li>当然 jsonp 不同于平常的<code>ajax</code>请求,它仅仅支持 get 类型的方式</li>
+</ol>
+<h4 id="实现流程"><a href="#实现流程" class="headerlink" title="实现流程"></a>实现流程</h4><ol>
+<li><p>设定一个 script 标签</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;http://jsonp.js?callback=xxx&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>callback 定义了一个函数名，而远程服务端通过调用指定的函数并传入参数来实现传递参数，将<code>fn(response)</code>传递回客户端</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$callback = !<span class="keyword">empty</span>($_GET[<span class="string">&#x27;callback&#x27;</span>]) ? $_GET[<span class="string">&#x27;callback&#x27;</span>] : <span class="string">&#x27;callback&#x27;</span>;</span><br><span class="line"><span class="keyword">echo</span> $callback.<span class="string">&#x27;(.json_encode($data).)&#x27;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>客户端接收到返回的 js 脚本，开始解析和执行<code>fn(response)</code></p>
+</li>
+</ol>
+<h4 id="服务端设置-http-header"><a href="#服务端设置-http-header" class="headerlink" title="服务端设置 http header"></a>服务端设置 http header</h4><ul>
+<li>另外一个解决跨域的简洁方法，需要服务器端来做</li>
+<li>但是作为交互方，我们必须知道这个方法</li>
+<li>是将来解决跨域问题的一个趋势</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190718/YNGAeXPTUx6I.png?imageslim" alt="mark"></p>
+<h4 id="重点总结-2"><a href="#重点总结-2" class="headerlink" title="重点总结"></a>重点总结</h4><ul>
+<li>XMLHttpRequest</li>
+<li>状态码说明</li>
+<li>跨域</li>
+</ul>
+<h2 id="5-6-存储"><a href="#5-6-存储" class="headerlink" title="5-6 存储"></a>5-6 存储</h2><blockquote>
+<p>题目</p>
+<p>知识点</p>
+<p>解答</p>
+</blockquote>
+<h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><ul>
+<li>请描述一下 cookie，sessionStorage 和 localStorage 的区别？</li>
+</ul>
+<h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>cookie</li>
+<li>sessionStorage 和 localStorage</li>
+</ul>
+<h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><blockquote>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5b57dba3f265da0fb018741f">可参考</a></p>
+</blockquote>
+<ul>
+<li>本身用于客户端和服务器端通信</li>
+<li>但是它有本地储存的功能，于是就被 <strong>借用</strong></li>
+<li>使用 document.cookie = … 获取和修改即可</li>
+</ul>
+<h4 id="cookie-用于储存的缺点"><a href="#cookie-用于储存的缺点" class="headerlink" title="cookie 用于储存的缺点"></a>cookie 用于储存的缺点</h4><ul>
+<li><p><strong>储存量太小</strong> ，Cookie`数量和长度的限制。每个 domain 最多只能有 20 条 cookie，每个 cookie 长度不能超过 4KB，否则会被截掉。在当今新的浏览器和客户端设备版本中，支持 8192 字节的 Cookie 大小已愈发常见。</p>
+</li>
+<li><p>所有 http 请求都带着，会<strong>影响获取资源的效率</strong></p>
+</li>
+<li><p>用户配置为禁用。有些用户禁用了浏览器或客户端设备接收 Cookie 的能力，因此限制了这一功能</p>
+</li>
+<li><p>由于在 HTTP 请求中的 cookie 是明文传递的，潜在的安全风险，Cookie 可能会被篡改</p>
+</li>
+<li><p>有些状态不可能保存在客户端</p>
+</li>
+<li><p>cookie 会被附加在每个 HTTP 请求中，所以无形中增加了流量</p>
+</li>
+<li><p>cookie 一般不可跨域使用</p>
+</li>
+<li><p>没有封装好的 setCookie 和 getCookie 方法，需要开发者自省封装</p>
+</li>
+</ul>
+<h3 id="sessionStorage-和-localStorage"><a href="#sessionStorage-和-localStorage" class="headerlink" title="sessionStorage 和 localStorage"></a>sessionStorage 和 localStorage</h3><ul>
+<li>HTML5 专门为储存而设计，最大容量 5M</li>
+<li>API 简答易用</li>
+<li>localStorage.setItem(key, value); localStorage.getItem(key, value);</li>
+</ul>
+<h4 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h4><p><strong>localStorage</strong> 生命周期是永久，这意味着除非用户显示在浏览器提供的 UI 上清除 localStorage 信息，否则这些信息将永远存在。</p>
+<p><strong>sessionStorage</strong> 生命周期为当前窗口或标签页，一旦窗口或标签页被永久关闭了，那么所有通过 sessionStorage 存储的数据也就被清空了。</p>
+<p>不同浏览器无法共享 localStorage 或 sessionStorage 中的信息。相同浏览器的不同页面间可以共享相同的 localStorage（页面属于相同域名和端口），但是不同页面或标签页间无法共享 sessionStorage 的信息。这里需要注意的是，页面及标 签页仅指顶级窗口，如果一个标签页包含多个 iframe 标签且他们属于同源页面，那么他们之间是可以共享 sessionStorage 的。</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+<li>iOS safari 隐藏模式下</li>
+<li>localStorage.getItem 会报错</li>
+<li>建议 统一使用 try-catch 封装</li>
+</ul>
+<h3 id="解答-3"><a href="#解答-3" class="headerlink" title="解答"></a>解答</h3><ul>
+<li>请描述一下 cookie，sessionStorage 和 localStorage 的区别？<ul>
+<li>容量</li>
+<li>是否携带到 ajax 中</li>
+<li>API 易用性</li>
+</ul>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2019/08/04/JS-Web-API/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BOM/" rel="tag">BOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax-%E8%AF%B7%E6%B1%82/" rel="tag">ajax 请求</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/" rel="tag">事件绑定</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%82%A8%E5%AD%98/" rel="tag">储存</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2019/08/04/JsBasicKnowledge01/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            前端JS基础面试技巧上
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/07/19/OperationEnvironment/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">运行环境</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

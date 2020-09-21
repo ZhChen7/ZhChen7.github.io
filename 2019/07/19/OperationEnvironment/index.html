@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    运行环境 |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-OperationEnvironment"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  运行环境
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/07/19/OperationEnvironment/" class="article-date">
+  <time datetime="2019-07-19T15:06:51.000Z" itemprop="datePublished">2019-07-19</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/">运行环境</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.6k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">6 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h1><blockquote>
+<p>讲解 JS 代码在浏览器中运行的相关问题，例如 <strong>页面加载和渲染</strong>，<strong>性能优化</strong>，<strong>安全性</strong> ，这些类别的题目。</p>
+<p>知识点：</p>
+<p>8-1 页面加载过程</p>
+<p>8-2 性能优化</p>
+</blockquote>
+<ul>
+<li>浏览器就可以通过访问链接来得到页面内容</li>
+<li>通过绘制和渲染，显示出页面的最终的样子</li>
+</ul>
+<h2 id="整个过程中，我们需要考虑什么问题？"><a href="#整个过程中，我们需要考虑什么问题？" class="headerlink" title="整个过程中，我们需要考虑什么问题？"></a>整个过程中，我们需要考虑什么问题？</h2><h3 id="3-个重点"><a href="#3-个重点" class="headerlink" title="3 个重点"></a>3 个重点</h3><ul>
+<li>页面加载过程</li>
+<li>性能优化</li>
+<li>安全性</li>
+</ul>
+<h2 id="8-1-页面加载过程"><a href="#8-1-页面加载过程" class="headerlink" title="8-1 页面加载过程"></a>8-1 页面加载过程</h2><blockquote>
+<p>题目</p>
+<p>知识点</p>
+<p>解答</p>
+</blockquote>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
+<li>从输入 url 到得到 html 的详细过程</li>
+<li>window.onload 和 DOMContentLoaded 的区别？</li>
+</ul>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>加载资源的形式</li>
+<li>加载一个资源的过程</li>
+<li>浏览器渲染页面的过程</li>
+</ul>
+<h4 id="加载资源的形式"><a href="#加载资源的形式" class="headerlink" title="加载资源的形式"></a>加载资源的形式</h4><ul>
+<li>输入 url （或跳转页面）加载 html</li>
+<li>url: <a target="_blank" rel="noopener" href="https://www.imooc.com/">https://www.imooc.com/</a></li>
+<li>加载 html 中的静态资源</li>
+<li>script 标签中资源的加载: &lt;**script src=”/static/jsjquery.js”&gt;&lt;/script** &gt;</li>
+</ul>
+<h4 id="加载一个资源的过程"><a href="#加载一个资源的过程" class="headerlink" title="加载一个资源的过程"></a>加载一个资源的过程</h4><ol>
+<li>浏览器根据 DNS 服务器得到域名的 IP 地址</li>
+<li>向这个 IP 的机器发送 http 请求</li>
+<li>服务器收到、处理并返回 http 请求</li>
+<li>浏览器得到返回内容</li>
+</ol>
+<h4 id="浏览器渲染页面的过程："><a href="#浏览器渲染页面的过程：" class="headerlink" title="浏览器渲染页面的过程："></a>浏览器渲染页面的过程：</h4><p>1.根据 HTML 结构生成 DOM Tree 2.根据 CSS 生成 CSSOM 3.将 DOM 和 CSSOM 整合形成 RenderTree 4.根据 RenderTree 开始渲染和展示 5.遇到&lt;**script** &gt;时，会执行并阻止渲染。</p>
+<h4 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h4><ul>
+<li><strong>为何要把 css 放在 head 中？</strong><ul>
+<li>css 放在 body 标签尾部时, DOMTree 构建完成之后便开始构建 RenderTree, 并计算布局渲染网页, 等加载解析完 css 之后, 开始构建 CSSOMTree, 并和 DOMTree 重新构建 RenderTree, 重新计算布局渲染网页</li>
+<li>css 放在 head 标签中时, 先加载 css, 之后解析 css 构建 CSSOMTree, 于此同时构建 DOMTree, CSSOMTree 和 DOMTree 都构建完毕之后开始构建 RenderTree, 计算布局渲染网页</li>
+</ul>
+</li>
+</ul>
+<p>对比两者, css 放在 head 标签中比 css 放在 body 标签尾部少了一次构建 RenderTree, 一次计算布局和一次渲染网页, 因此性能会更好; 并且 css 放在 body 标签尾部时会在网页中短暂出现”裸奔”的 HTML, 这不利于用户体验</p>
+<hr>
+<ul>
+<li><p><strong>为何要把 js 放在 body 最下面？</strong> ，<u>既然 Dom 树完全生成好后才能显示“没有图片的首屏”，浏览器又必须读完全部 HTML 才能生成完整的 Dom 树，script 标签不放在 body 底部是不是也一样？</u></p>
+<ul>
+<li>—— JS 放在底部可以保证让浏览器优先渲染完现有的 HTML 内容，让用户先看到内容，体验好。另外，JS 执行如果涉及 DOM 操作，得等待 DOM 解析完成才行，JS 放在底部执行时，HTML 肯定都解析成了 DOM 结构。JS 如果放在 HTML 顶部，JS 执行的时候 HTML 还没来得及转换为 DOM 结构，可能会报错。 <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000004292479">JS 一定要放在 Body 的最底部么？聊聊浏览器的渲染机制</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="window-onload-和-DOMContentLoaded"><a href="#window-onload-和-DOMContentLoaded" class="headerlink" title="window.onload 和 DOMContentLoaded"></a>window.onload 和 DOMContentLoaded</h4><p><img src="http://static.zxinc520.com/blog/20190719/sSK9VYP2CSRd.png?imageslim" alt="mark"></p>
+<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><ul>
+<li><p>从输入 url 到得到 html 的详细过程</p>
+<ul>
+<li>浏览器根据 DNS 服务器得到域名的 IP 地址</li>
+<li>向这个 IP 的机器发送 http 请求</li>
+<li>服务器收到、处理并返回 http 请求</li>
+<li>浏览器得到返回内容</li>
+</ul>
+</li>
+<li><p>window.onload 和 DOMContentLoaded 的区别？</p>
+<ul>
+<li>window.onload： 页面的全部资源加载完才会执行，包括图片、视频等</li>
+<li>DOMContentLoaded： DOM 渲染完即可执行，此时图片、视频还没有加载完</li>
+</ul>
+</li>
+</ul>
+<h2 id="8-2-性能优化"><a href="#8-2-性能优化" class="headerlink" title="8-2 性能优化"></a>8-2 性能优化</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5a966bd16fb9a0635172a50a">2018 前端性能优化清单</a></p>
+<p>关于 <strong>性能优化</strong> 是个大的面，这篇文章主要涉及到 <strong>前端</strong> 的几个点，如 <strong>前端性能优化</strong> 的流程、常见技术手段、工具等。</p>
+<p>提及 <strong>前端性能优化</strong> ，大家应该都会想到 <strong>雅虎军规</strong>，本文会结合 <strong>雅虎军规</strong> 融入自己的了解知识，进行的总结和梳理 😜</p>
+</blockquote>
+<h3 id="我们先来看看-👀-雅虎军规-的-35-条-："><a href="#我们先来看看-👀-雅虎军规-的-35-条-：" class="headerlink" title="我们先来看看 👀 雅虎军规 的 35 条 ："></a>我们先来看看 👀 雅虎军规 的 35 条 ：</h3><ul>
+<li>尽量减少 HTTP 请求个数——须权衡</li>
+<li>使用 <strong>CDN</strong>（内容分发网络）</li>
+<li>为文件头指定 Expires 或 Cache-Control ，使内容具有缓存性。</li>
+<li>避免空的 src 和 href</li>
+<li>使用 gzip 压缩内容</li>
+<li>把 CSS 放到顶部</li>
+<li>把 JS 放到底部</li>
+<li>避免使用 CSS 表达式</li>
+<li>将 CSS 和 JS 放到外部文件中</li>
+<li>减少 DNS 查找次数</li>
+<li>精简 CSS 和 JS</li>
+<li>避免跳转</li>
+<li>剔除重复的 JS 和 CSS</li>
+<li>配置 ETags</li>
+<li>使 AJAX 可缓存</li>
+<li>尽早刷新输出缓冲</li>
+<li>使用 GET 来完成 AJAX 请求</li>
+<li>延迟加载</li>
+<li>预加载</li>
+<li>减少 DOM 元素个数</li>
+<li>根据域名划分页面内容</li>
+<li>尽量减少 iframe 的个数</li>
+<li>避免 404</li>
+<li>减少 Cookie 的大小</li>
+<li>使用无 cookie 的域</li>
+<li>减少 DOM 访问</li>
+<li>开发智能事件处理程序</li>
+<li>用 代替 @import</li>
+<li>避免使用滤镜</li>
+<li>优化图像</li>
+<li>优化 CSS Spirite</li>
+<li>不要在 HTML 中缩放图像——须权衡</li>
+<li>favicon.ico 要小而且可缓存</li>
+<li>保持单个内容小于 25K</li>
+<li>打包组件成复合文本</li>
+</ul>
+<hr>
+<ul>
+<li>这本身就是一个综合性的问题</li>
+<li>没有标准答案，如果要非常全面，能写一本书</li>
+<li>只关注核心点，针对面试</li>
+</ul>
+<h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><ul>
+<li>多使用内存、缓存或其他方法</li>
+<li>减少 CPU 计算、减少网络请求</li>
+</ul>
+<h3 id="从哪里入手"><a href="#从哪里入手" class="headerlink" title="从哪里入手"></a>从哪里入手</h3><ul>
+<li>加载页面和静态资源</li>
+<li>页面渲染</li>
+</ul>
+<h3 id="加载资源优化"><a href="#加载资源优化" class="headerlink" title="加载资源优化"></a>加载资源优化</h3><ul>
+<li>静态资源的压缩合并</li>
+<li>静态资源缓存</li>
+<li>使用 CDN 让资源加载更快</li>
+<li>使用 SSR 后端渲染，数据直接输出到 HTML 中</li>
+</ul>
+<h3 id="渲染优化"><a href="#渲染优化" class="headerlink" title="渲染优化"></a>渲染优化</h3><ul>
+<li>CSS 放前面 ，JS 放后面</li>
+<li>懒加载 （图片懒加载、下拉加载更多）</li>
+<li>减少 DOM 查询 ，对 DOM 查询做缓存</li>
+<li>减少 DOM 操作，多个操作尽量合并 在一起执行</li>
+<li>事件节流</li>
+<li>尽早执行操作 （如 DOMContentLoaded）</li>
+</ul>
+<h3 id="优化示例"><a href="#优化示例" class="headerlink" title="优化示例"></a>优化示例</h3><blockquote>
+<p>展示几个优化示例</p>
+</blockquote>
+<h4 id="资源合并"><a href="#资源合并" class="headerlink" title="资源合并"></a>资源合并</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;a.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;b.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;c.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//资源合并</span></span><br><span class="line">&lt;script src=<span class="string">&quot;abc.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h4><ul>
+<li>通过连接名字控制缓存</li>
+<li>&lt;**script src=”adc_1.js”&gt;&lt;/script** &gt;</li>
+<li>只有内容改变的时候，连接名称才会改变</li>
+<li>&lt;**script src=”adc_2.js”&gt;&lt;/script** &gt;</li>
+</ul>
+<h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><blockquote>
+<p>2 个在线的好用的 CDN 网站：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bootcdn.cn/">https://www.bootcdn.cn/</a></p>
+<p><a target="_blank" rel="noopener" href="https://cdnjs.com/">https://cdnjs.com/</a></p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190719/wqVaD4amGTnT.png?imageslim" alt="mark"></p>
+<h4 id="使用-SSR-后端渲染"><a href="#使用-SSR-后端渲染" class="headerlink" title="使用 SSR 后端渲染"></a>使用 SSR 后端渲染</h4><ul>
+<li>现在 Vue React 提出了这样的概念</li>
+<li>其实 jsp php asp 都属于后端渲染</li>
+</ul>
+<h4 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h4><p><img src="http://static.zxinc520.com/blog/20190719/dNHq1Xfe0Ep5.png?imageslim" alt="mark"></p>
+<h4 id="缓存-DOM-查询"><a href="#缓存-DOM-查询" class="headerlink" title="缓存 DOM 查询"></a>缓存 DOM 查询</h4><p><img src="http://static.zxinc520.com/blog/20190719/4xj98cKCzJh9.png?imageslim" alt="mark"></p>
+<h4 id="合并-DOM-插入"><a href="#合并-DOM-插入" class="headerlink" title="合并 DOM 插入"></a>合并 DOM 插入</h4><p><img src="http://static.zxinc520.com/blog/20190719/S7Fvwi6QNApC.png?imageslim" alt="mark"></p>
+<h4 id="事件节流"><a href="#事件节流" class="headerlink" title="事件节流"></a>事件节流</h4><p><img src="http://static.zxinc520.com/blog/20190719/vHApgiVQan6S.png?imageslim" alt="mark"></p>
+<h4 id="尽早操作"><a href="#尽早操作" class="headerlink" title="尽早操作"></a>尽早操作</h4><p><img src="http://static.zxinc520.com/blog/20190719/q8SS7PiiaKI4.png?imageslim" alt="mark"></p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2019/07/19/OperationEnvironment/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B/" rel="tag">加载过程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2019/08/04/JS-Web-API/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            JS-Web-API
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/07/19/DevelopmentEnvironment/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">开发环境</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

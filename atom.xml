@@ -6,7 +6,7 @@
   <link href="https://zhchen7.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhchen7.github.io/"/>
-  <updated>2020-09-21T08:02:10.199Z</updated>
+  <updated>2020-03-23T09:46:34.000Z</updated>
   <id>https://zhchen7.github.io/</id>
   
   <author>
@@ -17,23 +17,613 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://zhchen7.github.io/2020/09/21/hello-world/"/>
-    <id>https://zhchen7.github.io/2020/09/21/hello-world/</id>
-    <published>2020-09-21T08:02:10.198Z</published>
-    <updated>2020-09-21T08:02:10.199Z</updated>
+    <title>手撕代码</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferHandcode/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferHandcode/</id>
+    <published>2020-03-23T09:46:34.000Z</published>
+    <updated>2020-03-23T09:46:34.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;面试专题总结：手撕代码&quot;&gt;&lt;a href=&quot;#面试专题总结：手撕代码&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
+    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    
+    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+    
+    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    
+    <category term="promise" scheme="https://zhchen7.github.io/tags/promise/"/>
+    
+    <category term="手撕代码" scheme="https://zhchen7.github.io/tags/%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>API、数组、跨域、动画、事件</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferAPI/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferAPI/</id>
+    <published>2020-03-23T09:40:43.000Z</published>
+    <updated>2020-03-23T09:40:43.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;面试专题总结：-API、数组、跨域、动画、事件&quot;&gt;&lt;a href=&quot;#面试专题总结：-API、数组、跨域、动画、事件&quot; class=&quot;headerlink&quot; title=&quot;面试专题总结： API、数组、跨域、动画、事件&quot;&gt;&lt;/a&gt;面试专题总结：</summary>
+        
+      
+    
+    
+    
+    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    
+    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+    
+    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    
+    <category term="数组" scheme="https://zhchen7.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="API" scheme="https://zhchen7.github.io/tags/API/"/>
+    
+    <category term="跨域" scheme="https://zhchen7.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+    <category term="动画" scheme="https://zhchen7.github.io/tags/%E5%8A%A8%E7%94%BB/"/>
+    
+    <category term="事件" scheme="https://zhchen7.github.io/tags/%E4%BA%8B%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6 知识点</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferES6/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferES6/</id>
+    <published>2020-03-23T09:38:45.000Z</published>
+    <updated>2020-03-23T09:38:45.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;面试专题总结：ES6-知识点&quot;&gt;&lt;a href=&quot;#面试专题总结：ES6-知识点&quot; class=&quot;headerlink&quot; title=&quot;面试专题总结：ES6 知识点&quot;&gt;&lt;/a&gt;面试专题总结：ES6</summary>
+        
+      
+    
+    
+    
+    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    
+    <category term="ES6 语法" scheme="https://zhchen7.github.io/categories/JS/ES6-%E8%AF%AD%E6%B3%95/"/>
+    
+    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    
+    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+    
+    <category term="ES6" scheme="https://zhchen7.github.io/tags/ES6/"/>
+    
+    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>变量类型和计算</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferVariabletypesandcalculations/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferVariabletypesandcalculations/</id>
+    <published>2020-03-23T09:35:29.000Z</published>
+    <updated>2020-03-23T09:35:29.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;JavaScript-变量类型和计算&quot;&gt;&lt;a href=&quot;#JavaScript-变量类型和计算&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 变量类型和计算&quot;&gt;&lt;/a&gt;JavaScript</summary>
+        
+      
+    
+    
+    
+    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    
+    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    
+    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+    <category term="变量类型和计算" scheme="https://zhchen7.github.io/categories/JS/%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%AE%A1%E7%AE%97/"/>
+    
+    
+    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>this 指向问题</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferthis/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferthis/</id>
+    <published>2020-03-23T09:35:29.000Z</published>
+    <updated>2020-03-23T09:35:29.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;专题总结：this-指向问题&quot;&gt;&lt;a href=&quot;#专题总结：this-指向问题&quot; class=&quot;headerlink&quot; title=&quot;专题总结：this 指向问题&quot;&gt;&lt;/a&gt;专题总结：this 指向问题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;拿到</summary>
+        
+      
+    
+    
+    
+    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    
+    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    
+    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+    <category term="this 指向问题" scheme="https://zhchen7.github.io/categories/JS/this-%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css 面试考点全面总结</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOffercss/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOffercss/</id>
+    <published>2020-03-23T09:22:32.000Z</published>
+    <updated>2020-03-23T09:22:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;css-面试考点全面总结&quot;&gt;&lt;a href=&quot;#css-面试考点全面总结&quot; class=&quot;headerlink&quot; title=&quot;css 面试考点全面总结&quot;&gt;&lt;/a&gt;css 面试考点全面总结&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;拿到 字节跳动实习生 offer</summary>
+        
+      
+    
+    
+    
+    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    
+    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+    
+    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原型和原型链</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferPrototypesandprototypechains/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferPrototypesandprototypechains/</id>
+    <published>2020-03-23T09:18:21.000Z</published>
+    <updated>2020-03-23T09:18:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;JavaScript-原型和原型链&quot;&gt;&lt;a href=&quot;#JavaScript-原型和原型链&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 原型和原型链&quot;&gt;&lt;/a&gt;JavaScript</summary>
+        
+      
+    
+    
+    
+    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    
+    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    
+    <category term="JS 三座大山" scheme="https://zhchen7.github.io/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    
+    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+    
+    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    
+    <category term="JS 三座大山" scheme="https://zhchen7.github.io/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>作用域和闭包</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferScopeandclosure/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferScopeandclosure/</id>
+    <published>2020-03-23T09:18:21.000Z</published>
+    <updated>2020-03-23T09:18:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;专题总结：作用域和闭包&quot;&gt;&lt;a href=&quot;#专题总结：作用域和闭包&quot; class=&quot;headerlink&quot; title=&quot;专题总结：作用域和闭包&quot;&gt;&lt;/a&gt;专题总结：作用域和闭包&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;拿到 字节跳动实习生 offer</summary>
+        
+      
+    
+    
+    
+    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    
+    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    
+    <category term="JS 三座大山" scheme="https://zhchen7.github.io/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    
+    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+    
+    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    
+    <category term="JS 三座大山" scheme="https://zhchen7.github.io/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>单线程和异步</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferSinglethreadedandasynchronous/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferSinglethreadedandasynchronous/</id>
+    <published>2020-03-23T09:18:21.000Z</published>
+    <updated>2020-03-23T09:18:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;专题总结：单线程和异步&quot;&gt;&lt;a href=&quot;#专题总结：单线程和异步&quot; class=&quot;headerlink&quot; title=&quot;专题总结：单线程和异步&quot;&gt;&lt;/a&gt;专题总结：单线程和异步&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;拿到 字节跳动实习生 offer</summary>
+        
+      
+    
+    
+    
+    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    
+    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    
+    <category term="JS 三座大山" scheme="https://zhchen7.github.io/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    
+    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+    
+    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    
+    <category term="JS 三座大山" scheme="https://zhchen7.github.io/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html 面试考点全面总结下篇</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferhtml2/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferhtml2/</id>
+    <published>2020-03-23T09:18:21.000Z</published>
+    <updated>2020-03-23T09:18:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;html-面试考点全面总结下篇&quot;&gt;&lt;a href=&quot;#html-面试考点全面总结下篇&quot; class=&quot;headerlink&quot; title=&quot;html 面试考点全面总结下篇&quot;&gt;&lt;/a&gt;html 面试考点全面总结下篇&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;拿到</summary>
+        
+      
+    
+    
+    
+    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    
+    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+    
+    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    
+    <category term="html" scheme="https://zhchen7.github.io/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html 面试考点全面总结上篇</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferhtml1/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferhtml1/</id>
+    <published>2020-03-23T09:14:53.000Z</published>
+    <updated>2020-03-23T09:14:53.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;html-面试考点全面总结上篇&quot;&gt;&lt;a href=&quot;#html-面试考点全面总结上篇&quot; class=&quot;headerlink&quot; title=&quot;html 面试考点全面总结上篇&quot;&gt;&lt;/a&gt;html 面试考点全面总结上篇&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;拿到</summary>
+        
+      
+    
+    
+    
+    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    
+    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    
+    
+    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    
+    <category term="html" scheme="https://zhchen7.github.io/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式</title>
+    <link href="https://zhchen7.github.io/2019/10/10/regular_expression/"/>
+    <id>https://zhchen7.github.io/2019/10/10/regular_expression/</id>
+    <published>2019-10-10T06:19:47.000Z</published>
+    <updated>2019-10-10T06:19:47.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;正则表达式&quot;&gt;&lt;a href=&quot;#正则表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式&quot;&gt;&lt;/a&gt;正则表达式&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;正则表达式是用于匹配字符串中字符组合的模式。在 JavaScript</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="https://zhchen7.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="正则表达式" scheme="https://zhchen7.github.io/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    
+    <category term="正则表达式" scheme="https://zhchen7.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟DOM</title>
+    <link href="https://zhchen7.github.io/2019/09/20/virtualDOM/"/>
+    <id>https://zhchen7.github.io/2019/09/20/virtualDOM/</id>
+    <published>2019-09-20T06:47:32.000Z</published>
+    <updated>2019-09-20T06:47:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;虚拟-DOM&quot;&gt;&lt;a href=&quot;#虚拟-DOM&quot; class=&quot;headerlink&quot; title=&quot;虚拟 DOM&quot;&gt;&lt;/a&gt;虚拟 DOM&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;本章分析了&lt;strong&gt;虚拟 DOM&lt;/strong&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="虚拟DOM" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/%E8%99%9A%E6%8B%9FDOM/"/>
+    
+    
+    <category term="虚拟DOM" scheme="https://zhchen7.github.io/tags/%E8%99%9A%E6%8B%9FDOM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端面试每日三加一</title>
+    <link href="https://zhchen7.github.io/2019/09/20/three-plus-one-a-day/"/>
+    <id>https://zhchen7.github.io/2019/09/20/three-plus-one-a-day/</id>
+    <published>2019-09-20T06:47:32.000Z</published>
+    <updated>2019-09-20T06:47:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前端面试每日三加一&quot;&gt;&lt;a href=&quot;#前端面试每日三加一&quot; class=&quot;headerlink&quot; title=&quot;前端面试每日三加一&quot;&gt;&lt;/a&gt;前端面试每日三加一&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;待更新状态&lt;/p&gt;
+&lt;p&gt;今天 2019/12/24 ~</summary>
+        
+      
+    
+    
+    
+    <category term="牛人面试题" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    <category term="前端面试每日三加一" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%AF%8F%E6%97%A5%E4%B8%89%E5%8A%A0%E4%B8%80/"/>
+    
+    
+    <category term="牛人面试题" scheme="https://zhchen7.github.io/tags/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>木易杨每日一题</title>
+    <link href="https://zhchen7.github.io/2019/09/20/muyiyang/"/>
+    <id>https://zhchen7.github.io/2019/09/20/muyiyang/</id>
+    <published>2019-09-20T06:45:02.000Z</published>
+    <updated>2019-09-20T06:45:02.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;每日一题&quot;&gt;&lt;a href=&quot;#每日一题&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="牛人面试题" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    <category term="木易杨每日一题" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%9C%A8%E6%98%93%E6%9D%A8%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+    <category term="牛人面试题" scheme="https://zhchen7.github.io/tags/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Step-By-Step】一周面试题深入解析</title>
+    <link href="https://zhchen7.github.io/2019/09/20/Step-By-Step/"/>
+    <id>https://zhchen7.github.io/2019/09/20/Step-By-Step/</id>
+    <published>2019-09-20T06:43:04.000Z</published>
+    <updated>2019-09-20T06:43:04.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;【Step-By-Step】一周面试题深入解析-周刊-01&quot;&gt;&lt;a href=&quot;#【Step-By-Step】一周面试题深入解析-周刊-01&quot; class=&quot;headerlink&quot; title=&quot;【Step-By-Step】一周面试题深入解析 / 周刊</summary>
+        
+      
+    
+    
+    
+    <category term="牛人面试题" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    <category term="Step-By-Step" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/Step-By-Step/"/>
+    
+    
+    <category term="牛人面试题" scheme="https://zhchen7.github.io/tags/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试中的复杂度分析</title>
+    <link href="https://zhchen7.github.io/2019/09/11/ComplexityAnalysis/"/>
+    <id>https://zhchen7.github.io/2019/09/11/ComplexityAnalysis/</id>
+    <published>2019-09-11T11:56:35.000Z</published>
+    <updated>2019-09-11T11:56:35.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;面试中的复杂度分析&quot;&gt;&lt;a href=&quot;#面试中的复杂度分析&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="玩转算法面试" scheme="https://zhchen7.github.io/categories/%E7%8E%A9%E8%BD%AC%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/"/>
+    
+    
+    <category term="算法面试" scheme="https://zhchen7.github.io/tags/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="算法" scheme="https://zhchen7.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="大 O？" scheme="https://zhchen7.github.io/tags/%E5%A4%A7-O%EF%BC%9F/"/>
+    
+    <category term="复杂度分析" scheme="https://zhchen7.github.io/tags/%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法面试到底是什么鬼</title>
+    <link href="https://zhchen7.github.io/2019/09/09/AlgorithmForTheInterview01/"/>
+    <id>https://zhchen7.github.io/2019/09/09/AlgorithmForTheInterview01/</id>
+    <published>2019-09-09T02:43:24.000Z</published>
+    <updated>2019-09-09T02:43:24.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;算法面试到底是什么鬼&quot;&gt;&lt;a href=&quot;#算法面试到底是什么鬼&quot; class=&quot;headerlink&quot; title=&quot;算法面试到底是什么鬼?&quot;&gt;&lt;/a&gt;算法面试到底是什么鬼?&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;玩转算法面试</summary>
+        
+      
+    
+    
+    
+    <category term="玩转算法面试" scheme="https://zhchen7.github.io/categories/%E7%8E%A9%E8%BD%AC%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/"/>
+    
+    
+    <category term="算法面试" scheme="https://zhchen7.github.io/tags/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="算法" scheme="https://zhchen7.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>组件化和 React</title>
+    <link href="https://zhchen7.github.io/2019/09/07/ReactTheory/"/>
+    <id>https://zhchen7.github.io/2019/09/07/ReactTheory/</id>
+    <published>2019-09-07T14:32:45.000Z</published>
+    <updated>2019-09-07T14:32:45.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;组件化和-React&quot;&gt;&lt;a href=&quot;#组件化和-React&quot; class=&quot;headerlink&quot; title=&quot;组件化和 React&quot;&gt;&lt;/a&gt;组件化和 React&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;本章先带领学生做一个 React 的实例，熟悉</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="React" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/React/"/>
+    
+    
+    <category term="React" scheme="https://zhchen7.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MVVM 和 vue</title>
+    <link href="https://zhchen7.github.io/2019/09/05/VueTheory/"/>
+    <id>https://zhchen7.github.io/2019/09/05/VueTheory/</id>
+    <published>2019-09-05T09:07:39.000Z</published>
+    <updated>2019-09-05T09:07:39.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;MVVM-和-vue&quot;&gt;&lt;a href=&quot;#MVVM-和-vue&quot; class=&quot;headerlink&quot; title=&quot;MVVM 和 vue&quot;&gt;&lt;/a&gt;MVVM 和 vue&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;本章首先介绍了 &lt;strong&gt;jQuery</summary>
+        
+      
+    
+    
+    
+    <category term="VUE" scheme="https://zhchen7.github.io/categories/VUE/"/>
+    
+    <category term="MVVM" scheme="https://zhchen7.github.io/categories/VUE/MVVM/"/>
+    
+    
+    <category term="vue" scheme="https://zhchen7.github.io/tags/vue/"/>
+    
+    <category term="MVVM" scheme="https://zhchen7.github.io/tags/MVVM/"/>
+    
+    <category term="响应式、模板解析、渲染" scheme="https://zhchen7.github.io/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E3%80%81%E6%A8%A1%E6%9D%BF%E8%A7%A3%E6%9E%90%E3%80%81%E6%B8%B2%E6%9F%93/"/>
     
   </entry>
   

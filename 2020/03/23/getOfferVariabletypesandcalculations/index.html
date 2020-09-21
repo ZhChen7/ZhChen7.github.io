@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    变量类型和计算 |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-getOfferVariabletypesandcalculations"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  变量类型和计算
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/03/23/getOfferVariabletypesandcalculations/" class="article-date">
+  <time datetime="2020-03-23T09:35:29.000Z" itemprop="datePublished">2020-03-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%AE%A1%E7%AE%97/">变量类型和计算</a> / <a class="article-category-link" href="/categories/Offer/">Offer</a> / <a class="article-category-link" href="/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.9k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">7 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="JavaScript-变量类型和计算"><a href="#JavaScript-变量类型和计算" class="headerlink" title="JavaScript 变量类型和计算"></a>JavaScript 变量类型和计算</h2><blockquote>
+<p>拿到 字节跳动实习生 offer 总结</p>
+<p>回馈分享一波自己的知识点总结</p>
+</blockquote>
+<blockquote>
+<p>希望读者依此构建自己的知识树（思维导图）</p>
+<p>偷懒一下：可参考我自己总结思维导图 : <a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
+<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
+<p>自己开发的博客地址：<a target="_blank" rel="noopener" href="http://zxinc520.com/">zxinc520.com</a></p>
+<p>github 地址: <a target="_blank" rel="noopener" href="https://github.com/ZhChen7">点击</a></p>
+</blockquote>
+<blockquote>
+<p>此篇 js - 【变量类型和计算】 知识点： 全部弄懂了，面试很容易。</p>
+</blockquote>
+<h2 id="一、变量类型"><a href="#一、变量类型" class="headerlink" title="一、变量类型"></a>一、变量类型</h2><h3 id="1-1、类型"><a href="#1-1、类型" class="headerlink" title="1.1、类型"></a>1.1、类型</h3><ul>
+<li>值类型（基本数据类型）<ul>
+<li>string,number,boolean,undefined,null,symbol 6 种</li>
+</ul>
+</li>
+<li>引用类型<ul>
+<li>Object、Array、Funtion。细分的话：有 Object、Array、Funtion、Date、RegExp 等</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2、值类型（基本数据类型）和引用类型区别"><a href="#1-2、值类型（基本数据类型）和引用类型区别" class="headerlink" title="1.2、值类型（基本数据类型）和引用类型区别"></a>1.2、值类型（基本数据类型）和引用类型区别</h3><ol>
+<li>内存的分配不同<ul>
+<li>基本数据类型存储在栈中。</li>
+<li>复杂数据类型存储在堆中，栈中存储的变量，是指向堆中的引用地址</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>栈（操作系统）：由操作系统自动分配释放 ，存放函数的参数值和局部变量的值等。堆（操作系统）： 一般由程序员分配释放， 若程序员不释放，程序结束时可能由 OS 回收，分配方式倒是类似于链表。其实在堆中一般存放变量是一些对象类型</p>
+</blockquote>
+<ol start="2">
+<li>访问机制不同：值类型按值访问，引用类型按引用访问</li>
+<li>复变量时不同(a=b)<ul>
+<li>基本数据类型：a=b;是将 b 中保存的原始值的副本赋值给新变量 a，a 和 b 完全独立，互不影响</li>
+<li>复杂数据类型：a=b;将 b 保存的对象内存的引用地址赋值给了新变量 a;a 和 b 指向了同一个堆内存地址，其中一个值发生了改变，另一个也会改变。</li>
+</ul>
+</li>
+<li>参数传递的不同(实参/形参)<ul>
+<li>函数传参都是按值传递(栈中的存储的内容)：基本数据类型，拷贝的是值；复杂数据类型，拷贝的是引用地址</li>
+</ul>
+</li>
+</ol>
+<h3 id="1-3、JavaScript-判断数据类型"><a href="#1-3、JavaScript-判断数据类型" class="headerlink" title="1.3、JavaScript 判断数据类型"></a>1.3、JavaScript 判断数据类型</h3><ol>
+<li><p>typeof</p>
+<ul>
+<li>typeof 运算符 只能 区分 值类型 的 类型，对于引用类型的 对象、数组 区分不出来</li>
+<li>注意：typeof null===“object” typeof new Function(); // function 有效</li>
+</ul>
+</li>
+<li><p>instanceof</p>
+<ul>
+<li>instanceof 运算符返回一个布尔值，表示对象是否为某个构造函数的实例</li>
+<li>缺点：instanceof 运算符只能用于对象（纯对象和数组），不适用原始类型（Undefined、Null、Boolean、Number 和 String）的值。</li>
+</ul>
+</li>
+<li><p>Object.prototype.toString.call()</p>
+<ul>
+<li>可以通过 Object.prototype.toString 方法准确判断某个对象值属于哪种内置类型。</li>
+</ul>
+</li>
+<li><p>constructor</p>
+<ul>
+<li><p>constructor 属性的作用是，可以得知某个实例对象，到底是哪一个构造函数产生的。</p>
+</li>
+<li><pre><code class="js">var f = new F();
+f.constructor === F; // true
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 二、变量计算（强制类型转换）</span><br><span class="line"></span><br><span class="line">### 2.1、显示强制类型转换</span><br><span class="line"></span><br><span class="line">1. 字符串和数字之间的显示转换</span><br><span class="line"></span><br><span class="line">   - String()</span><br><span class="line"></span><br><span class="line">   - Number()</span><br><span class="line"></span><br><span class="line">   - 日期显示转换为数字(+)</span><br><span class="line"></span><br><span class="line">     - 一元运算符 + 的另一个常见用途是将日期(Date)对象强制类型转换为数字，返回结果为 Unix 时间戳。</span><br><span class="line"></span><br><span class="line">     - &#96;&#96;&#96;js</span><br><span class="line">       var time &#x3D; new Date() + time;</span><br></pre></td></tr></table></figure></code></pre>
+</li>
+<li><p>奇特的~运算符</p>
+<ul>
+<li>~x 大致等同于 -(x+1)</li>
+<li><del>和 indexOf()一起可以将结果强制类型转换为真/假值，如果 indexOf()返回-1，</del>将其转换为假值 0，其他情况一律转换为真值。</li>
+</ul>
+</li>
+<li><p>~~字位截除</p>
+</li>
+<li><p>显式解析数字字符串</p>
+<ul>
+<li>Number()</li>
+<li>parseInt()</li>
+<li>parseFloat()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>显式转换为布尔值</p>
+<ul>
+<li>Boolean()</li>
+<li>(!!)显式强制类型转换为布尔值最常用地方法是!!</li>
+</ul>
+</li>
+<li><p>抽象值操作</p>
+<ul>
+<li>ToString</li>
+<li>ToNumber</li>
+<li>ToBoolean</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-2、隐式强制类型转换"><a href="#2-2、隐式强制类型转换" class="headerlink" title="2.2、隐式强制类型转换"></a>2.2、隐式强制类型转换</h3><ol>
+<li><p>转成字符串的</p>
+<ul>
+<li><p>字符串拼接</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line">a + b; <span class="comment">//&quot;1,23,4&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>因为数组的 valueOf()操作无法得到简单基本类型值，于是调用 toString()，因此两个数组变成了”1,2”和”3,4”，+将它们拼接后返回。</p>
+</li>
+</ul>
+</li>
+<li><p>隐式强制类型转换为布尔值</p>
+<ul>
+<li>if()语句中的条件判断表达式</li>
+<li>for(..; ..; ..)语句中的条件判断表达式</li>
+<li>while()和 do .. while()</li>
+<li>? : 中的条件判断表达式</li>
+<li>逻辑运算符||和&amp;&amp;左边的操作数</li>
+</ul>
+</li>
+<li><p>布尔值到数字</p>
+</li>
+<li><p>||和&amp;&amp;(选择器运算符)</p>
+<ul>
+<li>ES5 规范中说到：&amp;&amp;和||运算符的返回值并不一定是布尔类型，而是两个操作数其中一个的值。<ul>
+<li>对于||来说，如果条件判断结果为 true 就返回第一个操作数的值，如果为 false 就返回第二个操作数的值。</li>
+<li>对于&amp;&amp;来说，如果条件判断结果为 true 就返回第二个操作数的值，如果为 false 就返回第一个操作数的值。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-3、-和-宽松相等和严格相等"><a href="#2-3、-和-宽松相等和严格相等" class="headerlink" title="2.3、== 和 ===(宽松相等和严格相等)"></a>2.3、== 和 ===(宽松相等和严格相等)</h3><blockquote>
+<p>区别：==允许在相等比较中进行强制类型转换，而===不允许。</p>
+</blockquote>
+<h4 id="2-3-1、经典问题【-if-a-1-amp-amp-a-2-amp-amp-a-3-】"><a href="#2-3-1、经典问题【-if-a-1-amp-amp-a-2-amp-amp-a-3-】" class="headerlink" title="2.3.1、经典问题【 if(a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 】"></a>2.3.1、经典问题【 if(a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 】</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="comment">//... 使之成立</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="思考方向-—-【利用隐式转换规则】"><a href="#思考方向-—-【利用隐式转换规则】" class="headerlink" title="思考方向 — 【利用隐式转换规则】"></a>思考方向 — 【<strong>利用隐式转换规则</strong>】</h4><p><code>==</code> 操作符在左右数据类型不一致时，会先进行隐式转换。</p>
+<p><code>a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3</code> 的值意味着其不可能是基本数据类型。因为如果 a 是 null 或者是 undefined bool 类型，都不可能返回 true。</p>
+<p>因此可以推测 a 是复杂数据类型，JS 中复杂数据类型只有 <code>object</code>，回忆一下，Object 转换为原始类型会调用什么方法？</p>
+<ul>
+<li>如果部署了 <code>[Symbol.toPrimitive]</code> 接口，那么调用此接口，若返回的不是基本数据类型，抛出错误。</li>
+<li>如果没有部署[Symbol.toPrimitive]接口，那么根据要转换的类型，先调用 valueOf/toString<ol>
+<li>非 Date 类型对象，<code>hint</code> 是 <code>default</code> 时，调用顺序为：<code>valueOf</code> &gt;&gt;&gt; <code>toString</code>，即<code>valueOf</code> 返回的不是基本数据类型，才会继续调用 <code>toString</code>，如果<code>toString</code> 返回的还不是基本数据类型，那么抛出错误。</li>
+<li>如果 <code>hint</code> 是 <code>string</code>(Date 对象的 hint 默认是 string) ，调用顺序为：<code>toString</code> &gt;&gt;&gt; <code>valueOf</code>，即<code>toString</code> 返回的不是基本数据类型，才会继续调用 <code>valueOf</code>，如果<code>valueOf</code> 返回的还不是基本数据类型，那么抛出错误。</li>
+<li>如果 <code>hint</code> 是 <code>number</code>，调用顺序为： <code>valueOf</code> &gt;&gt;&gt; <code>toString</code></li>
+</ol>
+</li>
+</ul>
+<h3 id="7-种解决方案"><a href="#7-种解决方案" class="headerlink" title="7 种解决方案"></a>7 种解决方案</h3><ol>
+<li><p>利用 [Symbol.toPrimitive] 接口</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  [<span class="built_in">Symbol</span>.toPrimitive]: (<span class="function"><span class="keyword">function</span> (<span class="params">hint</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> i++;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)(),</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调用 valueOf 接口</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  valueOf: (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> i++;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)(),</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用 正则</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  reg: <span class="regexp">/\d/g</span>,</span><br><span class="line">  valueOf() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.reg.exec(<span class="number">123</span>)[<span class="number">0</span>];</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用数据劫持</p>
+<ul>
+<li><p>使用 Object.defineProperty 定义的属性，在获取属性时，会调用 get 方法。利用这个特性，我们在 window 对象上定义 a 属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(<span class="built_in">window</span>, <span class="string">&quot;a&quot;</span>, &#123;</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i++;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>利用 ES6 Proxy</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="built_in">Proxy</span>(</span><br><span class="line">  &#123;&#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    i: <span class="number">1</span>,</span><br><span class="line">    get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="function">() =&gt;</span> <span class="built_in">this</span>.i++;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重写数组的 join</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a.join = a.shift;</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用 with 关键字</p>
+</li>
+</ol>
+<blockquote>
+<p>注意：0 == ‘\n’ //true</p>
+</blockquote>
+<h2 id="三、相关典型问题"><a href="#三、相关典型问题" class="headerlink" title="三、相关典型问题"></a>三、相关典型问题</h2><ul>
+<li>JS 中使用 typeof 能得到的哪些类型</li>
+<li>何时使用 === 何时使用 ==<ul>
+<li>除了判断 <strong>对象属性是否为空</strong> 和 <strong>看是否函数的参数为空</strong> 的情况 ，其余的都用 === 。</li>
+</ul>
+</li>
+<li>JS 中有哪些 内置函数</li>
+<li>JS 变量按照 存储方式 分为哪些类型，并描述其特点</li>
+<li>如何理解 JSON</li>
+</ul>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2020/03/23/getOfferVariabletypesandcalculations/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/" rel="tag">面试全面总结</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/03/23/getOfferES6/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            ES6 知识点
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/03/23/getOfferthis/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">this 指向问题</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

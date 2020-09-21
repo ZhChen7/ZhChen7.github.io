@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    原型和原型链 |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-getOfferPrototypesandprototypechains"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  原型和原型链
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/03/23/getOfferPrototypesandprototypechains/" class="article-date">
+  <time datetime="2020-03-23T09:18:21.000Z" itemprop="datePublished">2020-03-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/">JS 三座大山</a> / <a class="article-category-link" href="/categories/Offer/">Offer</a> / <a class="article-category-link" href="/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">10 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="JavaScript-原型和原型链"><a href="#JavaScript-原型和原型链" class="headerlink" title="JavaScript 原型和原型链"></a>JavaScript 原型和原型链</h2><blockquote>
+<p>拿到 字节跳动实习生 offer 总结</p>
+<p>回馈分享一波自己的知识点总结</p>
+</blockquote>
+<blockquote>
+<p>希望读者依此构建自己的知识树（思维导图）</p>
+<p>偷懒一下：可参考我自己总结思维导图 : <a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
+<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
+<p>自己开发的博客地址：<a target="_blank" rel="noopener" href="http://zxinc520.com/">zxinc520.com</a></p>
+<p>github 地址: <a target="_blank" rel="noopener" href="https://github.com/ZhChen7">点击</a></p>
+</blockquote>
+<blockquote>
+<p>此篇 js - 【原型和原型链】 知识点： 全部弄懂了，面试很容易。</p>
+</blockquote>
+<h2 id="一、原型和原型定义"><a href="#一、原型和原型定义" class="headerlink" title="一、原型和原型定义"></a>一、原型和原型定义</h2><h3 id="1-1、背景"><a href="#1-1、背景" class="headerlink" title="1.1、背景"></a>1.1、背景</h3><p>JavaScript 中除了基础类型外的数据类型，都是对象（引用类型）。但是由于其没有 类（class，ES6 引入了 class，但其只是语法糖）的概念，如何将所有对象联系起来就成立一个问题，于是就有了原型和原型链的概念。</p>
+<h3 id="1-2、原型是什么？"><a href="#1-2、原型是什么？" class="headerlink" title="1.2、原型是什么？"></a>1.2、原型是什么？</h3><blockquote>
+<p>原型是一个 prototype 对象，用于表示对象之间的关系。</p>
+</blockquote>
+<h3 id="1-3、原型链"><a href="#1-3、原型链" class="headerlink" title="1.3、原型链"></a>1.3、原型链</h3><p>每个实例对象（ object ）都有一个私有属性（称之为 <strong>proto</strong> ）指向它的构造函数的原型对象（prototype ）。该原型对象也有一个自己的原型对象( <strong>proto</strong> ) ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。以上一整个原型与原型层层相链接的过程即为原型链</p>
+<h3 id="1-4、公式"><a href="#1-4、公式" class="headerlink" title="1.4、公式"></a>1.4、公式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 对象 = <span class="keyword">new</span> 函数();</span><br><span class="line">对象.__proto__ === 对象的构造函数.prototype;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、7-大继承写法"><a href="#二、7-大继承写法" class="headerlink" title="二、7 大继承写法"></a>二、7 大继承写法</h2><blockquote>
+<p>常考点【熟练掌握】</p>
+</blockquote>
+<h3 id="2-1、原型链继承"><a href="#2-1、原型链继承" class="headerlink" title="2.1、原型链继承"></a>2.1、原型链继承</h3><ul>
+<li><p>原型链继承的基本思想：是利用原型让一个引用类型继承另一个引用类型的属性和方法。</p>
+<p>如 SubType.prototype = new SuperType();</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = <span class="string">&quot;Yvette&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.age = <span class="number">22</span>;</span><br><span class="line">&#125;</span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>通过原型来实现继承时，原型会变成另一个类型的实例，原先的实例属性变成了现在的原型属性，该原型的引用类型属性会被所有的实例共享</li>
+<li>在创建子类型的实例时，不能向超类型的构造函数中传递参数</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-2、借用构造函数"><a href="#2-2、借用构造函数" class="headerlink" title="2.2、借用构造函数"></a>2.2、借用构造函数</h3><ul>
+<li><p>其基本思想为:在子类型的构造函数中调用超类型构造函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  SuperType.call(<span class="built_in">this</span>, name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优点</p>
+<ol>
+<li>可以向超类传递参数</li>
+<li>解决了原型中包含引用类型值被所有实例共享的问题</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>方法都在构造函数中定义，函数复用无从谈起</li>
+<li>另外超类型原型中定义的方法对于子类型而言都是不可见的</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-3、组合继承"><a href="#2-3、组合继承" class="headerlink" title="2.3、组合继承"></a>2.3、组合继承</h3><ul>
+<li><p>组合继承指的是将原型链和借用构造函数技术组合到一块，从而发挥二者之长的一种继承模式。基本思路：使用原型链实现对原型属性和方法的继承，通过借用构造函数来实现对实例属性的继承，既通过在原型上定义方法来实现了函数复用，又保证了每个实例都有自己的属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = <span class="string">&quot;zc&quot;</span>;</span><br><span class="line">  <span class="built_in">this</span>.colors = [<span class="string">&quot;pink&quot;</span>, <span class="string">&quot;blue&quot;</span>, <span class="string">&quot;green&quot;</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  SuperType.call(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line">SubType.prototype.constructor = SubType;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> SubType();</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> SubType();</span><br><span class="line"></span><br><span class="line">a.colors.push(<span class="string">&quot;red&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a.colors); <span class="comment">//[ &#x27;pink&#x27;, &#x27;blue&#x27;, &#x27;green&#x27;, &#x27;red&#x27; ]</span></span><br><span class="line"><span class="built_in">console</span>.log(b.colors); <span class="comment">//[ &#x27;pink&#x27;, &#x27;blue&#x27;, &#x27;green&#x27; ]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优点</p>
+<ol>
+<li>可以向超类传递参数</li>
+<li>每个实例都有自己的属性</li>
+<li>实现了函数复用</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>无论什么情况下，都会调用两次超类型构造函数：一次是在创建子类型原型的时候，另一次是在子类型构造函数内部。</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-4、原型式继承"><a href="#2-4、原型式继承" class="headerlink" title="2.4、原型式继承"></a>2.4、原型式继承</h3><ul>
+<li><p>原型式继承继承的基本思想：在 object() 函数内部，先创建一个临时性的构造函数，然后将传入的对象作为这个构造函数的原型，最后返回了这个临时类型的一个新实例，从本质上讲，object() 对传入的对象执行了一次浅拷贝。</p>
+<p>ECMAScript5 通过新增 Object.create()方法规范了原型式继承。这个方法接收两个参数：一个用作新对象原型的对象和（可选的）一个为新对象定义额外属性的对象(可以覆盖原型对象上的同名属性)，在传入一个参数的情况下，Object.create() 和 object() 方法的行为相同。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = o;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>同原型链实现继承一样，包含引用类型值的属性会被所有实例共享</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-5、寄生式继承"><a href="#2-5、寄生式继承" class="headerlink" title="2.5、寄生式继承"></a>2.5、寄生式继承</h3><ul>
+<li><p>寄生式继承是与原型式继承紧密相关的一种思路。寄生式继承的思路与寄生构造函数和工厂模式类似，即创建一个仅用于封装继承过程的函数，该函数在内部已某种方式来增强对象，最后再像真地是它做了所有工作一样返回对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = o;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createAnother</span>(<span class="params">original</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> clone = object(original); <span class="comment">//通过调用函数创建一个新对象</span></span><br><span class="line">  clone.sayHi = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//以某种方式增强这个对象</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> clone; <span class="comment">//返回这个对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优点</p>
+<ol>
+<li>基于 person 返回了一个新对象 -—— person2，新对象不仅具有 person 的所有属性和方法，而且还有自己的 sayHi() 方法。在考虑对象而不是自定义类型和构造函数的情况下，寄生式继承也是一种有用的模式。</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>使用寄生式继承来为对象添加函数，会由于不能做到函数复用而效率低下。</li>
+<li>同原型链实现继承一样，包含引用类型值的属性会被所有实例共享。</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-6、寄生组合式继承"><a href="#2-6、寄生组合式继承" class="headerlink" title="2.6、寄生组合式继承"></a>2.6、寄生组合式继承</h3><ul>
+<li><p>所谓寄生组合式继承，即通过借用构造函数来继承属性，通过原型链的混成形式来继承方法，基本思路：</p>
+<p>不必为了指定子类型的原型而调用超类型的构造函数，我们需要的仅是超类型原型的一个副本，本质上就是使用寄生式继承来继承超类型的原型，然后再将结果指定给子类型的原型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritPrototype</span>(<span class="params">subType, superType</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> prototype = object(superType.prototype); <span class="comment">//创建对象</span></span><br><span class="line">  prototype.constructor = subType; <span class="comment">//增强对象</span></span><br><span class="line">  subType.prototype = prototype; <span class="comment">//指定对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">  <span class="built_in">this</span>.colors = [<span class="string">&quot;pink&quot;</span>, <span class="string">&quot;blue&quot;</span>, <span class="string">&quot;green&quot;</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuberType</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  SuperType.call(<span class="built_in">this</span>, name);</span><br><span class="line">  <span class="built_in">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">inheritPrototype(SuberType, SuperType);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>步骤</p>
+<p>第一步：创建超类型原型的一个副本</p>
+<p>第二步：为创建的副本添加 constructor 属性</p>
+<p>第三步：将新创建的对象赋值给子类型的原型</p>
+</li>
+<li><p>优点</p>
+<ol>
+<li>只调用了一次超类构造函数，效率更高。避免在 SuberType.prototype 上面创建不必要的、多余的属性，与其同时，原型链还能保持不变。因此寄生组合继承是引用类型最理性的继承范式。</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-7、ES6-继承"><a href="#2-7、ES6-继承" class="headerlink" title="2.7、ES6 继承"></a>2.7、ES6 继承</h3><ul>
+<li><p>Class 可以通过 extends 关键字实现继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SuperType</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(age) &#123;</span><br><span class="line">    <span class="built_in">this</span>.age = age;</span><br><span class="line">  &#125;</span><br><span class="line">  getAge() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.age);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubType</span> <span class="keyword">extends</span> <span class="title">SuperType</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(age, name) &#123;</span><br><span class="line">    <span class="built_in">super</span>(age); <span class="comment">// 调用父类的constructor(x, y)</span></span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  getName() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于 ES6 的 class 需要做以下几点说明</p>
+<ol>
+<li>class 声明会提升，但不会初始化赋值。Foo 进入暂时性死区，类似于 let、const 声明变量。</li>
+<li>class 声明内部会启用严格模式。</li>
+<li>class 的所有方法（包括静态方法和实例方法）都是不可枚举的。</li>
+<li>class 的所有方法（包括静态方法和实例方法）都没有原型对象 prototype，所以也没有[[construct]]，不能使用 new 来调用。</li>
+<li>必须使用 new 调用 class</li>
+<li>class 内部无法重写类名</li>
+</ol>
+</li>
+</ul>
+<h4 id="使用-extends-关键字实现继承，有几点需要特别说明"><a href="#使用-extends-关键字实现继承，有几点需要特别说明" class="headerlink" title="使用 extends 关键字实现继承，有几点需要特别说明"></a>使用 extends 关键字实现继承，有几点需要特别说明</h4><ul>
+<li>子类必须在 constructor 中调用 super 方法，否则新建实例时会报错。如果没有子类没有定义 constructor 方法，那么这个方法会被默认添加。在子类的构造函数中，只有调用 super 之后，才能使用 this 关键字，否则报错。这是因为子类实例的构建，基于父类实例，只有 super 方法才能调用父类实例。</li>
+<li>ES5 的继承，实质是先创造子类的实例对象 this，然后再将父类的方法添加到 this 上面（Parent.apply(this)）。ES6 的继承机制完全不同，实质是先将父类实例对象的属性和方法，加到 this 上面（所以必须先调用 super 方法），然后再用子类的构造函数修改 this</li>
+</ul>
+<h2 id="三、相关题目"><a href="#三、相关题目" class="headerlink" title="三、相关题目"></a>三、相关题目</h2><h3 id="3-1、写一个原型链继承的例子"><a href="#3-1、写一个原型链继承的例子" class="headerlink" title="3.1、写一个原型链继承的例子"></a>3.1、写一个原型链继承的例子</h3><ul>
+<li>详细请观看上文。</li>
+</ul>
+<h3 id="3-2、描述-new-一个对象的过程"><a href="#3-2、描述-new-一个对象的过程" class="headerlink" title="3.2、描述 new 一个对象的过程"></a>3.2、描述 new 一个对象的过程</h3><h4 id="3-2-1、思路分析"><a href="#3-2-1、思路分析" class="headerlink" title="3.2.1、思路分析"></a>3.2.1、思路分析</h4><ol>
+<li>创建一个新对象 obj</li>
+<li>把 obj 的<strong>proto</strong>指向 构造函数.prototype 实现继承</li>
+<li>执行构造函数，传递参数，改变 this 指向</li>
+<li>最后把 obj 返回</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">伪代码：<span class="keyword">new</span> Person(<span class="string">&quot;John&quot;</span>) = &#123;</span><br><span class="line">                <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">	obj.__proto__ = Person.prototype;</span><br><span class="line">	<span class="keyword">var</span> result = Person.call(obj,<span class="string">&quot;John&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">typeof</span> result === <span class="string">&#x27;object&#x27;</span> ? result : obj; <span class="comment">// 如果无返回值或者返回一个非对象值，则将obj返回作为新对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-2、优秀的写法"><a href="#3-2-2、优秀的写法" class="headerlink" title="3.2.2、优秀的写法"></a>3.2.2、优秀的写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_new</span>(<span class="params">fn, ...arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> obj = <span class="built_in">Object</span>.create(fn.prototype);</span><br><span class="line">  <span class="keyword">const</span> ret = fn.apply(obj, arg);</span><br><span class="line">  <span class="keyword">return</span> ret <span class="keyword">instanceof</span> <span class="built_in">Object</span> ? ret : obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>或</strong> 【个人倾向于后面一种】</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_new</span>(<span class="params">fn, ...arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">  obj.__proto__ = fn.prototype;</span><br><span class="line">  <span class="keyword">let</span> ret = fn.apply(obj, arg);</span><br><span class="line">  <span class="keyword">return</span> ret <span class="keyword">instanceof</span> <span class="built_in">Object</span> ? ret : obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-3、为什么-return-ret-instanceof-Object-ret-obj-需要存在这一步骤？"><a href="#3-2-3、为什么-return-ret-instanceof-Object-ret-obj-需要存在这一步骤？" class="headerlink" title="3.2.3、为什么 return ret instanceof Object ? ret : obj; 需要存在这一步骤？"></a>3.2.3、为什么 <code>return ret instanceof Object ? ret : obj;</code> 需要存在这一步骤？</h4><blockquote>
+<p>这是因为 new 一个实例的时候，如果没有 return，</p>
+<p>就会根据构造函数内部 this 绑定的值生成对象，如果有返回值，</p>
+<p>就会根据返回值生成对象，为了模拟这一效果，就需要判断 apply 后是否有返回值。</p>
+</blockquote>
+<h4 id="3-2-4、总结-new-的过程中发生了什么"><a href="#3-2-4、总结-new-的过程中发生了什么" class="headerlink" title="3.2.4、总结 new 的过程中发生了什么"></a>3.2.4、总结 new 的过程中发生了什么</h4><ol>
+<li><p>令 john 的<strong>proto</strong>属性指向 Person.prototype，确立了这条原型链， 导致 john 能通过原型链继承 Person.prototype 中的部分属性，可以简单地视 john 和 Person.prototype 是继承关系。</p>
+</li>
+<li><p>john 是 Person 构造函数 的实例 john instanceof Person; //true</p>
+</li>
+<li><p>我们再来了解一下 instanceof 的内部原理，以应证我们的图是正确的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> L = A.__proto__;</span><br><span class="line"><span class="keyword">var</span> R = B.prototype;</span><br><span class="line"><span class="keyword">if</span> (L === R) <span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2020/03/23/getOfferPrototypesandprototypechains/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/" rel="tag">JS 三座大山</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/" rel="tag">面试全面总结</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/03/23/getOffercss/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            css 面试考点全面总结
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/03/23/getOfferScopeandclosure/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">作用域和闭包</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    html 面试考点全面总结上篇 |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-getOfferhtml1"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  html 面试考点全面总结上篇
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/03/23/getOfferhtml1/" class="article-date">
+  <time datetime="2020-03-23T09:14:53.000Z" itemprop="datePublished">2020-03-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Offer/">Offer</a> / <a class="article-category-link" href="/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">3.2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">11 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="html-面试考点全面总结上篇"><a href="#html-面试考点全面总结上篇" class="headerlink" title="html 面试考点全面总结上篇"></a>html 面试考点全面总结上篇</h2><blockquote>
+<p>拿到 字节跳动实习生 offer 总结</p>
+<p>回馈分享一波自己的知识点总结</p>
+</blockquote>
+<blockquote>
+<p>希望读者依此构建自己的知识树（思维导图）</p>
+<p>偷懒一下：可参考我自己总结思维导图 : <a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
+<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
+<p>自己开发的博客地址：<a target="_blank" rel="noopener" href="http://zxinc520.com/">zxinc520.com</a></p>
+<p>github 地址: <a target="_blank" rel="noopener" href="https://github.com/ZhChen7">点击</a></p>
+</blockquote>
+<blockquote>
+<p>此篇 html 共总结 22 大知识点： 全部弄懂了，面试很容易。</p>
+</blockquote>
+<h3 id="1、浏览器页面由哪三层构成"><a href="#1、浏览器页面由哪三层构成" class="headerlink" title="1、浏览器页面由哪三层构成"></a>1、浏览器页面由哪三层构成</h3><ul>
+<li>结构层<ul>
+<li>HTML</li>
+<li>构建文件结构</li>
+</ul>
+</li>
+<li>表示层<ul>
+<li>css</li>
+<li>设置文档呈现效果</li>
+</ul>
+</li>
+<li>行为层<ul>
+<li>JS 和 DOM 脚本</li>
+<li>实现文档的行为</li>
+</ul>
+</li>
+</ul>
+<h3 id="2、语义化-谈谈-html5-语义化"><a href="#2、语义化-谈谈-html5-语义化" class="headerlink" title="2、语义化 | 谈谈 html5 语义化"></a>2、语义化 | 谈谈 html5 语义化</h3><h4 id="2-1、什么是语义化？"><a href="#2-1、什么是语义化？" class="headerlink" title="2.1、什么是语义化？"></a>2.1、什么是语义化？</h4><p>HTML5 的语义化指的是合理使用语义化的标签来创建页面结构，如 header,footer,nav，从标签上即可以直观的知道这个标签的作用，而不是滥用 div。</p>
+<h4 id="2-2、语义化的优点有"><a href="#2-2、语义化的优点有" class="headerlink" title="2.2、语义化的优点有"></a>2.2、语义化的优点有</h4><ol>
+<li>代码结构清晰，易于阅读，利于开发和维护</li>
+<li>提高用户体验，在样式加载失败时，页面结构清晰</li>
+<li>方便其他设备解析（如屏幕阅读器）根据语义渲染网页。</li>
+<li>有利于搜索引擎优化（SEO），搜索引擎爬虫会根据不同的标签来赋予不同的权重</li>
+</ol>
+<h4 id="2-3、常用语义化标签有哪些"><a href="#2-3、常用语义化标签有哪些" class="headerlink" title="2.3、常用语义化标签有哪些"></a>2.3、常用语义化标签有哪些</h4><blockquote>
+<p>article | aside | nav | section | header | footer</p>
+</blockquote>
+<h3 id="3、HTML5-元素分类"><a href="#3、HTML5-元素分类" class="headerlink" title="3、HTML5 元素分类"></a>3、HTML5 元素分类</h3><ol>
+<li>结构性元素<ul>
+<li>section：在 web 页面应用中，该元素也可以用于区域章节表述；</li>
+<li>header：页面主题上的头部，注意区别于 head 元素；</li>
+<li>footer：页面的底部（页脚）；</li>
+<li>nav：是专门用于菜单导航、链接导航的元素，是 navigator 的缩写；</li>
+<li>article：用于表示一篇文章的主题部分，一般为文字集中显示的区域；</li>
+</ul>
+</li>
+<li>级块性元素<ul>
+<li>aside：用以表达注记、贴士、侧栏、摘要、插入的引用等作为补充主体的内容；</li>
+<li>figure：是对多个元素进行组合并展示的元素，通常与 figcaption 联合使用；</li>
+<li>code：表示一段代码块；</li>
+<li>dialog：用于表达人与人之间的对话，该元素还包括 dt 和 dd 这两个组合元素，他们常常同时使用。dt 用于表示说话者，而 dd 用来表示说话者的内容。</li>
+</ul>
+</li>
+<li>行内语义性元素<ul>
+<li>meter：表示特定范围内的数值，可用于工资、数量、百分比等；</li>
+<li>time：表示时间值；</li>
+<li>progress：用来表示进度条，可通过对其 max、min、step 等属性进行控制，完成对进度的表示和监视；</li>
+<li>video：视频元素，用于支持和实现视频（含视频流）文件的直接播放，支持缓冲预载和多种视频媒体格式；</li>
+<li>audio：音频元素，用于支持和实现音频（音频流）文件的直接播放，支持缓冲预载和多种音频媒体格式；</li>
+</ul>
+</li>
+<li>交互性元素<ul>
+<li>details：用来表示一段具体的内容，但是内容默认可能不显示，通过某种手段（如单击）与 legend 交互才会显示出来；</li>
+<li>datagrid：用来控制客户端数据与显示，可以由动态脚本及时更新；</li>
+<li>menu：主要用于交互菜单；</li>
+<li>command：用来处理命令按钮。</li>
+</ul>
+</li>
+</ol>
+<h3 id="4、常见空元素"><a href="#4、常见空元素" class="headerlink" title="4、常见空元素"></a>4、常见空元素</h3><p><strong>含义</strong> ：没有元素内容标记的内容【也称自闭合元素】</p>
+<p>常用的空元素：</p>
+<meta> <br> <hr> <input> <img> <link>
+
+<h3 id="5、表单增强-新增的-input-类型及属性"><a href="#5、表单增强-新增的-input-类型及属性" class="headerlink" title="5、表单增强 | 新增的 input 类型及属性"></a>5、表单增强 | 新增的 input 类型及属性</h3><h4 id="5-1、新类型"><a href="#5-1、新类型" class="headerlink" title="5.1、新类型"></a>5.1、新类型</h4><ul>
+<li>color ：用于指定颜色的控件</li>
+<li>number：用于输入浮点数的控件</li>
+<li>tel：用于输入电话号码的控件；换行会被自动从输入的值中移除 A，但不会执行其他语法。可以使用属性，比如 pattern 和 maxlength 来约束控件输入的值。恰当的时候，可以应用 :valid 和 :invalid CSS 伪类。</li>
+<li>email：用于编辑 e-mail 的字段。 合适的时候可以使用 :valid 和 :invalid CSS 伪类。</li>
+<li>url ：用于编辑 URL 的字段</li>
+<li>range ：用于输入不精确值控件</li>
+<li>search ：用于输入搜索字符串的单行文本字段。换行会被从输入的值中自动移除。</li>
+<li>与时间相关<ul>
+<li>date ： 用于输入日期的控件（年，月，日，不包括时间）</li>
+<li>time ： 用于输入不含时区的时间控件</li>
+<li>datatime 【已弃用】 ： 用于输入日期和时间的控件（小时，分钟， 秒，基于 UTC 时区的一小部分。 此功能已从 WHATWG HTML 中删除。</li>
+<li>datetime-local ： 用于输入日期时间控件，不包含时区</li>
+<li>month ： 用于输入年月的控件，不带时区</li>
+<li>week ： 用于输入一个由星期-年组成的日期，日期不包括时</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-2、新属性"><a href="#5-2、新属性" class="headerlink" title="5.2、新属性"></a>5.2、新属性</h4><ul>
+<li><p>placeholder</p>
+</li>
+<li><p>required 必填项</p>
+</li>
+<li><p>list 属性规定输入域的 datalist。datalist 是输入域的选项列表</p>
+</li>
+<li><p>pattern 定义正则</p>
+</li>
+<li><p>autofocus 属性规定在页面加载时，域自动地获得焦点。</p>
+</li>
+<li><p>readonly 该字段只读，不能修改</p>
+</li>
+<li><p>autocomplete 属性规定 form 或 input 域应该拥有自动完成功能。</p>
+</li>
+<li><p>min/max / step</p>
+<ul>
+<li><p>min、max 和 step 属性用于为包含数字或日期的 input 类型规定限定（约束）。</p>
+<p>max 属性规定输入域所允许的最大值。</p>
+<p>min 属性规定输入域所允许的最小值。</p>
+<p>step 属性为输入域规定合法的数字间隔（如果 step=”3”，则合法的数是 -3,0,3,6 等）。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6、认识-SVG"><a href="#6、认识-SVG" class="headerlink" title="6、认识 SVG"></a>6、认识 SVG</h3><p><strong>含义</strong> ：可缩放矢量图形（Scalable Vector Graphics，SVG），是一种用于描述基于二维的矢量图形的，基于 XML 的标记语言。</p>
+<p><strong>关键词</strong>：【基于 XML】【矢量】 【图像格式】</p>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>矢量<ul>
+<li>可以任意缩放</li>
+<li>不会破坏图像的清晰度和细节</li>
+<li>边缘清晰，适用任何分辨率</li>
+</ul>
+</li>
+<li>文本独立 文字独立于图像</li>
+<li>文件小 下载快</li>
+<li>颜色控制</li>
+</ul>
+<h4 id="6-1、SVG-与-HTML5-的-canvas-各有什么优点，哪个更有前途？"><a href="#6-1、SVG-与-HTML5-的-canvas-各有什么优点，哪个更有前途？" class="headerlink" title="6.1、SVG 与 HTML5 的 canvas 各有什么优点，哪个更有前途？"></a>6.1、SVG 与 HTML5 的 canvas 各有什么优点，哪个更有前途？</h4><blockquote>
+<p>Canvas 是使用 JavaScript 程序绘图(动态生成)，SVG 是使用 XML 文档描述来绘图。<br>从这点来看：SVG 更适合用来做动态交互，而且 SVG 绘图很容易编辑，只需要增加或移除相应的元素就可以了。<br>同时 SVG 是基于矢量的，所有它能够很好的处理图形大小的改变。Canvas 是基于位图的图像，它不能够改变大小，只能缩放显示；所以说 Canvas 更适合用来实现类似于 Flash 能做的事情(当然现在 Canvas 与 Flash 相比还有一些不够完善的地方)。<br>关于最后一点二者谁更有前途：从上面我们可以知道二者是有不同用途的，作为一个开发者，你应该做的是理解应用程序的具体需求并选择正确的技术来实现它。</p>
+</blockquote>
+<h3 id="7、浏览器内核"><a href="#7、浏览器内核" class="headerlink" title="7、浏览器内核"></a>7、浏览器内核</h3><h4 id="7-1、认识内核"><a href="#7-1、认识内核" class="headerlink" title="7.1、认识内核"></a>7.1、认识内核</h4><ul>
+<li>渲染引擎 ：渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息</li>
+<li>JS 引擎<ul>
+<li>解析和执行 JavaScript 来实现网页的动态效果</li>
+<li>引擎越来越独立，内核就倾向于只指渲染引擎</li>
+</ul>
+</li>
+</ul>
+<h4 id="7-2、主流浏览器所用的内核"><a href="#7-2、主流浏览器所用的内核" class="headerlink" title="7.2、主流浏览器所用的内核"></a>7.2、主流浏览器所用的内核</h4><ul>
+<li>IE 浏览器 Trident 内核</li>
+<li>谷歌浏览器（chrome）<ul>
+<li>Webkit（之前使用）</li>
+<li>blink 内核</li>
+</ul>
+</li>
+<li>Opera 浏览器<ul>
+<li>blink 内核</li>
+<li>Presto 内核（之前使用）<ul>
+<li>渲染速度的优化达到了极致</li>
+<li>牺牲了兼容性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>火狐浏览器（Firefox）<ul>
+<li>Gecko 内核 ： 代码完全公开，可开发程度很高</li>
+</ul>
+</li>
+<li>Safari 浏览器 ：苹果公司 webkit 内核</li>
+<li>国产浏览器<ul>
+<li>双内核（一个负责兼容，一个负责速度）</li>
+<li>常用<ul>
+<li>Trident + webkit</li>
+<li>Trident + blink</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="8、WEB-标准以及-W3C"><a href="#8、WEB-标准以及-W3C" class="headerlink" title="8、WEB 标准以及 W3C"></a>8、WEB 标准以及 W3C</h3><h4 id="8-1、web-标准"><a href="#8-1、web-标准" class="headerlink" title="8.1、web 标准"></a>8.1、web 标准</h4><blockquote>
+<p>分为结构、表现、行为</p>
+</blockquote>
+<h5 id="web-标准是什么？"><a href="#web-标准是什么？" class="headerlink" title="web 标准是什么？"></a>web 标准是什么？</h5><blockquote>
+<p>一系列标准的集合：</p>
+</blockquote>
+<ul>
+<li>结构化标准语言</li>
+<li>表现标准语言</li>
+<li>行为标准语言</li>
+</ul>
+<h5 id="web-标准诞生原因？"><a href="#web-标准诞生原因？" class="headerlink" title="web 标准诞生原因？"></a>web 标准诞生原因？</h5><blockquote>
+<p>为了解决因浏览器版本不同、软硬件设备不同导致的需多版本开发的问题。</p>
+</blockquote>
+<h4 id="8-2、W3C"><a href="#8-2、W3C" class="headerlink" title="8.2、W3C"></a>8.2、W3C</h4><blockquote>
+<p>W3C 对 web 标准提出规范化要求</p>
+</blockquote>
+<h5 id="一：结构要求："><a href="#一：结构要求：" class="headerlink" title="一：结构要求："></a>一：结构要求：</h5><ul>
+<li>遵循的好处<ul>
+<li>提升搜索引擎对页面的抓取效率</li>
+<li>对 SEO 很有帮助</li>
+</ul>
+</li>
+<li>具体<ul>
+<li>标签字母要小写</li>
+<li>标签要闭合</li>
+<li>标签不允许随便嵌套</li>
+</ul>
+</li>
+</ul>
+<h5 id="二：表现与行为要求："><a href="#二：表现与行为要求：" class="headerlink" title="二：表现与行为要求："></a>二：表现与行为要求：</h5><ul>
+<li>遵循的好处<ul>
+<li>使用户浏览者更方便的阅读</li>
+<li>使网页开发者之间更好的交流</li>
+</ul>
+</li>
+<li>具体<ul>
+<li>尽量使用外链 css 样式表和 js 脚本：提高页面渲染速度</li>
+<li>页面尽量少用行间样式表 ： 使结构和表现分离</li>
+<li>标签 id 和 class 等属性名要见文知义</li>
+</ul>
+</li>
+</ul>
+<h3 id="9、Doctype（DTD）"><a href="#9、Doctype（DTD）" class="headerlink" title="9、Doctype（DTD）"></a>9、Doctype（DTD）</h3><blockquote>
+<p>作用 ： 声明文档的类型风格</p>
+<p>告诉浏览器采用何种渲染模式解析页面</p>
+</blockquote>
+<h4 id="9-1、渲染模式"><a href="#9-1、渲染模式" class="headerlink" title="9.1、渲染模式"></a>9.1、渲染模式</h4><ul>
+<li>怪异模式（兼容模式、混杂模式）<ul>
+<li>服务于旧式规则</li>
+<li>页面以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作。</li>
+</ul>
+</li>
+<li>标准模式（严格模式）<ul>
+<li>服务于标准规则</li>
+<li>标准模式的排版 和 JS 运作模式都是以该浏览器支持的最高标准运行</li>
+</ul>
+</li>
+<li>近似标准模式<ul>
+<li>基本是标准模型</li>
+<li>有一些是自己的调整</li>
+</ul>
+</li>
+</ul>
+<p><strong>意义</strong>：严格模式与混杂模式存在的意义与其来源密切相关，如果说只存在严格模式，那么许多旧网站必然受到影响，如果只存在混杂模式，那么会回到当时浏览器大战时的混乱，每个浏览器都有自己的解析模式。</p>
+<h4 id="9-2、标准模式和混杂模式的区别？"><a href="#9-2、标准模式和混杂模式的区别？" class="headerlink" title="9.2、标准模式和混杂模式的区别？"></a>9.2、标准模式和混杂模式的区别？</h4><ul>
+<li><p><strong>盒模型的处理差异：</strong>标准 CSS 盒模型的宽度和高度等于内容区的高度和宽度，不包含内边距和边框，而 IE6 之前的浏览器实现的盒模型的宽高计算方式是包含内边距和边框的。因此，对于 IE，怪异模式和标准模式下的盒模型宽高计算方式是不一样的；</p>
+</li>
+<li><p><strong>行内元素的垂直对齐：</strong>很多早期的浏览器对齐图片至包含它们的盒子的下边框，虽然 CSS 的规范要求它们被对齐至盒内文本的基线。标准模式下，基于 Gecko 的浏览器将会对齐至基线，而在 quirks 模式下它们会对齐至底部。最直接的例子就是图片的显示。在标准模式下，图片并不是与父元素的下边框对齐的，如果仔细观察，你会发现图片与父元素下边框之间存在一点小空隙。那是因为标准模式下，图片是基线对齐的。而怪异模式下，则不存在这个问题。具体请看这篇文章 <a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/">CSS 深入理解 vertical-align 和 line-height 的基友关系</a>。</p>
+</li>
+</ul>
+<h4 id="9-3、标准模式和严格模式的区别？"><a href="#9-3、标准模式和严格模式的区别？" class="headerlink" title="9.3、标准模式和严格模式的区别？"></a>9.3、标准模式和严格模式的区别？</h4><p>严格模式主要有以下限制：</p>
+<ul>
+<li>变量必须声明后再使用</li>
+<li>函数的参数不能有同名属性，否则报错</li>
+<li>不能使用 with 语句</li>
+<li>不能对只读属性赋值，否则报错</li>
+<li>不能使用前缀 0 表示八进制数，否则报错</li>
+<li>不能删除不可删除的属性，否则报错</li>
+<li>不能删除变量 delete prop，会报错，只能删除属性 delete global[prop]</li>
+<li>eval 不会在它的外层作用域引入变量</li>
+<li>eval 和 arguments 不能被重新赋值</li>
+<li>arguments 不会自动反映函数参数的变化</li>
+<li>不能使用 arguments.callee</li>
+<li>不能使用 arguments.caller</li>
+<li>禁止 this 指向全局对象</li>
+<li>不能使用 fn.caller 和 fn.arguments 获取函数调用的堆栈</li>
+</ul>
+<h3 id="10、meta-标签"><a href="#10、meta-标签" class="headerlink" title="10、meta 标签"></a>10、meta 标签</h3><blockquote>
+<p>&lt;_meta_ &gt; 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。</p>
+</blockquote>
+<h4 id="10-1、四个属性"><a href="#10-1、四个属性" class="headerlink" title="10.1、四个属性"></a>10.1、四个属性</h4><ul>
+<li>http-equiv 【重要关键词】<ul>
+<li>content-type<ul>
+<li>定义字符编码</li>
+<li>不推荐使用 改用 charset 属性</li>
+</ul>
+</li>
+<li>refresh：指定以秒为单位，执行重载和重定向</li>
+</ul>
+</li>
+<li>name 【 重要关键词】<ul>
+<li>application-name：应用程序名称</li>
+<li>keywords ： keywords 用来告诉搜索引擎你网页的关键字是什么</li>
+<li>author ： 当前页的作者名</li>
+<li>viewport<ul>
+<li>设置浏览器视口</li>
+<li>重要关键字<ul>
+<li>width ： 视口宽度</li>
+<li>*-scale （initial-scale）： 缩放相关</li>
+<li>user-scalable ： 是否可以手动缩放</li>
+<li>例如：&lt;_meta name=”viewport” content=”width=device-width, initial-scale=1, maximum-scale=1”_ &gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>description description 用来告诉搜索引擎你的网站主要内容</li>
+<li>content ：具体描述 、不能单独存在</li>
+<li>charset（HTML5）：推荐使用 utf-8 简化了不同脚本对文件中字符的处理</li>
+</ul>
+<h4 id="10-2、meta-标签的作用"><a href="#10-2、meta-标签的作用" class="headerlink" title="10.2、meta 标签的作用"></a>10.2、meta 标签的作用</h4><ol>
+<li><p>搜索引擎优化（SEO）</p>
+</li>
+<li><p>定义页面使用语言</p>
+</li>
+<li><p>自动刷新并指向新的页面</p>
+</li>
+<li><p>实现网页转换时的动态效果</p>
+</li>
+<li><p>控制页面缓冲</p>
+</li>
+<li><p>网页定级评价</p>
+</li>
+<li><p>控制网页显示的窗口</p>
+</li>
+</ol>
+<p>######</p>
+<p>######</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2020/03/23/getOfferhtml1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/" rel="tag">面试全面总结</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/03/23/getOfferhtml2/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            html 面试考点全面总结下篇
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/10/10/regular_expression/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">正则表达式</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

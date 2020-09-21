@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客，学习网站，hexo，周琛，周琛的个人博客" />
+   
+  <meta name="description" content="周琛的博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Promise |  周琛的博客
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="琛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Promise"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Promise
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/13/Promise/" class="article-date">
+  <time datetime="2019-05-13T04:52:54.000Z" itemprop="datePublished">2019-05-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/%E5%BC%82%E6%AD%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">异步解决方案</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">8 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><blockquote>
+<p>前言: Promise 是 <strong>异步编程</strong> 的一种解决方案, 相比传统的解决方案—&gt;回调函数和事件更加强大.由社区最早提出和实现,ES6 将其写进了语言标准,统一了用法,原生提供了 Promise 对象.</p>
+<p>没有 Promise 之前,解决异步都是依赖回调,但执行多个具备前后顺序的异步操作时代码就会非常乱并且出现问题难调试.</p>
+<p>Promise 的 <strong>本质</strong> 是要干什么的：就是单纯的为了解决 <strong>回调地狱问题</strong>，但是并不能帮我们减少代码量。</p>
+</blockquote>
+<h3 id="“回调地狱”是什么"><a href="#“回调地狱”是什么" class="headerlink" title="“回调地狱”是什么"></a>“回调地狱”是什么</h3><p>”回调地狱“也叫”回调金字塔“，我们平时写代码的时候 js 如果异步 回调是不可避免的<br>例如 ajax 不断的进行异步请求数据 回调方法里还要对数据进行处理，继续回调…形成回调地狱<br>这会使得我们的代码可读性变差，出现问题 不好调试 也会导致性能下降</p>
+<p>而 nodejs 是一种单线程的事件驱动而且是非阻塞的 I/O 模型，而 I/O 模型，是异步的，这样 nodejs 在处理结果的时候 就需要在回调函数中执行，这样也就形成了回调地狱。</p>
+<p><img src="http://static.zxinc520.com/blog/20190420/4iquo6cVxxSQ.jpg?imageslim" alt="mark"></p>
+<h3 id="Promise-介绍"><a href="#Promise-介绍" class="headerlink" title="Promise 介绍"></a>Promise 介绍</h3><p>Promise 就是实现异步编程的一种解决方案，核心就是 Promise 对象。Promise 对象就像一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。它可以将异步操作以同步操作的流程表达出来，避免层层嵌套(callback)的毁掉函数。此外，Promise 对象提供统一的接口，使得控制异步操作更加容易。</p>
+<p><strong>Promise 对象的两个特点</strong>：</p>
+<ol>
+<li><p>对象的状态不受外界影响。有三种状态：pending(进行中)、resolved(已成功)、rejected(已失败);</p>
+</li>
+<li><p>一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise 对象的状态改变，只有两种可能：从 pending 变为 resolved 和从 pending 变为 rejected。</p>
+</li>
+</ol>
+<p><strong>Promise 缺点：</strong></p>
+<ol>
+<li>无法取消 Promise，一旦新建它就会立即执行，无法中途取消;</li>
+<li>如果不设置回调函数，Promise 内部抛出的错误，不会反应到外部;</li>
+<li>当处于 pending 状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）</li>
+</ol>
+<hr>
+<h4 id="基本概念："><a href="#基本概念：" class="headerlink" title="基本概念："></a><strong>基本概念：</strong></h4><ol>
+<li><p>Promise 是一个构造函数，既然是构造函数，那么，我们就可以 new Promise() 得到一个 Promise 的实例</p>
+</li>
+<li><p>在 Promise 上，有两个函数，分别叫做 <strong>resolve</strong>（成功之后的回调函数） 和 <strong>reject</strong>（失败之后的回调函数）</p>
+</li>
+<li><p>在 Promise 构造函数的 Prototype 属性上，有一个 <strong>.then()</strong> 方法，也就说，只要是 Promise 构造函数创建的实例，都可以访问到 .then() 方法。</p>
+</li>
+<li><p>Promise 表示一个 异步操作，每当我们 new 一个 Promise 的实例，这个实例，就表示一个具体的异步操作</p>
+</li>
+<li><p>既然 Promise 创建的实例，是一个异步操作，那么，这个 异步操作的结果，只能有两种状态：</p>
+</li>
+</ol>
+<p>​ 5.1 <strong>状态 1</strong>： 异步执行成功了，需要在内部调用成功的回调函数（<strong>resolve</strong>），把结果返回给调用者。</p>
+<p>​ 5.2 <strong>状态 2</strong>： 异步执行失败了，需要在内部调用失败的回调函数（<strong>reject</strong>），把结果返回给调用者。</p>
+<p>​ 5.3 由于 Promise 的实例，是一个异步操作，所以，内部拿到 操作结果后，无法使用 return 把操作的结果返回给调用者；这时候，只能使用回调函数的形式，来把 成功 或 失败的结果，返回给调用者。</p>
+<ol start="6">
+<li>我们可以在 new 出来的 Promise 实例上，调用 <strong>.then() 方法</strong>，【预先】为这个 Promise 异步操作指定 成功（<strong>resolve</strong>）和 失败（<strong>reject</strong>）回调函数</li>
+</ol>
+<h2 id="关于-Promise-要解决回调地狱问题的说明"><a href="#关于-Promise-要解决回调地狱问题的说明" class="headerlink" title="关于 Promise 要解决回调地狱问题的说明"></a>关于 Promise 要解决回调地狱问题的说明</h2><p><strong>实验需求</strong>：你要封装一个方法，我给你一个要读取文件的路径，你这个方法帮我读取文件，并把内容返回给我。</p>
+<p><em>代码实际演示：</em></p>
+<p>目录结构：</p>
+<p><img src="http://static.zxinc520.com/blog/20190420/djU0REH3KKbb.png?imageslim" alt="mark"></p>
+<h3 id="第一步：初步实现一个读取文件的功能："><a href="#第一步：初步实现一个读取文件的功能：" class="headerlink" title="第一步：初步实现一个读取文件的功能："></a>第一步：初步实现一个读取文件的功能：</h3><p><strong>封装读取文件的方法.js</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 需求：你要封装一个方法，我给你一个要读取文件的路径，你这个方法帮我读取文件，并把内容返回给我</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"></span><br><span class="line">fs.readFile(path.join(__dirname, <span class="string">&quot;./files/1.txt&quot;</span>), <span class="string">&quot;utf-8&quot;</span>, <span class="function">(<span class="params">err, dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">throw</span> err;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(dataStr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="http://static.zxinc520.com/blog/20190420/TR4X4SXC6m2m.png?imageslim" alt="mark"></p>
+<h3 id="第二步：封装一个读取文件的方法"><a href="#第二步：封装一个读取文件的方法" class="headerlink" title="第二步：封装一个读取文件的方法"></a>第二步：封装一个读取文件的方法</h3><p><strong>封装读取文件的方法.js</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//初衷 ：给定文件路径 ，返回读取到的内容</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFileByPath</span>(<span class="params">fpath</span>) </span>&#123;</span><br><span class="line">  fs.readFile(fpath, <span class="string">&quot;utf-8&quot;</span>, <span class="function">(<span class="params">err, dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">throw</span> err;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dataStr;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = getFileByPath(path.join(__dirname, <span class="string">&quot;./files/1.txt&quot;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src="http://static.zxinc520.com/blog/20190420/4LrSd5ascJjT.png?imageslim" alt="mark"></p>
+<h2 id="解决方案：使用回调函数"><a href="#解决方案：使用回调函数" class="headerlink" title="解决方案：使用回调函数"></a>解决方案：使用回调函数</h2><p><strong>封装读取文件的方法.js</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFileByPath</span>(<span class="params">fpath, callback</span>) </span>&#123;</span><br><span class="line">  fs.readFile(fpath, <span class="string">&quot;utf-8&quot;</span>, <span class="function">(<span class="params">err, dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">return</span> callback(err);</span><br><span class="line">    &#125;</span><br><span class="line">    callback(dataStr);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getFileByPath(path.join(__dirname, <span class="string">&quot;./files/1.txt&quot;</span>), <span class="function">(<span class="params">dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(dataStr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="http://static.zxinc520.com/blog/20190420/U5MDnc8QChTb.png?imageslim" alt="mark"></p>
+<h2 id="封装读取文件的方法–改进："><a href="#封装读取文件的方法–改进：" class="headerlink" title="封装读取文件的方法–改进："></a>封装读取文件的方法–改进：</h2><h4 id="callback-中，设置两个参数（err-dataStr）"><a href="#callback-中，设置两个参数（err-dataStr）" class="headerlink" title="callback 中，设置两个参数（err, dataStr）"></a>callback 中，设置两个参数（err, dataStr）</h4><p><strong>封装读取文件的方法.js</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用回调函数</span></span><br><span class="line"><span class="comment">//我们可以规定一下，callback中，有两个参数，第一个参数是失败的结果，第二个参数是成功的结果</span></span><br><span class="line"><span class="comment">//同时，我们规定了：如果成功后，返回的结果，应该位于callback 参数的第二个位置，此时，第一个位置由于没有出错，所以放一个null，如果失败了则第一个位置放置 Error对象，第二个位置放置一个 undefined</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFileByPath</span>(<span class="params">fpath, callback</span>) </span>&#123;</span><br><span class="line">  fs.readFile(fpath, <span class="string">&quot;utf-8&quot;</span>, <span class="function">(<span class="params">err, dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">return</span> callback(err);</span><br><span class="line">    &#125;</span><br><span class="line">    callback(<span class="literal">null</span>, dataStr);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getFileByPath(path.join(__dirname, <span class="string">&quot;./files/1.txt&quot;</span>), <span class="function">(<span class="params">err, dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(err.message);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(dataStr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190420/Gi6Iffxxw1Jk.png?imageslim" alt="mark"></p>
+<h2 id="封装读取文件的方法-提高版"><a href="#封装读取文件的方法-提高版" class="headerlink" title="封装读取文件的方法-提高版"></a>封装读取文件的方法-提高版</h2><h4 id="拆分成-两个-回调（getFileByPath-fpath-succCb-errCb-）"><a href="#拆分成-两个-回调（getFileByPath-fpath-succCb-errCb-）" class="headerlink" title="拆分成 两个 回调（getFileByPath (fpath, succCb, errCb)）"></a>拆分成 两个 回调（getFileByPath (fpath, succCb, errCb)）</h4><p><strong>封装读取文件的方法-提高版.js：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用两个回调---便于理解</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFileByPath</span>(<span class="params">fpath, succCb, errCb</span>) </span>&#123;</span><br><span class="line">  fs.readFile(fpath, <span class="string">&quot;utf-8&quot;</span>, <span class="function">(<span class="params">err, dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">return</span> errCb(err);</span><br><span class="line">    &#125;</span><br><span class="line">    succCb(dataStr);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getFileByPath(</span><br><span class="line">  path.join(__dirname, <span class="string">&quot;./files/1.txt&quot;</span>),</span><br><span class="line">  (dataStr) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;成功的结果，使用成功的回调succCb: &quot;</span> + dataStr);</span><br><span class="line">  &#125;,</span><br><span class="line">  (err) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;失败的结果，使用失败的回调errCb: &quot;</span> + err.message);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><strong>成功的结果：</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190420/OfeQfiHdiJVC.png?imageslim" alt="mark"></p>
+<p><strong>失败的结果：</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190420/uVvrqObQxNtc.png?imageslim" alt="mark"></p>
+<h2 id="回调嵌套"><a href="#回调嵌套" class="headerlink" title="回调嵌套"></a>回调嵌套</h2><h3 id="需求：先读取文件-1，在读取文件-2，最后读取文件-3"><a href="#需求：先读取文件-1，在读取文件-2，最后读取文件-3" class="headerlink" title="需求：先读取文件 1，在读取文件 2，最后读取文件 3"></a>需求：先读取文件 1，在读取文件 2，最后读取文件 3</h3><h6 id="初步实现："><a href="#初步实现：" class="headerlink" title="初步实现："></a><strong><em>初步实现：</em></strong></h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFileByPath</span>(<span class="params">fpath, callback</span>) </span>&#123;</span><br><span class="line">  fs.readFile(fpath, <span class="string">&quot;utf-8&quot;</span>, <span class="function">(<span class="params">err, dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">return</span> callback(err.message);</span><br><span class="line">    &#125;</span><br><span class="line">    callback(dataStr);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//回调地狱</span></span><br><span class="line">getFileByPath(path.join(__dirname, <span class="string">&quot;./files/1.txt&quot;</span>), <span class="function">(<span class="params">dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(dataStr);</span><br><span class="line">  getFileByPath(path.join(__dirname, <span class="string">&quot;./files/2.txt&quot;</span>), <span class="function">(<span class="params">dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(dataStr);</span><br><span class="line">    getFileByPath(path.join(__dirname, <span class="string">&quot;./files/3.txt&quot;</span>), <span class="function">(<span class="params">dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(dataStr);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190420/lQlQH83IcW3B.png?imageslim" alt="mark"></p>
+<h3 id="使用-Promise"><a href="#使用-Promise" class="headerlink" title="使用 **Promise **:"></a>使用 **Promise **:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFileByPath</span>(<span class="params">fpath</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    fs.readFile(path.join(__dirname, fpath), <span class="string">&quot;utf-8&quot;</span>, <span class="function">(<span class="params">err, dataStr</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">return</span> reject(err);</span><br><span class="line">      &#125;</span><br><span class="line">      resolve(dataStr);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getFileByPath(<span class="string">&quot;./files/1.txt&quot;</span>)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">    <span class="comment">//读取文件2</span></span><br><span class="line">    <span class="keyword">return</span> getFileByPath(<span class="string">&quot;./files/2.txt&quot;</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">    <span class="comment">//读取文件3</span></span><br><span class="line">    <span class="keyword">return</span> getFileByPath(<span class="string">&quot;./files/3.txt&quot;</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err.message);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190420/G1arCfeFpYYK.png?imageslim" alt="mark"></p>
+<h2 id="Ajax-使用-then-方法高逼格请求数据"><a href="#Ajax-使用-then-方法高逼格请求数据" class="headerlink" title="Ajax 使用 then 方法高逼格请求数据"></a>Ajax 使用 then 方法高逼格请求数据</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./node_modules/jquery/dist/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">&quot;#btn&quot;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">            url: <span class="string">&quot;./data.json&quot;</span>,</span></span><br><span class="line"><span class="javascript">            type: <span class="string">&quot;get&quot;</span>,</span></span><br><span class="line"><span class="javascript">            dataType: <span class="string">&quot;json&quot;</span>,</span></span><br><span class="line"><span class="javascript">          &#125;).then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(data);</span></span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="http://static.zxinc520.com/blog/20190420/Raly4WtVEqEx.gif" alt="mark"></p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhchen7.github.io/2019/05/13/Promise/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/promise/" rel="tag">promise</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%9E%E8%B0%83%E5%9C%B0%E7%8B%B1/" rel="tag">回调地狱</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">异步解决方案</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2019/06/11/Database/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            大二数据库实验
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/05/13/ProcessScheduling/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">操作系统进程调度作业</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2020
+        <i class="ri-heart-fill heart_icon"></i> zhou chen
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="琛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>
