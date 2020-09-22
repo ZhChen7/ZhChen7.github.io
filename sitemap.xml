@@ -592,6 +592,20 @@
   </url>
   
   <url>
+    <loc>https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2020-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhchen7.github.io/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/</loc>
+    <lastmod>2020-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zhchen7.github.io/tags/%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%AE%AD/</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>daily</changefreq>
@@ -607,20 +621,6 @@
   
   <url>
     <loc>https://zhchen7.github.io/tags/%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B/</loc>
-    <lastmod>2020-09-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2020-09-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhchen7.github.io/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -669,20 +669,6 @@
   </url>
   
   <url>
-    <loc>https://zhchen7.github.io/tags/%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6%EF%BC%88keyup-%EF%BC%8Cwatch-%EF%BC%8Ccomputed-%EF%BC%89/</loc>
-    <lastmod>2020-09-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhchen7.github.io/tags/nrm/</loc>
-    <lastmod>2020-09-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zhchen7.github.io/tags/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>daily</changefreq>
@@ -691,6 +677,20 @@
   
   <url>
     <loc>https://zhchen7.github.io/tags/%E8%B7%AF%E7%94%B1/</loc>
+    <lastmod>2020-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhchen7.github.io/tags/%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6%EF%BC%88keyup-%EF%BC%8Cwatch-%EF%BC%8Ccomputed-%EF%BC%89/</loc>
+    <lastmod>2020-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhchen7.github.io/tags/nrm/</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1056,14 +1056,14 @@
   </url>
   
   <url>
-    <loc>https://zhchen7.github.io/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%AE%AD/</loc>
+    <loc>https://zhchen7.github.io/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://zhchen7.github.io/categories/JS/%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/</loc>
+    <loc>https://zhchen7.github.io/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%AE%AD/</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1084,7 +1084,7 @@
   </url>
   
   <url>
-    <loc>https://zhchen7.github.io/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/</loc>
+    <loc>https://zhchen7.github.io/categories/JS/%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1112,14 +1112,14 @@
   </url>
   
   <url>
-    <loc>https://zhchen7.github.io/categories/VUE/%E7%AC%AC%E4%BA%94%E5%A4%A9/</loc>
+    <loc>https://zhchen7.github.io/categories/VUE/%E7%AC%AC%E5%9B%9B%E5%A4%A9/</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://zhchen7.github.io/categories/VUE/%E7%AC%AC%E5%9B%9B%E5%A4%A9/</loc>
+    <loc>https://zhchen7.github.io/categories/VUE/%E7%AC%AC%E4%BA%94%E5%A4%A9/</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
