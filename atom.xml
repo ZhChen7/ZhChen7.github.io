@@ -6,7 +6,7 @@
   <link href="https://zhchen7.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhchen7.github.io/"/>
-  <updated>2020-03-23T09:46:34.000Z</updated>
+  <updated>2020-09-22T02:25:15.000Z</updated>
   <id>https://zhchen7.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mac 实用工具</title>
+    <link href="https://zhchen7.github.io/2020/09/22/Mactoolinto/"/>
+    <id>https://zhchen7.github.io/2020/09/22/Mactoolinto/</id>
+    <published>2020-09-22T02:25:15.000Z</published>
+    <updated>2020-09-22T02:25:15.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;mac-实用工具&quot;&gt;&lt;a href=&quot;#mac-实用工具&quot; class=&quot;headerlink&quot; title=&quot;mac 实用工具&quot;&gt;&lt;/a&gt;mac 实用工具&lt;/h1&gt;&lt;h2 id=&quot;macOS-图床客户端-uPic&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="开机必备软件" scheme="https://zhchen7.github.io/categories/%E5%BC%80%E6%9C%BA%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/"/>
+    
+    
+    <category term="实用工具" scheme="https://zhchen7.github.io/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>手撕代码</title>
@@ -592,38 +617,6 @@
     
     
     <category term="React" scheme="https://zhchen7.github.io/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MVVM 和 vue</title>
-    <link href="https://zhchen7.github.io/2019/09/05/VueTheory/"/>
-    <id>https://zhchen7.github.io/2019/09/05/VueTheory/</id>
-    <published>2019-09-05T09:07:39.000Z</published>
-    <updated>2019-09-05T09:07:39.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;MVVM-和-vue&quot;&gt;&lt;a href=&quot;#MVVM-和-vue&quot; class=&quot;headerlink&quot; title=&quot;MVVM 和 vue&quot;&gt;&lt;/a&gt;MVVM 和 vue&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;本章首先介绍了 &lt;strong&gt;jQuery</summary>
-        
-      
-    
-    
-    
-    <category term="VUE" scheme="https://zhchen7.github.io/categories/VUE/"/>
-    
-    <category term="MVVM" scheme="https://zhchen7.github.io/categories/VUE/MVVM/"/>
-    
-    
-    <category term="vue" scheme="https://zhchen7.github.io/tags/vue/"/>
-    
-    <category term="MVVM" scheme="https://zhchen7.github.io/tags/MVVM/"/>
-    
-    <category term="响应式、模板解析、渲染" scheme="https://zhchen7.github.io/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E3%80%81%E6%A8%A1%E6%9D%BF%E8%A7%A3%E6%9E%90%E3%80%81%E6%B8%B2%E6%9F%93/"/>
     
   </entry>
   
