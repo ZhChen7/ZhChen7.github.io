@@ -100,14 +100,14 @@
   </url>
   
   <url>
-    <loc>https://zhchen7.github.io/2020/03/23/getOfferPrototypesandprototypechains/</loc>
+    <loc>https://zhchen7.github.io/2020/03/23/getOfferScopeandclosure/</loc>
     
     <lastmod>2020-03-23</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhchen7.github.io/2020/03/23/getOfferScopeandclosure/</loc>
+    <loc>https://zhchen7.github.io/2020/03/23/getOfferPrototypesandprototypechains/</loc>
     
     <lastmod>2020-03-23</lastmod>
     
@@ -1014,14 +1014,14 @@
   </url>
   
   <url>
-    <loc>https://zhchen7.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://zhchen7.github.io/categories/%E5%A4%A7%E5%AD%A6%E5%AE%9E%E8%AE%AD/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://zhchen7.github.io/categories/%E5%A4%A7%E5%AD%A6%E5%AE%9E%E8%AE%AD/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <loc>https://zhchen7.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1084,13 +1084,6 @@
   </url>
   
   <url>
-    <loc>https://zhchen7.github.io/categories/%E5%B7%A5%E5%85%B7/md%E8%BD%ACHTML/</loc>
-    <lastmod>2020-09-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zhchen7.github.io/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
@@ -1099,6 +1092,13 @@
   
   <url>
     <loc>https://zhchen7.github.io/categories/Offer/</loc>
+    <lastmod>2020-09-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhchen7.github.io/categories/%E5%B7%A5%E5%85%B7/md%E8%BD%ACHTML/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
