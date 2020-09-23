@@ -21,9 +21,9 @@ https://blog.zxinc520.com/2019/09/20/Step-By-Step/
 https://blog.zxinc520.com/2019/09/11/ComplexityAnalysis/
 https://blog.zxinc520.com/2019/09/09/AlgorithmForTheInterview01/
 https://blog.zxinc520.com/2019/09/07/ReactTheory/
-https://blog.zxinc520.com/2019/09/05/VueTheory/
-https://blog.zxinc520.com/2019/09/05/WeChatUp/
 https://blog.zxinc520.com/2019/09/05/WeChatUp02/
+https://blog.zxinc520.com/2019/09/05/WeChatUp/
+https://blog.zxinc520.com/2019/09/05/VueTheory/
 https://blog.zxinc520.com/2019/08/29/hybrid/
 https://blog.zxinc520.com/2019/08/14/asynchronization/
 https://blog.zxinc520.com/2019/08/10/NewPrototype/

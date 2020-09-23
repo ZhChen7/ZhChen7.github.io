@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://blog.zxinc520.com/2019/09/05/VueTheory/</loc>
+    <loc>https://blog.zxinc520.com/2019/09/05/WeChatUp02/</loc>
     
     <lastmod>2019-09-05</lastmod>
     
@@ -205,7 +205,7 @@
   </url>
   
   <url>
-    <loc>https://blog.zxinc520.com/2019/09/05/WeChatUp02/</loc>
+    <loc>https://blog.zxinc520.com/2019/09/05/VueTheory/</loc>
     
     <lastmod>2019-09-05</lastmod>
     
@@ -613,13 +613,6 @@
   </url>
   
   <url>
-    <loc>https://blog.zxinc520.com/tags/%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%AE%AD/</loc>
-    <lastmod>2020-09-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
@@ -628,6 +621,13 @@
   
   <url>
     <loc>https://blog.zxinc520.com/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/</loc>
+    <lastmod>2020-09-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zxinc520.com/tags/%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%AE%AD/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -739,6 +739,13 @@
   </url>
   
   <url>
+    <loc>https://blog.zxinc520.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+    <lastmod>2020-09-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.zxinc520.com/tags/MVVM/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
@@ -747,13 +754,6 @@
   
   <url>
     <loc>https://blog.zxinc520.com/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E3%80%81%E6%A8%A1%E6%9D%BF%E8%A7%A3%E6%9E%90%E3%80%81%E6%B8%B2%E6%9F%93/</loc>
-    <lastmod>2020-09-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.zxinc520.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1014,7 +1014,7 @@
   </url>
   
   <url>
-    <loc>https://blog.zxinc520.com/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</loc>
+    <loc>https://blog.zxinc520.com/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1028,14 +1028,7 @@
   </url>
   
   <url>
-    <loc>https://blog.zxinc520.com/categories/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2020-09-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.zxinc520.com/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/</loc>
+    <loc>https://blog.zxinc520.com/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1091,7 +1084,14 @@
   </url>
   
   <url>
-    <loc>https://blog.zxinc520.com/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%AE%AD/</loc>
+    <loc>https://blog.zxinc520.com/categories/%E5%B7%A5%E5%85%B7/md%E8%BD%ACHTML/</loc>
+    <lastmod>2020-09-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zxinc520.com/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1105,7 +1105,7 @@
   </url>
   
   <url>
-    <loc>https://blog.zxinc520.com/categories/%E5%B7%A5%E5%85%B7/md%E8%BD%ACHTML/</loc>
+    <loc>https://blog.zxinc520.com/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%AE%AD/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1147,14 +1147,14 @@
   </url>
   
   <url>
-    <loc>https://blog.zxinc520.com/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8A%E7%AF%87/</loc>
+    <loc>https://blog.zxinc520.com/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8B%E7%AF%87/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.zxinc520.com/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8B%E7%AF%87/</loc>
+    <loc>https://blog.zxinc520.com/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8A%E7%AF%87/</loc>
     <lastmod>2020-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
