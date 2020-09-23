@@ -17,7 +17,7 @@
   <entry>
     <title>vue3 比 vue2.x 版本的优势</title>
     <url>/2020/09/23/vue3-%E7%9A%84%E4%BC%98%E5%8A%BF/</url>
-    <content><![CDATA[<h2 id="vue3-比-vue2-x-版本的优势"><a href="#vue3-比-vue2-x-版本的优势" class="headerlink" title="vue3 比 vue2.x 版本的优势"></a>vue3 比 vue2.x 版本的优势</h2><blockquote>
+    <content><![CDATA[<blockquote>
 <p>——先学习 Vue2.x</p>
 <ul>
 <li>Vue3.0 并不是推倒从来，很多 2.x 内容依然被保存</li>
@@ -2973,82 +2973,6 @@ f.constructor === F; // true
       </tags>
   </entry>
   <entry>
-    <title>作用域和闭包</title>
-    <url>/2020/03/23/getOfferScopeandclosure/</url>
-    <content><![CDATA[<h2 id="专题总结：作用域和闭包"><a href="#专题总结：作用域和闭包" class="headerlink" title="专题总结：作用域和闭包"></a>专题总结：作用域和闭包</h2><blockquote>
-<p>拿到 字节跳动实习生 offer 总结</p>
-<p>回馈分享一波自己的知识点总结</p>
-</blockquote>
-<blockquote>
-<p>希望读者依此构建自己的知识树（思维导图）</p>
-<p>偷懒一下：可参考我自己总结思维导图 : <a href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
-<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
-<p>自己开发的博客地址：<a href="http://zxinc520.com/">zxinc520.com</a></p>
-<p>github 地址: <a href="https://github.com/ZhChen7">点击</a></p>
-</blockquote>
-<blockquote>
-<p>此篇 js - 【作用域和闭包】 知识点： 全部弄懂了，面试很容易。</p>
-</blockquote>
-<h2 id="一、作用域和作用域链概念"><a href="#一、作用域和作用域链概念" class="headerlink" title="一、作用域和作用域链概念"></a>一、作用域和作用域链概念</h2><h3 id="1-1、作用域"><a href="#1-1、作用域" class="headerlink" title="1.1、作用域"></a>1.1、作用域</h3><h4 id="1-1-1、作用域是什么"><a href="#1-1-1、作用域是什么" class="headerlink" title="1.1.1、作用域是什么"></a>1.1.1、作用域是什么</h4><p>作用域本质就是程序源代码中定义变量的区域，它可以解释为一套规则，是关于 JS 引擎如何寻找变量以及会在何处找到变量的规则。</p>
-<h4 id="1-1-2、作用域分为哪些"><a href="#1-1-2、作用域分为哪些" class="headerlink" title="1.1.2、作用域分为哪些"></a>1.1.2、作用域分为哪些</h4><ul>
-<li>词法作用域（静态作用域）<ul>
-<li>词法作用域是在写代码时就确定了作用域（不使用 eval 和 with 的前提下，这两个现在基本不使用，因此不讲了），即静态作用域</li>
-</ul>
-</li>
-<li>动态作用域<ul>
-<li>而动态作用域是在代码运行时动态确定的</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-2、作用域链"><a href="#1-2、作用域链" class="headerlink" title="1.2、作用域链"></a>1.2、作用域链</h3><h4 id="1-2-1、作用域链是什么"><a href="#1-2-1、作用域链是什么" class="headerlink" title="1.2.1、作用域链是什么"></a>1.2.1、作用域链是什么</h4><p>作用域链实际上是指向变量对象的指针列表，它只引用但不实际包含变量对象，它的用途是保证对执行环境有权访问的所有变量和函数的有序访问。</p>
-<p>简单来说：作用域链就是从当前作用域开始一层一层向上寻找某个变量，直到找到全局作用域还是没找到，就宣布放弃。这种一层一层的关系，就是作用域链。</p>
-<h5 id="两个重要概念："><a href="#两个重要概念：" class="headerlink" title="两个重要概念："></a>两个重要概念：</h5><ul>
-<li><p>变量对象</p>
-<p>每个执行环境都有一个与之关联的变量对象，环境中定义的所有变量和函数都保存在这个对象中（变量对象其实就是作用域这个抽象概念的具体值），比如一个函数中包含的局部变量，它的参数，它里面声明的函数都存在变量对象中。（一个当前执行函数的变量对象最开始时就包含一个 arguments 对象，这个对象用来装函数括号内的参数，所以全局环境的变量对象没有这个）</p>
-</li>
-<li><p>执行环境</p>
-<p>也可以叫执行上下文，这里定义了变量或函数有权访问的其他数据，当一个函数被执行时，他的执行环境会被推入环境栈，执行之后才会被弹出，把控制权返回给之前的执行环境。</p>
-</li>
-</ul>
-<h2 id="二、闭包"><a href="#二、闭包" class="headerlink" title="二、闭包"></a>二、闭包</h2><h3 id="2-1、闭包是什么"><a href="#2-1、闭包是什么" class="headerlink" title="2.1、闭包是什么"></a>2.1、闭包是什么</h3><p>闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包最常用的方式就是在一个函数内部创建另一个函数。</p>
-<h3 id="2-2、闭包的作用"><a href="#2-2、闭包的作用" class="headerlink" title="2.2、闭包的作用"></a>2.2、闭包的作用</h3><ol>
-<li><p>能够访问函数定义时所在的词法作用域(阻止其被回收)。</p>
-</li>
-<li><p>私有化变量</p>
-</li>
-<li><p>模拟块级作用域</p>
-</li>
-<li><p>创建模块</p>
-<ul>
-<li>两个必备的条件(来自《你不知道的 JavaScript》)<ul>
-<li>必须有外部的封闭函数，该函数必须至少被调用一次(每次调用都会创建一个新的模块实例)</li>
-<li>封闭函数必须返回至少一个内部函数，这样内部函数才能在私有作用域中形成闭包，并且可以访问或者修改私有的状态。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">coolModule</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;Yvette&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> age = <span class="number">20</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayAge</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(age);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    sayName,</span><br><span class="line">    sayAge,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> info = coolModule();</span><br><span class="line">info.sayName(); <span class="comment">//&#x27;Yvette&#x27;</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h3 id="2-3、闭包的缺点"><a href="#2-3、闭包的缺点" class="headerlink" title="2.3、闭包的缺点"></a>2.3、闭包的缺点</h3><p>闭包会导致函数的变量一直保存在内存中，过多的闭包可能会导致内存泄漏</p>
-<p>2.4、经典题目（闭包）</p>
-<blockquote>
-<p>函数自增</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i++;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JS</category>
-        <category>JS 三座大山</category>
-        <category>Offer</category>
-        <category>字节跳动</category>
-      </categories>
-      <tags>
-        <tag>面试全面总结</tag>
-        <tag>JS 三座大山</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>原型和原型链</title>
     <url>/2020/03/23/getOfferPrototypesandprototypechains/</url>
     <content><![CDATA[<h2 id="JavaScript-原型和原型链"><a href="#JavaScript-原型和原型链" class="headerlink" title="JavaScript 原型和原型链"></a>JavaScript 原型和原型链</h2><blockquote>
@@ -3213,6 +3137,82 @@ f.constructor === F; // true
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> L = A.__proto__;</span><br><span class="line"><span class="keyword">var</span> R = B.prototype;</span><br><span class="line"><span class="keyword">if</span> (L === R) <span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+]]></content>
+      <categories>
+        <category>JS</category>
+        <category>JS 三座大山</category>
+        <category>Offer</category>
+        <category>字节跳动</category>
+      </categories>
+      <tags>
+        <tag>面试全面总结</tag>
+        <tag>JS 三座大山</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>作用域和闭包</title>
+    <url>/2020/03/23/getOfferScopeandclosure/</url>
+    <content><![CDATA[<h2 id="专题总结：作用域和闭包"><a href="#专题总结：作用域和闭包" class="headerlink" title="专题总结：作用域和闭包"></a>专题总结：作用域和闭包</h2><blockquote>
+<p>拿到 字节跳动实习生 offer 总结</p>
+<p>回馈分享一波自己的知识点总结</p>
+</blockquote>
+<blockquote>
+<p>希望读者依此构建自己的知识树（思维导图）</p>
+<p>偷懒一下：可参考我自己总结思维导图 : <a href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
+<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
+<p>自己开发的博客地址：<a href="http://zxinc520.com/">zxinc520.com</a></p>
+<p>github 地址: <a href="https://github.com/ZhChen7">点击</a></p>
+</blockquote>
+<blockquote>
+<p>此篇 js - 【作用域和闭包】 知识点： 全部弄懂了，面试很容易。</p>
+</blockquote>
+<h2 id="一、作用域和作用域链概念"><a href="#一、作用域和作用域链概念" class="headerlink" title="一、作用域和作用域链概念"></a>一、作用域和作用域链概念</h2><h3 id="1-1、作用域"><a href="#1-1、作用域" class="headerlink" title="1.1、作用域"></a>1.1、作用域</h3><h4 id="1-1-1、作用域是什么"><a href="#1-1-1、作用域是什么" class="headerlink" title="1.1.1、作用域是什么"></a>1.1.1、作用域是什么</h4><p>作用域本质就是程序源代码中定义变量的区域，它可以解释为一套规则，是关于 JS 引擎如何寻找变量以及会在何处找到变量的规则。</p>
+<h4 id="1-1-2、作用域分为哪些"><a href="#1-1-2、作用域分为哪些" class="headerlink" title="1.1.2、作用域分为哪些"></a>1.1.2、作用域分为哪些</h4><ul>
+<li>词法作用域（静态作用域）<ul>
+<li>词法作用域是在写代码时就确定了作用域（不使用 eval 和 with 的前提下，这两个现在基本不使用，因此不讲了），即静态作用域</li>
+</ul>
+</li>
+<li>动态作用域<ul>
+<li>而动态作用域是在代码运行时动态确定的</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2、作用域链"><a href="#1-2、作用域链" class="headerlink" title="1.2、作用域链"></a>1.2、作用域链</h3><h4 id="1-2-1、作用域链是什么"><a href="#1-2-1、作用域链是什么" class="headerlink" title="1.2.1、作用域链是什么"></a>1.2.1、作用域链是什么</h4><p>作用域链实际上是指向变量对象的指针列表，它只引用但不实际包含变量对象，它的用途是保证对执行环境有权访问的所有变量和函数的有序访问。</p>
+<p>简单来说：作用域链就是从当前作用域开始一层一层向上寻找某个变量，直到找到全局作用域还是没找到，就宣布放弃。这种一层一层的关系，就是作用域链。</p>
+<h5 id="两个重要概念："><a href="#两个重要概念：" class="headerlink" title="两个重要概念："></a>两个重要概念：</h5><ul>
+<li><p>变量对象</p>
+<p>每个执行环境都有一个与之关联的变量对象，环境中定义的所有变量和函数都保存在这个对象中（变量对象其实就是作用域这个抽象概念的具体值），比如一个函数中包含的局部变量，它的参数，它里面声明的函数都存在变量对象中。（一个当前执行函数的变量对象最开始时就包含一个 arguments 对象，这个对象用来装函数括号内的参数，所以全局环境的变量对象没有这个）</p>
+</li>
+<li><p>执行环境</p>
+<p>也可以叫执行上下文，这里定义了变量或函数有权访问的其他数据，当一个函数被执行时，他的执行环境会被推入环境栈，执行之后才会被弹出，把控制权返回给之前的执行环境。</p>
+</li>
+</ul>
+<h2 id="二、闭包"><a href="#二、闭包" class="headerlink" title="二、闭包"></a>二、闭包</h2><h3 id="2-1、闭包是什么"><a href="#2-1、闭包是什么" class="headerlink" title="2.1、闭包是什么"></a>2.1、闭包是什么</h3><p>闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包最常用的方式就是在一个函数内部创建另一个函数。</p>
+<h3 id="2-2、闭包的作用"><a href="#2-2、闭包的作用" class="headerlink" title="2.2、闭包的作用"></a>2.2、闭包的作用</h3><ol>
+<li><p>能够访问函数定义时所在的词法作用域(阻止其被回收)。</p>
+</li>
+<li><p>私有化变量</p>
+</li>
+<li><p>模拟块级作用域</p>
+</li>
+<li><p>创建模块</p>
+<ul>
+<li>两个必备的条件(来自《你不知道的 JavaScript》)<ul>
+<li>必须有外部的封闭函数，该函数必须至少被调用一次(每次调用都会创建一个新的模块实例)</li>
+<li>封闭函数必须返回至少一个内部函数，这样内部函数才能在私有作用域中形成闭包，并且可以访问或者修改私有的状态。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">coolModule</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;Yvette&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> age = <span class="number">20</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayAge</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(age);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    sayName,</span><br><span class="line">    sayAge,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> info = coolModule();</span><br><span class="line">info.sayName(); <span class="comment">//&#x27;Yvette&#x27;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="2-3、闭包的缺点"><a href="#2-3、闭包的缺点" class="headerlink" title="2.3、闭包的缺点"></a>2.3、闭包的缺点</h3><p>闭包会导致函数的变量一直保存在内存中，过多的闭包可能会导致内存泄漏</p>
+<p>2.4、经典题目（闭包）</p>
+<blockquote>
+<p>函数自增</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i++;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>JS</category>
@@ -10451,6 +10451,119 @@ f.constructor === F; // true
       </tags>
   </entry>
   <entry>
+    <title>微信小程序笔记下</title>
+    <url>/2019/09/05/WeChatUp02/</url>
+    <content><![CDATA[<h1 id="微信小程序笔记下"><a href="#微信小程序笔记下" class="headerlink" title="微信小程序笔记下"></a>微信小程序笔记下</h1><blockquote>
+<p>微信小程序笔记下</p>
+<p>input</p>
+<p>color 属性</p>
+<p>bindchange</p>
+<p>wxs 页面脚本</p>
+<p>微信小程序事件 <strong>冒泡 ** 和 事件</strong>传参**</p>
+<p>服务号、订阅号</p>
+<p>sdk</p>
+</blockquote>
+<h2 id="微信小程序组件"><a href="#微信小程序组件" class="headerlink" title="微信小程序组件"></a>微信小程序组件</h2><h3 id="表单组件"><a href="#表单组件" class="headerlink" title="表单组件"></a>表单组件</h3><h4 id="input"><a href="#input" class="headerlink" title="input"></a>input</h4><blockquote>
+<p>输入框。该组件是<a href="https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html">原生组件</a>，使用时请注意相关限制</p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html">可以参考</a></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 输入框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;text&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;text&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;password&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;password&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;number&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;number&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;idcard&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;idcard&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;digit&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;digit&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 单选框 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio-group</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">radio</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">radio</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">radio-group</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 多选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">checkbox-group</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">checkbox-group</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/iBUB5P8LKOTz.png?imageslim" alt="mark"></p>
+<h3 id="改变颜色"><a href="#改变颜色" class="headerlink" title="改变颜色"></a>改变颜色</h3><blockquote>
+<p><strong>color 属性</strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 单选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">radio-group</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span> <span class="attr">color</span>=<span class="string">&quot;#f30&quot;</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">radio-group</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 多选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">checkbox-group</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">checkbox</span> <span class="attr">color</span>=<span class="string">&quot;#f30&quot;</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">checkbox-group</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/0lbNety1l8Nr.gif" alt="mark"></p>
+<ul>
+<li>checked：默认选中</li>
+<li>disabled: 禁用</li>
+</ul>
+<h3 id="bindchange"><a href="#bindchange" class="headerlink" title="bindchange"></a>bindchange</h3><blockquote>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/checkbox-group.html">checkbox-group</a>中选中项发生改变时触发 change 事件，detail = {value:[选中的 checkbox 的 value 的数组]}</p>
+<p><strong>单选框</strong> 和 <strong>复选框</strong> 都能用！</p>
+</blockquote>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 单选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">radio-group</span> =<span class="string">&quot;radiobindchangefun&quot;</span> <span class="attr">data-index</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span> <span class="attr">color</span>=<span class="string">&quot;#f30&quot;</span> <span class="attr">value</span>=<span class="string">&quot;nan&quot;</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span> <span class="attr">value</span>=<span class="string">&quot;nv&quot;</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">radio-group</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>index.js：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">radiobindchangefun(e)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.detail.value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/HhwLwtgLFk7s.gif" alt="mark"></p>
+<h2 id="wxs-页面脚本"><a href="#wxs-页面脚本" class="headerlink" title="wxs 页面脚本"></a>wxs 页面脚本</h2><blockquote>
+<p>WXS（WeiXin Script）是小程序的一套脚本语言，结合 <code>WXML</code>，可以构建出页面的结构。</p>
+<p>WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。</p>
+<p><strong>用的相对不多</strong></p>
+</blockquote>
+<ul>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/01wxs-module.html">WXS 模块</a></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/02variate.html">变量</a></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/03annotation.html">注释</a></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/04operator.html">运算符</a></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/05statement.html">语句</a></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/06datatype.html">数据类型</a></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/07basiclibrary.html">基础类库</a></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">wxs</span> <span class="attr">module</span>=<span class="string">&quot;foo&quot;</span>&gt;</span></span><br><span class="line">  var sum=function(a,b)&#123; return a+b; &#125; module.exports.sum=sum</span><br><span class="line"><span class="tag">&lt;/<span class="name">wxs</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;foo.sum(1,2)&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/sEHFhCJgcSTT.png?imageslim" alt="mark"></p>
+<h2 id="微信小程序事件冒泡和事件传参"><a href="#微信小程序事件冒泡和事件传参" class="headerlink" title="微信小程序事件冒泡和事件传参"></a>微信小程序事件冒泡和事件传参</h2><blockquote>
+<p>微信小程序事件冒泡和事件传参</p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html">参考</a></p>
+</blockquote>
+<h3 id="事件绑定和冒泡"><a href="#事件绑定和冒泡" class="headerlink" title="事件绑定和冒泡"></a>事件绑定和冒泡</h3><p>事件绑定的写法同组件的属性，以 key、value 的形式。</p>
+<ul>
+<li>key 以<code>bind</code>或<code>catch</code>开头，然后跟上事件的类型，如<code>bindtap</code>、<code>catchtouchstart</code>。自基础库版本 <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">1.5.0</a> 起，在非<a href="https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html">原生组件</a>中，<code>bind</code>和<code>catch</code>后可以紧跟一个冒号，其含义不变，如<code>bind:tap</code>、<code>catch:touchstart</code>。</li>
+<li>value 是一个字符串，需要在对应的 Page 中定义同名的函数。不然当触发事件的时候会报错。</li>
+</ul>
+<p><code>bind</code>事件绑定<strong>不会阻止</strong>冒泡事件向上冒泡，<code>catch</code>事件绑定<strong>可以阻止</strong>冒泡事件向上冒泡。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span> <span class="attr">bindtap</span>=<span class="string">&quot;ClickFatherEvent&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span> <span class="attr">catchtap</span>=<span class="string">&quot;ClickSonEvent&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190610/iYPyQKFs0uUh.gif" alt="mark"></p>
+<h3 id="事件传参"><a href="#事件传参" class="headerlink" title="事件传参"></a>事件传参</h3><blockquote>
+<p>自定义属性传参 ( <strong>data-index=”1”</strong> )</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span> <span class="attr">bindtap</span>=<span class="string">&quot;ClickFatherEvent&quot;</span> <span class="attr">data-index</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span> <span class="attr">catchtap</span>=<span class="string">&quot;ClickSonEvent&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">ClickFatherEvent(event)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;father&#x27;</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(event.currentTarget.dataset.index)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190611/QGePjx2yA28Q.gif" alt="mark"></p>
+<h2 id="服务号"><a href="#服务号" class="headerlink" title="服务号"></a>服务号</h2><blockquote>
+<p>服务号：为企业和组织提供更强大的业务服务与用户管理能力，主要偏向服务类交互（功能类似 12315，114，银行，提供绑定信息，服务交互的）；</p>
+<p>适用人群：媒体、企业、政府或其他组织。</p>
+<p>群发次数：服务号 1 个月（按自然月）内可发送 4 条群发消息。</p>
+<p><a href="https://kf.qq.com/faq/120911VrYVrA150918fMZ77R.html?scene_id=kf3386">可以参考</a></p>
+</blockquote>
+<h2 id="订阅号"><a href="#订阅号" class="headerlink" title="订阅号"></a>订阅号</h2><blockquote>
+<h1 id="什么是订阅号？"><a href="#什么是订阅号？" class="headerlink" title="什么是订阅号？"></a>什么是订阅号？</h1><p>订阅号：为媒体和个人提供一种新的信息传播方式，主要功能是在微信侧给用户传达资讯；（功能类似报纸杂志，提供新闻信息或娱乐趣事）</p>
+<p>适用人群：个人、媒体、企业、政府或其他组织。</p>
+<p>群发次数：订阅号（认证用户、非认证用户）1 天内可群发 1 条消息。</p>
+</blockquote>
+<p><strong>温馨提示：</strong></p>
+<ol>
+<li>如果想用公众平台简单发发消息，做宣传推广服务，建议可选择订阅号；</li>
+<li>如果想用公众平台进行商品销售，建议可选择服务号，后续可认证再申请微信支付商户；</li>
+</ol>
+<h2 id="sdk"><a href="#sdk" class="headerlink" title="sdk"></a>sdk</h2><blockquote>
+<p><a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%8C%85">软件开发工具包</a>（缩写：<strong>SDK</strong>、外语全称：<strong>Software Development Kit）</strong>一般都是一些<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275">软件工程师</a>为特定的<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%8C%85/10508451">软件包</a>、<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6/1471931">软件框架</a>、<a href="https://baike.baidu.com/item/%E7%A1%AC%E4%BB%B6/479446">硬件</a>平台、<a href="https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/192">操作系统</a>等建立应用软件时的<a href="https://baike.baidu.com/item/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/10464557">开发工具</a>的集合。 [1]</p>
+<p>软件开发工具包括广义上指<a href="https://baike.baidu.com/item/%E8%BE%85%E5%8A%A9/1045139">辅助</a>开发某一类软件的相关文档、范例和工具的<a href="https://baike.baidu.com/item/%E9%9B%86%E5%90%88/73081">集合</a>。</p>
+<p>软件开发工具包是一些被软件工程师用于为特定的软件包、软件框架、硬件平台、操作系统等创建应用软件的开发工具的集合，一般而言 SDK 即开发 <a href="https://baike.baidu.com/item/Windows">Windows</a> 平台下的应用程序所使用的 SDK。它可以简单的为某个<a href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80/2317999">程序设计语言</a>提供<a href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%8F%A3/10418844">应用程序接口</a> <strong>API</strong>的一些文件，但也可能包括能与某种<a href="https://baike.baidu.com/item/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F/186978">嵌入式系统</a>通讯的复杂的硬件。一般的工具包括用于调试和其他用途的实用工具。SDK 还经常包括示例代码、支持性的技术注解或者其他的为基本参考资料澄清疑点的支持文档。</p>
+<p>为了鼓励开发者使用其系统或者语言，许多 SDK 是<a href="https://baike.baidu.com/item/%E5%85%8D%E8%B4%B9/131326">免费</a>提供的。<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275">软件工程师</a>通常从目标系统开发者那里获得软件开发包，也可以直接从互联网下载，有时也被作为<a href="https://baike.baidu.com/item/%E8%90%A5%E9%94%80%E6%89%8B%E6%AE%B5">营销手段</a>。例如，营销公司会免费提供构建 SDK 以鼓励人们使用它，从而会吸引更多人由于能免费为其编程而购买其构件。</p>
+<p>SDK 可能附带了使其不能在不兼容的许可证下开发软件的许可证。例如产品供应商提供一个专有的 SDK 可能与自由软件开发抵触。<a href="https://baike.baidu.com/item/GPL">GPL</a> 能使 SDK 与专有软件开发近乎不兼容。<a href="https://baike.baidu.com/item/LGPL">LGPL</a> 下的 SDK 则没有这个问题。</p>
+<p><a href="https://baike.baidu.com/item/SDK/7815680">可参考官方解释</a></p>
+<p><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">微信 JS-SDK 说明文档</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>微信小程序</category>
+        <category>微信小程序下篇</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>微信小程序笔记上</title>
     <url>/2019/09/05/WeChatUp/</url>
     <content><![CDATA[<h1 id="微信小程序笔记上"><a href="#微信小程序笔记上" class="headerlink" title="微信小程序笔记上"></a>微信小程序笔记上</h1><blockquote>
@@ -10671,119 +10784,6 @@ f.constructor === F; // true
       <categories>
         <category>微信小程序</category>
         <category>微信小程序上篇</category>
-      </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信小程序笔记下</title>
-    <url>/2019/09/05/WeChatUp02/</url>
-    <content><![CDATA[<h1 id="微信小程序笔记下"><a href="#微信小程序笔记下" class="headerlink" title="微信小程序笔记下"></a>微信小程序笔记下</h1><blockquote>
-<p>微信小程序笔记下</p>
-<p>input</p>
-<p>color 属性</p>
-<p>bindchange</p>
-<p>wxs 页面脚本</p>
-<p>微信小程序事件 <strong>冒泡 ** 和 事件</strong>传参**</p>
-<p>服务号、订阅号</p>
-<p>sdk</p>
-</blockquote>
-<h2 id="微信小程序组件"><a href="#微信小程序组件" class="headerlink" title="微信小程序组件"></a>微信小程序组件</h2><h3 id="表单组件"><a href="#表单组件" class="headerlink" title="表单组件"></a>表单组件</h3><h4 id="input"><a href="#input" class="headerlink" title="input"></a>input</h4><blockquote>
-<p>输入框。该组件是<a href="https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html">原生组件</a>，使用时请注意相关限制</p>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html">可以参考</a></p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 输入框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;text&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;text&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;password&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;password&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;number&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;number&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;idcard&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;idcard&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;digit&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;digit&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 单选框 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio-group</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">radio</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">radio</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">radio-group</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 多选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">checkbox-group</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">checkbox-group</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190605/iBUB5P8LKOTz.png?imageslim" alt="mark"></p>
-<h3 id="改变颜色"><a href="#改变颜色" class="headerlink" title="改变颜色"></a>改变颜色</h3><blockquote>
-<p><strong>color 属性</strong></p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 单选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">radio-group</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span> <span class="attr">color</span>=<span class="string">&quot;#f30&quot;</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">radio-group</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 多选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">checkbox-group</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">checkbox</span> <span class="attr">color</span>=<span class="string">&quot;#f30&quot;</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">checkbox-group</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190605/0lbNety1l8Nr.gif" alt="mark"></p>
-<ul>
-<li>checked：默认选中</li>
-<li>disabled: 禁用</li>
-</ul>
-<h3 id="bindchange"><a href="#bindchange" class="headerlink" title="bindchange"></a>bindchange</h3><blockquote>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/checkbox-group.html">checkbox-group</a>中选中项发生改变时触发 change 事件，detail = {value:[选中的 checkbox 的 value 的数组]}</p>
-<p><strong>单选框</strong> 和 <strong>复选框</strong> 都能用！</p>
-</blockquote>
-<p><strong>例如：</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 单选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">radio-group</span> =<span class="string">&quot;radiobindchangefun&quot;</span> <span class="attr">data-index</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span> <span class="attr">color</span>=<span class="string">&quot;#f30&quot;</span> <span class="attr">value</span>=<span class="string">&quot;nan&quot;</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span> <span class="attr">value</span>=<span class="string">&quot;nv&quot;</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">radio-group</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>index.js：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">radiobindchangefun(e)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.detail.value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190605/HhwLwtgLFk7s.gif" alt="mark"></p>
-<h2 id="wxs-页面脚本"><a href="#wxs-页面脚本" class="headerlink" title="wxs 页面脚本"></a>wxs 页面脚本</h2><blockquote>
-<p>WXS（WeiXin Script）是小程序的一套脚本语言，结合 <code>WXML</code>，可以构建出页面的结构。</p>
-<p>WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。</p>
-<p><strong>用的相对不多</strong></p>
-</blockquote>
-<ul>
-<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/01wxs-module.html">WXS 模块</a></li>
-<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/02variate.html">变量</a></li>
-<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/03annotation.html">注释</a></li>
-<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/04operator.html">运算符</a></li>
-<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/05statement.html">语句</a></li>
-<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/06datatype.html">数据类型</a></li>
-<li><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/07basiclibrary.html">基础类库</a></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">wxs</span> <span class="attr">module</span>=<span class="string">&quot;foo&quot;</span>&gt;</span></span><br><span class="line">  var sum=function(a,b)&#123; return a+b; &#125; module.exports.sum=sum</span><br><span class="line"><span class="tag">&lt;/<span class="name">wxs</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;foo.sum(1,2)&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190605/sEHFhCJgcSTT.png?imageslim" alt="mark"></p>
-<h2 id="微信小程序事件冒泡和事件传参"><a href="#微信小程序事件冒泡和事件传参" class="headerlink" title="微信小程序事件冒泡和事件传参"></a>微信小程序事件冒泡和事件传参</h2><blockquote>
-<p>微信小程序事件冒泡和事件传参</p>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html">参考</a></p>
-</blockquote>
-<h3 id="事件绑定和冒泡"><a href="#事件绑定和冒泡" class="headerlink" title="事件绑定和冒泡"></a>事件绑定和冒泡</h3><p>事件绑定的写法同组件的属性，以 key、value 的形式。</p>
-<ul>
-<li>key 以<code>bind</code>或<code>catch</code>开头，然后跟上事件的类型，如<code>bindtap</code>、<code>catchtouchstart</code>。自基础库版本 <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">1.5.0</a> 起，在非<a href="https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html">原生组件</a>中，<code>bind</code>和<code>catch</code>后可以紧跟一个冒号，其含义不变，如<code>bind:tap</code>、<code>catch:touchstart</code>。</li>
-<li>value 是一个字符串，需要在对应的 Page 中定义同名的函数。不然当触发事件的时候会报错。</li>
-</ul>
-<p><code>bind</code>事件绑定<strong>不会阻止</strong>冒泡事件向上冒泡，<code>catch</code>事件绑定<strong>可以阻止</strong>冒泡事件向上冒泡。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span> <span class="attr">bindtap</span>=<span class="string">&quot;ClickFatherEvent&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span> <span class="attr">catchtap</span>=<span class="string">&quot;ClickSonEvent&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190610/iYPyQKFs0uUh.gif" alt="mark"></p>
-<h3 id="事件传参"><a href="#事件传参" class="headerlink" title="事件传参"></a>事件传参</h3><blockquote>
-<p>自定义属性传参 ( <strong>data-index=”1”</strong> )</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span> <span class="attr">bindtap</span>=<span class="string">&quot;ClickFatherEvent&quot;</span> <span class="attr">data-index</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span> <span class="attr">catchtap</span>=<span class="string">&quot;ClickSonEvent&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">ClickFatherEvent(event)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;father&#x27;</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(event.currentTarget.dataset.index)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190611/QGePjx2yA28Q.gif" alt="mark"></p>
-<h2 id="服务号"><a href="#服务号" class="headerlink" title="服务号"></a>服务号</h2><blockquote>
-<p>服务号：为企业和组织提供更强大的业务服务与用户管理能力，主要偏向服务类交互（功能类似 12315，114，银行，提供绑定信息，服务交互的）；</p>
-<p>适用人群：媒体、企业、政府或其他组织。</p>
-<p>群发次数：服务号 1 个月（按自然月）内可发送 4 条群发消息。</p>
-<p><a href="https://kf.qq.com/faq/120911VrYVrA150918fMZ77R.html?scene_id=kf3386">可以参考</a></p>
-</blockquote>
-<h2 id="订阅号"><a href="#订阅号" class="headerlink" title="订阅号"></a>订阅号</h2><blockquote>
-<h1 id="什么是订阅号？"><a href="#什么是订阅号？" class="headerlink" title="什么是订阅号？"></a>什么是订阅号？</h1><p>订阅号：为媒体和个人提供一种新的信息传播方式，主要功能是在微信侧给用户传达资讯；（功能类似报纸杂志，提供新闻信息或娱乐趣事）</p>
-<p>适用人群：个人、媒体、企业、政府或其他组织。</p>
-<p>群发次数：订阅号（认证用户、非认证用户）1 天内可群发 1 条消息。</p>
-</blockquote>
-<p><strong>温馨提示：</strong></p>
-<ol>
-<li>如果想用公众平台简单发发消息，做宣传推广服务，建议可选择订阅号；</li>
-<li>如果想用公众平台进行商品销售，建议可选择服务号，后续可认证再申请微信支付商户；</li>
-</ol>
-<h2 id="sdk"><a href="#sdk" class="headerlink" title="sdk"></a>sdk</h2><blockquote>
-<p><a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%8C%85">软件开发工具包</a>（缩写：<strong>SDK</strong>、外语全称：<strong>Software Development Kit）</strong>一般都是一些<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275">软件工程师</a>为特定的<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%8C%85/10508451">软件包</a>、<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6/1471931">软件框架</a>、<a href="https://baike.baidu.com/item/%E7%A1%AC%E4%BB%B6/479446">硬件</a>平台、<a href="https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/192">操作系统</a>等建立应用软件时的<a href="https://baike.baidu.com/item/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/10464557">开发工具</a>的集合。 [1]</p>
-<p>软件开发工具包括广义上指<a href="https://baike.baidu.com/item/%E8%BE%85%E5%8A%A9/1045139">辅助</a>开发某一类软件的相关文档、范例和工具的<a href="https://baike.baidu.com/item/%E9%9B%86%E5%90%88/73081">集合</a>。</p>
-<p>软件开发工具包是一些被软件工程师用于为特定的软件包、软件框架、硬件平台、操作系统等创建应用软件的开发工具的集合，一般而言 SDK 即开发 <a href="https://baike.baidu.com/item/Windows">Windows</a> 平台下的应用程序所使用的 SDK。它可以简单的为某个<a href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80/2317999">程序设计语言</a>提供<a href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%8F%A3/10418844">应用程序接口</a> <strong>API</strong>的一些文件，但也可能包括能与某种<a href="https://baike.baidu.com/item/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F/186978">嵌入式系统</a>通讯的复杂的硬件。一般的工具包括用于调试和其他用途的实用工具。SDK 还经常包括示例代码、支持性的技术注解或者其他的为基本参考资料澄清疑点的支持文档。</p>
-<p>为了鼓励开发者使用其系统或者语言，许多 SDK 是<a href="https://baike.baidu.com/item/%E5%85%8D%E8%B4%B9/131326">免费</a>提供的。<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275">软件工程师</a>通常从目标系统开发者那里获得软件开发包，也可以直接从互联网下载，有时也被作为<a href="https://baike.baidu.com/item/%E8%90%A5%E9%94%80%E6%89%8B%E6%AE%B5">营销手段</a>。例如，营销公司会免费提供构建 SDK 以鼓励人们使用它，从而会吸引更多人由于能免费为其编程而购买其构件。</p>
-<p>SDK 可能附带了使其不能在不兼容的许可证下开发软件的许可证。例如产品供应商提供一个专有的 SDK 可能与自由软件开发抵触。<a href="https://baike.baidu.com/item/GPL">GPL</a> 能使 SDK 与专有软件开发近乎不兼容。<a href="https://baike.baidu.com/item/LGPL">LGPL</a> 下的 SDK 则没有这个问题。</p>
-<p><a href="https://baike.baidu.com/item/SDK/7815680">可参考官方解释</a></p>
-<p><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">微信 JS-SDK 说明文档</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>微信小程序</category>
-        <category>微信小程序下篇</category>
       </categories>
       <tags>
         <tag>微信小程序</tag>

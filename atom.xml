@@ -48,14 +48,21 @@
     <link href="https://zhchen7.github.io/2020/09/23/vue3-%E7%9A%84%E4%BC%98%E5%8A%BF/"/>
     <id>https://zhchen7.github.io/2020/09/23/vue3-%E7%9A%84%E4%BC%98%E5%8A%BF/</id>
     <published>2020-09-23T14:29:51.000Z</published>
-    <updated>2020-09-23T07:26:33.499Z</updated>
+    <updated>2020-09-23T07:42:50.203Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;vue3-比-vue2-x-版本的优势&quot;&gt;&lt;a href=&quot;#vue3-比-vue2-x-版本的优势&quot; class=&quot;headerlink&quot; title=&quot;vue3 比 vue2.x 版本的优势&quot;&gt;&lt;/a&gt;vue3 比 vue2.x</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;——先学习 Vue2.x&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vue3.0 并不是推倒从来，很多 2.x 内容依然被保存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;—— 先学习 Typescript&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vue3.0 采用 TS 重写，必须学</summary>
         
       
     
@@ -315,9 +322,9 @@
   </entry>
   
   <entry>
-    <title>作用域和闭包</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferScopeandclosure/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferScopeandclosure/</id>
+    <title>原型和原型链</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferPrototypesandprototypechains/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferPrototypesandprototypechains/</id>
     <published>2020-03-23T09:18:21.000Z</published>
     <updated>2020-03-23T09:18:21.000Z</updated>
     
@@ -326,8 +333,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;专题总结：作用域和闭包&quot;&gt;&lt;a href=&quot;#专题总结：作用域和闭包&quot; class=&quot;headerlink&quot; title=&quot;专题总结：作用域和闭包&quot;&gt;&lt;/a&gt;专题总结：作用域和闭包&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;拿到 字节跳动实习生 offer</summary>
+    <summary type="html">&lt;h2 id=&quot;JavaScript-原型和原型链&quot;&gt;&lt;a href=&quot;#JavaScript-原型和原型链&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 原型和原型链&quot;&gt;&lt;/a&gt;JavaScript</summary>
         
       
     
@@ -349,9 +355,9 @@
   </entry>
   
   <entry>
-    <title>原型和原型链</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferPrototypesandprototypechains/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferPrototypesandprototypechains/</id>
+    <title>作用域和闭包</title>
+    <link href="https://zhchen7.github.io/2020/03/23/getOfferScopeandclosure/"/>
+    <id>https://zhchen7.github.io/2020/03/23/getOfferScopeandclosure/</id>
     <published>2020-03-23T09:18:21.000Z</published>
     <updated>2020-03-23T09:18:21.000Z</updated>
     
@@ -360,7 +366,8 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;JavaScript-原型和原型链&quot;&gt;&lt;a href=&quot;#JavaScript-原型和原型链&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 原型和原型链&quot;&gt;&lt;/a&gt;JavaScript</summary>
+    <summary type="html">&lt;h2 id=&quot;专题总结：作用域和闭包&quot;&gt;&lt;a href=&quot;#专题总结：作用域和闭包&quot; class=&quot;headerlink&quot; title=&quot;专题总结：作用域和闭包&quot;&gt;&lt;/a&gt;专题总结：作用域和闭包&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;拿到 字节跳动实习生 offer</summary>
         
       
     
