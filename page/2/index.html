@@ -160,6 +160,824 @@
     
     
     <article
+  id="post-getOfferPrototypesandprototypechains"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/23/getOfferPrototypesandprototypechains/"
+    >原型和原型链</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/03/23/getOfferPrototypesandprototypechains/" class="article-date">
+  <time datetime="2020-03-23T09:18:21.000Z" itemprop="datePublished">2020-03-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/">JS 三座大山</a> / <a class="article-category-link" href="/categories/Offer/">Offer</a> / <a class="article-category-link" href="/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="JavaScript-原型和原型链"><a href="#JavaScript-原型和原型链" class="headerlink" title="JavaScript 原型和原型链"></a>JavaScript 原型和原型链</h2><blockquote>
+<p>拿到 字节跳动实习生 offer 总结</p>
+<p>回馈分享一波自己的知识点总结</p>
+</blockquote>
+<blockquote>
+<p>希望读者依此构建自己的知识树（思维导图）</p>
+<p>偷懒一下：可参考我自己总结思维导图 : <a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
+<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
+<p>自己开发的博客地址：<a target="_blank" rel="noopener" href="http://zxinc520.com/">zxinc520.com</a></p>
+<p>github 地址: <a target="_blank" rel="noopener" href="https://github.com/ZhChen7">点击</a></p>
+</blockquote>
+<blockquote>
+<p>此篇 js - 【原型和原型链】 知识点： 全部弄懂了，面试很容易。</p>
+</blockquote>
+<h2 id="一、原型和原型定义"><a href="#一、原型和原型定义" class="headerlink" title="一、原型和原型定义"></a>一、原型和原型定义</h2><h3 id="1-1、背景"><a href="#1-1、背景" class="headerlink" title="1.1、背景"></a>1.1、背景</h3><p>JavaScript 中除了基础类型外的数据类型，都是对象（引用类型）。但是由于其没有 类（class，ES6 引入了 class，但其只是语法糖）的概念，如何将所有对象联系起来就成立一个问题，于是就有了原型和原型链的概念。</p>
+<h3 id="1-2、原型是什么？"><a href="#1-2、原型是什么？" class="headerlink" title="1.2、原型是什么？"></a>1.2、原型是什么？</h3><blockquote>
+<p>原型是一个 prototype 对象，用于表示对象之间的关系。</p>
+</blockquote>
+<h3 id="1-3、原型链"><a href="#1-3、原型链" class="headerlink" title="1.3、原型链"></a>1.3、原型链</h3><p>每个实例对象（ object ）都有一个私有属性（称之为 <strong>proto</strong> ）指向它的构造函数的原型对象（prototype ）。该原型对象也有一个自己的原型对象( <strong>proto</strong> ) ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。以上一整个原型与原型层层相链接的过程即为原型链</p>
+<h3 id="1-4、公式"><a href="#1-4、公式" class="headerlink" title="1.4、公式"></a>1.4、公式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 对象 = <span class="keyword">new</span> 函数();</span><br><span class="line">对象.__proto__ === 对象的构造函数.prototype;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、7-大继承写法"><a href="#二、7-大继承写法" class="headerlink" title="二、7 大继承写法"></a>二、7 大继承写法</h2><blockquote>
+<p>常考点【熟练掌握】</p>
+</blockquote>
+<h3 id="2-1、原型链继承"><a href="#2-1、原型链继承" class="headerlink" title="2.1、原型链继承"></a>2.1、原型链继承</h3><ul>
+<li><p>原型链继承的基本思想：是利用原型让一个引用类型继承另一个引用类型的属性和方法。</p>
+<p>如 SubType.prototype = new SuperType();</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = <span class="string">&quot;Yvette&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.age = <span class="number">22</span>;</span><br><span class="line">&#125;</span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>通过原型来实现继承时，原型会变成另一个类型的实例，原先的实例属性变成了现在的原型属性，该原型的引用类型属性会被所有的实例共享</li>
+<li>在创建子类型的实例时，不能向超类型的构造函数中传递参数</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-2、借用构造函数"><a href="#2-2、借用构造函数" class="headerlink" title="2.2、借用构造函数"></a>2.2、借用构造函数</h3><ul>
+<li><p>其基本思想为:在子类型的构造函数中调用超类型构造函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  SuperType.call(<span class="built_in">this</span>, name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优点</p>
+<ol>
+<li>可以向超类传递参数</li>
+<li>解决了原型中包含引用类型值被所有实例共享的问题</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>方法都在构造函数中定义，函数复用无从谈起</li>
+<li>另外超类型原型中定义的方法对于子类型而言都是不可见的</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-3、组合继承"><a href="#2-3、组合继承" class="headerlink" title="2.3、组合继承"></a>2.3、组合继承</h3><ul>
+<li><p>组合继承指的是将原型链和借用构造函数技术组合到一块，从而发挥二者之长的一种继承模式。基本思路：使用原型链实现对原型属性和方法的继承，通过借用构造函数来实现对实例属性的继承，既通过在原型上定义方法来实现了函数复用，又保证了每个实例都有自己的属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = <span class="string">&quot;zc&quot;</span>;</span><br><span class="line">  <span class="built_in">this</span>.colors = [<span class="string">&quot;pink&quot;</span>, <span class="string">&quot;blue&quot;</span>, <span class="string">&quot;green&quot;</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  SuperType.call(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line">SubType.prototype.constructor = SubType;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> SubType();</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> SubType();</span><br><span class="line"></span><br><span class="line">a.colors.push(<span class="string">&quot;red&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a.colors); <span class="comment">//[ &#x27;pink&#x27;, &#x27;blue&#x27;, &#x27;green&#x27;, &#x27;red&#x27; ]</span></span><br><span class="line"><span class="built_in">console</span>.log(b.colors); <span class="comment">//[ &#x27;pink&#x27;, &#x27;blue&#x27;, &#x27;green&#x27; ]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优点</p>
+<ol>
+<li>可以向超类传递参数</li>
+<li>每个实例都有自己的属性</li>
+<li>实现了函数复用</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>无论什么情况下，都会调用两次超类型构造函数：一次是在创建子类型原型的时候，另一次是在子类型构造函数内部。</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-4、原型式继承"><a href="#2-4、原型式继承" class="headerlink" title="2.4、原型式继承"></a>2.4、原型式继承</h3><ul>
+<li><p>原型式继承继承的基本思想：在 object() 函数内部，先创建一个临时性的构造函数，然后将传入的对象作为这个构造函数的原型，最后返回了这个临时类型的一个新实例，从本质上讲，object() 对传入的对象执行了一次浅拷贝。</p>
+<p>ECMAScript5 通过新增 Object.create()方法规范了原型式继承。这个方法接收两个参数：一个用作新对象原型的对象和（可选的）一个为新对象定义额外属性的对象(可以覆盖原型对象上的同名属性)，在传入一个参数的情况下，Object.create() 和 object() 方法的行为相同。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = o;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>同原型链实现继承一样，包含引用类型值的属性会被所有实例共享</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-5、寄生式继承"><a href="#2-5、寄生式继承" class="headerlink" title="2.5、寄生式继承"></a>2.5、寄生式继承</h3><ul>
+<li><p>寄生式继承是与原型式继承紧密相关的一种思路。寄生式继承的思路与寄生构造函数和工厂模式类似，即创建一个仅用于封装继承过程的函数，该函数在内部已某种方式来增强对象，最后再像真地是它做了所有工作一样返回对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = o;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createAnother</span>(<span class="params">original</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> clone = object(original); <span class="comment">//通过调用函数创建一个新对象</span></span><br><span class="line">  clone.sayHi = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//以某种方式增强这个对象</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> clone; <span class="comment">//返回这个对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优点</p>
+<ol>
+<li>基于 person 返回了一个新对象 -—— person2，新对象不仅具有 person 的所有属性和方法，而且还有自己的 sayHi() 方法。在考虑对象而不是自定义类型和构造函数的情况下，寄生式继承也是一种有用的模式。</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>使用寄生式继承来为对象添加函数，会由于不能做到函数复用而效率低下。</li>
+<li>同原型链实现继承一样，包含引用类型值的属性会被所有实例共享。</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-6、寄生组合式继承"><a href="#2-6、寄生组合式继承" class="headerlink" title="2.6、寄生组合式继承"></a>2.6、寄生组合式继承</h3><ul>
+<li><p>所谓寄生组合式继承，即通过借用构造函数来继承属性，通过原型链的混成形式来继承方法，基本思路：</p>
+<p>不必为了指定子类型的原型而调用超类型的构造函数，我们需要的仅是超类型原型的一个副本，本质上就是使用寄生式继承来继承超类型的原型，然后再将结果指定给子类型的原型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritPrototype</span>(<span class="params">subType, superType</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> prototype = object(superType.prototype); <span class="comment">//创建对象</span></span><br><span class="line">  prototype.constructor = subType; <span class="comment">//增强对象</span></span><br><span class="line">  subType.prototype = prototype; <span class="comment">//指定对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">  <span class="built_in">this</span>.colors = [<span class="string">&quot;pink&quot;</span>, <span class="string">&quot;blue&quot;</span>, <span class="string">&quot;green&quot;</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuberType</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  SuperType.call(<span class="built_in">this</span>, name);</span><br><span class="line">  <span class="built_in">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">inheritPrototype(SuberType, SuperType);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>步骤</p>
+<p>第一步：创建超类型原型的一个副本</p>
+<p>第二步：为创建的副本添加 constructor 属性</p>
+<p>第三步：将新创建的对象赋值给子类型的原型</p>
+</li>
+<li><p>优点</p>
+<ol>
+<li>只调用了一次超类构造函数，效率更高。避免在 SuberType.prototype 上面创建不必要的、多余的属性，与其同时，原型链还能保持不变。因此寄生组合继承是引用类型最理性的继承范式。</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-7、ES6-继承"><a href="#2-7、ES6-继承" class="headerlink" title="2.7、ES6 继承"></a>2.7、ES6 继承</h3><ul>
+<li><p>Class 可以通过 extends 关键字实现继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SuperType</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(age) &#123;</span><br><span class="line">    <span class="built_in">this</span>.age = age;</span><br><span class="line">  &#125;</span><br><span class="line">  getAge() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.age);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubType</span> <span class="keyword">extends</span> <span class="title">SuperType</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(age, name) &#123;</span><br><span class="line">    <span class="built_in">super</span>(age); <span class="comment">// 调用父类的constructor(x, y)</span></span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  getName() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于 ES6 的 class 需要做以下几点说明</p>
+<ol>
+<li>class 声明会提升，但不会初始化赋值。Foo 进入暂时性死区，类似于 let、const 声明变量。</li>
+<li>class 声明内部会启用严格模式。</li>
+<li>class 的所有方法（包括静态方法和实例方法）都是不可枚举的。</li>
+<li>class 的所有方法（包括静态方法和实例方法）都没有原型对象 prototype，所以也没有[[construct]]，不能使用 new 来调用。</li>
+<li>必须使用 new 调用 class</li>
+<li>class 内部无法重写类名</li>
+</ol>
+</li>
+</ul>
+<h4 id="使用-extends-关键字实现继承，有几点需要特别说明"><a href="#使用-extends-关键字实现继承，有几点需要特别说明" class="headerlink" title="使用 extends 关键字实现继承，有几点需要特别说明"></a>使用 extends 关键字实现继承，有几点需要特别说明</h4><ul>
+<li>子类必须在 constructor 中调用 super 方法，否则新建实例时会报错。如果没有子类没有定义 constructor 方法，那么这个方法会被默认添加。在子类的构造函数中，只有调用 super 之后，才能使用 this 关键字，否则报错。这是因为子类实例的构建，基于父类实例，只有 super 方法才能调用父类实例。</li>
+<li>ES5 的继承，实质是先创造子类的实例对象 this，然后再将父类的方法添加到 this 上面（Parent.apply(this)）。ES6 的继承机制完全不同，实质是先将父类实例对象的属性和方法，加到 this 上面（所以必须先调用 super 方法），然后再用子类的构造函数修改 this</li>
+</ul>
+<h2 id="三、相关题目"><a href="#三、相关题目" class="headerlink" title="三、相关题目"></a>三、相关题目</h2><h3 id="3-1、写一个原型链继承的例子"><a href="#3-1、写一个原型链继承的例子" class="headerlink" title="3.1、写一个原型链继承的例子"></a>3.1、写一个原型链继承的例子</h3><ul>
+<li>详细请观看上文。</li>
+</ul>
+<h3 id="3-2、描述-new-一个对象的过程"><a href="#3-2、描述-new-一个对象的过程" class="headerlink" title="3.2、描述 new 一个对象的过程"></a>3.2、描述 new 一个对象的过程</h3><h4 id="3-2-1、思路分析"><a href="#3-2-1、思路分析" class="headerlink" title="3.2.1、思路分析"></a>3.2.1、思路分析</h4><ol>
+<li>创建一个新对象 obj</li>
+<li>把 obj 的<strong>proto</strong>指向 构造函数.prototype 实现继承</li>
+<li>执行构造函数，传递参数，改变 this 指向</li>
+<li>最后把 obj 返回</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">伪代码：<span class="keyword">new</span> Person(<span class="string">&quot;John&quot;</span>) = &#123;</span><br><span class="line">                <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">	obj.__proto__ = Person.prototype;</span><br><span class="line">	<span class="keyword">var</span> result = Person.call(obj,<span class="string">&quot;John&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">typeof</span> result === <span class="string">&#x27;object&#x27;</span> ? result : obj; <span class="comment">// 如果无返回值或者返回一个非对象值，则将obj返回作为新对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-2、优秀的写法"><a href="#3-2-2、优秀的写法" class="headerlink" title="3.2.2、优秀的写法"></a>3.2.2、优秀的写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_new</span>(<span class="params">fn, ...arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> obj = <span class="built_in">Object</span>.create(fn.prototype);</span><br><span class="line">  <span class="keyword">const</span> ret = fn.apply(obj, arg);</span><br><span class="line">  <span class="keyword">return</span> ret <span class="keyword">instanceof</span> <span class="built_in">Object</span> ? ret : obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>或</strong> 【个人倾向于后面一种】</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_new</span>(<span class="params">fn, ...arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">  obj.__proto__ = fn.prototype;</span><br><span class="line">  <span class="keyword">let</span> ret = fn.apply(obj, arg);</span><br><span class="line">  <span class="keyword">return</span> ret <span class="keyword">instanceof</span> <span class="built_in">Object</span> ? ret : obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-3、为什么-return-ret-instanceof-Object-ret-obj-需要存在这一步骤？"><a href="#3-2-3、为什么-return-ret-instanceof-Object-ret-obj-需要存在这一步骤？" class="headerlink" title="3.2.3、为什么 return ret instanceof Object ? ret : obj; 需要存在这一步骤？"></a>3.2.3、为什么 <code>return ret instanceof Object ? ret : obj;</code> 需要存在这一步骤？</h4><blockquote>
+<p>这是因为 new 一个实例的时候，如果没有 return，</p>
+<p>就会根据构造函数内部 this 绑定的值生成对象，如果有返回值，</p>
+<p>就会根据返回值生成对象，为了模拟这一效果，就需要判断 apply 后是否有返回值。</p>
+</blockquote>
+<h4 id="3-2-4、总结-new-的过程中发生了什么"><a href="#3-2-4、总结-new-的过程中发生了什么" class="headerlink" title="3.2.4、总结 new 的过程中发生了什么"></a>3.2.4、总结 new 的过程中发生了什么</h4><ol>
+<li><p>令 john 的<strong>proto</strong>属性指向 Person.prototype，确立了这条原型链， 导致 john 能通过原型链继承 Person.prototype 中的部分属性，可以简单地视 john 和 Person.prototype 是继承关系。</p>
+</li>
+<li><p>john 是 Person 构造函数 的实例 john instanceof Person; //true</p>
+</li>
+<li><p>我们再来了解一下 instanceof 的内部原理，以应证我们的图是正确的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> L = A.__proto__;</span><br><span class="line"><span class="keyword">var</span> R = B.prototype;</span><br><span class="line"><span class="keyword">if</span> (L === R) <span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/" rel="tag">JS 三座大山</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/" rel="tag">面试全面总结</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
+  id="post-getOfferScopeandclosure"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/23/getOfferScopeandclosure/"
+    >作用域和闭包</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/03/23/getOfferScopeandclosure/" class="article-date">
+  <time datetime="2020-03-23T09:18:21.000Z" itemprop="datePublished">2020-03-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/">JS 三座大山</a> / <a class="article-category-link" href="/categories/Offer/">Offer</a> / <a class="article-category-link" href="/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="专题总结：作用域和闭包"><a href="#专题总结：作用域和闭包" class="headerlink" title="专题总结：作用域和闭包"></a>专题总结：作用域和闭包</h2><blockquote>
+<p>拿到 字节跳动实习生 offer 总结</p>
+<p>回馈分享一波自己的知识点总结</p>
+</blockquote>
+<blockquote>
+<p>希望读者依此构建自己的知识树（思维导图）</p>
+<p>偷懒一下：可参考我自己总结思维导图 : <a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
+<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
+<p>自己开发的博客地址：<a target="_blank" rel="noopener" href="http://zxinc520.com/">zxinc520.com</a></p>
+<p>github 地址: <a target="_blank" rel="noopener" href="https://github.com/ZhChen7">点击</a></p>
+</blockquote>
+<blockquote>
+<p>此篇 js - 【作用域和闭包】 知识点： 全部弄懂了，面试很容易。</p>
+</blockquote>
+<h2 id="一、作用域和作用域链概念"><a href="#一、作用域和作用域链概念" class="headerlink" title="一、作用域和作用域链概念"></a>一、作用域和作用域链概念</h2><h3 id="1-1、作用域"><a href="#1-1、作用域" class="headerlink" title="1.1、作用域"></a>1.1、作用域</h3><h4 id="1-1-1、作用域是什么"><a href="#1-1-1、作用域是什么" class="headerlink" title="1.1.1、作用域是什么"></a>1.1.1、作用域是什么</h4><p>作用域本质就是程序源代码中定义变量的区域，它可以解释为一套规则，是关于 JS 引擎如何寻找变量以及会在何处找到变量的规则。</p>
+<h4 id="1-1-2、作用域分为哪些"><a href="#1-1-2、作用域分为哪些" class="headerlink" title="1.1.2、作用域分为哪些"></a>1.1.2、作用域分为哪些</h4><ul>
+<li>词法作用域（静态作用域）<ul>
+<li>词法作用域是在写代码时就确定了作用域（不使用 eval 和 with 的前提下，这两个现在基本不使用，因此不讲了），即静态作用域</li>
+</ul>
+</li>
+<li>动态作用域<ul>
+<li>而动态作用域是在代码运行时动态确定的</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2、作用域链"><a href="#1-2、作用域链" class="headerlink" title="1.2、作用域链"></a>1.2、作用域链</h3><h4 id="1-2-1、作用域链是什么"><a href="#1-2-1、作用域链是什么" class="headerlink" title="1.2.1、作用域链是什么"></a>1.2.1、作用域链是什么</h4><p>作用域链实际上是指向变量对象的指针列表，它只引用但不实际包含变量对象，它的用途是保证对执行环境有权访问的所有变量和函数的有序访问。</p>
+<p>简单来说：作用域链就是从当前作用域开始一层一层向上寻找某个变量，直到找到全局作用域还是没找到，就宣布放弃。这种一层一层的关系，就是作用域链。</p>
+<h5 id="两个重要概念："><a href="#两个重要概念：" class="headerlink" title="两个重要概念："></a>两个重要概念：</h5><ul>
+<li><p>变量对象</p>
+<p>每个执行环境都有一个与之关联的变量对象，环境中定义的所有变量和函数都保存在这个对象中（变量对象其实就是作用域这个抽象概念的具体值），比如一个函数中包含的局部变量，它的参数，它里面声明的函数都存在变量对象中。（一个当前执行函数的变量对象最开始时就包含一个 arguments 对象，这个对象用来装函数括号内的参数，所以全局环境的变量对象没有这个）</p>
+</li>
+<li><p>执行环境</p>
+<p>也可以叫执行上下文，这里定义了变量或函数有权访问的其他数据，当一个函数被执行时，他的执行环境会被推入环境栈，执行之后才会被弹出，把控制权返回给之前的执行环境。</p>
+</li>
+</ul>
+<h2 id="二、闭包"><a href="#二、闭包" class="headerlink" title="二、闭包"></a>二、闭包</h2><h3 id="2-1、闭包是什么"><a href="#2-1、闭包是什么" class="headerlink" title="2.1、闭包是什么"></a>2.1、闭包是什么</h3><p>闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包最常用的方式就是在一个函数内部创建另一个函数。</p>
+<h3 id="2-2、闭包的作用"><a href="#2-2、闭包的作用" class="headerlink" title="2.2、闭包的作用"></a>2.2、闭包的作用</h3><ol>
+<li><p>能够访问函数定义时所在的词法作用域(阻止其被回收)。</p>
+</li>
+<li><p>私有化变量</p>
+</li>
+<li><p>模拟块级作用域</p>
+</li>
+<li><p>创建模块</p>
+<ul>
+<li>两个必备的条件(来自《你不知道的 JavaScript》)<ul>
+<li>必须有外部的封闭函数，该函数必须至少被调用一次(每次调用都会创建一个新的模块实例)</li>
+<li>封闭函数必须返回至少一个内部函数，这样内部函数才能在私有作用域中形成闭包，并且可以访问或者修改私有的状态。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">coolModule</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;Yvette&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> age = <span class="number">20</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayAge</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(age);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    sayName,</span><br><span class="line">    sayAge,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> info = coolModule();</span><br><span class="line">info.sayName(); <span class="comment">//&#x27;Yvette&#x27;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="2-3、闭包的缺点"><a href="#2-3、闭包的缺点" class="headerlink" title="2.3、闭包的缺点"></a>2.3、闭包的缺点</h3><p>闭包会导致函数的变量一直保存在内存中，过多的闭包可能会导致内存泄漏</p>
+<p>2.4、经典题目（闭包）</p>
+<blockquote>
+<p>函数自增</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i++;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/" rel="tag">JS 三座大山</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/" rel="tag">面试全面总结</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
+  id="post-getOfferSinglethreadedandasynchronous"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/23/getOfferSinglethreadedandasynchronous/"
+    >单线程和异步</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/03/23/getOfferSinglethreadedandasynchronous/" class="article-date">
+  <time datetime="2020-03-23T09:18:21.000Z" itemprop="datePublished">2020-03-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/">JS 三座大山</a> / <a class="article-category-link" href="/categories/Offer/">Offer</a> / <a class="article-category-link" href="/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="专题总结：单线程和异步"><a href="#专题总结：单线程和异步" class="headerlink" title="专题总结：单线程和异步"></a>专题总结：单线程和异步</h2><blockquote>
+<p>拿到 字节跳动实习生 offer 总结</p>
+<p>回馈分享一波自己的知识点总结</p>
+</blockquote>
+<blockquote>
+<p>希望读者依此构建自己的知识树（思维导图）</p>
+<p>偷懒一下：可参考我自己总结思维导图 : <a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
+<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
+<p>自己开发的博客地址：<a target="_blank" rel="noopener" href="http://zxinc520.com/">zxinc520.com</a></p>
+<p>github 地址: <a target="_blank" rel="noopener" href="https://github.com/ZhChen7">点击</a></p>
+</blockquote>
+<blockquote>
+<p>此篇 js - 【单线程和异步】 知识点： 全部弄懂了，面试很容易。</p>
+</blockquote>
+<h2 id="一、单线程和异步"><a href="#一、单线程和异步" class="headerlink" title="一、单线程和异步"></a>一、单线程和异步</h2><h3 id="1-1、同步-vs-异步"><a href="#1-1、同步-vs-异步" class="headerlink" title="1.1、同步 vs 异步"></a>1.1、同步 vs 异步</h3><ul>
+<li>同步是什么？<ul>
+<li>简单来说：一定要等任务执行完了，得到结果，才执行下一个任务。</li>
+<li>指某段程序执行时会阻塞其它程序执行，其表现形式为程序的执行顺序依赖程序本身的书写顺序</li>
+</ul>
+</li>
+<li>异步是什么？<ul>
+<li>指某段程序执行时不会阻塞其它程序执行，其表现形式为程序的执行顺序不依赖程序本身的书写顺序</li>
+<li>实现方式：event loop【事件轮询】</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2、异步和单线程"><a href="#1-2、异步和单线程" class="headerlink" title="1.2、异步和单线程"></a>1.2、异步和单线程</h3><ul>
+<li><p>单线程</p>
+<ul>
+<li>是什么？单线程就是同时只做一件事，两段 JS 不能同时 执行</li>
+<li>为什么是单线程？<ul>
+<li>避免 DOM 渲染的冲突<ol>
+<li>浏览器需要渲染 DOM</li>
+<li>JS 可以修改 DOM 结构</li>
+<li>JS 执行的时候，浏览器 DOM 渲染会暂停</li>
+<li>两段 JS 也不能同时执行（都修改 DOM 就冲突了）</li>
+<li>webworker 支持多线程，但是不能访问 DOM</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>单线程的解决方案 ？</p>
+<ul>
+<li>异步<ul>
+<li>异步暴露出的问题<ol>
+<li>没按照书写方式执行，可读性差</li>
+<li>callback 中不容易模块化</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>event loop</p>
+<ul>
+<li>是什么？</li>
+<li>事件轮询， JS 实现异步 的具体解决方案</li>
+<li>具体<ul>
+<li>同步代码，直接执行</li>
+<li>异步函数先放在 异步队列 中</li>
+<li>待同步函数执行完毕，轮询执行 异步队列 的函数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3、宏队列和微队列"><a href="#1-3、宏队列和微队列" class="headerlink" title="1.3、宏队列和微队列"></a>1.3、宏队列和微队列</h3><blockquote>
+<p><code>macrotask</code>（宏任务） 和 <code>microtask</code>（微任务）</p>
+<p>面试常考题【promise 回调函数和定时器任务的顺序问题】</p>
+</blockquote>
+<ul>
+<li><p>宏任务：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">script(整体代码)</span><br><span class="line"><span class="built_in">setTimeout</span></span><br><span class="line"><span class="built_in">setInterval</span></span><br><span class="line">I/O</span><br><span class="line">UI交互事件</span><br><span class="line">postMessage</span><br><span class="line">MessageChannel</span><br><span class="line">setImmediate(Node.js 环境)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>微任务</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.then</span><br><span class="line"><span class="built_in">Object</span>.observe</span><br><span class="line">MutaionObserver</span><br><span class="line">process.nextTick(Node.js 环境)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>执行机制：</p>
+<ol>
+<li>执行一个宏任务（栈中没有就从事件队列中获取）</li>
+<li>执行过程中如果遇到微任务，就将它添加到微任务的任务队列中</li>
+<li>宏任务执行完毕后，立即执行当前微任务队列中的所有微任务（依次执行）</li>
+<li>当前宏任务执行完毕，开始检查渲染，然后 GUI 线程接管渲染</li>
+<li>渲染完毕后，JS 引擎线程继续，开始下一个宏任务（从宏任务队列中获取）</li>
+</ol>
+<h4 id="经典面试题"><a href="#经典面试题" class="headerlink" title="经典面试题"></a>经典面试题</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;script start&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> promise1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;promise1&quot;</span>);</span><br><span class="line">  resolve();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;promise1 end&quot;</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;promise2&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;settimeout&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;script end&quot;</span>);</span><br><span class="line"><span class="comment">// 输出顺序: script start-&gt;promise1-&gt;promise1 end-&gt;script end-&gt;promise2-&gt;settimeout</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">async1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;async1 start&quot;</span>);</span><br><span class="line">  <span class="keyword">await</span> async2();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;async1 end&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">async2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;async2&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;script start&quot;</span>);</span><br><span class="line">async1();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;script end&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出顺序：script start-&gt;async1 start-&gt;async2-&gt;script end-&gt;async1 end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4、前端异步的场景"><a href="#1-4、前端异步的场景" class="headerlink" title="1.4、前端异步的场景"></a>1.4、前端异步的场景</h3><ul>
+<li>简单来说：所有的 “ 等待情况” 都需要异步</li>
+<li>定时任务：setTimeout，setInterval</li>
+<li>网络请求：ajax 请求，动态 &lt;_img_ &gt; 加载</li>
+<li>事件绑定</li>
+</ul>
+<h3 id="1-5、Web-Worker"><a href="#1-5、Web-Worker" class="headerlink" title="1.5、Web Worker"></a>1.5、Web Worker</h3><blockquote>
+<p>就是为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。等到 Worker 线程完成计算任务，再把结果返回给主线程。这样的好处是，一些计算密集型或高延迟的任务，被 Worker 线程负担了，主线程（通常负责 UI 交互）就会很流畅，不会被阻塞或拖慢。</p>
+</blockquote>
+<h3 id="1-6、模块化发展历程"><a href="#1-6、模块化发展历程" class="headerlink" title="1.6、模块化发展历程"></a>1.6、模块化发展历程</h3><blockquote>
+<p>可从 IIFE、AMD、CMD、CommonJS、UMD、webpack(require.ensure)、ES Module、&lt;_script type=”module”_ &gt; 这几个角度考虑。</p>
+<p><strong>作用</strong> ：模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。</p>
+</blockquote>
+<ol>
+<li><p>IIFE</p>
+<ul>
+<li><p>使用自执行函数来编写模块化</p>
+</li>
+<li><p>特点：</p>
+<p>在一个单独的函数作用域中执行代码，避免变量冲突。</p>
+</li>
+</ul>
+</li>
+<li><p>AMD</p>
+<ul>
+<li><p>使用 requireJS 来编写模块化</p>
+</li>
+<li><p>特点：依赖必须提前声明好</p>
+</li>
+<li><p>简单实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">&quot;./index.js&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">code</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// code 就是index.js 返回的内容</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>CMD</p>
+<ul>
+<li><p>使用 seaJS 来编写模块化</p>
+</li>
+<li><p>特点：支持动态引入依赖文件</p>
+</li>
+<li><p>简单实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> indexCode = <span class="built_in">require</span>(<span class="string">&quot;./index.js&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>CommonJS</p>
+<ul>
+<li>nodejs 中自带的模块化</li>
+<li>var fs = require(‘fs’);</li>
+</ul>
+</li>
+<li><p>UMD</p>
+<ul>
+<li>兼容 AMD，CommonJS 模块化语法</li>
+</ul>
+</li>
+<li><p>webpack(require.ensure)</p>
+<ul>
+<li>webpack 2.x 版本中的代码分割</li>
+</ul>
+</li>
+<li><p>ES Modules</p>
+<ul>
+<li>ES6 引入的模块化，支持 import 来引入另一个 js</li>
+<li>import a from ‘a’;</li>
+</ul>
+</li>
+</ol>
+<h4 id="1-6-1、AMD-与-CMD-的比较"><a href="#1-6-1、AMD-与-CMD-的比较" class="headerlink" title="1.6.1、AMD 与 CMD 的比较"></a>1.6.1、AMD 与 CMD 的比较</h4><ul>
+<li><p>定义</p>
+<p>AMD 和 CMD 都是用于浏览器端的模块规范</p>
+</li>
+<li><p>AMD</p>
+<ul>
+<li>AMD 是 RequireJS 在推广过程中对模块定义的规范化产出</li>
+<li>其主要内容就是定义了 define 函数该如何书写，只要你按照这个规范书写模块和依赖，require.js 就能正确的进行解析。</li>
+</ul>
+</li>
+<li><p>CMD</p>
+<ul>
+<li>CMD 其实就是 SeaJS 在推广过程中对模块定义的规范化产出</li>
+<li>主要内容就是描述该如何定义模块，如何引入模块，如何导出模块，只要你按照这个规范书写代码，sea.js 就能正确的进行解析</li>
+</ul>
+</li>
+<li><p>AMD 与 CMD 的区别</p>
+<ol>
+<li>AMD 推崇依赖前置，CMD 推崇依赖就近</li>
+<li>AMD 是提前执行，CMD 是延迟执行。</li>
+</ol>
+</li>
+</ul>
+<h4 id="1-6-2、CommonJS-与-AMD-的比较"><a href="#1-6-2、CommonJS-与-AMD-的比较" class="headerlink" title="1.6.2、CommonJS 与 AMD 的比较"></a>1.6.2、CommonJS 与 AMD 的比较</h4><blockquote>
+<p>在服务器端比如 node，采用的则是 CommonJS 规范。</p>
+<p>AMD 和 CMD 都是用于浏览器端的模块规范</p>
+</blockquote>
+<ol>
+<li><p>CommonJS 规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。</p>
+</li>
+<li><p>AMD 规范则是非同步加载模块，允许指定回调函数。</p>
+<p>由于 Node.js 主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以 CommonJS 规范比较适用。</p>
+</li>
+<li><p>但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式，因此浏览器端一般采用 AMD 规范。</p>
+</li>
+</ol>
+<h4 id="16-3、ES6-与-CommonJS-的比较"><a href="#16-3、ES6-与-CommonJS-的比较" class="headerlink" title="16.3、ES6 与 CommonJS 的比较"></a>16.3、ES6 与 CommonJS 的比较</h4><blockquote>
+<p>注意！浏览器加载 ES6 模块，也使用 &lt;_script_ &gt; 标签，但是要加入 type=”module” 属性。</p>
+</blockquote>
+<ol>
+<li>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</li>
+<li>CommonJS 模块是运行时加载，ES6 模块是编译时输出接口</li>
+</ol>
+<h3 id="1-7、async-和-defer"><a href="#1-7、async-和-defer" class="headerlink" title="1.7、async 和 defer"></a>1.7、async 和 defer</h3><ul>
+<li><p>共同点</p>
+<p>两者都会并行下载，不会影响页面的解析。</p>
+</li>
+<li><p>defer：defer 会按照顺序在 DOMContentLoaded 前按照页面出现顺序依次执行。</p>
+</li>
+<li><p>async ：async 则是下载完立即执行</p>
+</li>
+<li><p>具体解析【剖析】</p>
+<ul>
+<li><p>先来看一个普通的 script 标签。&lt;_script src=”a.js”&gt;</script_ ></p>
+<ul>
+<li><p>浏览器会做如下处理：</p>
+<p>1、停止解析 document.</p>
+<p>2、请求 a.js</p>
+<p>3、执行 a.js 中的脚本</p>
+<p>4、继续解析 document</p>
+</li>
+</ul>
+</li>
+<li><pre><code class="js">&lt;script src=&quot;d.js&quot; defer&gt;&lt;/script&gt;
+&lt;script src=&quot;e.js&quot; defer&gt;&lt;/script&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  不阻止解析 document， 并行下载 d.js, e.js</span><br><span class="line"></span><br><span class="line">  即使下载完 d.js, e.js 仍继续解析 document</span><br><span class="line"></span><br><span class="line">  按照页面中出现的顺序，在其他同步脚本执行后，DOMContentLoaded 事件前 依次执行 d.js, e.js。</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;js</span><br><span class="line">  &lt;script src&#x3D;&quot;b.js&quot; async&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;c.js&quot; async&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+不阻止解析 document, 并行下载 b.js, c.js
+
+当脚本下载完后立即执行。（两者执行顺序不确定，执行阶段不确定，可能在 DOMContentLoaded 事件前或者后 ）
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="async-和-defer-总结"><a href="#async-和-defer-总结" class="headerlink" title="async 和 defer 总结"></a>async 和 defer 总结</h4><ul>
+<li><p>两者都不会阻止 document 的解析</p>
+</li>
+<li><p>defer 会在 DOMContentLoaded 前依次执行 （可以利用这两点哦！）</p>
+</li>
+<li><p>async 则是下载完立即执行，不一定是在 DOMContentLoaded 前</p>
+</li>
+<li><p>async 因为顺序无关，所以很适合像 Google Analytics 这样的无依赖脚本</p>
+</li>
+</ul>
+<h3 id="1-8、异步编程-6-种解决方案"><a href="#1-8、异步编程-6-种解决方案" class="headerlink" title="1.8、异步编程 6 种解决方案"></a>1.8、异步编程 6 种解决方案</h3><ol>
+<li><p>回调函数（Callback）</p>
+<ul>
+<li><p>回调函数是异步操作最基本的方法</p>
+</li>
+<li><p>ajax(url, () =&gt; {</p>
+<p>​ // 处理逻辑</p>
+<p>})</p>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>容易写出回调地狱（Callback hell）</li>
+<li>不能使用 try catch 捕获错误，不能直接 return</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>事件监听</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f1.on(<span class="string">&quot;done&quot;</span>, f2);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发布订阅</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery.subscribe(<span class="string">&quot;done&quot;</span>, f2);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Promise</p>
+<ul>
+<li><p>是什么？</p>
+<ul>
+<li>promise 是目前 JS 异步编程的主流解决方案，遵循 Promises/A+ 方案。Promise 用于异步操作，表示一个还未完成但是预期会完成的操作。</li>
+<li>Promise 是 ES6 引入的一个新的对象，他的主要作用是用来解决 JS 异步机制里，回调机制产生的“回调地狱”。它并不是什么突破性的 API，只是封装了异步回调形式，使得异步回调可以写的更加优雅，可读性更高，而且可以链式调用。</li>
+</ul>
+</li>
+<li><p>剖析</p>
+<ul>
+<li><p>promise 本身相当于一个状态机，拥有三种状态</p>
+<ul>
+<li>pending</li>
+<li>fulfilled</li>
+<li>rejected</li>
+</ul>
+<p>一个 promise 对象初始化时的状态是 pending，调用了 resolve 后会将 promise 的状态扭转为 fulfilled，调用 reject 后会将 promise 的状态扭转为 rejected，这两种扭转一旦发生便不能再扭转该 promise 到其他状态。</p>
+</li>
+</ul>
+</li>
+<li><p>Promise 如何使用</p>
+<p>构造一个 promise 对象，并将要执行的异步函数传入到 promise 的参数中执行，并且在异步执行结束后调用 resolve( ) 函数，就可以在 promise 的 then 方法中获取到异步函数的执行结果</p>
+</li>
+<li><p>Promise 原型上的方法</p>
+<ol>
+<li>Promise.prototype.then(onFulfilled, onRejected)</li>
+<li>Promise.prototype.catch(onRejected)</li>
+<li>Promise.prototype.finally(onFinally)</li>
+</ol>
+</li>
+<li><p>Promise 静态方法</p>
+<ol>
+<li><p>Promise.all()</p>
+<p>Promise.all 接收一个 promise 对象数组作为参数，只有全部的 promise 都已经变为 fulfilled 状态后才会继续后面的处理</p>
+</li>
+<li><p>Promise.race()</p>
+<p>这个函数会在 promises 中第一个 promise 的状态扭转后就开始后面的处理（fulfilled、rejected 均可）</p>
+</li>
+<li><p>Promise.resolve()</p>
+</li>
+<li><p>Promise.reject()</p>
+</li>
+</ol>
+</li>
+<li><p>优点</p>
+<p>将异步操作以同步操作的流程表达出来，promise 链式调用，更好地解决了层层嵌套的回调地狱</p>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>不能取消执行。</li>
+<li>无法获取当前执行的进度信息（比如，要在用户界面展示进度条）。</li>
+<li>外部无法捕捉 Promise 内部抛出的错误</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>generator 函数</p>
+<ul>
+<li><p>是什么</p>
+<ul>
+<li>Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。</li>
+<li>如果说 JavaScript 是 ECMAScript 标准的一种具体实现、Iterator 遍历器是 Iterator 的具体实现，那么 Generator 函数可以说是 Iterator 接口的具体实现方式。</li>
+<li>Generator 函数可以通过配合 Thunk 函数更轻松更优雅的实现异步编程和控制流管理</li>
+</ul>
+</li>
+<li><p>描述</p>
+<ul>
+<li>执行 Generator 函数会返回一个遍历器对象，每一次 Generator 函数里面的 yield 都相当一次遍历器对象的 next()方法，并且可以通过 next(value)方法传入自定义的 value,来改变 Generator 函数的行为。</li>
+</ul>
+</li>
+<li><p>能封装异步任务的根本原因</p>
+<ul>
+<li>最大特点就是可以交出函数的执行权（即暂停执行）。Generator 函数可以暂停执行和恢复执行</li>
+</ul>
+</li>
+<li><p>两个特征</p>
+<ul>
+<li>function 关键字与函数名之间有一个星号</li>
+<li>函数体内部使用 yield 表达式，定义不同的内部状态（yield 在英语里的意思就是“产出”）。</li>
+</ul>
+</li>
+<li><p>过程</p>
+<p>Generator 函数的调用方法与普通函数一样，也是在函数名后面加上一对圆括号。不同的是，调用 Generator 函数后，该函数并不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象，也就是上一章介绍的遍历器对象（Iterator Object）</p>
+</li>
+<li><p>Generator 及其异步方面的应用</p>
+<ul>
+<li>Generator 函数将 JavaScript 异步编程带入了一个全新的阶段</li>
+</ul>
+</li>
+<li><p>总结</p>
+<p>调用 Generator 函数，返回一个遍历器对象，代表 Generator 函数的内部指针。以后，每次调用遍历器对象的 next 方法，就会返回一个有着 value 和 done 两个属性的对象。value 属性表示当前的内部状态的值，是 yield 表达式后面那个表达式的值；done 属性是一个布尔值，表示是否遍历结束。</p>
+</li>
+<li><p>demo</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fetch = <span class="built_in">require</span>(<span class="string">&quot;node-fetch&quot;</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> url = <span class="string">&quot;https://api.github.com/users/github&quot;</span>;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="keyword">yield</span> fetch(url);</span><br><span class="line">  <span class="built_in">console</span>.log(result.bio);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>async 和 await</p>
+<ul>
+<li><p>含义</p>
+<p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
+</li>
+<li><p>是什么？</p>
+<ul>
+<li>一句话，它就是 Generator 函数的语法糖。</li>
+<li>一比较就会发现，async 函数就是将 Generator 函数的星号（*）替换成 async，将 yield 替换成 await，仅此而已。</li>
+<li>async 函数可以理解为内置自动执行器的 Generator 函数语法糖，它配合 ES6 的 Promise 近乎完美的实现了异步编程解决方案。</li>
+</ul>
+</li>
+<li><p>相对于 Promise，优势体现在</p>
+<ol>
+<li>处理 then 的调用链，能够更清晰准确的写出代码</li>
+<li>并且也能优雅地解决回调地狱问题</li>
+</ol>
+</li>
+<li><p>相对 Generator 函数，体现在以下 4 点</p>
+<ol>
+<li>内置执行器。 Generator 函数的执行必须靠执行器，所以才有了 co 函数库，而 async 函数自带执行器。也就是说，async 函数的执行，与普通函数一模一样，只要一行</li>
+<li>更好的语义。 async 和 await，比起星号和 yield，语义更清楚了。async 表示函数里有异步操作，await 表示紧跟在后面的表达式需要等待结果</li>
+<li>更广的适用性。 co 函数库约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面，可以跟 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）</li>
+<li>返回值是 Promise。async 函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用 then 方法指定下一步的操作。</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<p>当然 async/await 函数也存在一些缺点，因为 await 将异步代码改造成了同步代码，如果多个异步代码没有依赖性却使用了 await 会导致性能上的降低，代码没有依赖性的话，完全可以使用 Promise.all 的方式。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li>JS 异步编程进化史：callback -&gt; promise -&gt; generator -&gt; async + await</li>
+<li>async/await 函数的实现，就是将 Generator 函数和自动执行器，包装在一个函数里</li>
+<li>async/await 可以说是异步终极解决方案了</li>
+</ol>
+<h2 id="二、相关面试问题"><a href="#二、相关面试问题" class="headerlink" title="二、相关面试问题"></a>二、相关面试问题</h2><ol>
+<li><p>什么是单线程，和异步有什么关系？</p>
+<ul>
+<li>单线程就是同时只做一件事，两段 JS 不能同时 执行</li>
+<li>原因就是 为了避免 DOM 渲染的冲突</li>
+<li>异步是一种 “无奈” 的解决方案，虽然有很多问题</li>
+</ul>
+</li>
+<li><p>是否用过 jQuery 的 Deferred</p>
+<ul>
+<li><p>步骤</p>
+<p>可以 jQuery 1.5 对 ajax 的改变举例</p>
+<p>说明如何简单的封装，使用 Deferred</p>
+<p>说明 ES6 promise 和 Deferred 的区别</p>
+</li>
+<li><p>jQuery 1.5 的变化</p>
+<ul>
+<li><p>无法改变 JS 异步和单线程的本质</p>
+</li>
+<li><p>只能从写法上杜绝 callback 这种形式</p>
+</li>
+<li><p>它是一种语法糖形式，但是解耦了代码</p>
+</li>
+<li><p>很好的体现：开放封闭原则</p>
+</li>
+<li><p>ajax 为例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ajax = $.ajax(<span class="string">&quot;data.json&quot;</span>);</span><br><span class="line">ajax</span><br><span class="line">  .done(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;success 1&quot;</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .fail(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .done(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;success 2&quot;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ajax); <span class="comment">//返回一个 deferred 对象</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>使用 jQuery Deferred</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">waitHandle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> dtd = $.Deferred(); <span class="comment">//创建一个 Deferred 对象</span></span><br><span class="line">  <span class="keyword">var</span> wait = <span class="function"><span class="keyword">function</span> (<span class="params">dtd</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//要求传入一个 Deferred 对象</span></span><br><span class="line">    <span class="keyword">var</span> task = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;执行完成&quot;</span>);</span><br><span class="line">      dtd.resolve(); <span class="comment">//表示异步任务已经完成</span></span><br><span class="line">      <span class="comment">// dtd.reject()  //表示异步任务失败或出错</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">setTimeout</span>(task, <span class="number">2000</span>);</span><br><span class="line">    <span class="keyword">return</span> dtd; <span class="comment">// 要求返回 Deferred 对象</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// 注意，这里一定要有返回值</span></span><br><span class="line">  <span class="keyword">return</span> wait(dtd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/" rel="tag">JS 三座大山</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/" rel="tag">面试全面总结</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-getOfferhtml2"
   class="article article-type-post"
   itemscope
@@ -6282,712 +7100,6 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">牛人面试题</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-ComplexityAnalysis"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/09/11/ComplexityAnalysis/"
-    >面试中的复杂度分析</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/09/11/ComplexityAnalysis/" class="article-date">
-  <time datetime="2019-09-11T11:56:35.000Z" itemprop="datePublished">2019-09-11</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%8E%A9%E8%BD%AC%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/">玩转算法面试</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="面试中的复杂度分析"><a href="#面试中的复杂度分析" class="headerlink" title="面试中的复杂度分析"></a>面试中的复杂度分析</h1><blockquote>
-<p>很多同学一提起复杂度分析就头疼，马上想起了《算法导论》中复杂的数学推导。但其实在一般的企业面试中，对复杂度的分析要求并没有那么高，但也是绕不过去的坎儿。在这一章，和大家介绍一下，面试中需要掌握的复杂度分析。…</p>
-</blockquote>
-<h2 id="2-1-究竟什么是大-O（Big-O）"><a href="#2-1-究竟什么是大-O（Big-O）" class="headerlink" title="2-1 究竟什么是大 O（Big O）"></a>2-1 究竟什么是大 O（Big O）</h2><h4 id="大-O？"><a href="#大-O？" class="headerlink" title="大 O？"></a>大 O？</h4><ul>
-<li>n 表示数据规模</li>
-<li>O（f(n)）表示运行算法所需要执行的指令数，和 f(n) 成正比</li>
-</ul>
-<h4 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h4><ul>
-<li>二分查找法 O(logn) — 所需执行指令数 ：a * logn</li>
-<li>寻找 数组中的最大/最小值 O(n) — 所需执行指令数 ：b * n</li>
-<li>归并排序算法 O(nlogn) — 所需执行指令数 ：c * nlogn</li>
-<li>选择排序法 O(n^2) — 所需执行指令数 ：d * n^2</li>
-</ul>
-<h3 id="到底什么是-Big-O？"><a href="#到底什么是-Big-O？" class="headerlink" title="到底什么是 Big O？"></a>到底什么是 Big O？</h3><p><img src="http://static.zxinc520.com/blog/20190909/61aLQ2wE8prQ.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190909/2PO7UfwEDOpW.png?imageslim" alt="mark"></p>
-<p><strong>在学术界</strong>，严格来讲，O(f(n)) 表示算法执行的上界</p>
-<p>归并排序算法的时间复杂度是 O(nlogn)的，同时也是 O（n^2）</p>
-<p><strong>在业界</strong>，我们就使用 O 来表示算法执行的最低上界</p>
-<p>我们一般不会说归并排序是 O(n^2)的</p>
-<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><ul>
-<li>O（nlogn + n）= O （nlogn）</li>
-<li>O（nlogn + n^2）=O（n^2）</li>
-</ul>
-<h4 id="无法判断"><a href="#无法判断" class="headerlink" title="无法判断"></a>无法判断</h4><ul>
-<li><p>O（AlogA + B） – A 与 B 无法确定</p>
-</li>
-<li><p>O（AlogA + B ^2）</p>
-</li>
-<li><p>对邻接表实现的图进行遍历</p>
-<ul>
-<li>时间复杂度：O（ V + E ）</li>
-</ul>
-</li>
-</ul>
-<h3 id="一个时间复杂度的问题"><a href="#一个时间复杂度的问题" class="headerlink" title="一个时间复杂度的问题"></a>一个时间复杂度的问题</h3><p>有一个字符串数组，将数组中的每一个字符串按照字母序排序；之后再将整个字符串数组按照字典序排序。整个操作的时间复杂度？</p>
-<p><img src="http://static.zxinc520.com/blog/20190909/8cfiXUHkirne.png?imageslim" alt="mark"></p>
-<p>正确解答：</p>
-<ul>
-<li>假设最长的字符串长度为 s ；数组中有 n 个字符串</li>
-<li>对每个字符串排序：O（slogs）</li>
-<li>将数组中的每一个字符串按照字母序排序：O（n * slog(s) ）</li>
-<li>将整个字符串数组按照字典序排序：O（s * nlog(n) ）</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190909/Q5nKtKe1dCi7.png?imageslim" alt="mark"></p>
-<h3 id="算法复杂度在有些情况是用例相关的"><a href="#算法复杂度在有些情况是用例相关的" class="headerlink" title="算法复杂度在有些情况是用例相关的"></a>算法复杂度在有些情况是用例相关的</h3><ul>
-<li><p>插入排序 O（n ^ 2）</p>
-<ul>
-<li>最差情况：O（n ^ 2）</li>
-<li>最好情况：O（n）</li>
-<li>平均情况：O（n ^ 2）</li>
-</ul>
-</li>
-<li><p>快速排序算法 O （nlogn）</p>
-<ul>
-<li>最差情况：O（n ^ 2）</li>
-<li>最好情况：O（ nlogn ）</li>
-<li>平均情况：O（ nlogn ）</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-2-对数据规模有一个概念"><a href="#2-2-对数据规模有一个概念" class="headerlink" title="2-2 对数据规模有一个概念"></a>2-2 对数据规模有一个概念</h2><h3 id="抛出问题"><a href="#抛出问题" class="headerlink" title="抛出问题"></a>抛出问题</h3><p>对 10 ^ 5 的数据进行选择排序，结果计算机假死？</p>
-<ul>
-<li>如果要想在 1s 之内解决问题：<ul>
-<li>O（n ^ 2）的算法可以处理大约 10 ^ 4 级别的数据</li>
-<li>O（ n ）的算法可以处理大约 10 ^ 8 级别的数据</li>
-<li>O（ nlogn ）的算法可以处理大约 10 ^7 级别的数据</li>
-</ul>
-</li>
-</ul>
-<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><ul>
-<li>多开一个辅助的数组：O（n）</li>
-<li>多开一个辅助的二维数组：O（n ^ 2）</li>
-<li>多开常数空间：O（1）</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190909/7uFcA2L2OHhI.png?imageslim" alt="mark"></p>
-<h2 id="2-3-简单的复杂度分析"><a href="#2-3-简单的复杂度分析" class="headerlink" title="2-3 简单的复杂度分析"></a>2-3 简单的复杂度分析</h2><h3 id="O（1）："><a href="#O（1）：" class="headerlink" title="O（1）："></a>O（1）：</h3><p><img src="http://static.zxinc520.com/blog/20190909/wmyLLvW5hvGh.png?imageslim" alt="mark"></p>
-<h3 id="O（-n-）："><a href="#O（-n-）：" class="headerlink" title="O（ n ）："></a>O（ n ）：</h3><p><img src="http://static.zxinc520.com/blog/20190909/R4zqgJ9zJqqs.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190909/fujJT4N78Ybh.png?imageslim" alt="mark"></p>
-<p>1/2 *n 次 swap 操作也是：O(n) 。</p>
-<h3 id="O（n-2）-选择排序"><a href="#O（n-2）-选择排序" class="headerlink" title="O（n ^ 2）: ( 选择排序 )"></a>O（n ^ 2）: ( 选择排序 )</h3><p><img src="http://static.zxinc520.com/blog/20190909/HPtrTeSx6DsB.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190909/rh5JcB9dA8ux.png?imageslim" alt="mark"></p>
-<p>并不是所有双重循环都是 O（n ^ 2）：例如 【因为里面的循环次数是固定的 】</p>
-<p><img src="http://static.zxinc520.com/blog/20190909/Vs0lBjzBPEi9.png?imageslim" alt="mark"></p>
-<p>下面算法是 O（logn）级别的： 【 自增并不是每次都加 1 】</p>
-<p><img src="http://static.zxinc520.com/blog/20190909/QJC2YLSAOdAk.png?imageslim" alt="mark"></p>
-<p>下面算法是 O（ sqrt (n) ）【 判断 n 是不是 一个素数】</p>
-<p><img src="http://static.zxinc520.com/blog/20190909/QeClcFN8EsWa.png?imageslim" alt="mark"></p>
-<h3 id="O（logn）：（-二分查找法-）"><a href="#O（logn）：（-二分查找法-）" class="headerlink" title="O（logn）：（ 二分查找法 ）"></a>O（logn）：（ 二分查找法 ）</h3><p><img src="http://static.zxinc520.com/blog/20190909/HCC3KITFnmlL.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190909/Y18HXPKRMICe.png?imageslim" alt="mark"></p>
-<h4 id="整形转成字符串"><a href="#整形转成字符串" class="headerlink" title="整形转成字符串"></a>整形转成字符串</h4><p><img src="http://static.zxinc520.com/blog/20190909/gDCAKNS0NtKo.png?imageslim" alt="mark"></p>
-<h3 id="log-以-2-为底-和-以-10-为底有区别吗"><a href="#log-以-2-为底-和-以-10-为底有区别吗" class="headerlink" title="log 以 2 为底 和 以 10 为底有区别吗"></a>log 以 2 为底 和 以 10 为底有区别吗</h3><p><img src="http://static.zxinc520.com/blog/20190909/hhkkzyo7uTJM.png?imageslim" alt="mark"></p>
-<h2 id="2-4-亲自试验自己算法的时间复杂度"><a href="#2-4-亲自试验自己算法的时间复杂度" class="headerlink" title="2-4 亲自试验自己算法的时间复杂度"></a>2-4 亲自试验自己算法的时间复杂度</h2><h3 id="复杂度实验"><a href="#复杂度实验" class="headerlink" title="复杂度实验"></a>复杂度实验</h3><p>实验，观察趋势</p>
-<p>每次 将数据规模提高两倍，看时间的变化</p>
-<h2 id="2-5-递归算法的复杂度分析"><a href="#2-5-递归算法的复杂度分析" class="headerlink" title="2-5 递归算法的复杂度分析"></a>2-5 递归算法的复杂度分析</h2><blockquote>
-<p>不是有递归的函数就一定是 O（ nlogn ）！</p>
-</blockquote>
-<h3 id="递归中进行一次递归调用的复杂度分析"><a href="#递归中进行一次递归调用的复杂度分析" class="headerlink" title="递归中进行一次递归调用的复杂度分析"></a>递归中进行一次递归调用的复杂度分析</h3><p>二分法使用递归：</p>
-<p><img src="http://static.zxinc520.com/blog/20190911/Vrm1PVyknLyf.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190911/HKc9QUhHzufd.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190911/Mrr5oypWBxGk.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190911/1hAzDU4ifP7w.png?imageslim" alt="mark"></p>
-<p>引申：上述 函数增加求 负次幂？</p>
-<h3 id="递归中进行多次递归调用"><a href="#递归中进行多次递归调用" class="headerlink" title="递归中进行多次递归调用"></a>递归中进行多次递归调用</h3><p><img src="http://static.zxinc520.com/blog/20190911/DmVGKhPNOvil.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190911/vlrGbmrXl4uo.png?imageslim" alt="mark"></p>
-<p>深度不一样，并不是所有 多次递归调用 的时间复杂度 为：O（2 ^ n）</p>
-<p><img src="http://static.zxinc520.com/blog/20190911/copG1I1hd0ya.png?imageslim" alt="mark"></p>
-<h4 id="递归函数的时间复杂度"><a href="#递归函数的时间复杂度" class="headerlink" title="递归函数的时间复杂度"></a>递归函数的时间复杂度</h4><p>查阅 <strong>主定理</strong> （面试一般不考察）</p>
-<h2 id="2-6-均摊时间复杂度分析（Amortized-Time-Analysis）"><a href="#2-6-均摊时间复杂度分析（Amortized-Time-Analysis）" class="headerlink" title="2-6 均摊时间复杂度分析（Amortized Time Analysis）"></a>2-6 均摊时间复杂度分析（Amortized Time Analysis）</h2><p><img src="http://static.zxinc520.com/blog/20190911/lH5rYQsGwqtN.png?imageslim" alt="mark"></p>
-<h2 id="2-7-避免复杂度的震荡"><a href="#2-7-避免复杂度的震荡" class="headerlink" title="2-7 避免复杂度的震荡"></a>2-7 避免复杂度的震荡</h2><p><img src="http://static.zxinc520.com/blog/20190911/glngyIU8g3Mi.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190911/AFsH4CLIkIE3.png?imageslim" alt="mark"></p>
-<h3 id="复杂度的震荡的解决方案"><a href="#复杂度的震荡的解决方案" class="headerlink" title="复杂度的震荡的解决方案"></a>复杂度的震荡的解决方案</h3><p><img src="http://static.zxinc520.com/blog/20190911/hwAvgAw9rUM1.png?imageslim" alt="mark"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/" rel="tag">复杂度分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7-O%EF%BC%9F/" rel="tag">大 O？</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/" rel="tag">算法面试</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-AlgorithmForTheInterview01"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/09/09/AlgorithmForTheInterview01/"
-    >算法面试到底是什么鬼</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/09/09/AlgorithmForTheInterview01/" class="article-date">
-  <time datetime="2019-09-09T02:43:24.000Z" itemprop="datePublished">2019-09-09</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%8E%A9%E8%BD%AC%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/">玩转算法面试</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="算法面试到底是什么鬼"><a href="#算法面试到底是什么鬼" class="headerlink" title="算法面试到底是什么鬼?"></a>算法面试到底是什么鬼?</h1><blockquote>
-<p>玩转算法面试 从真题到思维全面提升算法思维</p>
-<p>为了面试，更为了提升你的算法思维</p>
-<p>一提起算法面试，很多同学就会心有余悸。可其实，大多数企业的算法面试，并没有那么可怕。并不是一定要啃完整本《算法导论》，才能玩儿转算法面试；也并不是只有 ACM 参赛选手，才能笑傲算法面试。恰恰相反，大多数算法面试关注的算法思维，其实很基础。在这一章，和大家聊一聊，算法面试，到底是什么鬼？…</p>
-</blockquote>
-<h2 id="1-1-算法面试不仅仅是正确的回答问题"><a href="#1-1-算法面试不仅仅是正确的回答问题" class="headerlink" title="1-1 算法面试不仅仅是正确的回答问题"></a>1-1 算法面试不仅仅是正确的回答问题</h2><h4 id="算法面试是什么？"><a href="#算法面试是什么？" class="headerlink" title="算法面试是什么？"></a>算法面试是什么？</h4><ul>
-<li>让大家在面对面试中的算法问题时，有一个合理的思考路径<ul>
-<li>不代表能够“正确”回答每一个算法问题，但是合理的思考方向其实更重要，这也是正确完成算法面试问题的前提</li>
-<li>算法面试优秀不意味着技术面试优秀</li>
-<li>技术面试优秀不意味着能够拿到 Offer</li>
-</ul>
-</li>
-</ul>
-<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><h4 id="问题：对一组数据进行排序"><a href="#问题：对一组数据进行排序" class="headerlink" title="问题：对一组数据进行排序"></a>问题：对一组数据进行排序</h4><p>不假思索思考方向：</p>
-<ul>
-<li>快速排序算法 O（nlogn）</li>
-</ul>
-<p><strong>正确的方式</strong>是：应该和面试官探讨（ <strong>思考路径</strong> ）：</p>
-<ul>
-<li>这组数据有什么样的特征？<ul>
-<li>有没有可能包含有大量重复的元素？</li>
-<li>如果有这种可能的话，三路快排是更好的选择。</li>
-</ul>
-</li>
-<li>这组数据有什么样的特征？<ul>
-<li>是否大部分数据距离它正确的位置很近？是否近乎有序？</li>
-<li>如果是这样的话，插入排序是更好的选择</li>
-</ul>
-</li>
-<li>这组数据有什么样的特征？<ul>
-<li>是否数据的取值范围非常有限？比如对学生成绩排序</li>
-<li>如果是这样的话，计数排序是更好的选择</li>
-</ul>
-</li>
-<li>对排序有什么额外的要求？<ul>
-<li>是否需要稳定排序？</li>
-<li>如果是的话，归并排序是更好的选择</li>
-</ul>
-</li>
-<li>数据的存储状况是怎么样的？<ul>
-<li>是否是使用链表存储的？</li>
-<li>如果是的话，归并排序是更好的选择</li>
-</ul>
-</li>
-<li>数据的存储状态是怎样的？<ul>
-<li>数据的大小是否可以装载在内存里？</li>
-<li>数据量很大，或者内存很小，不足以装载在内存里，需要使用外排序算法</li>
-</ul>
-</li>
-</ul>
-<h2 id="1-2-什么是“正确”的回答一个算法问题"><a href="#1-2-什么是“正确”的回答一个算法问题" class="headerlink" title="1-2 什么是“正确”的回答一个算法问题"></a>1-2 什么是“正确”的回答一个算法问题</h2><p><strong>正确</strong> 还包含对问题的独到见解；优化；代码规范；容错性</p>
-<p>如果是 非常难的问题，对你的竞争对手来说，也是难的。</p>
-<p>关键在于你所表达出的解决问题的思路</p>
-<p>甚至通过表达解题思路的方向，得出结论：这个问题的解决方案，应该在哪一个领域，我可以通过查阅或者进一步学习解决问题</p>
-<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
-<li>项目经历 和 项目中遇到的实际问题</li>
-<li>你遇到的印象最深的 bug 是什么？</li>
-<li>面向对象</li>
-<li>设计模式</li>
-<li>网络相关；安全相关；内存相关；并发相关</li>
-<li>系统设计；scalability</li>
-</ul>
-<p>技术面试只是面试的一部分。面试不仅仅是考察你的技术水平，还是了解你的过去以及形成的思考行为方式</p>
-<p>关于过去：参与项目至关重要</p>
-<h4 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h4><ul>
-<li>本科生<ul>
-<li>毕业设计</li>
-<li>其它课程设计(大作业，大一点的程序设计等等)</li>
-</ul>
-</li>
-<li>如何找到项目？<ul>
-<li>实习</li>
-<li>参与实战课程学习<ul>
-<li>慕课网</li>
-<li>Coursera</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>创建自己的项目<ul>
-<li>自己做小应用：计划表；备忘录；播放器…</li>
-<li>自己解决小问题：爬虫；数据分析；词频统计</li>
-<li>“不是项目” 的项目：一本优秀的技术书籍的代码整理等…</li>
-<li>分享：自己的技术博客；github 等等…</li>
-</ul>
-</li>
-</ul>
-<h4 id="行为类问题"><a href="#行为类问题" class="headerlink" title="行为类问题"></a>行为类问题</h4><p>通过过去了解你的思考行为方式？</p>
-<ul>
-<li>遇到的最大的挑战？</li>
-<li>犯过的错误？</li>
-<li>遭遇的失败？</li>
-<li>最享受的工作内容？</li>
-<li>遇到冲突的处理方式？</li>
-<li>做的最与众不同的事儿？</li>
-</ul>
-<h4 id="准备好合适的问题问面试官"><a href="#准备好合适的问题问面试官" class="headerlink" title="准备好合适的问题问面试官"></a>准备好合适的问题问面试官</h4><ul>
-<li>整个小组的大概运行模式是怎样的？</li>
-<li>整个项目的后续规划是如何的？</li>
-<li>这个产品中的某个问题是如何解决的？</li>
-<li>为什么会选择某些技术？标准？</li>
-<li>我对某个技术很感兴趣，在你的小组中我会有怎样的机会深入这种技术？</li>
-</ul>
-<p><strong>算法面试仍然是非常重要的一部分</strong></p>
-<h2 id="1-3-如何准备算法面试"><a href="#1-3-如何准备算法面试" class="headerlink" title="1-3 如何准备算法面试"></a>1-3 如何准备算法面试</h2><p>准备面试 和 准备算法面试 是两个概念</p>
-<p>算法面试 ，只是面试中的一个环节</p>
-<h2 id="算法面试并没有那么难"><a href="#算法面试并没有那么难" class="headerlink" title="算法面试并没有那么难"></a>算法面试并没有那么难</h2><ul>
-<li>远远不需要啃完一本 《算法导论》<ul>
-<li>过于强调理论证明</li>
-</ul>
-</li>
-<li>高级数据结构 和 算法面试提及的概率很低<ul>
-<li>红黑树</li>
-<li>计算几何</li>
-<li>B - Tree</li>
-<li>数论</li>
-<li>斐波那契堆</li>
-<li>FFT</li>
-</ul>
-</li>
-</ul>
-<p><strong>算法面试远远不需要达到信息学竞赛的水平</strong> 。</p>
-<p><img src="http://static.zxinc520.com/blog/20190908/CNmOn2PupuUn.png?imageslim" alt="mark"></p>
-<h3 id="算法面试的准备范围"><a href="#算法面试的准备范围" class="headerlink" title="算法面试的准备范围"></a>算法面试的准备范围</h3><ul>
-<li>不要轻视基础算法 和 数据结构，而只关注 “有意思” 的题目</li>
-</ul>
-<p>重点关注：</p>
-<ul>
-<li>各种排序算法</li>
-<li>基础数据结构和算法的实现：如堆、二叉树、图….</li>
-<li>基础数据结构的使用：如链表、栈、队列、哈希表、图、Trie、并查集…</li>
-<li>基础算法：深度优先、广度优先、二分查找、递归…</li>
-<li>基本算法思想：递归、分治、回溯搜索、贪心、动态规划…</li>
-</ul>
-<h3 id="选择合适的-OJ"><a href="#选择合适的-OJ" class="headerlink" title="选择合适的 OJ"></a>选择合适的 OJ</h3><blockquote>
-<p>OJ：online judge</p>
-<p>在线判题系统</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190908/iW0zhuflnMIs.png?imageslim" alt="mark"></p>
-<h3 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode-cn.com/">LeetCode</a> （ 源于真实的面试问题 ）</li>
-<li><a target="_blank" rel="noopener" href="https://www.hackerrank.com/">HackerRank</a> （ 对问题分类很详细 ，更难一点，辅助作用）</li>
-</ul>
-<p><strong>注意</strong>： 在学习和实践做题之间，要掌握平衡</p>
-<h2 id="1-4-解决算法面试问题的整体思路"><a href="#1-4-解决算法面试问题的整体思路" class="headerlink" title="1-4 解决算法面试问题的整体思路"></a>1-4 解决算法面试问题的整体思路</h2><h3 id="注意题目中的条件"><a href="#注意题目中的条件" class="headerlink" title="注意题目中的条件"></a>注意题目中的条件</h3><ul>
-<li>给定一个有序数组…<ul>
-<li><strong>有序</strong>： 是不是可以使用二分查找法</li>
-</ul>
-</li>
-<li>有一些题目中的条件本质是暗示：<ul>
-<li>设计一个 O（nlogn）的算法<ul>
-<li>分治法</li>
-</ul>
-</li>
-<li>无需考虑额外的空间<ul>
-<li>开辟额外的空间</li>
-</ul>
-</li>
-<li>数据规模大概是 10000<ul>
-<li>O（n 的二次方）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="当没有思路的时候"><a href="#当没有思路的时候" class="headerlink" title="当没有思路的时候"></a>当没有思路的时候</h3><ul>
-<li>自己给自己几个简单的测试用例，试验一下</li>
-<li>不要忽视暴力解法。暴力解法通常是思考的起点</li>
-</ul>
-<h4 id="不要忽视暴力法"><a href="#不要忽视暴力法" class="headerlink" title="不要忽视暴力法"></a>不要忽视暴力法</h4><p><img src="http://static.zxinc520.com/blog/20190908/4H4HSG2k68nE.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190908/DTm490pyX7Vm.png?imageslim" alt="mark"></p>
-<h2 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h2><h3 id="无头绪的思路"><a href="#无头绪的思路" class="headerlink" title="无头绪的思路"></a>无头绪的思路</h3><ul>
-<li>遍历常见的算法思路</li>
-<li>遍历常见的数据结构</li>
-<li>空间 和 时间的 交换 （ 哈希表 ）</li>
-<li>预处理信息 （ 排序 ）</li>
-<li>在瓶颈处寻找答案：O（nlogn）+ O（n ∧ 2）；O（n∧3）</li>
-</ul>
-<h3 id="实际编写问题"><a href="#实际编写问题" class="headerlink" title="实际编写问题"></a>实际编写问题</h3><ul>
-<li>极端条件的判断<ul>
-<li>数组为空？字符串为空？数量为 0? 指针为 NULL ？</li>
-</ul>
-</li>
-<li>变量名</li>
-<li>模块化，复用性</li>
-</ul>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/" rel="tag">算法面试</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-ReactTheory"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/09/07/ReactTheory/"
-    >组件化和 React</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/09/07/ReactTheory/" class="article-date">
-  <time datetime="2019-09-07T14:32:45.000Z" itemprop="datePublished">2019-09-07</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/">框架</a> / <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/React/">React</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="组件化和-React"><a href="#组件化和-React" class="headerlink" title="组件化和 React"></a>组件化和 React</h1><blockquote>
-<p>本章先带领学生做一个 React 的实例，熟悉 React 开发环境、以及 <strong>组件化</strong> 的概念。然后，通过实例来讲解 React 的 <strong>实现原理</strong>，包括 <strong>JSX 的本质</strong> 、<strong>虚拟 DOM 和 JSX 的结合</strong>、以及 <strong>setState</strong> 。最后，<strong>对比 vue 和 React</strong> ，分析两者的异同。</p>
-<p>组件化和 React 高级面试知识点</p>
-<p>Think great thoughts and you will be great!</p>
-<p>心怀伟大的理想，你将会变得伟大。</p>
-</blockquote>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>是否做过 React 开发？</li>
-<li>React 以及组件化的一些核心概念</li>
-<li>实现流程</li>
-</ul>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>说一下对组件化的理解</li>
-<li>JSX 本质是什么？</li>
-<li>JSX 和 vdom 的关系？</li>
-<li>说一下 setState 的过程</li>
-<li>阐述一下对 React 和 Vue 的 认识</li>
-</ul>
-<h4 id="回顾-React"><a href="#回顾-React" class="headerlink" title="回顾 React"></a>回顾 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/">React</a></h4><ol>
-<li><p>创建一个基本的 React 应用</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/facebookincubator/create-react-app">Create React App</a> 是一个用于<strong>学习 React</strong> 的舒适环境，也是用 React 创建<strong>新的单页应用</strong>的最佳方式。</p>
-<p>它会配置你的开发环境，以便使你能够使用最新的 JavaScript 特性，提供良好的开发体验，并为生产环境优化你的应用程序。你需要在你的机器上安装 Node &gt;= 8.10 和 npm &gt;= 5.6。要创建项目，请执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br><span class="line">cd my-app</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用 React 实现 <strong>to-do-list</strong> ：</p>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Todo</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;</span><br><span class="line">      list: [],</span><br><span class="line">      title: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> list = <span class="built_in">this</span>.state.list;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          type=<span class="string">&quot;text&quot;</span></span><br><span class="line">          value=&#123;<span class="built_in">this</span>.state.title&#125;</span><br><span class="line">          onChange=&#123;<span class="built_in">this</span>.changeHandle.bind(<span class="built_in">this</span>)&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="built_in">this</span>.clickHandle.bind(<span class="built_in">this</span>)&#125;&gt;Submit&lt;/button&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &#123;list.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span> &#123;item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>;</span><br><span class="line">          &#125;)&#125;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  changeHandle(e) &#123;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      title: e.target.value,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  addTitle(title) &#123;</span><br><span class="line">    <span class="keyword">const</span> currentList = <span class="built_in">this</span>.state.list;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      list: currentList.concat(title),</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.state.list);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  clickHandle(e) &#123;</span><br><span class="line">    <span class="keyword">const</span> title = <span class="built_in">this</span>.state.title;</span><br><span class="line">    <span class="built_in">this</span>.addTitle(title);</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      title: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Todo;</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190907/GRlG7LRoeKp7.gif" alt="mark"></p>
-<h2 id="7-1-说一下对组件化的理解"><a href="#7-1-说一下对组件化的理解" class="headerlink" title="7-1 说一下对组件化的理解"></a>7-1 说一下对组件化的理解</h2><h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>组件的 <strong>封装</strong></li>
-<li>组件的 <strong>复用</strong></li>
-</ul>
-<h4 id="组件的封装"><a href="#组件的封装" class="headerlink" title="组件的封装"></a>组件的封装</h4><ul>
-<li>视图</li>
-<li>数据</li>
-<li>变化逻辑 （ 数据驱动视图变化 ）</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/m1BCsjY31wOd.png?imageslim" alt="mark"></p>
-<h4 id="组件的-复用"><a href="#组件的-复用" class="headerlink" title="组件的 复用"></a>组件的 复用</h4><ul>
-<li>props 传递</li>
-<li>复用</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/dSD9f5yFTKYD.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190907/dig0u7rhRuJi.png?imageslim" alt="mark"></p>
-<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>说一下对组件化的理解？<ul>
-<li>组件的封装：封装视图、数据、变化逻辑</li>
-<li>组件的复用：props 传递、复用</li>
-</ul>
-</li>
-</ul>
-<h2 id="7-2-JSX-本质是什么"><a href="#7-2-JSX-本质是什么" class="headerlink" title="7-2 JSX 本质是什么"></a>7-2 JSX 本质是什么</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>JSX 语法</li>
-<li>JSX 解析成 JS</li>
-<li>独立的标准</li>
-</ul>
-<h4 id="JSX-语法"><a href="#JSX-语法" class="headerlink" title="JSX 语法"></a>JSX 语法</h4><ul>
-<li>html 形式</li>
-<li>引入 JS 变量和表达式</li>
-<li>if … else …</li>
-<li>循环</li>
-<li>style 和 className</li>
-<li>事件</li>
-</ul>
-<h4 id="提出疑问"><a href="#提出疑问" class="headerlink" title="提出疑问"></a>提出疑问</h4><ul>
-<li>JSX 语法根本无法被浏览器所解析</li>
-<li>那么它如何在浏览器运行</li>
-</ul>
-<h4 id="JSX-解析"><a href="#JSX-解析" class="headerlink" title="JSX 解析"></a>JSX 解析</h4><ul>
-<li>JSX 其实是语法糖</li>
-<li>开发环境会将 JSX 编译成 JS 代码</li>
-<li>JSX 的写法 大大降低了学习成本和 编码工作量</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/Xy8TYGeoHcWC.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190907/yjXVnlK8oLfk.png?imageslim" alt="mark"></p>
-<h4 id="JSX-独立的标准"><a href="#JSX-独立的标准" class="headerlink" title="JSX 独立的标准"></a>JSX 独立的标准</h4><ul>
-<li>JSX 是 React 引入的，但不是 React 独有的</li>
-<li>React 已经将它作为一个独立的标准开放，其它项目也可用</li>
-<li>React.createElement 是可以自定义修改的</li>
-<li>说明：本身功能已经完备；和其它标准兼容和扩展性没问题</li>
-</ul>
-<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>JSX 本质是什么？<ul>
-<li>JSX 语法（标签、JS 表达式、判断、循环、事件绑定）</li>
-<li>JSX 本质就是语法糖，需被解析成 JS 才能运行</li>
-<li>JSX 是独立的标准，可被其它项目使用</li>
-</ul>
-</li>
-</ul>
-<h2 id="7-3-JSX-和-vdom-的关系"><a href="#7-3-JSX-和-vdom-的关系" class="headerlink" title="7-3 JSX 和 vdom 的关系"></a>7-3 JSX 和 vdom 的关系</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>分析：为何需要 vdom</li>
-<li>React.createElement 和 h</li>
-<li>何时 patch？</li>
-<li>自定义组件的解析</li>
-</ul>
-<h4 id="为何需要-vdom"><a href="#为何需要-vdom" class="headerlink" title="为何需要 vdom"></a>为何需要 vdom</h4><ul>
-<li>vdom 是 React 初次推广开来的，结合 JSX</li>
-<li>JSX 就是模板，最终要渲染成 html</li>
-<li>初次渲染 + 修改 state 后的 re-render</li>
-<li>正好 符合 vdom 的应用场景</li>
-</ul>
-<h4 id="回顾-vdom"><a href="#回顾-vdom" class="headerlink" title="回顾 vdom"></a>回顾 <a target="_blank" rel="noopener" href="http://www.zxinc520.com/lcj/%225d63a1bce9920a5ce05e2c3b%22">vdom</a></h4><ul>
-<li>vdom 如何应用，核心 API 是 什么？<ul>
-<li>如何使用？ 可用 snabbdom 的 用法 来 举例</li>
-<li>核心 函数 ：h 函数，patch 函数</li>
-</ul>
-</li>
-</ul>
-<p><strong>核心 API</strong> ：</p>
-<ul>
-<li>h（’&lt;标签名&gt;’，{ … 属性 … }，[… 子元素 …]）</li>
-<li>h（’&lt;标签名&gt;’，{ … 属性 … }，[ ‘….’]）</li>
-<li>patch（container，vnode）</li>
-<li>patch（vnode，newVnode）</li>
-</ul>
-<h4 id="React-createElement-和-h"><a href="#React-createElement-和-h" class="headerlink" title="React.createElement 和 h"></a>React.createElement 和 h</h4><p><img src="http://static.zxinc520.com/blog/20190907/hro0P4sQFQug.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190907/3N0XehWXEtQa.png?imageslim" alt="mark"></p>
-<h4 id="何时-patch"><a href="#何时-patch" class="headerlink" title="何时 patch"></a>何时 patch</h4><ul>
-<li>初次渲染 - ReactDOM.render (&lt; App /&gt;,container)</li>
-<li>会触发 patch (container,vnode)</li>
-<li>re-render - setState</li>
-<li>会触发 patch (vnode,newVnode)</li>
-</ul>
-<h4 id="自定义组件的解析"><a href="#自定义组件的解析" class="headerlink" title="自定义组件的解析"></a>自定义组件的解析</h4><ul>
-<li>‘div’ - 直接渲染 &lt; div&gt; 即可，vdom 可以做到</li>
-<li>Input 和 List ，是自定义组件 （class），vdom 默认不认识</li>
-<li>因此 Input 和 List 定义的时候 必须声明 render 函数</li>
-<li>根据 props 初始化实例，然后执行实例的 render 函数</li>
-<li>render 函数返回的还是 vnode 对象</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/q3iTc0PViQbi.png?imageslim" alt="mark"></p>
-<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>为何需要 vdom：JSX 需要渲染成 html，数据驱动视图</li>
-<li>React.createElement 和 h ，都生成 vnode</li>
-<li>何时 patch：ReactDOM.render(…) 和 setState</li>
-<li>自定义组件的解析：初始化实例，然后执行 render</li>
-</ul>
-<h2 id="7-4-说一下-setState-的过程"><a href="#7-4-说一下-setState-的过程" class="headerlink" title="7-4 说一下 setState 的过程"></a>7-4 说一下 setState 的过程</h2><h3 id="知识点-4"><a href="#知识点-4" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>setState 的异步</li>
-<li>vue 修改属性也是 异步</li>
-<li>setState 的过程</li>
-</ul>
-<h4 id="setState-的异步"><a href="#setState-的异步" class="headerlink" title="setState 的异步"></a>setState 的异步</h4><p><img src="http://static.zxinc520.com/blog/20190907/z8fAo7IMaYcs.png?imageslim" alt="mark"></p>
-<h4 id="setState-为何需要异步？"><a href="#setState-为何需要异步？" class="headerlink" title="setState 为何需要异步？"></a>setState 为何需要异步？</h4><ul>
-<li>可能会一次执行 多次 setState</li>
-<li>你无法规定、限制用户如何使用 setState</li>
-<li>没必要每次 setState 都重新渲染，考虑性能</li>
-<li>即便是每次重新渲染，用户也看不到中间的效果</li>
-<li>只看到最后的结果即可</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/0E8yvUnt3JOn.png?imageslim" alt="mark"></p>
-<h4 id="vue-修改属性也是异步"><a href="#vue-修改属性也是异步" class="headerlink" title="vue 修改属性也是异步"></a>vue 修改属性也是异步</h4><ul>
-<li>效果、原因和 setState 一样</li>
-<li>对比记忆，印象深刻</li>
-</ul>
-<h4 id="vue-的整个实现流程"><a href="#vue-的整个实现流程" class="headerlink" title="vue 的整个实现流程"></a>vue 的整个实现流程</h4><ul>
-<li>第一步：解析模板成 render 函数</li>
-<li>第二步：响应式开始监听</li>
-<li>第三步：首次渲染，显示页面，且绑定依赖</li>
-<li>第四步：data 属性变化（ <strong>异步</strong> ），触发 rerender</li>
-</ul>
-<h5 id="data-属性变化"><a href="#data-属性变化" class="headerlink" title="data 属性变化"></a>data 属性变化</h5><ul>
-<li>修改属性，被响应式 的 set 监听到</li>
-<li>set 中执行 updataComponent （ <strong>异步</strong> ）</li>
-<li>updataComponent 重新执行 vm.render()</li>
-<li>生成的 vnode 和 prevVnode，通过 patch 进行比较</li>
-<li>渲染到 html 中</li>
-</ul>
-<h4 id="setState-的过程"><a href="#setState-的过程" class="headerlink" title="setState 的过程"></a>setState 的过程</h4><ul>
-<li>每个组件实例，都有 renderComponent 方法</li>
-<li>执行 renderComponent 会重新执行实例的 render</li>
-<li>render 函数返回 newVnode，然后拿到 preVnode</li>
-<li>执行 patch （preVnode，newVnode）</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* renderComponent方法 大致模拟*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  renderComponent() &#123;</span><br><span class="line">    <span class="keyword">const</span> preVnode = <span class="built_in">this</span>._vnode;</span><br><span class="line">    <span class="keyword">const</span> newVnode = <span class="built_in">this</span>.render();</span><br><span class="line">    patch(preVnode, newVnode);</span><br><span class="line">    <span class="built_in">this</span>._vnode = newVnode;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>setState 的异步：效果、原因</li>
-<li>vue 修改属性也是异步：效果、原因</li>
-<li>setState 的过程：最终走到 patch(preVnode, newVnode)</li>
-</ul>
-<h1 id="7-5-总结"><a href="#7-5-总结" class="headerlink" title="7-5 总结"></a>7-5 总结</h1><ul>
-<li><p>说一下对组件化的理解？</p>
-<ul>
-<li>组件的封装：封装视图、数据、变化逻辑</li>
-<li>组件的复用：props 传递、复用</li>
-</ul>
-</li>
-<li><p>JSX 本质是什么？</p>
-<ul>
-<li>JSX 语法（标签、JS 表达式、判断、循环、事件绑定）</li>
-<li>JSX 本质就是语法糖，需被解析成 JS 才能运行</li>
-<li>JSX 是独立的标准，可被其它项目使用</li>
-</ul>
-</li>
-<li><p>JSX 和 vdom 的关系？</p>
-<ul>
-<li>为何需要 vdom：JSX 需要渲染成 html，数据驱动视图</li>
-<li>React.createElement 和 h ，都生成 vnode</li>
-<li>何时 patch：ReactDOM.render(…) 和 setState</li>
-<li>自定义组件的解析：初始化实例，然后执行 render</li>
-</ul>
-</li>
-<li><p>说一下 setState 的过程</p>
-<ul>
-<li>setState 的异步：效果、原因</li>
-<li>vue 修改属性也是异步：效果、原因</li>
-<li>setState 的过程：最终走到 patch(preVnode, newVnode)</li>
-</ul>
-</li>
-</ul>
-<h2 id="7-6-React-Vs-vue"><a href="#7-6-React-Vs-vue" class="headerlink" title="7-6 React Vs vue"></a>7-6 React Vs vue</h2><h3 id="知识点-5"><a href="#知识点-5" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>两者的本质区别</li>
-<li>看模板和组件化的区别</li>
-<li>两者共同点</li>
-<li>总结问题的答案</li>
-</ul>
-<h4 id="两者的本质区别"><a href="#两者的本质区别" class="headerlink" title="两者的本质区别"></a>两者的本质区别</h4><ul>
-<li>vue - 本质是 MVVM 框架，由 MVC 发展而来</li>
-<li>React - 本质是前端组件化框架，有后端组件化发展而来</li>
-</ul>
-<h4 id="模板的区别"><a href="#模板的区别" class="headerlink" title="模板的区别"></a>模板的区别</h4><ul>
-<li>vue - 使用模板 （ 最初由 angular 提出）</li>
-<li>React - 使用 JSX</li>
-<li>**模板语法 **上，我更倾向于 JSX</li>
-<li><strong>模板分离</strong> 上，我更加倾向于 vue</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/3TJdcbF6Ud41.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190907/oPnkXYam0Ovp.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190907/O7ONMqnOcIxs.png?imageslim" alt="mark"></p>
-<ul>
-<li>模板应该 和 JS 逻辑分离</li>
-<li>回顾 ”开放封闭原则“</li>
-</ul>
-<h4 id="组件化的区别"><a href="#组件化的区别" class="headerlink" title="组件化的区别"></a>组件化的区别</h4><ul>
-<li>React 本身就是组件化，没有组件化就不是 React</li>
-<li>vue 也支持组件化，不过是在 MVVM 上的扩展</li>
-<li>查阅 vue 组件化的文档，洋洋洒洒很多（ 侧面反映 ）</li>
-<li>对于组件化，我更倾向于 React，做的彻底而清晰</li>
-</ul>
-<h4 id="两者的共同点"><a href="#两者的共同点" class="headerlink" title="两者的共同点"></a>两者的共同点</h4><ul>
-<li>都支持组件化</li>
-<li>都是数据驱动视图</li>
-</ul>
-<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>阐述一下对 React 和 Vue 的 认识<ul>
-<li>国内使用，首推 vue。文档更易读、易学、社区够大</li>
-<li>如果团队水平较高，推荐使用 React。组件化 和 JSX</li>
-</ul>
-</li>
-</ul>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
 
     </footer>
   </div>
