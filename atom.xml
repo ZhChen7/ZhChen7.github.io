@@ -3,11 +3,11 @@
   <title>琛</title>
   <icon>https://www.gravatar.com/avatar/052f076c15d99674d466575f51f5d3ec</icon>
   <subtitle>学习记录</subtitle>
-  <link href="https://zhchen7.github.io/atom.xml" rel="self"/>
+  <link href="https://blog.zxinc520.com/atom.xml" rel="self"/>
   
-  <link href="https://zhchen7.github.io/"/>
+  <link href="https://blog.zxinc520.com/"/>
   <updated>2020-09-22T14:36:17.821Z</updated>
-  <id>https://zhchen7.github.io/</id>
+  <id>https://blog.zxinc520.com/</id>
   
   <author>
     <name>zhou chen</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Vue3 组合式 API</title>
-    <link href="https://zhchen7.github.io/2020/09/24/Vue3%20%E7%BB%84%E5%90%88%E5%BC%8F%20API/"/>
-    <id>https://zhchen7.github.io/2020/09/24/Vue3%20%E7%BB%84%E5%90%88%E5%BC%8F%20API/</id>
+    <link href="https://blog.zxinc520.com/2020/09/24/Vue3%20%E7%BB%84%E5%90%88%E5%BC%8F%20API/"/>
+    <id>https://blog.zxinc520.com/2020/09/24/Vue3%20%E7%BB%84%E5%90%88%E5%BC%8F%20API/</id>
     <published>2020-09-24T13:44:38.000Z</published>
     <updated>2020-09-22T14:36:17.821Z</updated>
     
@@ -34,19 +34,19 @@
     
     
     
-    <category term="框架" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    <category term="框架" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/"/>
     
-    <category term="Vue3" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/Vue3/"/>
+    <category term="Vue3" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/Vue3/"/>
     
     
-    <category term="Vue3" scheme="https://zhchen7.github.io/tags/Vue3/"/>
+    <category term="Vue3" scheme="https://blog.zxinc520.com/tags/Vue3/"/>
     
   </entry>
   
   <entry>
     <title>vue3 比 vue2.x 版本的优势</title>
-    <link href="https://zhchen7.github.io/2020/09/23/vue3-%E7%9A%84%E4%BC%98%E5%8A%BF/"/>
-    <id>https://zhchen7.github.io/2020/09/23/vue3-%E7%9A%84%E4%BC%98%E5%8A%BF/</id>
+    <link href="https://blog.zxinc520.com/2020/09/23/vue3-%E7%9A%84%E4%BC%98%E5%8A%BF/"/>
+    <id>https://blog.zxinc520.com/2020/09/23/vue3-%E7%9A%84%E4%BC%98%E5%8A%BF/</id>
     <published>2020-09-23T14:29:51.000Z</published>
     <updated>2020-09-23T07:42:50.203Z</updated>
     
@@ -68,21 +68,21 @@
     
     
     
-    <category term="框架" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    <category term="框架" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/"/>
     
-    <category term="Vue3" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/Vue3/"/>
+    <category term="Vue3" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/Vue3/"/>
     
     
-    <category term="Vue3" scheme="https://zhchen7.github.io/tags/Vue3/"/>
+    <category term="Vue3" scheme="https://blog.zxinc520.com/tags/Vue3/"/>
     
   </entry>
   
   <entry>
-    <title>Vue3+ &amp; Vue-CLI3+ 开发生态圈资讯</title>
-    <link href="https://zhchen7.github.io/2020/09/22/Vue3+%20&amp;%20Vue-CLI3+%20%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81%E5%9C%88%E8%B5%84%E8%AE%AF/"/>
-    <id>https://zhchen7.github.io/2020/09/22/Vue3+%20&amp;%20Vue-CLI3+%20%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81%E5%9C%88%E8%B5%84%E8%AE%AF/</id>
+    <title>Vue3+ Vue-CLI3+ 开发生态圈资讯</title>
+    <link href="https://blog.zxinc520.com/2020/09/22/Vue3+%20&amp;%20Vue-CLI3+%20%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81%E5%9C%88%E8%B5%84%E8%AE%AF/"/>
+    <id>https://blog.zxinc520.com/2020/09/22/Vue3+%20&amp;%20Vue-CLI3+%20%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81%E5%9C%88%E8%B5%84%E8%AE%AF/</id>
     <published>2020-09-22T14:14:58.000Z</published>
-    <updated>2020-09-23T07:57:19.937Z</updated>
+    <updated>2020-09-23T08:05:06.038Z</updated>
     
     
       
@@ -96,19 +96,19 @@
     
     
     
-    <category term="框架" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    <category term="框架" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/"/>
     
-    <category term="Vue3" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/Vue3/"/>
+    <category term="Vue3" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/Vue3/"/>
     
     
-    <category term="Vue3" scheme="https://zhchen7.github.io/tags/Vue3/"/>
+    <category term="Vue3" scheme="https://blog.zxinc520.com/tags/Vue3/"/>
     
   </entry>
   
   <entry>
     <title>mac 实用工具</title>
-    <link href="https://zhchen7.github.io/2020/09/22/Mactoolinto/"/>
-    <id>https://zhchen7.github.io/2020/09/22/Mactoolinto/</id>
+    <link href="https://blog.zxinc520.com/2020/09/22/Mactoolinto/"/>
+    <id>https://blog.zxinc520.com/2020/09/22/Mactoolinto/</id>
     <published>2020-09-22T02:25:15.000Z</published>
     <updated>2020-09-22T02:25:15.000Z</updated>
     
@@ -123,17 +123,17 @@
     
     
     
-    <category term="开机必备软件" scheme="https://zhchen7.github.io/categories/%E5%BC%80%E6%9C%BA%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/"/>
+    <category term="开机必备软件" scheme="https://blog.zxinc520.com/categories/%E5%BC%80%E6%9C%BA%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/"/>
     
     
-    <category term="实用工具" scheme="https://zhchen7.github.io/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    <category term="实用工具" scheme="https://blog.zxinc520.com/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>手撕代码</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferHandcode/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferHandcode/</id>
+    <link href="https://blog.zxinc520.com/2020/03/23/getOfferHandcode/"/>
+    <id>https://blog.zxinc520.com/2020/03/23/getOfferHandcode/</id>
     <published>2020-03-23T09:46:34.000Z</published>
     <updated>2020-03-23T09:46:34.000Z</updated>
     
@@ -148,23 +148,23 @@
     
     
     
-    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
     
-    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
     
-    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
-    <category term="promise" scheme="https://zhchen7.github.io/tags/promise/"/>
+    <category term="promise" scheme="https://blog.zxinc520.com/tags/promise/"/>
     
-    <category term="手撕代码" scheme="https://zhchen7.github.io/tags/%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81/"/>
+    <category term="手撕代码" scheme="https://blog.zxinc520.com/tags/%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81/"/>
     
   </entry>
   
   <entry>
     <title>API、数组、跨域、动画、事件</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferAPI/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferAPI/</id>
+    <link href="https://blog.zxinc520.com/2020/03/23/getOfferAPI/"/>
+    <id>https://blog.zxinc520.com/2020/03/23/getOfferAPI/</id>
     <published>2020-03-23T09:40:43.000Z</published>
     <updated>2020-03-23T09:40:43.000Z</updated>
     
@@ -179,29 +179,29 @@
     
     
     
-    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
     
-    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
     
-    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
-    <category term="数组" scheme="https://zhchen7.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    <category term="数组" scheme="https://blog.zxinc520.com/tags/%E6%95%B0%E7%BB%84/"/>
     
-    <category term="API" scheme="https://zhchen7.github.io/tags/API/"/>
+    <category term="API" scheme="https://blog.zxinc520.com/tags/API/"/>
     
-    <category term="跨域" scheme="https://zhchen7.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
+    <category term="跨域" scheme="https://blog.zxinc520.com/tags/%E8%B7%A8%E5%9F%9F/"/>
     
-    <category term="动画" scheme="https://zhchen7.github.io/tags/%E5%8A%A8%E7%94%BB/"/>
+    <category term="动画" scheme="https://blog.zxinc520.com/tags/%E5%8A%A8%E7%94%BB/"/>
     
-    <category term="事件" scheme="https://zhchen7.github.io/tags/%E4%BA%8B%E4%BB%B6/"/>
+    <category term="事件" scheme="https://blog.zxinc520.com/tags/%E4%BA%8B%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>ES6 知识点</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferES6/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferES6/</id>
+    <link href="https://blog.zxinc520.com/2020/03/23/getOfferES6/"/>
+    <id>https://blog.zxinc520.com/2020/03/23/getOfferES6/</id>
     <published>2020-03-23T09:38:45.000Z</published>
     <updated>2020-03-23T09:38:45.000Z</updated>
     
@@ -216,25 +216,25 @@
     
     
     
-    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    <category term="JS" scheme="https://blog.zxinc520.com/categories/JS/"/>
     
-    <category term="ES6 语法" scheme="https://zhchen7.github.io/categories/JS/ES6-%E8%AF%AD%E6%B3%95/"/>
+    <category term="ES6 语法" scheme="https://blog.zxinc520.com/categories/JS/ES6-%E8%AF%AD%E6%B3%95/"/>
     
-    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
     
-    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
     
-    <category term="ES6" scheme="https://zhchen7.github.io/tags/ES6/"/>
+    <category term="ES6" scheme="https://blog.zxinc520.com/tags/ES6/"/>
     
-    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>变量类型和计算</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferVariabletypesandcalculations/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferVariabletypesandcalculations/</id>
+    <link href="https://blog.zxinc520.com/2020/03/23/getOfferVariabletypesandcalculations/"/>
+    <id>https://blog.zxinc520.com/2020/03/23/getOfferVariabletypesandcalculations/</id>
     <published>2020-03-23T09:35:29.000Z</published>
     <updated>2020-03-23T09:35:29.000Z</updated>
     
@@ -249,23 +249,23 @@
     
     
     
-    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    <category term="JS" scheme="https://blog.zxinc520.com/categories/JS/"/>
     
-    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
     
-    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
-    <category term="变量类型和计算" scheme="https://zhchen7.github.io/categories/JS/%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%AE%A1%E7%AE%97/"/>
+    <category term="变量类型和计算" scheme="https://blog.zxinc520.com/categories/JS/%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%AE%A1%E7%AE%97/"/>
     
     
-    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>this 指向问题</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferthis/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferthis/</id>
+    <link href="https://blog.zxinc520.com/2020/03/23/getOfferthis/"/>
+    <id>https://blog.zxinc520.com/2020/03/23/getOfferthis/</id>
     <published>2020-03-23T09:35:29.000Z</published>
     <updated>2020-03-23T09:35:29.000Z</updated>
     
@@ -281,23 +281,23 @@
     
     
     
-    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    <category term="JS" scheme="https://blog.zxinc520.com/categories/JS/"/>
     
-    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
     
-    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
-    <category term="this 指向问题" scheme="https://zhchen7.github.io/categories/JS/this-%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/"/>
+    <category term="this 指向问题" scheme="https://blog.zxinc520.com/categories/JS/this-%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/"/>
     
     
-    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>css 面试考点全面总结</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOffercss/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOffercss/</id>
+    <link href="https://blog.zxinc520.com/2020/03/23/getOffercss/"/>
+    <id>https://blog.zxinc520.com/2020/03/23/getOffercss/</id>
     <published>2020-03-23T09:22:32.000Z</published>
     <updated>2020-03-23T09:22:32.000Z</updated>
     
@@ -313,19 +313,19 @@
     
     
     
-    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
     
-    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
     
-    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>原型和原型链</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferPrototypesandprototypechains/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferPrototypesandprototypechains/</id>
+    <link href="https://blog.zxinc520.com/2020/03/23/getOfferPrototypesandprototypechains/"/>
+    <id>https://blog.zxinc520.com/2020/03/23/getOfferPrototypesandprototypechains/</id>
     <published>2020-03-23T09:18:21.000Z</published>
     <updated>2020-03-23T09:18:21.000Z</updated>
     
@@ -340,25 +340,25 @@
     
     
     
-    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    <category term="JS" scheme="https://blog.zxinc520.com/categories/JS/"/>
     
-    <category term="JS 三座大山" scheme="https://zhchen7.github.io/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    <category term="JS 三座大山" scheme="https://blog.zxinc520.com/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
     
-    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
     
-    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
     
-    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
-    <category term="JS 三座大山" scheme="https://zhchen7.github.io/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    <category term="JS 三座大山" scheme="https://blog.zxinc520.com/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
     
   </entry>
   
   <entry>
     <title>作用域和闭包</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferScopeandclosure/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferScopeandclosure/</id>
+    <link href="https://blog.zxinc520.com/2020/03/23/getOfferScopeandclosure/"/>
+    <id>https://blog.zxinc520.com/2020/03/23/getOfferScopeandclosure/</id>
     <published>2020-03-23T09:18:21.000Z</published>
     <updated>2020-03-23T09:18:21.000Z</updated>
     
@@ -374,25 +374,25 @@
     
     
     
-    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    <category term="JS" scheme="https://blog.zxinc520.com/categories/JS/"/>
     
-    <category term="JS 三座大山" scheme="https://zhchen7.github.io/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    <category term="JS 三座大山" scheme="https://blog.zxinc520.com/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
     
-    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
     
-    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
     
-    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
-    <category term="JS 三座大山" scheme="https://zhchen7.github.io/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    <category term="JS 三座大山" scheme="https://blog.zxinc520.com/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
     
   </entry>
   
   <entry>
     <title>单线程和异步</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferSinglethreadedandasynchronous/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferSinglethreadedandasynchronous/</id>
+    <link href="https://blog.zxinc520.com/2020/03/23/getOfferSinglethreadedandasynchronous/"/>
+    <id>https://blog.zxinc520.com/2020/03/23/getOfferSinglethreadedandasynchronous/</id>
     <published>2020-03-23T09:18:21.000Z</published>
     <updated>2020-03-23T09:18:21.000Z</updated>
     
@@ -408,25 +408,25 @@
     
     
     
-    <category term="JS" scheme="https://zhchen7.github.io/categories/JS/"/>
+    <category term="JS" scheme="https://blog.zxinc520.com/categories/JS/"/>
     
-    <category term="JS 三座大山" scheme="https://zhchen7.github.io/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    <category term="JS 三座大山" scheme="https://blog.zxinc520.com/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
     
-    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
     
-    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
     
-    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
-    <category term="JS 三座大山" scheme="https://zhchen7.github.io/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
+    <category term="JS 三座大山" scheme="https://blog.zxinc520.com/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
     
   </entry>
   
   <entry>
     <title>html 面试考点全面总结下篇</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferhtml2/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferhtml2/</id>
+    <link href="https://blog.zxinc520.com/2020/03/23/getOfferhtml2/"/>
+    <id>https://blog.zxinc520.com/2020/03/23/getOfferhtml2/</id>
     <published>2020-03-23T09:18:21.000Z</published>
     <updated>2020-03-23T09:18:21.000Z</updated>
     
@@ -442,21 +442,21 @@
     
     
     
-    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
     
-    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
     
-    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
-    <category term="html" scheme="https://zhchen7.github.io/tags/html/"/>
+    <category term="html" scheme="https://blog.zxinc520.com/tags/html/"/>
     
   </entry>
   
   <entry>
     <title>html 面试考点全面总结上篇</title>
-    <link href="https://zhchen7.github.io/2020/03/23/getOfferhtml1/"/>
-    <id>https://zhchen7.github.io/2020/03/23/getOfferhtml1/</id>
+    <link href="https://blog.zxinc520.com/2020/03/23/getOfferhtml1/"/>
+    <id>https://blog.zxinc520.com/2020/03/23/getOfferhtml1/</id>
     <published>2020-03-23T09:14:53.000Z</published>
     <updated>2020-03-23T09:14:53.000Z</updated>
     
@@ -472,21 +472,21 @@
     
     
     
-    <category term="Offer" scheme="https://zhchen7.github.io/categories/Offer/"/>
+    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
     
-    <category term="字节跳动" scheme="https://zhchen7.github.io/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
+    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
     
     
-    <category term="面试全面总结" scheme="https://zhchen7.github.io/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
+    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
-    <category term="html" scheme="https://zhchen7.github.io/tags/html/"/>
+    <category term="html" scheme="https://blog.zxinc520.com/tags/html/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式</title>
-    <link href="https://zhchen7.github.io/2019/10/10/regular_expression/"/>
-    <id>https://zhchen7.github.io/2019/10/10/regular_expression/</id>
+    <link href="https://blog.zxinc520.com/2019/10/10/regular_expression/"/>
+    <id>https://blog.zxinc520.com/2019/10/10/regular_expression/</id>
     <published>2019-10-10T06:19:47.000Z</published>
     <updated>2019-10-10T06:19:47.000Z</updated>
     
@@ -502,19 +502,19 @@
     
     
     
-    <category term="工具" scheme="https://zhchen7.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://blog.zxinc520.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
-    <category term="正则表达式" scheme="https://zhchen7.github.io/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <category term="正则表达式" scheme="https://blog.zxinc520.com/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
     
-    <category term="正则表达式" scheme="https://zhchen7.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <category term="正则表达式" scheme="https://blog.zxinc520.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>虚拟DOM</title>
-    <link href="https://zhchen7.github.io/2019/09/20/virtualDOM/"/>
-    <id>https://zhchen7.github.io/2019/09/20/virtualDOM/</id>
+    <link href="https://blog.zxinc520.com/2019/09/20/virtualDOM/"/>
+    <id>https://blog.zxinc520.com/2019/09/20/virtualDOM/</id>
     <published>2019-09-20T06:47:32.000Z</published>
     <updated>2019-09-20T06:47:32.000Z</updated>
     
@@ -530,19 +530,19 @@
     
     
     
-    <category term="框架" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    <category term="框架" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/"/>
     
-    <category term="虚拟DOM" scheme="https://zhchen7.github.io/categories/%E6%A1%86%E6%9E%B6/%E8%99%9A%E6%8B%9FDOM/"/>
+    <category term="虚拟DOM" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/%E8%99%9A%E6%8B%9FDOM/"/>
     
     
-    <category term="虚拟DOM" scheme="https://zhchen7.github.io/tags/%E8%99%9A%E6%8B%9FDOM/"/>
+    <category term="虚拟DOM" scheme="https://blog.zxinc520.com/tags/%E8%99%9A%E6%8B%9FDOM/"/>
     
   </entry>
   
   <entry>
     <title>前端面试每日三加一</title>
-    <link href="https://zhchen7.github.io/2019/09/20/three-plus-one-a-day/"/>
-    <id>https://zhchen7.github.io/2019/09/20/three-plus-one-a-day/</id>
+    <link href="https://blog.zxinc520.com/2019/09/20/three-plus-one-a-day/"/>
+    <id>https://blog.zxinc520.com/2019/09/20/three-plus-one-a-day/</id>
     <published>2019-09-20T06:47:32.000Z</published>
     <updated>2019-09-20T06:47:32.000Z</updated>
     
@@ -559,19 +559,19 @@
     
     
     
-    <category term="牛人面试题" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <category term="牛人面试题" scheme="https://blog.zxinc520.com/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
-    <category term="前端面试每日三加一" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%AF%8F%E6%97%A5%E4%B8%89%E5%8A%A0%E4%B8%80/"/>
+    <category term="前端面试每日三加一" scheme="https://blog.zxinc520.com/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%AF%8F%E6%97%A5%E4%B8%89%E5%8A%A0%E4%B8%80/"/>
     
     
-    <category term="牛人面试题" scheme="https://zhchen7.github.io/tags/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <category term="牛人面试题" scheme="https://blog.zxinc520.com/tags/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>木易杨每日一题</title>
-    <link href="https://zhchen7.github.io/2019/09/20/muyiyang/"/>
-    <id>https://zhchen7.github.io/2019/09/20/muyiyang/</id>
+    <link href="https://blog.zxinc520.com/2019/09/20/muyiyang/"/>
+    <id>https://blog.zxinc520.com/2019/09/20/muyiyang/</id>
     <published>2019-09-20T06:45:02.000Z</published>
     <updated>2019-09-20T06:45:02.000Z</updated>
     
@@ -586,19 +586,19 @@
     
     
     
-    <category term="牛人面试题" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <category term="牛人面试题" scheme="https://blog.zxinc520.com/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
-    <category term="木易杨每日一题" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%9C%A8%E6%98%93%E6%9D%A8%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    <category term="木易杨每日一题" scheme="https://blog.zxinc520.com/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%9C%A8%E6%98%93%E6%9D%A8%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
-    <category term="牛人面试题" scheme="https://zhchen7.github.io/tags/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <category term="牛人面试题" scheme="https://blog.zxinc520.com/tags/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>【Step-By-Step】一周面试题深入解析</title>
-    <link href="https://zhchen7.github.io/2019/09/20/Step-By-Step/"/>
-    <id>https://zhchen7.github.io/2019/09/20/Step-By-Step/</id>
+    <link href="https://blog.zxinc520.com/2019/09/20/Step-By-Step/"/>
+    <id>https://blog.zxinc520.com/2019/09/20/Step-By-Step/</id>
     <published>2019-09-20T06:43:04.000Z</published>
     <updated>2019-09-20T06:43:04.000Z</updated>
     
@@ -613,12 +613,12 @@
     
     
     
-    <category term="牛人面试题" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <category term="牛人面试题" scheme="https://blog.zxinc520.com/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
-    <category term="Step-By-Step" scheme="https://zhchen7.github.io/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/Step-By-Step/"/>
+    <category term="Step-By-Step" scheme="https://blog.zxinc520.com/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/Step-By-Step/"/>
     
     
-    <category term="牛人面试题" scheme="https://zhchen7.github.io/tags/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <category term="牛人面试题" scheme="https://blog.zxinc520.com/tags/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
   </entry>
   
