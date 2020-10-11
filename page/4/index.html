@@ -160,6 +160,174 @@
     
     
     <article
+  id="post-ES6intro"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/08/04/ES6intro/"
+    >ES6 语法</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/08/04/ES6intro/" class="article-date">
+  <time datetime="2019-08-04T08:46:35.000Z" itemprop="datePublished">2019-08-04</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/ES6-%E8%AF%AD%E6%B3%95/">ES6 语法</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="ES6-语法"><a href="#ES6-语法" class="headerlink" title="ES6 语法"></a>ES6 语法</h1><blockquote>
+<p>本章主要讲解工作中最常用的 ES6 语法，包括 <strong>Module Class Promise</strong> 等语法，还会介绍使用 <strong>babel webpack rollup</strong> 来搭建 ES6 编译环境。</p>
+<p><a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/">ECMAScript 6 入门</a></p>
+</blockquote>
+<h2 id="ES6-使用"><a href="#ES6-使用" class="headerlink" title="ES6 使用"></a>ES6 使用</h2><ul>
+<li>开发环境已经普及使用</li>
+<li>浏览器环境却支持不好（ 需要开发环境编译 ）</li>
+<li>内容很多，重点了解常用语法</li>
+<li>面试：开发环境的使用 + 重点语法的掌握</li>
+</ul>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li>ES6 模块化如何使用，开发环境如何打包</li>
+<li>Class 和 普通构造函数 有何区别 ？</li>
+<li>Promise 的基本使用和原理</li>
+<li>总结一下 ES6 其它常用功能</li>
+</ul>
+<h2 id="2-1-ES6-模块化语法"><a href="#2-1-ES6-模块化语法" class="headerlink" title="2-1 ES6 模块化语法"></a>2-1 ES6 模块化语法</h2><blockquote>
+<p>ES6 模块化如何使用，开发环境如何打包</p>
+</blockquote>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><p><strong>ES6 模块化如何使用，开发环境如何打包:</strong></p>
+<ul>
+<li>模块化的基本语法</li>
+<li>开发环境的配置</li>
+<li>关于 JS 众多 模块化标准</li>
+</ul>
+<h4 id="export-语法"><a href="#export-语法" class="headerlink" title="export 语法"></a>export 语法</h4><blockquote>
+<p>export 语法</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*util1.js*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  a: <span class="number">100</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*util2.js*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">&quot;fn1&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">&quot;fn2&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*index.js*/</span></span><br><span class="line"><span class="keyword">import</span> util1 <span class="keyword">from</span> <span class="string">&quot;./util1.js&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; fn1, fn2 &#125; <span class="keyword">from</span> <span class="string">&quot;./util2.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(util1);</span><br><span class="line">fn1();</span><br><span class="line">fn2();</span><br></pre></td></tr></table></figure>
+
+<h4 id="开发环境-babel"><a href="#开发环境-babel" class="headerlink" title="开发环境 - babel"></a>开发环境 - babel</h4><blockquote>
+<p>Babel 是一个 JavaScript 编译器。<a target="_blank" rel="noopener" href="https://babeljs.io/">官网</a></p>
+<p>使用技巧 可参考 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cc4640d9b3032095d9e5754%22">React 学习第一天 ：webpack 中使用 Babel 配置</a></p>
+<p>和 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cb72a04009ae94788aa0d7f%22">Vue 第六天学习 ：webpack 中 babel 的配置</a></p>
+</blockquote>
+<h4 id="开发环境-webpack"><a href="#开发环境-webpack" class="headerlink" title="开发环境 - webpack"></a>开发环境 - webpack</h4><blockquote>
+<p>开发环境 - webpack - <em>webpack</em> 是一个模块打包器 <a target="_blank" rel="noopener" href="https://webpack.js.org/">官网</a></p>
+<p>详情 可参考我的博客：<a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cb181596d3d4a5cb52b65c9%22">Vue 第五天：webpack</a> 和 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cb72a04009ae94788aa0d7f%22">Vue 第六天学习：深入 webpack</a> 以及 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cc4640d9b3032095d9e5754%22">React 学习第一天：创建基本的 webpack4.x 项目 </a></p>
+</blockquote>
+<h4 id="rollup-js"><a href="#rollup-js" class="headerlink" title="rollup.js"></a>rollup.js</h4><blockquote>
+<p>概述 (Overview) <a target="_blank" rel="noopener" href="https://www.rollupjs.com/guide/zh">中文文档</a> <a target="_blank" rel="noopener" href="https://rollupjs.org/guide/en/">官网</a></p>
+<p>Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大块复杂的代码，例如 library 或应用程序。Rollup 对代码模块使用新的标准化格式，这些标准都包含在 JavaScript 的 ES6 版本中，而不是以前的特殊解决方案，如 CommonJS 和 AMD。ES6 模块可以使你自由、无缝地使用你最喜爱的 library 中那些最有用独立函数，而你的项目不必携带其他未使用的代码。ES6 模块最终还是要由浏览器原生实现，但当前 Rollup 可以使你提前体验</p>
+<p><strong>rollup 功能单一（极致） ，webpack 功能强大</strong></p>
+</blockquote>
+<h4 id="关于-JS-众多-模块化标准"><a href="#关于-JS-众多-模块化标准" class="headerlink" title="关于 JS 众多 模块化标准"></a>关于 JS 众多 模块化标准</h4><blockquote>
+<p>关于 JS 众多 模块化标准</p>
+<p>详情可参考我的博客：<a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d31940b724e8113740499b3%22">开发环境： 模块化</a></p>
+</blockquote>
+<p><strong>发展过程</strong></p>
+<ul>
+<li>没有模块化</li>
+<li>AMD 成为 标准，require.js （也有 CMD【<strong>用的不多</strong> 】）</li>
+<li>前端打包工具，nodejs 模块化可以被使用</li>
+<li>ES6 出现 ，想统一现在所有的模块化标准</li>
+<li>nodejs 积极支持，浏览器尚未统一</li>
+<li>你可以自造 lib，但是不要自造标准</li>
+</ul>
+<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>语法：import export （注意有无 default）</li>
+<li>环境：babel 编译 ES6 语法，模块化可用 webpack 和 rollup</li>
+<li>扩展：说一下自己对模块化标准统一的期待</li>
+</ul>
+<h2 id="2-2-Class-和-普通构造函数有何区别"><a href="#2-2-Class-和-普通构造函数有何区别" class="headerlink" title="2-2 Class 和 普通构造函数有何区别"></a>2-2 Class 和 普通构造函数有何区别</h2><blockquote>
+<p>Class 和 普通构造函数有何区别</p>
+<p><a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cd03896bd482e21ac46a9d4%22">我的博客：React 学习第二天：了解 class</a></p>
+</blockquote>
+<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>JS 构造函数</li>
+<li>Class 基本语法</li>
+<li>语法糖</li>
+<li>继承</li>
+</ul>
+<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>Class 和 普通构造函数 有何区别 ？<ul>
+<li>Class 在语法上更加贴合面向对象的写法</li>
+<li>Class 实现继承更加易读、易理解</li>
+<li>更易于写 java 等后端语言的使用</li>
+<li>本质还是语法糖， 使用 prototype</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-3-Promise-的基本使用"><a href="#2-3-Promise-的基本使用" class="headerlink" title="2-3 Promise 的基本使用"></a>2-3 Promise 的基本使用</h2><h3 id="Promise-的基本使用"><a href="#Promise-的基本使用" class="headerlink" title="Promise 的基本使用"></a>Promise 的基本使用</h3><blockquote>
+<p>可参考我的博客：<a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cbb3bf05733fa0a66088c80%22">Promise 详细分析</a></p>
+</blockquote>
+<ul>
+<li>Callback Hell</li>
+<li>Promise 语法</li>
+</ul>
+<h4 id="Callback-Hell"><a href="#Callback-Hell" class="headerlink" title="Callback Hell"></a>Callback Hell</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadImg</span>(<span class="params">src, callback, fail</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">&quot;img&quot;</span>);</span><br><span class="line">  img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    callback(img);</span><br><span class="line">  &#125;;</span><br><span class="line">  img.onerror = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    fail();</span><br><span class="line">  &#125;;</span><br><span class="line">  img.src = src;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> src =</span><br><span class="line">  <span class="string">&quot;https://edu-image.nosdn.127.net/B34DC36428D2D51B8EF5EE2C83CE9BF2.png?imageView&amp;thumbnail=241y34&amp;quality=100&quot;</span>;</span><br><span class="line">loadImg(</span><br><span class="line">  src,</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">img</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(img.width);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;failed&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Promise-语法"><a href="#Promise-语法" class="headerlink" title="Promise 语法"></a>Promise 语法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadImg</span>(<span class="params">src</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">&quot;img&quot;</span>);</span><br><span class="line">    img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve(img);</span><br><span class="line">    &#125;;</span><br><span class="line">    img.onerror = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      reject();</span><br><span class="line">    &#125;;</span><br><span class="line">    img.src = src;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> promise;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> src =</span><br><span class="line">  <span class="string">&quot;https://edu-image.nosdn.127.net/B34DC36428D2D51B8EF5EE2C83CE9BF2.png?imageView&amp;thumbnail=241y34&amp;quality=100&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> result = loadImg(src);</span><br><span class="line"></span><br><span class="line">result.then(</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">img</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(img.width);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;faild&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">result.then(<span class="function"><span class="keyword">function</span> (<span class="params">img</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(img.height);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>Promise 的基本使用和原理?<ul>
+<li>new Promise 实例，而且要 return</li>
+<li>new Promise 时要传入函数，函数有 resolve, reject 两个参数</li>
+<li>成功时执行 resolve() 失败时执行 reject()</li>
+<li>then 监听结果</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-4-总结一下-ES6-其它常用功能"><a href="#2-4-总结一下-ES6-其它常用功能" class="headerlink" title="2-4 总结一下 ES6 其它常用功能"></a>2-4 总结一下 ES6 其它常用功能</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>let/const</li>
+<li>多行字符串/模板变量</li>
+<li>解构赋值</li>
+<li>块级作用域</li>
+<li>函数默认参数</li>
+<li>箭头函数</li>
+</ul>
+<h4 id="let-const"><a href="#let-const" class="headerlink" title="let/const"></a>let/const</h4><p><img src="http://static.zxinc520.com/blog/20190804/IjRCPysI3ja5.png?imageslim" alt="mark"></p>
+<h4 id="多行字符串-模板变量"><a href="#多行字符串-模板变量" class="headerlink" title="多行字符串/模板变量"></a>多行字符串/模板变量</h4><p><img src="http://static.zxinc520.com/blog/20190804/cmkreCVTvB3f.png?imageslim" alt="mark"></p>
+<h4 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h4><p><img src="http://static.zxinc520.com/blog/20190804/tkv3jll7XPJG.png?imageslim" alt="mark"></p>
+<h4 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h4><p><img src="http://static.zxinc520.com/blog/20190804/vqFw5Cyt1Okg.png?imageslim" alt="mark"></p>
+<h4 id="函数默认参数"><a href="#函数默认参数" class="headerlink" title="函数默认参数"></a>函数默认参数</h4><p><img src="http://static.zxinc520.com/blog/20190804/rDHBLwq6djzQ.png?imageslim" alt="mark"></p>
+<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p><img src="http://static.zxinc520.com/blog/20190804/26aXyJj3eE8M.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190804/XppPYlgRUceY.png?imageslim" alt="mark"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6-%E6%A8%A1%E5%9D%97%E5%8C%96%E8%AF%AD%E6%B3%95/" rel="tag">ES6 模块化语法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/babel/" rel="tag">babel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rollup/" rel="tag">rollup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-IntroductionToCourse"
   class="article article-type-post"
   itemscope
@@ -2689,140 +2857,6 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%AE%AD/" rel="tag">学习实训</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-Database"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/06/11/Database/"
-    >大二数据库实验</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/06/11/Database/" class="article-date">
-  <time datetime="2019-06-11T10:10:52.000Z" itemprop="datePublished">2019-06-11</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%AE%9E%E8%AE%AD/">大学实训</a> / <a class="article-category-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%AE%9E%E8%AE%AD/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="大二数据库实验"><a href="#大二数据库实验" class="headerlink" title="大二数据库实验"></a>大二数据库实验</h1><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><blockquote>
-<p>数据库课程实验综合小实验（做一个项目实现增删改查功能）</p>
-<p>大二下学期期末大作业！</p>
-</blockquote>
-<h3 id="技术运用："><a href="#技术运用：" class="headerlink" title="技术运用："></a>技术运用：</h3><p>​ <u>运用到的技术</u>：<strong>bootstrap</strong>+ <strong>art-template</strong> + <strong>node.js</strong> + <strong>mysql</strong></p>
-<table>
-<thead>
-<tr>
-<th>课题</th>
-<th>数据库</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>班级</td>
-<td>1701</td>
-</tr>
-<tr>
-<td>作者姓名</td>
-<td>周琛</td>
-</tr>
-<tr>
-<td>学号</td>
-<td>2017115010124</td>
-</tr>
-<tr>
-<td>所在院系</td>
-<td>计算机信息与工程学院</td>
-</tr>
-<tr>
-<td>学科专业名称</td>
-<td>计算机科学与技术</td>
-</tr>
-<tr>
-<td>导师及职称</td>
-<td>童强</td>
-</tr>
-</tbody></table>
-<p>​</p>
-<h2 id="一、实验目的与要求"><a href="#一、实验目的与要求" class="headerlink" title="一、实验目的与要求"></a>一、实验目的与要求</h2><ol>
-<li>用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。</li>
-<li>说明文档中有 node 连接数据库的关键代码说明。</li>
-<li>给了一个实例代码，实现了对一张表的增删改查功能（说明文档中可以看到数据库及表的名称，和有关连接数据库和实现增删改查的关键代码）。</li>
-<li>可以运行，实现对学生课程数据库的操作；</li>
-</ol>
-<h2 id="二-步骤操作"><a href="#二-步骤操作" class="headerlink" title="二.步骤操作"></a>二.步骤操作</h2><h4 id="1-用-node-设计一个应用程序，实现对平时实验数据库的增、删、改、查。"><a href="#1-用-node-设计一个应用程序，实现对平时实验数据库的增、删、改、查。" class="headerlink" title="1. 用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。"></a>1. 用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。</h4><p><strong>效果图:</strong></p>
-<p>用图说话：</p>
-<p><img src="http://static.zxinc520.com/blog/20190525/JWCuqSFLOqbB.png?imageslim" alt="mark"></p>
-<h3 id="视频"><a href="#视频" class="headerlink" title="视频:"></a><img src="http://static.zxinc520.com/blog/20190525/KHUkC8mo5c0L.png?imageslim" alt="mark">视频:</h3><video id="video" controls="" preload="none" poster="http://static.zxinc520.com/blog/20190613/yhdLmF30B7EP.png?imageslim">
-      <source id="mp4" src="http://static.zxinc520.com/bandicam%202019-05-28%2012-50-22-208.mp4" type="video/mp4">
-      </video>
-
-<h3 id="2-说明文档中有-node-连接数据库的关键代码"><a href="#2-说明文档中有-node-连接数据库的关键代码" class="headerlink" title="2. 说明文档中有 node 连接数据库的关键代码"></a>2. 说明文档中有 node 连接数据库的关键代码</h3><blockquote>
-<p>文件 : mysql.js</p>
-<p><strong>作用: 连接数据库,执行数据操作、 封装、暴露方法.</strong></p>
-</blockquote>
-<p><strong>mysql.js</strong>:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mysql = <span class="built_in">require</span>(<span class="string">&quot;mysql&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行数据操作、 封装、暴露方法</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  query: <span class="function"><span class="keyword">function</span> (<span class="params">sql, params, callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//1.创建链接</span></span><br><span class="line">    <span class="keyword">const</span> connection = mysql.createConnection(&#123;</span><br><span class="line">      host: <span class="string">&quot;localhost&quot;</span>,</span><br><span class="line">      user: <span class="string">&quot;root&quot;</span>,</span><br><span class="line">      password: <span class="string">&quot;123456&quot;</span>,</span><br><span class="line">      database: <span class="string">&quot;zc&quot;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//每次使用的时候需要创建链接，数据操作完成之后要关闭连接</span></span><br><span class="line">    connection.connect(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;数据库链接失败&quot;</span>);</span><br><span class="line">        <span class="keyword">throw</span> err;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//开始数据操作</span></span><br><span class="line">      <span class="comment">//传入三个参数，第一个参数sql语句，第二个参数sql语句中需要的数据，第三个参数回调函数</span></span><br><span class="line">      connection.query(sql, params, <span class="function"><span class="keyword">function</span> (<span class="params">err, results, fields</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">&quot;数据操作失败&quot;</span>);</span><br><span class="line">          <span class="keyword">throw</span> err;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将查询出来的数据返回给回调函数</span></span><br><span class="line">        callback &amp;&amp; callback(results, fields);</span><br><span class="line">        <span class="comment">//results作为数据操作后的结果，fields作为数据库连接的一些字段</span></span><br><span class="line">        <span class="comment">//停止链接数据库，必须再查询语句后，要不然一调用这个方法，就直接停止链接，数据操作就会失败</span></span><br><span class="line">        connection.end(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&quot;关闭数据库连接失败！&quot;</span>);</span><br><span class="line">            <span class="keyword">throw</span> err;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-实现了对一张表的增删改查功能"><a href="#3-实现了对一张表的增删改查功能" class="headerlink" title="3.实现了对一张表的增删改查功能"></a>3.实现了对一张表的增删改查功能</h2><blockquote>
-<p>给了一个实例代码，实现了对一张表的增删改查功能（说明文档中可以看到数据库及表的名称，和有关连接数据库和实现增删改查的关键代码）。</p>
-</blockquote>
-<h4 id="添加功能实现"><a href="#添加功能实现" class="headerlink" title="添加功能实现:"></a>添加功能实现:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">&quot;/add&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> body = req.body;</span><br><span class="line">  <span class="built_in">console</span>.log(body);</span><br><span class="line">  <span class="keyword">let</span> addSql = <span class="string">&quot;INSERT INTO user(id,username,tel) VALUES(?,?,?)&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> addSqlParams = [body.id, body.username, body.tel];</span><br><span class="line">  db.query(addSql, addSqlParams, <span class="function"><span class="keyword">function</span> (<span class="params">result, fields</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;添加成功&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> res.status(<span class="number">200</span>).json(&#123;</span><br><span class="line">      err_code: <span class="number">0</span>,</span><br><span class="line">      message: <span class="string">&quot;OK&quot;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong>效果图:</strong></p>
-<p><img src="http://static.zxinc520.com/blog/20190525/Q4p9PqfySpYr.png?imageslim" alt="mark"></p>
-<h4 id="删除功能实现"><a href="#删除功能实现" class="headerlink" title="删除功能实现 :"></a>删除功能实现 :</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">&quot;/delete&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> deleteSql = <span class="string">&quot;DELETE FROM user  WHERE id = ?&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> deleteSqlParams = req.query.id;</span><br><span class="line">  db.query(deleteSql, deleteSqlParams, <span class="function">(<span class="params">err, results</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;</span><br><span class="line">    res.redirect(<span class="number">302</span>, <span class="string">&quot;/&quot;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong>效果图:</strong></p>
-<p><img src="http://static.zxinc520.com/blog/20190611/Gu16nhNmt2FM.png?imageslim" alt="mark"></p>
-<h4 id="修改功能实现"><a href="#修改功能实现" class="headerlink" title="修改功能实现"></a>修改功能实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">&quot;/fix&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  fixsql = <span class="string">&quot;SELECT * FROM user WHERE id = ?&quot;</span>;</span><br><span class="line">  fixSqlParams = req.query.id;</span><br><span class="line">  db.query(fixsql, fixSqlParams, <span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">    res.render(<span class="string">&quot;fix.html&quot;</span>, &#123;</span><br><span class="line">      result: result[<span class="number">0</span>],</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">router.post(<span class="string">&quot;/fix&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.body);</span><br><span class="line">  updatasql = <span class="string">&quot;UPDATE user SET username = ?,tel=? WHERE id = ?&quot;</span>;</span><br><span class="line">  updataSqlParams = [req.body.username, req.body.tel, req.body.id];</span><br><span class="line">  db.query(updatasql, updataSqlParams, <span class="function">(<span class="params">err, results</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res.status(<span class="number">200</span>).json(&#123;</span><br><span class="line">      err_code: <span class="number">0</span>,</span><br><span class="line">      message: <span class="string">&quot;OK&quot;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong>效果图:</strong></p>
-<p><img src="http://static.zxinc520.com/blog/20190525/RdNGNjvSnJNF.png?imageslim" alt="mark"></p>
-<h4 id="查找功能实现"><a href="#查找功能实现" class="headerlink" title="查找功能实现"></a>查找功能实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">&quot;/search&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.body);</span><br><span class="line">  arr = [];</span><br><span class="line">  db.query(<span class="string">&quot;select * from user&quot;</span>, [], <span class="function"><span class="keyword">function</span> (<span class="params">result, fields</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">    result.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (</span><br><span class="line">        e.id.indexOf(req.body.value) &gt;= <span class="number">0</span> ||</span><br><span class="line">        e.username.indexOf(req.body.value) &gt;= <span class="number">0</span> ||</span><br><span class="line">        e.tel.indexOf(req.body.value) &gt;= <span class="number">0</span></span><br><span class="line">      ) &#123;</span><br><span class="line">        arr.push(e);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> res.status(<span class="number">200</span>).json(&#123;</span><br><span class="line">      err_code: <span class="number">0</span>,</span><br><span class="line">      message: arr,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong>效果图:</strong></p>
-<p><img src="http://static.zxinc520.com/blog/20190611/Ed1NKxGH1I4I.png?imageslim" alt="mark"></p>
-<h2 id="4-运行程序"><a href="#4-运行程序" class="headerlink" title="4. 运行程序"></a>4. 运行程序</h2><p>相关代码源代码以上传至码云,地址为:</p>
-<p><a target="_blank" rel="noopener" href="https://gitee.com/zxinc/sophomore_database_experiment">源码地址</a></p>
-<video id="video" controls="" preload="none" poster="http://static.zxinc520.com/blog/20190613/yhdLmF30B7EP.png?imageslim">
- <source id="mp4" src="http://static.zxinc520.com/bandicam%202019-05-28%2012-50-22-208.mp4" type="video/mp4">
-  </video>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7%E4%BA%8C/" rel="tag">大二</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E8%AE%AD/" rel="tag">数据库实训</a></li></ul>
 
     </footer>
   </div>
