@@ -160,6 +160,174 @@
     
     
     <article
+  id="post-Create-react-app基本使用"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/10/15/Create-react-app%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"
+    >Create-react-app基本使用</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/10/15/Create-react-app%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2020-10-15T05:07:08.000Z" itemprop="datePublished">2020-10-15</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/">框架</a> / <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/React/">React</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h3 id="Create-react-app-安装方法"><a href="#Create-react-app-安装方法" class="headerlink" title="Create-react-app 安装方法"></a>Create-react-app 安装方法</h3><blockquote>
+<p>Create React App 是一个官方支持的创建 React 单页应用程序的方法。它提供了一个零配置的现代构建设置。</p>
+<p>你 <strong>无需</strong> 安装或配置 Webpack 或 Babel 等工具。 它们是预先配置好并且隐藏的，因此你可以专注于代码。</p>
+</blockquote>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br><span class="line"><span class="built_in">cd</span> my-app</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建应用程序"><a href="#创建应用程序" class="headerlink" title="创建应用程序"></a>创建应用程序</h2><p><strong>你需要在本地开发计算机上使用 Node &gt;= 6</strong>（但在服务器上不需要）。 你可以使用 <a target="_blank" rel="noopener" href="https://github.com/creationix/nvm#installation">nvm</a> (macOS/Linux) 或 <a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows">nvm-windows</a> 轻松地在不同项目之间切换 Node 版本。</p>
+<p>要创建新应用，你可以选择以下方法之一：</p>
+<h3 id="npx"><a href="#npx" class="headerlink" title="npx"></a>npx</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br></pre></td></tr></table></figure>
+
+<p><em>(<a target="_blank" rel="noopener" href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">npx</a> 来自 npm 5.2+ 或更高版本, 查看 <a target="_blank" rel="noopener" href="https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f">npm 旧版本的说明</a>)</em></p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init react-app my-app</span><br></pre></td></tr></table></figure>
+
+<p><em><code>npm init &lt;initializer&gt;</code> 在 npm 6+ 中可用</em></p>
+<h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a>Yarn</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn create react-app my-app</span><br></pre></td></tr></table></figure>
+
+<p><em><code>yarn create</code> 在 Yarn 0.25+ 中可用</em></p>
+<h3 id="图片加载"><a href="#图片加载" class="headerlink" title="图片加载"></a>图片加载</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> img1 <span class="keyword">from</span> <span class="string">&#x27;../src/assets/1.jpg&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;img src=&#123;img1&#125; /&gt;</span><br><span class="line">        &lt;img src=&#123;<span class="built_in">require</span>(<span class="string">&#x27;../src/assets/1.jpg&#x27;</span>)&#125; alt=<span class="string">&quot;&quot;</span>/&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="父子间传值"><a href="#父子间传值" class="headerlink" title="父子间传值"></a>父子间传值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> img1 <span class="keyword">from</span> <span class="string">&quot;../src/assets/1.jpg&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">&quot;./Home&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>();</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;</span><br><span class="line">      num: <span class="number">1</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onClickHandle = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(props);</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      num: <span class="built_in">this</span>.state.num+<span class="number">1</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;img src=&#123;img1&#125; /&gt;</span><br><span class="line">        &lt;img src=&#123;<span class="built_in">require</span>(<span class="string">&quot;../src/assets/1.jpg&quot;</span>)&#125; alt=<span class="string">&quot;&quot;</span> /&gt;</span><br><span class="line">        &lt;Home msg=&#123;<span class="built_in">this</span>.state.num&#125; onClickHandle=&#123;<span class="built_in">this</span>.onClickHandle&#125; /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                </span><br><span class="line">                &lt;h1&gt;&#123;<span class="built_in">this</span>.props.msg&#125;&lt;/h1&gt;</span><br><span class="line">                &lt;button onClick = &#123;<span class="built_in">this</span>.props.onClickHandle.bind(<span class="built_in">this</span>,<span class="string">&#x27;xxx&#x27;</span>)&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Home;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="同级组件传值"><a href="#同级组件传值" class="headerlink" title="同级组件传值"></a>同级组件传值</h3><blockquote>
+<p>pubsub  – -  发布/订阅库</p>
+</blockquote>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ol>
+<li>Pubsubjs 是一个用 JavaScript 编写的基于主题的发布/订阅库。</li>
+<li>Pubsubjs 具有同步解耦功能，因此主题是异步发布的。 这有助于保持程序的可预测性，因为在使用者处理主题时，主题的发起者不会被阻塞。</li>
+<li>Pubsubjs 被设计为在单个进程中使用，并不适合多进程应用程序(比如具有许多子进程的 Node.js-Cluster)。 如果你的 Node.js 应用程序是一个单进程应用程序，你很好。 如果它是(或将是)一个多进程应用程序，你最好使用 redis pub / sub 或类似的应用程序</li>
+</ol>
+<h3 id="PubSub使用方式"><a href="#PubSub使用方式" class="headerlink" title="PubSub使用方式"></a>PubSub使用方式</h3><ol>
+<li>react导入库:  <code>npm install pubsub-js --save</code></li>
+<li>react 页面引入PubSub :<code> import PubSub from &#39;pubsub-js&#39;</code></li>
+<li>pubsubjs使用 发送消息：PubSub.publish(名称,参数) 订阅消息：PubSub.subscrib(名称,函数) 取消订阅：PubSub.unsubscrib(名称)</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// home.jsx  --  传递数据</span></span><br><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> PubSub <span class="keyword">from</span> <span class="string">&quot;pubsub-js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  pubsub() &#123;</span><br><span class="line">    PubSub.publish(<span class="string">&quot;evt&quot;</span>, <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="built_in">this</span>.pubsub.bind(<span class="built_in">this</span>)&#125;&gt;进行同级数据传递&lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Home;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Hello.jsx   --- 监听数据</span></span><br><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> PubSub <span class="keyword">from</span> <span class="string">&quot;pubsub-js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    PubSub.subscribe(<span class="string">&quot;evt&quot;</span>, <span class="function">(<span class="params">msg, data</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(msg);</span><br><span class="line">      <span class="built_in">console</span>.log(data);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hello;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="数据请求-axios-和-模拟数据-json-server"><a href="#数据请求-axios-和-模拟数据-json-server" class="headerlink" title="数据请求 axios 和 模拟数据 json-server"></a>数据请求 axios 和 模拟数据 json-server</h3><ul>
+<li>json-server ： <code>npm install json-server -g</code></li>
+<li>axios : <code> npm install --save axios</code></li>
+</ul>
+<h4 id="json-server的使用"><a href="#json-server的使用" class="headerlink" title="json-server的使用"></a>json-server的使用</h4><ol>
+<li><p>首先准备一个json文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;data1&quot;</span>: [&#123;</span><br><span class="line">            <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;001&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Sherry&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;age&quot;</span>: <span class="number">24</span>,</span><br><span class="line">            <span class="attr">&quot;friends&quot;</span>: [&#123;</span><br><span class="line">                    <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;100&quot;</span>,</span><br><span class="line">                    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;friend1&quot;</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;200&quot;</span>,</span><br><span class="line">                    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;friend2&quot;</span></span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;002&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Addy&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;age&quot;</span>: <span class="number">26</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;data2&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;003&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Jack&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;age&quot;</span>: <span class="number">25</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;data3&quot;</span>: [&#123;</span><br><span class="line">        <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;004&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Rebeca&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;age&quot;</span>: <span class="number">27</span></span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>使用全局json-server命令，启动mock服务。这个mock服务，管理的数据，就是db.json。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json-server --watch --port 3001 db.json</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用json-server支持的功能，尝试进行数据访问</p>
+</li>
+</ol>
+<h4 id="请求mock模拟数据Demo"><a href="#请求mock模拟数据Demo" class="headerlink" title="请求mock模拟数据Demo"></a>请求mock模拟数据Demo</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&quot;axios&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="built_in">this</span>.ajaxFun();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ajaxFun = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    axios.get(<span class="string">&quot;http://localhost:4000/data1&quot;</span>).then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(data);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;h1&gt;Test&lt;/h1&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Test;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/uPic/1BiO40.png" alt="1BiO40"></p>
+<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><blockquote>
+<p>正向代理 — 开发环境</p>
+<p>反向代理 – 上线环境  </p>
+<h2 id="反向代理和正向代理"><a href="#反向代理和正向代理" class="headerlink" title="反向代理和正向代理"></a>反向代理和正向代理</h2><p><a href="javascript:;">编辑</a></p>
+<p>(1)正向代理和代理服务器</p>
+<p>正向代理即通常所说的代理，用于代表内部网络用户向Internet上的服务器(或称外部服务器，通常为Web服务器)发出连接请求，并接收响应结果，执行该代理功能的服务器称为代理服务器。使用代理服务器访问外部网络时，客户端必须在局域网设置中指明代理服务器的地址以及要代理的服务的端口号。 [5] </p>
+<p>(2)反向代理和代理服务器</p>
+<p>反向代理的方向与正向代理相反，指代表外部网络用户向内部服务器发出请求，即接收来自Internet上用户的连接请求，并将这些请求转发给内部网络上的服务器，然后将从内部服务器上得到的响应返回给Internet上请求连接的客户：执行反向代理服务的服务器称为反向代理服务器，反向代理服务器对外部用户表现为一个服务器</p>
+</blockquote>
+<h4 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a><strong>正向代理</strong></h4><p>正向代理，意思是一个位于客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。客户端才能使用正向代理。</p>
+<p>正向代理:是一个位于客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。客户端才能使用正向代理。</p>
+<p>正向代理的典型用途是为在防火墙内的局域网客户端提供访问Internet的途径。正向代理还可以使用缓冲特性(由mod_cache提供)减少网络使用率。</p>
+<p>使用ProxyRequests指令即可激活正向代理。因为正向代理允许客户端通过它访问任意网站并且隐藏客户端自身，因此你必须采取安全措施以确保仅为经过授权的客户端提供服务。</p>
+<p>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86">反向代理</a>不同之处在于，典型的正向代理是一种最终用户知道并主动使用的代理方式。例如Chrome浏览器中安装了switchysharp以后，通过switchysharp方便地进行代理转发服务。而为此用户必须要提前在switchysharp中做好设置才能达到相应的效果。</p>
+<h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a><strong>反向代理</strong></h4><p>反向代理服务器位于用户与目标服务器之间，但是对于用户而言，反向代理服务器就相当于目标服务器，即用户直接访问反向代理服务器就可以获得目标服务器的资源。同时，用户不需要知道目标服务器的地址，也无须在用户端作任何设定。反向代理服务器通常可用来作为Web加速，即使用反向代理作为Web服务器的前置机来降低网络和服务器的负载，提高访问效率。 [1]</p>
+<p><strong>优点</strong> </p>
+<ol>
+<li>提高了内部服务器的安全</li>
+</ol>
+<p>外部网络用户通过反向代理访向内部服务器，只能看到反向代理服务器的IP地址和端口号，内部服务器对于外部网络来说是完全不可见。而且反向代理服务器上没有保存任何的信息资源，所有的网页程序都保存在内部服务器上，对反向代理服务器的攻击并不能使真的网页信息系统受到破坏，这样就提高了内部服务器的安全性。</p>
+<ol start="2">
+<li>加快了对内部服务器的访问速度</li>
+</ol>
+<p>在内部服务器前放置两台反向代理服务器，分别连接到教育网和公网，这样公网用户就可以直接通过公网线路访问学校服务器，从而避开了公网和教育网之间拥挤的链路。同时反向代理服务器的缓存功能也加快了用户的访问速度。 [4] </p>
+<ol start="3">
+<li>节约了有限的IP资源</li>
+</ol>
+<p>校园网内部服务器除使用教育网地址外，也会采用公网的IP地址对外提供服务，公网分配的IP地址数目是有限的，如果每个服务器有分配-个公网地址，那是不可能的，通过反向代理技术很好的解决了IP地址不足的问题。</p>
+<h3 id="模拟请求真实的数据接口-中国天气网中的数据"><a href="#模拟请求真实的数据接口-中国天气网中的数据" class="headerlink" title="模拟请求真实的数据接口 中国天气网中的数据"></a>模拟请求真实的数据接口 中国天气网中的数据</h3><ol>
+<li><p>找到配置文件 <code>react-demo/node_modules/react-scripts</code> </p>
+</li>
+<li><p>找到中国天气网的接口。：  <a target="_blank" rel="noopener" href="http://www.weather.com.cn/data/cityinfo/101320101.html">http://www.weather.com.cn/data/cityinfo/101320101.html</a></p>
+</li>
+<li><p>更改react项目的配置文件：<code>react-demo/node_modules/react-scripts/config/webpackDevServer.config.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 112行proxy</span></span><br><span class="line">proxy: &#123;</span><br><span class="line">  <span class="string">&quot;/api&quot;</span>: &#123;</span><br><span class="line">    target: <span class="string">&quot;http://www.weather.com.cn/data/cityinfo/&quot;</span>,  <span class="comment">//对应自己的接口</span></span><br><span class="line">      changeOrigin: <span class="literal">true</span>,</span><br><span class="line">        <span class="string">&quot;pathRewrite&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;^/api&quot;</span>: <span class="string">&quot;/&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>react组件：Test.jsx </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&quot;axios&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="built_in">this</span>.ajaxFun();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ajaxFun = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    axios.get(<span class="string">&#x27;/api/101320101.html&#x27;</span>).then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(data);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;h1&gt;Test&lt;/h1&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Test;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/uPic/DsGJME.png" alt="DsGJME"></p>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-React-高级指引"
   class="article article-type-post"
   itemscope
@@ -3094,248 +3262,6 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/" rel="tag">面试全面总结</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-getOfferVariabletypesandcalculations"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/03/23/getOfferVariabletypesandcalculations/"
-    >变量类型和计算</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2020/03/23/getOfferVariabletypesandcalculations/" class="article-date">
-  <time datetime="2020-03-23T09:35:29.000Z" itemprop="datePublished">2020-03-23</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%AE%A1%E7%AE%97/">变量类型和计算</a> / <a class="article-category-link" href="/categories/Offer/">Offer</a> / <a class="article-category-link" href="/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="JavaScript-变量类型和计算"><a href="#JavaScript-变量类型和计算" class="headerlink" title="JavaScript 变量类型和计算"></a>JavaScript 变量类型和计算</h2><blockquote>
-<p>拿到 字节跳动实习生 offer 总结</p>
-<p>回馈分享一波自己的知识点总结</p>
-</blockquote>
-<blockquote>
-<p>希望读者依此构建自己的知识树（思维导图）</p>
-<p>偷懒一下：可参考我自己总结思维导图 : <a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
-<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
-<p>自己开发的博客地址：<a target="_blank" rel="noopener" href="http://zxinc520.com/">zxinc520.com</a></p>
-<p>github 地址: <a target="_blank" rel="noopener" href="https://github.com/ZhChen7">点击</a></p>
-</blockquote>
-<blockquote>
-<p>此篇 js - 【变量类型和计算】 知识点： 全部弄懂了，面试很容易。</p>
-</blockquote>
-<h2 id="一、变量类型"><a href="#一、变量类型" class="headerlink" title="一、变量类型"></a>一、变量类型</h2><h3 id="1-1、类型"><a href="#1-1、类型" class="headerlink" title="1.1、类型"></a>1.1、类型</h3><ul>
-<li>值类型（基本数据类型）<ul>
-<li>string,number,boolean,undefined,null,symbol 6 种</li>
-</ul>
-</li>
-<li>引用类型<ul>
-<li>Object、Array、Funtion。细分的话：有 Object、Array、Funtion、Date、RegExp 等</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-2、值类型（基本数据类型）和引用类型区别"><a href="#1-2、值类型（基本数据类型）和引用类型区别" class="headerlink" title="1.2、值类型（基本数据类型）和引用类型区别"></a>1.2、值类型（基本数据类型）和引用类型区别</h3><ol>
-<li>内存的分配不同<ul>
-<li>基本数据类型存储在栈中。</li>
-<li>复杂数据类型存储在堆中，栈中存储的变量，是指向堆中的引用地址</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>栈（操作系统）：由操作系统自动分配释放 ，存放函数的参数值和局部变量的值等。堆（操作系统）： 一般由程序员分配释放， 若程序员不释放，程序结束时可能由 OS 回收，分配方式倒是类似于链表。其实在堆中一般存放变量是一些对象类型</p>
-</blockquote>
-<ol start="2">
-<li>访问机制不同：值类型按值访问，引用类型按引用访问</li>
-<li>复变量时不同(a=b)<ul>
-<li>基本数据类型：a=b;是将 b 中保存的原始值的副本赋值给新变量 a，a 和 b 完全独立，互不影响</li>
-<li>复杂数据类型：a=b;将 b 保存的对象内存的引用地址赋值给了新变量 a;a 和 b 指向了同一个堆内存地址，其中一个值发生了改变，另一个也会改变。</li>
-</ul>
-</li>
-<li>参数传递的不同(实参/形参)<ul>
-<li>函数传参都是按值传递(栈中的存储的内容)：基本数据类型，拷贝的是值；复杂数据类型，拷贝的是引用地址</li>
-</ul>
-</li>
-</ol>
-<h3 id="1-3、JavaScript-判断数据类型"><a href="#1-3、JavaScript-判断数据类型" class="headerlink" title="1.3、JavaScript 判断数据类型"></a>1.3、JavaScript 判断数据类型</h3><ol>
-<li><p>typeof</p>
-<ul>
-<li>typeof 运算符 只能 区分 值类型 的 类型，对于引用类型的 对象、数组 区分不出来</li>
-<li>注意：typeof null===“object” typeof new Function(); // function 有效</li>
-</ul>
-</li>
-<li><p>instanceof</p>
-<ul>
-<li>instanceof 运算符返回一个布尔值，表示对象是否为某个构造函数的实例</li>
-<li>缺点：instanceof 运算符只能用于对象（纯对象和数组），不适用原始类型（Undefined、Null、Boolean、Number 和 String）的值。</li>
-</ul>
-</li>
-<li><p>Object.prototype.toString.call()</p>
-<ul>
-<li>可以通过 Object.prototype.toString 方法准确判断某个对象值属于哪种内置类型。</li>
-</ul>
-</li>
-<li><p>constructor</p>
-<ul>
-<li><p>constructor 属性的作用是，可以得知某个实例对象，到底是哪一个构造函数产生的。</p>
-</li>
-<li><pre><code class="js">var f = new F();
-f.constructor === F; // true
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 二、变量计算（强制类型转换）</span><br><span class="line"></span><br><span class="line">### 2.1、显示强制类型转换</span><br><span class="line"></span><br><span class="line">1. 字符串和数字之间的显示转换</span><br><span class="line"></span><br><span class="line">   - String()</span><br><span class="line"></span><br><span class="line">   - Number()</span><br><span class="line"></span><br><span class="line">   - 日期显示转换为数字(+)</span><br><span class="line"></span><br><span class="line">     - 一元运算符 + 的另一个常见用途是将日期(Date)对象强制类型转换为数字，返回结果为 Unix 时间戳。</span><br><span class="line"></span><br><span class="line">     - &#96;&#96;&#96;js</span><br><span class="line">       var time &#x3D; new Date() + time;</span><br></pre></td></tr></table></figure></code></pre>
-</li>
-<li><p>奇特的~运算符</p>
-<ul>
-<li>~x 大致等同于 -(x+1)</li>
-<li><del>和 indexOf()一起可以将结果强制类型转换为真/假值，如果 indexOf()返回-1，</del>将其转换为假值 0，其他情况一律转换为真值。</li>
-</ul>
-</li>
-<li><p>~~字位截除</p>
-</li>
-<li><p>显式解析数字字符串</p>
-<ul>
-<li>Number()</li>
-<li>parseInt()</li>
-<li>parseFloat()</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>显式转换为布尔值</p>
-<ul>
-<li>Boolean()</li>
-<li>(!!)显式强制类型转换为布尔值最常用地方法是!!</li>
-</ul>
-</li>
-<li><p>抽象值操作</p>
-<ul>
-<li>ToString</li>
-<li>ToNumber</li>
-<li>ToBoolean</li>
-</ul>
-</li>
-</ol>
-<h3 id="2-2、隐式强制类型转换"><a href="#2-2、隐式强制类型转换" class="headerlink" title="2.2、隐式强制类型转换"></a>2.2、隐式强制类型转换</h3><ol>
-<li><p>转成字符串的</p>
-<ul>
-<li><p>字符串拼接</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line">a + b; <span class="comment">//&quot;1,23,4&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>因为数组的 valueOf()操作无法得到简单基本类型值，于是调用 toString()，因此两个数组变成了”1,2”和”3,4”，+将它们拼接后返回。</p>
-</li>
-</ul>
-</li>
-<li><p>隐式强制类型转换为布尔值</p>
-<ul>
-<li>if()语句中的条件判断表达式</li>
-<li>for(..; ..; ..)语句中的条件判断表达式</li>
-<li>while()和 do .. while()</li>
-<li>? : 中的条件判断表达式</li>
-<li>逻辑运算符||和&amp;&amp;左边的操作数</li>
-</ul>
-</li>
-<li><p>布尔值到数字</p>
-</li>
-<li><p>||和&amp;&amp;(选择器运算符)</p>
-<ul>
-<li>ES5 规范中说到：&amp;&amp;和||运算符的返回值并不一定是布尔类型，而是两个操作数其中一个的值。<ul>
-<li>对于||来说，如果条件判断结果为 true 就返回第一个操作数的值，如果为 false 就返回第二个操作数的值。</li>
-<li>对于&amp;&amp;来说，如果条件判断结果为 true 就返回第二个操作数的值，如果为 false 就返回第一个操作数的值。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="2-3、-和-宽松相等和严格相等"><a href="#2-3、-和-宽松相等和严格相等" class="headerlink" title="2.3、== 和 ===(宽松相等和严格相等)"></a>2.3、== 和 ===(宽松相等和严格相等)</h3><blockquote>
-<p>区别：==允许在相等比较中进行强制类型转换，而===不允许。</p>
-</blockquote>
-<h4 id="2-3-1、经典问题【-if-a-1-amp-amp-a-2-amp-amp-a-3-】"><a href="#2-3-1、经典问题【-if-a-1-amp-amp-a-2-amp-amp-a-3-】" class="headerlink" title="2.3.1、经典问题【 if(a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 】"></a>2.3.1、经典问题【 if(a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 】</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="comment">//... 使之成立</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="思考方向-—-【利用隐式转换规则】"><a href="#思考方向-—-【利用隐式转换规则】" class="headerlink" title="思考方向 — 【利用隐式转换规则】"></a>思考方向 — 【<strong>利用隐式转换规则</strong>】</h4><p><code>==</code> 操作符在左右数据类型不一致时，会先进行隐式转换。</p>
-<p><code>a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3</code> 的值意味着其不可能是基本数据类型。因为如果 a 是 null 或者是 undefined bool 类型，都不可能返回 true。</p>
-<p>因此可以推测 a 是复杂数据类型，JS 中复杂数据类型只有 <code>object</code>，回忆一下，Object 转换为原始类型会调用什么方法？</p>
-<ul>
-<li>如果部署了 <code>[Symbol.toPrimitive]</code> 接口，那么调用此接口，若返回的不是基本数据类型，抛出错误。</li>
-<li>如果没有部署[Symbol.toPrimitive]接口，那么根据要转换的类型，先调用 valueOf/toString<ol>
-<li>非 Date 类型对象，<code>hint</code> 是 <code>default</code> 时，调用顺序为：<code>valueOf</code> &gt;&gt;&gt; <code>toString</code>，即<code>valueOf</code> 返回的不是基本数据类型，才会继续调用 <code>toString</code>，如果<code>toString</code> 返回的还不是基本数据类型，那么抛出错误。</li>
-<li>如果 <code>hint</code> 是 <code>string</code>(Date 对象的 hint 默认是 string) ，调用顺序为：<code>toString</code> &gt;&gt;&gt; <code>valueOf</code>，即<code>toString</code> 返回的不是基本数据类型，才会继续调用 <code>valueOf</code>，如果<code>valueOf</code> 返回的还不是基本数据类型，那么抛出错误。</li>
-<li>如果 <code>hint</code> 是 <code>number</code>，调用顺序为： <code>valueOf</code> &gt;&gt;&gt; <code>toString</code></li>
-</ol>
-</li>
-</ul>
-<h3 id="7-种解决方案"><a href="#7-种解决方案" class="headerlink" title="7 种解决方案"></a>7 种解决方案</h3><ol>
-<li><p>利用 [Symbol.toPrimitive] 接口</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  [<span class="built_in">Symbol</span>.toPrimitive]: (<span class="function"><span class="keyword">function</span> (<span class="params">hint</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> i++;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)(),</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调用 valueOf 接口</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  valueOf: (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> i++;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)(),</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>利用 正则</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  reg: <span class="regexp">/\d/g</span>,</span><br><span class="line">  valueOf() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.reg.exec(<span class="number">123</span>)[<span class="number">0</span>];</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>利用数据劫持</p>
-<ul>
-<li><p>使用 Object.defineProperty 定义的属性，在获取属性时，会调用 get 方法。利用这个特性，我们在 window 对象上定义 a 属性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(<span class="built_in">window</span>, <span class="string">&quot;a&quot;</span>, &#123;</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i++;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>利用 ES6 Proxy</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="built_in">Proxy</span>(</span><br><span class="line">  &#123;&#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    i: <span class="number">1</span>,</span><br><span class="line">    get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="function">() =&gt;</span> <span class="built_in">this</span>.i++;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重写数组的 join</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a.join = a.shift;</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>利用 with 关键字</p>
-</li>
-</ol>
-<blockquote>
-<p>注意：0 == ‘\n’ //true</p>
-</blockquote>
-<h2 id="三、相关典型问题"><a href="#三、相关典型问题" class="headerlink" title="三、相关典型问题"></a>三、相关典型问题</h2><ul>
-<li>JS 中使用 typeof 能得到的哪些类型</li>
-<li>何时使用 === 何时使用 ==<ul>
-<li>除了判断 <strong>对象属性是否为空</strong> 和 <strong>看是否函数的参数为空</strong> 的情况 ，其余的都用 === 。</li>
-</ul>
-</li>
-<li>JS 中有哪些 内置函数</li>
-<li>JS 变量按照 存储方式 分为哪些类型，并描述其特点</li>
-<li>如何理解 JSON</li>
-</ul>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/" rel="tag">面试全面总结</a></li></ul>
 
     </footer>
   </div>

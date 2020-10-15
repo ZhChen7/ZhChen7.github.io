@@ -6,7 +6,7 @@
   <link href="https://blog.zxinc520.com/atom.xml" rel="self"/>
   
   <link href="https://blog.zxinc520.com/"/>
-  <updated>2020-10-12T08:58:47.068Z</updated>
+  <updated>2020-10-15T07:51:45.395Z</updated>
   <id>https://blog.zxinc520.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Create-react-app基本使用</title>
+    <link href="https://blog.zxinc520.com/2020/10/15/Create-react-app%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
+    <id>https://blog.zxinc520.com/2020/10/15/Create-react-app%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</id>
+    <published>2020-10-15T05:07:08.000Z</published>
+    <updated>2020-10-15T07:51:45.395Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Create-react-app-安装方法&quot;&gt;&lt;a href=&quot;#Create-react-app-安装方法&quot; class=&quot;headerlink&quot; title=&quot;Create-react-app 安装方法&quot;&gt;&lt;/a&gt;Create-react-app</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="React" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/React/"/>
+    
+    
+    <category term="React" scheme="https://blog.zxinc520.com/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>React 高级指引</title>
@@ -590,35 +617,6 @@
     
     
     <category term="虚拟DOM" scheme="https://blog.zxinc520.com/tags/%E8%99%9A%E6%8B%9FDOM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端面试每日三加一</title>
-    <link href="https://blog.zxinc520.com/2019/09/20/three-plus-one-a-day/"/>
-    <id>https://blog.zxinc520.com/2019/09/20/three-plus-one-a-day/</id>
-    <published>2019-09-20T06:47:32.000Z</published>
-    <updated>2019-09-20T06:47:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前端面试每日三加一&quot;&gt;&lt;a href=&quot;#前端面试每日三加一&quot; class=&quot;headerlink&quot; title=&quot;前端面试每日三加一&quot;&gt;&lt;/a&gt;前端面试每日三加一&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;待更新状态&lt;/p&gt;
-&lt;p&gt;今天 2019/12/24 ~</summary>
-        
-      
-    
-    
-    
-    <category term="牛人面试题" scheme="https://blog.zxinc520.com/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    
-    <category term="前端面试每日三加一" scheme="https://blog.zxinc520.com/categories/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%AF%8F%E6%97%A5%E4%B8%89%E5%8A%A0%E4%B8%80/"/>
-    
-    
-    <category term="牛人面试题" scheme="https://blog.zxinc520.com/tags/%E7%89%9B%E4%BA%BA%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
   </entry>
   
