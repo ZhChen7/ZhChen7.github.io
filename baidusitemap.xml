@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://blog.zxinc520.com/2020/10/10/react-01/</loc>
-    <lastmod>2020-10-11</lastmod>
+    <loc>https://blog.zxinc520.com/2020/10/10/react%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2020-10-15</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.zxinc520.com/2020/10/12/React-%E9%AB%98%E7%BA%A7%E6%8C%87%E5%BC%95/</loc>
+    <lastmod>2020-10-12</lastmod>
   </url>
   <url>
     <loc>https://blog.zxinc520.com/2020/09/22/Vue3+%20&%20Vue-CLI3+%20%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81%E5%9C%88%E8%B5%84%E8%AE%AF/</loc>
@@ -45,11 +49,11 @@
     <lastmod>2020-03-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.zxinc520.com/2020/03/23/getOfferScopeandclosure/</loc>
+    <loc>https://blog.zxinc520.com/2020/03/23/getOfferPrototypesandprototypechains/</loc>
     <lastmod>2020-03-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.zxinc520.com/2020/03/23/getOfferPrototypesandprototypechains/</loc>
+    <loc>https://blog.zxinc520.com/2020/03/23/getOfferScopeandclosure/</loc>
     <lastmod>2020-03-23</lastmod>
   </url>
   <url>
@@ -97,15 +101,15 @@
     <lastmod>2019-09-07</lastmod>
   </url>
   <url>
+    <loc>https://blog.zxinc520.com/2019/09/05/VueTheory/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>
+  <url>
     <loc>https://blog.zxinc520.com/2019/09/05/WeChatUp/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>
   <url>
     <loc>https://blog.zxinc520.com/2019/09/05/WeChatUp02/</loc>
-    <lastmod>2019-09-05</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.zxinc520.com/2019/09/05/VueTheory/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>
   <url>

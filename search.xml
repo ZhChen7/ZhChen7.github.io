@@ -1,8 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>React 高级指引</title>
+    <url>/2020/10/12/React-%E9%AB%98%E7%BA%A7%E6%8C%87%E5%BC%95/</url>
+    <content><![CDATA[<h2 id="无障碍表单"><a href="#无障碍表单" class="headerlink" title="无障碍表单"></a>无障碍表单</h2><h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><p>所有的 HTML 表单控制，例如 <code>&lt;input&gt;</code> 和 <code>&lt;textarea&gt;</code> ，都需要被标注来实现无障碍辅助功能。我们需要提供屏幕朗读器以解释性标注。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;label htmlFor=<span class="string">&quot;namedInput&quot;</span>&gt;Name:&lt;/label&gt;</span><br><span class="line">&lt;input id=<span class="string">&quot;namedInput&quot;</span> type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;name&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Refs-转发"><a href="#Refs-转发" class="headerlink" title="Refs 转发"></a>Refs 转发</h2><blockquote>
+<p>Ref 转发是一项将 <a href="https://reactjs.bootcss.com/docs/refs-and-the-dom.html">ref</a> 自动地通过组件传递到其一子组件的技巧。对于大多数应用中的组件来说，这通常不是必需的。但其对某些组件，尤其是可重用的组件库是很有用的。最常见的案例如下所述。</p>
+<p>简单来说 — 进行DOM操作  – 官方建议不要优先使用Ref，而考虑使用state</p>
+</blockquote>
+<h3 id="react-提供3种方式进行-ref使用"><a href="#react-提供3种方式进行-ref使用" class="headerlink" title="react 提供3种方式进行 ref使用"></a>react 提供3种方式进行 ref使用</h3><ol>
+<li>字符串的方式</li>
+<li>回调函数 ( 推荐 )<ul>
+<li>就是在dom节点上或者组件上挂载函数，函数的形参 试dom节点，达到的效果和字符串是一样的，都是获取值的引用</li>
+</ul>
+</li>
+<li>React.createRef() —  react16.3新提供的方式。</li>
+</ol>
+<h4 id="字符串的方式"><a href="#字符串的方式" class="headerlink" title="字符串的方式"></a>字符串的方式</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  hanle()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.refs.demoref);</span><br><span class="line">  &#125;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">      &lt;input type=<span class="string">&quot;text&quot;</span> </span><br><span class="line">      ref = <span class="string">&#x27;demoref&#x27;</span></span><br><span class="line">      placeholder=<span class="string">&#x27;请输入...&#x27;</span>/&gt; </span><br><span class="line">      &lt;button onClick = &#123;<span class="function">()=&gt;</span> <span class="built_in">this</span>.hanle()&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">      hanle() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.demoref);</span><br><span class="line">      &#125;</span><br><span class="line">      render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            &lt;input</span><br><span class="line">              type=<span class="string">&quot;text&quot;</span></span><br><span class="line">              ref=&#123;<span class="function">(<span class="params">input</span>) =&gt;</span> (<span class="built_in">this</span>.demoref = input)&#125;</span><br><span class="line">              placeholder=<span class="string">&quot;请输入...&quot;</span></span><br><span class="line">            /&gt;</span><br><span class="line"></span><br><span class="line">            &lt;button onClick=&#123;<span class="function">() =&gt;</span> <span class="built_in">this</span>.hanle()&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">MyComponent</span> /&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">&quot;app&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="React-createRef"><a href="#React-createRef" class="headerlink" title="React.createRef"></a>React.createRef</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.myRef = React.createRef();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="built_in">this</span>.myRef.current.style.border = <span class="string">&#x27;1px solid red&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&#123;this.myRef&#125;</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>123123<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">MyComponent</span> /&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">&quot;app&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Fragments"><a href="#Fragments" class="headerlink" title="Fragments"></a>Fragments</h2><blockquote>
+<p>React 中的一个常见模式是一个组件返回多个元素。Fragments 允许你将子列表分组，而无需向 DOM 添加额外节点。</p>
+</blockquote>
+<p>有时，语义化的 HTML 会被破坏。比如当在 JSX 中使用 <code>&lt;div&gt;</code> 元素来实现 React 代码功能的时候，又或是在使用列表（<code>&lt;ol&gt;</code>， <code>&lt;ul&gt;</code> 和 <code>&lt;dl&gt;</code>）和 HTML <code>&lt;table&gt;</code> 时。 在这种情况下，我们应该使用 <a href="https://reactjs.bootcss.com/docs/fragments.html">React Fragments</a> 来组合各个组件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Columns</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;React.Fragment&gt;</span><br><span class="line">        &lt;td&gt;Hello&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;World&lt;/td&gt;</span><br><span class="line">      &lt;/React.Fragment&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="短语法"><a href="#短语法" class="headerlink" title="短语法"></a>短语法</h3><p>你可以使用一种新的，且更简短的语法来声明 Fragments。它看起来像空标签：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Columns</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;&gt;</span><br><span class="line">        &lt;td&gt;Hello&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;World&lt;/td&gt;</span><br><span class="line">      &lt;/&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="带-key-的-Fragments"><a href="#带-key-的-Fragments" class="headerlink" title="带 key 的 Fragments"></a>带 key 的 Fragments</h3><p>使用显式 <code>&lt;React.Fragment&gt;</code> 语法声明的片段可能具有 key。一个使用场景是将一个集合映射到一个 Fragments 数组 - 举个例子，创建一个描述列表：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Glossary</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;dl&gt;</span><br><span class="line">      &#123;props.items.map(<span class="function"><span class="params">item</span> =&gt;</span> (</span><br><span class="line">        <span class="comment">// 没有`key`，React 会发出一个关键警告</span></span><br><span class="line">        &lt;React.Fragment key=&#123;item.id&#125;&gt;</span><br><span class="line">          &lt;dt&gt;&#123;item.term&#125;&lt;/dt&gt;</span><br><span class="line">          &lt;dd&gt;&#123;item.description&#125;&lt;/dd&gt;</span><br><span class="line">        &lt;/React.Fragment&gt;</span><br><span class="line">      ))&#125;</span><br><span class="line">    &lt;/dl&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>key</code> 是唯一可以传递给 <code>Fragment</code> 的属性。未来我们可能会添加对其他属性的支持，例如事件。</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="Refs-and-the-DOM"><a href="#Refs-and-the-DOM" class="headerlink" title="Refs and the DOM"></a>Refs and the DOM</h2><blockquote>
+<p>Refs 提供了一种方式，允许我们访问 DOM 节点或在 render 方法中创建的 React 元素。</p>
+</blockquote>
+<p>在典型的 React 数据流中，<a href="https://reactjs.bootcss.com/docs/components-and-props.html">props</a> 是父组件与子组件交互的唯一方式。要修改一个子组件，你需要使用新的 props 来重新渲染它。但是，在某些情况下，你需要在典型数据流之外强制修改子组件。被修改的子组件可能是一个 React 组件的实例，也可能是一个 DOM 元素。对于这两种情况，React 都提供了解决办法。</p>
+<h3 id="何时使用-Refs"><a href="#何时使用-Refs" class="headerlink" title="何时使用 Refs"></a>何时使用 Refs</h3><p>下面是几个适合使用 refs 的情况：</p>
+<ul>
+<li>管理焦点，文本选择或媒体播放。</li>
+<li>触发强制动画。</li>
+<li>集成第三方 DOM 库。</li>
+</ul>
+<p>避免使用 refs 来做任何可以通过声明式实现来完成的事情。</p>
+<p>举个例子，避免在 <code>Dialog</code> 组件里暴露 <code>open()</code> 和 <code>close()</code> 方法，最好传递 <code>isOpen</code> 属性。</p>
+<h3 id="勿过度使用-Refs"><a href="#勿过度使用-Refs" class="headerlink" title="勿过度使用 Refs"></a>勿过度使用 Refs</h3><p>你可能首先会想到使用 refs 在你的 app 中“让事情发生”。如果是这种情况，请花一点时间，认真再考虑一下 state 属性应该被安排在哪个组件层中。通常你会想明白，让更高的组件层级拥有这个 state，是更恰当的。查看 <a href="https://reactjs.bootcss.com/docs/lifting-state-up.html">状态提升</a> 以获取更多有关示例。</p>
+<h3 id="创建-Refs"><a href="#创建-Refs" class="headerlink" title="创建 Refs"></a>创建 Refs</h3><blockquote>
+<p> React.createRef</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.myRef = React.createRef();</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&#123;this.myRef&#125;</span> /&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="为-DOM-元素添加-ref"><a href="#为-DOM-元素添加-ref" class="headerlink" title="为 DOM 元素添加 ref"></a>为 DOM 元素添加 ref</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.myRef = React.createRef();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="built_in">this</span>.myRef.current.style.border = <span class="string">&#x27;1px solid red&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&#123;this.myRef&#125;</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>123123<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">MyComponent</span> /&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">&quot;app&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="为-class-组件添加-Ref"><a href="#为-class-组件添加-Ref" class="headerlink" title="为 class 组件添加 Ref"></a>为 class 组件添加 Ref</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AutoFocusTextInput</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.textInput = React.createRef();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="built_in">this</span>.textInput.current.focusTextInput();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;CustomTextInput ref=&#123;<span class="built_in">this</span>.textInput&#125; /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Refs-与函数组件"><a href="#Refs-与函数组件" class="headerlink" title="Refs 与函数组件"></a>Refs 与函数组件</h4><blockquote>
+<p>默认情况下，<strong>你不能在函数组件上使用 <code>ref</code> 属性</strong>，因为它们没有实例</p>
+</blockquote>
+<p>如果要在函数组件中使用 <code>ref</code>，你可以使用 <a href="https://reactjs.bootcss.com/docs/forwarding-refs.html"><code>forwardRef</code></a>（可与 <a href="https://reactjs.bootcss.com/docs/hooks-reference.html#useimperativehandle"><code>useImperativeHandle</code></a> 结合使用），或者可以将该组件转化为 class 组件。</p>
+<p>不管怎样，你可以<strong>在函数组件内部使用 <code>ref</code> 属性</strong>，只要它指向一个 DOM 元素或 class 组件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CustomTextInput</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 这里必须声明 textInput，这样 ref 才可以引用它</span></span><br><span class="line">  <span class="keyword">const</span> textInput = useRef(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    textInput.current.focus();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        type=<span class="string">&quot;text&quot;</span></span><br><span class="line">        ref=&#123;textInput&#125; /&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        type=<span class="string">&quot;button&quot;</span></span><br><span class="line">        value=<span class="string">&quot;Focus the text input&quot;</span></span><br><span class="line">        onClick=&#123;handleClick&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>框架</category>
+        <category>React</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>React基本认识与环境搭建&amp;JSX&amp;相关语法知识点</title>
-    <url>/2020/10/10/react-01/</url>
+    <url>/2020/10/10/react%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/</url>
     <content><![CDATA[<h2 id="资料速览"><a href="#资料速览" class="headerlink" title="资料速览"></a>资料速览</h2><p>React官网：<a href="https://reactjs.bootcss.com/docs/hello-world.html">https://reactjs.bootcss.com/docs/hello-world.html</a></p>
 <p><a href="https://www.html.cn/create-react-app/">Create React App 中文文档</a></p>
 <p><a href="https://www.html.cn/create-react-app/docs/getting-started">快速入门</a><a href="https://react.css88.com/community/support.html">帮助</a><a href="https://www.github.com/facebook/create-react-app">GitHub</a></p>
@@ -47,7 +138,7 @@
 
 
 <p><img src="http://static.zxinc520.com/uPic/q28oVY.png" alt="q28oVY"></p>
-<h3 id="渲染数组"><a href="#渲染数组" class="headerlink" title="渲染数组"></a>渲染数组</h3>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/babel&quot;</span>&gt;</span><br><span class="line">       <span class="keyword">let</span> arr = [</span><br><span class="line">           <span class="string">&#x27;哈哈哈哈哈1&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;哈哈哈哈哈2&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;哈哈哈哈哈3&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;哈哈哈哈哈4&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;哈哈哈哈哈5&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;哈哈哈哈哈6&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;哈哈哈哈哈7&#x27;</span>]</span><br><span class="line">        <span class="keyword">let</span> word = (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">               &#123;arr.map(<span class="function"><span class="params">item</span> =&gt;</span>&#123;</span><br><span class="line">                   <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span> </span><br><span class="line">               &#125;)&#125;   </span><br><span class="line">           &lt;/div&gt;</span><br><span class="line">        )   </span><br><span class="line">       ReactDOM.render(word,<span class="built_in">document</span>.getElementById(<span class="string">&#x27;app&#x27;</span>))</span><br><span class="line">   &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="渲染数组"><a href="#渲染数组" class="headerlink" title="渲染数组"></a>渲染数组</h3>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [</span><br><span class="line">  <span class="string">&#x27;哈哈哈哈哈1&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;哈哈哈哈哈2&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;哈哈哈哈哈3&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;哈哈哈哈哈4&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;哈哈哈哈哈5&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;哈哈哈哈哈6&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;哈哈哈哈哈7&#x27;</span>]</span><br><span class="line"><span class="keyword">let</span> word = (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">  &#123;arr.map(<span class="function"><span class="params">item</span> =&gt;</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span> </span><br><span class="line">  &#125;)&#125;   </span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">)   </span><br><span class="line">ReactDOM.render(word,<span class="built_in">document</span>.getElementById(<span class="string">&#x27;app&#x27;</span>))</span><br></pre></td></tr></table></figure>
 
 
 
@@ -130,10 +221,87 @@
 
 
 
+<h3 id="类组件state状态"><a href="#类组件state状态" class="headerlink" title="类组件state状态"></a>类组件state状态</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">        <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">            <span class="built_in">super</span>(props)</span><br><span class="line">            <span class="comment">// state状态</span></span><br><span class="line">            <span class="built_in">this</span>.state = &#123;</span><br><span class="line">                msg : <span class="string">&#x27;hello world&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        render()&#123;</span><br><span class="line">            <span class="keyword">return</span>(</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &lt;p&gt;&#123;<span class="built_in">this</span>.state.msg&#125;&lt;/p&gt;    </span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">   ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Father</span>/&gt;</span></span>,<span class="built_in">document</span>.getElementById(<span class="string">&#x27;app&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="setState是异步的"><a href="#setState是异步的" class="headerlink" title="setState是异步的"></a>setState是异步的</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">           <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">               <span class="built_in">super</span>(props)</span><br><span class="line">               <span class="built_in">this</span>.state = &#123;</span><br><span class="line">                   msg : <span class="string">&#x27;hello world&#x27;</span></span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           handle = <span class="function">(<span class="params">data</span>)=&gt;</span>&#123;</span><br><span class="line">               <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">                   msg:<span class="string">&#x27;zczczczc&#x27;</span></span><br><span class="line">               &#125;,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">                   <span class="built_in">console</span>.log(<span class="built_in">this</span>.state.msg);</span><br><span class="line">               &#125;)    </span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line">           render()&#123;</span><br><span class="line">               <span class="keyword">return</span>(</span><br><span class="line">                   &lt;div&gt;</span><br><span class="line">                       &lt;p&gt;&#123;<span class="built_in">this</span>.state.msg&#125;&lt;/p&gt;    </span><br><span class="line">                       &lt;button onClick = &#123;<span class="built_in">this</span>.handle&#125;&gt;点我&lt;/button&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line">               )</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="字符串标签插入（字符串-gt-HTML）"><a href="#字符串标签插入（字符串-gt-HTML）" class="headerlink" title="字符串标签插入（字符串 =&gt; HTML）"></a>字符串标签插入（字符串 =&gt; HTML）</h3><blockquote>
+<p>官网说明：<a href="https://reactjs.org/docs/dom-elements.html">https://reactjs.org/docs/dom-elements.html</a></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;div dangerouslySetInnerHTML=&#123;&#123;<span class="attr">__html</span>:<span class="built_in">this</span>.state.newHtml&#125;&#125;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="事件绑定-和-this"><a href="#事件绑定-和-this" class="headerlink" title="事件绑定 和 this"></a>事件绑定 和 this</h3><blockquote>
+<p>React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同：</p>
+<ul>
+<li>React 事件的命名采用小驼峰式（camelCase），而不是纯小写。</li>
+<li>使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串。</li>
+</ul>
+</blockquote>
+<h4 id="修改-this指向"><a href="#修改-this指向" class="headerlink" title="修改 this指向"></a>修改 this指向</h4><ol>
+<li>bind 方式显示绑定</li>
+<li>函数通过箭头函数进行创建</li>
+<li>constructor 中提前进行绑定</li>
+<li>把事件的调用写成箭头函数的调用方式</li>
+</ol>
+<h4 id="bind-方式显示绑定"><a href="#bind-方式显示绑定" class="headerlink" title="bind 方式显示绑定"></a>bind 方式显示绑定</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Com</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">           <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">                <span class="built_in">super</span>(props)</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           handle()&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           render()&#123;</span><br><span class="line">               <span class="keyword">return</span>(</span><br><span class="line">                   &lt;div&gt;</span><br><span class="line">                        &lt;h1&gt;<span class="number">121131</span>&lt;/h1&gt;</span><br><span class="line">                        &lt;button onClick=&#123;<span class="built_in">this</span>.handle.bind(<span class="built_in">this</span>)&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">               )</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="函数通过箭头函数进行创建"><a href="#函数通过箭头函数进行创建" class="headerlink" title="函数通过箭头函数进行创建"></a>函数通过箭头函数进行创建</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Com</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">          <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">               <span class="built_in">super</span>(props)</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          handle= <span class="function">()=&gt;</span>&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          render()&#123;</span><br><span class="line">              <span class="keyword">return</span>(</span><br><span class="line">                  &lt;div&gt;</span><br><span class="line">                       &lt;h1&gt;<span class="number">121131</span>&lt;/h1&gt;</span><br><span class="line">                       &lt;button onClick=&#123;<span class="built_in">this</span>.handle&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line">              )</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="constructor-中提前进行绑定"><a href="#constructor-中提前进行绑定" class="headerlink" title="constructor 中提前进行绑定"></a>constructor 中提前进行绑定</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Com</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">          <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">               <span class="built_in">super</span>(props)</span><br><span class="line">               <span class="built_in">this</span>.handle = <span class="built_in">this</span>.handle.bind(<span class="built_in">this</span>)</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          handle()&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          render()&#123;</span><br><span class="line">              <span class="keyword">return</span>(</span><br><span class="line">                  &lt;div&gt;</span><br><span class="line">                       &lt;h1&gt;<span class="number">121131</span>&lt;/h1&gt;</span><br><span class="line">                       &lt;button onClick=&#123;<span class="built_in">this</span>.handle&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line">              )</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="把事件的调用写成箭头函数的调用方式"><a href="#把事件的调用写成箭头函数的调用方式" class="headerlink" title="把事件的调用写成箭头函数的调用方式"></a>把事件的调用写成箭头函数的调用方式</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Com</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">          <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">               <span class="built_in">super</span>(props)</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          handle()&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          render()&#123;</span><br><span class="line">              <span class="keyword">return</span>(</span><br><span class="line">                  &lt;div&gt;</span><br><span class="line">                       &lt;h1&gt;<span class="number">121131</span>&lt;/h1&gt;</span><br><span class="line">                       &lt;button onClick=&#123;<span class="function">()=&gt;</span><span class="built_in">this</span>.handle()&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line">              )</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;button onClick=&#123;<span class="built_in">this</span>.handle.bind(<span class="built_in">this</span>,<span class="string">&#x27;xxxx&#x27;</span>)&#125;&gt;点击&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;button onClick=&#123;<span class="function">()=&gt;</span><span class="built_in">this</span>.handle(<span class="string">&#x27;xxxx&#x27;</span>)&#125;&gt;点击&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Event事件对象"><a href="#Event事件对象" class="headerlink" title="Event事件对象"></a><strong>Event事件对象</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Com</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">           <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">                <span class="built_in">super</span>(props)</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           handle(p)&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(p);</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           render()&#123;</span><br><span class="line">               <span class="keyword">return</span>(</span><br><span class="line">                   &lt;div&gt;</span><br><span class="line">                        &lt;h1&gt;<span class="number">121131</span>&lt;/h1&gt;</span><br><span class="line">                        &lt;button onClick=&#123;<span class="function">(<span class="params">e</span>)=&gt;</span><span class="built_in">this</span>.handle(e)&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">               )</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h3><blockquote>
+<p>在 React 中，你可以创建不同的组件来封装各种你需要的行为。然后，依据应用的不同状态，你可以只渲染对应状态下的部分内容。</p>
+<p>React 中的条件渲染和 JavaScript 中的一样，使用 JavaScript 运算符 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else"><code>if</code></a> 或者<a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">条件运算符</a>去创建元素来表现当前的状态，然后让 React 根据它们来更新 UI。</p>
+</blockquote>
+<h3 id="状态提升"><a href="#状态提升" class="headerlink" title="状态提升"></a>状态提升</h3><blockquote>
+<p>通常，多个组件需要反映相同的变化数据，这时我们建议将共享状态提升到最近的共同父组件中去。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demoa</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">   <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">     <span class="built_in">super</span>(props);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   render() &#123;</span><br><span class="line">     <span class="keyword">return</span> (</span><br><span class="line">       &lt;div&gt;</span><br><span class="line">         &lt;h1&gt;我的demoa ---- &#123;<span class="built_in">this</span>.props.msg&#125;&lt;/h1&gt;</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">     );</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Demob</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">   <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">     <span class="built_in">super</span>(props);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   render() &#123;</span><br><span class="line">     <span class="keyword">return</span> (</span><br><span class="line">       &lt;div&gt;</span><br><span class="line">         &lt;h1&gt;我的demob  ---- &#123;<span class="built_in">this</span>.props.msg&#125;&lt;/h1&gt;</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">     );</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Com1</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">   <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">     <span class="built_in">super</span>(props);</span><br><span class="line">     <span class="built_in">this</span>.state = &#123;</span><br><span class="line">         msg: <span class="string">&#x27;我是2个组件都用的数据&#x27;</span></span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   handle()&#123;</span><br><span class="line">       <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">           msg:<span class="string">&#x27;我被修改了&#x27;</span></span><br><span class="line">       &#125;)</span><br><span class="line">   &#125;</span><br><span class="line">   render() &#123;</span><br><span class="line">     <span class="keyword">return</span> (</span><br><span class="line">       &lt;div&gt;</span><br><span class="line">         &lt;h1&gt;我是组件&lt;/h1&gt;</span><br><span class="line">         &lt;Demoa msg = &#123;<span class="built_in">this</span>.state.msg&#125;/&gt;</span><br><span class="line">         &lt;Demob msg = &#123;<span class="built_in">this</span>.state.msg&#125;/&gt;</span><br><span class="line">         &lt;button onClick = &#123;<span class="function">()=&gt;</span><span class="built_in">this</span>.handle()&#125;&gt;修改&lt;/button&gt;</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">     );</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Com1</span> /&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">&quot;app&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="http://static.zxinc520.com/uPic/AiYlXZ.png" alt="AiYlXZ"></p>
 <h2 id="相关Error"><a href="#相关Error" class="headerlink" title="相关Error"></a>相关Error</h2><p><img src="http://static.zxinc520.com/uPic/jDVqvD.png" alt="jDVqvD"></p>
 <p><strong>错误原因：组件名字首写字母要大写字母。</strong></p>
 <p><img src="http://static.zxinc520.com/uPic/6dGfpO.png" alt="6dGfpO"></p>
 <p>错误原因：<strong>React.component</strong>  =&gt;  **React.Component.    拼写错误。</p>
+<p><img src="http://static.zxinc520.com/uPic/20ng4N.png" alt="20ng4N"></p>
+<p><strong>错误原因：class类组件、super() 没有被调用。</strong> </p>
+<p><img src="http://static.zxinc520.com/uPic/Tb902w.png" alt="Tb902w"></p>
+<p>错误原因：父组件传递过来的参数 为调用某一项～</p>
 ]]></content>
       <categories>
         <category>框架</category>
@@ -3151,82 +3319,6 @@ f.constructor === F; // true
       </tags>
   </entry>
   <entry>
-    <title>作用域和闭包</title>
-    <url>/2020/03/23/getOfferScopeandclosure/</url>
-    <content><![CDATA[<h2 id="专题总结：作用域和闭包"><a href="#专题总结：作用域和闭包" class="headerlink" title="专题总结：作用域和闭包"></a>专题总结：作用域和闭包</h2><blockquote>
-<p>拿到 字节跳动实习生 offer 总结</p>
-<p>回馈分享一波自己的知识点总结</p>
-</blockquote>
-<blockquote>
-<p>希望读者依此构建自己的知识树（思维导图）</p>
-<p>偷懒一下：可参考我自己总结思维导图 : <a href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
-<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
-<p>自己开发的博客地址：<a href="http://zxinc520.com/">zxinc520.com</a></p>
-<p>github 地址: <a href="https://github.com/ZhChen7">点击</a></p>
-</blockquote>
-<blockquote>
-<p>此篇 js - 【作用域和闭包】 知识点： 全部弄懂了，面试很容易。</p>
-</blockquote>
-<h2 id="一、作用域和作用域链概念"><a href="#一、作用域和作用域链概念" class="headerlink" title="一、作用域和作用域链概念"></a>一、作用域和作用域链概念</h2><h3 id="1-1、作用域"><a href="#1-1、作用域" class="headerlink" title="1.1、作用域"></a>1.1、作用域</h3><h4 id="1-1-1、作用域是什么"><a href="#1-1-1、作用域是什么" class="headerlink" title="1.1.1、作用域是什么"></a>1.1.1、作用域是什么</h4><p>作用域本质就是程序源代码中定义变量的区域，它可以解释为一套规则，是关于 JS 引擎如何寻找变量以及会在何处找到变量的规则。</p>
-<h4 id="1-1-2、作用域分为哪些"><a href="#1-1-2、作用域分为哪些" class="headerlink" title="1.1.2、作用域分为哪些"></a>1.1.2、作用域分为哪些</h4><ul>
-<li>词法作用域（静态作用域）<ul>
-<li>词法作用域是在写代码时就确定了作用域（不使用 eval 和 with 的前提下，这两个现在基本不使用，因此不讲了），即静态作用域</li>
-</ul>
-</li>
-<li>动态作用域<ul>
-<li>而动态作用域是在代码运行时动态确定的</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-2、作用域链"><a href="#1-2、作用域链" class="headerlink" title="1.2、作用域链"></a>1.2、作用域链</h3><h4 id="1-2-1、作用域链是什么"><a href="#1-2-1、作用域链是什么" class="headerlink" title="1.2.1、作用域链是什么"></a>1.2.1、作用域链是什么</h4><p>作用域链实际上是指向变量对象的指针列表，它只引用但不实际包含变量对象，它的用途是保证对执行环境有权访问的所有变量和函数的有序访问。</p>
-<p>简单来说：作用域链就是从当前作用域开始一层一层向上寻找某个变量，直到找到全局作用域还是没找到，就宣布放弃。这种一层一层的关系，就是作用域链。</p>
-<h5 id="两个重要概念："><a href="#两个重要概念：" class="headerlink" title="两个重要概念："></a>两个重要概念：</h5><ul>
-<li><p>变量对象</p>
-<p>每个执行环境都有一个与之关联的变量对象，环境中定义的所有变量和函数都保存在这个对象中（变量对象其实就是作用域这个抽象概念的具体值），比如一个函数中包含的局部变量，它的参数，它里面声明的函数都存在变量对象中。（一个当前执行函数的变量对象最开始时就包含一个 arguments 对象，这个对象用来装函数括号内的参数，所以全局环境的变量对象没有这个）</p>
-</li>
-<li><p>执行环境</p>
-<p>也可以叫执行上下文，这里定义了变量或函数有权访问的其他数据，当一个函数被执行时，他的执行环境会被推入环境栈，执行之后才会被弹出，把控制权返回给之前的执行环境。</p>
-</li>
-</ul>
-<h2 id="二、闭包"><a href="#二、闭包" class="headerlink" title="二、闭包"></a>二、闭包</h2><h3 id="2-1、闭包是什么"><a href="#2-1、闭包是什么" class="headerlink" title="2.1、闭包是什么"></a>2.1、闭包是什么</h3><p>闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包最常用的方式就是在一个函数内部创建另一个函数。</p>
-<h3 id="2-2、闭包的作用"><a href="#2-2、闭包的作用" class="headerlink" title="2.2、闭包的作用"></a>2.2、闭包的作用</h3><ol>
-<li><p>能够访问函数定义时所在的词法作用域(阻止其被回收)。</p>
-</li>
-<li><p>私有化变量</p>
-</li>
-<li><p>模拟块级作用域</p>
-</li>
-<li><p>创建模块</p>
-<ul>
-<li>两个必备的条件(来自《你不知道的 JavaScript》)<ul>
-<li>必须有外部的封闭函数，该函数必须至少被调用一次(每次调用都会创建一个新的模块实例)</li>
-<li>封闭函数必须返回至少一个内部函数，这样内部函数才能在私有作用域中形成闭包，并且可以访问或者修改私有的状态。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">coolModule</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;Yvette&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> age = <span class="number">20</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayAge</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(age);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    sayName,</span><br><span class="line">    sayAge,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> info = coolModule();</span><br><span class="line">info.sayName(); <span class="comment">//&#x27;Yvette&#x27;</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h3 id="2-3、闭包的缺点"><a href="#2-3、闭包的缺点" class="headerlink" title="2.3、闭包的缺点"></a>2.3、闭包的缺点</h3><p>闭包会导致函数的变量一直保存在内存中，过多的闭包可能会导致内存泄漏</p>
-<p>2.4、经典题目（闭包）</p>
-<blockquote>
-<p>函数自增</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i++;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JS</category>
-        <category>JS 三座大山</category>
-        <category>Offer</category>
-        <category>字节跳动</category>
-      </categories>
-      <tags>
-        <tag>面试全面总结</tag>
-        <tag>JS 三座大山</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>原型和原型链</title>
     <url>/2020/03/23/getOfferPrototypesandprototypechains/</url>
     <content><![CDATA[<h2 id="JavaScript-原型和原型链"><a href="#JavaScript-原型和原型链" class="headerlink" title="JavaScript 原型和原型链"></a>JavaScript 原型和原型链</h2><blockquote>
@@ -3391,6 +3483,82 @@ f.constructor === F; // true
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> L = A.__proto__;</span><br><span class="line"><span class="keyword">var</span> R = B.prototype;</span><br><span class="line"><span class="keyword">if</span> (L === R) <span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+]]></content>
+      <categories>
+        <category>JS</category>
+        <category>JS 三座大山</category>
+        <category>Offer</category>
+        <category>字节跳动</category>
+      </categories>
+      <tags>
+        <tag>面试全面总结</tag>
+        <tag>JS 三座大山</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>作用域和闭包</title>
+    <url>/2020/03/23/getOfferScopeandclosure/</url>
+    <content><![CDATA[<h2 id="专题总结：作用域和闭包"><a href="#专题总结：作用域和闭包" class="headerlink" title="专题总结：作用域和闭包"></a>专题总结：作用域和闭包</h2><blockquote>
+<p>拿到 字节跳动实习生 offer 总结</p>
+<p>回馈分享一波自己的知识点总结</p>
+</blockquote>
+<blockquote>
+<p>希望读者依此构建自己的知识树（思维导图）</p>
+<p>偷懒一下：可参考我自己总结思维导图 : <a href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
+<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
+<p>自己开发的博客地址：<a href="http://zxinc520.com/">zxinc520.com</a></p>
+<p>github 地址: <a href="https://github.com/ZhChen7">点击</a></p>
+</blockquote>
+<blockquote>
+<p>此篇 js - 【作用域和闭包】 知识点： 全部弄懂了，面试很容易。</p>
+</blockquote>
+<h2 id="一、作用域和作用域链概念"><a href="#一、作用域和作用域链概念" class="headerlink" title="一、作用域和作用域链概念"></a>一、作用域和作用域链概念</h2><h3 id="1-1、作用域"><a href="#1-1、作用域" class="headerlink" title="1.1、作用域"></a>1.1、作用域</h3><h4 id="1-1-1、作用域是什么"><a href="#1-1-1、作用域是什么" class="headerlink" title="1.1.1、作用域是什么"></a>1.1.1、作用域是什么</h4><p>作用域本质就是程序源代码中定义变量的区域，它可以解释为一套规则，是关于 JS 引擎如何寻找变量以及会在何处找到变量的规则。</p>
+<h4 id="1-1-2、作用域分为哪些"><a href="#1-1-2、作用域分为哪些" class="headerlink" title="1.1.2、作用域分为哪些"></a>1.1.2、作用域分为哪些</h4><ul>
+<li>词法作用域（静态作用域）<ul>
+<li>词法作用域是在写代码时就确定了作用域（不使用 eval 和 with 的前提下，这两个现在基本不使用，因此不讲了），即静态作用域</li>
+</ul>
+</li>
+<li>动态作用域<ul>
+<li>而动态作用域是在代码运行时动态确定的</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2、作用域链"><a href="#1-2、作用域链" class="headerlink" title="1.2、作用域链"></a>1.2、作用域链</h3><h4 id="1-2-1、作用域链是什么"><a href="#1-2-1、作用域链是什么" class="headerlink" title="1.2.1、作用域链是什么"></a>1.2.1、作用域链是什么</h4><p>作用域链实际上是指向变量对象的指针列表，它只引用但不实际包含变量对象，它的用途是保证对执行环境有权访问的所有变量和函数的有序访问。</p>
+<p>简单来说：作用域链就是从当前作用域开始一层一层向上寻找某个变量，直到找到全局作用域还是没找到，就宣布放弃。这种一层一层的关系，就是作用域链。</p>
+<h5 id="两个重要概念："><a href="#两个重要概念：" class="headerlink" title="两个重要概念："></a>两个重要概念：</h5><ul>
+<li><p>变量对象</p>
+<p>每个执行环境都有一个与之关联的变量对象，环境中定义的所有变量和函数都保存在这个对象中（变量对象其实就是作用域这个抽象概念的具体值），比如一个函数中包含的局部变量，它的参数，它里面声明的函数都存在变量对象中。（一个当前执行函数的变量对象最开始时就包含一个 arguments 对象，这个对象用来装函数括号内的参数，所以全局环境的变量对象没有这个）</p>
+</li>
+<li><p>执行环境</p>
+<p>也可以叫执行上下文，这里定义了变量或函数有权访问的其他数据，当一个函数被执行时，他的执行环境会被推入环境栈，执行之后才会被弹出，把控制权返回给之前的执行环境。</p>
+</li>
+</ul>
+<h2 id="二、闭包"><a href="#二、闭包" class="headerlink" title="二、闭包"></a>二、闭包</h2><h3 id="2-1、闭包是什么"><a href="#2-1、闭包是什么" class="headerlink" title="2.1、闭包是什么"></a>2.1、闭包是什么</h3><p>闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包最常用的方式就是在一个函数内部创建另一个函数。</p>
+<h3 id="2-2、闭包的作用"><a href="#2-2、闭包的作用" class="headerlink" title="2.2、闭包的作用"></a>2.2、闭包的作用</h3><ol>
+<li><p>能够访问函数定义时所在的词法作用域(阻止其被回收)。</p>
+</li>
+<li><p>私有化变量</p>
+</li>
+<li><p>模拟块级作用域</p>
+</li>
+<li><p>创建模块</p>
+<ul>
+<li>两个必备的条件(来自《你不知道的 JavaScript》)<ul>
+<li>必须有外部的封闭函数，该函数必须至少被调用一次(每次调用都会创建一个新的模块实例)</li>
+<li>封闭函数必须返回至少一个内部函数，这样内部函数才能在私有作用域中形成闭包，并且可以访问或者修改私有的状态。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">coolModule</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">&quot;Yvette&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> age = <span class="number">20</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayAge</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(age);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    sayName,</span><br><span class="line">    sayAge,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> info = coolModule();</span><br><span class="line">info.sayName(); <span class="comment">//&#x27;Yvette&#x27;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="2-3、闭包的缺点"><a href="#2-3、闭包的缺点" class="headerlink" title="2.3、闭包的缺点"></a>2.3、闭包的缺点</h3><p>闭包会导致函数的变量一直保存在内存中，过多的闭包可能会导致内存泄漏</p>
+<p>2.4、经典题目（闭包）</p>
+<blockquote>
+<p>函数自增</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i++;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>JS</category>
@@ -10301,6 +10469,334 @@ f.constructor === F; // true
       </tags>
   </entry>
   <entry>
+    <title>MVVM 和 vue</title>
+    <url>/2019/09/05/VueTheory/</url>
+    <content><![CDATA[<h1 id="MVVM-和-vue"><a href="#MVVM-和-vue" class="headerlink" title="MVVM 和 vue"></a>MVVM 和 vue</h1><blockquote>
+<p>本章首先介绍了 <strong>jQuery 开发方式和框架开发方式的区别</strong> ，引导学生进入框架开发的思路转变。然后通过 MVC 模式引入 <strong>MVVM</strong> ，在两者比较让学生更快熟悉 MVVM 。最后结合实例，详细讲解 vue 的 <strong>实现原理</strong> ，包括 <strong>响应式</strong>、<strong>模板解析</strong>、<strong>渲染</strong> 这三大要素。…</p>
+<p>高级面试：<strong>vue 知识点</strong></p>
+<p>放弃该放弃的是无奈，放弃不该放弃的是无能，不放弃该放弃的是无知，不放弃不该放弃的是执著！</p>
+<p>It is helpless to give up the waiver. It is incompetence to give up what should not be given up. It is ignorance that does not give up the waiver. It is attachment that does not give up and should not give up!</p>
+</blockquote>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>如何 理解 MVVM</li>
+<li>如何 实现 MVVM</li>
+<li>是否解读过 vue 源码</li>
+</ul>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
+<li>说一下 使用 jQuery 和 使用框架的区别</li>
+<li>说一下 对 MVVM 的理解</li>
+<li>vue 中如何实现 <strong>响应式</strong></li>
+<li>vue 中如何解析 <strong>模板</strong></li>
+<li>vue 的 整个实现流程</li>
+</ul>
+<h2 id="使用-jQuery-和-使用框架的区别"><a href="#使用-jQuery-和-使用框架的区别" class="headerlink" title="使用 jQuery 和 使用框架的区别"></a>使用 jQuery 和 使用框架的区别</h2><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
+<li>jQuery 实现 todo-list</li>
+<li>vue 实现 todo-list</li>
+<li>jQuery 和 框架的区别</li>
+</ul>
+<h4 id="jQuery-实现-todo-list"><a href="#jQuery-实现-todo-list" class="headerlink" title="jQuery 实现 todo-list"></a>jQuery 实现 todo-list</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;txt-title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn-submit&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ul-list&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $txtTitle = $(<span class="string">&quot;#txt-title&quot;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $ulList = $(<span class="string">&quot;#ul-list&quot;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $btnSubmit = $(<span class="string">&quot;#btn-submit&quot;</span>);</span></span><br><span class="line"><span class="javascript">      $btnSubmit.click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> title = $txtTitle.val();</span></span><br><span class="line">        if (!title) &#123;</span><br><span class="line"><span class="javascript">          <span class="keyword">return</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> $li = $(<span class="string">`&lt;li&gt;<span class="subst">$&#123;title&#125;</span>&lt;/li&gt;`</span>);</span></span><br><span class="line">        $ulList.append($li);</span><br><span class="line"><span class="javascript">        $txtTitle.val(<span class="string">&quot;&quot;</span>);</span></span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190902/BaCUCHQ12jJW.gif" alt="mark"></p>
+<h4 id="vue-实现-todo-list"><a href="#vue-实现-todo-list" class="headerlink" title="vue 实现 todo-list"></a>vue 实现 todo-list</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/vue/2.6.10/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="javascript">          title: <span class="string">&quot;&quot;</span>,</span></span><br><span class="line">          list: [],</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line"><span class="javascript">          add: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">this</span>.list.push(<span class="built_in">this</span>.title);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">this</span>.title = <span class="string">&quot;&quot;</span>;</span></span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190903/sQq0jR7s1E7E.gif" alt="mark"></p>
+<h3 id="两者的区别"><a href="#两者的区别" class="headerlink" title="两者的区别"></a>两者的区别</h3><ul>
+<li><strong>数据</strong> 和 <strong>视图</strong> 的分离</li>
+<li>以数据驱动视图</li>
+</ul>
+<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>说一下 使用 jQuery 和 使用框架的区别 ？<ul>
+<li><strong>数据</strong> 和 <strong>视图</strong> 的分离，<u>解耦</u>（ <em>开放封闭原则</em> ）</li>
+<li>以数据驱动视图，只关心数据变化，DOM 操作被封装</li>
+</ul>
+</li>
+</ul>
+<h2 id="说一下-对-MVVM-的理解"><a href="#说一下-对-MVVM-的理解" class="headerlink" title="说一下 对 MVVM 的理解"></a>说一下 对 MVVM 的理解</h2><blockquote>
+<p>目前前端框架中，最为出色的要属 Vue 和 React 了，这俩个框架的核心理念都<strong>是数据驱动页面渲染</strong>，同时他们都是 MVVM 模式的框架，<strong>MVVM 模式</strong> 中的 M 还是固定表示 Modal，V 还是表死 View，这俩个基本都是不会发生变化，一个页面必然需要数据和渲染俩个部分，那么变化的是如何将 Modal 渲染到 View 的过程变了，在 MVVM 模式中，将 View 和 Modal 绑定在一起，只要 Modal 发生了变化，View 就会自动更新，不需要我们认为的再去写如何操作 DOM 更新的过程了</p>
+</blockquote>
+<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>MVC</li>
+<li>MVVM</li>
+<li>关于 ViewModel</li>
+</ul>
+<h4 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h4><ul>
+<li>M -Model 数据</li>
+<li>V - View 视图、界面</li>
+<li>C - Controller 控制器 、逻辑处理</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190903/k21xefObaEwr.png?imageslim" alt="mark"></p>
+<p><strong>MVC</strong>模式（Model–view–controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。</p>
+<p>在前端的 <strong>MVC 模式</strong> 中，M 还是表示 Modal 层，负责与后台交互数据，V 表示 View，负责页面上 DOM 的渲染，C 表示绑定在 DOM 元素上的事件，当 Controllor 中的事件被调用，会去调用 Modal 中的数据，然后交给 View 重新渲染数据</p>
+<h4 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h4><ul>
+<li>M - Model 模型、数据</li>
+<li>V - View 视图、模板（ 视图和模板是分离的 ）</li>
+<li>ViewModel - <strong>连接</strong> Model 和 View</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190903/23g0MdeUf9sw.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190903/1qFclAqzYLGt.png?imageslim" alt="mark"></p>
+<h4 id="关于-ViewModel"><a href="#关于-ViewModel" class="headerlink" title="关于 ViewModel"></a>关于 ViewModel</h4><ul>
+<li>MVVM 不算是一种创新</li>
+<li>但其中的 ViewModel 确实是一种创新</li>
+<li>真正 结合前端场景应用的创建</li>
+</ul>
+<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>说一下 对 MVVM 的理解<ul>
+<li>MVVM - Model View ViewModel</li>
+<li>三者之间的联系。以及如何对应到各段代码</li>
+<li>ViewModel 的理解，联系 View 和 Model</li>
+</ul>
+</li>
+</ul>
+<h1 id="MVVM-框架的三大要素"><a href="#MVVM-框架的三大要素" class="headerlink" title="MVVM 框架的三大要素"></a>MVVM 框架的三大要素</h1><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ul>
+<li>再次分析 demo</li>
+<li>三要素总结</li>
+</ul>
+<h3 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h3><ul>
+<li>响应式：vue 如何监听到 data 的每个属性变化？</li>
+<li>模板引擎：vue 的模板如何被解析，指令如何处理？</li>
+<li>渲染：vue 的模板如何被渲染成 html？以及渲染过程</li>
+</ul>
+<h2 id="vue-中如何实现响应式"><a href="#vue-中如何实现响应式" class="headerlink" title="vue 中如何实现响应式"></a>vue 中如何实现响应式</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>什么是响应式？</li>
+<li>Object.defineProperty</li>
+<li>模拟</li>
+</ul>
+<h4 id="什么是响应式？"><a href="#什么是响应式？" class="headerlink" title="什么是响应式？"></a>什么是响应式？</h4><ul>
+<li>修改 data 属性后，vue 立刻监听到</li>
+<li>data 属性被代理到 vm 上</li>
+<li>演示</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/vue/2.6.10/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="javascript">          name: <span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="javascript">          age: <span class="string">&quot;18&quot;</span>,</span></span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190904/h1SkefYXlHkn.gif" alt="mark"></p>
+<h4 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h4><blockquote>
+<p><code>Object.defineProperty()</code> 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。</p>
+<p><strong>语法</strong> ：Object.defineProperty(obj, prop, descriptor)</p>
+<p><strong>参数</strong> ：</p>
+<p><u>Object.defineProperty(obj, prop, descriptor)</u></p>
+<p><strong>obj</strong> ：要在其上定义属性的对象。</p>
+<p><strong>prop</strong> ：要定义或修改的属性的名称。</p>
+<p><strong>descriptor</strong> ：将被定义或修改的属性描述符。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">25</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">//获取属性的时候，如何监听到？</span></span><br><span class="line">obj.age = <span class="number">26</span>; <span class="comment">//赋值属性的时候，如何监听到？</span></span><br></pre></td></tr></table></figure>
+
+<p><em>Object.defineProperty：</em></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">&quot;name&quot;</span>, &#123;</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;get&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">  &#125;,</span><br><span class="line">  set: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;set&quot;</span>);</span><br><span class="line">    name = newVal;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.name);</span><br><span class="line">obj.name = <span class="string">&quot;list&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="模拟实现"><a href="#模拟实现" class="headerlink" title="模拟实现"></a>模拟实现</h3><blockquote>
+<p>模拟实现 Vue 如何监听 data</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 如何监听data</span></span><br><span class="line"><span class="comment">var vm=new Vue(&#123;</span></span><br><span class="line"><span class="comment">    el:&#x27;张三&#x27;,</span></span><br><span class="line"><span class="comment">    data:&#123;</span></span><br><span class="line"><span class="comment">        name:&#x27;张三&#x27;,</span></span><br><span class="line"><span class="comment">        age:20</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟实现</span></span><br><span class="line"><span class="keyword">var</span> vm = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> data = &#123;</span><br><span class="line">  price: <span class="number">100</span>,</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> key, value;</span><br><span class="line"><span class="keyword">for</span> (key <span class="keyword">in</span> data) &#123;</span><br><span class="line">  <span class="comment">//命中闭包。新建一个函数，保证 key 的独立的作用域</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(vm, key, &#123;</span><br><span class="line">      get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;get&quot;</span>); <span class="comment">//监听</span></span><br><span class="line">        <span class="keyword">return</span> data[key];</span><br><span class="line">      &#125;,</span><br><span class="line">      set: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;set&quot;</span>); <span class="comment">//监听</span></span><br><span class="line">        data[key] = newVal;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190904/P570ewmXOdNX.gif" alt="mark"></p>
+<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>什么是响应式？<ul>
+<li>关键是理解 Object.defineProperty</li>
+<li>将 data 的属性代理到 vm 上</li>
+</ul>
+</li>
+</ul>
+<h2 id="vue-中如何解析模板"><a href="#vue-中如何解析模板" class="headerlink" title="vue 中如何解析模板"></a>vue 中如何解析模板</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>模板是什么？</li>
+<li>render 函数</li>
+<li>render 函数 与 vdom</li>
+</ul>
+<h4 id="模板是什么？"><a href="#模板是什么？" class="headerlink" title="模板是什么？"></a>模板是什么？</h4><ul>
+<li><p>本质：字符串</p>
+</li>
+<li><p>有逻辑，如 v-if 、v-for 等</p>
+</li>
+<li><p>与 html 格式很像，但有很大区别</p>
+</li>
+<li><p>最终还要转换为 html 来显示</p>
+</li>
+<li><p><strong>模板最终必须转化成 JS 代码</strong> ，因为：</p>
+<ul>
+<li>有逻辑（v-if、v-for），必须用 JS 才能实现 （ 图灵完备 ）</li>
+<li>转换成 html 渲染页面，必须用 JS 才能实现</li>
+<li>因此，模板最重要转换成 一个 JS 函数 （render 函数）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="render-函数-with-的用法"><a href="#render-函数-with-的用法" class="headerlink" title="render 函数 - with 的用法"></a>render 函数 - with 的用法</h4><blockquote>
+<p>with 的用法 — <strong>自己开发的代码尽量不要使用！</strong></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">20</span>,</span><br><span class="line">  getAddress: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;beijing&quot;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不使用 with</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(obj.name);</span><br><span class="line">  alert(obj.age);</span><br><span class="line">  obj.getAddress();</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">20</span>,</span><br><span class="line">  getAddress: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;beijing&quot;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 with</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">with</span> (obj) &#123;</span><br><span class="line">    alert(obj.name);</span><br><span class="line">    alert(obj.age);</span><br><span class="line">    getAddress();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn1();</span><br></pre></td></tr></table></figure>
+
+<h4 id="render-函数"><a href="#render-函数" class="headerlink" title="render 函数"></a>render 函数</h4><p><img src="http://static.zxinc520.com/blog/20190905/igfqtojmzQ4H.png?imageslim" alt="mark"></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>模板中所有信息都包含在了 render 函数中</li>
+<li>this 即 vm</li>
+<li>price 即 this.price 即 vm.price ，即 data 中的 price</li>
+<li>_c 即 this. _c 即 vm. _c</li>
+</ul>
+<h4 id="render-函数剖析"><a href="#render-函数剖析" class="headerlink" title="render 函数剖析"></a>render 函数剖析</h4><ul>
+<li>从哪里可以看到 render 函数？</li>
+<li>复杂一点的例子，render 函数是什么样子的？</li>
+<li>v- if 、v-for 、v-on 都是怎么处理的？</li>
+</ul>
+<h4 id="看一下-todo-list-demo-的-render-函数"><a href="#看一下-todo-list-demo-的-render-函数" class="headerlink" title="看一下 todo-list demo 的 render 函数"></a>看一下 todo-list demo 的 render 函数</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> (<span class="built_in">this</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> _c(<span class="string">&quot;div&quot;</span>, &#123; <span class="attr">attrs</span>: &#123; <span class="attr">id</span>: <span class="string">&quot;app&quot;</span> &#125; &#125;, [</span><br><span class="line">    _c(<span class="string">&quot;div&quot;</span>, [</span><br><span class="line">      _c(<span class="string">&quot;input&quot;</span>, &#123;</span><br><span class="line">        directives: [</span><br><span class="line">          &#123;</span><br><span class="line">            name: <span class="string">&quot;model&quot;</span>,</span><br><span class="line">            rawName: <span class="string">&quot;v-model&quot;</span>,</span><br><span class="line">            value: title,</span><br><span class="line">            expression: <span class="string">&quot;title&quot;</span>,</span><br><span class="line">          &#125;,</span><br><span class="line">        ],</span><br><span class="line">        attrs: &#123; <span class="attr">type</span>: <span class="string">&quot;text&quot;</span> &#125;,</span><br><span class="line">        domProps: &#123; <span class="attr">value</span>: title &#125;,</span><br><span class="line">        on: &#123;</span><br><span class="line">          input: <span class="function"><span class="keyword">function</span> (<span class="params">$event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> ($event.target.composing) <span class="keyword">return</span>;</span><br><span class="line">            title = $event.target.value;</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;),</span><br><span class="line">      _v(<span class="string">&quot; &quot;</span>),</span><br><span class="line">      _c(<span class="string">&quot;button&quot;</span>, &#123; <span class="attr">on</span>: &#123; <span class="attr">click</span>: add &#125; &#125;, [_v(<span class="string">&quot;submit&quot;</span>)]),</span><br><span class="line">    ]),</span><br><span class="line">    _v(<span class="string">&quot; &quot;</span>),</span><br><span class="line">    _c(</span><br><span class="line">      <span class="string">&quot;ul&quot;</span>,</span><br><span class="line">      _l(list, <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _c(<span class="string">&quot;li&quot;</span>, [_v(_s(item))]);</span><br><span class="line">      &#125;),</span><br><span class="line">      <span class="number">0</span></span><br><span class="line">    ),</span><br><span class="line">  ]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>根据 todo-list demo 的 render 函数</li>
+<li>v- model 是怎么实现的？</li>
+<li>v-on :click 是怎么实现的？</li>
+<li>v- for 是怎么实现的？</li>
+</ul>
+<h4 id="重要"><a href="#重要" class="headerlink" title="重要"></a>重要</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    vue2.0 开始支持预编译</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    开发环境 ：写模板</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    编译打包</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    生产环境：JS</span></span><br><span class="line"><span class="comment">    --------------------------------------------</span></span><br><span class="line"><span class="comment">    React 组件化</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    JSX 模板</span></span><br><span class="line"><span class="comment">    编译 ： -&gt; JS 代码</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><ul>
+<li><p>已经解决了 模板中 “逻辑” （v-for、v-if ）的问题</p>
+</li>
+<li><p>还剩下模板生成 html 问题</p>
+</li>
+<li><p>另外，vm._c 是什么？ render 函数 返回了什么？</p>
+</li>
+</ul>
+<h5 id="先复习一下-vdom-的知识"><a href="#先复习一下-vdom-的知识" class="headerlink" title="先复习一下 vdom 的知识"></a>先复习一下 vdom 的知识</h5><blockquote>
+<p>可参考 <a href="http://zxinc520.com/lcj/%225d63a1bce9920a5ce05e2c3b%22">vdom 篇</a></p>
+</blockquote>
+<p>vdom 的如何应用，核心 API 是什么？</p>
+<ul>
+<li>介绍 <a href="https://github.com/snabbdom/snabbdom">snabbdom</a></li>
+<li>重做 之前的 demo</li>
+<li>核心 API</li>
+</ul>
+<h5 id="render-函数和-vdom"><a href="#render-函数和-vdom" class="headerlink" title="render 函数和 vdom"></a>render 函数和 vdom</h5><p><img src="http://static.zxinc520.com/blog/20190905/ldxxH0zJ4t3s.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190905/MykHq1vOBFyL.png?imageslim" alt="mark"></p>
+<ul>
+<li>updataComponent 中实现了 vdom 的 patch</li>
+<li>页面首次渲染执行 updataComponent</li>
+<li>data 中每次修改属性，执行 updataComponent</li>
+</ul>
+<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>vue 中如何解析 <strong>模板</strong><ul>
+<li>模板：字符串，有逻辑，嵌入 JS 变量……</li>
+<li>模板必须转换成 JS 代码（有逻辑，渲染 html，JS 变量）</li>
+<li>render 函数是什么样子的</li>
+<li>render 函数执行是返回 vnode</li>
+<li>updataComponent</li>
+</ul>
+</li>
+</ul>
+<h1 id="vue-的整个实现流程"><a href="#vue-的整个实现流程" class="headerlink" title="vue 的整个实现流程"></a>vue 的整个实现流程</h1><h3 id="整个实现流程"><a href="#整个实现流程" class="headerlink" title="整个实现流程"></a>整个实现流程</h3><ul>
+<li><p>第一步：解析模板成 render 函数</p>
+<ul>
+<li>with 的用法</li>
+<li>模板中的所有信息都被 render 函数 包含</li>
+<li>模板中用到的 data 中的属性，都变成了 JS 变量</li>
+<li>模板中的 v-model、v-for、v-on 都变成了 JS 逻辑</li>
+<li>render 函数返回 vnode</li>
+</ul>
+</li>
+<li><p>第二步：响应式开始监听</p>
+<ul>
+<li>Object.defineProperty</li>
+<li>将 data 的属性代理到 vm 上</li>
+</ul>
+</li>
+<li><p>第三步：首次渲染，显示页面，且绑定依赖</p>
+<ul>
+<li>初次渲染，执行 updataComponent ，执行 vm.render()</li>
+<li>执行 render 函数，会访问到 vm.list 和 vm.title</li>
+<li>会被响应式的 get 方法监听到 （后面详细讲）</li>
+<li>执行 updataComponent ，会被 vdom 的 patch 方法</li>
+<li>patch 将 vnode 渲染成 DOM ，初次渲染完成</li>
+</ul>
+<hr>
+<ul>
+<li>为何要监听 get，直接监听 set 不行吗？</li>
+<li>data 中有很多属性，有些被用到，有些可能不被用到</li>
+<li>被用到的会走到 get ，不被用到的 不会走到 get</li>
+<li>未走到 get 中的属性，set 的时候我们也无需关心</li>
+<li><strong>避免不必要的重复渲染</strong></li>
+</ul>
+</li>
+<li><p>第四步：data 属性变化，触发 rerender</p>
+<ul>
+<li>修改属性，被响应式 的 set 监听到</li>
+<li>set 中执行 updataComponent</li>
+<li>updataComponent 重新执行 vm.render()</li>
+<li>生成的 vnode 和 prevVnode，通过 patch 进行比较</li>
+</ul>
+</li>
+</ul>
+<h3 id="问题解答-4"><a href="#问题解答-4" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>vue 的整个实现流程？<ul>
+<li>第一步：解析模板成 render 函数</li>
+<li>第二步：响应式开始监听</li>
+<li>第三步：首次渲染，显示页面，且绑定依赖</li>
+<li>第四步：data 属性变化，触发 rerender</li>
+</ul>
+</li>
+</ul>
+<h1 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h1><ul>
+<li><p>说一下 使用 jQuery 和 使用框架的区别</p>
+<ul>
+<li><strong>数据</strong> 和 <strong>视图</strong> 的分离，<u>解耦</u>（ <em>开放封闭原则</em> ）</li>
+<li>以数据驱动视图，只关心数据变化，DOM 操作被封装</li>
+</ul>
+</li>
+<li><p>什么是 MVVM ？</p>
+<ul>
+<li><p>MVVM - Model View ViewModel</p>
+</li>
+<li><p>三者之间的联系。以及如何对应到各段代码</p>
+</li>
+<li><p>ViewModel 的理解，联系 View 和 Model</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="三要素-1"><a href="#三要素-1" class="headerlink" title="三要素"></a>三要素</h3><ul>
+<li><p>响应式：vue 如何监听到 data 的每个属性变化？</p>
+</li>
+<li><p>模板引擎：vue 的模板如何被解析，指令如何处理？</p>
+</li>
+<li><p>渲染：vue 的模板如何被渲染成 html？以及渲染过程？</p>
+</li>
+<li><p>Vue 如何实现响应式？</p>
+<ul>
+<li>关键是理解 Object.defineProperty</li>
+<li>将 data 的属性代理到 vm 上</li>
+</ul>
+</li>
+<li><p>vue 中如何解析 <strong>模板</strong> ？</p>
+<ul>
+<li>模板：字符串，有逻辑，嵌入 JS 变量……</li>
+<li>模板必须转换成 JS 代码（有逻辑，渲染 html，JS 变量）</li>
+<li>render 函数是什么样子的</li>
+<li>render 函数执行是返回 vnode</li>
+<li>updataComponent</li>
+</ul>
+</li>
+<li><p>vue 的整个实现流程？</p>
+<ul>
+<li>第一步：解析模板成 render 函数</li>
+<li>第二步：响应式开始监听</li>
+<li>第三步：首次渲染，显示页面，且绑定依赖</li>
+<li>第四步：data 属性变化，触发 rerender</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>框架</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>MVVM</tag>
+        <tag>响应式、模板解析、渲染</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>微信小程序笔记上</title>
     <url>/2019/09/05/WeChatUp/</url>
     <content><![CDATA[<h1 id="微信小程序笔记上"><a href="#微信小程序笔记上" class="headerlink" title="微信小程序笔记上"></a>微信小程序笔记上</h1><blockquote>
@@ -10637,334 +11133,6 @@ f.constructor === F; // true
       </categories>
       <tags>
         <tag>微信小程序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MVVM 和 vue</title>
-    <url>/2019/09/05/VueTheory/</url>
-    <content><![CDATA[<h1 id="MVVM-和-vue"><a href="#MVVM-和-vue" class="headerlink" title="MVVM 和 vue"></a>MVVM 和 vue</h1><blockquote>
-<p>本章首先介绍了 <strong>jQuery 开发方式和框架开发方式的区别</strong> ，引导学生进入框架开发的思路转变。然后通过 MVC 模式引入 <strong>MVVM</strong> ，在两者比较让学生更快熟悉 MVVM 。最后结合实例，详细讲解 vue 的 <strong>实现原理</strong> ，包括 <strong>响应式</strong>、<strong>模板解析</strong>、<strong>渲染</strong> 这三大要素。…</p>
-<p>高级面试：<strong>vue 知识点</strong></p>
-<p>放弃该放弃的是无奈，放弃不该放弃的是无能，不放弃该放弃的是无知，不放弃不该放弃的是执著！</p>
-<p>It is helpless to give up the waiver. It is incompetence to give up what should not be given up. It is ignorance that does not give up the waiver. It is attachment that does not give up and should not give up!</p>
-</blockquote>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>如何 理解 MVVM</li>
-<li>如何 实现 MVVM</li>
-<li>是否解读过 vue 源码</li>
-</ul>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>说一下 使用 jQuery 和 使用框架的区别</li>
-<li>说一下 对 MVVM 的理解</li>
-<li>vue 中如何实现 <strong>响应式</strong></li>
-<li>vue 中如何解析 <strong>模板</strong></li>
-<li>vue 的 整个实现流程</li>
-</ul>
-<h2 id="使用-jQuery-和-使用框架的区别"><a href="#使用-jQuery-和-使用框架的区别" class="headerlink" title="使用 jQuery 和 使用框架的区别"></a>使用 jQuery 和 使用框架的区别</h2><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
-<li>jQuery 实现 todo-list</li>
-<li>vue 实现 todo-list</li>
-<li>jQuery 和 框架的区别</li>
-</ul>
-<h4 id="jQuery-实现-todo-list"><a href="#jQuery-实现-todo-list" class="headerlink" title="jQuery 实现 todo-list"></a>jQuery 实现 todo-list</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;txt-title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn-submit&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ul-list&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $txtTitle = $(<span class="string">&quot;#txt-title&quot;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $ulList = $(<span class="string">&quot;#ul-list&quot;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $btnSubmit = $(<span class="string">&quot;#btn-submit&quot;</span>);</span></span><br><span class="line"><span class="javascript">      $btnSubmit.click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> title = $txtTitle.val();</span></span><br><span class="line">        if (!title) &#123;</span><br><span class="line"><span class="javascript">          <span class="keyword">return</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> $li = $(<span class="string">`&lt;li&gt;<span class="subst">$&#123;title&#125;</span>&lt;/li&gt;`</span>);</span></span><br><span class="line">        $ulList.append($li);</span><br><span class="line"><span class="javascript">        $txtTitle.val(<span class="string">&quot;&quot;</span>);</span></span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190902/BaCUCHQ12jJW.gif" alt="mark"></p>
-<h4 id="vue-实现-todo-list"><a href="#vue-实现-todo-list" class="headerlink" title="vue 实现 todo-list"></a>vue 实现 todo-list</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/vue/2.6.10/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="javascript">          title: <span class="string">&quot;&quot;</span>,</span></span><br><span class="line">          list: [],</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line"><span class="javascript">          add: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">this</span>.list.push(<span class="built_in">this</span>.title);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">this</span>.title = <span class="string">&quot;&quot;</span>;</span></span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190903/sQq0jR7s1E7E.gif" alt="mark"></p>
-<h3 id="两者的区别"><a href="#两者的区别" class="headerlink" title="两者的区别"></a>两者的区别</h3><ul>
-<li><strong>数据</strong> 和 <strong>视图</strong> 的分离</li>
-<li>以数据驱动视图</li>
-</ul>
-<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>说一下 使用 jQuery 和 使用框架的区别 ？<ul>
-<li><strong>数据</strong> 和 <strong>视图</strong> 的分离，<u>解耦</u>（ <em>开放封闭原则</em> ）</li>
-<li>以数据驱动视图，只关心数据变化，DOM 操作被封装</li>
-</ul>
-</li>
-</ul>
-<h2 id="说一下-对-MVVM-的理解"><a href="#说一下-对-MVVM-的理解" class="headerlink" title="说一下 对 MVVM 的理解"></a>说一下 对 MVVM 的理解</h2><blockquote>
-<p>目前前端框架中，最为出色的要属 Vue 和 React 了，这俩个框架的核心理念都<strong>是数据驱动页面渲染</strong>，同时他们都是 MVVM 模式的框架，<strong>MVVM 模式</strong> 中的 M 还是固定表示 Modal，V 还是表死 View，这俩个基本都是不会发生变化，一个页面必然需要数据和渲染俩个部分，那么变化的是如何将 Modal 渲染到 View 的过程变了，在 MVVM 模式中，将 View 和 Modal 绑定在一起，只要 Modal 发生了变化，View 就会自动更新，不需要我们认为的再去写如何操作 DOM 更新的过程了</p>
-</blockquote>
-<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>MVC</li>
-<li>MVVM</li>
-<li>关于 ViewModel</li>
-</ul>
-<h4 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h4><ul>
-<li>M -Model 数据</li>
-<li>V - View 视图、界面</li>
-<li>C - Controller 控制器 、逻辑处理</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190903/k21xefObaEwr.png?imageslim" alt="mark"></p>
-<p><strong>MVC</strong>模式（Model–view–controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。</p>
-<p>在前端的 <strong>MVC 模式</strong> 中，M 还是表示 Modal 层，负责与后台交互数据，V 表示 View，负责页面上 DOM 的渲染，C 表示绑定在 DOM 元素上的事件，当 Controllor 中的事件被调用，会去调用 Modal 中的数据，然后交给 View 重新渲染数据</p>
-<h4 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h4><ul>
-<li>M - Model 模型、数据</li>
-<li>V - View 视图、模板（ 视图和模板是分离的 ）</li>
-<li>ViewModel - <strong>连接</strong> Model 和 View</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190903/23g0MdeUf9sw.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190903/1qFclAqzYLGt.png?imageslim" alt="mark"></p>
-<h4 id="关于-ViewModel"><a href="#关于-ViewModel" class="headerlink" title="关于 ViewModel"></a>关于 ViewModel</h4><ul>
-<li>MVVM 不算是一种创新</li>
-<li>但其中的 ViewModel 确实是一种创新</li>
-<li>真正 结合前端场景应用的创建</li>
-</ul>
-<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>说一下 对 MVVM 的理解<ul>
-<li>MVVM - Model View ViewModel</li>
-<li>三者之间的联系。以及如何对应到各段代码</li>
-<li>ViewModel 的理解，联系 View 和 Model</li>
-</ul>
-</li>
-</ul>
-<h1 id="MVVM-框架的三大要素"><a href="#MVVM-框架的三大要素" class="headerlink" title="MVVM 框架的三大要素"></a>MVVM 框架的三大要素</h1><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ul>
-<li>再次分析 demo</li>
-<li>三要素总结</li>
-</ul>
-<h3 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h3><ul>
-<li>响应式：vue 如何监听到 data 的每个属性变化？</li>
-<li>模板引擎：vue 的模板如何被解析，指令如何处理？</li>
-<li>渲染：vue 的模板如何被渲染成 html？以及渲染过程</li>
-</ul>
-<h2 id="vue-中如何实现响应式"><a href="#vue-中如何实现响应式" class="headerlink" title="vue 中如何实现响应式"></a>vue 中如何实现响应式</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>什么是响应式？</li>
-<li>Object.defineProperty</li>
-<li>模拟</li>
-</ul>
-<h4 id="什么是响应式？"><a href="#什么是响应式？" class="headerlink" title="什么是响应式？"></a>什么是响应式？</h4><ul>
-<li>修改 data 属性后，vue 立刻监听到</li>
-<li>data 属性被代理到 vm 上</li>
-<li>演示</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/vue/2.6.10/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="javascript">          name: <span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="javascript">          age: <span class="string">&quot;18&quot;</span>,</span></span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190904/h1SkefYXlHkn.gif" alt="mark"></p>
-<h4 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h4><blockquote>
-<p><code>Object.defineProperty()</code> 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。</p>
-<p><strong>语法</strong> ：Object.defineProperty(obj, prop, descriptor)</p>
-<p><strong>参数</strong> ：</p>
-<p><u>Object.defineProperty(obj, prop, descriptor)</u></p>
-<p><strong>obj</strong> ：要在其上定义属性的对象。</p>
-<p><strong>prop</strong> ：要定义或修改的属性的名称。</p>
-<p><strong>descriptor</strong> ：将被定义或修改的属性描述符。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">25</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">//获取属性的时候，如何监听到？</span></span><br><span class="line">obj.age = <span class="number">26</span>; <span class="comment">//赋值属性的时候，如何监听到？</span></span><br></pre></td></tr></table></figure>
-
-<p><em>Object.defineProperty：</em></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">&quot;name&quot;</span>, &#123;</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;get&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">  &#125;,</span><br><span class="line">  set: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;set&quot;</span>);</span><br><span class="line">    name = newVal;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.name);</span><br><span class="line">obj.name = <span class="string">&quot;list&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="模拟实现"><a href="#模拟实现" class="headerlink" title="模拟实现"></a>模拟实现</h3><blockquote>
-<p>模拟实现 Vue 如何监听 data</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 如何监听data</span></span><br><span class="line"><span class="comment">var vm=new Vue(&#123;</span></span><br><span class="line"><span class="comment">    el:&#x27;张三&#x27;,</span></span><br><span class="line"><span class="comment">    data:&#123;</span></span><br><span class="line"><span class="comment">        name:&#x27;张三&#x27;,</span></span><br><span class="line"><span class="comment">        age:20</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟实现</span></span><br><span class="line"><span class="keyword">var</span> vm = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> data = &#123;</span><br><span class="line">  price: <span class="number">100</span>,</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> key, value;</span><br><span class="line"><span class="keyword">for</span> (key <span class="keyword">in</span> data) &#123;</span><br><span class="line">  <span class="comment">//命中闭包。新建一个函数，保证 key 的独立的作用域</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(vm, key, &#123;</span><br><span class="line">      get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;get&quot;</span>); <span class="comment">//监听</span></span><br><span class="line">        <span class="keyword">return</span> data[key];</span><br><span class="line">      &#125;,</span><br><span class="line">      set: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;set&quot;</span>); <span class="comment">//监听</span></span><br><span class="line">        data[key] = newVal;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190904/P570ewmXOdNX.gif" alt="mark"></p>
-<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>什么是响应式？<ul>
-<li>关键是理解 Object.defineProperty</li>
-<li>将 data 的属性代理到 vm 上</li>
-</ul>
-</li>
-</ul>
-<h2 id="vue-中如何解析模板"><a href="#vue-中如何解析模板" class="headerlink" title="vue 中如何解析模板"></a>vue 中如何解析模板</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>模板是什么？</li>
-<li>render 函数</li>
-<li>render 函数 与 vdom</li>
-</ul>
-<h4 id="模板是什么？"><a href="#模板是什么？" class="headerlink" title="模板是什么？"></a>模板是什么？</h4><ul>
-<li><p>本质：字符串</p>
-</li>
-<li><p>有逻辑，如 v-if 、v-for 等</p>
-</li>
-<li><p>与 html 格式很像，但有很大区别</p>
-</li>
-<li><p>最终还要转换为 html 来显示</p>
-</li>
-<li><p><strong>模板最终必须转化成 JS 代码</strong> ，因为：</p>
-<ul>
-<li>有逻辑（v-if、v-for），必须用 JS 才能实现 （ 图灵完备 ）</li>
-<li>转换成 html 渲染页面，必须用 JS 才能实现</li>
-<li>因此，模板最重要转换成 一个 JS 函数 （render 函数）</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="render-函数-with-的用法"><a href="#render-函数-with-的用法" class="headerlink" title="render 函数 - with 的用法"></a>render 函数 - with 的用法</h4><blockquote>
-<p>with 的用法 — <strong>自己开发的代码尽量不要使用！</strong></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">20</span>,</span><br><span class="line">  getAddress: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;beijing&quot;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不使用 with</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(obj.name);</span><br><span class="line">  alert(obj.age);</span><br><span class="line">  obj.getAddress();</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">20</span>,</span><br><span class="line">  getAddress: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;beijing&quot;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 with</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">with</span> (obj) &#123;</span><br><span class="line">    alert(obj.name);</span><br><span class="line">    alert(obj.age);</span><br><span class="line">    getAddress();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn1();</span><br></pre></td></tr></table></figure>
-
-<h4 id="render-函数"><a href="#render-函数" class="headerlink" title="render 函数"></a>render 函数</h4><p><img src="http://static.zxinc520.com/blog/20190905/igfqtojmzQ4H.png?imageslim" alt="mark"></p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
-<li>模板中所有信息都包含在了 render 函数中</li>
-<li>this 即 vm</li>
-<li>price 即 this.price 即 vm.price ，即 data 中的 price</li>
-<li>_c 即 this. _c 即 vm. _c</li>
-</ul>
-<h4 id="render-函数剖析"><a href="#render-函数剖析" class="headerlink" title="render 函数剖析"></a>render 函数剖析</h4><ul>
-<li>从哪里可以看到 render 函数？</li>
-<li>复杂一点的例子，render 函数是什么样子的？</li>
-<li>v- if 、v-for 、v-on 都是怎么处理的？</li>
-</ul>
-<h4 id="看一下-todo-list-demo-的-render-函数"><a href="#看一下-todo-list-demo-的-render-函数" class="headerlink" title="看一下 todo-list demo 的 render 函数"></a>看一下 todo-list demo 的 render 函数</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> (<span class="built_in">this</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> _c(<span class="string">&quot;div&quot;</span>, &#123; <span class="attr">attrs</span>: &#123; <span class="attr">id</span>: <span class="string">&quot;app&quot;</span> &#125; &#125;, [</span><br><span class="line">    _c(<span class="string">&quot;div&quot;</span>, [</span><br><span class="line">      _c(<span class="string">&quot;input&quot;</span>, &#123;</span><br><span class="line">        directives: [</span><br><span class="line">          &#123;</span><br><span class="line">            name: <span class="string">&quot;model&quot;</span>,</span><br><span class="line">            rawName: <span class="string">&quot;v-model&quot;</span>,</span><br><span class="line">            value: title,</span><br><span class="line">            expression: <span class="string">&quot;title&quot;</span>,</span><br><span class="line">          &#125;,</span><br><span class="line">        ],</span><br><span class="line">        attrs: &#123; <span class="attr">type</span>: <span class="string">&quot;text&quot;</span> &#125;,</span><br><span class="line">        domProps: &#123; <span class="attr">value</span>: title &#125;,</span><br><span class="line">        on: &#123;</span><br><span class="line">          input: <span class="function"><span class="keyword">function</span> (<span class="params">$event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> ($event.target.composing) <span class="keyword">return</span>;</span><br><span class="line">            title = $event.target.value;</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;),</span><br><span class="line">      _v(<span class="string">&quot; &quot;</span>),</span><br><span class="line">      _c(<span class="string">&quot;button&quot;</span>, &#123; <span class="attr">on</span>: &#123; <span class="attr">click</span>: add &#125; &#125;, [_v(<span class="string">&quot;submit&quot;</span>)]),</span><br><span class="line">    ]),</span><br><span class="line">    _v(<span class="string">&quot; &quot;</span>),</span><br><span class="line">    _c(</span><br><span class="line">      <span class="string">&quot;ul&quot;</span>,</span><br><span class="line">      _l(list, <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _c(<span class="string">&quot;li&quot;</span>, [_v(_s(item))]);</span><br><span class="line">      &#125;),</span><br><span class="line">      <span class="number">0</span></span><br><span class="line">    ),</span><br><span class="line">  ]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>根据 todo-list demo 的 render 函数</li>
-<li>v- model 是怎么实现的？</li>
-<li>v-on :click 是怎么实现的？</li>
-<li>v- for 是怎么实现的？</li>
-</ul>
-<h4 id="重要"><a href="#重要" class="headerlink" title="重要"></a>重要</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    vue2.0 开始支持预编译</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    开发环境 ：写模板</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    编译打包</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    生产环境：JS</span></span><br><span class="line"><span class="comment">    --------------------------------------------</span></span><br><span class="line"><span class="comment">    React 组件化</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    JSX 模板</span></span><br><span class="line"><span class="comment">    编译 ： -&gt; JS 代码</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><ul>
-<li><p>已经解决了 模板中 “逻辑” （v-for、v-if ）的问题</p>
-</li>
-<li><p>还剩下模板生成 html 问题</p>
-</li>
-<li><p>另外，vm._c 是什么？ render 函数 返回了什么？</p>
-</li>
-</ul>
-<h5 id="先复习一下-vdom-的知识"><a href="#先复习一下-vdom-的知识" class="headerlink" title="先复习一下 vdom 的知识"></a>先复习一下 vdom 的知识</h5><blockquote>
-<p>可参考 <a href="http://zxinc520.com/lcj/%225d63a1bce9920a5ce05e2c3b%22">vdom 篇</a></p>
-</blockquote>
-<p>vdom 的如何应用，核心 API 是什么？</p>
-<ul>
-<li>介绍 <a href="https://github.com/snabbdom/snabbdom">snabbdom</a></li>
-<li>重做 之前的 demo</li>
-<li>核心 API</li>
-</ul>
-<h5 id="render-函数和-vdom"><a href="#render-函数和-vdom" class="headerlink" title="render 函数和 vdom"></a>render 函数和 vdom</h5><p><img src="http://static.zxinc520.com/blog/20190905/ldxxH0zJ4t3s.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190905/MykHq1vOBFyL.png?imageslim" alt="mark"></p>
-<ul>
-<li>updataComponent 中实现了 vdom 的 patch</li>
-<li>页面首次渲染执行 updataComponent</li>
-<li>data 中每次修改属性，执行 updataComponent</li>
-</ul>
-<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>vue 中如何解析 <strong>模板</strong><ul>
-<li>模板：字符串，有逻辑，嵌入 JS 变量……</li>
-<li>模板必须转换成 JS 代码（有逻辑，渲染 html，JS 变量）</li>
-<li>render 函数是什么样子的</li>
-<li>render 函数执行是返回 vnode</li>
-<li>updataComponent</li>
-</ul>
-</li>
-</ul>
-<h1 id="vue-的整个实现流程"><a href="#vue-的整个实现流程" class="headerlink" title="vue 的整个实现流程"></a>vue 的整个实现流程</h1><h3 id="整个实现流程"><a href="#整个实现流程" class="headerlink" title="整个实现流程"></a>整个实现流程</h3><ul>
-<li><p>第一步：解析模板成 render 函数</p>
-<ul>
-<li>with 的用法</li>
-<li>模板中的所有信息都被 render 函数 包含</li>
-<li>模板中用到的 data 中的属性，都变成了 JS 变量</li>
-<li>模板中的 v-model、v-for、v-on 都变成了 JS 逻辑</li>
-<li>render 函数返回 vnode</li>
-</ul>
-</li>
-<li><p>第二步：响应式开始监听</p>
-<ul>
-<li>Object.defineProperty</li>
-<li>将 data 的属性代理到 vm 上</li>
-</ul>
-</li>
-<li><p>第三步：首次渲染，显示页面，且绑定依赖</p>
-<ul>
-<li>初次渲染，执行 updataComponent ，执行 vm.render()</li>
-<li>执行 render 函数，会访问到 vm.list 和 vm.title</li>
-<li>会被响应式的 get 方法监听到 （后面详细讲）</li>
-<li>执行 updataComponent ，会被 vdom 的 patch 方法</li>
-<li>patch 将 vnode 渲染成 DOM ，初次渲染完成</li>
-</ul>
-<hr>
-<ul>
-<li>为何要监听 get，直接监听 set 不行吗？</li>
-<li>data 中有很多属性，有些被用到，有些可能不被用到</li>
-<li>被用到的会走到 get ，不被用到的 不会走到 get</li>
-<li>未走到 get 中的属性，set 的时候我们也无需关心</li>
-<li><strong>避免不必要的重复渲染</strong></li>
-</ul>
-</li>
-<li><p>第四步：data 属性变化，触发 rerender</p>
-<ul>
-<li>修改属性，被响应式 的 set 监听到</li>
-<li>set 中执行 updataComponent</li>
-<li>updataComponent 重新执行 vm.render()</li>
-<li>生成的 vnode 和 prevVnode，通过 patch 进行比较</li>
-</ul>
-</li>
-</ul>
-<h3 id="问题解答-4"><a href="#问题解答-4" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>vue 的整个实现流程？<ul>
-<li>第一步：解析模板成 render 函数</li>
-<li>第二步：响应式开始监听</li>
-<li>第三步：首次渲染，显示页面，且绑定依赖</li>
-<li>第四步：data 属性变化，触发 rerender</li>
-</ul>
-</li>
-</ul>
-<h1 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h1><ul>
-<li><p>说一下 使用 jQuery 和 使用框架的区别</p>
-<ul>
-<li><strong>数据</strong> 和 <strong>视图</strong> 的分离，<u>解耦</u>（ <em>开放封闭原则</em> ）</li>
-<li>以数据驱动视图，只关心数据变化，DOM 操作被封装</li>
-</ul>
-</li>
-<li><p>什么是 MVVM ？</p>
-<ul>
-<li><p>MVVM - Model View ViewModel</p>
-</li>
-<li><p>三者之间的联系。以及如何对应到各段代码</p>
-</li>
-<li><p>ViewModel 的理解，联系 View 和 Model</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="三要素-1"><a href="#三要素-1" class="headerlink" title="三要素"></a>三要素</h3><ul>
-<li><p>响应式：vue 如何监听到 data 的每个属性变化？</p>
-</li>
-<li><p>模板引擎：vue 的模板如何被解析，指令如何处理？</p>
-</li>
-<li><p>渲染：vue 的模板如何被渲染成 html？以及渲染过程？</p>
-</li>
-<li><p>Vue 如何实现响应式？</p>
-<ul>
-<li>关键是理解 Object.defineProperty</li>
-<li>将 data 的属性代理到 vm 上</li>
-</ul>
-</li>
-<li><p>vue 中如何解析 <strong>模板</strong> ？</p>
-<ul>
-<li>模板：字符串，有逻辑，嵌入 JS 变量……</li>
-<li>模板必须转换成 JS 代码（有逻辑，渲染 html，JS 变量）</li>
-<li>render 函数是什么样子的</li>
-<li>render 函数执行是返回 vnode</li>
-<li>updataComponent</li>
-</ul>
-</li>
-<li><p>vue 的整个实现流程？</p>
-<ul>
-<li>第一步：解析模板成 render 函数</li>
-<li>第二步：响应式开始监听</li>
-<li>第三步：首次渲染，显示页面，且绑定依赖</li>
-<li>第四步：data 属性变化，触发 rerender</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>框架</category>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-        <tag>MVVM</tag>
-        <tag>响应式、模板解析、渲染</tag>
       </tags>
   </entry>
   <entry>

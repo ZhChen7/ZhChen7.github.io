@@ -160,6 +160,134 @@
     
     
     <article
+  id="post-NewPrototype"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/08/10/NewPrototype/"
+    >原型</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/08/10/NewPrototype/" class="article-date">
+  <time datetime="2019-08-10T07:52:24.000Z" itemprop="datePublished">2019-08-10</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/">JS 三座大山</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><blockquote>
+<p>本章将结合 <strong>jQuery</strong> 和 <strong>zepto</strong> 源码来讲解原型的实际应用。通过 <strong>源码来分析</strong> jQuery 和 zepto 是如何使用原型的，以及通过它们的 <strong>插件机制</strong>，讲解 <strong>原型的扩展性</strong> 。</p>
+<p>《前端 JS 面试技巧》请参考我之前的博客： <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d2df2cdda85353d5ca8b83f%22">前端 JS 基础面试技巧</a></p>
+</blockquote>
+<h3 id="关于原型"><a href="#关于原型" class="headerlink" title="关于原型"></a>关于原型</h3><ul>
+<li>《前端 JS 面试技巧》已经讲解过原型的 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d2df2cdda85353d5ca8b83f%22">基础知识</a></li>
+<li>高级面试题，光会原型基础还不够，还要实际应用</li>
+<li>zepto jquery 中如何用原型</li>
+<li>顺便也算是解读了 zepto 和 jquery 的部分源码</li>
+</ul>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
+<li>说一个原型的实际应用</li>
+<li>原型如何体现它的扩展性</li>
+</ul>
+<h2 id="原型的实际应用"><a href="#原型的实际应用" class="headerlink" title="原型的实际应用"></a>原型的实际应用</h2><blockquote>
+<p>原型的实际应用</p>
+</blockquote>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>jquery 和 zepto 的简单使用</li>
+<li>zepto 如何使用原型</li>
+<li>jquery 如何使用原型</li>
+</ul>
+<h4 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p&gt;jquery test <span class="number">1</span>&lt;/p&gt;</span><br><span class="line">&lt;p&gt;jquery test <span class="number">2</span>&lt;/p&gt;</span><br><span class="line">&lt;p&gt;jquery test <span class="number">3</span>&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">&quot;div1&quot;</span>&gt;</span><br><span class="line">    &lt;p&gt;jquery test <span class="keyword">in</span> dev&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> $p = $(<span class="string">&#x27;p&#x27;</span>)</span><br><span class="line">    $p.css(<span class="string">&#x27;font-size&#x27;</span>, <span class="string">&#x27;40px&#x27;</span>) <span class="comment">//css 是原型方法</span></span><br><span class="line">    alert($p.html()) 		    <span class="comment">//html 是原型方法</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> $div1 = $(<span class="string">&#x27;#div1&#x27;</span>)      <span class="comment">//css 是原型方法</span></span><br><span class="line">    $div1.css(<span class="string">&#x27;color&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>)  <span class="comment">//html 是原型方法</span></span><br><span class="line">    alert($div1.html())</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="zepto-如何使用原型"><a href="#zepto-如何使用原型" class="headerlink" title="zepto 如何使用原型"></a>zepto 如何使用原型</h4><blockquote>
+<p>源码中，这里的处理情况比较复杂。但因为本次只针对原型，因此这里就弱化了</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">window</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//空对象</span></span><br><span class="line">  <span class="keyword">var</span> zepto = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  zepto.init = <span class="function"><span class="keyword">function</span> (<span class="params">selector</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//源码中，这里的处理情况比较复杂。但因为本次只针对原型，因此这里就弱化了</span></span><br><span class="line">    <span class="keyword">var</span> slice = <span class="built_in">Array</span>.prototype.slice;</span><br><span class="line">    <span class="keyword">var</span> dom = slice.call(<span class="built_in">document</span>.querySelectorAll(selector));</span><br><span class="line">    <span class="keyword">return</span> zepto.Z(dom, selector);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 即使用 zepto 时候的 $</span></span><br><span class="line">  <span class="keyword">var</span> $ = <span class="function"><span class="keyword">function</span> (<span class="params">selector</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> zepto.init(selector);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 这就是构造函数</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Z</span>(<span class="params">dom, selector</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i,</span><br><span class="line">      len = dom ? dom.length : <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) <span class="built_in">this</span>[i] = dom[i];</span><br><span class="line">    <span class="built_in">this</span>.length = len;</span><br><span class="line">    <span class="built_in">this</span>.selector = selector;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  zepto.Z = <span class="function"><span class="keyword">function</span> (<span class="params">dom, selector</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 注意，出现了 new 关键字</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Z(dom, selector);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  $.fn = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: zepto.Z,</span><br><span class="line">    css: function (key, value) &#123;&#125;,</span><br><span class="line">    html: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;&#125;,</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  zepto.Z.prototype = Z.prototype = $.fn;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>.$ = $;</span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="jquery-如何使用原型"><a href="#jquery-如何使用原型" class="headerlink" title="jquery 如何使用原型"></a>jquery 如何使用原型</h4><blockquote>
+<p>简化了源码，重在讲解 jquery 如何使用原型</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//简化了源码，真实源码分支很多,选取部分代码</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">window</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> jQuery = <span class="function"><span class="keyword">function</span> (<span class="params">selector</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//注意 new 关键字，第一步就找到了 构造函数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> jQuery.fn.init(selector);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//定义构造函数</span></span><br><span class="line">  <span class="keyword">var</span> init = (jQuery.fn.init = <span class="function"><span class="keyword">function</span> (<span class="params">selector</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> slice = <span class="built_in">Array</span>.prototype.slice;</span><br><span class="line">    <span class="keyword">var</span> dom = slice.call(<span class="built_in">document</span>.querySelectorAll(selector));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> i,</span><br><span class="line">      len = dom ? dom.length : <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) <span class="built_in">this</span>[i] = dom[i];</span><br><span class="line">    <span class="built_in">this</span>.length = len;</span><br><span class="line">    <span class="built_in">this</span>.selector = selector || <span class="string">&quot;&quot;</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  init.prototype = jQuery.fn;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//初始化 jQuery.fn</span></span><br><span class="line">  jQuery.fn = jQuery.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: jQuery,</span><br><span class="line"></span><br><span class="line">    //其他函数...</span><br><span class="line">    css: function (key, value) &#123;&#125;,</span><br><span class="line">    html: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;&#125;,</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//定义原型</span></span><br><span class="line">  init.prototype = jQuery.fn;</span><br><span class="line">  <span class="built_in">window</span>.$ = jQuery;</span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>描述一下 jquery 如何使用原型</li>
+<li>描述一下 zepto 如何使用原型</li>
+<li>再结合自己的项目经验，说一下自己开发的例子</li>
+</ul>
+<h2 id="如何体现原型的扩展性"><a href="#如何体现原型的扩展性" class="headerlink" title="如何体现原型的扩展性"></a>如何体现原型的扩展性</h2><blockquote>
+<p>体现原型的扩展性</p>
+</blockquote>
+<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>总结 zepto 和 jquery 原型的使用</li>
+<li>插件机制</li>
+</ul>
+<h3 id="总结-zepto-和-jquery-原型的使用"><a href="#总结-zepto-和-jquery-原型的使用" class="headerlink" title="总结 zepto 和 jquery 原型的使用"></a>总结 zepto 和 jquery 原型的使用</h3><blockquote>
+<p>总结 zepto 和 jquery 原型的使用</p>
+<p>相关 <strong>代码实现</strong> 请看上文 ：zepto 如何使用原型 和 jquery 如何使用原型</p>
+</blockquote>
+<p><em>问题一：为何要把原型方法放在 $.fn ?</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化 jQuery.fn</span></span><br><span class="line">jQuery.fn = jQuery.prototype = &#123;</span><br><span class="line">  <span class="keyword">constructor</span>: jQuery,</span><br><span class="line"></span><br><span class="line">  //其他函数...</span><br><span class="line">  css: function (key, value) &#123;&#125;,</span><br><span class="line">  html: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;&#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义原型</span></span><br><span class="line">init.prototype = jQuery.fn;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解答</strong> ：<u>因为要扩展插件</u> ，做一个简单的插件的例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 因为要扩展插件，做一个简单的插件的例子</span></span><br><span class="line">$.fn.getNodeName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">this</span>[<span class="number">0</span>].nodeName;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>好处</strong>：</p>
+<ol>
+<li>只有 $ 会暴露在 window 全局变量</li>
+<li>将插件扩展统一到 $.fn.xxx 这一接口，方便使用</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><p>说一个原型的实际应用</p>
+<ul>
+<li>描述一下 jquery 如何使用 原型</li>
+<li>描述一下 zepto 如何使用 原型</li>
+<li>再结合自己的项目经验，说一下自己开发的例子</li>
+</ul>
+</li>
+<li><p>原型如何体现它的扩展性</p>
+<ul>
+<li>说一下 jquery 和 zepto 的 插件机制</li>
+<li>结合自己的开发经验，做过的基于原型的插件</li>
+</ul>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/" rel="tag">JS 三座大山</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/" rel="tag">面试全面总结</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-ES6intro"
   class="article article-type-post"
   itemscope
@@ -2697,166 +2825,6 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/API/" rel="tag">API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/" rel="tag">数组相关操作</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-OperatingSystemCourseDesign"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/06/15/OperatingSystemCourseDesign/"
-    >操作系统课程设计</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/06/15/OperatingSystemCourseDesign/" class="article-date">
-  <time datetime="2019-06-15T05:24:42.000Z" itemprop="datePublished">2019-06-15</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">课程设计</a> / <a class="article-category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%AE%AD/">操作系统实训</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="操作系统课程设计"><a href="#操作系统课程设计" class="headerlink" title="操作系统课程设计"></a>操作系统课程设计</h1><p><img src="http://static.zxinc520.com/blog/20190615/PaXCTq1hgEbO.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190615/HbzHoGRT91yz.png?imageslim" alt="mark"></p>
-<table>
-<thead>
-<tr>
-<th>课题</th>
-<th>操作系统</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>院系</td>
-<td>计算机与信息工程学院</td>
-</tr>
-<tr>
-<td>班级</td>
-<td>1701</td>
-</tr>
-<tr>
-<td>姓名</td>
-<td>周琛</td>
-</tr>
-<tr>
-<td>学号</td>
-<td>2017115010124</td>
-</tr>
-</tbody></table>
-<h2 id="实验一-处理器调度"><a href="#实验一-处理器调度" class="headerlink" title="实验一 处理器调度"></a>实验一 处理器调度</h2><h3 id="一、实习内容"><a href="#一、实习内容" class="headerlink" title="一、实习内容"></a>一、实习内容</h3><p>​ 选择一个调度算法，实现处理器调度。</p>
-<h3 id="二、实习目的"><a href="#二、实习目的" class="headerlink" title="二、实习目的"></a>二、实习目的</h3><p>​ 在采用多道程序设计的系统中，往往有若干个进程同时处于就绪状态。当就绪进程个数大于处理器数时，就必须依照某种策略来决定哪些进程优先占用处理器。本实习模拟在单处理器情况下的处理器调度，帮助学生加深了解处理器调度的工作。</p>
-<h3 id="三、实习题目"><a href="#三、实习题目" class="headerlink" title="三、实习题目"></a>三、实习题目</h3><p>​ 本实习有两个题，学生可选择其中的一题做实习。</p>
-<p>​ 第一题：设计一个<strong>按优先数调度算法</strong>实现处理器调度的程序。</p>
-<h4 id="提示"><a href="#提示" class="headerlink" title="提示:"></a>提示:</h4><ol>
-<li><p>假定系统有五个进程，每一个进程用一个进程控制块 PCB 来代表，进程控制块的<strong>格式为</strong>：</p>
-<p><img src="http://static.zxinc520.com/blog/20190615/BvLSkm8uRm2W.png?imageslim" alt="mark"></p>
-</li>
-</ol>
-<p>其中，进程名——作为进程的标识，假设五个进程的进程名分别为 P1，P2，P3，P4，P5。</p>
-<ul>
-<li>指针——按优先数的大小把五个进程连成队列，用指针指出下一个进程的进程控制块的首地址，最后一个进程中的指针为“0”。</li>
-<li>要求运行时间——假设进程需要运行的单位时间数。</li>
-<li>优先数——赋予进程的优先数，调度时总是选取优先数大的进程先执行。</li>
-<li>状态——可假设有两种状态，“就绪”状态和“结束”状态。五个进程的初始状态都为“就绪”，用“R”表示，当一个进程运行结束后，它的状态为“结束”，用“E”表示。</li>
-</ul>
-<ol start="2">
-<li><p>在每次运行你所设计的处理器调度程序之前，为每个进程任意确定它的“优先数”和“要求运行时间”。</p>
-</li>
-<li><p>为了调度方便，把五个进程按给定的优先数从大到小连成队列。用一单元指出队首进程，用指针指出队列的连接情况。例：</p>
-<p><strong>队首标志</strong></p>
-</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190615/cAeym1O3lvaj.png?imageslim" alt="mark"></p>
-<ol start="4">
-<li>处理器调度总是选队首进程运行。采用动态改变优先数的办法，进程每运行一次优先数就减“1”。由于本实习是模拟处理器调度，所以，对被选中的进程并不实际的启动运行，而是执行：</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190615/nEAGCE9sJJqJ.png?imageslim" alt="mark"></p>
-<p><strong>提醒注意的是：</strong>在实际的系统中，当一个进程被选中运行时，必须恢复进程的现场，让它占有处理器运行，直到出现等待事件或运行结束。在这里省去了这些工作。</p>
-<ol start="5">
-<li>进程运行一次后，若要求运行时间 ¹0，则再将它加入队列（按优先数大小插入，且置队首标志）；若要求运行时间=0，则把它的状态修改成“结束”（E），且退出队列。</li>
-<li>若“就绪”状态的进程队列不为空，则重复上面（4）和（5）的步骤，直到所有进程都成为“结束”状态。</li>
-<li>在所设计的程序中应有显示或打印语句，能显示或打印每次被选中进程的进程名以及运行一次后进程队列的变化。</li>
-<li>为五个进程任意确定一组“优先数”和“要求运行时间”，启动所设计的处理器调度程序，显示或打印逐次被选中进程的进程名以及进程控制块的动态变化过程。</li>
-</ol>
-<p><strong>源代码:</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt; //strcpy()</span><br><span class="line">#include&lt;stdlib.h&gt;//malloc()</span><br><span class="line"><span class="keyword">void</span> insertQuestion();</span><br><span class="line"><span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time);</span><br><span class="line"><span class="keyword">void</span> view();</span><br><span class="line"><span class="keyword">void</span> arithmetic();</span><br><span class="line">typedef struct process</span><br><span class="line">&#123;</span><br><span class="line">    char ProcessName[<span class="number">5</span>];</span><br><span class="line">    int Priority;</span><br><span class="line">    int Time;</span><br><span class="line">    int processState;</span><br><span class="line">    struct process *next;</span><br><span class="line">&#125;nodelist;</span><br><span class="line"></span><br><span class="line">nodelist *pHead=NULL;<span class="comment">//存放调度的首节点地址</span></span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    insertQuestion();</span><br><span class="line">    arithmetic();</span><br><span class="line">    <span class="comment">// view();</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加问题</span></span><br><span class="line"><span class="keyword">void</span> insertQuestion()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time);</span><br><span class="line">    char ProcessName[<span class="number">5</span>];</span><br><span class="line">    int Priority;</span><br><span class="line">    int Time;</span><br><span class="line">    int i=<span class="number">0</span>;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">      scanf(<span class="string">&quot;%s %d %d&quot;</span>,ProcessName,&amp;Priority,&amp;Time);</span><br><span class="line">      insertNode(ProcessName,Priority,Time);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将数据插入链表</span></span><br><span class="line"><span class="keyword">void</span> insertNode(char ProcessName[<span class="number">5</span>],int Priority,int Time)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//申请存储空间</span></span><br><span class="line">    nodelist *pNew=(nodelist *)malloc(sizeof(nodelist));</span><br><span class="line">    nodelist *p,*q;</span><br><span class="line">    strcpy(pNew-&gt;ProcessName,ProcessName);</span><br><span class="line">    pNew-&gt;Priority = Priority;</span><br><span class="line">    pNew-&gt;Time = Time;</span><br><span class="line">    pNew-&gt;processState=<span class="number">1</span>;</span><br><span class="line">    pNew-&gt;next=NULL;</span><br><span class="line">        <span class="keyword">if</span>(pHead==NULL) <span class="comment">//插入前链表为空，新插入的节点为头节点</span></span><br><span class="line">        &#123;</span><br><span class="line">            pHead=pNew;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            p=pHead;</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;next!=<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">while</span>(p-&gt;next!=<span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                q=p-&gt;next;</span><br><span class="line">                p=q;</span><br><span class="line">                &#125;</span><br><span class="line">                p-&gt;next=pNew;</span><br><span class="line">                pNew-&gt;next=NULL;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;next==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                p-&gt;next=pNew;</span><br><span class="line">                p=pNew;</span><br><span class="line">                pNew-&gt;next=NULL;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//显示链表中的数据</span></span><br><span class="line"><span class="keyword">void</span> view()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 显示所有的结果 */</span></span><br><span class="line">    nodelist *p=pHead;</span><br><span class="line">    <span class="keyword">if</span>(pHead!=NULL)</span><br><span class="line">    &#123;</span><br><span class="line">    	    printf(<span class="string">&quot;进程名\t优先数\t时间\t就绪状态\n&quot;</span>);</span><br><span class="line">            <span class="keyword">while</span>(p!=NULL)</span><br><span class="line">            &#123;</span><br><span class="line">                printf(<span class="string">&quot;%s\t&quot;</span>,p-&gt;ProcessName);</span><br><span class="line">                printf(<span class="string">&quot;%d\t&quot;</span>,p-&gt;Priority);</span><br><span class="line">                printf(<span class="string">&quot;%d\t&quot;</span>,p-&gt;Time);</span><br><span class="line">                 printf(<span class="string">&quot;%d\t&quot;</span>,p-&gt;processState);</span><br><span class="line">                p=p-&gt;next;</span><br><span class="line">                printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">      printf(<span class="string">&quot;链表中啥都没有！\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> arithmetic()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//相关算法实现</span></span><br><span class="line">    nodelist *p=pHead;</span><br><span class="line">    nodelist *q=pHead;</span><br><span class="line">    nodelist *m=pHead;</span><br><span class="line">    int max=p-&gt;Priority;</span><br><span class="line">    int flag=<span class="number">0</span>;</span><br><span class="line">    int i;</span><br><span class="line">    int sum=<span class="number">0</span>;</span><br><span class="line">    char firstName[<span class="number">5</span>];</span><br><span class="line">    char ReturnProcessName[<span class="number">5</span>];</span><br><span class="line">    strcpy(ReturnProcessName,p-&gt;ProcessName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(pHead!=NULL)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(m!=<span class="number">0</span>)&#123;</span><br><span class="line">        sum+=m-&gt;Time;</span><br><span class="line">        m=m-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; sum; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(p!=NULL)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>( max &lt; (p-&gt;Priority) &amp;&amp; (p-&gt;Time&gt;<span class="number">0</span>))&#123;</span><br><span class="line">                    max= p-&gt;Priority;</span><br><span class="line">                    strcpy(ReturnProcessName,p-&gt;ProcessName);</span><br><span class="line">                    flag=<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                p=p-&gt;next;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">                      <span class="keyword">while</span>(q!=NULL)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="keyword">if</span>(strcmp(q-&gt;ProcessName,ReturnProcessName) == <span class="number">0</span>)&#123;</span><br><span class="line">                            	printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">                            	printf(<span class="string">&quot;被选中进程的进程名:&quot;</span>);</span><br><span class="line">                                printf(<span class="string">&quot;%s\n&quot;</span>,q-&gt;ProcessName);</span><br><span class="line">                                q-&gt;Priority--;</span><br><span class="line">                                q-&gt;Time--;</span><br><span class="line">                            &#125;</span><br><span class="line">	                              <span class="keyword">if</span> (q-&gt;Time==<span class="number">0</span>)</span><br><span class="line">					                &#123;</span><br><span class="line">					                	q-&gt;processState=<span class="number">0</span>;</span><br><span class="line">					                &#125;</span><br><span class="line">                            q=q-&gt;next;</span><br><span class="line">                        &#125;</span><br><span class="line">                    p=pHead;</span><br><span class="line">                    q=pHead;</span><br><span class="line">                    max=p-&gt;Priority;</span><br><span class="line">                    printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">                    printf(<span class="string">&quot;运行一次后进程队列的变化:\n&quot;</span>);</span><br><span class="line">                    printf(<span class="string">&quot;----------------------------------\n&quot;</span>);</span><br><span class="line">                    view();</span><br><span class="line">                    printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">                    strcpy(ReturnProcessName,p-&gt;ProcessName);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>运行结果:</strong></p>
-<p><img src="http://static.zxinc520.com/blog/20190615/1Xn16500J847.jpg?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190615/qCGSz0Azzdif.jpg?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190615/FMiq4WyNObOV.gif" alt="mark"></p>
-<h2 id="实验二-主存储器空间的分配和回收"><a href="#实验二-主存储器空间的分配和回收" class="headerlink" title="实验二 主存储器空间的分配和回收"></a>实验二 主存储器空间的分配和回收</h2><h3 id="一、实习内容-1"><a href="#一、实习内容-1" class="headerlink" title="一、实习内容"></a>一、实习内容</h3><p>​ 主存储器空间的分配和回收。</p>
-<h3 id="二、实习目的-1"><a href="#二、实习目的-1" class="headerlink" title="二、实习目的"></a>二、实习目的</h3><p>​ 一个好的计算机系统不仅要有一个足够容量的、存取速度高的、稳定可靠的主存储器，而且要能合理地分配和使用这些存储空间。当用户提出申请存储器空间时，存储管理必须根据申请者的要求，按一定的策略分析主存空间的使用情况，找出足够的空闲区域分配给申请者。当作业撤离或主动归还主存资源时，则存储管理要收回作业占用的主存空间或归还部分主存空间。主存的分配和回收的实现虽与主存储器的管理方式有关的，通过本实习帮助学生理解在不同的存储管理方式下应怎样实现主存空间的分配和回收。</p>
-<h3 id="三、实习题目-1"><a href="#三、实习题目-1" class="headerlink" title="三、实习题目"></a>三、实习题目</h3><p>​ 模拟在分页式管理方式下采用位示图来表示主存分配情况，实现主存空间的分配和回收。</p>
-<h4 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h4><ol>
-<li><p>分页式存储器把主存分成大小相等的若干块，作业的信息也按块的大小分页，作业装入主存时可把作业的信息按页分散存放在主存的空闲块中，为了说明主存中哪些块已经被占用，哪些块是尚未分配的空闲块，可用一张位示图来指出。位示图可由若干存储单元来构成，其中每一位与一个物理块对应，用 0/1 表示对应块为空闲/已占用。</p>
-</li>
-<li><p>假设某系统的主存被分成大小相等的 64 块，则位示图可用 8 个字节来构成，另用一单元记录当前空闲块数。如果已有第 0，1，4，5，6，9，11，13，24，31，共 10 个主存块被占用了，那么位示图情况如下：</p>
-<p><img src="http://static.zxinc520.com/blog/20190615/y2yBXTmrC7SP.png?imageslim" alt="mark"></p>
-</li>
-<li><p>当要装入一个作业时，根据作业对主存的需要量，先查当前空闲块数是否能满足作业要求，若不能满足则输出分配不成功。若能满足，则查位示图，找出为“0”的一些位，置上占用标志“1”，从“当前空闲块数”中减去本次占用块数。</p>
-</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190615/Wq5YpOTIc25K.png?imageslim" alt="mark"></p>
-<p>其中，j 表示找到的是第 n 个字节，I 表示对应的是第 n 位。</p>
-<p>根据分配给作业的块号，为作业建立一张<strong>页表</strong>，页表格式：</p>
-<p><img src="http://static.zxinc520.com/blog/20190615/fWnQmUT7up8x.png?imageslim" alt="mark"></p>
-<ol start="4">
-<li><p>当一个作业执行结束，归还主存时，根据该作业的页表可以知道应归还的块号，由块号可计算出在位示图中的对应位置，把对应位的占用标志清成“0”，表示对应的块已成为空闲块。归还的块数加入到当前空闲块数中。由块号计算在位示图中的位置的公式如下：</p>
-<p><img src="http://static.zxinc520.com/blog/20190615/0zJ5vnMejiNd.png?imageslim" alt="mark"></p>
-</li>
-<li><p>设计实现主存分配和回收的程序。假定位示图的初始状态如（2）所述，现有一信息量为 5 页的作业要装入，运行你所设计的分配程序，为作业分配主存且建立页表（格式如（3）所述）。然后假定有另一作业执行结束，它占用的块号为第 4，5，6 和 31 块，运行你所设计的回收程序，收回作业归还的主存块。</p>
-</li>
-</ol>
-<p>要求能显示和打印分配或回收前后的位示图和当前空闲块数，对完成一次分配后还要显示或打印为作业建立的页表。</p>
-<h3 id="四、实习报告"><a href="#四、实习报告" class="headerlink" title="四、实习报告"></a>四、实习报告</h3><ol>
-<li>实习题目。</li>
-<li>程序中使用的数据结构及符号说明。</li>
-<li>流程图。</li>
-<li>打印一份源程序并附上注释。</li>
-<li>打印程序运行时的初值和运行结果，要求如下：</li>
-</ol>
-<h4 id="输出要求"><a href="#输出要求" class="headerlink" title="输出要求:"></a>输出要求:</h4><p>​ 打印位示图和当前空闲块数的初值；要求装入的作业对主存的申请量，为作业分配后的位示图、当前空闲块数和页表；作业归还的块号、回收作业所占主存后的位示图和当前空闲块数。</p>
-<p><strong>源代码:</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;stdio.h&quot;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int arr[<span class="number">64</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">  int n=<span class="number">0</span>;</span><br><span class="line">  int sumsheng=<span class="number">54</span>;</span><br><span class="line">  int i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">  int count=<span class="number">0</span>;</span><br><span class="line">  int indexI=<span class="number">0</span>;</span><br><span class="line">  int flag=<span class="number">0</span>;</span><br><span class="line">  int arr1[<span class="number">64</span>];</span><br><span class="line">  int finallyIndex=<span class="number">0</span>;</span><br><span class="line">  int arrindex=<span class="number">0</span>;</span><br><span class="line">  int arrindex2=<span class="number">0</span>;</span><br><span class="line">  int indexflag=<span class="number">0</span>;</span><br><span class="line">  int x[<span class="number">64</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">  int ReturnNum=<span class="number">0</span>;</span><br><span class="line">  int term;</span><br><span class="line">  arr[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">  arr[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">  arr[<span class="number">4</span>]=<span class="number">1</span>;</span><br><span class="line">  arr[<span class="number">5</span>]=<span class="number">1</span>;</span><br><span class="line">  arr[<span class="number">6</span>]=<span class="number">1</span>;</span><br><span class="line">  arr[<span class="number">9</span>]=<span class="number">1</span>;</span><br><span class="line">  arr[<span class="number">11</span>]=<span class="number">1</span>;</span><br><span class="line">  arr[<span class="number">13</span>]=<span class="number">1</span>;</span><br><span class="line">  arr[<span class="number">24</span>]=<span class="number">1</span>;</span><br><span class="line">  arr[<span class="number">31</span>]=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  printf(<span class="string">&quot;装入的作业对主存的申请量:&quot;</span>);</span><br><span class="line">  scanf(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// printf(&quot;%d\n&quot;, sumsheng);</span></span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;-------------------------------------\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;初始位示图:\n&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">64</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> (i%<span class="number">8</span>==<span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  printf(<span class="string">&quot;%d &quot;</span>,arr[i]);</span><br><span class="line">&#125;</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;当前空闲块数的初值:%d\n&quot;</span>,sumsheng );</span><br><span class="line">printf(<span class="string">&quot;-------------------------------------\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">sumsheng=sumsheng-n;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (n&gt;sumsheng)</span><br><span class="line">    &#123;</span><br><span class="line">      printf(<span class="string">&quot;分配不成功\n&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">64</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[i]==<span class="number">0</span>)</span><br><span class="line">          &#123;</span><br><span class="line">            indexI=i;</span><br><span class="line">            goto LOOP;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">       LOOP:<span class="keyword">for</span>(i=indexI;i&lt;<span class="number">64</span>;i++)&#123;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (arr[i]==<span class="number">0</span>)</span><br><span class="line">          &#123;</span><br><span class="line">            arr[i]=<span class="number">1</span>;</span><br><span class="line">            arr1[indexflag]=i;</span><br><span class="line">            indexflag++;</span><br><span class="line">            count++;</span><br><span class="line">            <span class="keyword">if</span>(count==n)&#123;</span><br><span class="line">                 finallyIndex=i;</span><br><span class="line">                 goto A;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       A:printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">printf(<span class="string">&quot;-------------------------------------\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;为作业分配后的位示图:\n&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">64</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> (i%<span class="number">8</span>==<span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  printf(<span class="string">&quot;%d &quot;</span>,arr[i]);</span><br><span class="line">&#125;</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;为作业分配后的空闲块数:%d\n&quot;</span>,sumsheng);</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;页表:\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;页号\t块号\n&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">&#123;</span><br><span class="line">  printf(<span class="string">&quot;%d\t%d\n&quot;</span>,i,arr1[i]);</span><br><span class="line">&#125;</span><br><span class="line">printf(<span class="string">&quot;-------------------------------------\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;-------------------------------------\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;输入作业归还的块号的数量:&quot;</span>);</span><br><span class="line">scanf(<span class="string">&quot;%d&quot;</span>,&amp;ReturnNum);</span><br><span class="line">printf(<span class="string">&quot;输入作业归还的块号:&quot;</span>);</span><br><span class="line"> <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;ReturnNum ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(<span class="string">&quot;%d&quot;</span>,&amp;x[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; ReturnNum; i++)</span><br><span class="line">    &#123;</span><br><span class="line">       term=x[i];</span><br><span class="line">       arr[term]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">printf(<span class="string">&quot;回收作业所占主存后的位示图:\n&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">64</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> (i%<span class="number">8</span>==<span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  printf(<span class="string">&quot;%d &quot;</span>,arr[i]);</span><br><span class="line">&#125;</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">printf(<span class="string">&quot;当前空闲块数:%d\n&quot;</span>,sumsheng+ReturnNum);</span><br><span class="line">printf(<span class="string">&quot;-------------------------------------\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>运行结果:</strong></p>
-<p><img src="http://static.zxinc520.com/blog/20190615/oPYSHAezbqWC.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190615/5tuH6MxvT5cc.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190615/Mhg1pbnGuPwe.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190615/DePT3qGywNBk.gif" alt="mark"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%AE%AD/" rel="tag">学习实训</a></li></ul>
 
     </footer>
   </div>
