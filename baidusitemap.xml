@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.zxinc520.com/2020/10/15/Create-react-app%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2020-10-15</lastmod>
+    <lastmod>2020-10-19</lastmod>
   </url>
   <url>
     <loc>https://blog.zxinc520.com/2020/10/10/react%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/</loc>
@@ -105,15 +105,15 @@
     <lastmod>2019-09-07</lastmod>
   </url>
   <url>
-    <loc>https://blog.zxinc520.com/2019/09/05/VueTheory/</loc>
-    <lastmod>2019-09-05</lastmod>
-  </url>
-  <url>
     <loc>https://blog.zxinc520.com/2019/09/05/WeChatUp/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>
   <url>
     <loc>https://blog.zxinc520.com/2019/09/05/WeChatUp02/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.zxinc520.com/2019/09/05/VueTheory/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>
   <url>

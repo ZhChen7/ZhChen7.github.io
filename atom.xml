@@ -6,7 +6,7 @@
   <link href="https://blog.zxinc520.com/atom.xml" rel="self"/>
   
   <link href="https://blog.zxinc520.com/"/>
-  <updated>2020-10-15T07:51:45.395Z</updated>
+  <updated>2020-10-19T06:07:09.655Z</updated>
   <id>https://blog.zxinc520.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.zxinc520.com/2020/10/15/Create-react-app%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
     <id>https://blog.zxinc520.com/2020/10/15/Create-react-app%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</id>
     <published>2020-10-15T05:07:08.000Z</published>
-    <updated>2020-10-15T07:51:45.395Z</updated>
+    <updated>2020-10-19T06:07:09.655Z</updated>
     
     
       
@@ -40,6 +40,8 @@
     
     
     <category term="React" scheme="https://blog.zxinc520.com/tags/React/"/>
+    
+    <category term="React-Router" scheme="https://blog.zxinc520.com/tags/React-Router/"/>
     
   </entry>
   

@@ -306,7 +306,126 @@
 <p><img src="http://static.zxinc520.com/uPic/DsGJME.png" alt="DsGJME"></p>
 </li>
 </ol>
- 
+<h3 id="react路由"><a href="#react路由" class="headerlink" title="react路由"></a>react路由</h3><blockquote>
+<p>路由  —  根据 url的不同来切换对应的组件。 实现SPA切换时不会刷新页面</p>
+<p>自从 React 16 发布后， React Router 也发布了第五个版本，更好的支持 React 16。</p>
+<p>官方文档链接：<a target="_blank" rel="noopener" href="https://reacttraining.com/react-router/web/guides/quick-start">reacttraining.com/react-route…</a></p>
+</blockquote>
+<p>React Router 是一个基于 <a target="_blank" rel="noopener" href="http://facebook.github.io/react/">React</a> 之上的强大路由库，它可以让你向应用中快速地添加视图和数据流，同时保持页面与 URL 间的同步。</p>
+<h3 id="react-router与react-router-dom区别"><a href="#react-router与react-router-dom区别" class="headerlink" title="react-router与react-router-dom区别"></a>react-router与react-router-dom区别</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Switch, Route, Router &#125; <span class="keyword">from</span> <span class="string">&#x27;react-router&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Swtich, Route, BrowserRouter, HashHistory, Link &#125; <span class="keyword">from</span> <span class="string">&#x27;react-router-dom&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><h4 id="api方面"><a href="#api方面" class="headerlink" title="api方面"></a>api方面</h4><p><strong>React-router：</strong></p>
+<p>提供了路由的核心api。如Router、Route、Switch等，但没有提供有关dom操作进行路由跳转的api；</p>
+<p><strong>React-router-dom：</strong></p>
+<p>提供了BrowserRouter、Route、Link等api，可以通过dom操作触发事件控制路由。</p>
+<p>Link组件，会渲染一个a标签；BrowserRouter和HashRouter组件，前者使用pushState和popState事件构建路由，后者使用 hash 和 hashchange 事件构建路由。</p>
+</li>
+<li><h4 id="动态路由跳转"><a href="#动态路由跳转" class="headerlink" title="动态路由跳转"></a>动态路由跳转</h4><p><strong>React-router</strong></p>
+<p>router4.0以上 this.props.history.push(‘/path’) 实现跳转；</p>
+<p>router3.0以上 this.props.router.push(‘/path’) 实现跳转；</p>
+<p><strong>React-router-dom</strong></p>
+<p>直接用 this.props.history.push(‘/path’) 实现跳转</p>
+</li>
+<li><h4 id="使用区别"><a href="#使用区别" class="headerlink" title="使用区别"></a>使用区别</h4><p>react-router-dom在react-router的基础上扩展了可操作dom的api。</p>
+<p>Swtich 和 Route 都是从react-router中导入了相应的组件并重新导出，没做什么特殊处理。</p>
+<p>react-router-dom中package.json依赖中存在对react-router的依赖，故此，不需要npm安装react-router。</p>
+</li>
+</ol>
+<h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><p>每个 React Router 应用程序的核心应该是路由器组件。对于 web 项目，react-router-dom 提供BrowserRouter和HashRouter路由器。两者之间的主要区别是它们存储URL和与Web服务器通信的方式。</p>
+<ul>
+<li>BrowserRouter 使用常规URL路径，创建一个像example.com/some/path这样真实的 URL ，但是他们要求正确的配置服务器。具体来说，您的 web 服务器需要在所有由 React Router 客户端管理的 URL 上处理相同的页面。<a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app">Create React App</a>在开发中即开即用地支持此功能，并附带有关如何配置生产服务器的说明。</li>
+<li>HashRouter 将当前位置存储在URL的哈希部分中，因此URL看起来类似于<a target="_blank" rel="noopener" href="http://example.com/#/your/page%E3%80%82%E7%94%B1%E4%BA%8E%E5%93%88%E5%B8%8C%E4%BB%8E%E4%B8%8D%E5%8F%91%E9%80%81%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%9B%A0%E6%AD%A4%E8%BF%99%E6%84%8F%E5%91%B3%E7%9D%80%E4%B8%8D%E9%9C%80%E8%A6%81%E7%89%B9%E6%AE%8A%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E3%80%82">http://example.com/#/your/page。由于哈希从不发送到服务器，因此这意味着不需要特殊的服务器配置。</a></li>
+</ul>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
+<li>你可以用 npm 或者 yarn 安装 React Router，由于我们在构建一个web app，所以我们在这个文档中使用 <code>react-router-dom</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install react-router-dom --save</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="根目录index-js包裹"><a href="#根目录index-js包裹" class="headerlink" title="根目录index.js包裹"></a>根目录index.js包裹</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; BrowserRouter <span class="keyword">as</span> Router, Switch, Route, Link &#125; <span class="keyword">from</span> <span class="string">&quot;react-router-dom&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> serviceWorker <span class="keyword">from</span> <span class="string">&#x27;./serviceWorker&#x27;</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Router</span>&gt;</span><span class="tag">&lt;<span class="name">App</span> /&gt;</span><span class="tag">&lt;/<span class="name">Router</span>&gt;</span></span>,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br><span class="line">serviceWorker.unregister();</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Route使用"><a href="#Route使用" class="headerlink" title="Route使用"></a>Route使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">&#x27;/home&#x27;</span> component=&#123;Home&#125;/&gt;</span><br><span class="line">&lt;Route path=<span class="string">&#x27;/hello&#x27;</span> component=&#123;Hello&#125;/&gt;</span><br><span class="line">&lt;Route path=<span class="string">&#x27;/test&#x27;</span> component=&#123;Test&#125;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/uPic/I0RT40.png" alt="I0RT40"></p>
+<h4 id="路由导航Link"><a href="#路由导航Link" class="headerlink" title="路由导航Link"></a>路由导航Link</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;Link to=<span class="string">&#x27;/home&#x27;</span>&gt;点我去home&lt;/Link&gt; </span><br><span class="line">&lt;Link to=<span class="string">&#x27;/hello&#x27;</span>&gt;点我去hello&lt;/Link&gt; </span><br><span class="line">&lt;Link to=<span class="string">&#x27;/test&#x27;</span>&gt;点我去test&lt;/Link&gt; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;Route path=<span class="string">&#x27;/home&#x27;</span> component=&#123;Home&#125;/&gt;</span><br><span class="line">&lt;Route path=<span class="string">&#x27;/hello&#x27;</span> component=&#123;Hello&#125;/&gt;</span><br><span class="line">&lt;Route path=<span class="string">&#x27;/test&#x27;</span> component=&#123;Test&#125;/&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="NavLink"><a href="#NavLink" class="headerlink" title="NavLink"></a>NavLink</h4><blockquote>
+<p>可以动态给选中的导航增加active的类名</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;NavLink to=<span class="string">&#x27;/home&#x27;</span>&gt;点我去home  &lt;/NavLink&gt; </span><br><span class="line">&lt;NavLink to=<span class="string">&#x27;/hello&#x27;</span>&gt;点我去hello&lt;/NavLink&gt; </span><br><span class="line">&lt;NavLink to=<span class="string">&#x27;/test&#x27;</span>&gt;点我去test&lt;/NavLink&gt; </span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Route精准匹配"><a href="#Route精准匹配" class="headerlink" title="Route精准匹配"></a>Route精准匹配</h4><blockquote>
+<p>exact</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">&#x27;/&#x27;</span> exact component=&#123;Home&#125;/&gt;</span><br><span class="line">&lt;Route path=<span class="string">&#x27;/home&#x27;</span> component=&#123;Home&#125;/&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Switch-防止多次渲染"><a href="#Switch-防止多次渲染" class="headerlink" title="Switch 防止多次渲染"></a>Switch 防止多次渲染</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;Switch&gt;</span><br><span class="line">  &lt;Route path=<span class="string">&quot;/&quot;</span> exact component=&#123;Home&#125; /&gt;</span><br><span class="line">  &lt;Route path=<span class="string">&quot;/home&quot;</span> component=&#123;Home&#125; /&gt;</span><br><span class="line">  &lt;Route path=<span class="string">&quot;/hello&quot;</span> component=&#123;Hello&#125; /&gt;</span><br><span class="line">  &lt;Route path=<span class="string">&quot;/test&quot;</span> component=&#123;Test&#125; /&gt;</span><br><span class="line">  &lt;Route path=<span class="string">&quot;/test&quot;</span> component=&#123;Test&#125; /&gt;</span><br><span class="line">&lt;/Switch&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h4><blockquote>
+<p>Redirect</p>
+</blockquote>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Redirect <span class="keyword">from</span>=<span class="string">&#x27;/&#x27;</span> to=<span class="string">&#x27;/hello&#x27;</span> exact&gt;&lt;/Redirect&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="路由进阶"><a href="#路由进阶" class="headerlink" title="路由进阶"></a>路由进阶</h3><h4 id="高阶组件"><a href="#高阶组件" class="headerlink" title="高阶组件"></a>高阶组件</h4><p>高阶组件（HOC）是 React 中用于复用组件逻辑的一种高级技巧。HOC 自身不是 React API 的一部分，它是一种基于 React 的组合特性而形成的设计模式。</p>
+<p>具体而言，<strong>高阶组件是参数为组件，返回值为新组件的函数。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> EnhancedComponent = higherOrderComponent(WrappedComponent);</span><br></pre></td></tr></table></figure>
+
+<p>组件是将 props 转换为 UI，而高阶组件是将组件转换为另一个组件。</p>
+<p>HOC 在 React 的第三方库中很常见，例如 Redux 的 <a target="_blank" rel="noopener" href="https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md#connect"><code>connect</code></a> 和 Relay 的 <a target="_blank" rel="noopener" href="http://facebook.github.io/relay/docs/en/fragment-container.html"><code>createFragmentContainer</code></a>。</p>
+<h4 id="withRouter"><a href="#withRouter" class="headerlink" title="withRouter"></a>withRouter</h4><blockquote>
+<p>高阶组件中的withRouter, 作用是将一个组件包裹进Route里面, 然后react-router的三个对象history, location, match就会被放进这个组件的props属性中.</p>
+</blockquote>
+<p>所以withRouter的作用就是, 如果我们某个东西不是一个Router, 但是我们要依靠它去跳转一个页面, 比如点击页面的logo, 返回首页, 这时候就可以使用withRouter来做.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Route, Link, NavLink ,Switch,Redirect,withRouter&#125; <span class="keyword">from</span> <span class="string">&quot;react-router-dom&quot;</span>;</span><br><span class="line"><span class="comment">// 打印 props</span></span><br><span class="line">componentDidMount()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.props);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withRouter(App);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/uPic/LFAXmD.png" alt="LFAXmD"></p>
+<h4 id="监听路由变化-history"><a href="#监听路由变化-history" class="headerlink" title="监听路由变化 history"></a>监听路由变化 history</h4><blockquote>
+<p>history.listen()</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount()&#123;</span><br><span class="line">  <span class="built_in">this</span>.props.history.listen(<span class="function"><span class="params">link</span> =&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(link);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/uPic/gWktwn.png" alt="gWktwn"></p>
+<h4 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;<span class="function">()=&gt;</span><span class="built_in">this</span>.props.history.push(<span class="string">&#x27;/test&#x27;</span>)&#125;&gt;点我去test&lt;/button&gt; </span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h4><h5 id="1、params"><a href="#1、params" class="headerlink" title="1、params"></a>1、params</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">&#x27;/path/:name&#x27;</span> component=&#123;Path&#125;/&gt;</span><br><span class="line">&lt;link to=<span class="string">&quot;/path/2&quot;</span>&gt;xxx&lt;/Link&gt;</span><br><span class="line"><span class="built_in">this</span>.props.history.push(&#123;<span class="attr">pathname</span>:<span class="string">&quot;/path/&quot;</span> + name&#125;);</span><br><span class="line">读取参数用:<span class="built_in">this</span>.props.match.params.nam</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>优势 ： 刷新地址栏，参数依然存在<br>缺点:只能传字符串，并且，如果传的值太多的话，url会变得长而丑陋。</p>
+</blockquote>
+<h5 id="2、query"><a href="#2、query" class="headerlink" title="2、query"></a>2、query</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">&#x27;/query&#x27;</span> component=&#123;Query&#125;/&gt;</span><br><span class="line">&lt;Link to=&#123;&#123; <span class="attr">path</span> : <span class="string">&#x27; /query&#x27;</span> , <span class="attr">query</span> : &#123; <span class="attr">name</span> : <span class="string">&#x27;sunny&#x27;</span> &#125;&#125;&#125;&gt;</span><br><span class="line"><span class="built_in">this</span>.props.history.push(&#123;<span class="attr">pathname</span>:<span class="string">&quot;/query&quot;</span>,<span class="attr">query</span>: &#123; <span class="attr">name</span> : <span class="string">&#x27;sunny&#x27;</span> &#125;&#125;);</span><br><span class="line">读取参数用: <span class="built_in">this</span>.props.location.query.name</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>优势：传参优雅，传递参数可传对象；<br>缺点：刷新地址栏，参数丢失</p>
+</blockquote>
+<h5 id="3、state"><a href="#3、state" class="headerlink" title="3、state"></a>3、state</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">&#x27;/sort &#x27;</span> component=&#123;Sort&#125;/&gt;</span><br><span class="line">&lt;Link to=&#123;&#123; <span class="attr">path</span> : <span class="string">&#x27; /sort &#x27;</span> , <span class="attr">state</span> : &#123; <span class="attr">name</span> : <span class="string">&#x27;sunny&#x27;</span> &#125;&#125;&#125;&gt; </span><br><span class="line"><span class="built_in">this</span>.props.history.push(&#123;<span class="attr">pathname</span>:<span class="string">&quot;/sort &quot;</span>,<span class="attr">state</span> : &#123; <span class="attr">name</span> : <span class="string">&#x27;sunny&#x27;</span> &#125;&#125;);</span><br><span class="line">读取参数用: <span class="built_in">this</span>.props.location.query.state </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>优缺点同query</p>
+</blockquote>
+<h5 id="4、search"><a href="#4、search" class="headerlink" title="4、search"></a>4、search</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">&#x27;/web/departManange &#x27;</span> component=&#123;DepartManange&#125;/&gt;</span><br><span class="line">&lt;link to=<span class="string">&quot;web/departManange?tenantId=12121212&quot;</span>&gt;xxx&lt;/Link&gt;</span><br><span class="line"><span class="built_in">this</span>.props.history.push(&#123;<span class="attr">pathname</span>:<span class="string">&quot;/web/departManange?tenantId&quot;</span> + row.tenantId&#125;);</span><br><span class="line">读取参数用: <span class="built_in">this</span>.props.location.search</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>优缺点同params</p>
+</blockquote>
+<h5 id="5、react-Hooks中获取路由参数的方式："><a href="#5、react-Hooks中获取路由参数的方式：" class="headerlink" title="5、react Hooks中获取路由参数的方式："></a>5、react Hooks中获取路由参数的方式：</h5><p>1.通过hooks钩子函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useHistory,useLocation,useParams,useMatch &#125; <span class="keyword">from</span> <span class="string">&#x27;react-router-dom&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> history = useHistory();</span><br><span class="line">history.push(<span class="string">&#x27;/&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>2.通过函数props参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Home</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> location = useLocation();</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div className=<span class="string">&#x27;home&#x27;</span>&gt;</span><br><span class="line">            &lt;Banner /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
       <!-- reward -->
       
     </div>
@@ -316,7 +435,7 @@
     
     <footer class="article-footer">
        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Router/" rel="tag">React-Router</a></li></ul>
 
     </footer>
   </div>
