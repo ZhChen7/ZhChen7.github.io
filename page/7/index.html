@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Archives: 2019 |  周琛的博客
+     周琛的博客
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -58,247 +58,193 @@
       
       
     <main class="content on">
-      <section class="outer">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/ZhChen7"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">琛</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['学习', '学习使我快乐', '快乐，开心～'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
   
   <article class="articles">
     
     
-    <h1 class="page-type-title">2019</h1>
     
     
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2019" class="archive-year">2019</a>
+    <article
+  id="post-MarkdownToHTML"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/03/15/MarkdownToHTML/"
+    >MarkdownToHtml</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/03/15/MarkdownToHTML/" class="article-date">
+  <time datetime="2019-03-15T08:44:07.000Z" itemprop="datePublished">2019-03-15</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a> / <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/md%E8%BD%ACHTML/">md转HTML</a>
+  </div>
+   
     </div>
-    <div class="archives">
       
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/09/05/WeChatUp02/" class="archive-article-date">
-  <time datetime="2019-09-05T09:07:39.000Z" itemprop="datePublished">09/05</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/09/05/WeChatUp02/"
-    >微信小程序笔记下</a> 
-</h2>
- 
+  <h1 id="MarkdownToHtml"><a href="#MarkdownToHtml" class="headerlink" title="MarkdownToHtml"></a>MarkdownToHtml</h1><blockquote>
+<p>将 Markdown 文档转换为 HTML 显示</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<p>本应用是采用 node.js + Express 搭建的</p>
+<p>运用的模板：art-template</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://aui.github.io/art-template/zh-cn/docs/index.html">art-template</a> 是一个简约、超快的模板引擎。</li>
+</ul>
+</blockquote>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>我把 <em>MarkdownToHTML.md</em> 放在目录 <strong>public/doc</strong> 下（放在那里看你心情咯！）</p>
+<h2 id="安装-marked"><a href="#安装-marked" class="headerlink" title="安装 marked"></a>安装 marked</h2><blockquote>
+<p>npm install marked –save</p>
+</blockquote>
+<h1 id="关键步骤"><a href="#关键步骤" class="headerlink" title="关键步骤"></a>关键步骤</h1><p>路由部分关键代码：router.js （ 里面的部分代码是关键 ）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line"></span><br><span class="line">router.get(<span class="string">&quot;/:docName&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    docId = req.params.docName.replace(<span class="regexp">/&quot;/g</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    publish.findById(docId, <span class="function"><span class="keyword">function</span> (<span class="params">err, publish</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="keyword">return</span> next(err)</span><br><span class="line">        &#125;</span><br><span class="line">        fs.readFile(__dirname + src + publish.publishMainBodyUrl + <span class="string">&#x27;.md&#x27;</span>,           <span class="string">&#x27;utf-8&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(err);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                htmlStr = marked(data.toString());</span><br><span class="line">                res.type(<span class="string">&#x27;html&#x27;</span>)</span><br><span class="line">                message.find(&#123;</span><br><span class="line">                    message_type: publish.publishMainBodyUrl</span><br><span class="line">                &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err, message</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                        <span class="keyword">return</span> next(err)</span><br><span class="line">                    &#125;</span><br><span class="line">                    message.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">                        e.UTCtodata = <span class="keyword">new</span> <span class="built_in">Date</span>(e.message_time).toLocaleString()</span><br><span class="line">                    &#125;)</span><br><span class="line">                    res.render(<span class="string">&#x27;MainBody.html&#x27;</span>, &#123;</span><br><span class="line">                        doc: htmlStr,</span><br><span class="line">                        publish: publish,</span><br><span class="line">                        message: message</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/29/hybrid/" class="archive-article-date">
-  <time datetime="2019-08-29T07:53:28.000Z" itemprop="datePublished">08/29</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/08/29/hybrid/"
-    >hybrid</a> 
-</h2>
- 
+<p>##</p>
+<p>MainBody.html: 用 art-template 模板渲染后台传来的数据</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">   &#123;&#123;@ doc &#125;&#125;或者  &lt;%- doc %&gt;</span></span><br><span class="line"><span class="comment"> （ @和- 很关键 ==&gt;原文输出语句不会对 HTML 内容进行转义处理，可能存在安全风险，请谨慎使用。这个坑害我多走了好多弯路。）</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;markfs&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123;@ doc &#125;&#125; <span class="comment">&lt;!-- 或者  &lt;%- doc %&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/14/asynchronization/" class="archive-article-date">
-  <time datetime="2019-08-14T07:30:31.000Z" itemprop="datePublished">08/14</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/08/14/asynchronization/"
-    >异步</a> 
-</h2>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="http://static.zxinc520.com/blogimage/20190314/x6s26FzHS5go.png?imageslim" alt="g"></p>
  
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/10/NewPrototype/" class="archive-article-date">
-  <time datetime="2019-08-10T07:52:24.000Z" itemprop="datePublished">08/10</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/08/10/NewPrototype/"
-    >原型</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/04/ES6intro/" class="archive-article-date">
-  <time datetime="2019-08-04T08:46:35.000Z" itemprop="datePublished">08/04</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/08/04/ES6intro/"
-    >ES6 语法</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/04/IntroductionToCourse/" class="archive-article-date">
-  <time datetime="2019-08-04T08:44:08.000Z" itemprop="datePublished">08/04</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/08/04/IntroductionToCourse/"
-    >课程导论</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/04/JsBasicKnowledge01/" class="archive-article-date">
-  <time datetime="2019-08-04T08:44:08.000Z" itemprop="datePublished">08/04</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/08/04/JsBasicKnowledge01/"
-    >前端JS基础面试技巧上</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/04/JsBasicKnowledge02/" class="archive-article-date">
-  <time datetime="2019-08-04T08:44:08.000Z" itemprop="datePublished">08/04</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/08/04/JsBasicKnowledge02/"
-    >前端JS基础面试技巧下</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/04/JS-Web-API/" class="archive-article-date">
-  <time datetime="2019-08-04T08:44:08.000Z" itemprop="datePublished">08/04</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/08/04/JS-Web-API/"
-    >JS-Web-API</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/07/19/OperationEnvironment/" class="archive-article-date">
-  <time datetime="2019-07-19T15:06:51.000Z" itemprop="datePublished">07/19</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/07/19/OperationEnvironment/"
-    >运行环境</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
+      <!-- reward -->
       
     </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li></ul>
+
+    </footer>
   </div>
-  
+
+    
+ 
+   
+</article>
+
+    
+  </article>
   
 
   
   <nav class="page-nav">
     
-    <a class="extend prev" rel="prev" href="/archives/2019/">上一页</a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2019/page/3/">3</a><a class="page-number" href="/archives/2019/page/4/">4</a><a class="page-number" href="/archives/2019/page/5/">5</a><a class="extend next" rel="next" href="/archives/2019/page/3/">下一页</a>
+    <a class="extend prev" rel="prev" href="/page/6/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
   </nav>
   
 </section>
+</div>
+
       <footer class="footer">
   <div class="outer">
     <ul>

@@ -160,6 +160,463 @@
     
     
     <article
+  id="post-VueLearn07"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/04/18/VueLearn07/"
+    >Mint-UI、MUI</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/04/18/VueLearn07/" class="article-date">
+  <time datetime="2019-04-18T10:18:48.000Z" itemprop="datePublished">2019-04-18</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/">框架</a> / <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/Vue/">Vue</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="Vue-第七天学习"><a href="#Vue-第七天学习" class="headerlink" title="Vue 第七天学习"></a>Vue 第七天学习</h1><blockquote>
+<p>Mint-UI 学习</p>
+<p>MUI</p>
+</blockquote>
+<h2 id="Mint-UI"><a href="#Mint-UI" class="headerlink" title="Mint-UI"></a>Mint-UI</h2><h3 id="基于-Vue-js-的移动端组件库"><a href="#基于-Vue-js-的移动端组件库" class="headerlink" title="基于 Vue.js 的移动端组件库"></a>基于 Vue.js 的移动端组件库</h3><p><strong>特性介绍：</strong><a target="_blank" rel="noopener" href="http://mint-ui.github.io/#!/zh-cn">Mint-UI 官网</a></p>
+<ol>
+<li>Mint UI 包含丰富的 CSS 和 JS 组件，能够满足日常的移动端开发需要。通过它，可以快速构建出风格统一的页面，提升开发效率。</li>
+<li>真正意义上的按需加载组件。可以只加载声明过的组件及其样式文件，无需再纠结文件体积过大。</li>
+<li>考虑到移动端的性能门槛，Mint UI 采用 CSS3 处理各种动效，避免浏览器进行不必要的重绘和重排，从而使用户获得流畅顺滑的体验。</li>
+<li>依托 Vue.js 高效的组件化方案，Mint UI 做到了轻量化。即使全部引入，压缩后的文件体积也仅有 ~30kb (JS + CSS) gzip。</li>
+</ol>
+<p><strong>安装：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 安装</span><br><span class="line"><span class="meta">#</span><span class="bash"> Vue 1.x</span></span><br><span class="line">npm install mint-ui@1 -S</span><br><span class="line"><span class="meta">#</span><span class="bash"> Vue 2.0</span></span><br><span class="line">npm install mint-ui -S</span><br></pre></td></tr></table></figure>
+
+<p><strong>来自官网</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入全部组件</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> Mint <span class="keyword">from</span> <span class="string">&quot;mint-ui&quot;</span>;</span><br><span class="line">Vue.use(Mint);</span><br><span class="line"><span class="comment">// 按需引入部分组件</span></span><br><span class="line"><span class="keyword">import</span> &#123; Cell, Checklist &#125; <span class="keyword">from</span> <span class="string">&quot;minu-ui&quot;</span>;</span><br><span class="line">Vue.component(Cell.name, Cell);</span><br><span class="line">Vue.component(Checklist.name, Checklist);</span><br></pre></td></tr></table></figure>
+
+<h3 id="项目演示："><a href="#项目演示：" class="headerlink" title="项目演示："></a><strong>项目演示：</strong></h3><p>项目目录：</p>
+<p><img src="http://static.zxinc520.com/blog/20190418/udiBT1HHpIk4.png?imageslim" alt="mark"></p>
+<p><strong>main.js:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span>;</span><br><span class="line">Vue.use(VueRouter);</span><br><span class="line"></span><br><span class="line"><span class="comment">//导入所以的 MintUI 组件</span></span><br><span class="line"><span class="comment">//导入 mint-ui</span></span><br><span class="line"><span class="keyword">import</span> MintUI <span class="keyword">from</span> <span class="string">&quot;mint-ui&quot;</span>; <span class="comment">//把所有的组件都导入进来</span></span><br><span class="line"><span class="comment">//这里可以 省略 node_modules 目录</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;mint-ui/lib/style.css&quot;</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(MintUI); <span class="comment">//把所有的组件，注册为全局的组件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//导入app组件</span></span><br><span class="line"><span class="keyword">import</span> app <span class="keyword">from</span> <span class="string">&quot;./App.vue&quot;</span>;</span><br><span class="line"><span class="comment">//导入 自定义路由模块</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&quot;./router.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    msg: <span class="string">&quot;123&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  render: <span class="function">(<span class="params">c</span>) =&gt;</span> c(app),</span><br><span class="line">  router,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>App.vue:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;mt-button type&#x3D;&quot;primary&quot; size&#x3D;&quot;large&quot;&gt;default&lt;&#x2F;mt-button&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190418/L8Aec7UwlBhj.png?imageslim" alt="mark"></p>
+<h2 id="JS-components-使用"><a href="#JS-components-使用" class="headerlink" title="JS components 使用"></a>JS components 使用</h2><h4 id="例如：使用-Toast-组件"><a href="#例如：使用-Toast-组件" class="headerlink" title="例如：使用 Toast 组件"></a>例如：使用 <strong>Toast 组件</strong></h4><p>App.vue:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;mt-button type&#x3D;&quot;primary&quot; size&#x3D;&quot;large&quot; @click&#x3D;&quot;show&quot;&gt;default&lt;&#x2F;mt-button&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; Toast &#125; from &quot;mint-ui&quot;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    show() &#123;</span><br><span class="line">      Toast(&#123;</span><br><span class="line">        message: &quot;Upload Complete&quot;,</span><br><span class="line">        position: &quot;middle&quot;,</span><br><span class="line">        duration: 5000,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190418/4i9Jbv1iwEGP.gif" alt="mark"></p>
+<h2 id="使用-bootstrap-图标-配合-Toast-组件-使用"><a href="#使用-bootstrap-图标-配合-Toast-组件-使用" class="headerlink" title="使用 bootstrap 图标 配合 **Toast 组件 **使用"></a>使用 <strong>bootstrap 图标</strong> 配合 **Toast 组件 **使用</h2><ol>
+<li>安装 bootstrap 包</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i bootstrap@3.3.7 -S</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在 main.js 文件</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;bootstrap/dist/css/bootstrap.min.css&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>在 App.vue 文件里</li>
+</ol>
+<p><img src="http://static.zxinc520.com/blog/20190418/07pVWBGzLVEB.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190418/9NNEMXf71zIY.gif" alt="mark"></p>
+<h4 id="自定义图标颜色"><a href="#自定义图标颜色" class="headerlink" title="自定义图标颜色"></a>自定义图标颜色</h4><p><img src="http://static.zxinc520.com/blog/20190418/7x5iyU8lwDzL.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190418/IX8tRWh9aU8d.gif" alt="mark"></p>
+<h2 id="模拟-完成接收数据-Toast-组件消失需求"><a href="#模拟-完成接收数据-Toast-组件消失需求" class="headerlink" title="模拟 完成接收数据 Toast 组件消失需求"></a>模拟 完成接收数据 Toast 组件消失需求</h2><h3 id="需求：-1s-后-Toast-组件消失需求"><a href="#需求：-1s-后-Toast-组件消失需求" class="headerlink" title="需求： 1s 后 Toast 组件消失需求"></a>需求： 1s 后 Toast 组件消失需求</h3><p><strong>App.vue:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;mt-button type&#x3D;&quot;primary&quot; size&#x3D;&quot;large&quot; @click&#x3D;&quot;show&quot;&gt;default&lt;&#x2F;mt-button&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; Toast &#125; from &quot;mint-ui&quot;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      instance: null,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    this.getList();</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    getList() &#123;</span><br><span class="line">      this.show();</span><br><span class="line">      setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">        this.instance.close();</span><br><span class="line">      &#125;, 1000);</span><br><span class="line">    &#125;,</span><br><span class="line">    show() &#123;</span><br><span class="line">      this.instance &#x3D; Toast(&#123;</span><br><span class="line">        message: &quot;Upload Complete&quot;,</span><br><span class="line">        duration: -1,</span><br><span class="line">        position: &quot;middle&quot;,</span><br><span class="line">        duration: 5000,</span><br><span class="line">        iconClass: &quot;glyphicon glyphicon-heart&quot;,</span><br><span class="line">        className: &quot;mytoast&quot;,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190418/qPQ3yPDUEMHo.gif" alt="mark"></p>
+<h2 id="babel-plugin-component-插件"><a href="#babel-plugin-component-插件" class="headerlink" title="babel-plugin-component 插件"></a>babel-plugin-component 插件</h2><p><strong>作用</strong>：为了项目整体内容不过于庞大，按需加载是许多第三方的库和插件必不可少的，于是使用了官方提供的按需加载插件<a href="https://link.juejin.im/?target=https://github.com/ElementUI/babel-plugin-component">babel-plugin-component</a></p>
+<h3 id="按需导入："><a href="#按需导入：" class="headerlink" title="按需导入："></a>按需导入：</h3><ol>
+<li>1.安装：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-plugin-component -D</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>2.修改 <strong>.babelrc</strong> 里面的 <strong>plugins</strong> ：</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;presets&quot;</span>: [<span class="string">&quot;env&quot;</span>, <span class="string">&quot;stage-0&quot;</span>],</span><br><span class="line">  <span class="attr">&quot;plugins&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;transform-runtime&quot;</span>,</span><br><span class="line">    [</span><br><span class="line">      <span class="string">&quot;component&quot;</span>,</span><br><span class="line">      [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">&quot;libraryName&quot;</span>: <span class="string">&quot;mint-ui&quot;</span>,</span><br><span class="line">          <span class="attr">&quot;style&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="项目改造"><a href="#项目改造" class="headerlink" title="项目改造"></a>项目改造</h2><h4 id="按需导入"><a href="#按需导入" class="headerlink" title="按需导入"></a>按需导入</h4><p><strong>mian.js:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;mint-ui/lib/style.css&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按需导入</span></span><br><span class="line"><span class="keyword">import</span> &#123; Button &#125; <span class="keyword">from</span> <span class="string">&quot;mint-ui&quot;</span>;</span><br><span class="line">Vue.component(<span class="string">&quot;mybtn&quot;</span>, Button); <span class="comment">//导入自定义的 mybtn 按钮组件</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>App.vue:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;</span><br><span class="line">        &lt;mybtn type&#x3D;&quot;primary&quot;&gt;mybtn&lt;&#x2F;mybtn&gt;</span><br><span class="line">        &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;</span><br><span class="line">        &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;</span><br><span class="line">        &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;templat</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190418/Kh82KQyT57d4.png?imageslim" alt="mark"></p>
+<h2 id="MUI"><a href="#MUI" class="headerlink" title="MUI"></a>MUI</h2><blockquote>
+<p>注意： MUI 不同于 Mint-UI，MUI 只是开发出来的一套好用的代码片段，里面提供了配套的样式、配套的 HTML 代码段，类似于 Bootstrap； 而 Mint-UI，是真正的组件库，是使用 Vue 技术封装出来的 成套的组件，可以无缝的和 VUE 项目进行集成开发；<br>因此，从体验上来说， Mint-UI 体验更好，因为这是别人帮我们开发好的现成的 Vue 组件；<br>从体验上来说， MUI 和 Bootstrap 类似；<br>理论上，任何项目都可以使用 MUI 或 Bootstrap，但是，MInt-UI 只适用于 Vue 项目；</p>
+</blockquote>
+<p><strong>mui 框架：</strong>性能和体验的差距，一直是 mobile app 开发者放弃 HTML5 的首要原因。 浏览器天生的切页白屏、不忍直视的转页动画、浮动元素的抖动、无法流畅下拉刷新等问题，这些都让 HTML5 开发者倍感挫败，尤其拿到 Android 低端机运行，摔手机的心都有； 另一方面，浏览器默认控件样式又少又丑，制作一个漂亮的控件非常麻烦，也有一些制作简单的 ui 框架但性能低下。</p>
+<p>mui 框架有效的解决了这些问题，这是一个可以方便开发出高性能 App 的框架，也是目前最接近原生 App 效果的框架。</p>
+<p><strong>注意：</strong> MUI 并不能使用 npm 去下载，需要自己手动从 github 上，下载现成的包，自己解压出来，然后手动拷贝到项目中使用；</p>
+<ol>
+<li>下载 MUI 包 从 github 上</li>
+</ol>
+<h3 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h3><p><strong>在 main.js 导入 MUI 包:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;./lib/dist/css/mui.min.css&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>在 App.vue 中使用（例如一个 按钮）：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;mui-btn mui-btn-royal&quot;</span>&gt;</span></span><br><span class="line">  Badge button <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;mui-badge mui-badge-royal&quot;</span>&gt;</span>999<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190418/TxVONoruT7Xq.png?imageslim" alt="mark"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MUI/" rel="tag">MUI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mint-UI/" rel="tag">Mint-UI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
+  id="post-VueLearn06"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/04/17/VueLearn06/"
+    >webpack、webpack 后续问题</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/04/17/VueLearn06/" class="article-date">
+  <time datetime="2019-04-17T13:28:36.000Z" itemprop="datePublished">2019-04-17</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/">框架</a> / <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/Vue/">Vue</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="Vue-第六天学习"><a href="#Vue-第六天学习" class="headerlink" title="Vue 第六天学习"></a>Vue 第六天学习</h1><blockquote>
+<p>file-loader（解决 webpack 打包图片路径问题，字体路径问题）</p>
+<p>webpack 中 babel 的配置（处理高级的 es6 语法或者 es7 语法）</p>
+<p>Vue 中的 render 函数</p>
+<p>在 webpack 构建的项目中，使用 Vue 进行开发</p>
+<p>export default 和 export 的使用方式</p>
+<p>结合 webpack 使用 vue-router</p>
+<p>组件中 style 标签 lang 属性和 scoped 属性的介绍</p>
+<p>抽离路由模块</p>
+<p>一个人如果不想输，就要不断学好眼前的东西，它们将来都会大有用处…</p>
+</blockquote>
+<h2 id="webpack-后续问题"><a href="#webpack-后续问题" class="headerlink" title="webpack 后续问题"></a>webpack 后续问题</h2><h5 id="问题：Webpack-打包图片路径问题"><a href="#问题：Webpack-打包图片路径问题" class="headerlink" title="问题：Webpack 打包图片路径问题"></a>问题：Webpack 打包图片路径问题</h5><p><img src="http://static.zxinc520.com/blog/20190415/EHGtOouC7m7W.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190415/67j7Iq3tsM4q.png?imageslim" alt="mark"></p>
+<h4 id="在页面中引入图片有两种方式"><a href="#在页面中引入图片有两种方式" class="headerlink" title="在页面中引入图片有两种方式"></a>在页面中引入图片有两种方式</h4><ul>
+<li>img 标签引入</li>
+<li>css 引入</li>
+</ul>
+<h2 id="解决方案：Webpack-使用-file-loader-处理图片"><a href="#解决方案：Webpack-使用-file-loader-处理图片" class="headerlink" title="解决方案：Webpack 使用 file-loader 处理图片"></a>解决方案：Webpack 使用 file-loader 处理图片</h2><h3 id="安装：file-loader-包"><a href="#安装：file-loader-包" class="headerlink" title="安装：file-loader 包"></a>安装：<strong>file-loader</strong> 包</h3><ol>
+<li>运行 <code>npm i url-loader file-loader -D</code> 来安装 <strong>file-loader</strong> 包</li>
+</ol>
+<p><img src="http://static.zxinc520.com/blog/20190415/tFYCSVQRUkQu.png?imageslim" alt="mark"></p>
+<p>​</p>
+<ol start="2">
+<li>配置 webpack.config.js 文件</li>
+</ol>
+<p><img src="http://static.zxinc520.com/blog/20190415/cELvBLsveIEX.png?imageslim" alt="mark"></p>
+<ol start="3">
+<li>运行<code> npm run dev</code></li>
+</ol>
+<p><img src="http://static.zxinc520.com/blog/20190415/VVGGMT2828JL.gif" alt="mark"></p>
+<h3 id="file-loader-参数"><a href="#file-loader-参数" class="headerlink" title="file-loader 参数"></a>file-loader 参数</h3><ul>
+<li><p><code>limit</code> 给定的值，是图片的大小，单位是 byte，如果我们引用的 图片，<strong>大于 **给定的值，则会被转为</strong>base64 格式** 的字符串，如果，图片**小于或等于 **给定的 limit 值，则不会被转为 base64 的 字符串<br><img src="http://static.zxinc520.com/blog/20190416/XiEHyP6vdL8s.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190416/T1MukN0guNf5.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190416/FPE7T3OUKGxd.png?imageslim" alt="mark"></p>
+</li>
+<li><p><code>name</code> 属性 使图片路径 url 不变</p>
+</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190416/wX5GMiFDX3zF.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190416/9qKydj98tyeA.png?imageslim" alt="mark"></p>
+<h2 id="处理字体文件-路径问题"><a href="#处理字体文件-路径问题" class="headerlink" title="处理字体文件 路径问题"></a>处理字体文件 路径问题</h2><blockquote>
+<p>使用 <strong>file-loader</strong></p>
+</blockquote>
+<p>问题描述：引入 bootstrap 字体图标库，但报错！</p>
+<p><img src="http://static.zxinc520.com/blog/20190416/1tjFUEn3NBee.png?imageslim" alt="mark"></p>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li>配置 webpack.config.js</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.(ttf|eot|svg|woff|woff2)$/</span>,use:<span class="string">&#x27;url-loader&#x27;</span>&#125;,<span class="comment">//这是 处理 字体文件的 loader</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190417/K7a1le382DJs.png?imageslim" alt="mark"></p>
+<ol start="2">
+<li>运行 <code>npm run dev</code></li>
+</ol>
+<h1 id="webpack-中-babel-的配置"><a href="#webpack-中-babel-的配置" class="headerlink" title="webpack 中 babel 的配置"></a>webpack 中 babel 的配置</h1><p><a target="_blank" rel="noopener" href="https://www.babeljs.cn/docs/index.html">babel 介绍 </a></p>
+<p><strong>问题描述</strong>：</p>
+<ol>
+<li>webpack 中默认只能处理一部分 es6 语法，一些更高级的 es6 语法或者 es7 语法 webpack 处理不了，这时候就需要借助第三方 loader 帮助 webpack 处理这些语法</li>
+<li>class 是 es6 中提供的语法，是用来实现 es6 中面向对象编程的方式，class 和 static 与 Java 中类似</li>
+</ol>
+<p><img src="http://static.zxinc520.com/blog/20190416/4zFaWW0Qqco2.png?imageslim" alt="mark"></p>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li>通过 <strong>babel</strong> 可以将高级语法转化为低级语法</li>
+<li>安装，运行两个命令，安装两套包，去安装 babel 相关的功能</li>
+</ol>
+<ul>
+<li><strong>第一套包</strong>：<code>npm i babel-core babel-loader babel-plugin-transform-runtime -D</code></li>
+<li><strong>第二套包</strong>：<code>npm i babel-preset-env babel-preset-stage-0 -D</code></li>
+</ul>
+<ol start="3">
+<li>打开 webpack 配置文件，在 module 节点写的 rules 数组中添加一个新的匹配规则</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>,use:<span class="string">&#x27;babel-loader&#x27;</span>,<span class="attr">exclude</span>:<span class="regexp">/node_modules/</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190416/T3zLwVwLDPgf.png?imageslim" alt="mark"></p>
+<!--在配置babel的loader规则时必须把node_module目录通过exclude排除-->
+
+<p><strong>排除 node_module 目录的原因:</strong></p>
+<ul>
+<li>如果排除 node_module，babel 会把 node_module 目录下的所有第三方 js 文件都打包编译，这会非常消耗 CPU，同时打包速度非常慢</li>
+<li>babel 把 node_module 中的 js 文件转化完毕项目也无法正常运行</li>
+</ul>
+<ol start="4">
+<li>在项目的根目录中新建一个叫做 <strong>.babelrc</strong> 的 babel 配置文件，这个配置文件属于 <strong>json 格式</strong></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;presets&quot;</span>:[<span class="string">&quot;env&quot;</span>,<span class="string">&quot;stage-0&quot;</span>],</span><br><span class="line">    <span class="string">&quot;plugins&quot;</span>:[<span class="string">&quot;transform-runtime&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190416/Mddz8O6ipjPl.png?imageslim" alt="mark"></p>
+<p><strong>报错：</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190416/6PopTItC2OrO.png?imageslim" alt="mark"></p>
+<p><strong>解决方案：</strong>执行 <code>npm i babel-loader@7</code></p>
+<p><img src="http://static.zxinc520.com/blog/20190416/HJupUdf1JIBA.png?imageslim" alt="mark"></p>
+<p><strong>报错：</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190416/dYb1bw19ID0Y.png?imageslim" alt="mark"></p>
+<p><strong>啊啊啊啊~~ 崩溃！！</strong></p>
+<h2 id="修改之后还是跑不起来—-醉了！！"><a href="#修改之后还是跑不起来—-醉了！！" class="headerlink" title="修改之后还是跑不起来—-醉了！！"></a>修改之后还是跑不起来—-醉了！！</h2><p><img src="http://static.zxinc520.com/blog/20190416/dK1vXd5NuoO4.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190416/sEpb3GoWOHIM.png?imageslim" alt="mark"></p>
+<p><strong>报错：</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190416/vh340CYSUk0d.png?imageslim" alt="mark"></p>
+<h2 id="升级总结（来自百度）"><a href="#升级总结（来自百度）" class="headerlink" title="升级总结（来自百度）"></a>升级总结（<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016458913">来自百度</a>）</h2><h4 id="babel-升级-7-X-踩坑记录"><a href="#babel-升级-7-X-踩坑记录" class="headerlink" title="-babel 升级 7.X 踩坑记录"></a>-babel 升级 7.X 踩坑记录</h4><ol>
+<li>babel 包名改变，以前安装是 <code>npm i babel-*</code> 现在安装 babel 系列需要写成 <code>npm i @babel/*</code></li>
+<li><code>.babelrc</code> 文件写法改变，<code>preset plugins</code> 等全部写成 <code>@babel/*</code> 的形式</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">npm:</span><br><span class="line">- babel-preset-env</span><br><span class="line">+ @babel/preset-env</span><br><span class="line">- babel-preset-react</span><br><span class="line">+ @babel/preset-react</span><br><span class="line">- babel-preset-stage-0</span><br><span class="line"></span><br><span class="line">.babelrc:</span><br><span class="line">- &quot;presets&quot;: [&quot;react&quot;, &quot;env&quot;, &quot;stage-0&quot;, &quot;mobx&quot;]</span><br><span class="line">+ &quot;presets&quot;: [&quot;@babel/preset-react&quot;, &quot;@babel/preset-env&quot;, &quot;mobx&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>除了上述的<code>preset</code>，我还用了<code>babel-preset-mobx</code><br>但是没找到 <code>@babel/preset-mobx</code>，从<a target="_blank" rel="noopener" href="https://github.com/zwhitchcox/babel-preset-mobx/commits/master">babel-preset-mobx git 提交日志</a>上看，作者已经支持了最新的<code>babel</code>。在之后的测试中，发现<code>mobx</code>的功能也能正常使用。<br>另外，<a target="_blank" rel="noopener" href="https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets">stage-*已弃用</a></p>
+<h2 id="使用-Vue-实例的-render-方法"><a href="#使用-Vue-实例的-render-方法" class="headerlink" title="使用 Vue 实例的 render 方法"></a>使用 Vue 实例的 render 方法</h2><blockquote>
+<p>Vue 推荐使用在绝大多数情况下使用 template 来创建你的 HTML。然而在一些场景中，你真的需要 JavaScript 的完全编程的能力，这就是 <strong>render 函数</strong>，它比 template 更接近编译器。</p>
+</blockquote>
+<p>*基本使用**</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">let</span> login = &#123;</span></span><br><span class="line"><span class="handlebars"><span class="xml">    template: &quot;<span class="tag">&lt;<span class="name">h1</span>&gt;</span>login 组件<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>&quot;,</span></span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">    data: &#123;&#125;,</span><br><span class="line">    methods: &#123;&#125;,</span><br><span class="line">    render(createElement) &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> createElement(login);</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190417/El6GtYoXY4Wm.png?imageslim" alt="mark"></p>
+<h2 id="在-webpack-构建的项目中，使用-Vue-进行开发"><a href="#在-webpack-构建的项目中，使用-Vue-进行开发" class="headerlink" title="在 webpack 构建的项目中，使用 Vue 进行开发"></a>在 webpack 构建的项目中，使用 Vue 进行开发</h2><ul>
+<li>在普通网页中如何使用 Vue<ul>
+<li>1.使用 script 标签，引入 Vue 的包</li>
+<li>2.在 index 页面中，创建 一个 id 为 app div 容器</li>
+<li>3.通过 new Vue 得到一个 vm 的实例</li>
+</ul>
+</li>
+</ul>
+<h2 id="重点：在-webpack-中-尝试-使用-Vue"><a href="#重点：在-webpack-中-尝试-使用-Vue" class="headerlink" title="重点：在 webpack 中 尝试 使用 Vue"></a>重点：在 webpack 中 尝试 使用 Vue</h2><ol>
+<li><strong>直接导入 Vue 包</strong>：</li>
+</ol>
+<p><img src="http://static.zxinc520.com/blog/20190417/fl74cG8ej4BE.png?imageslim" alt="mark"></p>
+<p><strong>结果报错</strong>：</p>
+<p><img src="http://static.zxinc520.com/blog/20190417/wte2gIV3SL5L.png?imageslim" alt="mark"></p>
+<!--注意：在webpack 中 使用 `import Vue from 'vue'`导入的 Vue 构造函数，功能不完整，只提供了 **runtime-only** 的方式，并没有提供 像网页中-->
+
+<p><img src="http://static.zxinc520.com/blog/20190417/FDsekOzOdqSz.png?imageslim" alt="mark"></p>
+<h4 id="回顾-：包的-查找-规则"><a href="#回顾-：包的-查找-规则" class="headerlink" title="- 回顾 ：包的 查找 规则"></a>- 回顾 ：包的 <strong>查找</strong> 规则</h4><ol>
+<li>找 项目根目录中有没有 node_modules 的文件夹</li>
+<li>在 node_modules 中，根据包名，找对应的 vue 文件夹</li>
+<li>在 vue 文件夹中，找 一个叫 package.json 的包配置文件</li>
+<li>在 package.json 文件中，查找 一个 main 属性【mian 属性指定了这个包在被加载的时候的入口文件】</li>
+</ol>
+<p><strong>解决方案 1</strong>：</p>
+<p><img src="http://static.zxinc520.com/blog/20190417/Q2FwTyktL3nF.png?imageslim" alt="mark"></p>
+<p><strong>解决方案 2</strong>：</p>
+<p><img src="http://static.zxinc520.com/blog/20190417/67SE8EyWVRmn.png?imageslim" alt="mark"></p>
+<p><strong>解决方案 3（更优雅）：</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190417/Cfv9yq1PVXPl.png?imageslim" alt="mark"></p>
+<h2 id="定义-文件形式-vue-组件-加载到页面上"><a href="#定义-文件形式-vue-组件-加载到页面上" class="headerlink" title="定义 文件形式 vue 组件 加载到页面上"></a>定义 文件形式 vue 组件 加载到页面上</h2><p><strong>例如</strong>：</p>
+<p><img src="http://static.zxinc520.com/blog/20190417/znhigwsi4kiE.png?imageslim" alt="mark"></p>
+<p><strong>报错：</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190417/6ag81mxVMdjN.png?imageslim" alt="mark"></p>
+<p><strong>原因：</strong></p>
+<ul>
+<li>默认，webpack 无法打包 .vue 文件，需要安装 *<em>相关的 loader</em></li>
+</ul>
+<p><strong>解决方案：</strong></p>
+<ol>
+<li><p>安装：执行 <code>npm i vue-loader vue-template-compiler -D</code> 命令</p>
+</li>
+<li><p>配置 webpack.config.js 文件</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.vue$/</span>,use:<span class="string">&#x27;vue-loader&#x27;</span>&#125; 	<span class="comment">//处理 .vue后缀名的 loader</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190417/8cY6BeLLmNt2.png?imageslim" alt="mark"></p>
+<p>结果：还是报错</p>
+<p><img src="http://static.zxinc520.com/blog/20190417/VgCmomodVkuA.png?imageslim" alt="mark"></p>
+<h4 id="原因：Vue-loader-在-15-之后的版本都是-vue-loader-的使用都是需要伴生-VueLoaderPlugin-的"><a href="#原因：Vue-loader-在-15-之后的版本都是-vue-loader-的使用都是需要伴生-VueLoaderPlugin-的" class="headerlink" title="原因：Vue-loader 在 15.*之后的版本都是 vue-loader 的使用都是需要伴生 VueLoaderPlugin 的."></a>原因：Vue-loader 在 15.*之后的版本都是 vue-loader 的使用都是需要伴生 VueLoaderPlugin 的.</h4><p>解决：在 <strong>webpack.config.js</strong> 中加入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> VueLoaderPlugin = <span class="built_in">require</span>(<span class="string">&quot;vue-loader/lib/plugin&quot;</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  devtool: <span class="string">&quot;sourcemap&quot;</span>,</span><br><span class="line">  entry: <span class="string">&quot;./js/entry.js&quot;</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">&quot;bundle.js&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [<span class="keyword">new</span> VueLoaderPlugin()],</span><br><span class="line">  <span class="built_in">module</span>: &#123;&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190417/4zePeemdDl56.png?imageslim" alt="mark"></p>
+<p><strong>使用 render 函数 ：</strong></p>
+<p><img src="http://static.zxinc520.com/blog/20190417/z60O8OR9qlLk.png?imageslim" alt="mark"><img src="http://static.zxinc520.com/blog/20190417/NG0rBbunP4N7.png?imageslim" alt="mark"></p>
+<h2 id="总结梳理："><a href="#总结梳理：" class="headerlink" title="总结梳理："></a>总结梳理：</h2><h4 id="总结梳理：-webpack-中如何使用-vue"><a href="#总结梳理：-webpack-中如何使用-vue" class="headerlink" title="总结梳理： webpack 中如何使用 vue"></a>总结梳理： webpack 中如何使用 vue</h4><ol>
+<li><p>安装 vue 的包： cnpm i vue -S</p>
+</li>
+<li><p>由于 在 webpack 中，推荐使用 .vue 这个组件模板文件定义组件，所以，需要安装 能解析这种文件的 loader ，执行命令： <code>cnpm i vue-loader vue-template-complier -D</code></p>
+</li>
+<li><p>在 main.js 中，导入 vue 模块 import Vue from ‘vue’</p>
+</li>
+<li><p>定义一个 .vue 结尾的组件，其中，组件有三部分组成： template script style</p>
+</li>
+<li><p>使用 import login from ‘./login.vue’ 导入这个组件</p>
+</li>
+<li><p>创建 vm 的实例 var vm = new Vue({ el: ‘#app’, render: c =&gt; c(login) })</p>
+</li>
+<li><p>在页面中创建一个 id 为 app 的 div 元素，作为我们 vm 实例要控制的区域；</p>
+</li>
+</ol>
+<h2 id="export-default-和-export-的使用方式"><a href="#export-default-和-export-的使用方式" class="headerlink" title="export default 和 export 的使用方式"></a>export default 和 export 的使用方式</h2><p><strong>基本使用：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h3&gt;这是登录组件，vue 文件定义出来的--&#123;&#123; msg &#125;&#125;&lt;&#x2F;h3&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      msg: &quot;哈哈哈&quot;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    show() &#123;</span><br><span class="line">      console.log(&quot;调用了 login.vue 中的show 方法！&quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190417/VJ8FVeRYb0oV.png?imageslim" alt="mark"></p>
+<h2 id="export，import-，export-default-是什么？"><a href="#export，import-，export-default-是什么？" class="headerlink" title="export，import ，export default 是什么？"></a>export，import ，export default 是什么？</h2><p>ES6 模块主要有两个功能：export 和 import<br><strong>export</strong> 用于对外输出本模块（一个文件可以理解为一个模块）变量的接口<br><strong>import</strong> 用于在一个模块中加载另一个含有 export 接口的模块。<br>也就是说使用 export 命令定义了模块的对外接口以后，其他 JS 文件就可以通过 import 命令加载这个模块（文件）。这几个都是 ES6 的语法。</p>
+<ul>
+<li>注意：export default 向外暴露的成员，可以使用任意的变量来接受</li>
+<li>注意：在一个模块中，export default 只允许向外暴露一次</li>
+<li>注意：在一个模块中，可以同时使用 export 和 export default 向外暴露成员</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在 Node中，使用 <span class="keyword">var</span> 名称= <span class="built_in">require</span>(<span class="string">&#x27;模块标识符&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports和 <span class="built_in">exports</span> 来暴露成员</span><br></pre></td></tr></table></figure>
+
+<h2 id="export-与-export-default"><a href="#export-与-export-default" class="headerlink" title="export 与 export default"></a>export 与 export default</h2><p>上面讲的是 export 和 import，但是 <strong>export</strong> 跟 <strong>export default</strong> 有什么区别呢？如下：</p>
+<ol>
+<li>export 与 export default 均可用于导出常量、函数、文件、模块等</li>
+<li>你可以在其它文件或模块中通过 import+(常量 | 函数 | 文件 | 模块)名的方式，将其导入，以便能够对其进行使用</li>
+<li>在一个文件或模块中，export、import 可以有多个，export default 仅有一个，<strong>export default</strong> 只能导出<strong>一个默认模块</strong>，这个模块<strong>可以匿名</strong>（ 引入的时候可以给这个模块取任意名字，例如 “obj”，且不需要用大括号括起来。）</li>
+</ol>
+<p><strong>export ：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//demo1.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> str = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对应的引入方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//demo2.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; str, f &#125; <span class="keyword">from</span> <span class="string">&quot;demo1&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>export default</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//demo1.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  a: <span class="string">&quot;hello&quot;</span>,</span><br><span class="line">  b: <span class="string">&quot;world&quot;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>对应的引入方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//demo2.js</span></span><br><span class="line"><span class="keyword">import</span> obj <span class="keyword">from</span> <span class="string">&quot;demo1&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>通过 export 方式导出，在导入时要<strong>加 { }**，export default 则 **不需要</strong></li>
+</ol>
+<p>这样来说其实很多时候 export 与 export default 可以实现同样的目的，只是用法有些区别。注意第四条，通过 export 方式导出，在导入时要加{ }，export default 则不需要。使用 export default 命令，为模块指定默认输出，这样就不需要知道所要加载模块的变量名。</p>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name=<span class="string">&quot;李四&quot;</span>;</span><br><span class="line"><span class="keyword">export</span> &#123; name &#125;</span><br><span class="line"><span class="comment">//import &#123; name &#125; from &quot;/.a.js&quot;</span></span><br><span class="line">可以写成：</span><br><span class="line"><span class="keyword">var</span> name=<span class="string">&quot;李四&quot;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> name</span><br><span class="line"><span class="comment">//import name from &quot;/.a.js&quot; 这里name不需要大括号</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="说明与比较：new-Vue-和-export-default-？"><a href="#说明与比较：new-Vue-和-export-default-？" class="headerlink" title="说明与比较：new Vue() 和 export default {}？"></a>说明与比较：new Vue() 和 export default {}？</h3><p>在生成、导出、导入、使用 Vue 组件的时候，像我这种新手就会常常被位于不同文件的 <code>new Vue()</code> 和 <code>export default&#123;&#125;</code> 搞得晕头转向。它们含义到底是什么，又有什么异同呢？</p>
+<p>首先，Vue 是什么？ po 主的理解是 Vue 就是一个构造函数，生成的实例是一个巨大的对象，可以包含数据、模板、挂载元素、方法、生命周期钩子等选项。</p>
+<p>所以渲染的时候，可以使用构造 Vue 实例的方式来渲染相应的 html 页面：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&#x27;#app&#x27;</span></span><br><span class="line">    ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>那么 export default {} 又是来干嘛的？</p>
+<p>这是在复用组件的时候用到的。假设我们写了一个单页面组件 A 文件，而在另一个文件 B 里面需要用到它，那么就要用 <a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/?search=%E7%9C%81%E7%95%A5&x=0&y=0#docs/module">ES6 的 import/export 语法</a> ，在文件 A 中定义输出接口 <code>export **</code>，在文件 B 中引入 <code>import **</code>，然后再生成一个 Vue 实例 <code>new Vue (**)</code>，把引入的组件用起来，这样就可以复用组件 A 去配合文件 B 生成 html 页面了。</p>
+<h2 id="结合-webpack-使用-vue-router"><a href="#结合-webpack-使用-vue-router" class="headerlink" title="结合 webpack 使用 vue-router"></a>结合 webpack 使用 vue-router</h2><ol>
+<li>安装 <code>npm i vue-router -S </code></li>
+</ol>
+<p>例：</p>
+<p>目录结构：</p>
+<p><img src="http://static.zxinc520.com/blog/20190417/MFFstwRsuS8S.png?imageslim" alt="mark"></p>
+<p><strong>main.js：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在 webpack 构建的项目中，使用Vue 进行开发</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&quot;../node_modules/vue/dist/vue.js&quot;</span>;</span><br><span class="line"><span class="comment">//1. 导入 vue-router 包</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 手动安装</span></span><br><span class="line">Vue.use(VueRouter);</span><br><span class="line"></span><br><span class="line"><span class="comment">//导入app组件</span></span><br><span class="line"><span class="keyword">import</span> app <span class="keyword">from</span> <span class="string">&quot;./App.vue&quot;</span>;</span><br><span class="line"><span class="comment">//导入 Account 组件</span></span><br><span class="line"><span class="keyword">import</span> account <span class="keyword">from</span> <span class="string">&quot;./main/Account.vue&quot;</span>;</span><br><span class="line"><span class="comment">//导入 GoodsList 组件</span></span><br><span class="line"><span class="keyword">import</span> goodslist <span class="keyword">from</span> <span class="string">&quot;./main/GoodsList.vue&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 创建路由对象</span></span><br><span class="line"><span class="keyword">let</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&quot;/account&quot;</span>, <span class="attr">component</span>: account &#125;,</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&quot;/goodslist&quot;</span>, <span class="attr">component</span>: goodslist &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    msg: <span class="string">&quot;12322&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  render: <span class="function">(<span class="params">c</span>) =&gt;</span> c(app),</span><br><span class="line">  router,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//注意：App 这个组件，是通过 VM 实例的 render 函数，渲染出来的，render 函数如果要渲染 组件渲染出来的组件，只能是 el ：&#x27;#app&#x27; 所指定的 元素中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Account 和 GoodsList 组件，是通过 路由匹配监听到的，所以，这两个组件，只能展示到 属于 路由的 &lt;router-view&gt;&lt;/router-view&gt; 中去</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>App.vue:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;style&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190417/8RslBeQhHAvx.gif" alt="mark"></p>
+<h2 id="webpack-路由嵌套"><a href="#webpack-路由嵌套" class="headerlink" title="webpack-路由嵌套"></a>webpack-路由嵌套</h2><p>目录结构：</p>
+<p><img src="http://static.zxinc520.com/blog/20190417/KpfhuMnyjazc.png?imageslim" alt="mark"></p>
+<p><strong>main.js:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在 webpack 构建的项目中，使用Vue 进行开发</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&quot;../node_modules/vue/dist/vue.js&quot;</span>;</span><br><span class="line"><span class="comment">//1. 导入 vue-router 包</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 手动安装</span></span><br><span class="line">Vue.use(VueRouter);</span><br><span class="line"></span><br><span class="line"><span class="comment">//导入app组件</span></span><br><span class="line"><span class="keyword">import</span> app <span class="keyword">from</span> <span class="string">&quot;./App.vue&quot;</span>;</span><br><span class="line"><span class="comment">//导入 Account 组件</span></span><br><span class="line"><span class="keyword">import</span> account <span class="keyword">from</span> <span class="string">&quot;./main/Account.vue&quot;</span>;</span><br><span class="line"><span class="comment">//导入 GoodsList 组件</span></span><br><span class="line"><span class="keyword">import</span> goodslist <span class="keyword">from</span> <span class="string">&quot;./main/GoodsList.vue&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> login <span class="keyword">from</span> <span class="string">&quot;./son/login.vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> register <span class="keyword">from</span> <span class="string">&quot;./son/register.vue&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 创建路由对象</span></span><br><span class="line"><span class="keyword">let</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">&quot;/account&quot;</span>,</span><br><span class="line">      component: account,</span><br><span class="line">      children: [</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">&quot;login&quot;</span>, <span class="attr">component</span>: login &#125;,</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">&quot;register&quot;</span>, <span class="attr">component</span>: register &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&quot;/goodslist&quot;</span>, <span class="attr">component</span>: goodslist &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    msg: <span class="string">&quot;12322&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  render: <span class="function">(<span class="params">c</span>) =&gt;</span> c(app),</span><br><span class="line">  router,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//注意：App 这个组件，是通过 VM 实例的 render 函数，渲染出来的，render 函数如果要渲染 组件渲染出来的组件，只能是 el ：&#x27;#app&#x27; 所指定的 元素中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Account 和 GoodsList 组件，是通过 路由匹配监听到的，所以，这两个组件，只能展示到 属于 路由的 &lt;router-view&gt;&lt;/router-view&gt; 中去</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>App.vue:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Account:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;这是Account组件&lt;&#x2F;h1&gt;</span><br><span class="line"></span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;account&#x2F;login&quot;&gt;登录&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;account&#x2F;register&quot;&gt;注册&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190417/tSeVisl10K0W.gif" alt="mark"></p>
+<h2 id="组件中-style-标签-lang-属性和-scoped-属性的介绍"><a href="#组件中-style-标签-lang-属性和-scoped-属性的介绍" class="headerlink" title="组件中 style 标签 lang 属性和 scoped 属性的介绍"></a>组件中 style 标签 lang 属性和 scoped 属性的介绍</h2><p><strong>scoped：</strong>在子组件中设置 style 属性，如果不加 scoped 属性，如果是单页面程序，样式就会作用到全局中去，加了 scoped 属性以后，表示限制了该样式作用域只在该组件中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;这是goods组件&lt;&#x2F;h1&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">div &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>lang 属性：</strong>普通的 style 标签只支持普通的样式,如果想启用 scss 或 less,需要为 style 设置 lang 属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;这是account组件&lt;&#x2F;h1&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang&#x3D;&quot;scss&quot; scoped&gt;</span><br><span class="line">body &#123;</span><br><span class="line">  div &#123;</span><br><span class="line">    font-style: italic;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="抽离路由模块"><a href="#抽离路由模块" class="headerlink" title="抽离路由模块"></a>抽离路由模块</h2><p>目录结构：</p>
+<p><img src="http://static.zxinc520.com/blog/20190417/imC2sybXMC8G.png?imageslim" alt="mark"></p>
+<p><strong>main.js:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在 webpack 构建的项目中，使用Vue 进行开发</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&quot;../node_modules/vue/dist/vue.js&quot;</span>;</span><br><span class="line"><span class="comment">//1. 导入 vue-router 包</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 手动安装</span></span><br><span class="line">Vue.use(VueRouter);</span><br><span class="line"></span><br><span class="line"><span class="comment">//导入app组件</span></span><br><span class="line"><span class="keyword">import</span> app <span class="keyword">from</span> <span class="string">&quot;./App.vue&quot;</span>;</span><br><span class="line"><span class="comment">//导入 自定义路由模块</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&quot;./router.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    msg: <span class="string">&quot;12322&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  render: <span class="function">(<span class="params">c</span>) =&gt;</span> c(app),</span><br><span class="line">  router,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//注意：App 这个组件，是通过 VM 实例的 render 函数，渲染出来的，render 函数如果要渲染 组件渲染出来的组件，只能是 el ：&#x27;#app&#x27; 所指定的 元素中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Account 和 GoodsList 组件，是通过 路由匹配监听到的，所以，这两个组件，只能展示到 属于 路由的 &lt;router-view&gt;&lt;/router-view&gt; 中去</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>router.js:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//导入 Account 组件</span></span><br><span class="line"><span class="keyword">import</span> account <span class="keyword">from</span> <span class="string">&quot;./main/Account.vue&quot;</span>;</span><br><span class="line"><span class="comment">//导入 GoodsList 组件</span></span><br><span class="line"><span class="keyword">import</span> goodslist <span class="keyword">from</span> <span class="string">&quot;./main/GoodsList.vue&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> login <span class="keyword">from</span> <span class="string">&quot;./son/login.vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> register <span class="keyword">from</span> <span class="string">&quot;./son/register.vue&quot;</span>;</span><br><span class="line"><span class="comment">//3. 创建路由对象</span></span><br><span class="line"><span class="keyword">let</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">&quot;/account&quot;</span>,</span><br><span class="line">      component: account,</span><br><span class="line">      children: [</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">&quot;login&quot;</span>, <span class="attr">component</span>: login &#125;,</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">&quot;register&quot;</span>, <span class="attr">component</span>: register &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&quot;/goodslist&quot;</span>, <span class="attr">component</span>: goodslist &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router;</span><br></pre></td></tr></table></figure>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack-%E5%90%8E%E7%BB%AD%E9%97%AE%E9%A2%98/" rel="tag">webpack 后续问题</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-VueLearn05"
   class="article article-type-post"
   itemscope
@@ -1371,87 +1828,13 @@
 </article>
 
     
-    <article
-  id="post-MarkdownToHTML"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/03/15/MarkdownToHTML/"
-    >MarkdownToHtml</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/03/15/MarkdownToHTML/" class="article-date">
-  <time datetime="2019-03-15T08:44:07.000Z" itemprop="datePublished">2019-03-15</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a> / <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/md%E8%BD%ACHTML/">md转HTML</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="MarkdownToHtml"><a href="#MarkdownToHtml" class="headerlink" title="MarkdownToHtml"></a>MarkdownToHtml</h1><blockquote>
-<p>将 Markdown 文档转换为 HTML 显示</p>
-</blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>本应用是采用 node.js + Express 搭建的</p>
-<p>运用的模板：art-template</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://aui.github.io/art-template/zh-cn/docs/index.html">art-template</a> 是一个简约、超快的模板引擎。</li>
-</ul>
-</blockquote>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>我把 <em>MarkdownToHTML.md</em> 放在目录 <strong>public/doc</strong> 下（放在那里看你心情咯！）</p>
-<h2 id="安装-marked"><a href="#安装-marked" class="headerlink" title="安装 marked"></a>安装 marked</h2><blockquote>
-<p>npm install marked –save</p>
-</blockquote>
-<h1 id="关键步骤"><a href="#关键步骤" class="headerlink" title="关键步骤"></a>关键步骤</h1><p>路由部分关键代码：router.js （ 里面的部分代码是关键 ）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line"></span><br><span class="line">router.get(<span class="string">&quot;/:docName&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    docId = req.params.docName.replace(<span class="regexp">/&quot;/g</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    publish.findById(docId, <span class="function"><span class="keyword">function</span> (<span class="params">err, publish</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="keyword">return</span> next(err)</span><br><span class="line">        &#125;</span><br><span class="line">        fs.readFile(__dirname + src + publish.publishMainBodyUrl + <span class="string">&#x27;.md&#x27;</span>,           <span class="string">&#x27;utf-8&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(err);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                htmlStr = marked(data.toString());</span><br><span class="line">                res.type(<span class="string">&#x27;html&#x27;</span>)</span><br><span class="line">                message.find(&#123;</span><br><span class="line">                    message_type: publish.publishMainBodyUrl</span><br><span class="line">                &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err, message</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                        <span class="keyword">return</span> next(err)</span><br><span class="line">                    &#125;</span><br><span class="line">                    message.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">                        e.UTCtodata = <span class="keyword">new</span> <span class="built_in">Date</span>(e.message_time).toLocaleString()</span><br><span class="line">                    &#125;)</span><br><span class="line">                    res.render(<span class="string">&#x27;MainBody.html&#x27;</span>, &#123;</span><br><span class="line">                        doc: htmlStr,</span><br><span class="line">                        publish: publish,</span><br><span class="line">                        message: message</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>##</p>
-<p>MainBody.html: 用 art-template 模板渲染后台传来的数据</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">   &#123;&#123;@ doc &#125;&#125;或者  &lt;%- doc %&gt;</span></span><br><span class="line"><span class="comment"> （ @和- 很关键 ==&gt;原文输出语句不会对 HTML 内容进行转义处理，可能存在安全风险，请谨慎使用。这个坑害我多走了好多弯路。）</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;markfs&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123;@ doc &#125;&#125; <span class="comment">&lt;!-- 或者  &lt;%- doc %&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="http://static.zxinc520.com/blogimage/20190314/x6s26FzHS5go.png?imageslim" alt="g"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
   </article>
   
 
   
   <nav class="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/5/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">下一页</a>
   </nav>
   
 </section>

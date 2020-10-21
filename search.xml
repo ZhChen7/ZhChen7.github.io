@@ -1,6 +1,608 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>必须要会的 50 个 React 面试题</title>
+    <url>/2020/10/21/%E5%BF%85%E9%A1%BB%E8%A6%81%E4%BC%9A%E7%9A%84-50-%E4%B8%AA-React-%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="React-面试题-–-参考🔗"><a href="#React-面试题-–-参考🔗" class="headerlink" title="React 面试题  –  参考🔗"></a><strong>React 面试题</strong>  –  <a href="https://juejin.im/post/6844903806715559943">参考🔗</a></h2><p>以下是面试官最有可能问到的 <strong>50 个 React 面试题和答案</strong>。为方便你学习，我对它们进行了分类：</p>
+<ul>
+<li>基本知识</li>
+<li>React 组件</li>
+<li>React Redux</li>
+<li>React 路由</li>
+</ul>
+<h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a><strong>基本知识</strong></h2><h3 id="1-区分-Real-DOM-和-Virtual-DOM"><a href="#1-区分-Real-DOM-和-Virtual-DOM" class="headerlink" title="1. 区分 Real DOM 和 Virtual DOM"></a><strong>1. 区分 Real DOM 和 Virtual DOM</strong></h3><table>
+<thead>
+<tr>
+<th><strong>Real DOM</strong></th>
+<th><strong>Virtual DOM</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. 更新缓慢。</td>
+<td>1. 更新更快。</td>
+</tr>
+<tr>
+<td>2. 可以直接更新 HTML。</td>
+<td>2. 无法直接更新 HTML。</td>
+</tr>
+<tr>
+<td>3. 如果元素更新，则创建新 DOM。</td>
+<td>3. 如果元素更新，则更新 JSX 。</td>
+</tr>
+<tr>
+<td>4. DOM 操作代价很高。</td>
+<td>4. DOM 操作非常简单。</td>
+</tr>
+<tr>
+<td>5. 消耗的内存较多。</td>
+<td>5. 很少的内存消耗。</td>
+</tr>
+</tbody></table>
+<h3 id="2-什么是-React？"><a href="#2-什么是-React？" class="headerlink" title="2. 什么是 React？"></a><strong>2. 什么是 React？</strong></h3><ul>
+<li>React 是 Facebook 在 2011 年开发的前端 JavaScript 库。</li>
+<li>它遵循基于组件的方法，有助于构建可重用的 UI 组件。</li>
+<li>它用于开发复杂和交互式的 Web 和移动 UI。</li>
+<li>尽管它仅在 2015 年开源，但有一个很大的支持社区。</li>
+</ul>
+<h3 id="3-React-有什么特点？"><a href="#3-React-有什么特点？" class="headerlink" title="3. React 有什么特点？"></a><strong>3. React 有什么特点？</strong></h3><p>React 的主要功能如下：</p>
+<ol>
+<li>它使用**虚拟 DOM **而不是真正的 DOM。</li>
+<li>它可以用<strong>服务器端渲染</strong>。</li>
+<li>它遵循<strong>单向数据流</strong>或数据绑定。</li>
+</ol>
+<h3 id="4-列出-React-的一些主要优点。"><a href="#4-列出-React-的一些主要优点。" class="headerlink" title="4. 列出 React 的一些主要优点。"></a><strong>4. 列出 React 的一些主要优点。</strong></h3><p>React 的一些主要优点是：</p>
+<ol>
+<li>它提高了应用的性能</li>
+<li>可以方便地在客户端和服务器端使用</li>
+<li>由于 JSX，代码的可读性很好</li>
+<li>React 很容易与 Meteor，Angular 等其他框架集成</li>
+<li>使用 React，编写 UI 测试用例变得非常容易</li>
+</ol>
+<h3 id="5-React-有哪些限制？"><a href="#5-React-有哪些限制？" class="headerlink" title="5. React 有哪些限制？"></a><strong>5. React 有哪些限制？</strong></h3><p>React 的限制如下：</p>
+<ol>
+<li>React 只是一个库，而不是一个完整的框架</li>
+<li>它的库非常庞大，需要时间来理解</li>
+<li>新手程序员可能很难理解</li>
+<li>编码变得复杂，因为它使用内联模板和 JSX</li>
+</ol>
+<h3 id="6-什么是-JSX？"><a href="#6-什么是-JSX？" class="headerlink" title="6. 什么是 JSX？"></a><strong>6. 什么是 JSX？</strong></h3><p>JSX 是 J avaScript XML 的简写。是 React 使用的一种文件，它利用 JavaScript 的表现力和类似 HTML 的模板语法。这使得 HTML 文件非常容易理解。此文件能使应用非常可靠，并能够提高其性能。下面是 JSX 的一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">render()&#123;</span><br><span class="line">    return(</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;h1&gt; Hello World from Edureka!!&lt;&#x2F;h1&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-你了解-Virtual-DOM-吗？解释一下它的工作原理。"><a href="#7-你了解-Virtual-DOM-吗？解释一下它的工作原理。" class="headerlink" title="7. 你了解 Virtual DOM 吗？解释一下它的工作原理。"></a><strong>7. 你了解 Virtual DOM 吗？解释一下它的工作原理。</strong></h3><p>Virtual DOM 是一个轻量级的 JavaScript 对象，它最初只是 real DOM 的副本。它是一个节点树，它将元素、它们的属性和内容作为对象及其属性。 React 的渲染函数从 React 组件中创建一个节点树。然后它响应数据模型中的变化来更新该树，该变化是由用户或系统完成的各种动作引起的。</p>
+<p>Virtual DOM 工作过程有三个简单的步骤。</p>
+<ol>
+<li><p>每当底层数据发生改变时，整个 UI 都将在 Virtual DOM 描述中重新渲染。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/25/169b42c3abe78a05?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="Virtual DOM 1"></p>
+</li>
+<li><p>然后计算之前 DOM 表示与新表示的之间的差异。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/25/169b42c3b5c6759a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="Virtual DOM 2"></p>
+</li>
+<li><p>完成计算后，将只用实际更改的内容更新 real DOM。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/25/169b42c3b5163360?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="Virtual DOM 3"></p>
+</li>
+</ol>
+<h3 id="8-为什么浏览器无法读取-JSX？"><a href="#8-为什么浏览器无法读取-JSX？" class="headerlink" title="8. 为什么浏览器无法读取 JSX？"></a><strong>8. 为什么浏览器无法读取 JSX？</strong></h3><p>浏览器只能处理 JavaScript 对象，而不能读取常规 JavaScript 对象中的 JSX。所以为了使浏览器能够读取 JSX，首先，需要用像 Babel 这样的 JSX 转换器将 JSX 文件转换为 JavaScript 对象，然后再将其传给浏览器。</p>
+<h3 id="9-与-ES5-相比，React-的-ES6-语法有何不同？"><a href="#9-与-ES5-相比，React-的-ES6-语法有何不同？" class="headerlink" title="9. 与 ES5 相比，React 的 ES6 语法有何不同？"></a><strong>9. 与 ES5 相比，React 的 ES6 语法有何不同？</strong></h3><p>以下语法是 ES5 与 ES6 中的区别：</p>
+<ol>
+<li>require 与 import</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">var React &#x3D; require(&#39;react&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">import React from &#39;react&#39;;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>export 与 exports</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">module.exports &#x3D; Component;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">export default Component;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>component 和 function</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">var MyComponent &#x3D; React.createClass(&#123;</span><br><span class="line">    render: function() &#123;</span><br><span class="line">        return</span><br><span class="line">			&lt;h3&gt;Hello Edureka!&lt;&#x2F;h3&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">class MyComponent extends React.Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return</span><br><span class="line">			&lt;h3&gt;Hello Edureka!&lt;&#x2F;h3&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>props</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">var App &#x3D; React.createClass(&#123;</span><br><span class="line">    propTypes: &#123; name: React.PropTypes.string &#125;,</span><br><span class="line">    render: function() &#123;</span><br><span class="line">        return</span><br><span class="line">			&lt;h3&gt;Hello, &#123;this.props.name&#125;!&lt;&#x2F;h3&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">class App extends React.Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return</span><br><span class="line">			&lt;h3&gt;Hello, &#123;this.props.name&#125;!&lt;&#x2F;h3&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>state</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">var App &#x3D; React.createClass(&#123;</span><br><span class="line">    getInitialState: function() &#123;</span><br><span class="line">        return &#123; name: &#39;world&#39; &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    render: function() &#123;</span><br><span class="line">        return</span><br><span class="line">	        &lt;h3&gt;Hello, &#123;this.state.name&#125;!&lt;&#x2F;h3&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">class App extends React.Component &#123;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">        super();</span><br><span class="line">        this.state &#x3D; &#123; name: &#39;world&#39; &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return</span><br><span class="line">	        &lt;h3&gt;Hello, &#123;this.state.name&#125;!&lt;&#x2F;h3&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-React-与-Angular-有何不同？"><a href="#10-React-与-Angular-有何不同？" class="headerlink" title="10. React 与 Angular 有何不同？"></a><strong>10. React 与 Angular 有何不同？</strong></h3><table>
+<thead>
+<tr>
+<th><strong>主题</strong></th>
+<th><strong>React</strong></th>
+<th><strong>Angular</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>1. 体系结构</em></td>
+<td>只有 MVC 中的 View</td>
+<td>完整的 MVC</td>
+</tr>
+<tr>
+<td><em>2. 渲染</em></td>
+<td>可以在服务器端渲染</td>
+<td>客户端渲染</td>
+</tr>
+<tr>
+<td><em>3. DOM</em></td>
+<td>使用 virtual DOM</td>
+<td>使用 real DOM</td>
+</tr>
+<tr>
+<td><em>4. 数据绑定</em></td>
+<td>单向数据绑定</td>
+<td>双向数据绑定</td>
+</tr>
+<tr>
+<td><em>5. 调试</em></td>
+<td>编译时调试</td>
+<td>运行时调试</td>
+</tr>
+<tr>
+<td><em>6. 作者</em></td>
+<td>Facebook</td>
+<td>Google</td>
+</tr>
+</tbody></table>
+<h2 id="React-组件"><a href="#React-组件" class="headerlink" title="React 组件"></a><strong>React 组件</strong></h2><h3 id="11-你理解“在-React-中，一切都是组件”这句话。"><a href="#11-你理解“在-React-中，一切都是组件”这句话。" class="headerlink" title="11. 你理解“在 React 中，一切都是组件”这句话。"></a><strong>11. 你理解“在 React 中，一切都是组件”这句话。</strong></h3><p>组件是 React 应用 UI 的构建块。这些组件将整个 UI 分成小的独立并可重用的部分。每个组件彼此独立，而不会影响 UI 的其余部分。</p>
+<h3 id="12-解释-React-中-render-的目的。"><a href="#12-解释-React-中-render-的目的。" class="headerlink" title="12. 解释 React 中 render() 的目的。"></a><strong>12. 解释 React 中 render() 的目的。</strong></h3><p>每个 React 组件强制要求必须有一个 **render()**。它返回一个 React 元素，是原生 DOM 组件的表示。如果需要渲染多个 HTML 元素，则必须将它们组合在一个封闭标记内，例如 <code>&lt;form&gt;</code>、<code>&lt;group&gt;</code>、<code>&lt;div&gt;</code> 等。此函数必须保持纯净，即必须每次调用时都返回相同的结果。</p>
+<h3 id="13-如何将两个或多个组件嵌入到一个组件中？"><a href="#13-如何将两个或多个组件嵌入到一个组件中？" class="headerlink" title="13. 如何将两个或多个组件嵌入到一个组件中？"></a><strong>13. 如何将两个或多个组件嵌入到一个组件中？</strong></h3><p>可以通过以下方式将组件嵌入到一个组件中：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class MyComponent extends React.Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return(</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">            	&lt;h1&gt;Hello&lt;&#x2F;h1&gt;</span><br><span class="line">                &lt;Header&#x2F;&gt;</span><br><span class="line">            &lt;&#x2F;div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Header extends React.Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return</span><br><span class="line">			&lt;h1&gt;Header Component&lt;&#x2F;h1&gt;</span><br><span class="line">   &#125;;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;MyComponent&#x2F;&gt;, document.getElementById(&#39;content&#39;)</span><br><span class="line">);</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="14-什么是-Props"><a href="#14-什么是-Props" class="headerlink" title="14. 什么是 Props?"></a><strong>14. 什么是 Props?</strong></h3><p>Props 是 React 中属性的简写。它们是只读组件，必须保持纯，即不可变。它们总是在整个应用中从父组件传递到子组件。子组件永远不能将 prop 送回父组件。这有助于维护单向数据流，通常用于呈现动态生成的数据。</p>
+<h3 id="15-React-中的状态是什么？它是如何使用的？"><a href="#15-React-中的状态是什么？它是如何使用的？" class="headerlink" title="15. React 中的状态是什么？它是如何使用的？"></a><strong>15. React 中的状态是什么？它是如何使用的？</strong></h3><p>状态是 React 组件的核心，是数据的来源，必须尽可能简单。基本上状态是确定组件呈现和行为的对象。与 props 不同，它们是可变的，并创建动态和交互式组件。可以通过 <code>this.state()</code> 访问它们。</p>
+<h3 id="16-区分状态和-props"><a href="#16-区分状态和-props" class="headerlink" title="16. 区分状态和 props"></a><strong>16. 区分状态和 props</strong></h3><table>
+<thead>
+<tr>
+<th><strong>条件</strong></th>
+<th><strong>State</strong></th>
+<th><strong>Props</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. 从父组件中接收初始值</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>2. 父组件可以改变值</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>3. 在组件中设置默认值</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>4. 在组件的内部变化</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>5. 设置子组件的初始值</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>6. 在子组件的内部更改</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody></table>
+<h3 id="17-如何更新组件的状态？"><a href="#17-如何更新组件的状态？" class="headerlink" title="17. 如何更新组件的状态？"></a><strong>17. 如何更新组件的状态？</strong></h3><p>可以用 <code>this.setState()</code>更新组件的状态。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class MyComponent extends React.Component &#123;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">        super();</span><br><span class="line">        this.state &#x3D; &#123;</span><br><span class="line">            name: &#39;Maxx&#39;,</span><br><span class="line">            id: &#39;101&#39;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    render()</span><br><span class="line">        &#123;</span><br><span class="line">            setTimeout(()&#x3D;&gt;&#123;this.setState(&#123;name:&#39;Jaeha&#39;, id:&#39;222&#39;&#125;)&#125;,2000)</span><br><span class="line">            return (</span><br><span class="line">				&lt;div&gt;</span><br><span class="line">                	&lt;h1&gt;Hello &#123;this.state.name&#125;&lt;&#x2F;h1&gt;</span><br><span class="line">					&lt;h2&gt;Your Id is &#123;this.state.id&#125;&lt;&#x2F;h2&gt;</span><br><span class="line">                &lt;&#x2F;div&gt;</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;MyComponent&#x2F;&gt;, document.getElementById(&#39;content&#39;)</span><br><span class="line">);</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="18-React-中的箭头函数是什么？怎么用？"><a href="#18-React-中的箭头函数是什么？怎么用？" class="headerlink" title="18. React 中的箭头函数是什么？怎么用？"></a><strong>18. React 中的箭头函数是什么？怎么用？</strong></h3><p>箭头函数（**=&gt;**）是用于编写函数表达式的简短语法。这些函数允许正确绑定组件的上下文，因为在 ES6 中默认下不能使用自动绑定。使用高阶函数时，箭头函数非常有用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;General way</span><br><span class="line">render() &#123;</span><br><span class="line">    return(</span><br><span class="line">        &lt;MyInput onChange &#x3D; &#123;this.handleChange.bind(this) &#125; &#x2F;&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;With Arrow Function</span><br><span class="line">render() &#123;</span><br><span class="line">    return(</span><br><span class="line">        &lt;MyInput onChange &#x3D; &#123; (e)&#x3D;&gt;this.handleOnChange(e) &#125; &#x2F;&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="19-区分有状态和无状态组件。"><a href="#19-区分有状态和无状态组件。" class="headerlink" title="19. 区分有状态和无状态组件。"></a><strong>19. 区分有状态和无状态组件。</strong></h3><table>
+<thead>
+<tr>
+<th><strong>有状态组件</strong></th>
+<th><strong>无状态组件</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. 在内存中存储有关组件状态变化的信息</td>
+<td>1. 计算组件的内部的状态</td>
+</tr>
+<tr>
+<td>2. 有权改变状态</td>
+<td>2. 无权改变状态</td>
+</tr>
+<tr>
+<td>3. 包含过去、现在和未来可能的状态变化情况</td>
+<td>3. 不包含过去，现在和未来可能发生的状态变化情况</td>
+</tr>
+<tr>
+<td>4. 接受无状态组件状态变化要求的通知，然后将 props 发送给他们。</td>
+<td>4.从有状态组件接收 props 并将其视为回调函数。</td>
+</tr>
+</tbody></table>
+<h3 id="20-React-组件生命周期的阶段是什么？"><a href="#20-React-组件生命周期的阶段是什么？" class="headerlink" title="20. React 组件生命周期的阶段是什么？"></a><strong>20. React 组件生命周期的阶段是什么？</strong></h3><p>React 组件的生命周期有三个不同的阶段：</p>
+<ol>
+<li><em>初始渲染阶段：</em>这是组件即将开始其生命之旅并进入 DOM 的阶段。</li>
+<li><em>更新阶段：</em>一旦组件被添加到 DOM，它只有在 prop 或状态发生变化时才可能更新和重新渲染。这些只发生在这个阶段。</li>
+<li><em>卸载阶段：</em>这是组件生命周期的最后阶段，组件被销毁并从 DOM 中删除。</li>
+</ol>
+<h3 id="21-详细解释-React-组件的生命周期方法。"><a href="#21-详细解释-React-组件的生命周期方法。" class="headerlink" title="21. 详细解释 React 组件的生命周期方法。"></a><strong>21. 详细解释 React 组件的生命周期方法。</strong></h3><p>一些最重要的生命周期方法是：</p>
+<ol>
+<li><strong>*componentWillMount***</strong>()** – 在渲染之前执行，在客户端和服务器端都会执行。</li>
+<li><strong>*componentDidMount***</strong>()** – 仅在第一次渲染后在客户端执行。</li>
+<li><strong>*componentWillReceiveProps***</strong>()** – 当从父类接收到 props 并且在调用另一个渲染器之前调用。</li>
+<li><strong>*shouldComponentUpdate***</strong>()** – 根据特定条件返回 true 或 false。如果你希望更新组件，请返回<strong>true</strong> 否则返回 *<em>false\</em>*。默认情况下，它返回 false。</li>
+<li><strong>*componentWillUpdate***</strong>()** – 在 DOM 中进行渲染之前调用。</li>
+<li><strong>*componentDidUpdate***</strong>()** – 在渲染发生后立即调用。</li>
+<li><strong>*componentWillUnmount***</strong>()** – 从 DOM 卸载组件后调用。用于清理内存空间。</li>
+</ol>
+<h3 id="22-React-中的事件是什么？"><a href="#22-React-中的事件是什么？" class="headerlink" title="22. React 中的事件是什么？"></a><strong>22. React 中的事件是什么？</strong></h3><p>在 React 中，事件是对鼠标悬停、鼠标单击、按键等特定操作的触发反应。处理这些事件类似于处理 DOM 元素中的事件。但是有一些语法差异，如：</p>
+<ol>
+<li>用驼峰命名法对事件命名而不是仅使用小写字母。</li>
+<li>事件作为函数而不是字符串传递。</li>
+</ol>
+<p>事件参数重包含一组特定于事件的属性。每个事件类型都包含自己的属性和行为，只能通过其事件处理程序访问。</p>
+<h3 id="23-如何在-React-中创建一个事件？"><a href="#23-如何在-React-中创建一个事件？" class="headerlink" title="23. 如何在 React 中创建一个事件？"></a><strong>23. 如何在 React 中创建一个事件？</strong></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Display extends React.Component(&#123;</span><br><span class="line">    show(evt) &#123;</span><br><span class="line">        &#x2F;&#x2F; code</span><br><span class="line">    &#125;,</span><br><span class="line">    render() &#123;</span><br><span class="line">        &#x2F;&#x2F; Render the div with an onClick prop (value is a function)</span><br><span class="line">        return (</span><br><span class="line">            &lt;div onClick&#x3D;&#123;this.show&#125;&gt;Click Me!&lt;&#x2F;div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="24-React-中的合成事件是什么？"><a href="#24-React-中的合成事件是什么？" class="headerlink" title="24. React 中的合成事件是什么？"></a><strong>24. React 中的合成事件是什么？</strong></h3><p>合成事件是围绕浏览器原生事件充当跨浏览器包装器的对象。它们将不同浏览器的行为合并为一个 API。这样做是为了确保事件在不同浏览器中显示一致的属性。</p>
+<h3 id="25-你对-React-的-refs-有什么了解？"><a href="#25-你对-React-的-refs-有什么了解？" class="headerlink" title="25. 你对 React 的 refs 有什么了解？"></a><strong>25. 你对 React 的 refs 有什么了解？</strong></h3><p>Refs 是 React 中引用的简写。它是一个有助于存储对特定的 React 元素或组件的引用的属性，它将由组件渲染配置函数返回。用于对 render() 返回的特定元素或组件的引用。当需要进行 DOM 测量或向组件添加方法时，它们会派上用场。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class ReferenceDemo extends React.Component&#123;</span><br><span class="line">     display() &#123;</span><br><span class="line">         const name &#x3D; this.inputDemo.value;</span><br><span class="line">         document.getElementById(&#39;disp&#39;).innerHTML &#x3D; name;</span><br><span class="line">     &#125;</span><br><span class="line">render() &#123;</span><br><span class="line">    return(</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            Name: &lt;input type&#x3D;&quot;text&quot; ref&#x3D;&#123;input &#x3D;&gt; this.inputDemo &#x3D; input&#125; &#x2F;&gt;</span><br><span class="line">            &lt;button name&#x3D;&quot;Click&quot; onClick&#x3D;&#123;this.display&#125;&gt;Click&lt;&#x2F;button&gt;</span><br><span class="line">            &lt;h2&gt;Hello &lt;span id&#x3D;&quot;disp&quot;&gt;&lt;&#x2F;span&gt; !!!&lt;&#x2F;h2&gt;</span><br><span class="line">          &lt;&#x2F;div&gt;</span><br><span class="line">    );</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="26-列出一些应该使用-Refs-的情况。"><a href="#26-列出一些应该使用-Refs-的情况。" class="headerlink" title="26. 列出一些应该使用 Refs 的情况。"></a><strong>26. 列出一些应该使用 Refs 的情况。</strong></h3><p>以下是应该使用 refs 的情况：</p>
+<ul>
+<li>需要管理焦点、选择文本或媒体播放时</li>
+<li>触发式动画</li>
+<li>与第三方 DOM 库集成</li>
+</ul>
+<h3 id="27-如何模块化-React-中的代码？"><a href="#27-如何模块化-React-中的代码？" class="headerlink" title="27. 如何模块化 React 中的代码？"></a><strong>27. 如何模块化 React 中的代码？</strong></h3><p>可以使用 export 和 import 属性来模块化代码。它们有助于在不同的文件中单独编写组件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;ChildComponent.jsx</span><br><span class="line">export default class ChildComponent extends React.Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return(</span><br><span class="line">              &lt;div&gt;</span><br><span class="line">              	&lt;h1&gt;This is a child component&lt;&#x2F;h1&gt;</span><br><span class="line">              &lt;&#x2F;div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;ParentComponent.jsx</span><br><span class="line">import ChildComponent from &#39;.&#x2F;childcomponent.js&#39;;</span><br><span class="line">class ParentComponent extends React.Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return(</span><br><span class="line">             &lt;div&gt;</span><br><span class="line">                &lt;App &#x2F;&gt;</span><br><span class="line">             &lt;&#x2F;div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="28-如何在-React-中创建表单"><a href="#28-如何在-React-中创建表单" class="headerlink" title="28. 如何在 React 中创建表单"></a><strong>28. 如何在 React 中创建表单</strong></h3><p>React 表单类似于 HTML 表单。但是在 React 中，状态包含在组件的 state 属性中，并且只能通过 <code>setState()</code> 更新。因此元素不能直接更新它们的状态，它们的提交是由 JavaScript 函数处理的。此函数可以完全访问用户输入到表单的数据。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">handleSubmit(event) &#123;</span><br><span class="line">    alert(&#39;A name was submitted: &#39; + this.state.value);</span><br><span class="line">    event.preventDefault();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;form onSubmit&#x3D;&#123;this.handleSubmit&#125;&gt;</span><br><span class="line">            &lt;label&gt;</span><br><span class="line">                Name:</span><br><span class="line">                &lt;input type&#x3D;&quot;text&quot; value&#x3D;&#123;this.state.value&#125; onChange&#x3D;&#123;this.handleSubmit&#125; &#x2F;&gt;</span><br><span class="line">            &lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot; &#x2F;&gt;</span><br><span class="line">        &lt;&#x2F;form&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="29-你对受控组件和非受控组件了解多少？"><a href="#29-你对受控组件和非受控组件了解多少？" class="headerlink" title="29. 你对受控组件和非受控组件了解多少？"></a><strong>29. 你对受控组件和非受控组件了解多少？</strong></h3><table>
+<thead>
+<tr>
+<th><strong>受控组件</strong></th>
+<th><strong>非受控组件</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. 没有维持自己的状态</td>
+<td>1. 保持着自己的状态</td>
+</tr>
+<tr>
+<td>2.数据由父组件控制</td>
+<td>2.数据由 DOM 控制</td>
+</tr>
+<tr>
+<td>3. 通过 props 获取当前值，然后通过回调通知更改</td>
+<td>3. Refs 用于获取其当前值</td>
+</tr>
+</tbody></table>
+<h3 id="30-什么是高阶组件（HOC）？"><a href="#30-什么是高阶组件（HOC）？" class="headerlink" title="30. 什么是高阶组件（HOC）？"></a><strong>30. 什么是高阶组件（HOC）？</strong></h3><p>高阶组件是重用组件逻辑的高级方法，是一种源于 React 的组件模式。 HOC 是自定义组件，在它之内包含另一个组件。它们可以接受子组件提供的任何动态，但不会修改或复制其输入组件中的任何行为。你可以认为 HOC 是“纯（Pure）”组件。</p>
+<h3 id="31-你能用-HOC-做什么？"><a href="#31-你能用-HOC-做什么？" class="headerlink" title="31. 你能用 HOC 做什么？"></a><strong>31. 你能用 HOC 做什么？</strong></h3><p>HOC 可用于许多任务，例如：</p>
+<ul>
+<li>代码重用，逻辑和引导抽象</li>
+<li>渲染劫持</li>
+<li>状态抽象和控制</li>
+<li>Props 控制</li>
+</ul>
+<h3 id="32-什么是纯组件？"><a href="#32-什么是纯组件？" class="headerlink" title="32. 什么是纯组件？"></a><strong>32. 什么是纯组件？</strong></h3><p><em>纯（Pure）</em> 组件是可以编写的最简单、最快的组件。它们可以替换任何只有 <strong>render()</strong> 的组件。这些组件增强了代码的简单性和应用的性能。</p>
+<h3 id="33-React-中-key-的重要性是什么？"><a href="#33-React-中-key-的重要性是什么？" class="headerlink" title="33. React 中 key 的重要性是什么？"></a><strong>33. React 中 key 的重要性是什么？</strong></h3><p>key 用于识别唯一的 Virtual DOM 元素及其驱动 UI 的相应数据。它们通过回收 DOM 中当前所有的元素来帮助 React 优化渲染。这些 key 必须是唯一的数字或字符串，React 只是重新排序元素而不是重新渲染它们。这可以提高应用程序的性能。</p>
+<h2 id="React-Redux"><a href="#React-Redux" class="headerlink" title="React Redux"></a><strong>React Redux</strong></h2><h3 id="34-MVC-框架的主要问题是什么？"><a href="#34-MVC-框架的主要问题是什么？" class="headerlink" title="34. MVC 框架的主要问题是什么？"></a><strong>34. MVC 框架的主要问题是什么？</strong></h3><p>以下是 MVC 框架的一些主要问题：</p>
+<ul>
+<li>对 DOM 操作的代价非常高</li>
+<li>程序运行缓慢且效率低下</li>
+<li>内存浪费严重</li>
+<li>由于循环依赖性，组件模型需要围绕 models 和 views 进行创建</li>
+</ul>
+<h3 id="35-解释一下-Flux"><a href="#35-解释一下-Flux" class="headerlink" title="35. 解释一下 Flux"></a><strong>35. 解释一下 Flux</strong></h3><p><img src="https://user-gold-cdn.xitu.io/2019/3/25/169b42c4d3813a3e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="flux"></p>
+<p>Flux 是一种强制单向数据流的架构模式。它控制派生数据，并使用具有所有数据权限的中心 store 实现多个组件之间的通信。整个应用中的数据更新必须只能在此处进行。 Flux 为应用提供稳定性并减少运行时的错误。</p>
+<h3 id="36-什么是-Redux？"><a href="#36-什么是-Redux？" class="headerlink" title="36. 什么是 Redux？"></a><strong>36. 什么是 Redux？</strong></h3><p>Redux 是当今最热门的前端开发库之一。它是 JavaScript 程序的可预测状态容器，用于整个应用的状态管理。使用 Redux 开发的应用易于测试，可以在不同环境中运行，并显示一致的行为。</p>
+<h3 id="37-Redux-遵循的三个原则是什么？"><a href="#37-Redux-遵循的三个原则是什么？" class="headerlink" title="37. Redux 遵循的三个原则是什么？"></a><strong>37. Redux 遵循的三个原则是什么？</strong></h3><ol>
+<li><strong><em>单一事实来源：</em></strong>整个应用的状态存储在单个 store 中的对象/状态树里。单一状态树可以更容易地跟踪随时间的变化，并调试或检查应用程序。</li>
+<li><strong><em>状态是只读的：</em></strong>改变状态的唯一方法是去触发一个动作。动作是描述变化的普通 JS 对象。就像 state 是数据的最小表示一样，该操作是对数据更改的最小表示。</li>
+<li><strong><em>使用纯函数进行更改：</em></strong>为了指定状态树如何通过操作进行转换，你需要纯函数。纯函数是那些返回值仅取决于其参数值的函数。</li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/25/169b42c501879053?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="Store"></p>
+<h3 id="38-你对“单一事实来源”有什么理解？"><a href="#38-你对“单一事实来源”有什么理解？" class="headerlink" title="38. 你对“单一事实来源”有什么理解？"></a><strong>38. 你对“单一事实来源”有什么理解？</strong></h3><p>Redux 使用 “Store” 将程序的整个状态存储在同一个地方。因此所有组件的状态都存储在 Store 中，并且它们从 Store 本身接收更新。单一状态树可以更容易地跟踪随时间的变化，并调试或检查程序。</p>
+<h3 id="39-列出-Redux-的组件。"><a href="#39-列出-Redux-的组件。" class="headerlink" title="39. 列出 Redux 的组件。"></a><strong>39. 列出 Redux 的组件。</strong></h3><p>Redux 由以下组件组成：</p>
+<ol>
+<li><strong>Action</strong> – 这是一个用来描述发生了什么事情的对象。</li>
+<li><strong>Reducer</strong> – 这是一个确定状态将如何变化的地方。</li>
+<li><strong>Store</strong> – 整个程序的状态/对象树保存在 Store 中。</li>
+<li><strong>View</strong> – 只显示 Store 提供的数据。</li>
+</ol>
+<h3 id="40-数据如何通过-Redux-流动？"><a href="#40-数据如何通过-Redux-流动？" class="headerlink" title="40. 数据如何通过 Redux 流动？"></a><strong>40. 数据如何通过 Redux 流动？</strong></h3><p><img src="https://user-gold-cdn.xitu.io/2019/3/25/169b42c4958809d0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="Data Flow in Redux"></p>
+<h3 id="41-如何在-Redux-中定义-Action？"><a href="#41-如何在-Redux-中定义-Action？" class="headerlink" title="41. 如何在 Redux 中定义 Action？"></a><strong>41. 如何在 Redux 中定义 Action？</strong></h3><p>React 中的 Action 必须具有 type 属性，该属性指示正在执行的 ACTION 的类型。必须将它们定义为字符串常量，并且还可以向其添加更多的属性。在 Redux 中，action 被名为 Action Creators 的函数所创建。以下是 Action 和 Action Creator 的示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function addTodo(text) &#123;</span><br><span class="line">       return &#123;</span><br><span class="line">                type: ADD_TODO,</span><br><span class="line">                 text</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="42-解释-Reducer-的作用。"><a href="#42-解释-Reducer-的作用。" class="headerlink" title="42. 解释 Reducer 的作用。"></a><strong>42. 解释 Reducer 的作用。</strong></h3><p>Reducers 是纯函数，它规定应用程序的状态怎样因响应 ACTION 而改变。Reducers 通过接受先前的状态和 action 来工作，然后它返回一个新的状态。它根据操作的类型确定需要执行哪种更新，然后返回新的值。如果不需要完成任务，它会返回原来的状态。</p>
+<h3 id="43-Store-在-Redux-中的意义是什么？"><a href="#43-Store-在-Redux-中的意义是什么？" class="headerlink" title="43. Store 在 Redux 中的意义是什么？"></a><strong>43. Store 在 Redux 中的意义是什么？</strong></h3><p>Store 是一个 JavaScript 对象，它可以保存程序的状态，并提供一些方法来访问状态、调度操作和注册侦听器。应用程序的整个状态/对象树保存在单一存储中。因此，Redux 非常简单且是可预测的。我们可以将中间件传递到 store 来处理数据，并记录改变存储状态的各种操作。所有操作都通过 reducer 返回一个新状态。</p>
+<h3 id="44-Redux-与-Flux-有何不同？"><a href="#44-Redux-与-Flux-有何不同？" class="headerlink" title="44. Redux 与 Flux 有何不同？"></a><strong>44. Redux 与 Flux 有何不同？</strong></h3><table>
+<thead>
+<tr>
+<th><strong>Flux</strong></th>
+<th><strong>Redux</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. Store 包含状态和更改逻辑</td>
+<td>1. Store 和更改逻辑是分开的</td>
+</tr>
+<tr>
+<td>2. 有多个 Store</td>
+<td>2. 只有一个 Store</td>
+</tr>
+<tr>
+<td>3. 所有 Store 都互不影响且是平级的</td>
+<td>3. 带有分层 reducer 的单一 Store</td>
+</tr>
+<tr>
+<td>4. 有单一调度器</td>
+<td>4. 没有调度器的概念</td>
+</tr>
+<tr>
+<td>5. React 组件订阅 store</td>
+<td>5. 容器组件是有联系的</td>
+</tr>
+<tr>
+<td>6. 状态是可变的</td>
+<td>6. 状态是不可改变的</td>
+</tr>
+</tbody></table>
+<h3 id="45-Redux-有哪些优点？"><a href="#45-Redux-有哪些优点？" class="headerlink" title="45. Redux 有哪些优点？"></a><strong>45. Redux 有哪些优点？</strong></h3><p>Redux 的优点如下：</p>
+<ul>
+<li><strong>结果的可预测性 -</strong> 由于总是存在一个真实来源，即 store ，因此不存在如何将当前状态与动作和应用的其他部分同步的问题。</li>
+<li><strong>可维护性 -</strong> 代码变得更容易维护，具有可预测的结果和严格的结构。</li>
+<li><strong>服务器端渲染 -</strong> 你只需将服务器上创建的 store 传到客户端即可。这对初始渲染非常有用，并且可以优化应用性能，从而提供更好的用户体验。</li>
+<li><strong>开发人员工具 -</strong> 从操作到状态更改，开发人员可以实时跟踪应用中发生的所有事情。</li>
+<li><strong>社区和生态系统 -</strong> Redux 背后有一个巨大的社区，这使得它更加迷人。一个由才华横溢的人组成的大型社区为库的改进做出了贡献，并开发了各种应用。</li>
+<li><strong>易于测试 -</strong> Redux 的代码主要是小巧、纯粹和独立的功能。这使代码可测试且独立。</li>
+<li><strong>组织 -</strong> Redux 准确地说明了代码的组织方式，这使得代码在团队使用时更加一致和简单。</li>
+</ul>
+<h2 id="React-路由"><a href="#React-路由" class="headerlink" title="React 路由"></a><strong>React 路由</strong></h2><h3 id="46-什么是-React-路由？"><a href="#46-什么是-React-路由？" class="headerlink" title="46. 什么是 React 路由？"></a><strong>46. 什么是 React 路由？</strong></h3><p>React 路由是一个构建在 React 之上的强大的路由库，它有助于向应用程序添加新的屏幕和流。这使 URL 与网页上显示的数据保持同步。它负责维护标准化的结构和行为，并用于开发单页 Web 应用。 React 路由有一个简单的 API。</p>
+<h3 id="47-为什么-React-Router-v4-中使用-switch-关键字-？"><a href="#47-为什么-React-Router-v4-中使用-switch-关键字-？" class="headerlink" title="47. 为什么 React Router v4 中使用 switch 关键字 ？"></a><strong>47. 为什么 React Router v4 中使用 switch 关键字 ？</strong></h3><p>虽然 <strong><code>&lt;div&gt;</code> ** 用于封装 Router 中的多个路由，当你想要仅显示要在多个定义的路线中呈现的单个路线时，可以使用 “switch” 关键字。使用时，</strong><code>&lt;switch&gt;</code>** 标记会按顺序将已定义的 URL 与已定义的路由进行匹配。找到第一个匹配项后，它将渲染指定的路径。从而绕过其它路线。</p>
+<h3 id="48-为什么需要-React-中的路由？"><a href="#48-为什么需要-React-中的路由？" class="headerlink" title="48. 为什么需要 React 中的路由？"></a><strong>48. 为什么需要 React 中的路由？</strong></h3><p>Router 用于定义多个路由，当用户定义特定的 URL 时，如果此 URL 与 Router 内定义的任何 “路由” 的路径匹配，则用户将重定向到该特定路由。所以基本上我们需要在自己的应用中添加一个 Router 库，允许创建多个路由，每个路由都会向我们提供一个独特的视图</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;switch&gt;</span><br><span class="line">    &lt;route exact path&#x3D;’&#x2F;’ component&#x3D;&#123;Home&#125;&#x2F;&gt;</span><br><span class="line">    &lt;route path&#x3D;’&#x2F;posts&#x2F;:id’ component&#x3D;&#123;Newpost&#125;&#x2F;&gt;</span><br><span class="line">    &lt;route path&#x3D;’&#x2F;posts’   component&#x3D;&#123;Post&#125;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;switch&gt;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="49-列出-React-Router-的优点。"><a href="#49-列出-React-Router-的优点。" class="headerlink" title="49. 列出 React Router 的优点。"></a><strong>49. 列出 React Router 的优点。</strong></h3><p>几个优点是：</p>
+<ol>
+<li>就像 React 基于组件一样，在 React Router v4 中，API 是 _’All About Components’_。可以将 Router 可视化为单个根组件（**<code>&lt;BrowserRouter&gt;</code><strong>），其中我们将特定的子路由（</strong><code>&lt;route&gt;</code>**）包起来。</li>
+<li>无需手动设置历史值：在 React Router v4 中，我们要做的就是将路由包装在 <strong><code>&lt;BrowserRouter&gt;</code></strong> 组件中。</li>
+<li>包是分开的：共有三个包，分别用于 Web、Native 和 Core。这使我们应用更加紧凑。基于类似的编码风格很容易进行切换。</li>
+</ol>
+<h3 id="50-React-Router-与常规路由有何不同？"><a href="#50-React-Router-与常规路由有何不同？" class="headerlink" title="50. React Router 与常规路由有何不同？"></a><strong>50. React Router 与常规路由有何不同？</strong></h3><table>
+<thead>
+<tr>
+<th><strong>主题</strong></th>
+<th><strong>常规路由</strong></th>
+<th><strong>React 路由</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>参与的页面</strong></td>
+<td>每个视图对应一个新文件</td>
+<td>只涉及单个 HTML 页面</td>
+</tr>
+<tr>
+<td><strong>URL 更改</strong></td>
+<td>HTTP 请求被发送到服务器并且接收相应的 HTML 页面</td>
+<td>仅更改历史记录属性</td>
+</tr>
+<tr>
+<td><strong>体验</strong></td>
+<td>用户实际在每个视图的不同页面切换</td>
+<td>用户认为自己正在不同的页面间切换</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>框架</category>
+        <category>React</category>
+      </categories>
+      <tags>
+        <tag>React基础面试题-50</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React Hooks</title>
+    <url>/2020/10/19/Hook/</url>
+    <content><![CDATA[<p>如果你刚开始接触 Hook，那么可能需要先查阅 <a href="https://reactjs.bootcss.com/docs/hooks-overview.html">Hook 概览</a>。你也可以在 <a href="https://reactjs.bootcss.com/docs/hooks-faq.html">Hooks FAQ</a> 章节中获取有用的信息。</p>
+<ul>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#basic-hooks">基础 Hook</a><ul>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#usestate"><code>useState</code></a></li>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#useeffect"><code>useEffect</code></a></li>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#usecontext"><code>useContext</code></a></li>
+</ul>
+</li>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#additional-hooks">额外的 Hook</a><ul>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#usereducer"><code>useReducer</code></a></li>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#usecallback"><code>useCallback</code></a></li>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#usememo"><code>useMemo</code></a></li>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#useref"><code>useRef</code></a></li>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#useimperativehandle"><code>useImperativeHandle</code></a></li>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#uselayouteffect"><code>useLayoutEffect</code></a></li>
+<li><a href="https://reactjs.bootcss.com/docs/hooks-reference.html#usedebugvalue"><code>useDebugValue</code></a></li>
+</ul>
+</li>
+</ul>
+<h2 id="一、什么是-Hooks"><a href="#一、什么是-Hooks" class="headerlink" title="一、什么是 Hooks"></a>一、什么是 Hooks</h2><ul>
+<li><p>React 一直都提倡使用<strong>**函数组件**</strong>，但是有时候需要使用 state 或者其他一些功能时，只能使用<strong>**类组件**</strong>，因为函数组件没有实例，没有生命周期函数，只有类组件才有</p>
+</li>
+<li><p>Hooks 是 React 16.8 新增的特性，它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性</p>
+</li>
+<li><p>如果你在编写函数组件并意识到需要向其添加一些 state，以前的做法是必须将其它转化为 class。现在你可以直接在现有的函数组件中使用 Hooks</p>
+</li>
+<li><p>凡是 use 开头的 React API 都是 Hooks</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 声明一个新的叫做 “count” 的 state 变量</span></span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;/p&gt;</span><br><span class="line">      &lt;button onClick=&#123;<span class="function">() =&gt;</span> setCount(count + <span class="number">1</span>)&#125;&gt;Click me&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、Hooks-解决的问题"><a href="#二、Hooks-解决的问题" class="headerlink" title="二、Hooks 解决的问题"></a>二、Hooks 解决的问题</h2><h3 id="1-类组件的不足"><a href="#1-类组件的不足" class="headerlink" title="1. 类组件的不足"></a>1. 类组件的不足</h3><ul>
+<li><p><strong>状态逻辑难复用：</strong> 在组件之间复用状态逻辑很难，可能要用到 <strong>render props</strong> （<strong>渲染属性</strong>）或者 <strong>HOC</strong>（<strong>高阶组件</strong>），但无论是渲染属性，还是高阶组件，都会在原先的组件外包裹一层父容器（一般都是 div 元素），<strong>导致层级冗余</strong></p>
+</li>
+<li><p>趋向复杂难以维护：</p>
+<ul>
+<li>在生命周期函数中混杂不相干的逻辑（如：在 <code>componentDidMount</code> 中注册事件以及其他的逻辑，在 <code>componentWillUnmount</code> 中卸载事件，这样分散不集中的写法，很容易写出 bug ）</li>
+<li>类组件中到处都是对状态的访问和处理，导致组件难以拆分成更小的组件</li>
+</ul>
+</li>
+<li><p>this 指向问题</p>
+<p>：父组件给子组件传递函数时，必须绑定 this</p>
+<ul>
+<li>react 中的组件四种绑定 this 方法的区别</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">any</span>, <span class="title">any</span>&gt; </span>&#123;</span><br><span class="line">  handleClick2;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;</span><br><span class="line">      num: <span class="number">1</span>,</span><br><span class="line">      title: <span class="string">&quot; react study&quot;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">this</span>.handleClick2 = <span class="built_in">this</span>.handleClick1.bind(<span class="built_in">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleClick1() &#123;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      num: <span class="built_in">this</span>.state.num + <span class="number">1</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleClick3 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      num: <span class="built_in">this</span>.state.num + <span class="number">1</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;Ann, &#123;<span class="built_in">this</span>.state.num&#125;&lt;/h2&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="built_in">this</span>.handleClick2&#125;&gt;btn1&lt;/button&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="built_in">this</span>.handleClick1.bind(<span class="built_in">this</span>)&#125;&gt;btn2&lt;/button&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="function">() =&gt;</span> <span class="built_in">this</span>.handleClick1()&#125;&gt;btn3&lt;/button&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="built_in">this</span>.handleClick3&#125;&gt;btn4&lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>前提：子组件内部做了性能优化，如（<strong>React.PureComponent</strong>）</p>
+<ul>
+<li>第一种是<strong>在构造函数中绑定 this</strong>：那么每次父组件刷新的时候，如果传递给子组件其他的 props 值不变，那么子组件就不会刷新；</li>
+<li>第二种是<strong>在 render() 函数里面绑定 this</strong>：因为 <strong>bind 函数会返回一个新的函数</strong>，所以每次父组件刷新时，都会重新生成一个函数，即使父组件传递给子组件其他的 props 值不变，子组件每次都会刷新；</li>
+<li>第三种是<strong>使用箭头函数</strong>：父组件刷新的时候，即使两个箭头函数的函数体是一样的，都会生成一个新的箭头函数，所以子组件每次都会刷新；</li>
+<li>第四种是<strong>使用类的静态属性：原理和第一种方法差不多，比第一种更简洁</strong></li>
+</ul>
+<p>综上所述，如果不注意的话，很容易写成第三种写法，导致性能上有所损耗。</p>
+<h3 id="2-Hooks-优势"><a href="#2-Hooks-优势" class="headerlink" title="2. Hooks 优势"></a>2. Hooks 优势</h3><ul>
+<li>能优化类组件的三大问题</li>
+<li>能在无需修改组件结构的情况下复用状态逻辑（自定义 Hooks ）</li>
+<li>能将组件中相互关联的部分拆分成更小的函数（比如设置订阅或请求数据）</li>
+<li><strong>副作用的关注点分离</strong>：<strong>副作用指那些没有发生在数据向视图转换过程中的逻辑，如 <code>ajax</code> 请求、访问原生<code>dom</code> 元素、本地持久化缓存、绑定/解绑事件、添加订阅、设置定时器、记录日志等</strong>。以往这些副作用都是写在类组件生命周期函数中的。而 <code>useEffect</code> 在全部渲染完毕后才会执行，<code>useLayoutEffect</code> 会在浏览器 <code>layout</code> 之后，<code>painting</code> 之前执行。</li>
+</ul>
+<h2 id="三、注意事项"><a href="#三、注意事项" class="headerlink" title="三、注意事项"></a>三、注意事项</h2><ul>
+<li><strong>只能在****函数内部的最外层****调用 Hook，不要在循环、条件判断或者子函数中调用</strong></li>
+<li><strong>只能在 React 的****函数组件****中调用 Hook，不要在其他 JavaScript 函数中调用</strong></li>
+<li><a href="https://reactjs.org/warnings/invalid-hook-call-warning.html"><strong>https://reactjs.org/warnings/invalid-hook-call-warning.html</strong></a></li>
+</ul>
+<h2 id="四、useState-amp-useMemo-amp-useCallback"><a href="#四、useState-amp-useMemo-amp-useCallback" class="headerlink" title="四、useState &amp; useMemo &amp; useCallback"></a>四、useState &amp; useMemo &amp; useCallback</h2><ul>
+<li><strong>React 假设当你多次调用 useState 的时候，你能保证每次渲染时它们的****调用顺序****是不变的。</strong></li>
+<li>通过在函数组件里调用它来给组件添加一些内部 state，React 会 <strong>在重复渲染时保留这个 state</strong></li>
+<li>useState 唯一的参数就是初始 state</li>
+<li>useState 会返回一个数组：一个 state，一个更新 state 的函数<ul>
+<li>在初始化渲染期间，返回的状态 (state) 与传入的第一个参数 (initialState) 值相同</li>
+<li>你可以在事件处理函数中或其他一些地方调用这个函数。它类似 class 组件的 this.setState，但是它<strong>不会把新的 state 和旧的 state 进行合并，而是直接替换</strong></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这里可以任意命名，因为返回的是数组，数组解构</span></span><br><span class="line"><span class="keyword">const</span> [state, setState] = useState(initialState);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-1-使用例子"><a href="#4-1-使用例子" class="headerlink" title="4.1 使用例子"></a>4.1 使用例子</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 声明一个叫 &quot;count&quot; 的 state 变量</span></span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;/p&gt;</span><br><span class="line">      &lt;button onClick=&#123;<span class="function">() =&gt;</span> setCount(count + <span class="number">1</span>)&#125;&gt;Click me&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>state 初始值为 <code>&#123; count: 0 &#125;</code> ，当用户点击按钮后，我们通过调用 <code>this.setState()</code> 来增加 <code>state.count</code>。整个章节中都将使用该 class 的代码片段做示例。</p>
+<p><strong>等价的 class 示例</strong></p>
+<p>如果你之前在 React 中使用过 class，这段代码看起来应该很熟悉：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;</span><br><span class="line">      count: <span class="number">0</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;p&gt;You clicked &#123;<span class="built_in">this</span>.state.count&#125; times&lt;/p&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="function">() =&gt;</span> <span class="built_in">this</span>.setState(&#123; <span class="attr">count</span>: <span class="built_in">this</span>.state.count + <span class="number">1</span> &#125;)&#125;&gt;</span><br><span class="line">          Click me</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-每次渲染都是独立的闭包"><a href="#4-2-每次渲染都是独立的闭包" class="headerlink" title="4.2 每次渲染都是独立的闭包"></a>4.2 每次渲染都是独立的闭包</h3><ul>
+<li>每一次渲染都有它自己的 Props 和 State</li>
+<li>每一次渲染都有它自己的事件处理函数</li>
+<li>当点击更新状态的时候，函数组件都会重新被调用，那么每次渲染都是独立的，取到的值不会受后面操作的影响</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Counter2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> [number, setNumber] = useState(<span class="number">0</span>);</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">alertNumber</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// alert 只能获取到点击按钮时的那个状态</span></span><br><span class="line">      alert(number);</span><br><span class="line">    &#125;, <span class="number">3000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;p&gt;&#123;number&#125;&lt;/p&gt;</span><br><span class="line">      &lt;button onClick=&#123;<span class="function">() =&gt;</span> setNumber(number + <span class="number">1</span>)&#125;&gt;+&lt;/button&gt;</span><br><span class="line">      &lt;button onClick=&#123;alertNumber&#125;&gt;alertNumber&lt;/button&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-函数式更新"><a href="#4-3-函数式更新" class="headerlink" title="4.3 函数式更新"></a>4.3 函数式更新</h3><ul>
+<li><strong>如果新的 state 需要通过使用先前的 state 计算得出，那么可以将回调函数当做参数传递给 setState。该回调函数将接收先前的 state，并返回一个更新后的值。</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Counter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> [number, setNumber] = useState(<span class="number">0</span>);</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">lazy</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// setNumber(number+1);</span></span><br><span class="line">      <span class="comment">// 这样每次执行时都会去获取一遍 state，而不是使用点击触发时的那个 state</span></span><br><span class="line">      setNumber(<span class="function">(<span class="params">number</span>) =&gt;</span> number + <span class="number">1</span>);</span><br><span class="line">    &#125;, <span class="number">3000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;p&gt;&#123;number&#125;&lt;/p&gt;</span><br><span class="line">      &lt;button onClick=&#123;<span class="function">() =&gt;</span> setNumber(number + <span class="number">1</span>)&#125;&gt;+&lt;/button&gt;</span><br><span class="line">      &lt;button onClick=&#123;lazy&#125;&gt;lazy&lt;/button&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-惰性初始化-state"><a href="#4-4-惰性初始化-state" class="headerlink" title="4.4 惰性初始化 state"></a>4.4 惰性初始化 state</h3><ul>
+<li><strong>initialState 参数只会在组件的初始化渲染中起作用，后续渲染时会被忽略</strong></li>
+<li><strong>如果初始 state 需要通过复杂计算获得，则可以传入一个函数，在函数中计算并返回初始的 state，此函数只在初始渲染时被调用</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Counter5</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;Counter5 render&quot;</span>);</span><br><span class="line">  <span class="comment">// 这个函数只在初始渲染时执行一次，后续更新状态重新渲染组件时，该函数就不会再被调用</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getInitState</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">number</span>: props.number &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> [counter, setCounter] = useState(getInitState);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;p&gt;&#123;counter.number&#125;&lt;/p&gt;</span><br><span class="line">      &lt;button onClick=&#123;<span class="function">() =&gt;</span> setCounter(&#123; <span class="attr">number</span>: counter.number + <span class="number">1</span> &#125;)&#125;&gt;</span><br><span class="line">        +</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">      &lt;button onClick=&#123;<span class="function">() =&gt;</span> setCounter(counter)&#125;&gt;setCounter&lt;/button&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-5-性能优化"><a href="#4-5-性能优化" class="headerlink" title="4.5 性能优化"></a>4.5 性能优化</h3><h4 id="4-5-1-Object-is-（浅比较）"><a href="#4-5-1-Object-is-（浅比较）" class="headerlink" title="4.5.1 Object.is （浅比较）"></a>4.5.1 Object.is （浅比较）</h4><ul>
+<li>Hook 内部使用 Object.is 来比较新/旧 state 是否相等</li>
+<li><strong>与 class 组件中的 setState 方法不同，如果你修改状态的时候，传的状态值没有变化，则不重新渲染</strong></li>
+<li><strong>与 class 组件中的 setState 方法不同，useState 不会自动合并更新对象。你可以用函数式的 setState 结合展开运算符来达到合并更新对象的效果</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Counter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [counter, setCounter] = useState(&#123; <span class="attr">name</span>: <span class="string">&quot;计数器&quot;</span>, <span class="attr">number</span>: <span class="number">0</span> &#125;);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;render Counter&quot;</span>);</span><br><span class="line">  <span class="comment">// 如果你修改状态的时候，传的状态值没有变化，则不重新渲染</span></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        &#123;counter.name&#125;:&#123;counter.number&#125;</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;button</span><br><span class="line">        onClick=&#123;<span class="function">() =&gt;</span> setCounter(&#123; ...counter, <span class="attr">number</span>: counter.number + <span class="number">1</span> &#125;)&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        +</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">      &lt;button onClick=&#123;<span class="function">() =&gt;</span> setCounter(counter)&#125;&gt;++&lt;/button&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">j;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-5-2-减少渲染次数"><a href="#4-5-2-减少渲染次数" class="headerlink" title="4.5.2 减少渲染次数"></a>4.5.2 减少渲染次数</h4><ul>
+<li><strong>默认情况，只要父组件状态变了（不管子组件依不依赖该状态），子组件也会重新渲染</strong></li>
+<li>一般的优化：<ol>
+<li><strong>类组件</strong>：可以使用 <code>pureComponent</code> ；</li>
+<li><strong>函数组件</strong>：使用 <code>React.memo</code> ，将函数组件传递给 <code>memo</code> 之后，就会返回一个新的组件，新组件的功能：<strong>如果接受到的属性不变，则不重新渲染函数</strong>；</li>
+</ol>
+</li>
+<li><strong>但是怎么保证属性不会变尼？这里使用 useState ，每次更新都是独立的</strong>，<code>const [number,setNumber] = useState(0)</code> <strong>也就是说每次都会生成一个新的值（哪怕这个值没有变化），即使使用了 <code>React.memo</code> ，也还是会重新渲染</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, memo, useMemo, useCallback &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubCounter</span>(<span class="params">&#123; onClick, data &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;SubCounter render&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;onClick&#125;</span>&gt;</span>&#123;data.number&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line">SubCounter = memo(SubCounter);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Counter6</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;Counter render&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> [name, setName] = useState(<span class="string">&quot;计数器&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> [number, setNumber] = useState(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> data = &#123; number &#125;;</span><br><span class="line">  <span class="keyword">const</span> addClick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    setNumber(number + <span class="number">1</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        type=<span class="string">&quot;text&quot;</span></span><br><span class="line">        value=&#123;name&#125;</span><br><span class="line">        onChange=&#123;<span class="function">(<span class="params">e</span>) =&gt;</span> setName(e.target.value)&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">      &lt;SubCounter data=&#123;data&#125; onClick=&#123;addClick&#125; /&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更深入的优化：<ol>
+<li><strong>useCallback</strong>：接收一个内联回调函数参数和一个依赖项数组（子组件依赖父组件的状态，即子组件会使用到父组件的值） ，useCallback 会返回该回调函数的 memoized 版本，该回调函数仅在某个依赖项改变时才会更新</li>
+<li><strong>useMemo</strong>：把创建函数和依赖项数组作为参数传入 <code>useMemo</code>，它仅会在某个依赖项改变时才重新计算 memoized 值。这种优化有助于避免在每次渲染时都进行高开销的计算</li>
+</ol>
+</li>
+</ul>
+<h2 id="基础-Hook"><a href="#基础-Hook" class="headerlink" title="基础 Hook"></a>基础 Hook</h2><h3 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useEffect &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Hook = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(&#123;</span><br><span class="line">    name: <span class="string">&quot;zc&quot;</span>,</span><br><span class="line">    age: <span class="number">18</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">const</span> [arr, setArr] = useState([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line">  <span class="keyword">const</span> [func, setFunc] = useState(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> handle = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    setCount(&#123;</span><br><span class="line">      ...count,</span><br><span class="line">      age: count.age + <span class="number">1</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;h1&gt;&#123;count.name&#125;&lt;/h1&gt;</span><br><span class="line">      &lt;h1&gt;&#123;count.age&#125;&lt;/h1&gt;</span><br><span class="line">      &lt;h1&gt;&#123;arr&#125;&lt;/h1&gt;</span><br><span class="line">      &lt;h1&gt;&#123;func&#125;&lt;/h1&gt;</span><br><span class="line">      &lt;button onClick=&#123;handle&#125;&gt;增加&lt;/button&gt;</span><br><span class="line">      &lt;button</span><br><span class="line">        onClick=&#123;<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          setArr(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            arr.push(<span class="number">4</span>);</span><br><span class="line">            <span class="keyword">return</span> [...arr];</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        增加</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hook;</span><br></pre></td></tr></table></figure>
+
+<h3 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h3><ul>
+<li><strong>effect（副作用）：指那些没有发生在数据向视图转换过程中的逻辑，如 <code>ajax</code> 请求、访问原生<code>dom</code> 元素、本地持久化缓存、绑定/解绑事件、添加订阅、设置定时器、记录日志等。</strong></li>
+<li><strong>副作用操作****可以分两****类：****需要清除的和不需要清除的****。</strong></li>
+<li>原先在函数组件内（这里指在 React 渲染阶段）改变 dom 、发送 ajax 请求以及执行其他包含副作用的操作都是不被允许的，因为这可能会产生莫名其妙的 bug 并破坏 UI 的一致性</li>
+<li>useEffect 就是一个 Effect Hook，给函数组件增加了操作副作用的能力。它跟 class 组件中的 <code>componentDidMount</code>、<code>componentDidUpdate</code> 和 <code>componentWillUnmount</code> 具有相同的用途，只不过被合并成了一个 API</li>
+<li><strong>useEffect 接收一个函数，该函数会在组件渲染到屏幕之后才执行，该函数有要求：要么返回一个能清除副作用的函数，要么就不返回任何内容</strong></li>
+<li>与 <code>componentDidMount</code> 或 <code>componentDidUpdate</code> 不同，使用 useEffect 调度的 effect 不会阻塞浏览器更新屏幕，这让你的应用看起来响应更快。大多数情况下，effect 不需要同步地执行。在个别情况下（例如测量布局），有单独的 useLayoutEffect Hook 供你使用，其 API 与 useEffect 相同。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useEffect, useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Hook1 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line">  useEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">  &#125;, []); <span class="comment">// []不监听任何状态</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;useEffect&lt;/h1&gt;</span><br><span class="line">      &lt;h1&gt;&#123;count&#125;&lt;/h1&gt;</span><br><span class="line">      &lt;button onClick=&#123;<span class="function">() =&gt;</span> setCount(count + <span class="number">1</span>)&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hook1;</span><br></pre></td></tr></table></figure>
+
+<p><strong>清除 effect</strong></p>
+<p>通常，组件卸载时需要清除 effect 创建的诸如订阅或计时器 ID 等资源。要实现这一点，<code>useEffect</code> 函数需返回一个清除函数。以下就是一个创建订阅的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">useEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> subscription = props.source.subscribe();</span><br><span class="line">  <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 清除订阅</span></span><br><span class="line">    subscription.unsubscribe();</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h3><blockquote>
+<p>useContext &amp; createContext. 一起使用</p>
+<p>全局变量，跨级传值</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> value = useContext(MyContext);</span><br></pre></td></tr></table></figure>
+
+<p>接收一个 context 对象（<code>React.createContext</code> 的返回值）并返回该 context 的当前值。当前的 context 值由上层组件中距离当前组件最近的 <code>&lt;MyContext.Provider&gt;</code> 的 <code>value</code> prop 决定。</p>
+<p>当组件上层最近的 <code>&lt;MyContext.Provider&gt;</code> 更新时，该 Hook 会触发重渲染，并使用最新传递给 <code>MyContext</code> provider 的 context <code>value</code> 值。即使祖先使用 <a href="https://reactjs.bootcss.com/docs/react-api.html#reactmemo"><code>React.memo</code></a> 或 <a href="https://reactjs.bootcss.com/docs/react-component.html#shouldcomponentupdate"><code>shouldComponentUpdate</code></a>，也会在组件本身使用 <code>useContext</code> 时重新渲染。</p>
+<p>别忘记 <code>useContext</code> 的参数必须是 _context 对象本身_：</p>
+<ul>
+<li><strong>正确：</strong> <code>useContext(MyContext)</code></li>
+<li><strong>错误：</strong> <code>useContext(MyContext.Consumer)</code></li>
+<li><strong>错误：</strong> <code>useContext(MyContext.Provider)</code></li>
+</ul>
+<p>调用了 <code>useContext</code> 的组件总会在 context 值变化时重新渲染。如果重渲染组件的开销较大，你可以 <a href="https://github.com/facebook/react/issues/15156#issuecomment-474590693">通过使用 memoization 来优化</a>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useContext, useState, createContext &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MyContext = createContext();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Comson = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> count = useContext(MyContext);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;h1&gt;子组件&lt;/h1&gt;</span><br><span class="line">      &lt;p&gt;我是子组件 ---- &#123;count&#125;&lt;/p&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> HookuseContext = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> handle = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    setCount(count + <span class="number">1</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;&#123;count&#125;&lt;/h1&gt;</span><br><span class="line">      &lt;MyContext.Provider value=&#123;count&#125;&gt;</span><br><span class="line">        &lt;Comson /&gt;</span><br><span class="line">      &lt;/MyContext.Provider&gt;</span><br><span class="line">      &lt;button onClick=&#123;handle&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> HookuseContext;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>提示</p>
+<p>如果你在接触 Hook 前已经对 context API 比较熟悉，那应该可以理解，<code>useContext(MyContext)</code> 相当于 class 组件中的 <code>static contextType = MyContext</code> 或者 <code>&lt;MyContext.Consumer&gt;</code>。</p>
+<p><code>useContext(MyContext)</code> 只是让你能够<em>读取</em> context 的值以及订阅 context 的变化。你仍然需要在上层组件树中使用 <code>&lt;MyContext.Provider&gt;</code> 来为下层组件<em>提供</em> context。</p>
+</blockquote>
+<h2 id="额外的-Hook"><a href="#额外的-Hook" class="headerlink" title="额外的 Hook"></a>额外的 Hook</h2><p>以下介绍的 Hook，有些是上一节中基础 Hook 的变体，有些则仅在特殊情况下会用到。不用特意预先学习它们。</p>
+<h3 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> refContainer = useRef(initialValue);</span><br></pre></td></tr></table></figure>
+
+<p><code>useRef</code> 返回一个可变的 ref 对象，其 <code>.current</code> 属性被初始化为传入的参数（<code>initialValue</code>）。返回的 ref 对象在组件的整个生命周期内保持不变。</p>
+<p>一个常见的用例便是命令式地访问子组件：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TextInputWithFocusButton</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> inputEl = useRef(<span class="literal">null</span>);</span><br><span class="line">  <span class="keyword">const</span> onButtonClick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// `current` 指向已挂载到 DOM 上的文本输入元素</span></span><br><span class="line">    inputEl.current.focus();</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;input ref=&#123;inputEl&#125; type=<span class="string">&quot;text&quot;</span> /&gt;</span><br><span class="line">      &lt;button onClick=&#123;onButtonClick&#125;&gt;Focus the input&lt;/button&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>本质上，<code>useRef</code> 就像是可以在其 <code>.current</code> 属性中保存一个可变值的“盒子”。</p>
+<p>你应该熟悉 ref 这一种<a href="https://zh-hans.reactjs.org/docs/refs-and-the-dom.html">访问 DOM</a> 的主要方式。如果你将 ref 对象以 <code>&lt;div ref=&#123;myRef&#125; /&gt;</code> 形式传入组件，则无论该节点如何改变，React 都会将 ref 对象的 <code>.current</code> 属性设置为相应的 DOM 节点。</p>
+<p>然而，<code>useRef()</code> 比 <code>ref</code> 属性更有用。它可以<a href="https://zh-hans.reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables">很方便地保存任何可变值</a>，其类似于在 class 中使用实例字段的方式。</p>
+<p>这是因为它创建的是一个普通 Javascript 对象。而 <code>useRef()</code> 和自建一个 <code>&#123;current: ...&#125;</code> 对象的唯一区别是，<code>useRef</code> 会在每次渲染时返回同一个 ref 对象。</p>
+<p>请记住，当 ref 对象内容发生变化时，<code>useRef</code> 并<em>不会</em>通知你。变更 <code>.current</code> 属性不会引发组件重新渲染。如果想要在 React 绑定或解绑 DOM 节点的 ref 时运行某些代码，则需要使用<a href="https://zh-hans.reactjs.org/docs/hooks-faq.html#how-can-i-measure-a-dom-node">回调 ref</a> 来实现</p>
+]]></content>
+      <categories>
+        <category>框架</category>
+        <category>React</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+        <tag>React-Hooks</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Create-react-app基本使用</title>
     <url>/2020/10/15/Create-react-app%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h3 id="Create-react-app-安装方法"><a href="#Create-react-app-安装方法" class="headerlink" title="Create-react-app 安装方法"></a>Create-react-app 安装方法</h3><blockquote>
@@ -10717,6 +11319,334 @@ f.constructor === F; // true
       </tags>
   </entry>
   <entry>
+    <title>MVVM 和 vue</title>
+    <url>/2019/09/05/VueTheory/</url>
+    <content><![CDATA[<h1 id="MVVM-和-vue"><a href="#MVVM-和-vue" class="headerlink" title="MVVM 和 vue"></a>MVVM 和 vue</h1><blockquote>
+<p>本章首先介绍了 <strong>jQuery 开发方式和框架开发方式的区别</strong> ，引导学生进入框架开发的思路转变。然后通过 MVC 模式引入 <strong>MVVM</strong> ，在两者比较让学生更快熟悉 MVVM 。最后结合实例，详细讲解 vue 的 <strong>实现原理</strong> ，包括 <strong>响应式</strong>、<strong>模板解析</strong>、<strong>渲染</strong> 这三大要素。…</p>
+<p>高级面试：<strong>vue 知识点</strong></p>
+<p>放弃该放弃的是无奈，放弃不该放弃的是无能，不放弃该放弃的是无知，不放弃不该放弃的是执著！</p>
+<p>It is helpless to give up the waiver. It is incompetence to give up what should not be given up. It is ignorance that does not give up the waiver. It is attachment that does not give up and should not give up!</p>
+</blockquote>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>如何 理解 MVVM</li>
+<li>如何 实现 MVVM</li>
+<li>是否解读过 vue 源码</li>
+</ul>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
+<li>说一下 使用 jQuery 和 使用框架的区别</li>
+<li>说一下 对 MVVM 的理解</li>
+<li>vue 中如何实现 <strong>响应式</strong></li>
+<li>vue 中如何解析 <strong>模板</strong></li>
+<li>vue 的 整个实现流程</li>
+</ul>
+<h2 id="使用-jQuery-和-使用框架的区别"><a href="#使用-jQuery-和-使用框架的区别" class="headerlink" title="使用 jQuery 和 使用框架的区别"></a>使用 jQuery 和 使用框架的区别</h2><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
+<li>jQuery 实现 todo-list</li>
+<li>vue 实现 todo-list</li>
+<li>jQuery 和 框架的区别</li>
+</ul>
+<h4 id="jQuery-实现-todo-list"><a href="#jQuery-实现-todo-list" class="headerlink" title="jQuery 实现 todo-list"></a>jQuery 实现 todo-list</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;txt-title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn-submit&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ul-list&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $txtTitle = $(<span class="string">&quot;#txt-title&quot;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $ulList = $(<span class="string">&quot;#ul-list&quot;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $btnSubmit = $(<span class="string">&quot;#btn-submit&quot;</span>);</span></span><br><span class="line"><span class="javascript">      $btnSubmit.click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> title = $txtTitle.val();</span></span><br><span class="line">        if (!title) &#123;</span><br><span class="line"><span class="javascript">          <span class="keyword">return</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> $li = $(<span class="string">`&lt;li&gt;<span class="subst">$&#123;title&#125;</span>&lt;/li&gt;`</span>);</span></span><br><span class="line">        $ulList.append($li);</span><br><span class="line"><span class="javascript">        $txtTitle.val(<span class="string">&quot;&quot;</span>);</span></span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190902/BaCUCHQ12jJW.gif" alt="mark"></p>
+<h4 id="vue-实现-todo-list"><a href="#vue-实现-todo-list" class="headerlink" title="vue 实现 todo-list"></a>vue 实现 todo-list</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/vue/2.6.10/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="javascript">          title: <span class="string">&quot;&quot;</span>,</span></span><br><span class="line">          list: [],</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line"><span class="javascript">          add: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">this</span>.list.push(<span class="built_in">this</span>.title);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">this</span>.title = <span class="string">&quot;&quot;</span>;</span></span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190903/sQq0jR7s1E7E.gif" alt="mark"></p>
+<h3 id="两者的区别"><a href="#两者的区别" class="headerlink" title="两者的区别"></a>两者的区别</h3><ul>
+<li><strong>数据</strong> 和 <strong>视图</strong> 的分离</li>
+<li>以数据驱动视图</li>
+</ul>
+<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>说一下 使用 jQuery 和 使用框架的区别 ？<ul>
+<li><strong>数据</strong> 和 <strong>视图</strong> 的分离，<u>解耦</u>（ <em>开放封闭原则</em> ）</li>
+<li>以数据驱动视图，只关心数据变化，DOM 操作被封装</li>
+</ul>
+</li>
+</ul>
+<h2 id="说一下-对-MVVM-的理解"><a href="#说一下-对-MVVM-的理解" class="headerlink" title="说一下 对 MVVM 的理解"></a>说一下 对 MVVM 的理解</h2><blockquote>
+<p>目前前端框架中，最为出色的要属 Vue 和 React 了，这俩个框架的核心理念都<strong>是数据驱动页面渲染</strong>，同时他们都是 MVVM 模式的框架，<strong>MVVM 模式</strong> 中的 M 还是固定表示 Modal，V 还是表死 View，这俩个基本都是不会发生变化，一个页面必然需要数据和渲染俩个部分，那么变化的是如何将 Modal 渲染到 View 的过程变了，在 MVVM 模式中，将 View 和 Modal 绑定在一起，只要 Modal 发生了变化，View 就会自动更新，不需要我们认为的再去写如何操作 DOM 更新的过程了</p>
+</blockquote>
+<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>MVC</li>
+<li>MVVM</li>
+<li>关于 ViewModel</li>
+</ul>
+<h4 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h4><ul>
+<li>M -Model 数据</li>
+<li>V - View 视图、界面</li>
+<li>C - Controller 控制器 、逻辑处理</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190903/k21xefObaEwr.png?imageslim" alt="mark"></p>
+<p><strong>MVC</strong>模式（Model–view–controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。</p>
+<p>在前端的 <strong>MVC 模式</strong> 中，M 还是表示 Modal 层，负责与后台交互数据，V 表示 View，负责页面上 DOM 的渲染，C 表示绑定在 DOM 元素上的事件，当 Controllor 中的事件被调用，会去调用 Modal 中的数据，然后交给 View 重新渲染数据</p>
+<h4 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h4><ul>
+<li>M - Model 模型、数据</li>
+<li>V - View 视图、模板（ 视图和模板是分离的 ）</li>
+<li>ViewModel - <strong>连接</strong> Model 和 View</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190903/23g0MdeUf9sw.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190903/1qFclAqzYLGt.png?imageslim" alt="mark"></p>
+<h4 id="关于-ViewModel"><a href="#关于-ViewModel" class="headerlink" title="关于 ViewModel"></a>关于 ViewModel</h4><ul>
+<li>MVVM 不算是一种创新</li>
+<li>但其中的 ViewModel 确实是一种创新</li>
+<li>真正 结合前端场景应用的创建</li>
+</ul>
+<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>说一下 对 MVVM 的理解<ul>
+<li>MVVM - Model View ViewModel</li>
+<li>三者之间的联系。以及如何对应到各段代码</li>
+<li>ViewModel 的理解，联系 View 和 Model</li>
+</ul>
+</li>
+</ul>
+<h1 id="MVVM-框架的三大要素"><a href="#MVVM-框架的三大要素" class="headerlink" title="MVVM 框架的三大要素"></a>MVVM 框架的三大要素</h1><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ul>
+<li>再次分析 demo</li>
+<li>三要素总结</li>
+</ul>
+<h3 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h3><ul>
+<li>响应式：vue 如何监听到 data 的每个属性变化？</li>
+<li>模板引擎：vue 的模板如何被解析，指令如何处理？</li>
+<li>渲染：vue 的模板如何被渲染成 html？以及渲染过程</li>
+</ul>
+<h2 id="vue-中如何实现响应式"><a href="#vue-中如何实现响应式" class="headerlink" title="vue 中如何实现响应式"></a>vue 中如何实现响应式</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>什么是响应式？</li>
+<li>Object.defineProperty</li>
+<li>模拟</li>
+</ul>
+<h4 id="什么是响应式？"><a href="#什么是响应式？" class="headerlink" title="什么是响应式？"></a>什么是响应式？</h4><ul>
+<li>修改 data 属性后，vue 立刻监听到</li>
+<li>data 属性被代理到 vm 上</li>
+<li>演示</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/vue/2.6.10/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="javascript">          name: <span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="javascript">          age: <span class="string">&quot;18&quot;</span>,</span></span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190904/h1SkefYXlHkn.gif" alt="mark"></p>
+<h4 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h4><blockquote>
+<p><code>Object.defineProperty()</code> 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。</p>
+<p><strong>语法</strong> ：Object.defineProperty(obj, prop, descriptor)</p>
+<p><strong>参数</strong> ：</p>
+<p><u>Object.defineProperty(obj, prop, descriptor)</u></p>
+<p><strong>obj</strong> ：要在其上定义属性的对象。</p>
+<p><strong>prop</strong> ：要定义或修改的属性的名称。</p>
+<p><strong>descriptor</strong> ：将被定义或修改的属性描述符。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">25</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">//获取属性的时候，如何监听到？</span></span><br><span class="line">obj.age = <span class="number">26</span>; <span class="comment">//赋值属性的时候，如何监听到？</span></span><br></pre></td></tr></table></figure>
+
+<p><em>Object.defineProperty：</em></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">&quot;name&quot;</span>, &#123;</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;get&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">  &#125;,</span><br><span class="line">  set: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;set&quot;</span>);</span><br><span class="line">    name = newVal;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.name);</span><br><span class="line">obj.name = <span class="string">&quot;list&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="模拟实现"><a href="#模拟实现" class="headerlink" title="模拟实现"></a>模拟实现</h3><blockquote>
+<p>模拟实现 Vue 如何监听 data</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 如何监听data</span></span><br><span class="line"><span class="comment">var vm=new Vue(&#123;</span></span><br><span class="line"><span class="comment">    el:&#x27;张三&#x27;,</span></span><br><span class="line"><span class="comment">    data:&#123;</span></span><br><span class="line"><span class="comment">        name:&#x27;张三&#x27;,</span></span><br><span class="line"><span class="comment">        age:20</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟实现</span></span><br><span class="line"><span class="keyword">var</span> vm = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> data = &#123;</span><br><span class="line">  price: <span class="number">100</span>,</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> key, value;</span><br><span class="line"><span class="keyword">for</span> (key <span class="keyword">in</span> data) &#123;</span><br><span class="line">  <span class="comment">//命中闭包。新建一个函数，保证 key 的独立的作用域</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(vm, key, &#123;</span><br><span class="line">      get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;get&quot;</span>); <span class="comment">//监听</span></span><br><span class="line">        <span class="keyword">return</span> data[key];</span><br><span class="line">      &#125;,</span><br><span class="line">      set: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;set&quot;</span>); <span class="comment">//监听</span></span><br><span class="line">        data[key] = newVal;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190904/P570ewmXOdNX.gif" alt="mark"></p>
+<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>什么是响应式？<ul>
+<li>关键是理解 Object.defineProperty</li>
+<li>将 data 的属性代理到 vm 上</li>
+</ul>
+</li>
+</ul>
+<h2 id="vue-中如何解析模板"><a href="#vue-中如何解析模板" class="headerlink" title="vue 中如何解析模板"></a>vue 中如何解析模板</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>模板是什么？</li>
+<li>render 函数</li>
+<li>render 函数 与 vdom</li>
+</ul>
+<h4 id="模板是什么？"><a href="#模板是什么？" class="headerlink" title="模板是什么？"></a>模板是什么？</h4><ul>
+<li><p>本质：字符串</p>
+</li>
+<li><p>有逻辑，如 v-if 、v-for 等</p>
+</li>
+<li><p>与 html 格式很像，但有很大区别</p>
+</li>
+<li><p>最终还要转换为 html 来显示</p>
+</li>
+<li><p><strong>模板最终必须转化成 JS 代码</strong> ，因为：</p>
+<ul>
+<li>有逻辑（v-if、v-for），必须用 JS 才能实现 （ 图灵完备 ）</li>
+<li>转换成 html 渲染页面，必须用 JS 才能实现</li>
+<li>因此，模板最重要转换成 一个 JS 函数 （render 函数）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="render-函数-with-的用法"><a href="#render-函数-with-的用法" class="headerlink" title="render 函数 - with 的用法"></a>render 函数 - with 的用法</h4><blockquote>
+<p>with 的用法 — <strong>自己开发的代码尽量不要使用！</strong></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">20</span>,</span><br><span class="line">  getAddress: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;beijing&quot;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不使用 with</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(obj.name);</span><br><span class="line">  alert(obj.age);</span><br><span class="line">  obj.getAddress();</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">20</span>,</span><br><span class="line">  getAddress: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;beijing&quot;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 with</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">with</span> (obj) &#123;</span><br><span class="line">    alert(obj.name);</span><br><span class="line">    alert(obj.age);</span><br><span class="line">    getAddress();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn1();</span><br></pre></td></tr></table></figure>
+
+<h4 id="render-函数"><a href="#render-函数" class="headerlink" title="render 函数"></a>render 函数</h4><p><img src="http://static.zxinc520.com/blog/20190905/igfqtojmzQ4H.png?imageslim" alt="mark"></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>模板中所有信息都包含在了 render 函数中</li>
+<li>this 即 vm</li>
+<li>price 即 this.price 即 vm.price ，即 data 中的 price</li>
+<li>_c 即 this. _c 即 vm. _c</li>
+</ul>
+<h4 id="render-函数剖析"><a href="#render-函数剖析" class="headerlink" title="render 函数剖析"></a>render 函数剖析</h4><ul>
+<li>从哪里可以看到 render 函数？</li>
+<li>复杂一点的例子，render 函数是什么样子的？</li>
+<li>v- if 、v-for 、v-on 都是怎么处理的？</li>
+</ul>
+<h4 id="看一下-todo-list-demo-的-render-函数"><a href="#看一下-todo-list-demo-的-render-函数" class="headerlink" title="看一下 todo-list demo 的 render 函数"></a>看一下 todo-list demo 的 render 函数</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> (<span class="built_in">this</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> _c(<span class="string">&quot;div&quot;</span>, &#123; <span class="attr">attrs</span>: &#123; <span class="attr">id</span>: <span class="string">&quot;app&quot;</span> &#125; &#125;, [</span><br><span class="line">    _c(<span class="string">&quot;div&quot;</span>, [</span><br><span class="line">      _c(<span class="string">&quot;input&quot;</span>, &#123;</span><br><span class="line">        directives: [</span><br><span class="line">          &#123;</span><br><span class="line">            name: <span class="string">&quot;model&quot;</span>,</span><br><span class="line">            rawName: <span class="string">&quot;v-model&quot;</span>,</span><br><span class="line">            value: title,</span><br><span class="line">            expression: <span class="string">&quot;title&quot;</span>,</span><br><span class="line">          &#125;,</span><br><span class="line">        ],</span><br><span class="line">        attrs: &#123; <span class="attr">type</span>: <span class="string">&quot;text&quot;</span> &#125;,</span><br><span class="line">        domProps: &#123; <span class="attr">value</span>: title &#125;,</span><br><span class="line">        on: &#123;</span><br><span class="line">          input: <span class="function"><span class="keyword">function</span> (<span class="params">$event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> ($event.target.composing) <span class="keyword">return</span>;</span><br><span class="line">            title = $event.target.value;</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;),</span><br><span class="line">      _v(<span class="string">&quot; &quot;</span>),</span><br><span class="line">      _c(<span class="string">&quot;button&quot;</span>, &#123; <span class="attr">on</span>: &#123; <span class="attr">click</span>: add &#125; &#125;, [_v(<span class="string">&quot;submit&quot;</span>)]),</span><br><span class="line">    ]),</span><br><span class="line">    _v(<span class="string">&quot; &quot;</span>),</span><br><span class="line">    _c(</span><br><span class="line">      <span class="string">&quot;ul&quot;</span>,</span><br><span class="line">      _l(list, <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _c(<span class="string">&quot;li&quot;</span>, [_v(_s(item))]);</span><br><span class="line">      &#125;),</span><br><span class="line">      <span class="number">0</span></span><br><span class="line">    ),</span><br><span class="line">  ]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>根据 todo-list demo 的 render 函数</li>
+<li>v- model 是怎么实现的？</li>
+<li>v-on :click 是怎么实现的？</li>
+<li>v- for 是怎么实现的？</li>
+</ul>
+<h4 id="重要"><a href="#重要" class="headerlink" title="重要"></a>重要</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    vue2.0 开始支持预编译</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    开发环境 ：写模板</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    编译打包</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    生产环境：JS</span></span><br><span class="line"><span class="comment">    --------------------------------------------</span></span><br><span class="line"><span class="comment">    React 组件化</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    JSX 模板</span></span><br><span class="line"><span class="comment">    编译 ： -&gt; JS 代码</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><ul>
+<li><p>已经解决了 模板中 “逻辑” （v-for、v-if ）的问题</p>
+</li>
+<li><p>还剩下模板生成 html 问题</p>
+</li>
+<li><p>另外，vm._c 是什么？ render 函数 返回了什么？</p>
+</li>
+</ul>
+<h5 id="先复习一下-vdom-的知识"><a href="#先复习一下-vdom-的知识" class="headerlink" title="先复习一下 vdom 的知识"></a>先复习一下 vdom 的知识</h5><blockquote>
+<p>可参考 <a href="http://zxinc520.com/lcj/%225d63a1bce9920a5ce05e2c3b%22">vdom 篇</a></p>
+</blockquote>
+<p>vdom 的如何应用，核心 API 是什么？</p>
+<ul>
+<li>介绍 <a href="https://github.com/snabbdom/snabbdom">snabbdom</a></li>
+<li>重做 之前的 demo</li>
+<li>核心 API</li>
+</ul>
+<h5 id="render-函数和-vdom"><a href="#render-函数和-vdom" class="headerlink" title="render 函数和 vdom"></a>render 函数和 vdom</h5><p><img src="http://static.zxinc520.com/blog/20190905/ldxxH0zJ4t3s.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190905/MykHq1vOBFyL.png?imageslim" alt="mark"></p>
+<ul>
+<li>updataComponent 中实现了 vdom 的 patch</li>
+<li>页面首次渲染执行 updataComponent</li>
+<li>data 中每次修改属性，执行 updataComponent</li>
+</ul>
+<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>vue 中如何解析 <strong>模板</strong><ul>
+<li>模板：字符串，有逻辑，嵌入 JS 变量……</li>
+<li>模板必须转换成 JS 代码（有逻辑，渲染 html，JS 变量）</li>
+<li>render 函数是什么样子的</li>
+<li>render 函数执行是返回 vnode</li>
+<li>updataComponent</li>
+</ul>
+</li>
+</ul>
+<h1 id="vue-的整个实现流程"><a href="#vue-的整个实现流程" class="headerlink" title="vue 的整个实现流程"></a>vue 的整个实现流程</h1><h3 id="整个实现流程"><a href="#整个实现流程" class="headerlink" title="整个实现流程"></a>整个实现流程</h3><ul>
+<li><p>第一步：解析模板成 render 函数</p>
+<ul>
+<li>with 的用法</li>
+<li>模板中的所有信息都被 render 函数 包含</li>
+<li>模板中用到的 data 中的属性，都变成了 JS 变量</li>
+<li>模板中的 v-model、v-for、v-on 都变成了 JS 逻辑</li>
+<li>render 函数返回 vnode</li>
+</ul>
+</li>
+<li><p>第二步：响应式开始监听</p>
+<ul>
+<li>Object.defineProperty</li>
+<li>将 data 的属性代理到 vm 上</li>
+</ul>
+</li>
+<li><p>第三步：首次渲染，显示页面，且绑定依赖</p>
+<ul>
+<li>初次渲染，执行 updataComponent ，执行 vm.render()</li>
+<li>执行 render 函数，会访问到 vm.list 和 vm.title</li>
+<li>会被响应式的 get 方法监听到 （后面详细讲）</li>
+<li>执行 updataComponent ，会被 vdom 的 patch 方法</li>
+<li>patch 将 vnode 渲染成 DOM ，初次渲染完成</li>
+</ul>
+<hr>
+<ul>
+<li>为何要监听 get，直接监听 set 不行吗？</li>
+<li>data 中有很多属性，有些被用到，有些可能不被用到</li>
+<li>被用到的会走到 get ，不被用到的 不会走到 get</li>
+<li>未走到 get 中的属性，set 的时候我们也无需关心</li>
+<li><strong>避免不必要的重复渲染</strong></li>
+</ul>
+</li>
+<li><p>第四步：data 属性变化，触发 rerender</p>
+<ul>
+<li>修改属性，被响应式 的 set 监听到</li>
+<li>set 中执行 updataComponent</li>
+<li>updataComponent 重新执行 vm.render()</li>
+<li>生成的 vnode 和 prevVnode，通过 patch 进行比较</li>
+</ul>
+</li>
+</ul>
+<h3 id="问题解答-4"><a href="#问题解答-4" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>vue 的整个实现流程？<ul>
+<li>第一步：解析模板成 render 函数</li>
+<li>第二步：响应式开始监听</li>
+<li>第三步：首次渲染，显示页面，且绑定依赖</li>
+<li>第四步：data 属性变化，触发 rerender</li>
+</ul>
+</li>
+</ul>
+<h1 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h1><ul>
+<li><p>说一下 使用 jQuery 和 使用框架的区别</p>
+<ul>
+<li><strong>数据</strong> 和 <strong>视图</strong> 的分离，<u>解耦</u>（ <em>开放封闭原则</em> ）</li>
+<li>以数据驱动视图，只关心数据变化，DOM 操作被封装</li>
+</ul>
+</li>
+<li><p>什么是 MVVM ？</p>
+<ul>
+<li><p>MVVM - Model View ViewModel</p>
+</li>
+<li><p>三者之间的联系。以及如何对应到各段代码</p>
+</li>
+<li><p>ViewModel 的理解，联系 View 和 Model</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="三要素-1"><a href="#三要素-1" class="headerlink" title="三要素"></a>三要素</h3><ul>
+<li><p>响应式：vue 如何监听到 data 的每个属性变化？</p>
+</li>
+<li><p>模板引擎：vue 的模板如何被解析，指令如何处理？</p>
+</li>
+<li><p>渲染：vue 的模板如何被渲染成 html？以及渲染过程？</p>
+</li>
+<li><p>Vue 如何实现响应式？</p>
+<ul>
+<li>关键是理解 Object.defineProperty</li>
+<li>将 data 的属性代理到 vm 上</li>
+</ul>
+</li>
+<li><p>vue 中如何解析 <strong>模板</strong> ？</p>
+<ul>
+<li>模板：字符串，有逻辑，嵌入 JS 变量……</li>
+<li>模板必须转换成 JS 代码（有逻辑，渲染 html，JS 变量）</li>
+<li>render 函数是什么样子的</li>
+<li>render 函数执行是返回 vnode</li>
+<li>updataComponent</li>
+</ul>
+</li>
+<li><p>vue 的整个实现流程？</p>
+<ul>
+<li>第一步：解析模板成 render 函数</li>
+<li>第二步：响应式开始监听</li>
+<li>第三步：首次渲染，显示页面，且绑定依赖</li>
+<li>第四步：data 属性变化，触发 rerender</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>框架</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>MVVM</tag>
+        <tag>响应式、模板解析、渲染</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>微信小程序笔记上</title>
     <url>/2019/09/05/WeChatUp/</url>
     <content><![CDATA[<h1 id="微信小程序笔记上"><a href="#微信小程序笔记上" class="headerlink" title="微信小程序笔记上"></a>微信小程序笔记上</h1><blockquote>
@@ -11053,334 +11983,6 @@ f.constructor === F; // true
       </categories>
       <tags>
         <tag>微信小程序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MVVM 和 vue</title>
-    <url>/2019/09/05/VueTheory/</url>
-    <content><![CDATA[<h1 id="MVVM-和-vue"><a href="#MVVM-和-vue" class="headerlink" title="MVVM 和 vue"></a>MVVM 和 vue</h1><blockquote>
-<p>本章首先介绍了 <strong>jQuery 开发方式和框架开发方式的区别</strong> ，引导学生进入框架开发的思路转变。然后通过 MVC 模式引入 <strong>MVVM</strong> ，在两者比较让学生更快熟悉 MVVM 。最后结合实例，详细讲解 vue 的 <strong>实现原理</strong> ，包括 <strong>响应式</strong>、<strong>模板解析</strong>、<strong>渲染</strong> 这三大要素。…</p>
-<p>高级面试：<strong>vue 知识点</strong></p>
-<p>放弃该放弃的是无奈，放弃不该放弃的是无能，不放弃该放弃的是无知，不放弃不该放弃的是执著！</p>
-<p>It is helpless to give up the waiver. It is incompetence to give up what should not be given up. It is ignorance that does not give up the waiver. It is attachment that does not give up and should not give up!</p>
-</blockquote>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>如何 理解 MVVM</li>
-<li>如何 实现 MVVM</li>
-<li>是否解读过 vue 源码</li>
-</ul>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>说一下 使用 jQuery 和 使用框架的区别</li>
-<li>说一下 对 MVVM 的理解</li>
-<li>vue 中如何实现 <strong>响应式</strong></li>
-<li>vue 中如何解析 <strong>模板</strong></li>
-<li>vue 的 整个实现流程</li>
-</ul>
-<h2 id="使用-jQuery-和-使用框架的区别"><a href="#使用-jQuery-和-使用框架的区别" class="headerlink" title="使用 jQuery 和 使用框架的区别"></a>使用 jQuery 和 使用框架的区别</h2><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
-<li>jQuery 实现 todo-list</li>
-<li>vue 实现 todo-list</li>
-<li>jQuery 和 框架的区别</li>
-</ul>
-<h4 id="jQuery-实现-todo-list"><a href="#jQuery-实现-todo-list" class="headerlink" title="jQuery 实现 todo-list"></a>jQuery 实现 todo-list</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;txt-title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn-submit&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ul-list&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $txtTitle = $(<span class="string">&quot;#txt-title&quot;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $ulList = $(<span class="string">&quot;#ul-list&quot;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> $btnSubmit = $(<span class="string">&quot;#btn-submit&quot;</span>);</span></span><br><span class="line"><span class="javascript">      $btnSubmit.click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> title = $txtTitle.val();</span></span><br><span class="line">        if (!title) &#123;</span><br><span class="line"><span class="javascript">          <span class="keyword">return</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> $li = $(<span class="string">`&lt;li&gt;<span class="subst">$&#123;title&#125;</span>&lt;/li&gt;`</span>);</span></span><br><span class="line">        $ulList.append($li);</span><br><span class="line"><span class="javascript">        $txtTitle.val(<span class="string">&quot;&quot;</span>);</span></span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190902/BaCUCHQ12jJW.gif" alt="mark"></p>
-<h4 id="vue-实现-todo-list"><a href="#vue-实现-todo-list" class="headerlink" title="vue 实现 todo-list"></a>vue 实现 todo-list</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/vue/2.6.10/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="javascript">          title: <span class="string">&quot;&quot;</span>,</span></span><br><span class="line">          list: [],</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line"><span class="javascript">          add: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">this</span>.list.push(<span class="built_in">this</span>.title);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">this</span>.title = <span class="string">&quot;&quot;</span>;</span></span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190903/sQq0jR7s1E7E.gif" alt="mark"></p>
-<h3 id="两者的区别"><a href="#两者的区别" class="headerlink" title="两者的区别"></a>两者的区别</h3><ul>
-<li><strong>数据</strong> 和 <strong>视图</strong> 的分离</li>
-<li>以数据驱动视图</li>
-</ul>
-<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>说一下 使用 jQuery 和 使用框架的区别 ？<ul>
-<li><strong>数据</strong> 和 <strong>视图</strong> 的分离，<u>解耦</u>（ <em>开放封闭原则</em> ）</li>
-<li>以数据驱动视图，只关心数据变化，DOM 操作被封装</li>
-</ul>
-</li>
-</ul>
-<h2 id="说一下-对-MVVM-的理解"><a href="#说一下-对-MVVM-的理解" class="headerlink" title="说一下 对 MVVM 的理解"></a>说一下 对 MVVM 的理解</h2><blockquote>
-<p>目前前端框架中，最为出色的要属 Vue 和 React 了，这俩个框架的核心理念都<strong>是数据驱动页面渲染</strong>，同时他们都是 MVVM 模式的框架，<strong>MVVM 模式</strong> 中的 M 还是固定表示 Modal，V 还是表死 View，这俩个基本都是不会发生变化，一个页面必然需要数据和渲染俩个部分，那么变化的是如何将 Modal 渲染到 View 的过程变了，在 MVVM 模式中，将 View 和 Modal 绑定在一起，只要 Modal 发生了变化，View 就会自动更新，不需要我们认为的再去写如何操作 DOM 更新的过程了</p>
-</blockquote>
-<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>MVC</li>
-<li>MVVM</li>
-<li>关于 ViewModel</li>
-</ul>
-<h4 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h4><ul>
-<li>M -Model 数据</li>
-<li>V - View 视图、界面</li>
-<li>C - Controller 控制器 、逻辑处理</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190903/k21xefObaEwr.png?imageslim" alt="mark"></p>
-<p><strong>MVC</strong>模式（Model–view–controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。</p>
-<p>在前端的 <strong>MVC 模式</strong> 中，M 还是表示 Modal 层，负责与后台交互数据，V 表示 View，负责页面上 DOM 的渲染，C 表示绑定在 DOM 元素上的事件，当 Controllor 中的事件被调用，会去调用 Modal 中的数据，然后交给 View 重新渲染数据</p>
-<h4 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h4><ul>
-<li>M - Model 模型、数据</li>
-<li>V - View 视图、模板（ 视图和模板是分离的 ）</li>
-<li>ViewModel - <strong>连接</strong> Model 和 View</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190903/23g0MdeUf9sw.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190903/1qFclAqzYLGt.png?imageslim" alt="mark"></p>
-<h4 id="关于-ViewModel"><a href="#关于-ViewModel" class="headerlink" title="关于 ViewModel"></a>关于 ViewModel</h4><ul>
-<li>MVVM 不算是一种创新</li>
-<li>但其中的 ViewModel 确实是一种创新</li>
-<li>真正 结合前端场景应用的创建</li>
-</ul>
-<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>说一下 对 MVVM 的理解<ul>
-<li>MVVM - Model View ViewModel</li>
-<li>三者之间的联系。以及如何对应到各段代码</li>
-<li>ViewModel 的理解，联系 View 和 Model</li>
-</ul>
-</li>
-</ul>
-<h1 id="MVVM-框架的三大要素"><a href="#MVVM-框架的三大要素" class="headerlink" title="MVVM 框架的三大要素"></a>MVVM 框架的三大要素</h1><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ul>
-<li>再次分析 demo</li>
-<li>三要素总结</li>
-</ul>
-<h3 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h3><ul>
-<li>响应式：vue 如何监听到 data 的每个属性变化？</li>
-<li>模板引擎：vue 的模板如何被解析，指令如何处理？</li>
-<li>渲染：vue 的模板如何被渲染成 html？以及渲染过程</li>
-</ul>
-<h2 id="vue-中如何实现响应式"><a href="#vue-中如何实现响应式" class="headerlink" title="vue 中如何实现响应式"></a>vue 中如何实现响应式</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>什么是响应式？</li>
-<li>Object.defineProperty</li>
-<li>模拟</li>
-</ul>
-<h4 id="什么是响应式？"><a href="#什么是响应式？" class="headerlink" title="什么是响应式？"></a>什么是响应式？</h4><ul>
-<li>修改 data 属性后，vue 立刻监听到</li>
-<li>data 属性被代理到 vm 上</li>
-<li>演示</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/vue/2.6.10/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="javascript">          name: <span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="javascript">          age: <span class="string">&quot;18&quot;</span>,</span></span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190904/h1SkefYXlHkn.gif" alt="mark"></p>
-<h4 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h4><blockquote>
-<p><code>Object.defineProperty()</code> 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。</p>
-<p><strong>语法</strong> ：Object.defineProperty(obj, prop, descriptor)</p>
-<p><strong>参数</strong> ：</p>
-<p><u>Object.defineProperty(obj, prop, descriptor)</u></p>
-<p><strong>obj</strong> ：要在其上定义属性的对象。</p>
-<p><strong>prop</strong> ：要定义或修改的属性的名称。</p>
-<p><strong>descriptor</strong> ：将被定义或修改的属性描述符。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">25</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">//获取属性的时候，如何监听到？</span></span><br><span class="line">obj.age = <span class="number">26</span>; <span class="comment">//赋值属性的时候，如何监听到？</span></span><br></pre></td></tr></table></figure>
-
-<p><em>Object.defineProperty：</em></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">&quot;name&quot;</span>, &#123;</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;get&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">  &#125;,</span><br><span class="line">  set: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;set&quot;</span>);</span><br><span class="line">    name = newVal;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.name);</span><br><span class="line">obj.name = <span class="string">&quot;list&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="模拟实现"><a href="#模拟实现" class="headerlink" title="模拟实现"></a>模拟实现</h3><blockquote>
-<p>模拟实现 Vue 如何监听 data</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 如何监听data</span></span><br><span class="line"><span class="comment">var vm=new Vue(&#123;</span></span><br><span class="line"><span class="comment">    el:&#x27;张三&#x27;,</span></span><br><span class="line"><span class="comment">    data:&#123;</span></span><br><span class="line"><span class="comment">        name:&#x27;张三&#x27;,</span></span><br><span class="line"><span class="comment">        age:20</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟实现</span></span><br><span class="line"><span class="keyword">var</span> vm = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> data = &#123;</span><br><span class="line">  price: <span class="number">100</span>,</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> key, value;</span><br><span class="line"><span class="keyword">for</span> (key <span class="keyword">in</span> data) &#123;</span><br><span class="line">  <span class="comment">//命中闭包。新建一个函数，保证 key 的独立的作用域</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(vm, key, &#123;</span><br><span class="line">      get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;get&quot;</span>); <span class="comment">//监听</span></span><br><span class="line">        <span class="keyword">return</span> data[key];</span><br><span class="line">      &#125;,</span><br><span class="line">      set: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;set&quot;</span>); <span class="comment">//监听</span></span><br><span class="line">        data[key] = newVal;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190904/P570ewmXOdNX.gif" alt="mark"></p>
-<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>什么是响应式？<ul>
-<li>关键是理解 Object.defineProperty</li>
-<li>将 data 的属性代理到 vm 上</li>
-</ul>
-</li>
-</ul>
-<h2 id="vue-中如何解析模板"><a href="#vue-中如何解析模板" class="headerlink" title="vue 中如何解析模板"></a>vue 中如何解析模板</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>模板是什么？</li>
-<li>render 函数</li>
-<li>render 函数 与 vdom</li>
-</ul>
-<h4 id="模板是什么？"><a href="#模板是什么？" class="headerlink" title="模板是什么？"></a>模板是什么？</h4><ul>
-<li><p>本质：字符串</p>
-</li>
-<li><p>有逻辑，如 v-if 、v-for 等</p>
-</li>
-<li><p>与 html 格式很像，但有很大区别</p>
-</li>
-<li><p>最终还要转换为 html 来显示</p>
-</li>
-<li><p><strong>模板最终必须转化成 JS 代码</strong> ，因为：</p>
-<ul>
-<li>有逻辑（v-if、v-for），必须用 JS 才能实现 （ 图灵完备 ）</li>
-<li>转换成 html 渲染页面，必须用 JS 才能实现</li>
-<li>因此，模板最重要转换成 一个 JS 函数 （render 函数）</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="render-函数-with-的用法"><a href="#render-函数-with-的用法" class="headerlink" title="render 函数 - with 的用法"></a>render 函数 - with 的用法</h4><blockquote>
-<p>with 的用法 — <strong>自己开发的代码尽量不要使用！</strong></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">20</span>,</span><br><span class="line">  getAddress: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;beijing&quot;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不使用 with</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(obj.name);</span><br><span class="line">  alert(obj.age);</span><br><span class="line">  obj.getAddress();</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  age: <span class="number">20</span>,</span><br><span class="line">  getAddress: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;beijing&quot;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 with</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">with</span> (obj) &#123;</span><br><span class="line">    alert(obj.name);</span><br><span class="line">    alert(obj.age);</span><br><span class="line">    getAddress();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn1();</span><br></pre></td></tr></table></figure>
-
-<h4 id="render-函数"><a href="#render-函数" class="headerlink" title="render 函数"></a>render 函数</h4><p><img src="http://static.zxinc520.com/blog/20190905/igfqtojmzQ4H.png?imageslim" alt="mark"></p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
-<li>模板中所有信息都包含在了 render 函数中</li>
-<li>this 即 vm</li>
-<li>price 即 this.price 即 vm.price ，即 data 中的 price</li>
-<li>_c 即 this. _c 即 vm. _c</li>
-</ul>
-<h4 id="render-函数剖析"><a href="#render-函数剖析" class="headerlink" title="render 函数剖析"></a>render 函数剖析</h4><ul>
-<li>从哪里可以看到 render 函数？</li>
-<li>复杂一点的例子，render 函数是什么样子的？</li>
-<li>v- if 、v-for 、v-on 都是怎么处理的？</li>
-</ul>
-<h4 id="看一下-todo-list-demo-的-render-函数"><a href="#看一下-todo-list-demo-的-render-函数" class="headerlink" title="看一下 todo-list demo 的 render 函数"></a>看一下 todo-list demo 的 render 函数</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;title&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> (<span class="built_in">this</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> _c(<span class="string">&quot;div&quot;</span>, &#123; <span class="attr">attrs</span>: &#123; <span class="attr">id</span>: <span class="string">&quot;app&quot;</span> &#125; &#125;, [</span><br><span class="line">    _c(<span class="string">&quot;div&quot;</span>, [</span><br><span class="line">      _c(<span class="string">&quot;input&quot;</span>, &#123;</span><br><span class="line">        directives: [</span><br><span class="line">          &#123;</span><br><span class="line">            name: <span class="string">&quot;model&quot;</span>,</span><br><span class="line">            rawName: <span class="string">&quot;v-model&quot;</span>,</span><br><span class="line">            value: title,</span><br><span class="line">            expression: <span class="string">&quot;title&quot;</span>,</span><br><span class="line">          &#125;,</span><br><span class="line">        ],</span><br><span class="line">        attrs: &#123; <span class="attr">type</span>: <span class="string">&quot;text&quot;</span> &#125;,</span><br><span class="line">        domProps: &#123; <span class="attr">value</span>: title &#125;,</span><br><span class="line">        on: &#123;</span><br><span class="line">          input: <span class="function"><span class="keyword">function</span> (<span class="params">$event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> ($event.target.composing) <span class="keyword">return</span>;</span><br><span class="line">            title = $event.target.value;</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;),</span><br><span class="line">      _v(<span class="string">&quot; &quot;</span>),</span><br><span class="line">      _c(<span class="string">&quot;button&quot;</span>, &#123; <span class="attr">on</span>: &#123; <span class="attr">click</span>: add &#125; &#125;, [_v(<span class="string">&quot;submit&quot;</span>)]),</span><br><span class="line">    ]),</span><br><span class="line">    _v(<span class="string">&quot; &quot;</span>),</span><br><span class="line">    _c(</span><br><span class="line">      <span class="string">&quot;ul&quot;</span>,</span><br><span class="line">      _l(list, <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _c(<span class="string">&quot;li&quot;</span>, [_v(_s(item))]);</span><br><span class="line">      &#125;),</span><br><span class="line">      <span class="number">0</span></span><br><span class="line">    ),</span><br><span class="line">  ]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>根据 todo-list demo 的 render 函数</li>
-<li>v- model 是怎么实现的？</li>
-<li>v-on :click 是怎么实现的？</li>
-<li>v- for 是怎么实现的？</li>
-</ul>
-<h4 id="重要"><a href="#重要" class="headerlink" title="重要"></a>重要</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    vue2.0 开始支持预编译</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    开发环境 ：写模板</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    编译打包</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    生产环境：JS</span></span><br><span class="line"><span class="comment">    --------------------------------------------</span></span><br><span class="line"><span class="comment">    React 组件化</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    JSX 模板</span></span><br><span class="line"><span class="comment">    编译 ： -&gt; JS 代码</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><ul>
-<li><p>已经解决了 模板中 “逻辑” （v-for、v-if ）的问题</p>
-</li>
-<li><p>还剩下模板生成 html 问题</p>
-</li>
-<li><p>另外，vm._c 是什么？ render 函数 返回了什么？</p>
-</li>
-</ul>
-<h5 id="先复习一下-vdom-的知识"><a href="#先复习一下-vdom-的知识" class="headerlink" title="先复习一下 vdom 的知识"></a>先复习一下 vdom 的知识</h5><blockquote>
-<p>可参考 <a href="http://zxinc520.com/lcj/%225d63a1bce9920a5ce05e2c3b%22">vdom 篇</a></p>
-</blockquote>
-<p>vdom 的如何应用，核心 API 是什么？</p>
-<ul>
-<li>介绍 <a href="https://github.com/snabbdom/snabbdom">snabbdom</a></li>
-<li>重做 之前的 demo</li>
-<li>核心 API</li>
-</ul>
-<h5 id="render-函数和-vdom"><a href="#render-函数和-vdom" class="headerlink" title="render 函数和 vdom"></a>render 函数和 vdom</h5><p><img src="http://static.zxinc520.com/blog/20190905/ldxxH0zJ4t3s.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190905/MykHq1vOBFyL.png?imageslim" alt="mark"></p>
-<ul>
-<li>updataComponent 中实现了 vdom 的 patch</li>
-<li>页面首次渲染执行 updataComponent</li>
-<li>data 中每次修改属性，执行 updataComponent</li>
-</ul>
-<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>vue 中如何解析 <strong>模板</strong><ul>
-<li>模板：字符串，有逻辑，嵌入 JS 变量……</li>
-<li>模板必须转换成 JS 代码（有逻辑，渲染 html，JS 变量）</li>
-<li>render 函数是什么样子的</li>
-<li>render 函数执行是返回 vnode</li>
-<li>updataComponent</li>
-</ul>
-</li>
-</ul>
-<h1 id="vue-的整个实现流程"><a href="#vue-的整个实现流程" class="headerlink" title="vue 的整个实现流程"></a>vue 的整个实现流程</h1><h3 id="整个实现流程"><a href="#整个实现流程" class="headerlink" title="整个实现流程"></a>整个实现流程</h3><ul>
-<li><p>第一步：解析模板成 render 函数</p>
-<ul>
-<li>with 的用法</li>
-<li>模板中的所有信息都被 render 函数 包含</li>
-<li>模板中用到的 data 中的属性，都变成了 JS 变量</li>
-<li>模板中的 v-model、v-for、v-on 都变成了 JS 逻辑</li>
-<li>render 函数返回 vnode</li>
-</ul>
-</li>
-<li><p>第二步：响应式开始监听</p>
-<ul>
-<li>Object.defineProperty</li>
-<li>将 data 的属性代理到 vm 上</li>
-</ul>
-</li>
-<li><p>第三步：首次渲染，显示页面，且绑定依赖</p>
-<ul>
-<li>初次渲染，执行 updataComponent ，执行 vm.render()</li>
-<li>执行 render 函数，会访问到 vm.list 和 vm.title</li>
-<li>会被响应式的 get 方法监听到 （后面详细讲）</li>
-<li>执行 updataComponent ，会被 vdom 的 patch 方法</li>
-<li>patch 将 vnode 渲染成 DOM ，初次渲染完成</li>
-</ul>
-<hr>
-<ul>
-<li>为何要监听 get，直接监听 set 不行吗？</li>
-<li>data 中有很多属性，有些被用到，有些可能不被用到</li>
-<li>被用到的会走到 get ，不被用到的 不会走到 get</li>
-<li>未走到 get 中的属性，set 的时候我们也无需关心</li>
-<li><strong>避免不必要的重复渲染</strong></li>
-</ul>
-</li>
-<li><p>第四步：data 属性变化，触发 rerender</p>
-<ul>
-<li>修改属性，被响应式 的 set 监听到</li>
-<li>set 中执行 updataComponent</li>
-<li>updataComponent 重新执行 vm.render()</li>
-<li>生成的 vnode 和 prevVnode，通过 patch 进行比较</li>
-</ul>
-</li>
-</ul>
-<h3 id="问题解答-4"><a href="#问题解答-4" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>vue 的整个实现流程？<ul>
-<li>第一步：解析模板成 render 函数</li>
-<li>第二步：响应式开始监听</li>
-<li>第三步：首次渲染，显示页面，且绑定依赖</li>
-<li>第四步：data 属性变化，触发 rerender</li>
-</ul>
-</li>
-</ul>
-<h1 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h1><ul>
-<li><p>说一下 使用 jQuery 和 使用框架的区别</p>
-<ul>
-<li><strong>数据</strong> 和 <strong>视图</strong> 的分离，<u>解耦</u>（ <em>开放封闭原则</em> ）</li>
-<li>以数据驱动视图，只关心数据变化，DOM 操作被封装</li>
-</ul>
-</li>
-<li><p>什么是 MVVM ？</p>
-<ul>
-<li><p>MVVM - Model View ViewModel</p>
-</li>
-<li><p>三者之间的联系。以及如何对应到各段代码</p>
-</li>
-<li><p>ViewModel 的理解，联系 View 和 Model</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="三要素-1"><a href="#三要素-1" class="headerlink" title="三要素"></a>三要素</h3><ul>
-<li><p>响应式：vue 如何监听到 data 的每个属性变化？</p>
-</li>
-<li><p>模板引擎：vue 的模板如何被解析，指令如何处理？</p>
-</li>
-<li><p>渲染：vue 的模板如何被渲染成 html？以及渲染过程？</p>
-</li>
-<li><p>Vue 如何实现响应式？</p>
-<ul>
-<li>关键是理解 Object.defineProperty</li>
-<li>将 data 的属性代理到 vm 上</li>
-</ul>
-</li>
-<li><p>vue 中如何解析 <strong>模板</strong> ？</p>
-<ul>
-<li>模板：字符串，有逻辑，嵌入 JS 变量……</li>
-<li>模板必须转换成 JS 代码（有逻辑，渲染 html，JS 变量）</li>
-<li>render 函数是什么样子的</li>
-<li>render 函数执行是返回 vnode</li>
-<li>updataComponent</li>
-</ul>
-</li>
-<li><p>vue 的整个实现流程？</p>
-<ul>
-<li>第一步：解析模板成 render 函数</li>
-<li>第二步：响应式开始监听</li>
-<li>第三步：首次渲染，显示页面，且绑定依赖</li>
-<li>第四步：data 属性变化，触发 rerender</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>框架</category>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-        <tag>MVVM</tag>
-        <tag>响应式、模板解析、渲染</tag>
       </tags>
   </entry>
   <entry>
@@ -12451,8 +13053,8 @@ f.constructor === F; // true
 ]]></content>
       <categories>
         <category>JS</category>
-        <category>JS 三座大山</category>
         <category>基础知识</category>
+        <category>JS 三座大山</category>
       </categories>
       <tags>
         <tag>JS</tag>
@@ -12614,8 +13216,8 @@ f.constructor === F; // true
 ]]></content>
       <categories>
         <category>JS</category>
-        <category>JS 三座大山</category>
         <category>基础知识</category>
+        <category>JS 三座大山</category>
       </categories>
       <tags>
         <tag>JS</tag>
@@ -13052,8 +13654,8 @@ f.constructor === F; // true
 ]]></content>
       <categories>
         <category>JS</category>
-        <category>JS 三座大山</category>
         <category>基础知识</category>
+        <category>JS 三座大山</category>
       </categories>
       <tags>
         <tag>DOM</tag>

@@ -160,6 +160,399 @@
     
     
     <article
+  id="post-WeChatUp02"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/09/05/WeChatUp02/"
+    >微信小程序笔记下</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/09/05/WeChatUp02/" class="article-date">
+  <time datetime="2019-09-05T09:07:39.000Z" itemprop="datePublished">2019-09-05</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a> / <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8B%E7%AF%87/">微信小程序下篇</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="微信小程序笔记下"><a href="#微信小程序笔记下" class="headerlink" title="微信小程序笔记下"></a>微信小程序笔记下</h1><blockquote>
+<p>微信小程序笔记下</p>
+<p>input</p>
+<p>color 属性</p>
+<p>bindchange</p>
+<p>wxs 页面脚本</p>
+<p>微信小程序事件 <strong>冒泡 ** 和 事件</strong>传参**</p>
+<p>服务号、订阅号</p>
+<p>sdk</p>
+</blockquote>
+<h2 id="微信小程序组件"><a href="#微信小程序组件" class="headerlink" title="微信小程序组件"></a>微信小程序组件</h2><h3 id="表单组件"><a href="#表单组件" class="headerlink" title="表单组件"></a>表单组件</h3><h4 id="input"><a href="#input" class="headerlink" title="input"></a>input</h4><blockquote>
+<p>输入框。该组件是<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html">原生组件</a>，使用时请注意相关限制</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html">可以参考</a></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 输入框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;text&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;text&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;password&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;password&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;number&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;number&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;idcard&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;idcard&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;digit&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&#x27;digit&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 单选框 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio-group</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">radio</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">radio</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">radio-group</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 多选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">checkbox-group</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">checkbox-group</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/iBUB5P8LKOTz.png?imageslim" alt="mark"></p>
+<h3 id="改变颜色"><a href="#改变颜色" class="headerlink" title="改变颜色"></a>改变颜色</h3><blockquote>
+<p><strong>color 属性</strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 单选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">radio-group</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span> <span class="attr">color</span>=<span class="string">&quot;#f30&quot;</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">radio-group</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 多选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">checkbox-group</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">checkbox</span> <span class="attr">color</span>=<span class="string">&quot;#f30&quot;</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">checkbox</span>&gt;</span>多选框<span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">checkbox-group</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/0lbNety1l8Nr.gif" alt="mark"></p>
+<ul>
+<li>checked：默认选中</li>
+<li>disabled: 禁用</li>
+</ul>
+<h3 id="bindchange"><a href="#bindchange" class="headerlink" title="bindchange"></a>bindchange</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/checkbox-group.html">checkbox-group</a>中选中项发生改变时触发 change 事件，detail = {value:[选中的 checkbox 的 value 的数组]}</p>
+<p><strong>单选框</strong> 和 <strong>复选框</strong> 都能用！</p>
+</blockquote>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 单选框 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">radio-group</span> =<span class="string">&quot;radiobindchangefun&quot;</span> <span class="attr">data-index</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span> <span class="attr">color</span>=<span class="string">&quot;#f30&quot;</span> <span class="attr">value</span>=<span class="string">&quot;nan&quot;</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">radio</span> <span class="attr">value</span>=<span class="string">&quot;nv&quot;</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">radio-group</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>index.js：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">radiobindchangefun(e)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.detail.value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/HhwLwtgLFk7s.gif" alt="mark"></p>
+<h2 id="wxs-页面脚本"><a href="#wxs-页面脚本" class="headerlink" title="wxs 页面脚本"></a>wxs 页面脚本</h2><blockquote>
+<p>WXS（WeiXin Script）是小程序的一套脚本语言，结合 <code>WXML</code>，可以构建出页面的结构。</p>
+<p>WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。</p>
+<p><strong>用的相对不多</strong></p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/01wxs-module.html">WXS 模块</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/02variate.html">变量</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/03annotation.html">注释</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/04operator.html">运算符</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/05statement.html">语句</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/06datatype.html">数据类型</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/07basiclibrary.html">基础类库</a></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">wxs</span> <span class="attr">module</span>=<span class="string">&quot;foo&quot;</span>&gt;</span></span><br><span class="line">  var sum=function(a,b)&#123; return a+b; &#125; module.exports.sum=sum</span><br><span class="line"><span class="tag">&lt;/<span class="name">wxs</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;foo.sum(1,2)&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/sEHFhCJgcSTT.png?imageslim" alt="mark"></p>
+<h2 id="微信小程序事件冒泡和事件传参"><a href="#微信小程序事件冒泡和事件传参" class="headerlink" title="微信小程序事件冒泡和事件传参"></a>微信小程序事件冒泡和事件传参</h2><blockquote>
+<p>微信小程序事件冒泡和事件传参</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html">参考</a></p>
+</blockquote>
+<h3 id="事件绑定和冒泡"><a href="#事件绑定和冒泡" class="headerlink" title="事件绑定和冒泡"></a>事件绑定和冒泡</h3><p>事件绑定的写法同组件的属性，以 key、value 的形式。</p>
+<ul>
+<li>key 以<code>bind</code>或<code>catch</code>开头，然后跟上事件的类型，如<code>bindtap</code>、<code>catchtouchstart</code>。自基础库版本 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">1.5.0</a> 起，在非<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html">原生组件</a>中，<code>bind</code>和<code>catch</code>后可以紧跟一个冒号，其含义不变，如<code>bind:tap</code>、<code>catch:touchstart</code>。</li>
+<li>value 是一个字符串，需要在对应的 Page 中定义同名的函数。不然当触发事件的时候会报错。</li>
+</ul>
+<p><code>bind</code>事件绑定<strong>不会阻止</strong>冒泡事件向上冒泡，<code>catch</code>事件绑定<strong>可以阻止</strong>冒泡事件向上冒泡。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span> <span class="attr">bindtap</span>=<span class="string">&quot;ClickFatherEvent&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span> <span class="attr">catchtap</span>=<span class="string">&quot;ClickSonEvent&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190610/iYPyQKFs0uUh.gif" alt="mark"></p>
+<h3 id="事件传参"><a href="#事件传参" class="headerlink" title="事件传参"></a>事件传参</h3><blockquote>
+<p>自定义属性传参 ( <strong>data-index=”1”</strong> )</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span> <span class="attr">bindtap</span>=<span class="string">&quot;ClickFatherEvent&quot;</span> <span class="attr">data-index</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span> <span class="attr">catchtap</span>=<span class="string">&quot;ClickSonEvent&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ClickFatherEvent(event)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;father&#x27;</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(event.currentTarget.dataset.index)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190611/QGePjx2yA28Q.gif" alt="mark"></p>
+<h2 id="服务号"><a href="#服务号" class="headerlink" title="服务号"></a>服务号</h2><blockquote>
+<p>服务号：为企业和组织提供更强大的业务服务与用户管理能力，主要偏向服务类交互（功能类似 12315，114，银行，提供绑定信息，服务交互的）；</p>
+<p>适用人群：媒体、企业、政府或其他组织。</p>
+<p>群发次数：服务号 1 个月（按自然月）内可发送 4 条群发消息。</p>
+<p><a target="_blank" rel="noopener" href="https://kf.qq.com/faq/120911VrYVrA150918fMZ77R.html?scene_id=kf3386">可以参考</a></p>
+</blockquote>
+<h2 id="订阅号"><a href="#订阅号" class="headerlink" title="订阅号"></a>订阅号</h2><blockquote>
+<h1 id="什么是订阅号？"><a href="#什么是订阅号？" class="headerlink" title="什么是订阅号？"></a>什么是订阅号？</h1><p>订阅号：为媒体和个人提供一种新的信息传播方式，主要功能是在微信侧给用户传达资讯；（功能类似报纸杂志，提供新闻信息或娱乐趣事）</p>
+<p>适用人群：个人、媒体、企业、政府或其他组织。</p>
+<p>群发次数：订阅号（认证用户、非认证用户）1 天内可群发 1 条消息。</p>
+</blockquote>
+<p><strong>温馨提示：</strong></p>
+<ol>
+<li>如果想用公众平台简单发发消息，做宣传推广服务，建议可选择订阅号；</li>
+<li>如果想用公众平台进行商品销售，建议可选择服务号，后续可认证再申请微信支付商户；</li>
+</ol>
+<h2 id="sdk"><a href="#sdk" class="headerlink" title="sdk"></a>sdk</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%8C%85">软件开发工具包</a>（缩写：<strong>SDK</strong>、外语全称：<strong>Software Development Kit）</strong>一般都是一些<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275">软件工程师</a>为特定的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%8C%85/10508451">软件包</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6/1471931">软件框架</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%A1%AC%E4%BB%B6/479446">硬件</a>平台、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/192">操作系统</a>等建立应用软件时的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/10464557">开发工具</a>的集合。 [1]</p>
+<p>软件开发工具包括广义上指<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BE%85%E5%8A%A9/1045139">辅助</a>开发某一类软件的相关文档、范例和工具的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%9B%86%E5%90%88/73081">集合</a>。</p>
+<p>软件开发工具包是一些被软件工程师用于为特定的软件包、软件框架、硬件平台、操作系统等创建应用软件的开发工具的集合，一般而言 SDK 即开发 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Windows">Windows</a> 平台下的应用程序所使用的 SDK。它可以简单的为某个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80/2317999">程序设计语言</a>提供<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%8F%A3/10418844">应用程序接口</a> <strong>API</strong>的一些文件，但也可能包括能与某种<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F/186978">嵌入式系统</a>通讯的复杂的硬件。一般的工具包括用于调试和其他用途的实用工具。SDK 还经常包括示例代码、支持性的技术注解或者其他的为基本参考资料澄清疑点的支持文档。</p>
+<p>为了鼓励开发者使用其系统或者语言，许多 SDK 是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%8D%E8%B4%B9/131326">免费</a>提供的。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275">软件工程师</a>通常从目标系统开发者那里获得软件开发包，也可以直接从互联网下载，有时也被作为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%90%A5%E9%94%80%E6%89%8B%E6%AE%B5">营销手段</a>。例如，营销公司会免费提供构建 SDK 以鼓励人们使用它，从而会吸引更多人由于能免费为其编程而购买其构件。</p>
+<p>SDK 可能附带了使其不能在不兼容的许可证下开发软件的许可证。例如产品供应商提供一个专有的 SDK 可能与自由软件开发抵触。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/GPL">GPL</a> 能使 SDK 与专有软件开发近乎不兼容。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/LGPL">LGPL</a> 下的 SDK 则没有这个问题。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/SDK/7815680">可参考官方解释</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">微信 JS-SDK 说明文档</a></p>
+</blockquote>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
+  id="post-hybrid"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/08/29/hybrid/"
+    >hybrid</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/08/29/hybrid/" class="article-date">
+  <time datetime="2019-08-29T07:53:28.000Z" itemprop="datePublished">2019-08-29</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B7%B7%E5%90%88APP/">混合APP</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="hybrid"><a href="#hybrid" class="headerlink" title="hybrid"></a>hybrid</h1><blockquote>
+<p>本章主要介绍 hybrid 的原理和应用。hybrid 基础部分要讲解 file 协议、webview、更新上线流程；另外，通过 h5 和 hybrid 的对比，来了解两者的异同和使用场景；最后讲解前端 JS 和客户端的通讯，包括通讯原理和 JS-bridge 的代码封装。…</p>
+<p>社会主流 <strong>大前端</strong> 的概念。</p>
+<p><strong>知识点</strong></p>
+<p>6-1 hybrid 是什么？ 为何用 hybrid ？</p>
+<p>6-2 hybrid 更新上线流程</p>
+<p>6-3 hybrid 和 h5 的 主要区别？</p>
+<p>6-4 前端 JS 和 客户端 如何通讯？</p>
+<p>The greatest test of courage on earth is to bear defeat without losing heart.</p>
+<p>世界上对勇气的最大考验是忍受失败而不丧失信心。</p>
+</blockquote>
+<h3 id="hybrid-1"><a href="#hybrid-1" class="headerlink" title="hybrid"></a>hybrid</h3><ul>
+<li>移动端占大部分流量，已经远远超过 PC</li>
+<li>一线互联网公司都有自己的 App</li>
+<li>这些 App 中有很大比例的前端代码 ( 不要惊讶 )</li>
+<li>拿微信举例，你每天浏览微信的内容，多少是前端？</li>
+</ul>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>hybrid 是什么？ 为何用 hybrid ？</li>
+<li>介绍一下 hybrid 更新 和上线的流程？</li>
+<li>hybrid 和 h5 的 主要区别？</li>
+<li>前端 JS 和 客户端 如何通讯？</li>
+</ul>
+<h2 id="6-1-hybrid-是什么？-为何用-hybrid-？"><a href="#6-1-hybrid-是什么？-为何用-hybrid-？" class="headerlink" title="6-1 hybrid 是什么？ 为何用 hybrid ？"></a>6-1 hybrid 是什么？ 为何用 hybrid ？</h2><h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>hybrid 文字解释</li>
+<li>存在价值，为何用 hybrid ？</li>
+<li>webview</li>
+<li>file：//协议</li>
+<li>hybrid 实现流程</li>
+</ul>
+<h4 id="hybrid-文字解释"><a href="#hybrid-文字解释" class="headerlink" title="hybrid 文字解释"></a>hybrid 文字解释</h4><ul>
+<li>hybrid 即 “混合” ，即 前端 和客户端的混合开发</li>
+<li>需前端开发人员 和 客户端开发人员配合完成</li>
+<li>某些环节也可能涉及到 server 端</li>
+<li>注意：不要以为自己是前端就可以不理会客户端的知识</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190829/no77eoeMXoEi.png?imageslim" alt="mark"></p>
+<h4 id="hybrid-存在价值"><a href="#hybrid-存在价值" class="headerlink" title="hybrid 存在价值"></a>hybrid 存在价值</h4><ul>
+<li>可以快速迭代更新【关键】（无需 app 审核，思考为何？–&gt; 前端部分能够快速更新上线）</li>
+<li>体验流畅 （ 和 NA 的体验基本类似 ）</li>
+<li>减少开发和沟通成本，双端公用一套代码</li>
+</ul>
+<h4 id="webview"><a href="#webview" class="headerlink" title="webview"></a>webview</h4><ul>
+<li>是 App 中的一个组件（app 可以有 webview，也可以没有）</li>
+<li>用于加载 h5 页面，即一个小型的浏览器 内核</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190829/I797MG2jf2xe.png?imageslim" alt="mark"></p>
+<h4 id="file-协议"><a href="#file-协议" class="headerlink" title="file 协议"></a>file 协议</h4><ul>
+<li>其实在一开始接触 html 开发，就已经使用了 file 协议</li>
+<li>只不过你当时没有 “协议” “标准” 等这些概念</li>
+<li>再次强调 “协议” “标准” 的重要性 ！！！</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190829/kyXpWyLb4oVR.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190829/cxJ86AeO2374.png?imageslim" alt="mark"></p>
+<p><em>两者的区别：</em></p>
+<ul>
+<li>file 协议：本地文件，快</li>
+<li>http(s) 协议：网络加载，慢</li>
+</ul>
+<h4 id="hybrid-具体实现"><a href="#hybrid-具体实现" class="headerlink" title="hybrid 具体实现"></a>hybrid 具体实现</h4><ul>
+<li>不是所有的场景都适合使用 hybrid</li>
+<li>使用 <strong>NA</strong> ：体验要求极致，变化不频繁（ 如头条的首页 ）</li>
+<li>使用 <strong>hybrid</strong> ：体验要求高，变化频繁（ 如头条的新闻详情页 ）</li>
+<li>使用 <strong>h5</strong> ：体验无要求，不常用（如举报、反馈等页面）</li>
+</ul>
+<p><strong>具体实现</strong>：</p>
+<ul>
+<li>前端 做好静态页面（html css js），将文件交给客户端</li>
+<li>客户端拿到前端静态页面，以文件形式储存在 app 中</li>
+<li>客户端 在一个 webview 中</li>
+<li>使用 file 协议 加载静态页面</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190829/RIR0zOPUN22I.png?imageslim" alt="mark"></p>
+<h4 id="具体实现-–-遗留问题："><a href="#具体实现-–-遗留问题：" class="headerlink" title="具体实现 – 遗留问题："></a>具体实现 – 遗留问题：</h4><ul>
+<li>app 发布之后，静态文件如何实时更新？</li>
+<li>静态页面如何获取内容？</li>
+</ul>
+<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>hybrid 是什么？ 为何用 hybrid ？<ul>
+<li>hybrid 即 “混合” ，即 前端 和客户端的混合开发</li>
+<li>hybrid 存在的核心意义在于快速迭代，无需审核</li>
+<li>hybrid 实现流程（图），以及 webview 和 file 协议</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-2-hybrid-更新上线流程"><a href="#6-2-hybrid-更新上线流程" class="headerlink" title="6-2 hybrid 更新上线流程"></a>6-2 hybrid 更新上线流程</h2><ul>
+<li>回顾 hybrid 实现流程</li>
+<li>思考 （目的，实现途径）</li>
+<li>更新流程</li>
+</ul>
+<h4 id="回顾-hybrid-实现流程"><a href="#回顾-hybrid-实现流程" class="headerlink" title="回顾 hybrid 实现流程"></a>回顾 hybrid 实现流程</h4><p><img src="http://static.zxinc520.com/blog/20190829/aeHMDopqsrCy.png?imageslim" alt="mark"></p>
+<h4 id="思考-（目的，实现途径）"><a href="#思考-（目的，实现途径）" class="headerlink" title="思考 （目的，实现途径）"></a>思考 （目的，实现途径）</h4><p><img src="http://static.zxinc520.com/blog/20190829/wCDenA4EGmC8.png?imageslim" alt="mark"></p>
+<ul>
+<li>要替换每个客户端的静态文件</li>
+<li>只能客户端来做（客户端是我们开发的）</li>
+<li>客户端去 server 下载最新的静态文件</li>
+<li>我们维护 server 的静态文件</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190829/H6H3arUgJB6d.png?imageslim" alt="mark"></p>
+<p><em>完整流程：</em></p>
+<ul>
+<li>分版本，有版本号，如 201803211015</li>
+<li>将静态 文件压缩成 zip 包，上传到服务器</li>
+<li>客户端每次启动，都去服务端检查版本号</li>
+<li>如果服务端本版本号大于客户端版本号，就去下载最新的 zip 包</li>
+<li>下载完之后解压包，然后将现有的文件覆盖</li>
+</ul>
+<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>介绍一下 hybrid 更新 和上线的流程？<ul>
+<li>掌握流程图</li>
+<li>要点 1：服务端的版本和 zip 包维护</li>
+<li>要点 2：更新 zip 包之前，先对比版本号</li>
+<li>要点 3：zip 下载解压和覆盖</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-3hybrid-和-h5-的-主要区别？"><a href="#6-3hybrid-和-h5-的-主要区别？" class="headerlink" title="6-3hybrid 和 h5 的 主要区别？"></a>6-3hybrid 和 h5 的 主要区别？</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>优点</li>
+<li>缺点</li>
+<li>适用的场景</li>
+</ul>
+<h4 id="hybrid-优点"><a href="#hybrid-优点" class="headerlink" title="hybrid 优点"></a>hybrid 优点</h4><ul>
+<li>体验更好，跟 NA 体验基本一致</li>
+<li>可快速迭代，无需 app 审核 【关键】</li>
+</ul>
+<h4 id="hybrid-缺点"><a href="#hybrid-缺点" class="headerlink" title="hybrid 缺点"></a>hybrid 缺点</h4><ul>
+<li>开发成本高。联调，测试，查 bug 都比较麻烦</li>
+<li>运维成本高。参考此前讲过的更新上线的流程</li>
+</ul>
+<h4 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h4><ul>
+<li>hybrid ：产品的稳定功能，体验要求高，迭代频繁</li>
+<li>h5：单次的运营活动（如 xx 红包）或 不常用功能（反馈、举报页面等）</li>
+</ul>
+<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>hybrid 和 h5 的 主要区别？<ul>
+<li>优点：体验好，可快速迭代</li>
+<li>缺点：开发成本高，运维成本高</li>
+<li>适用的场景：hybrid 适合产品型，h5 适合 运行型</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-4-前端-JS-和-客户端-如何通讯？"><a href="#6-4-前端-JS-和-客户端-如何通讯？" class="headerlink" title="6-4 前端 JS 和 客户端 如何通讯？"></a>6-4 前端 JS 和 客户端 如何通讯？</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>回顾 之前遗留的问题</li>
+<li>JS 和 客户端通讯的基本形式</li>
+<li>schema 协议简介和使用</li>
+<li>schema 使用的封装</li>
+<li>内置上线</li>
+</ul>
+<h4 id="之前遗留的问题"><a href="#之前遗留的问题" class="headerlink" title="之前遗留的问题"></a>之前遗留的问题</h4><ul>
+<li>新闻详情页适用于 hybrid，前端如何 获取新闻内容 ？<ul>
+<li>不能用 ajax （http(s)协议）获取。第一： 跨域 ，第二 ：速度慢</li>
+<li>客户端获取新闻内容，然后 JS 通讯拿到内容，再渲染</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190829/MIj2ETWq9QH1.png?imageslim" alt="mark"></p>
+<p><em>JS 和 客户端通讯的基本形式</em> ：</p>
+<ul>
+<li>JS 访问客户端能力，传递参数 和 回调函数</li>
+<li>客户端 通过 回调函数 返回内容</li>
+</ul>
+<h4 id="schema-协议简介和使用"><a href="#schema-协议简介和使用" class="headerlink" title="schema 协议简介和使用"></a>schema 协议简介和使用</h4><ul>
+<li>之前介绍了 http(s) 和 file 协议</li>
+<li>schema 协议 ——前端和客户端通讯的约定</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190829/w3OphLjO8erc.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190829/QpzXgisk6E3y.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190829/RjgtefgjYzXH.png?imageslim" alt="mark"></p>
+<h4 id="模拟扫一扫前后端通讯"><a href="#模拟扫一扫前后端通讯" class="headerlink" title="模拟扫一扫前后端通讯"></a>模拟扫一扫前后端通讯</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>扫一扫<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="function"><span class="keyword">function</span> <span class="title">invokeScan</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>[<span class="string">&quot;_invoke_scan_callback_&quot;</span>] = <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span></span><br><span class="line">          alert(result);</span><br><span class="line">        &#125;;</span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">&quot;iframe&quot;</span>);</span></span><br><span class="line"><span class="javascript">        iframe.style.display = <span class="string">&quot;none&quot;</span>;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// iframe.src = &#x27;weixin://dl/scan&#x27;  //重要</span></span></span><br><span class="line">        iframe.src =</span><br><span class="line"><span class="javascript">          <span class="string">&quot;weixin://dl/scan?k1=v1&amp;k2=v2&amp;k3=v3&amp;callback=_invoke_scan_callback_&quot;</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> body = <span class="built_in">document</span>.body;</span></span><br><span class="line">        body.appendChild(iframe);</span><br><span class="line"><span class="javascript">        <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line">          body.removeChild(iframe);</span><br><span class="line"><span class="javascript">          iframe = <span class="literal">null</span>;</span></span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.getElementById(<span class="string">&quot;btn&quot;</span>).addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line">        invokeScan();</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="schema-使用的封装"><a href="#schema-使用的封装" class="headerlink" title="schema 使用的封装"></a>schema 使用的封装</h4><p><img src="http://static.zxinc520.com/blog/20190829/jcvC6T5SH3Pm.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190829/fW8NCvLoYRAg.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190829/5Yhq6r9uLr7X.png?imageslim" alt="mark"></p>
+<h4 id="schema-封装代码"><a href="#schema-封装代码" class="headerlink" title="schema 封装代码"></a>schema 封装代码</h4><p><em>schema 使用的封装</em> ：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn1&quot;</span>&gt;</span>扫一扫<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn2&quot;</span>&gt;</span>分享<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;invoke.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="comment">//调用扫一扫</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.getElementById(<span class="string">&quot;btn1&quot;</span>).addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.invoke.scan(&#123;&#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;);</span></span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line"><span class="javascript">      <span class="comment">//调用分享</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.getElementById(<span class="string">&quot;btn2&quot;</span>).addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.invoke.share(</span></span><br><span class="line">          &#123;</span><br><span class="line"><span class="javascript">            title: <span class="string">&quot;xxx&quot;</span>,</span></span><br><span class="line"><span class="javascript">            content: <span class="string">&quot;yyy&quot;</span>,</span></span><br><span class="line">          &#125;,</span><br><span class="line"><span class="javascript">          <span class="function"><span class="keyword">function</span> (<span class="params">relust</span>) </span>&#123;</span></span><br><span class="line">            if (relust.error === 0) &#123;</span><br><span class="line"><span class="javascript">              alert(<span class="string">&quot;分享成功&quot;</span>);</span></span><br><span class="line"><span class="javascript">            &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line">              alert(relust.message);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        );</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>invoke.js</em> ：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// invoke.js</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">window, undefined</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//调用 schema 的封装</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">_invoke</span>(<span class="params">action, data, callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//拼装 schema 协议</span></span><br><span class="line">    <span class="keyword">var</span> schema = <span class="string">&quot;myapp://utils/&quot;</span> + action;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//拼接参数</span></span><br><span class="line">    schema += <span class="string">&quot;?a=a&quot;</span>;</span><br><span class="line">    <span class="keyword">var</span> key;</span><br><span class="line">    <span class="keyword">for</span> (key <span class="keyword">in</span> data) &#123;</span><br><span class="line">      <span class="keyword">if</span> (data.hasOwnProperty(key)) &#123;</span><br><span class="line">        schema += <span class="string">&quot;&amp;&quot;</span> + key + data[key];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//处理 callback</span></span><br><span class="line">    <span class="keyword">var</span> callbackName = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> callback === <span class="string">&quot;string&quot;</span>) &#123;</span><br><span class="line">      callbackName = callback;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      callbackName = action + <span class="built_in">Date</span>.now();</span><br><span class="line">      <span class="built_in">window</span>[callbackName] = callback;</span><br><span class="line">    &#125;</span><br><span class="line">    schema += <span class="string">&quot;callback=callbackName&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//触发</span></span><br><span class="line">    <span class="keyword">var</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">&quot;iframe&quot;</span>);</span><br><span class="line">    iframe.style.display = <span class="string">&quot;none&quot;</span>;</span><br><span class="line">    iframe.src = schema; <span class="comment">//重要</span></span><br><span class="line">    <span class="keyword">var</span> body = <span class="built_in">document</span>.body;</span><br><span class="line">    body.appendChild(iframe);</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      body.removeChild(iframe);</span><br><span class="line">      iframe = <span class="literal">null</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//暴露到全局变量</span></span><br><span class="line">  <span class="built_in">window</span>.invoke = &#123;</span><br><span class="line">    share: <span class="function"><span class="keyword">function</span> (<span class="params">data, callback</span>) </span>&#123;</span><br><span class="line">      _invoke(<span class="string">&quot;share&quot;</span>, data, callback);</span><br><span class="line">    &#125;,</span><br><span class="line">    scan: <span class="function"><span class="keyword">function</span> (<span class="params">data, callback</span>) </span>&#123;</span><br><span class="line">      _invoke(<span class="string">&quot;scan&quot;</span>, data, callback);</span><br><span class="line">    &#125;,</span><br><span class="line">    login: <span class="function"><span class="keyword">function</span> (<span class="params">data, callback</span>) </span>&#123;</span><br><span class="line">      _invoke(<span class="string">&quot;login&quot;</span>, data, callback);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>前端 JS 和 客户端 如何通讯？<ul>
+<li>通讯的基本形式：调用能力，传递参数，监听回调</li>
+<li>对 schema 协议的理解和使用 （这个协议可理解为 ：定义了前端和客户端 通信的一个标准）</li>
+<li>调用 schema 代码的封装</li>
+<li>内置上线的好处：更快、更安全</li>
+</ul>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hybrid/" rel="tag">hybrid</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-asynchronization"
   class="article article-type-post"
   itemscope
@@ -2126,519 +2519,13 @@
 </article>
 
     
-    <article
-  id="post-DevelopmentEnvironment"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/07/19/DevelopmentEnvironment/"
-    >开发环境</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/07/19/DevelopmentEnvironment/" class="article-date">
-  <time datetime="2019-07-19T09:57:31.000Z" itemprop="datePublished">2019-07-19</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">开发环境</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><blockquote>
-<p>讲解在面试过程中，面试官可能会问及的前端开发环境的问题，例如 <strong>IDE</strong> ，<strong>Git</strong> ，<strong>模块化</strong> ，<strong>打包工具</strong> ，<strong>上线流程</strong> ，这些类别的题目。</p>
-<p>知识点：</p>
-<p>7-1 IDE</p>
-<p>7-2 Git</p>
-<p>7-3 模块化</p>
-<p>7-4 构建工具</p>
-<p>7-5 上线和回滚</p>
-</blockquote>
-<h3 id="关于开发环境"><a href="#关于开发环境" class="headerlink" title="关于开发环境"></a>关于开发环境</h3><ul>
-<li>面试官想通过开发环境了解面试者的经验</li>
-<li>开发环境，最能体现工作产出的效率</li>
-<li>会以聊天的形式为主，而不是出具体的问题</li>
-</ul>
-<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><blockquote>
-<p><strong>IDE</strong> ，<strong>Git</strong> ，<strong>JS 模块化</strong> ，<strong>打包工具</strong> ，<strong>上线流程</strong> ，</p>
-</blockquote>
-<ul>
-<li>IDE （ 写代码的效率 ）</li>
-<li>git （ 代码版本管理 ，多人协作开发 ）</li>
-<li>JS 模块化</li>
-<li>打包工具</li>
-<li>上线回滚的流程</li>
-</ul>
-<h2 id="7-1-IDE"><a href="#7-1-IDE" class="headerlink" title="7-1 IDE"></a>7-1 IDE</h2><ul>
-<li>webstorm （ 我平常基本用的就是 <strong>webstorm</strong> ）</li>
-<li>sublime</li>
-<li>vscode</li>
-<li>atom</li>
-<li>插件 插件 插件 ！！！</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190719/MxVs8IUJKDhO.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190719/QNC5aBgIVByU.png?imageslim" alt="mark"></p>
-<p><strong>注意：</strong></p>
-<ul>
-<li>千万不要说你使用 Dreamweaver 或者 notpad ++</li>
-<li>不做 .net 也不要用 Visual Studio</li>
-<li>不做 java 也不要用 eclipse</li>
-</ul>
-<h2 id="7-2-Git"><a href="#7-2-Git" class="headerlink" title="7-2 Git"></a>7-2 Git</h2><blockquote>
-<p>Git 详细介绍：可参考的的博客：<a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d285a027b8c9f7d8dc4f627%22">Git 篇</a></p>
-</blockquote>
-<ul>
-<li>正式项目都需要代码版本管理</li>
-<li>大型项目需要多人协作开发</li>
-<li>Git 和 linux 是一个作者</li>
-</ul>
-<h2 id="7-3-模块化"><a href="#7-3-模块化" class="headerlink" title="7-3 模块化"></a>7-3 模块化</h2><blockquote>
-<p>模块化编程就是通过组合一些<strong>相对独立可复用的模块</strong>来进行功能的实现，其最核心的两部分是<strong>定义模块</strong>和<strong>引入模块</strong>；</p>
-<ul>
-<li>定义模块时，每个模块内部的执行逻辑是不被外部感知的，只是导出（暴露）出部分方法和数据；</li>
-<li>引入模块时，同步 / 异步去加载待引入的代码，执行并获取到其暴露的方法和数据；</li>
-</ul>
-<p><strong>模块化的发展情况</strong> ：无模块化–&gt;CommonJS 规范–&gt;AMD 规范–&gt;CMD 规范–&gt;ES6 模块化</p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5b6c222a6fb9a04fde5af4ee">Javascript 模块化指北</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5b4420e7f265da0f4b7a7b27">这一次，我要弄懂 javascript 的模块化</a></p>
-</blockquote>
-<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>不使用模块化的情况</li>
-<li>使用模块化</li>
-<li>AMD</li>
-<li>CommonJS</li>
-</ul>
-<h4 id="无模块化"><a href="#无模块化" class="headerlink" title="无模块化"></a>无模块化</h4><p>script 标签引入 js 文件，相互罗列，但是被依赖的放在前面，否则使用就会报错。如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;jquery.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">&quot;jquery_scroller.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">&quot;main.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">&quot;other1.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">&quot;other2.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">&quot;other3.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>​ 即简单的将所有的 js 文件统统放在一起。但是这些文件的顺序还不能出错，比如 jquery 需要先引入，才能引入 jquery 插件，才能在其他的文件中使用 jquery。缺点很明显：</p>
-<ul>
-<li>污染全局作用域</li>
-<li>维护成本高</li>
-<li>依赖关系不明显</li>
-</ul>
-<h3 id="AMD-规范"><a href="#AMD-规范" class="headerlink" title="AMD 规范"></a>AMD 规范</h3><blockquote>
-<p>异步模块定义（<strong>AMD</strong>）API 指定了一种定义模块的机制，以便可以异步加载模块及其依赖项。这特别适用于浏览器环境，其中模块的同步加载会导致性能，可用性，调试和跨域访问问题。</p>
-</blockquote>
-<ul>
-<li>require.js <a target="_blank" rel="noopener" href="https://requirejs.org/">https://requirejs.org/</a></li>
-<li>全局 define 函数</li>
-<li>全局 require 函数</li>
-<li>依赖 JS 会自动、异步加载</li>
-</ul>
-<p>AMD 标准中，定义了下面三个 API：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([<span class="built_in">module</span>], callback);</span><br><span class="line">define(id, [depends], callback);</span><br><span class="line"><span class="built_in">require</span>.config();</span><br></pre></td></tr></table></figure>
-
-<p>即通过 define 来<strong>定义</strong>一个模块，然后使用 require 来<strong>加载</strong>一个模块, 使用 require.config()指定引用路径。</p>
-<h4 id="举例说明："><a href="#举例说明：" class="headerlink" title="举例说明："></a>举例说明：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script</span><br><span class="line">  src=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js&quot;</span></span><br><span class="line">  data-main=<span class="string">&quot;./main.js&quot;</span></span><br><span class="line">&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><em>main.js:</em></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">&quot;./a.js&quot;</span>], <span class="function"><span class="keyword">function</span> (<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> data = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  a.printDate(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><em>a.js:</em></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">&quot;./a-util.js&quot;</span>], <span class="function"><span class="keyword">function</span> (<span class="params">aUtil</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = &#123;</span><br><span class="line">    printDate: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(aUtil.aGetFormatDate(data));</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><em>a-util.js:</em></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">&quot;./util.js&quot;</span>], <span class="function"><span class="keyword">function</span> (<span class="params">util</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> aUtil = &#123;</span><br><span class="line">    aGetFormatDate: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> util.getFormatDate(data, <span class="number">2</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> aUtil;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><em>util.js:</em></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> util = &#123;</span><br><span class="line">    getFormatDate: <span class="function"><span class="keyword">function</span> (<span class="params">data, type</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (type === <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;2019-07-19&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (type === <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;2019年6月20日&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> util;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190719/tVkLYFlEzrtH.png?imageslim" alt="mark"></p>
-<h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><blockquote>
-<p>2009 年 ry 发布 Node.js 的第一个版本，CommonJS 作为其中最核心的特性之一，适用于服务端下的场景；历年来的考察和时间的洗礼，以及前端工程化对其的充分支持，CommonJS 被广泛运用于 Node.js 和浏览器；</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Core Module</span></span><br><span class="line"><span class="keyword">const</span> cp = <span class="built_in">require</span>(<span class="string">&quot;child_process&quot;</span>);</span><br><span class="line"><span class="comment">// Npm Module</span></span><br><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">&quot;axios&quot;</span>);</span><br><span class="line"><span class="comment">// Custom Module</span></span><br><span class="line"><span class="keyword">const</span> foo = <span class="built_in">require</span>(<span class="string">&quot;./foo&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123; axios &#125;;</span><br><span class="line"><span class="built_in">exports</span>.foo = foo;</span><br></pre></td></tr></table></figure>
-
-<p><strong>规范</strong></p>
-<ul>
-<li>module (Object): 模块本身</li>
-<li>exports (*): 模块的导出部分，即暴露出来的内容</li>
-<li>require (Function): 加载模块的函数，获得目标模块的导出值（基础类型为复制，引用类型为浅拷贝），可以加载内置模块、npm 模块和自定义模块。</li>
-</ul>
-<p><strong>nodejs 模块化规范，现在被大量用前端，原因</strong> ：</p>
-<ul>
-<li>前端开发依赖的插件课库，都可以从 npm 中获取</li>
-<li>构建工具的高度自动化，使得使用 npm 的成本非常低</li>
-<li>CommonJS 不会异步加载 JS ，而是同步一次性加载出来</li>
-</ul>
-<h4 id="使用-CommonJS"><a href="#使用-CommonJS" class="headerlink" title="使用 CommonJS"></a>使用 CommonJS</h4><blockquote>
-<p><strong>module</strong> (Object)、<strong>exports</strong> (*)、<strong>require</strong> (Function)</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//util.ls</span></span><br><span class="line"><span class="built_in">module</span>.export = &#123;</span><br><span class="line">  getFormatDate: <span class="function"><span class="keyword">function</span> (<span class="params">data, type</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (type === <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;2019-07-19&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (type === <span class="number">2</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;2019年6月20日&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//a-util.js</span></span><br><span class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">&quot;util.js&quot;</span>);</span><br><span class="line"><span class="built_in">module</span>.export = &#123;</span><br><span class="line">  aGetFormatDate: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> util.getFormatDate(data, <span class="number">2</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h4 id="特性总结"><a href="#特性总结" class="headerlink" title="特性总结"></a>特性总结</h4><ul>
-<li>同步执行模块声明和引入逻辑，分析一些复杂的依赖引用（如循环依赖）时需注意；</li>
-<li>缓存机制，性能更优，同时限制了内存占用；</li>
-<li>Module 模块可供改造的灵活度高，可以实现一些定制需求（如热更新、任意文件类型模块支持）；</li>
-</ul>
-<h4 id="AMD-和-CommonJS-的使用场景"><a href="#AMD-和-CommonJS-的使用场景" class="headerlink" title="AMD 和 CommonJS 的使用场景"></a>AMD 和 CommonJS 的使用场景</h4><ul>
-<li>需要异步加载 JS ，使用 AMD</li>
-<li>使用了 npm 之后建议使用 CommonJS</li>
-</ul>
-<h3 id="重点总结"><a href="#重点总结" class="headerlink" title="重点总结"></a>重点总结</h3><ul>
-<li>AMD</li>
-<li>CommonJS</li>
-<li>两者的区别</li>
-</ul>
-<h2 id="7-4-构建工具"><a href="#7-4-构建工具" class="headerlink" title="7-4 构建工具"></a>7-4 构建工具</h2><blockquote>
-<p>我们一定会感叹前端技术发展之快，各种可以提高开发效率的新思想和框架层出不穷。但是他们都有一个共同特点：源代码无法直接运行，必须通过转换后才能正常运行。</p>
-<p>比如：Grunt 、Gulp、FIS 3、<strong>Webpack</strong> …</p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/entry/5ae5c8c9f265da0b9f400d8e">前端构建工具发展及其比较</a></p>
-<p><a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cb181596d3d4a5cb52b65c9%22">webpack 学习可参考我的博客 </a> 和 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cb72a04009ae94788aa0d7f%22">我的另一篇博客</a> 均有 涉及。</p>
-</blockquote>
-<p>构建工具就是做这件事，将源代码转换成可以执行的 JavaScript、CSS、HTML 代码，包括如下内容：</p>
-<ul>
-<li>代码转换：将 TypeScript 编译成 JavaScript、将 SCSS 编译成 CSS 等。</li>
-<li>文件优化：压缩 JavaScript、CSS、HTML 代码，压缩合并图片等。</li>
-<li>代码分割：提取多个页面的公共代码，提取首屏不需要执行部分代码让其异步记在。</li>
-<li>模块合并：在采用模块化的项目里会有很多个模块和文件，需要通过构建功能将模块分类合并成一个文件。</li>
-<li>自动刷新：监听本地源代码变化，自动重新构建、刷新浏览器。</li>
-<li>代码校验：在代码被提交到仓库前需要校验代码是否符合规范，以及单元测试是否通过。</li>
-<li>自动发布：更新代码后，自动构建出线上发布代码并传输给发布系统。</li>
-</ul>
-<p>构建其实是工程化、自动化思想在前端开发中的体现，将一系列流程用代码去实现，让代码自动化地执行这一系列复杂的流程。构建为前端开发注入了更大的活力，解放了我们的生产力。</p>
-<p>历史上先后出现了一系列构建工具，他们各有优缺点。由于前端工程师很熟悉 JavaScript，Node.js 又可以胜任所有构建需求，所以大多数构建工具都是用 Node.js 开发的。</p>
-<h2 id="7-5-上线和回滚"><a href="#7-5-上线和回滚" class="headerlink" title="7-5 上线和回滚"></a>7-5 上线和回滚</h2><ul>
-<li>不会有具体的问题，交流询问的方式</li>
-</ul>
-<h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>上线和回滚的基本流程</li>
-<li>linux 基本命令</li>
-</ul>
-<h4 id="上线和回滚的基本流程"><a href="#上线和回滚的基本流程" class="headerlink" title="上线和回滚的基本流程"></a>上线和回滚的基本流程</h4><ul>
-<li><p>是非常重要的开发环节</p>
-</li>
-<li><p>各个公司的具体流程不同</p>
-</li>
-<li><p>由专门的工具后者系统完成，我们无需关心细节</p>
-</li>
-<li><p>如果你没有参与过，面试时也要说出要点</p>
-</li>
-<li><p>只讲要点，具体实现无法讲解</p>
-</li>
-</ul>
-<h3 id="上线流程要点"><a href="#上线流程要点" class="headerlink" title="上线流程要点"></a>上线流程要点</h3><ul>
-<li>将测试完成的代码提交到 git 版本库的 master 分支</li>
-<li>将当前服务器的代码全部打包并记录版本号，备份</li>
-<li>将 master 分支的代码提交覆盖到线上服务器，生成新版本号</li>
-</ul>
-<h3 id="回滚的流程要点"><a href="#回滚的流程要点" class="headerlink" title="回滚的流程要点"></a>回滚的流程要点</h3><ul>
-<li>将当前服务器的代码打包并记录版本号，备份</li>
-<li>将备份的上一个版本号解压，覆盖到线上服务器，并生成新的版本号</li>
-</ul>
-<h3 id="linux-基本命令"><a href="#linux-基本命令" class="headerlink" title="linux 基本命令"></a>linux 基本命令</h3><ul>
-<li>服务器使用 linux 居多，server 版，只有命令行</li>
-<li>测试环境要匹配线上环境，因此也是 linux</li>
-<li>经常需要登录测试机来自己配置，获取数据</li>
-</ul>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IDE/" rel="tag">IDE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%8A%E7%BA%BF%E5%92%8C%E5%9B%9E%E6%BB%9A/" rel="tag">上线和回滚</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" rel="tag">构建工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="tag">模块化</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-gitLearning"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/07/12/gitLearning/"
-    >Git 学习</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/07/12/gitLearning/" class="article-date">
-  <time datetime="2019-07-12T09:59:30.000Z" itemprop="datePublished">2019-07-12</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="Git-学习"><a href="#Git-学习" class="headerlink" title="Git 学习"></a>Git 学习</h1><blockquote>
-<p><strong>Git 学习</strong></p>
-<p>Git 的优势</p>
-<p>Git 与 SVN 的主要区别</p>
-<p>安装 Git</p>
-<p>初始化 Git 仓储/（仓库）</p>
-<p>配置使用者的用户名和邮箱</p>
-<p>把代码 存储到仓库中</p>
-<p>Git 查看日志</p>
-<p>Git 版本回退</p>
-<p>Git 分支的新建与合并</p>
-<p>上传至 github</p>
-<p>通过 ssh 方式 上传 代码</p>
-<p>push 和 pull 简写</p>
-</blockquote>
-<h3 id="什么是-Git？"><a href="#什么是-Git？" class="headerlink" title="什么是 Git？"></a>什么是 Git？</h3><blockquote>
-<p>git – fast 版本控制</p>
-<p>Git 是由“Linux 之父” <strong>Linus Torvalds</strong> 创建的。因为他发现找不到满意的方案来管理 Linux Kernel 联合开发的版本控制，就自己写了 Git。</p>
-<p><a target="_blank" rel="noopener" href="https://git-scm.com/">官方网站</a></p>
-</blockquote>
-<ul>
-<li>Git 是一个<a target="_blank" rel="noopener" href="https://git-scm.com/about/free-and-open-source">免费的开源</a> 分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有事务</li>
-<li>Git <a target="_blank" rel="noopener" href="https://git-scm.com/doc">易于学习</a>， <a target="_blank" rel="noopener" href="https://git-scm.com/about/small-and-fast">占地面积小，具有闪电般快速的性能</a>。它超越了 Subversion，CVS，Perforce 和 ClearCase 等 SCM 工具，具有<a target="_blank" rel="noopener" href="https://git-scm.com/about/branching-and-merging">廉价本地分支</a>，便捷的<a target="_blank" rel="noopener" href="https://git-scm.com/about/staging-area">临时区域</a>和 <a target="_blank" rel="noopener" href="https://git-scm.com/about/distributed">多个工作流程等功能</a>。</li>
-</ul>
-<h3 id="Git-的优势"><a href="#Git-的优势" class="headerlink" title="Git 的优势"></a>Git 的优势</h3><p>说到优势，那么自然是相对与 SVN 而言的</p>
-<ol>
-<li><p><strong>版本库本地化，支持离线提交，相对独立不影响协同开发。</strong>每个开发者都拥有自己的版本控制库，在自己的版本库上可以任意的执行提交代码、创建分支等行为。例如，开发者认为自己提交的代码有问题？没关系，因为版本库是自己的，回滚历史、反复提交、归并分支并不会影响到其他开发者。</p>
-</li>
-<li><p><strong>更少的“仓库污染”。</strong>git 对于每个工程只会产生一个.git 目录，这个工程所有的版本控制信息都在这个目录中，不会像 SVN 那样在每个目录下都产生.svn 目录。</p>
-</li>
-<li><p><strong>把内容按元数据方式存储，完整克隆版本库。</strong>所有版本信息位于.git 目录中，它是处于你的机器上的一个克隆版的版本库，它拥有中心版本库上所有的东西，例如标签、分支、版本记录等。</p>
-</li>
-<li><p><strong>支持快速切换分支方便合并，比较合并性能好。</strong>在同一目录下即可切换不同的分支，方便合并，且合并文件速度比 SVN 快。</p>
-</li>
-<li><p><strong>分布式版本库，无单点故障，内容完整性好。</strong>内容存储使用的是 SHA-1 哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。</p>
-</li>
-</ol>
-<h3 id="Git-与-SVN-的主要区别"><a href="#Git-与-SVN-的主要区别" class="headerlink" title="Git 与 SVN 的主要区别"></a>Git 与 SVN 的主要区别</h3><p>Git 是<strong>分布式</strong>SCM，而 SVN 是基于<strong>服务器</strong>的，也就是说每个开发者本地都有一套 git 库，每个人维护自己的版本（或者合并其他人的版本），而 SVN 是每个人写完代码后都及时的 checkin 到服务器上，进行合并。</p>
-<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496">廖雪峰的官方网站 git 安装</a></p>
-</blockquote>
-<p>鼠标 <strong>右键</strong>，选中 <code>Git Bash Here</code> 在里面输入相关命令：</p>
-<p><img src="http://static.zxinc520.com/blog/20190711/litoDVMJqNVb.png?imageslim" alt="mark"></p>
-<h2 id="使用-Git"><a href="#使用-Git" class="headerlink" title="使用 Git"></a>使用 Git</h2><h3 id="初始化-Git-仓储-（仓库）"><a href="#初始化-Git-仓储-（仓库）" class="headerlink" title="初始化 Git 仓储/（仓库）"></a>初始化 Git 仓储/（仓库）</h3><ol>
-<li><strong>新建</strong>一个文件夹</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190711/9NbV1d2Bf3H2.png?imageslim" alt="mark"></p>
-<ol start="2">
-<li><strong>进入</strong>文件夹，鼠标<strong>右键</strong> 选中 <code>Git Bash Here</code>，输入命令 <code>git init</code> 回车。</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190711/PApIqKpihnsJ.gif" alt="mark"></p>
-<h3 id="配置使用者的用户名和邮箱"><a href="#配置使用者的用户名和邮箱" class="headerlink" title="配置使用者的用户名和邮箱"></a>配置使用者的用户名和邮箱</h3><blockquote>
-<p>配置使用者的用户名和邮箱 （自报家门）,每一次备份都会把当前备份者的信息存储起来。</p>
-<p><strong>配置用户名</strong> ： <code>git config --global user.name &quot;zhouchen&quot;</code></p>
-<p><strong>配置邮箱</strong>： <code>git config --global user.email &quot;1583741285@qq.com&quot;</code></p>
-</blockquote>
-<ol>
-<li><p>配置使用者的<strong>用户名</strong>：<strong>进入</strong>文件夹，鼠标<strong>右键</strong> 选中 <code>Git Bash Here</code>，</p>
-<p>输入命令 <code>git config --global user.name &quot;zhouchen&quot;</code> 回车 。</p>
-</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190711/FUG7gTH6S2Mh.png?imageslim" alt="mark"></p>
-<ol start="2">
-<li><p>同样的配置使用者的 <strong>邮箱</strong>：<strong>进入</strong>文件夹，鼠标<strong>右键</strong> 选中 <code>Git Bash Here</code>，</p>
-<p>输入命令 <code>git config --global user.email &quot;1583741285@qq.com&quot;</code> 回车 。</p>
-</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190711/p62Mz0UPYcY9.png?imageslim" alt="mark"></p>
-<h3 id="把代码-存储到仓库中"><a href="#把代码-存储到仓库中" class="headerlink" title="把代码 存储到仓库中"></a>把代码 存储到仓库中</h3><blockquote>
-<p>把代码 存储到仓库中</p>
-</blockquote>
-<p><strong>需求</strong>：将 readme.md 文件 存储到仓库中</p>
-<p><img src="http://static.zxinc520.com/blog/20190711/KwUDn18LHU1f.png?imageslim" alt="mark"></p>
-<ol>
-<li><p><strong>进入</strong>文件夹，鼠标<strong>右键</strong> 选中 <code>Git Bash Here</code>，</p>
-<p>输入命令 <code>git add ./readme.md</code> 回车 。</p>
-</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190711/P1DnSzDuSOBO.png?imageslim" alt="mark"></p>
-<ol start="2">
-<li>紧接上一步，输入命令 <code>git commit -m &quot;add Introductions&quot;</code> 回车 。</li>
-</ol>
-<p><u>add Introductions</u>—–可以自定义，一个辅助的解释 <strong>说明</strong>。</p>
-<p><img src="http://static.zxinc520.com/blog/20190711/FqHM4n7stzsF.png?imageslim" alt="mark"></p>
-<h4 id="查看提交状态"><a href="#查看提交状态" class="headerlink" title="查看提交状态"></a>查看提交状态</h4><p>命令：<code>git status</code></p>
-<p><img src="http://static.zxinc520.com/blog/20190711/85IXkLM5Wusf.png?imageslim" alt="mark"></p>
-<h4 id="add-补充-–-添加到大门口"><a href="#add-补充-–-添加到大门口" class="headerlink" title="add 补充 – 添加到大门口"></a>add 补充 – 添加到大门口</h4><p>命令 ：<code>git add .</code></p>
-<h4 id="一次性-–-放入仓库"><a href="#一次性-–-放入仓库" class="headerlink" title="一次性 – 放入仓库"></a>一次性 – 放入仓库</h4><blockquote>
-<p>合并 add 和 commit 命令</p>
-</blockquote>
-<p>命令：<code>git commit --all -m &quot;这是一次性的操作&quot;</code></p>
-<h3 id="Git-查看日志"><a href="#Git-查看日志" class="headerlink" title="Git 查看日志"></a>Git 查看日志</h3><blockquote>
-<p>查看日志—-能够查看自己提交的信息</p>
-<p><code>git log</code>：查看历史提交的日志</p>
-<p><code>git log --oneline</code> 可以看到精简版的日志</p>
-</blockquote>
-<p>命令：<code>git log</code></p>
-<p><img src="http://static.zxinc520.com/blog/20190711/PBubR1jYW0fX.png?imageslim" alt="mark"></p>
-<p>命令：<code>git log --oneline</code></p>
-<p><img src="http://static.zxinc520.com/blog/20190711/bDLltWMjdSo2.png?imageslim" alt="mark"></p>
-<h3 id="Git-版本回退"><a href="#Git-版本回退" class="headerlink" title="Git 版本回退"></a>Git 版本回退</h3><blockquote>
-<p>git 版本回退</p>
-<p>场景：如果最后一次提交的代码有误，可以通过 git 版本回退，回到代码无误的那一个状态。</p>
-</blockquote>
-<h4 id="根据索引回退"><a href="#根据索引回退" class="headerlink" title="根据索引回退"></a>根据索引回退</h4><ol>
-<li>使用命令 <code>git log --oneline</code>查看状态</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190711/3RDzcU0Fo8Vy.png?imageslim" alt="mark"></p>
-<ol start="2">
-<li>命令：<code>git reset --hard Head~0 </code> ( 向后退 <strong>0</strong> 次)</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190711/Uobb7X1EwPUd.png?imageslim" alt="mark"></p>
-<ol start="3">
-<li>命令：<code>git reset --hard Head~1</code> （向后退 <strong>1</strong> 次）；此时代码回退了<strong>一次</strong> 。</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190711/3lM4UYpv7mQw.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190711/rwuTTeqbAFNc.png?imageslim" alt="mark"></p>
-<h4 id="通过版本号回退"><a href="#通过版本号回退" class="headerlink" title="通过版本号回退"></a>通过版本号回退</h4><blockquote>
-<p>通过版本号回退</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190712/VsLjP0uf8h8D.png?imageslim" alt="mark"></p>
-<p>命令：<code>git reset --hard ac97cbc </code> 回车执行</p>
-<p><img src="http://static.zxinc520.com/blog/20190712/puqQzAUO57un.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190712/4b2kofXa5m3B.png?imageslim" alt="mark"></p>
-<h4 id="git-reflog"><a href="#git-reflog" class="headerlink" title="git reflog"></a>git reflog</h4><blockquote>
-<p>可以看到每一次切换版本记录</p>
-</blockquote>
-<p>命令：<code>git reflog</code> 查看总体记录</p>
-<p><img src="http://static.zxinc520.com/blog/20190712/rIsddoYu54q2.png?imageslim" alt="mark"></p>
-<h3 id="Git-分支的新建与合并"><a href="#Git-分支的新建与合并" class="headerlink" title="Git 分支的新建与合并"></a>Git 分支的新建与合并</h3><blockquote>
-<p>git 创建分支</p>
-<p>运用场景：放开发者只开发完成部分代码，想保存代码,为了能够后续继续开发，可以创建分支。</p>
-</blockquote>
-<p><strong>现在让我们来看一个简单的分支与合并的例子，实际工作中大体也会用到这样的工作流程：</strong></p>
-<ol>
-<li>开发某个网站。</li>
-<li>为实现某个新的需求，创建一个分支。</li>
-<li>在这个分支上开展工作。</li>
-</ol>
-<p><strong>假设此时，你突然接到一个电话说有个很严重的问题需要紧急修补，那么可以按照下面的方式处理：</strong></p>
-<ol>
-<li>返回到原先已经发布到生产服务器上的分支。</li>
-<li>为这次紧急修补建立一个新分支，并在其中修复问题。</li>
-<li>通过测试后，回到生产服务器所在的分支，将修补分支合并进来，然后再推送到生产服务器上。</li>
-<li>切换到之前实现新需求的分支，继续工作。</li>
-</ol>
-<h3 id="Git-分支的新建"><a href="#Git-分支的新建" class="headerlink" title="Git 分支的新建"></a>Git 分支的新建</h3><p><strong>新建分支</strong> ：命令：<code>git branch &lt;name&gt;</code></p>
-<p><img src="http://static.zxinc520.com/blog/20190712/vCIxtjnYlgsu.png?imageslim" alt="mark"></p>
-<p><strong>查看分支信息</strong> ：命令：<code>git branch</code> （ <strong>绿色</strong> –&gt; 代表正处于此分支）</p>
-<p><img src="http://static.zxinc520.com/blog/20190712/R3t4POgEphiO.png?imageslim" alt="mark"></p>
-<p><strong>切换分支</strong> ：命令 <code>git checkout dev</code></p>
-<p><img src="http://static.zxinc520.com/blog/20190712/MQQVVoNGu41k.png?imageslim" alt="mark"></p>
-<h4 id="在分支中提交部分代码"><a href="#在分支中提交部分代码" class="headerlink" title="在分支中提交部分代码"></a>在分支中提交部分代码</h4><blockquote>
-<p>类似于主分支 提交（一样）</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190712/gBcACkrl5Gxf.png?imageslim" alt="mark"></p>
-<h3 id="Git-合并分支"><a href="#Git-合并分支" class="headerlink" title="Git 合并分支"></a>Git 合并分支</h3><blockquote>
-<p>合并分支</p>
-<p><strong>需求</strong>：将 dev 分支 合并到主分支（master 分支）上。</p>
-</blockquote>
-<ol>
-<li>切换到 <strong>master</strong> 分支：命令：<code>git checkout master</code></li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190712/bKIzXXwv3Xnm.png?imageslim" alt="mark"></p>
-<ol start="2">
-<li>合并 dev 分支 到 master 分支上：命令：<code>git merge dev</code></li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190712/uMQR0k4u6qTT.png?imageslim" alt="mark"></p>
-<ol start="3">
-<li>查看自己的提交记录 命令：<code>git log --oneline</code></li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190712/gu7FKi6tGBkf.png?imageslim" alt="mark"></p>
-<h3 id="上传至-github"><a href="#上传至-github" class="headerlink" title="上传至 github"></a>上传至 github</h3><blockquote>
-<p><code>git push [地址] master</code></p>
-<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/900937935629664">参考廖雪峰的官方网站 github 篇</a></p>
-<p>【地址】：例如：<a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Travel.git">https://github.com/ZhChen7/Travel.git</a></p>
-</blockquote>
-<p><strong>git push</strong> 推项目到 github：<code>git push [地址] master</code></p>
-<h4 id="从-github-拉下项目"><a href="#从-github-拉下项目" class="headerlink" title="从 github 拉下项目"></a>从 github 拉下项目</h4><blockquote>
-<p>github 拉下项目</p>
-<p>【地址】：例如：<a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Travel.git">https://github.com/ZhChen7/Travel.git</a></p>
-</blockquote>
-<p><strong>git pull</strong> 从 github 拉下项目 ：<code>git pull [地址] master</code></p>
-<p><strong>git clone</strong> 从 github 复制项目（往往在第一次使用）：<code>git clone [地址]</code></p>
-<h3 id="通过-ssh-方式-上传-代码"><a href="#通过-ssh-方式-上传-代码" class="headerlink" title="通过 ssh 方式 上传 代码"></a>通过 ssh 方式 上传 代码</h3><blockquote>
-<p>公钥 和 私钥 ；两者之间是有关联的。</p>
-</blockquote>
-<ol>
-<li><p>生成 <strong>公钥</strong> 和 <strong>私钥</strong></p>
-<p>命令：<code>ssh-keygen -t rsa -C &lt;邮箱&gt;</code></p>
-</li>
-</ol>
-<p><img src="http://static.zxinc520.com/blog/20190712/2GKvEKipn11B.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190712/9qHzNoUvBgy2.png?imageslim" alt="mark"></p>
-<p><strong>找到生成的文件</strong> ：</p>
-<p><img src="http://static.zxinc520.com/blog/20190712/DPxGphRT9AXv.png?imageslim" alt="mark"></p>
-<p><strong>给自己的 github 配置 ssh</strong> ：</p>
-<p><img src="http://static.zxinc520.com/blog/20190712/eK9KUtgXVIrN.png?imageslim" alt="mark"></p>
-<h3 id="提交冲突"><a href="#提交冲突" class="headerlink" title="提交冲突"></a>提交冲突</h3><blockquote>
-<p>先 <strong>pull</strong> 还是 先 <strong>push</strong></p>
-<p>应用场景：多人共同提交时，产生提交冲突时。</p>
-</blockquote>
-<p><strong>解决方案</strong>：<strong>先 pull</strong> 然后 <strong>后 push</strong></p>
-<h3 id="push-和-pull-简写"><a href="#push-和-pull-简写" class="headerlink" title="push 和 pull 简写"></a>push 和 pull 简写</h3><blockquote>
-<p>push 和 pull 简写</p>
-<p>【地址简写】：<code>git remote add &lt;变量名&gt; &lt;远程地址&gt;</code></p>
-</blockquote>
-<p><strong>配置远程地址</strong>（设置别名）：方便每一次不用输入很长的地址</p>
-<p>命令：<code>git remote add origin git@github.com:ZhChen7/Travel.git</code></p>
-<p>即：为 <code>git@github.com:ZhChen7/Travel.git</code>设置别名： **origin **</p>
-<h4 id="默认关联"><a href="#默认关联" class="headerlink" title="默认关联"></a>默认关联</h4><blockquote>
-<p>当我们在 push 时，加上 <strong>-u 参数</strong> ，那么在<strong>下次 push 时</strong>；只用 写 <code>git push</code> 即可上传代码。</p>
-<p>（加上 <strong>-u</strong> 之后，git 会把当前分支 与 远程指定的分支 进行<strong>关联</strong>）</p>
-</blockquote>
-<p>下次 直接写 <code>git push</code> 相当于 写 <code>git push origin master</code> 。</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
   </article>
   
 
   
   <nav class="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">下一页</a>
+    <a class="extend prev" rel="prev" href="/page/3/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">下一页</a>
   </nav>
   
 </section>
