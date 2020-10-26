@@ -6,7 +6,7 @@
   <link href="https://blog.zxinc520.com/atom.xml" rel="self"/>
   
   <link href="https://blog.zxinc520.com/"/>
-  <updated>2020-10-22T03:08:01.045Z</updated>
+  <updated>2020-10-26T08:27:24.465Z</updated>
   <id>https://blog.zxinc520.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redux 学习指南</title>
+    <link href="https://blog.zxinc520.com/2020/10/23/redux/"/>
+    <id>https://blog.zxinc520.com/2020/10/23/redux/</id>
+    <published>2020-10-23T04:41:50.000Z</published>
+    <updated>2020-10-26T08:27:24.465Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Redux-学习指南&quot;&gt;&lt;a href=&quot;#Redux-学习指南&quot; class=&quot;headerlink&quot; title=&quot;Redux 学习指南&quot;&gt;&lt;/a&gt;Redux 学习指南&lt;/h2&gt;&lt;h3 id=&quot;设计思想&quot;&gt;&lt;a href=&quot;#设计思想&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="React" scheme="https://blog.zxinc520.com/categories/%E6%A1%86%E6%9E%B6/React/"/>
+    
+    
+    <category term="React" scheme="https://blog.zxinc520.com/tags/React/"/>
+    
+    <category term="redux" scheme="https://blog.zxinc520.com/tags/redux/"/>
+    
+  </entry>
   
   <entry>
     <title>阿里云- 宝塔使用</title>
@@ -61,7 +90,7 @@
     <link href="https://blog.zxinc520.com/2020/10/19/Hook/"/>
     <id>https://blog.zxinc520.com/2020/10/19/Hook/</id>
     <published>2020-10-19T12:07:07.000Z</published>
-    <updated>2020-10-22T08:57:04.691Z</updated>
+    <updated>2020-10-23T04:15:08.587Z</updated>
     
     
       
@@ -572,36 +601,6 @@
     <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
     
     <category term="JS 三座大山" scheme="https://blog.zxinc520.com/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>html 面试考点全面总结下篇</title>
-    <link href="https://blog.zxinc520.com/2020/03/23/getOfferhtml2/"/>
-    <id>https://blog.zxinc520.com/2020/03/23/getOfferhtml2/</id>
-    <published>2020-03-23T09:18:21.000Z</published>
-    <updated>2020-03-23T09:18:21.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;html-面试考点全面总结下篇&quot;&gt;&lt;a href=&quot;#html-面试考点全面总结下篇&quot; class=&quot;headerlink&quot; title=&quot;html 面试考点全面总结下篇&quot;&gt;&lt;/a&gt;html 面试考点全面总结下篇&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;拿到</summary>
-        
-      
-    
-    
-    
-    <category term="Offer" scheme="https://blog.zxinc520.com/categories/Offer/"/>
-    
-    <category term="字节跳动" scheme="https://blog.zxinc520.com/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"/>
-    
-    
-    <category term="面试全面总结" scheme="https://blog.zxinc520.com/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/"/>
-    
-    <category term="html" scheme="https://blog.zxinc520.com/tags/html/"/>
     
   </entry>
   

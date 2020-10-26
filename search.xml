@@ -1,6 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Redux 学习指南</title>
+    <url>/2020/10/23/redux/</url>
+    <content><![CDATA[<h2 id="Redux-学习指南"><a href="#Redux-学习指南" class="headerlink" title="Redux 学习指南"></a>Redux 学习指南</h2><h3 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h3><p>Redux 的设计思想很简单，就两句话。</p>
+<blockquote>
+<p>（1）Web 应用是一个状态机，视图与状态是一一对应的。</p>
+<p>（2）所有的状态，保存在一个对象里面。</p>
+</blockquote>
+<p>请务必记住这两句话，下面就是详细解释。</p>
+<h3 id="Redux-三大核心"><a href="#Redux-三大核心" class="headerlink" title="Redux 三大核心"></a>Redux 三大核心</h3><ol>
+<li>单一数据源</li>
+<li>State是只读的</li>
+<li>使用纯函数来执行修改 </li>
+</ol>
+<p><img src="http://static.zxinc520.com/uPic/uLpZu4.png" alt="uLpZu4"></p>
+<p><strong>store、components、actionCreaters、reducers的关系即为：</strong></p>
+<ul>
+<li>首先有一个组件，组件要去获取store中的一些数据</li>
+<li>actionCreaters通过dispatch(action)方法  让store知道 组件要获取数据</li>
+<li>store在reducer查组件需要什么数据，reducer返回组件应该拿到的数据</li>
+<li>store获得数据后把数据 返给 组件</li>
+</ul>
+<h2 id="Redux-核心"><a href="#Redux-核心" class="headerlink" title="Redux 核心"></a>Redux 核心</h2><h3 id="state-状态"><a href="#state-状态" class="headerlink" title="state 状态"></a>state 状态</h3><ul>
+<li>DomainState：服务器返回的State</li>
+<li>UI State ： 关于当前组件的State</li>
+<li>App State：全局的State</li>
+</ul>
+<p><code>Store</code>对象包含所有数据。如果想得到某个时点的数据，就要对 Store 生成快照。这种时点的数据集合，就叫做 State。</p>
+<p>当前时刻的 State，可以通过<code>store.getState()</code>拿到。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> store = createStore(fn);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> state = store.getState();</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>Redux 规定， 一个 State 对应一个 View。只要 State 相同，View 就相同。你知道 State，就知道 View 是什么样，反之亦然。</p>
+<h3 id="Action-事件对象"><a href="#Action-事件对象" class="headerlink" title="Action 事件对象"></a>Action 事件对象</h3><ul>
+<li>本质就是一个JS 对象</li>
+<li>必须包含Type属性</li>
+<li>只是描述了有事情要发生，并没有描述如何去更新State</li>
+</ul>
+<p>State 的变化，会导致 View 的变化。但是，用户接触不到 State，只能接触到 View。所以，State 的变化必须是 View 导致的。Action 就是 View 发出的通知，表示 State 应该要发生变化了。</p>
+<p>Action 是一个对象。其中的<code>type</code>属性是必须的，表示 Action 的名称。其他属性可以自由设置，社区有一个<a href="https://github.com/acdlite/flux-standard-action">规范</a>可以参考。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> action = &#123;</span><br><span class="line">  type: <span class="string">&#x27;ADD_TODO&#x27;</span>,</span><br><span class="line">  payload: <span class="string">&#x27;Learn Redux&#x27;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，Action 的名称是<code>ADD_TODO</code>，它携带的信息是字符串<code>Learn Redux</code>。</p>
+<p>可以这样理解，Action 描述当前发生的事情。改变 State 的唯一办法，就是使用 Action。它会运送数据到 Store。</p>
+<h3 id="Action-Creator"><a href="#Action-Creator" class="headerlink" title="Action Creator"></a>Action Creator</h3><p>View 要发送多少种消息，就会有多少种 Action。如果都手写，会很麻烦。可以定义一个函数来生成 Action，这个函数就叫 Action Creator。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> ADD_TODO = <span class="string">&#x27;添加 TODO&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    type: ADD_TODO,</span><br><span class="line">    text</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> action = addTodo(<span class="string">&#x27;Learn Redux&#x27;</span>);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，<code>addTodo</code>函数就是一个 Action Creator。</p>
+<h3 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h3><ul>
+<li>用来把 action 喝 reducer 关联到一起</li>
+<li>通过createStore 来构建 store</li>
+<li>通过 subscribe 来注册监听</li>
+<li>通过 dispatch 来发送 action</li>
+</ul>
+<p>Store 就是保存数据的地方，你可以把它看成一个容器。整个应用只能有一个 Store。</p>
+<p>Redux 提供<code>createStore</code>这个函数，用来生成 Store。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> store = createStore(fn);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，<code>createStore</code>函数接受另一个函数作为参数，返回新生成的 Store 对象。</p>
+<h3 id="store-dispatch"><a href="#store-dispatch" class="headerlink" title="store.dispatch()"></a>store.dispatch()</h3><p><code>store.dispatch()</code>是 View 发出 Action 的唯一方法。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> store = createStore(fn);</span><br><span class="line"></span><br><span class="line">store.dispatch(&#123;</span><br><span class="line">  type: <span class="string">&#x27;ADD_TODO&#x27;</span>,</span><br><span class="line">  payload: <span class="string">&#x27;Learn Redux&#x27;</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，<code>store.dispatch</code>接受一个 Action 对象作为参数，将它发送出去。</p>
+<p>结合 Action Creator，这段代码可以改写如下。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">store.dispatch(addTodo(<span class="string">&#x27;Learn Redux&#x27;</span>));</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h3><ul>
+<li>本质就是一个函数</li>
+<li>响应发送过来的 action</li>
+<li>函数接收两个参数，第一个是初始化 state，第二个是发送过来的action</li>
+<li>必须要有 return 返回值</li>
+</ul>
+<p><strong>Store 收到 Action 以后，必须给出一个新的 State，这样 View 才会发生变化。这种 State 的计算过程就叫做 Reducer。</strong> </p>
+<p>Reducer 是一个函数，它接受 Action 和当前 State 作为参数，返回一个新的 State。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function"><span class="keyword">function</span> (<span class="params">state, action</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">return</span> new_state;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>整个应用的初始状态，可以作为 State 的默认值。下面是一个实际的例子。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> defaultState = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = defaultState, action</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;ADD&#x27;</span>:</span><br><span class="line">      <span class="keyword">return</span> state + action.payload;</span><br><span class="line">    <span class="keyword">default</span>: </span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> state = reducer(<span class="number">1</span>, &#123;</span><br><span class="line">  type: <span class="string">&#x27;ADD&#x27;</span>,</span><br><span class="line">  payload: <span class="number">2</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，<code>reducer</code>函数收到名为<code>ADD</code>的 Action 以后，就返回一个新的 State，作为加法的计算结果。其他运算的逻辑（比如减法），也可以根据 Action 的不同来实现。</p>
+<p>实际应用中，Reducer 函数不用像上面这样手动调用，<code>store.dispatch</code>方法会触发 Reducer 的自动执行。为此，Store 需要知道 Reducer 函数，做法就是在生成 Store 的时候，将 Reducer 传入<code>createStore</code>方法。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，<code>createStore</code>接受 Reducer 作为参数，生成一个新的 Store。以后每当<code>store.dispatch</code>发送过来一个新的 Action，就会自动调用 Reducer，得到新的 State。</p>
+<p>为什么这个函数叫做 Reducer 呢？因为它可以作为数组的<code>reduce</code>方法的参数。请看下面的例子，一系列 Action 对象按照顺序作为一个数组。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> actions = [</span><br><span class="line">  &#123; <span class="attr">type</span>: <span class="string">&#x27;ADD&#x27;</span>, <span class="attr">payload</span>: <span class="number">0</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">type</span>: <span class="string">&#x27;ADD&#x27;</span>, <span class="attr">payload</span>: <span class="number">1</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">type</span>: <span class="string">&#x27;ADD&#x27;</span>, <span class="attr">payload</span>: <span class="number">2</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> total = actions.reduce(reducer, <span class="number">0</span>); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，数组<code>actions</code>表示依次有三个 Action，分别是加<code>0</code>、加<code>1</code>和加<code>2</code>。数组的<code>reduce</code>方法接受 Reducer 函数作为参数，就可以直接得到最终的状态<code>3</code>。</p>
+<h3 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h3><p>由于 Reducer 是纯函数，就可以保证同样的State，必定得到同样的 View。但也正因为这一点，Reducer 函数里面不能改变 State，必须返回一个全新的对象，请参考下面的写法。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// State 是一个对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123; thingToChange &#125;);</span><br><span class="line">  <span class="comment">// 或者</span></span><br><span class="line">  <span class="keyword">return</span> &#123; ...state, ...newState &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// State 是一个数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [...state, newItem];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>最好把 State 对象设成只读。你没法改变它，要得到新的 State，唯一办法就是生成一个新对象。这样的好处是，任何时候，与某个 View 对应的 State 总是一个不变的对象。</p>
+<h3 id="store-subscribe"><a href="#store-subscribe" class="headerlink" title="store.subscribe()"></a>store.subscribe()</h3><p>Store 允许使用<code>store.subscribe</code>方法设置监听函数，一旦 State 发生变化，就自动执行这个函数。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line">store.subscribe(listener);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>显然，只要把 View 的更新函数（对于 React 项目，就是组件的<code>render</code>方法或<code>setState</code>方法）放入<code>listen</code>，就会实现 View 的自动渲染。</p>
+<p><code>store.subscribe</code>方法返回一个函数，调用这个函数就可以解除监听。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> unsubscribe = store.subscribe(<span class="function">() =&gt;</span></span><br><span class="line">  <span class="built_in">console</span>.log(store.getState())</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">unsubscribe();</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p>首先，用户发出 Action。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">store.dispatch(action);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>然后，Store 自动调用 Reducer，并且传入两个参数：当前 State 和收到的 Action。 Reducer 会返回新的 State 。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> nextState = todoApp(previousState, action);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>State 一旦有变化，Store 就会调用监听函数。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 设置监听函数</span></span><br><span class="line">store.subscribe(listener);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><code>listener</code>可以通过<code>store.getState()</code>得到当前状态。如果使用的是 React，这时可以触发重新渲染 View。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">listerner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> newState = store.getState();</span><br><span class="line">  component.setState(newState);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="Store-的实现"><a href="#Store-的实现" class="headerlink" title="Store 的实现"></a>Store 的实现</h2><p>上一节介绍了 Redux 涉及的基本概念，可以发现 Store 提供了三个方法。</p>
+<blockquote>
+<ul>
+<li>store.getState()</li>
+<li>store.dispatch()</li>
+<li>store.subscribe()</li>
+</ul>
+</blockquote>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> &#123; subscribe, dispatch, getState &#125; = createStore(reducer);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><code>createStore</code>方法还可以接受第二个参数，表示 State 的最初状态。这通常是服务器给出的。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> store = createStore(todoApp, <span class="built_in">window</span>.STATE_FROM_SERVER)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，<code>window.STATE_FROM_SERVER</code>就是整个应用的状态初始值。注意，如果提供了这个参数，它会覆盖 Reducer 函数的默认初始值。</p>
+<p>下面是<code>createStore</code>方法的一个简单实现，可以了解一下 Store 是怎么生成的。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> createStore = <span class="function">(<span class="params">reducer</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> state;</span><br><span class="line">  <span class="keyword">let</span> listeners = [];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> getState = <span class="function">() =&gt;</span> state;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> dispatch = <span class="function">(<span class="params">action</span>) =&gt;</span> &#123;</span><br><span class="line">    state = reducer(state, action);</span><br><span class="line">    listeners.forEach(<span class="function"><span class="params">listener</span> =&gt;</span> listener());</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> subscribe = <span class="function">(<span class="params">listener</span>) =&gt;</span> &#123;</span><br><span class="line">    listeners.push(listener);</span><br><span class="line">    <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      listeners = listeners.filter(<span class="function"><span class="params">l</span> =&gt;</span> l !== listener);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  dispatch(&#123;&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123; getState, dispatch, subscribe &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="Redux-简单-demo"><a href="#Redux-简单-demo" class="headerlink" title="Redux 简单 demo"></a>Redux 简单 demo</h2><p><strong>src/action/index.js:</strong> </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> ADD_TODO = <span class="string">&quot;ADD_TODO&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    type: ADD_TODO,</span><br><span class="line">    text,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>src/reducer/index.js</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> demoInitialState = &#123;</span><br><span class="line">    value: <span class="string">&#x27;默认值&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = demoInitialState, action</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(state, action);</span><br><span class="line">    <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;ADD_TODO&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                ...state, ...action</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">return</span> state</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    reducer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>src/store/index.js：</strong> </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&quot;redux&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 倒入我们自己创建的 reducer</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; reducer &#125; <span class="keyword">from</span> <span class="string">&quot;../reducer&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 构建 store</span></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>Home.jsx:</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useEffect &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//导入 store</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&quot;../store&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导入 action</span></span><br><span class="line"><span class="keyword">import</span> &#123; addTodo &#125; <span class="keyword">from</span> <span class="string">&quot;../action&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Home = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> handleClick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    store.dispatch(addTodo(<span class="string">&quot;11111&quot;</span>));</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    store.subscribe(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(store.getState());</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;button onClick=&#123;handleClick&#125;&gt;Home 按钮&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Home;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/uPic/MYLa1c.png" alt="MYLa1c"></p>
+]]></content>
+      <categories>
+        <category>框架</category>
+        <category>React</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+        <tag>redux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>阿里云- 宝塔使用</title>
     <url>/2020/10/22/%E9%98%BF%E9%87%8C%E4%BA%91-%E5%AE%9D%E5%A1%94%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[]]></content>
@@ -673,7 +849,26 @@
 <h3 id="自定义Hook（-）"><a href="#自定义Hook（-）" class="headerlink" title="自定义Hook（*）"></a>自定义Hook（*）</h3><blockquote>
 <p><em>Hook</em> 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。</p>
 <p>通过自定义 Hook，可以将组件逻辑提取到可重用的函数中。</p>
+<ol>
+<li>自定义的hook，必须以use开头</li>
+<li>自定义的hook，可以使用这些hook（useSate,useEffect…）来封装</li>
+</ol>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> useCus = <span class="function">(<span class="params">val, num</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(val);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> add = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    setCount(count + num);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    count,</span><br><span class="line">    add,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Hook3 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> &#123; count, add &#125; = useCus(<span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;div&gt;&#123;count&#125;&lt;/div&gt;</span><br><span class="line">      &lt;button onClick=&#123;<span class="function">() =&gt;</span> add()&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hook3;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>useInstance.ts</strong> </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRef, useCallback, useEffect &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">useInstance</span>&lt;<span class="title">P</span> <span class="title">extends</span> </span>&#123;&#125;, S <span class="keyword">extends</span> &#123;&#125;, C <span class="keyword">extends</span> &#123;&#125;&gt;(props: P, <span class="attr">state</span>: S, custom?: C ) &#123;</span><br><span class="line">  <span class="keyword">const</span> instanceRef = useRef(&#123;</span><br><span class="line">    props,</span><br><span class="line">    state,</span><br><span class="line">    custom,</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    instanceRef.current.props = props;</span><br><span class="line">    instanceRef.current.state = state;</span><br><span class="line">    instanceRef.current.custom = custom;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> getProps = useCallback(():<span class="function"><span class="params">P</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> instanceRef.current.props;</span><br><span class="line">  &#125;, [instanceRef]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> getState = useCallback(():<span class="function"><span class="params">S</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> instanceRef.current.state;</span><br><span class="line">  &#125;, [instanceRef]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> getCustom = useCallback(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> instanceRef.current.custom;</span><br><span class="line">  &#125;, [instanceRef]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123; getProps, getState, getCustom &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>useTimeout.ts</strong> </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRef, useCallback, useEffect &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">useTimeout</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> timeoutRef = useRef&lt;<span class="literal">null</span> | number&gt;(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (timeoutRef.current !== <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="built_in">window</span>.clearTimeout(timeoutRef.current);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, [timeoutRef]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="built_in">setTimeout</span> = useCallback(<span class="function">(<span class="params">func, delay</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (timeoutRef.current !== <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="built_in">window</span>.clearTimeout(timeoutRef.current);</span><br><span class="line">    &#125;</span><br><span class="line">    timeoutRef.current = <span class="built_in">window</span>.setTimeout(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      timeoutRef.current = <span class="literal">null</span>;</span><br><span class="line">      func();</span><br><span class="line">    &#125;, delay);</span><br><span class="line">  &#125;, [timeoutRef]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="built_in">clearTimeout</span> = useCallback(<span class="function">(<span class="params">func, delay</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (timeoutRef.current !== <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="built_in">window</span>.clearTimeout(timeoutRef.current);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, [timeoutRef]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> [<span class="built_in">setTimeout</span>, <span class="built_in">clearTimeout</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>useCacheBind.js</strong> </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRef, useCallback &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">useCachebind</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> cacheBindRef = useRef&lt;any&gt;(&#123;&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> getCacheBind = useCallback(<span class="function">(<span class="params">name: string, fn: <span class="built_in">Function</span>, ...aArgs: any[]</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> cachedBind = cacheBindRef.current;</span><br><span class="line">    <span class="keyword">let</span> cacheKey = <span class="string">`<span class="subst">$&#123;name&#125;</span>_<span class="subst">$&#123;aArgs.join(<span class="string">&#x27;_&#x27;</span>)&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">let</span> cache = cachedBind[cacheKey];</span><br><span class="line">    <span class="keyword">if</span> (cache) &#123;</span><br><span class="line">      <span class="keyword">let</span> argsEqual = cache.oriFn === fn;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; cache.args.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (cache.args[i] !== aArgs[i]) &#123;</span><br><span class="line">          argsEqual = <span class="literal">false</span>;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (argsEqual) &#123;</span><br><span class="line">        <span class="keyword">return</span> cache.fn;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cache = &#123;</span><br><span class="line">      fn: fn.bind(<span class="literal">null</span>, ...aArgs),</span><br><span class="line">      oriFn: fn,</span><br><span class="line">      args: aArgs</span><br><span class="line">    &#125;;</span><br><span class="line">    cachedBind[cacheKey] = cache;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> cache.fn;</span><br><span class="line">  &#125;, [cacheBindRef]);</span><br><span class="line">  <span class="keyword">return</span> &#123; getCacheBind &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>框架</category>
@@ -11401,6 +11596,232 @@ f.constructor === F; // true
       </tags>
   </entry>
   <entry>
+    <title>微信小程序笔记上</title>
+    <url>/2019/09/05/WeChatUp/</url>
+    <content><![CDATA[<h1 id="微信小程序笔记上"><a href="#微信小程序笔记上" class="headerlink" title="微信小程序笔记上"></a>微信小程序笔记上</h1><blockquote>
+<p>微信小程序学习笔记上</p>
+<p>初步接触小程序</p>
+<p>基础内容介绍</p>
+<p>开发者文档</p>
+<p>app.js 全局生命周期函数</p>
+<p>WXML 数据绑定</p>
+<p>通过 wx.request 请求数据</p>
+<p>微信小程序里列表渲染</p>
+<p>页面相关事件处理函数</p>
+<p>True mastery of any skill takes a lifetime.</p>
+<p>对任何技能的掌握都需要一生的刻苦操练。</p>
+</blockquote>
+<h1 id="小程序简介"><a href="#小程序简介" class="headerlink" title="小程序简介"></a>小程序简介</h1><blockquote>
+<p>小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</p>
+<p>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。</p>
+</blockquote>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/introduction.html">相关介绍</a></p>
+<p><strong>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。但和常规的前端开发又有一些区别：</strong> <a href="https://juejin.im/entry/581db98fa0bb9f0058abffea">可以参考</a></p>
+<ol>
+<li><strong>JavaScript</strong>: 微信小程序的 JavaScript 运行环境即不是 Browser 也不是 Node.js。它运行在微信 App 的上下文中，不能操作 Browser context 下的 DOM，也不能通过 N*ode.js 相关接口访问操作系统 API。所以，严格意义来讲，微信小程序并不是 Html5，虽然开发过程和用到的技术栈和 Html5 是相通的。</li>
+<li><strong>WXML：</strong>作为微信小程序的展示层，并不是使用 Html，而是自己发明的基于 XML 语法的描述。</li>
+<li><strong>WXSS：</strong>用来修饰展示层的样式。官方的描述是 “ WXSS (WeiXin Style Sheets) 是一套样式语言，用于描述 WXML 的组件样式。WXSS 用来决定 WXML 的组件应该怎么显示。” “我们的 WXSS 具有 CSS 大部分特性…我们对 CSS 进行了扩充以及修改。”基于 CSS2 还是 CSS3？大部分是哪些部分？是否支持 CSS3 里的动画？不得而知。</li>
+</ol>
+<h4 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h4><p><img src="http://static.zxinc520.com/blog/20190514/yTqqYeB2UoIS.png?imageslim" alt="mark"></p>
+<ol>
+<li><code>app.js</code>做为小程序的入口，里面有个 App 实例，每个小程序只会有一个 App 实例，小程序启动以后触发 onLaunch 函数执行，获取用户信息</li>
+<li><code>app.json</code>是小程序的所有全局配置，<code>pages</code>字段放置所有页面的路径，<code>window</code>字段定义所有页面的顶部背景颜色，文字颜色 详细配置请<a href="https://link.juejin.im/?target=https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html">戳这里 👇</a></li>
+<li><code>app.wxss</code>文件就是页面公用的样式，仅支持部分 css 选择器</li>
+<li><code>wxml</code>就是我们的 HTML 文件，常用标签为 <code>view</code> 、<code>text</code> 等，没有所谓的<code>div</code>、<code>span</code>、<code>p</code>一类的标签了，我们习惯称它们为组件</li>
+</ol>
+<hr>
+<blockquote>
+<p><strong>设计理念：</strong></p>
+<p>小程序内部可以理解成一个 mvvm 的框架，分为逻辑层和视图层，逻辑层将数据进行处理后发送给视图层，同时接受视图层的事件反馈。</p>
+</blockquote>
+<hr>
+<p><img src="http://static.zxinc520.com/blog/20190514/U6eXvlL8evmQ.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190514/m4UDxEkFa1ae.png?imageslim" alt="mark"></p>
+<h2 id="开始上手"><a href="#开始上手" class="headerlink" title="开始上手"></a>开始上手</h2><blockquote>
+<p><strong>开始正式学习</strong></p>
+<p>基础学习部分</p>
+</blockquote>
+<h3 id="加载一张图片"><a href="#加载一张图片" class="headerlink" title="加载一张图片"></a>加载一张图片</h3><p><img src="http://static.zxinc520.com/blog/20190514/GnYuPkAo16G5.png?imageslim" alt="mark"></p>
+<p>_简单使用样式_：</p>
+<p><img src="http://static.zxinc520.com/blog/20190514/gvNQzg8BaF74.png?imageslim" alt="mark"></p>
+<h2 id="WXSS"><a href="#WXSS" class="headerlink" title="WXSS"></a>WXSS</h2><blockquote>
+<p>WXSS (WeiXin Style Sheets)是一套样式语言，用于描述 WXML 的组件样式。</p>
+<p>WXSS 用来决定 WXML 的组件应该怎么显示。 <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">可以参考官网</a></p>
+</blockquote>
+<p>为了适应广大的前端开发者，WXSS 具有 CSS 大部分特性。同时为了更适合开发微信小程序，WXSS 对 CSS 进行了扩充以及修改。</p>
+<p>与 CSS 相比，WXSS 扩展的特性有：</p>
+<ul>
+<li>尺寸单位</li>
+<li>样式导入</li>
+</ul>
+<h2 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h2><p>​ <strong>rpx</strong>（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为 750rpx。如在 iPhone6 上，屏幕宽度为 375px，共有 750 个物理像素，则 750rpx = 375px = 750 物理像素，1rpx = 0.5px = 1 物理像素</p>
+<p><img src="http://static.zxinc520.com/blog/20190514/57Wa2m8PEEyp.png?imageslim" alt="mark"></p>
+<p><strong>建议：</strong> 开发微信小程序时设计师可以用 iPhone6 作为视觉稿的标准。</p>
+<p><strong>注意：</strong> 在较小的屏幕上不可避免的会有一些毛刺，请在开发时尽量避免这种情况。</p>
+<h2 id="全局样式与局部样式"><a href="#全局样式与局部样式" class="headerlink" title="全局样式与局部样式"></a>全局样式与局部样式</h2><p>定义在 app.wxss 中的样式为全局样式，作用于每一个页面。在 page 的 wxss 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 app.wxss 中相同的选择器。</p>
+<h2 id="开发者文档"><a href="#开发者文档" class="headerlink" title="开发者文档"></a>开发者文档</h2><blockquote>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/image.html">开发者文档</a></p>
+<p><strong>不会</strong> 或 <strong>忘了</strong> 就查文档！</p>
+</blockquote>
+<h3 id="image"><a href="#image" class="headerlink" title="image:"></a>image:</h3><p>​ <strong>解决图片缩放问题：</strong></p>
+<ul>
+<li>mode （ 常用下面 2 个属性值缩放图片 ）<ul>
+<li>aspectFit：缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。</li>
+<li>aspectFill：缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190520/XC3RPCh4fJdY.png?imageslim" alt="mark"></p>
+<h3 id="swiper"><a href="#swiper" class="headerlink" title="swiper"></a>swiper</h3><blockquote>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html">看开发者文档</a></p>
+<p>轮播组件：调用相应的标签及参数设置</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190520/PgOdEdCQrqvp.gif" alt="mark"></p>
+<h2 id="解读-app-json"><a href="#解读-app-json" class="headerlink" title="解读 app.json"></a>解读 app.json</h2><blockquote>
+<p>小程序根目录下的 <code>app.json</code> 文件用来对微信小程序进行全局配置。文件内容为一个 JSON 对象，有以下属性：</p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">可以参考官网</a></p>
+</blockquote>
+<h3 id="pages"><a href="#pages" class="headerlink" title="pages"></a>pages</h3><blockquote>
+<p>用于指定小程序由哪些页面组成，每一项都对应一个页面的 路径（含文件名） 信息。文件名不需要写文件后缀，框架会自动去寻找对于位置的 <code>.json</code>, <code>.js</code>, <code>.wxml</code>, <code>.wxss</code> 四个文件进行处理。</p>
+</blockquote>
+<h3 id="window"><a href="#window" class="headerlink" title="window"></a>window</h3><blockquote>
+<p>用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;window&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;navigationBarBackgroundColor&quot;</span>: <span class="string">&quot;#ffffff&quot;</span>,</span><br><span class="line">    <span class="string">&quot;navigationBarTextStyle&quot;</span>: <span class="string">&quot;black&quot;</span>,</span><br><span class="line">    <span class="string">&quot;navigationBarTitleText&quot;</span>: <span class="string">&quot;微信接口功能演示&quot;</span>,</span><br><span class="line">    <span class="string">&quot;backgroundColor&quot;</span>: <span class="string">&quot;#eeeeee&quot;</span>,</span><br><span class="line">    <span class="string">&quot;backgroundTextStyle&quot;</span>: <span class="string">&quot;light&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="tabBar"><a href="#tabBar" class="headerlink" title="tabBar"></a>tabBar</h3><blockquote>
+<p>如果小程序是一个多 tab 应用（客户端窗口的底部或顶部有 tab 栏可以切换页面），可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;tabBar&quot;</span>: &#123;</span><br><span class="line">   <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#333&quot;</span>,</span><br><span class="line">   <span class="string">&quot;selectedColor&quot;</span>: <span class="string">&quot;#f30&quot;</span>,</span><br><span class="line">   <span class="string">&quot;list&quot;</span>: [&#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;首页&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/message/message&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;消息&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;个人中心&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;综合&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190521/OCDT2PNCaB4Y.png?imageslim" alt="mark"></p>
+<p><em>等等等… 不了解就看文档！</em></p>
+<p><strong>注意： 所以看开发者文档很重要！</strong></p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">点一下就可以看了，别懒！</a></p>
+<h2 id="app-js-全局生命周期函数"><a href="#app-js-全局生命周期函数" class="headerlink" title="app.js 全局生命周期函数"></a>app.js 全局生命周期函数</h2><blockquote>
+<p>app.js 全局生命周期函数</p>
+</blockquote>
+<p><em>在 app.js 文件中</em> ， 定义了一些生命周期方法 ， onLaunch，onShow，onHide，onError，以及任意开发者添加的函数或者数据（通过 this 可以访问）</p>
+<p><strong>以下是各个生命周期方法作用和描述：</strong></p>
+<ol>
+<li><strong>onLaunch 生命周期函数</strong> –监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</li>
+<li><strong>onShow 生命周期函数</strong>–监听小程序显示 当小程序启动，或从后台进入前台显示，会触发 onShow</li>
+<li><strong>onHide 生命周期函数</strong>–监听小程序隐藏 当小程序从前台进入后台，会触发 onHide</li>
+<li><strong>onError 错误监听函数</strong> 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息</li>
+</ol>
+<p>其他 Any 开发者可以添加任意的函数或数据到 Object 参数中，用 this 可以访问</p>
+<p><em>index.js:</em> （个人感觉 和 <strong>Vue</strong> 真的好像，如果熟悉 Vue 的话，这理解起来应该没有难度。）</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="comment">//获取应用实例</span></span><br><span class="line"><span class="keyword">const</span> app = getApp();</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    motto: <span class="string">&quot;Hello World&quot;</span>,</span><br><span class="line">    listarr: <span class="number">0</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</span></span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">option</span>) </span>&#123;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: <span class="string">&quot;https://www.baifubao.com/callback&quot;</span>,</span><br><span class="line">      success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">          listarr: res.statusCode,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：着重关注 onLoad 函数，因为使用最频繁！</strong></p>
+<h2 id="WXML-数据绑定"><a href="#WXML-数据绑定" class="headerlink" title="WXML 数据绑定"></a>WXML 数据绑定</h2><blockquote>
+<p>WXML 中的动态数据均来自对应 Page 的 data。</p>
+</blockquote>
+<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">&quot;Hello World!&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190526/Dr9a1AITnQo7.png?imageslim" alt="mark"></p>
+<h4 id="特别注意："><a href="#特别注意：" class="headerlink" title="特别注意："></a>特别注意：</h4><ol>
+<li>花括号和引号之间不能有空格</li>
+<li>不能直接写 checked=“false”，其计算结果是一个字符串，转成 boolean 类型后转为真值。</li>
+</ol>
+<h2 id="通过-wx-request-请求数据"><a href="#通过-wx-request-请求数据" class="headerlink" title="通过 wx.request 请求数据"></a>通过 wx.request 请求数据</h2><blockquote>
+<p>通过 wx.request 请求数据</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">wx.request(&#123;</span><br><span class="line">  url: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  data: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  header: &#123;&#125;,</span><br><span class="line">  method: <span class="string">&quot;GET&quot;</span>,</span><br><span class="line">  dataType: <span class="string">&quot;json&quot;</span>,</span><br><span class="line">  responseType: <span class="string">&quot;text&quot;</span>,</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;&#125;,</span><br><span class="line">  complete: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190527/x00Ledvp9GT7.png?imageslim" alt="mark"></p>
+<p><strong>setData</strong>：接受 <u>wx.request</u> 请求的数据，赋值给 Page 里面的 data（然后通过插值表达式渲染到页面）</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="comment">//获取应用实例</span></span><br><span class="line"><span class="keyword">const</span> app = getApp();</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    motto: <span class="string">&quot;Hello World&quot;</span>,</span><br><span class="line">    listarr: <span class="number">0</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">option</span>) </span>&#123;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: <span class="string">&quot;https://www.baifubao.com/callback&quot;</span>,</span><br><span class="line">      success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">          listarr: res.statusCode,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="微信小程序里列表渲染"><a href="#微信小程序里列表渲染" class="headerlink" title="微信小程序里列表渲染"></a>微信小程序里列表渲染</h2><blockquote>
+<h3 id="wx-for"><a href="#wx-for" class="headerlink" title="wx:for"></a>wx:for</h3><p>在组件上使用 <code>wx:for</code> 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。</p>
+<p>默认数组的当前项的下标变量名默认为 <code>index</code>，数组当前项的变量名默认为 <code>item</code></p>
+</blockquote>
+<p><em>类比于 Vue：</em></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;example-1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span>&gt;</span>&#123;&#123; item.message &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>微信小程序里面：</em></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;view wx:<span class="keyword">for</span>=<span class="string">&quot;&#123;&#123;array&#125;&#125;&quot;</span>&gt;&#123;&#123;index&#125;&#125;: &#123;&#123;item.message&#125;&#125;&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    array: [</span><br><span class="line">      &#123;</span><br><span class="line">        message: <span class="string">&quot;foo&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        message: <span class="string">&quot;bar&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="wx-key"><a href="#wx-key" class="headerlink" title="wx:key"></a>wx:key</h4><p>​ <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/list.html">可以参考</a></p>
+<p>如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 <a href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html">``</a> 中的输入内容，<a href="https://developers.weixin.qq.com/miniprogram/dev/component/switch.html">``</a>的选中状态），需要使用 <code>wx:key</code> 来指定列表中项目的唯一的标识符。</p>
+<ol>
+<li>字符串，代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。</li>
+<li>保留关键字 <code>*this</code> 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：</li>
+</ol>
+<p>当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。</p>
+<p><strong>如不提供 wx:key，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">switch</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;objectArray&#125;&#125;&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;unique&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: block;&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123;item.id&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;switch&quot;</span>&gt;</span>Switch<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;addToFront&quot;</span>&gt;</span>Add to the front<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">switch</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;numberArray&#125;&#125;&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;*this&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: block;&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123;item&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;addNumberToFront&quot;</span>&gt;</span>Add to the front<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    objectArray: [</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">5</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_5&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_4&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_3&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_2&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_1&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">0</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_0&quot;</span> &#125;,</span><br><span class="line">    ],</span><br><span class="line">    numberArray: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="页面相关事件处理函数"><a href="#页面相关事件处理函数" class="headerlink" title="页面相关事件处理函数"></a>页面相关事件处理函数</h2><blockquote>
+<p>页面相关事件处理函数（<strong>下拉刷新</strong>，<strong>滑到底部加载更多</strong>等）</p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.startPullDownRefresh.html">可以参考</a></p>
+</blockquote>
+<p><strong>下拉事件和触底事件</strong>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//页面相关事件处理函数---监听用户下拉动作</span></span><br><span class="line">   onPullDownRefresh:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">&#x27;下拉！&#x27;</span>)</span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="comment">//页面上拉触底事件的处理函数</span></span><br><span class="line">   onReachBottom:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">&#x27;上拉&#x27;</span>)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h2><blockquote>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.showNavigationBarLoading.html">可以参考官方文档</a></p>
+<p>js 文件</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">函数 API</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">wx.showNavigationBarLoading(Object object)</td>
+<td align="center">在当前页面显示导航条加载动画</td>
+</tr>
+<tr>
+<td align="center">wx.setNavigationBarTitle(Object object)</td>
+<td align="center">动态设置当前页面的标题</td>
+</tr>
+<tr>
+<td align="center">wx.setNavigationBarColor(Object object)</td>
+<td align="center">设置页面导航条颜色</td>
+</tr>
+<tr>
+<td align="center">wx.hideNavigationBarLoading(Object object)</td>
+<td align="center">在当前页面隐藏导航条加载动画</td>
+</tr>
+</tbody></table>
+<p><img src="http://static.zxinc520.com/blog/20190603/DXIDRjESGUHv.gif" alt="mark"></p>
+<h2 id="界面交互"><a href="#界面交互" class="headerlink" title="界面交互"></a>界面交互</h2><blockquote>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html">参考官方文档</a></p>
+</blockquote>
+<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">wx.showToast(&#123;</span><br><span class="line">  title: <span class="string">&quot;成功w&quot;</span>,</span><br><span class="line">  icon: <span class="string">&quot;success&quot;</span>,</span><br><span class="line">  duration: <span class="number">2000</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190603/fRajsw7UWlQc.gif" alt="mark"></p>
+<h2 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h2><blockquote>
+<p>下拉刷新( <strong>配合</strong> 页面<em>相关事件处理函数</em>—监听用户下拉动作)</p>
+</blockquote>
+<p><strong>index.json:</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;enablePullDownRefresh&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;backgroundTextStyle&quot;</span>: <span class="string">&quot;dark&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>index.js:</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//页面相关事件处理函数---监听用户下拉动作</span></span><br><span class="line"> onPullDownRefresh:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">&#x27;下拉！&#x27;</span>)</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190603/bHEJTM3fLLsC.gif" alt="mark"></p>
+]]></content>
+      <categories>
+        <category>微信小程序</category>
+        <category>微信小程序上篇</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MVVM 和 vue</title>
     <url>/2019/09/05/VueTheory/</url>
     <content><![CDATA[<h1 id="MVVM-和-vue"><a href="#MVVM-和-vue" class="headerlink" title="MVVM 和 vue"></a>MVVM 和 vue</h1><blockquote>
@@ -11726,232 +12147,6 @@ f.constructor === F; // true
         <tag>vue</tag>
         <tag>MVVM</tag>
         <tag>响应式、模板解析、渲染</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信小程序笔记上</title>
-    <url>/2019/09/05/WeChatUp/</url>
-    <content><![CDATA[<h1 id="微信小程序笔记上"><a href="#微信小程序笔记上" class="headerlink" title="微信小程序笔记上"></a>微信小程序笔记上</h1><blockquote>
-<p>微信小程序学习笔记上</p>
-<p>初步接触小程序</p>
-<p>基础内容介绍</p>
-<p>开发者文档</p>
-<p>app.js 全局生命周期函数</p>
-<p>WXML 数据绑定</p>
-<p>通过 wx.request 请求数据</p>
-<p>微信小程序里列表渲染</p>
-<p>页面相关事件处理函数</p>
-<p>True mastery of any skill takes a lifetime.</p>
-<p>对任何技能的掌握都需要一生的刻苦操练。</p>
-</blockquote>
-<h1 id="小程序简介"><a href="#小程序简介" class="headerlink" title="小程序简介"></a>小程序简介</h1><blockquote>
-<p>小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</p>
-<p>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。</p>
-</blockquote>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/introduction.html">相关介绍</a></p>
-<p><strong>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。但和常规的前端开发又有一些区别：</strong> <a href="https://juejin.im/entry/581db98fa0bb9f0058abffea">可以参考</a></p>
-<ol>
-<li><strong>JavaScript</strong>: 微信小程序的 JavaScript 运行环境即不是 Browser 也不是 Node.js。它运行在微信 App 的上下文中，不能操作 Browser context 下的 DOM，也不能通过 N*ode.js 相关接口访问操作系统 API。所以，严格意义来讲，微信小程序并不是 Html5，虽然开发过程和用到的技术栈和 Html5 是相通的。</li>
-<li><strong>WXML：</strong>作为微信小程序的展示层，并不是使用 Html，而是自己发明的基于 XML 语法的描述。</li>
-<li><strong>WXSS：</strong>用来修饰展示层的样式。官方的描述是 “ WXSS (WeiXin Style Sheets) 是一套样式语言，用于描述 WXML 的组件样式。WXSS 用来决定 WXML 的组件应该怎么显示。” “我们的 WXSS 具有 CSS 大部分特性…我们对 CSS 进行了扩充以及修改。”基于 CSS2 还是 CSS3？大部分是哪些部分？是否支持 CSS3 里的动画？不得而知。</li>
-</ol>
-<h4 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h4><p><img src="http://static.zxinc520.com/blog/20190514/yTqqYeB2UoIS.png?imageslim" alt="mark"></p>
-<ol>
-<li><code>app.js</code>做为小程序的入口，里面有个 App 实例，每个小程序只会有一个 App 实例，小程序启动以后触发 onLaunch 函数执行，获取用户信息</li>
-<li><code>app.json</code>是小程序的所有全局配置，<code>pages</code>字段放置所有页面的路径，<code>window</code>字段定义所有页面的顶部背景颜色，文字颜色 详细配置请<a href="https://link.juejin.im/?target=https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html">戳这里 👇</a></li>
-<li><code>app.wxss</code>文件就是页面公用的样式，仅支持部分 css 选择器</li>
-<li><code>wxml</code>就是我们的 HTML 文件，常用标签为 <code>view</code> 、<code>text</code> 等，没有所谓的<code>div</code>、<code>span</code>、<code>p</code>一类的标签了，我们习惯称它们为组件</li>
-</ol>
-<hr>
-<blockquote>
-<p><strong>设计理念：</strong></p>
-<p>小程序内部可以理解成一个 mvvm 的框架，分为逻辑层和视图层，逻辑层将数据进行处理后发送给视图层，同时接受视图层的事件反馈。</p>
-</blockquote>
-<hr>
-<p><img src="http://static.zxinc520.com/blog/20190514/U6eXvlL8evmQ.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190514/m4UDxEkFa1ae.png?imageslim" alt="mark"></p>
-<h2 id="开始上手"><a href="#开始上手" class="headerlink" title="开始上手"></a>开始上手</h2><blockquote>
-<p><strong>开始正式学习</strong></p>
-<p>基础学习部分</p>
-</blockquote>
-<h3 id="加载一张图片"><a href="#加载一张图片" class="headerlink" title="加载一张图片"></a>加载一张图片</h3><p><img src="http://static.zxinc520.com/blog/20190514/GnYuPkAo16G5.png?imageslim" alt="mark"></p>
-<p>_简单使用样式_：</p>
-<p><img src="http://static.zxinc520.com/blog/20190514/gvNQzg8BaF74.png?imageslim" alt="mark"></p>
-<h2 id="WXSS"><a href="#WXSS" class="headerlink" title="WXSS"></a>WXSS</h2><blockquote>
-<p>WXSS (WeiXin Style Sheets)是一套样式语言，用于描述 WXML 的组件样式。</p>
-<p>WXSS 用来决定 WXML 的组件应该怎么显示。 <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">可以参考官网</a></p>
-</blockquote>
-<p>为了适应广大的前端开发者，WXSS 具有 CSS 大部分特性。同时为了更适合开发微信小程序，WXSS 对 CSS 进行了扩充以及修改。</p>
-<p>与 CSS 相比，WXSS 扩展的特性有：</p>
-<ul>
-<li>尺寸单位</li>
-<li>样式导入</li>
-</ul>
-<h2 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h2><p>​ <strong>rpx</strong>（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为 750rpx。如在 iPhone6 上，屏幕宽度为 375px，共有 750 个物理像素，则 750rpx = 375px = 750 物理像素，1rpx = 0.5px = 1 物理像素</p>
-<p><img src="http://static.zxinc520.com/blog/20190514/57Wa2m8PEEyp.png?imageslim" alt="mark"></p>
-<p><strong>建议：</strong> 开发微信小程序时设计师可以用 iPhone6 作为视觉稿的标准。</p>
-<p><strong>注意：</strong> 在较小的屏幕上不可避免的会有一些毛刺，请在开发时尽量避免这种情况。</p>
-<h2 id="全局样式与局部样式"><a href="#全局样式与局部样式" class="headerlink" title="全局样式与局部样式"></a>全局样式与局部样式</h2><p>定义在 app.wxss 中的样式为全局样式，作用于每一个页面。在 page 的 wxss 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 app.wxss 中相同的选择器。</p>
-<h2 id="开发者文档"><a href="#开发者文档" class="headerlink" title="开发者文档"></a>开发者文档</h2><blockquote>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/image.html">开发者文档</a></p>
-<p><strong>不会</strong> 或 <strong>忘了</strong> 就查文档！</p>
-</blockquote>
-<h3 id="image"><a href="#image" class="headerlink" title="image:"></a>image:</h3><p>​ <strong>解决图片缩放问题：</strong></p>
-<ul>
-<li>mode （ 常用下面 2 个属性值缩放图片 ）<ul>
-<li>aspectFit：缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。</li>
-<li>aspectFill：缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。</li>
-</ul>
-</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190520/XC3RPCh4fJdY.png?imageslim" alt="mark"></p>
-<h3 id="swiper"><a href="#swiper" class="headerlink" title="swiper"></a>swiper</h3><blockquote>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html">看开发者文档</a></p>
-<p>轮播组件：调用相应的标签及参数设置</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190520/PgOdEdCQrqvp.gif" alt="mark"></p>
-<h2 id="解读-app-json"><a href="#解读-app-json" class="headerlink" title="解读 app.json"></a>解读 app.json</h2><blockquote>
-<p>小程序根目录下的 <code>app.json</code> 文件用来对微信小程序进行全局配置。文件内容为一个 JSON 对象，有以下属性：</p>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">可以参考官网</a></p>
-</blockquote>
-<h3 id="pages"><a href="#pages" class="headerlink" title="pages"></a>pages</h3><blockquote>
-<p>用于指定小程序由哪些页面组成，每一项都对应一个页面的 路径（含文件名） 信息。文件名不需要写文件后缀，框架会自动去寻找对于位置的 <code>.json</code>, <code>.js</code>, <code>.wxml</code>, <code>.wxss</code> 四个文件进行处理。</p>
-</blockquote>
-<h3 id="window"><a href="#window" class="headerlink" title="window"></a>window</h3><blockquote>
-<p>用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
-</blockquote>
-<p>例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;window&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;navigationBarBackgroundColor&quot;</span>: <span class="string">&quot;#ffffff&quot;</span>,</span><br><span class="line">    <span class="string">&quot;navigationBarTextStyle&quot;</span>: <span class="string">&quot;black&quot;</span>,</span><br><span class="line">    <span class="string">&quot;navigationBarTitleText&quot;</span>: <span class="string">&quot;微信接口功能演示&quot;</span>,</span><br><span class="line">    <span class="string">&quot;backgroundColor&quot;</span>: <span class="string">&quot;#eeeeee&quot;</span>,</span><br><span class="line">    <span class="string">&quot;backgroundTextStyle&quot;</span>: <span class="string">&quot;light&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="tabBar"><a href="#tabBar" class="headerlink" title="tabBar"></a>tabBar</h3><blockquote>
-<p>如果小程序是一个多 tab 应用（客户端窗口的底部或顶部有 tab 栏可以切换页面），可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;tabBar&quot;</span>: &#123;</span><br><span class="line">   <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#333&quot;</span>,</span><br><span class="line">   <span class="string">&quot;selectedColor&quot;</span>: <span class="string">&quot;#f30&quot;</span>,</span><br><span class="line">   <span class="string">&quot;list&quot;</span>: [&#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;首页&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/message/message&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;消息&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;个人中心&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;综合&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190521/OCDT2PNCaB4Y.png?imageslim" alt="mark"></p>
-<p><em>等等等… 不了解就看文档！</em></p>
-<p><strong>注意： 所以看开发者文档很重要！</strong></p>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">点一下就可以看了，别懒！</a></p>
-<h2 id="app-js-全局生命周期函数"><a href="#app-js-全局生命周期函数" class="headerlink" title="app.js 全局生命周期函数"></a>app.js 全局生命周期函数</h2><blockquote>
-<p>app.js 全局生命周期函数</p>
-</blockquote>
-<p><em>在 app.js 文件中</em> ， 定义了一些生命周期方法 ， onLaunch，onShow，onHide，onError，以及任意开发者添加的函数或者数据（通过 this 可以访问）</p>
-<p><strong>以下是各个生命周期方法作用和描述：</strong></p>
-<ol>
-<li><strong>onLaunch 生命周期函数</strong> –监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</li>
-<li><strong>onShow 生命周期函数</strong>–监听小程序显示 当小程序启动，或从后台进入前台显示，会触发 onShow</li>
-<li><strong>onHide 生命周期函数</strong>–监听小程序隐藏 当小程序从前台进入后台，会触发 onHide</li>
-<li><strong>onError 错误监听函数</strong> 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息</li>
-</ol>
-<p>其他 Any 开发者可以添加任意的函数或数据到 Object 参数中，用 this 可以访问</p>
-<p><em>index.js:</em> （个人感觉 和 <strong>Vue</strong> 真的好像，如果熟悉 Vue 的话，这理解起来应该没有难度。）</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="comment">//获取应用实例</span></span><br><span class="line"><span class="keyword">const</span> app = getApp();</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    motto: <span class="string">&quot;Hello World&quot;</span>,</span><br><span class="line">    listarr: <span class="number">0</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</span></span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">option</span>) </span>&#123;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: <span class="string">&quot;https://www.baifubao.com/callback&quot;</span>,</span><br><span class="line">      success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">          listarr: res.statusCode,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：着重关注 onLoad 函数，因为使用最频繁！</strong></p>
-<h2 id="WXML-数据绑定"><a href="#WXML-数据绑定" class="headerlink" title="WXML 数据绑定"></a>WXML 数据绑定</h2><blockquote>
-<p>WXML 中的动态数据均来自对应 Page 的 data。</p>
-</blockquote>
-<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">&quot;Hello World!&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190526/Dr9a1AITnQo7.png?imageslim" alt="mark"></p>
-<h4 id="特别注意："><a href="#特别注意：" class="headerlink" title="特别注意："></a>特别注意：</h4><ol>
-<li>花括号和引号之间不能有空格</li>
-<li>不能直接写 checked=“false”，其计算结果是一个字符串，转成 boolean 类型后转为真值。</li>
-</ol>
-<h2 id="通过-wx-request-请求数据"><a href="#通过-wx-request-请求数据" class="headerlink" title="通过 wx.request 请求数据"></a>通过 wx.request 请求数据</h2><blockquote>
-<p>通过 wx.request 请求数据</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">wx.request(&#123;</span><br><span class="line">  url: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  data: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  header: &#123;&#125;,</span><br><span class="line">  method: <span class="string">&quot;GET&quot;</span>,</span><br><span class="line">  dataType: <span class="string">&quot;json&quot;</span>,</span><br><span class="line">  responseType: <span class="string">&quot;text&quot;</span>,</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;&#125;,</span><br><span class="line">  complete: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190527/x00Ledvp9GT7.png?imageslim" alt="mark"></p>
-<p><strong>setData</strong>：接受 <u>wx.request</u> 请求的数据，赋值给 Page 里面的 data（然后通过插值表达式渲染到页面）</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="comment">//获取应用实例</span></span><br><span class="line"><span class="keyword">const</span> app = getApp();</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    motto: <span class="string">&quot;Hello World&quot;</span>,</span><br><span class="line">    listarr: <span class="number">0</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">option</span>) </span>&#123;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: <span class="string">&quot;https://www.baifubao.com/callback&quot;</span>,</span><br><span class="line">      success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">          listarr: res.statusCode,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="微信小程序里列表渲染"><a href="#微信小程序里列表渲染" class="headerlink" title="微信小程序里列表渲染"></a>微信小程序里列表渲染</h2><blockquote>
-<h3 id="wx-for"><a href="#wx-for" class="headerlink" title="wx:for"></a>wx:for</h3><p>在组件上使用 <code>wx:for</code> 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。</p>
-<p>默认数组的当前项的下标变量名默认为 <code>index</code>，数组当前项的变量名默认为 <code>item</code></p>
-</blockquote>
-<p><em>类比于 Vue：</em></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;example-1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span>&gt;</span>&#123;&#123; item.message &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><em>微信小程序里面：</em></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;view wx:<span class="keyword">for</span>=<span class="string">&quot;&#123;&#123;array&#125;&#125;&quot;</span>&gt;&#123;&#123;index&#125;&#125;: &#123;&#123;item.message&#125;&#125;&lt;/view&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    array: [</span><br><span class="line">      &#123;</span><br><span class="line">        message: <span class="string">&quot;foo&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        message: <span class="string">&quot;bar&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="wx-key"><a href="#wx-key" class="headerlink" title="wx:key"></a>wx:key</h4><p>​ <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/list.html">可以参考</a></p>
-<p>如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 <a href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html">``</a> 中的输入内容，<a href="https://developers.weixin.qq.com/miniprogram/dev/component/switch.html">``</a>的选中状态），需要使用 <code>wx:key</code> 来指定列表中项目的唯一的标识符。</p>
-<ol>
-<li>字符串，代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。</li>
-<li>保留关键字 <code>*this</code> 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：</li>
-</ol>
-<p>当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。</p>
-<p><strong>如不提供 wx:key，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">switch</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;objectArray&#125;&#125;&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;unique&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: block;&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123;item.id&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;switch&quot;</span>&gt;</span>Switch<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;addToFront&quot;</span>&gt;</span>Add to the front<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">switch</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;numberArray&#125;&#125;&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;*this&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: block;&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123;item&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;addNumberToFront&quot;</span>&gt;</span>Add to the front<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    objectArray: [</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">5</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_5&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_4&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_3&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_2&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_1&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">0</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_0&quot;</span> &#125;,</span><br><span class="line">    ],</span><br><span class="line">    numberArray: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="页面相关事件处理函数"><a href="#页面相关事件处理函数" class="headerlink" title="页面相关事件处理函数"></a>页面相关事件处理函数</h2><blockquote>
-<p>页面相关事件处理函数（<strong>下拉刷新</strong>，<strong>滑到底部加载更多</strong>等）</p>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.startPullDownRefresh.html">可以参考</a></p>
-</blockquote>
-<p><strong>下拉事件和触底事件</strong>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//页面相关事件处理函数---监听用户下拉动作</span></span><br><span class="line">   onPullDownRefresh:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">&#x27;下拉！&#x27;</span>)</span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="comment">//页面上拉触底事件的处理函数</span></span><br><span class="line">   onReachBottom:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">&#x27;上拉&#x27;</span>)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h2><blockquote>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.showNavigationBarLoading.html">可以参考官方文档</a></p>
-<p>js 文件</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">函数 API</th>
-<th align="center">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">wx.showNavigationBarLoading(Object object)</td>
-<td align="center">在当前页面显示导航条加载动画</td>
-</tr>
-<tr>
-<td align="center">wx.setNavigationBarTitle(Object object)</td>
-<td align="center">动态设置当前页面的标题</td>
-</tr>
-<tr>
-<td align="center">wx.setNavigationBarColor(Object object)</td>
-<td align="center">设置页面导航条颜色</td>
-</tr>
-<tr>
-<td align="center">wx.hideNavigationBarLoading(Object object)</td>
-<td align="center">在当前页面隐藏导航条加载动画</td>
-</tr>
-</tbody></table>
-<p><img src="http://static.zxinc520.com/blog/20190603/DXIDRjESGUHv.gif" alt="mark"></p>
-<h2 id="界面交互"><a href="#界面交互" class="headerlink" title="界面交互"></a>界面交互</h2><blockquote>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html">参考官方文档</a></p>
-</blockquote>
-<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">wx.showToast(&#123;</span><br><span class="line">  title: <span class="string">&quot;成功w&quot;</span>,</span><br><span class="line">  icon: <span class="string">&quot;success&quot;</span>,</span><br><span class="line">  duration: <span class="number">2000</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190603/fRajsw7UWlQc.gif" alt="mark"></p>
-<h2 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h2><blockquote>
-<p>下拉刷新( <strong>配合</strong> 页面<em>相关事件处理函数</em>—监听用户下拉动作)</p>
-</blockquote>
-<p><strong>index.json:</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;enablePullDownRefresh&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;backgroundTextStyle&quot;</span>: <span class="string">&quot;dark&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>index.js:</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//页面相关事件处理函数---监听用户下拉动作</span></span><br><span class="line"> onPullDownRefresh:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">&#x27;下拉！&#x27;</span>)</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190603/bHEJTM3fLLsC.gif" alt="mark"></p>
-]]></content>
-      <categories>
-        <category>微信小程序</category>
-        <category>微信小程序上篇</category>
-      </categories>
-      <tags>
-        <tag>微信小程序</tag>
       </tags>
   </entry>
   <entry>
