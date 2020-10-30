@@ -2547,8 +2547,8 @@
         <category>字节跳动</category>
       </categories>
       <tags>
-        <tag>promise</tag>
         <tag>面试全面总结</tag>
+        <tag>promise</tag>
         <tag>手撕代码</tag>
       </tags>
   </entry>
@@ -13362,8 +13362,8 @@ f.constructor === F; // true
 ]]></content>
       <categories>
         <category>JS</category>
-        <category>JS 三座大山</category>
         <category>基础知识</category>
+        <category>JS 三座大山</category>
       </categories>
       <tags>
         <tag>JS</tag>
@@ -13525,8 +13525,8 @@ f.constructor === F; // true
 ]]></content>
       <categories>
         <category>JS</category>
-        <category>JS 三座大山</category>
         <category>基础知识</category>
+        <category>JS 三座大山</category>
       </categories>
       <tags>
         <tag>JS</tag>
@@ -13963,8 +13963,8 @@ f.constructor === F; // true
 ]]></content>
       <categories>
         <category>JS</category>
-        <category>JS 三座大山</category>
         <category>基础知识</category>
+        <category>JS 三座大山</category>
       </categories>
       <tags>
         <tag>DOM</tag>
