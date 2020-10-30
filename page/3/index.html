@@ -160,6 +160,497 @@
     
     
     <article
+  id="post-getOfferSinglethreadedandasynchronous"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/23/getOfferSinglethreadedandasynchronous/"
+    >单线程和异步</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/03/23/getOfferSinglethreadedandasynchronous/" class="article-date">
+  <time datetime="2020-03-23T09:18:21.000Z" itemprop="datePublished">2020-03-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/">JS 三座大山</a> / <a class="article-category-link" href="/categories/Offer/">Offer</a> / <a class="article-category-link" href="/categories/Offer/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="专题总结：单线程和异步"><a href="#专题总结：单线程和异步" class="headerlink" title="专题总结：单线程和异步"></a>专题总结：单线程和异步</h2><blockquote>
+<p>拿到 字节跳动实习生 offer 总结</p>
+<p>回馈分享一波自己的知识点总结</p>
+</blockquote>
+<blockquote>
+<p>希望读者依此构建自己的知识树（思维导图）</p>
+<p>偷懒一下：可参考我自己总结思维导图 : <a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
+<p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
+<p>自己开发的博客地址：<a target="_blank" rel="noopener" href="http://zxinc520.com/">zxinc520.com</a></p>
+<p>github 地址: <a target="_blank" rel="noopener" href="https://github.com/ZhChen7">点击</a></p>
+</blockquote>
+<blockquote>
+<p>此篇 js - 【单线程和异步】 知识点： 全部弄懂了，面试很容易。</p>
+</blockquote>
+<h2 id="一、单线程和异步"><a href="#一、单线程和异步" class="headerlink" title="一、单线程和异步"></a>一、单线程和异步</h2><h3 id="1-1、同步-vs-异步"><a href="#1-1、同步-vs-异步" class="headerlink" title="1.1、同步 vs 异步"></a>1.1、同步 vs 异步</h3><ul>
+<li>同步是什么？<ul>
+<li>简单来说：一定要等任务执行完了，得到结果，才执行下一个任务。</li>
+<li>指某段程序执行时会阻塞其它程序执行，其表现形式为程序的执行顺序依赖程序本身的书写顺序</li>
+</ul>
+</li>
+<li>异步是什么？<ul>
+<li>指某段程序执行时不会阻塞其它程序执行，其表现形式为程序的执行顺序不依赖程序本身的书写顺序</li>
+<li>实现方式：event loop【事件轮询】</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2、异步和单线程"><a href="#1-2、异步和单线程" class="headerlink" title="1.2、异步和单线程"></a>1.2、异步和单线程</h3><ul>
+<li><p>单线程</p>
+<ul>
+<li>是什么？单线程就是同时只做一件事，两段 JS 不能同时 执行</li>
+<li>为什么是单线程？<ul>
+<li>避免 DOM 渲染的冲突<ol>
+<li>浏览器需要渲染 DOM</li>
+<li>JS 可以修改 DOM 结构</li>
+<li>JS 执行的时候，浏览器 DOM 渲染会暂停</li>
+<li>两段 JS 也不能同时执行（都修改 DOM 就冲突了）</li>
+<li>webworker 支持多线程，但是不能访问 DOM</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>单线程的解决方案 ？</p>
+<ul>
+<li>异步<ul>
+<li>异步暴露出的问题<ol>
+<li>没按照书写方式执行，可读性差</li>
+<li>callback 中不容易模块化</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>event loop</p>
+<ul>
+<li>是什么？</li>
+<li>事件轮询， JS 实现异步 的具体解决方案</li>
+<li>具体<ul>
+<li>同步代码，直接执行</li>
+<li>异步函数先放在 异步队列 中</li>
+<li>待同步函数执行完毕，轮询执行 异步队列 的函数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3、宏队列和微队列"><a href="#1-3、宏队列和微队列" class="headerlink" title="1.3、宏队列和微队列"></a>1.3、宏队列和微队列</h3><blockquote>
+<p><code>macrotask</code>（宏任务） 和 <code>microtask</code>（微任务）</p>
+<p>面试常考题【promise 回调函数和定时器任务的顺序问题】</p>
+</blockquote>
+<ul>
+<li><p>宏任务：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">script(整体代码)</span><br><span class="line"><span class="built_in">setTimeout</span></span><br><span class="line"><span class="built_in">setInterval</span></span><br><span class="line">I/O</span><br><span class="line">UI交互事件</span><br><span class="line">postMessage</span><br><span class="line">MessageChannel</span><br><span class="line">setImmediate(Node.js 环境)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>微任务</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.then</span><br><span class="line"><span class="built_in">Object</span>.observe</span><br><span class="line">MutaionObserver</span><br><span class="line">process.nextTick(Node.js 环境)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>执行机制：</p>
+<ol>
+<li>执行一个宏任务（栈中没有就从事件队列中获取）</li>
+<li>执行过程中如果遇到微任务，就将它添加到微任务的任务队列中</li>
+<li>宏任务执行完毕后，立即执行当前微任务队列中的所有微任务（依次执行）</li>
+<li>当前宏任务执行完毕，开始检查渲染，然后 GUI 线程接管渲染</li>
+<li>渲染完毕后，JS 引擎线程继续，开始下一个宏任务（从宏任务队列中获取）</li>
+</ol>
+<h4 id="经典面试题"><a href="#经典面试题" class="headerlink" title="经典面试题"></a>经典面试题</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;script start&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> promise1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;promise1&quot;</span>);</span><br><span class="line">  resolve();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;promise1 end&quot;</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;promise2&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;settimeout&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;script end&quot;</span>);</span><br><span class="line"><span class="comment">// 输出顺序: script start-&gt;promise1-&gt;promise1 end-&gt;script end-&gt;promise2-&gt;settimeout</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">async1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;async1 start&quot;</span>);</span><br><span class="line">  <span class="keyword">await</span> async2();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;async1 end&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">async2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;async2&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;script start&quot;</span>);</span><br><span class="line">async1();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;script end&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出顺序：script start-&gt;async1 start-&gt;async2-&gt;script end-&gt;async1 end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4、前端异步的场景"><a href="#1-4、前端异步的场景" class="headerlink" title="1.4、前端异步的场景"></a>1.4、前端异步的场景</h3><ul>
+<li>简单来说：所有的 “ 等待情况” 都需要异步</li>
+<li>定时任务：setTimeout，setInterval</li>
+<li>网络请求：ajax 请求，动态 &lt;_img_ &gt; 加载</li>
+<li>事件绑定</li>
+</ul>
+<h3 id="1-5、Web-Worker"><a href="#1-5、Web-Worker" class="headerlink" title="1.5、Web Worker"></a>1.5、Web Worker</h3><blockquote>
+<p>就是为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。等到 Worker 线程完成计算任务，再把结果返回给主线程。这样的好处是，一些计算密集型或高延迟的任务，被 Worker 线程负担了，主线程（通常负责 UI 交互）就会很流畅，不会被阻塞或拖慢。</p>
+</blockquote>
+<h3 id="1-6、模块化发展历程"><a href="#1-6、模块化发展历程" class="headerlink" title="1.6、模块化发展历程"></a>1.6、模块化发展历程</h3><blockquote>
+<p>可从 IIFE、AMD、CMD、CommonJS、UMD、webpack(require.ensure)、ES Module、&lt;_script type=”module”_ &gt; 这几个角度考虑。</p>
+<p><strong>作用</strong> ：模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。</p>
+</blockquote>
+<ol>
+<li><p>IIFE</p>
+<ul>
+<li><p>使用自执行函数来编写模块化</p>
+</li>
+<li><p>特点：</p>
+<p>在一个单独的函数作用域中执行代码，避免变量冲突。</p>
+</li>
+</ul>
+</li>
+<li><p>AMD</p>
+<ul>
+<li><p>使用 requireJS 来编写模块化</p>
+</li>
+<li><p>特点：依赖必须提前声明好</p>
+</li>
+<li><p>简单实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">&quot;./index.js&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">code</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// code 就是index.js 返回的内容</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>CMD</p>
+<ul>
+<li><p>使用 seaJS 来编写模块化</p>
+</li>
+<li><p>特点：支持动态引入依赖文件</p>
+</li>
+<li><p>简单实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> indexCode = <span class="built_in">require</span>(<span class="string">&quot;./index.js&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>CommonJS</p>
+<ul>
+<li>nodejs 中自带的模块化</li>
+<li>var fs = require(‘fs’);</li>
+</ul>
+</li>
+<li><p>UMD</p>
+<ul>
+<li>兼容 AMD，CommonJS 模块化语法</li>
+</ul>
+</li>
+<li><p>webpack(require.ensure)</p>
+<ul>
+<li>webpack 2.x 版本中的代码分割</li>
+</ul>
+</li>
+<li><p>ES Modules</p>
+<ul>
+<li>ES6 引入的模块化，支持 import 来引入另一个 js</li>
+<li>import a from ‘a’;</li>
+</ul>
+</li>
+</ol>
+<h4 id="1-6-1、AMD-与-CMD-的比较"><a href="#1-6-1、AMD-与-CMD-的比较" class="headerlink" title="1.6.1、AMD 与 CMD 的比较"></a>1.6.1、AMD 与 CMD 的比较</h4><ul>
+<li><p>定义</p>
+<p>AMD 和 CMD 都是用于浏览器端的模块规范</p>
+</li>
+<li><p>AMD</p>
+<ul>
+<li>AMD 是 RequireJS 在推广过程中对模块定义的规范化产出</li>
+<li>其主要内容就是定义了 define 函数该如何书写，只要你按照这个规范书写模块和依赖，require.js 就能正确的进行解析。</li>
+</ul>
+</li>
+<li><p>CMD</p>
+<ul>
+<li>CMD 其实就是 SeaJS 在推广过程中对模块定义的规范化产出</li>
+<li>主要内容就是描述该如何定义模块，如何引入模块，如何导出模块，只要你按照这个规范书写代码，sea.js 就能正确的进行解析</li>
+</ul>
+</li>
+<li><p>AMD 与 CMD 的区别</p>
+<ol>
+<li>AMD 推崇依赖前置，CMD 推崇依赖就近</li>
+<li>AMD 是提前执行，CMD 是延迟执行。</li>
+</ol>
+</li>
+</ul>
+<h4 id="1-6-2、CommonJS-与-AMD-的比较"><a href="#1-6-2、CommonJS-与-AMD-的比较" class="headerlink" title="1.6.2、CommonJS 与 AMD 的比较"></a>1.6.2、CommonJS 与 AMD 的比较</h4><blockquote>
+<p>在服务器端比如 node，采用的则是 CommonJS 规范。</p>
+<p>AMD 和 CMD 都是用于浏览器端的模块规范</p>
+</blockquote>
+<ol>
+<li><p>CommonJS 规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。</p>
+</li>
+<li><p>AMD 规范则是非同步加载模块，允许指定回调函数。</p>
+<p>由于 Node.js 主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以 CommonJS 规范比较适用。</p>
+</li>
+<li><p>但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式，因此浏览器端一般采用 AMD 规范。</p>
+</li>
+</ol>
+<h4 id="16-3、ES6-与-CommonJS-的比较"><a href="#16-3、ES6-与-CommonJS-的比较" class="headerlink" title="16.3、ES6 与 CommonJS 的比较"></a>16.3、ES6 与 CommonJS 的比较</h4><blockquote>
+<p>注意！浏览器加载 ES6 模块，也使用 &lt;_script_ &gt; 标签，但是要加入 type=”module” 属性。</p>
+</blockquote>
+<ol>
+<li>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</li>
+<li>CommonJS 模块是运行时加载，ES6 模块是编译时输出接口</li>
+</ol>
+<h3 id="1-7、async-和-defer"><a href="#1-7、async-和-defer" class="headerlink" title="1.7、async 和 defer"></a>1.7、async 和 defer</h3><ul>
+<li><p>共同点</p>
+<p>两者都会并行下载，不会影响页面的解析。</p>
+</li>
+<li><p>defer：defer 会按照顺序在 DOMContentLoaded 前按照页面出现顺序依次执行。</p>
+</li>
+<li><p>async ：async 则是下载完立即执行</p>
+</li>
+<li><p>具体解析【剖析】</p>
+<ul>
+<li><p>先来看一个普通的 script 标签。&lt;_script src=”a.js”&gt;</script_ ></p>
+<ul>
+<li><p>浏览器会做如下处理：</p>
+<p>1、停止解析 document.</p>
+<p>2、请求 a.js</p>
+<p>3、执行 a.js 中的脚本</p>
+<p>4、继续解析 document</p>
+</li>
+</ul>
+</li>
+<li><pre><code class="js">&lt;script src=&quot;d.js&quot; defer&gt;&lt;/script&gt;
+&lt;script src=&quot;e.js&quot; defer&gt;&lt;/script&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  不阻止解析 document， 并行下载 d.js, e.js</span><br><span class="line"></span><br><span class="line">  即使下载完 d.js, e.js 仍继续解析 document</span><br><span class="line"></span><br><span class="line">  按照页面中出现的顺序，在其他同步脚本执行后，DOMContentLoaded 事件前 依次执行 d.js, e.js。</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;js</span><br><span class="line">  &lt;script src&#x3D;&quot;b.js&quot; async&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;c.js&quot; async&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+不阻止解析 document, 并行下载 b.js, c.js
+
+当脚本下载完后立即执行。（两者执行顺序不确定，执行阶段不确定，可能在 DOMContentLoaded 事件前或者后 ）
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="async-和-defer-总结"><a href="#async-和-defer-总结" class="headerlink" title="async 和 defer 总结"></a>async 和 defer 总结</h4><ul>
+<li><p>两者都不会阻止 document 的解析</p>
+</li>
+<li><p>defer 会在 DOMContentLoaded 前依次执行 （可以利用这两点哦！）</p>
+</li>
+<li><p>async 则是下载完立即执行，不一定是在 DOMContentLoaded 前</p>
+</li>
+<li><p>async 因为顺序无关，所以很适合像 Google Analytics 这样的无依赖脚本</p>
+</li>
+</ul>
+<h3 id="1-8、异步编程-6-种解决方案"><a href="#1-8、异步编程-6-种解决方案" class="headerlink" title="1.8、异步编程 6 种解决方案"></a>1.8、异步编程 6 种解决方案</h3><ol>
+<li><p>回调函数（Callback）</p>
+<ul>
+<li><p>回调函数是异步操作最基本的方法</p>
+</li>
+<li><p>ajax(url, () =&gt; {</p>
+<p>​ // 处理逻辑</p>
+<p>})</p>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>容易写出回调地狱（Callback hell）</li>
+<li>不能使用 try catch 捕获错误，不能直接 return</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>事件监听</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f1.on(<span class="string">&quot;done&quot;</span>, f2);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发布订阅</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery.subscribe(<span class="string">&quot;done&quot;</span>, f2);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Promise</p>
+<ul>
+<li><p>是什么？</p>
+<ul>
+<li>promise 是目前 JS 异步编程的主流解决方案，遵循 Promises/A+ 方案。Promise 用于异步操作，表示一个还未完成但是预期会完成的操作。</li>
+<li>Promise 是 ES6 引入的一个新的对象，他的主要作用是用来解决 JS 异步机制里，回调机制产生的“回调地狱”。它并不是什么突破性的 API，只是封装了异步回调形式，使得异步回调可以写的更加优雅，可读性更高，而且可以链式调用。</li>
+</ul>
+</li>
+<li><p>剖析</p>
+<ul>
+<li><p>promise 本身相当于一个状态机，拥有三种状态</p>
+<ul>
+<li>pending</li>
+<li>fulfilled</li>
+<li>rejected</li>
+</ul>
+<p>一个 promise 对象初始化时的状态是 pending，调用了 resolve 后会将 promise 的状态扭转为 fulfilled，调用 reject 后会将 promise 的状态扭转为 rejected，这两种扭转一旦发生便不能再扭转该 promise 到其他状态。</p>
+</li>
+</ul>
+</li>
+<li><p>Promise 如何使用</p>
+<p>构造一个 promise 对象，并将要执行的异步函数传入到 promise 的参数中执行，并且在异步执行结束后调用 resolve( ) 函数，就可以在 promise 的 then 方法中获取到异步函数的执行结果</p>
+</li>
+<li><p>Promise 原型上的方法</p>
+<ol>
+<li>Promise.prototype.then(onFulfilled, onRejected)</li>
+<li>Promise.prototype.catch(onRejected)</li>
+<li>Promise.prototype.finally(onFinally)</li>
+</ol>
+</li>
+<li><p>Promise 静态方法</p>
+<ol>
+<li><p>Promise.all()</p>
+<p>Promise.all 接收一个 promise 对象数组作为参数，只有全部的 promise 都已经变为 fulfilled 状态后才会继续后面的处理</p>
+</li>
+<li><p>Promise.race()</p>
+<p>这个函数会在 promises 中第一个 promise 的状态扭转后就开始后面的处理（fulfilled、rejected 均可）</p>
+</li>
+<li><p>Promise.resolve()</p>
+</li>
+<li><p>Promise.reject()</p>
+</li>
+</ol>
+</li>
+<li><p>优点</p>
+<p>将异步操作以同步操作的流程表达出来，promise 链式调用，更好地解决了层层嵌套的回调地狱</p>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>不能取消执行。</li>
+<li>无法获取当前执行的进度信息（比如，要在用户界面展示进度条）。</li>
+<li>外部无法捕捉 Promise 内部抛出的错误</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>generator 函数</p>
+<ul>
+<li><p>是什么</p>
+<ul>
+<li>Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。</li>
+<li>如果说 JavaScript 是 ECMAScript 标准的一种具体实现、Iterator 遍历器是 Iterator 的具体实现，那么 Generator 函数可以说是 Iterator 接口的具体实现方式。</li>
+<li>Generator 函数可以通过配合 Thunk 函数更轻松更优雅的实现异步编程和控制流管理</li>
+</ul>
+</li>
+<li><p>描述</p>
+<ul>
+<li>执行 Generator 函数会返回一个遍历器对象，每一次 Generator 函数里面的 yield 都相当一次遍历器对象的 next()方法，并且可以通过 next(value)方法传入自定义的 value,来改变 Generator 函数的行为。</li>
+</ul>
+</li>
+<li><p>能封装异步任务的根本原因</p>
+<ul>
+<li>最大特点就是可以交出函数的执行权（即暂停执行）。Generator 函数可以暂停执行和恢复执行</li>
+</ul>
+</li>
+<li><p>两个特征</p>
+<ul>
+<li>function 关键字与函数名之间有一个星号</li>
+<li>函数体内部使用 yield 表达式，定义不同的内部状态（yield 在英语里的意思就是“产出”）。</li>
+</ul>
+</li>
+<li><p>过程</p>
+<p>Generator 函数的调用方法与普通函数一样，也是在函数名后面加上一对圆括号。不同的是，调用 Generator 函数后，该函数并不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象，也就是上一章介绍的遍历器对象（Iterator Object）</p>
+</li>
+<li><p>Generator 及其异步方面的应用</p>
+<ul>
+<li>Generator 函数将 JavaScript 异步编程带入了一个全新的阶段</li>
+</ul>
+</li>
+<li><p>总结</p>
+<p>调用 Generator 函数，返回一个遍历器对象，代表 Generator 函数的内部指针。以后，每次调用遍历器对象的 next 方法，就会返回一个有着 value 和 done 两个属性的对象。value 属性表示当前的内部状态的值，是 yield 表达式后面那个表达式的值；done 属性是一个布尔值，表示是否遍历结束。</p>
+</li>
+<li><p>demo</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fetch = <span class="built_in">require</span>(<span class="string">&quot;node-fetch&quot;</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> url = <span class="string">&quot;https://api.github.com/users/github&quot;</span>;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="keyword">yield</span> fetch(url);</span><br><span class="line">  <span class="built_in">console</span>.log(result.bio);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>async 和 await</p>
+<ul>
+<li><p>含义</p>
+<p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
+</li>
+<li><p>是什么？</p>
+<ul>
+<li>一句话，它就是 Generator 函数的语法糖。</li>
+<li>一比较就会发现，async 函数就是将 Generator 函数的星号（*）替换成 async，将 yield 替换成 await，仅此而已。</li>
+<li>async 函数可以理解为内置自动执行器的 Generator 函数语法糖，它配合 ES6 的 Promise 近乎完美的实现了异步编程解决方案。</li>
+</ul>
+</li>
+<li><p>相对于 Promise，优势体现在</p>
+<ol>
+<li>处理 then 的调用链，能够更清晰准确的写出代码</li>
+<li>并且也能优雅地解决回调地狱问题</li>
+</ol>
+</li>
+<li><p>相对 Generator 函数，体现在以下 4 点</p>
+<ol>
+<li>内置执行器。 Generator 函数的执行必须靠执行器，所以才有了 co 函数库，而 async 函数自带执行器。也就是说，async 函数的执行，与普通函数一模一样，只要一行</li>
+<li>更好的语义。 async 和 await，比起星号和 yield，语义更清楚了。async 表示函数里有异步操作，await 表示紧跟在后面的表达式需要等待结果</li>
+<li>更广的适用性。 co 函数库约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面，可以跟 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）</li>
+<li>返回值是 Promise。async 函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用 then 方法指定下一步的操作。</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<p>当然 async/await 函数也存在一些缺点，因为 await 将异步代码改造成了同步代码，如果多个异步代码没有依赖性却使用了 await 会导致性能上的降低，代码没有依赖性的话，完全可以使用 Promise.all 的方式。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li>JS 异步编程进化史：callback -&gt; promise -&gt; generator -&gt; async + await</li>
+<li>async/await 函数的实现，就是将 Generator 函数和自动执行器，包装在一个函数里</li>
+<li>async/await 可以说是异步终极解决方案了</li>
+</ol>
+<h2 id="二、相关面试问题"><a href="#二、相关面试问题" class="headerlink" title="二、相关面试问题"></a>二、相关面试问题</h2><ol>
+<li><p>什么是单线程，和异步有什么关系？</p>
+<ul>
+<li>单线程就是同时只做一件事，两段 JS 不能同时 执行</li>
+<li>原因就是 为了避免 DOM 渲染的冲突</li>
+<li>异步是一种 “无奈” 的解决方案，虽然有很多问题</li>
+</ul>
+</li>
+<li><p>是否用过 jQuery 的 Deferred</p>
+<ul>
+<li><p>步骤</p>
+<p>可以 jQuery 1.5 对 ajax 的改变举例</p>
+<p>说明如何简单的封装，使用 Deferred</p>
+<p>说明 ES6 promise 和 Deferred 的区别</p>
+</li>
+<li><p>jQuery 1.5 的变化</p>
+<ul>
+<li><p>无法改变 JS 异步和单线程的本质</p>
+</li>
+<li><p>只能从写法上杜绝 callback 这种形式</p>
+</li>
+<li><p>它是一种语法糖形式，但是解耦了代码</p>
+</li>
+<li><p>很好的体现：开放封闭原则</p>
+</li>
+<li><p>ajax 为例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ajax = $.ajax(<span class="string">&quot;data.json&quot;</span>);</span><br><span class="line">ajax</span><br><span class="line">  .done(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;success 1&quot;</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .fail(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .done(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;success 2&quot;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ajax); <span class="comment">//返回一个 deferred 对象</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>使用 jQuery Deferred</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">waitHandle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> dtd = $.Deferred(); <span class="comment">//创建一个 Deferred 对象</span></span><br><span class="line">  <span class="keyword">var</span> wait = <span class="function"><span class="keyword">function</span> (<span class="params">dtd</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//要求传入一个 Deferred 对象</span></span><br><span class="line">    <span class="keyword">var</span> task = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;执行完成&quot;</span>);</span><br><span class="line">      dtd.resolve(); <span class="comment">//表示异步任务已经完成</span></span><br><span class="line">      <span class="comment">// dtd.reject()  //表示异步任务失败或出错</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">setTimeout</span>(task, <span class="number">2000</span>);</span><br><span class="line">    <span class="keyword">return</span> dtd; <span class="comment">// 要求返回 Deferred 对象</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// 注意，这里一定要有返回值</span></span><br><span class="line">  <span class="keyword">return</span> wait(dtd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/" rel="tag">JS 三座大山</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93/" rel="tag">面试全面总结</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-getOfferhtml2"
   class="article article-type-post"
   itemscope
@@ -6683,311 +7174,6 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/" rel="tag">算法面试</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-ReactTheory"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/09/07/ReactTheory/"
-    >组件化和 React</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/09/07/ReactTheory/" class="article-date">
-  <time datetime="2019-09-07T14:32:45.000Z" itemprop="datePublished">2019-09-07</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/">框架</a> / <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/React/">React</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="组件化和-React"><a href="#组件化和-React" class="headerlink" title="组件化和 React"></a>组件化和 React</h1><blockquote>
-<p>本章先带领学生做一个 React 的实例，熟悉 React 开发环境、以及 <strong>组件化</strong> 的概念。然后，通过实例来讲解 React 的 <strong>实现原理</strong>，包括 <strong>JSX 的本质</strong> 、<strong>虚拟 DOM 和 JSX 的结合</strong>、以及 <strong>setState</strong> 。最后，<strong>对比 vue 和 React</strong> ，分析两者的异同。</p>
-<p>组件化和 React 高级面试知识点</p>
-<p>Think great thoughts and you will be great!</p>
-<p>心怀伟大的理想，你将会变得伟大。</p>
-</blockquote>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>是否做过 React 开发？</li>
-<li>React 以及组件化的一些核心概念</li>
-<li>实现流程</li>
-</ul>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>说一下对组件化的理解</li>
-<li>JSX 本质是什么？</li>
-<li>JSX 和 vdom 的关系？</li>
-<li>说一下 setState 的过程</li>
-<li>阐述一下对 React 和 Vue 的 认识</li>
-</ul>
-<h4 id="回顾-React"><a href="#回顾-React" class="headerlink" title="回顾 React"></a>回顾 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/">React</a></h4><ol>
-<li><p>创建一个基本的 React 应用</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/facebookincubator/create-react-app">Create React App</a> 是一个用于<strong>学习 React</strong> 的舒适环境，也是用 React 创建<strong>新的单页应用</strong>的最佳方式。</p>
-<p>它会配置你的开发环境，以便使你能够使用最新的 JavaScript 特性，提供良好的开发体验，并为生产环境优化你的应用程序。你需要在你的机器上安装 Node &gt;= 8.10 和 npm &gt;= 5.6。要创建项目，请执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br><span class="line">cd my-app</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用 React 实现 <strong>to-do-list</strong> ：</p>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Todo</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;</span><br><span class="line">      list: [],</span><br><span class="line">      title: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> list = <span class="built_in">this</span>.state.list;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          type=<span class="string">&quot;text&quot;</span></span><br><span class="line">          value=&#123;<span class="built_in">this</span>.state.title&#125;</span><br><span class="line">          onChange=&#123;<span class="built_in">this</span>.changeHandle.bind(<span class="built_in">this</span>)&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="built_in">this</span>.clickHandle.bind(<span class="built_in">this</span>)&#125;&gt;Submit&lt;/button&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &#123;list.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span> &#123;item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>;</span><br><span class="line">          &#125;)&#125;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  changeHandle(e) &#123;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      title: e.target.value,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  addTitle(title) &#123;</span><br><span class="line">    <span class="keyword">const</span> currentList = <span class="built_in">this</span>.state.list;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      list: currentList.concat(title),</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.state.list);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  clickHandle(e) &#123;</span><br><span class="line">    <span class="keyword">const</span> title = <span class="built_in">this</span>.state.title;</span><br><span class="line">    <span class="built_in">this</span>.addTitle(title);</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      title: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Todo;</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190907/GRlG7LRoeKp7.gif" alt="mark"></p>
-<h2 id="7-1-说一下对组件化的理解"><a href="#7-1-说一下对组件化的理解" class="headerlink" title="7-1 说一下对组件化的理解"></a>7-1 说一下对组件化的理解</h2><h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>组件的 <strong>封装</strong></li>
-<li>组件的 <strong>复用</strong></li>
-</ul>
-<h4 id="组件的封装"><a href="#组件的封装" class="headerlink" title="组件的封装"></a>组件的封装</h4><ul>
-<li>视图</li>
-<li>数据</li>
-<li>变化逻辑 （ 数据驱动视图变化 ）</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/m1BCsjY31wOd.png?imageslim" alt="mark"></p>
-<h4 id="组件的-复用"><a href="#组件的-复用" class="headerlink" title="组件的 复用"></a>组件的 复用</h4><ul>
-<li>props 传递</li>
-<li>复用</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/dSD9f5yFTKYD.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190907/dig0u7rhRuJi.png?imageslim" alt="mark"></p>
-<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>说一下对组件化的理解？<ul>
-<li>组件的封装：封装视图、数据、变化逻辑</li>
-<li>组件的复用：props 传递、复用</li>
-</ul>
-</li>
-</ul>
-<h2 id="7-2-JSX-本质是什么"><a href="#7-2-JSX-本质是什么" class="headerlink" title="7-2 JSX 本质是什么"></a>7-2 JSX 本质是什么</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>JSX 语法</li>
-<li>JSX 解析成 JS</li>
-<li>独立的标准</li>
-</ul>
-<h4 id="JSX-语法"><a href="#JSX-语法" class="headerlink" title="JSX 语法"></a>JSX 语法</h4><ul>
-<li>html 形式</li>
-<li>引入 JS 变量和表达式</li>
-<li>if … else …</li>
-<li>循环</li>
-<li>style 和 className</li>
-<li>事件</li>
-</ul>
-<h4 id="提出疑问"><a href="#提出疑问" class="headerlink" title="提出疑问"></a>提出疑问</h4><ul>
-<li>JSX 语法根本无法被浏览器所解析</li>
-<li>那么它如何在浏览器运行</li>
-</ul>
-<h4 id="JSX-解析"><a href="#JSX-解析" class="headerlink" title="JSX 解析"></a>JSX 解析</h4><ul>
-<li>JSX 其实是语法糖</li>
-<li>开发环境会将 JSX 编译成 JS 代码</li>
-<li>JSX 的写法 大大降低了学习成本和 编码工作量</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/Xy8TYGeoHcWC.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190907/yjXVnlK8oLfk.png?imageslim" alt="mark"></p>
-<h4 id="JSX-独立的标准"><a href="#JSX-独立的标准" class="headerlink" title="JSX 独立的标准"></a>JSX 独立的标准</h4><ul>
-<li>JSX 是 React 引入的，但不是 React 独有的</li>
-<li>React 已经将它作为一个独立的标准开放，其它项目也可用</li>
-<li>React.createElement 是可以自定义修改的</li>
-<li>说明：本身功能已经完备；和其它标准兼容和扩展性没问题</li>
-</ul>
-<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>JSX 本质是什么？<ul>
-<li>JSX 语法（标签、JS 表达式、判断、循环、事件绑定）</li>
-<li>JSX 本质就是语法糖，需被解析成 JS 才能运行</li>
-<li>JSX 是独立的标准，可被其它项目使用</li>
-</ul>
-</li>
-</ul>
-<h2 id="7-3-JSX-和-vdom-的关系"><a href="#7-3-JSX-和-vdom-的关系" class="headerlink" title="7-3 JSX 和 vdom 的关系"></a>7-3 JSX 和 vdom 的关系</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>分析：为何需要 vdom</li>
-<li>React.createElement 和 h</li>
-<li>何时 patch？</li>
-<li>自定义组件的解析</li>
-</ul>
-<h4 id="为何需要-vdom"><a href="#为何需要-vdom" class="headerlink" title="为何需要 vdom"></a>为何需要 vdom</h4><ul>
-<li>vdom 是 React 初次推广开来的，结合 JSX</li>
-<li>JSX 就是模板，最终要渲染成 html</li>
-<li>初次渲染 + 修改 state 后的 re-render</li>
-<li>正好 符合 vdom 的应用场景</li>
-</ul>
-<h4 id="回顾-vdom"><a href="#回顾-vdom" class="headerlink" title="回顾 vdom"></a>回顾 <a target="_blank" rel="noopener" href="http://www.zxinc520.com/lcj/%225d63a1bce9920a5ce05e2c3b%22">vdom</a></h4><ul>
-<li>vdom 如何应用，核心 API 是 什么？<ul>
-<li>如何使用？ 可用 snabbdom 的 用法 来 举例</li>
-<li>核心 函数 ：h 函数，patch 函数</li>
-</ul>
-</li>
-</ul>
-<p><strong>核心 API</strong> ：</p>
-<ul>
-<li>h（’&lt;标签名&gt;’，{ … 属性 … }，[… 子元素 …]）</li>
-<li>h（’&lt;标签名&gt;’，{ … 属性 … }，[ ‘….’]）</li>
-<li>patch（container，vnode）</li>
-<li>patch（vnode，newVnode）</li>
-</ul>
-<h4 id="React-createElement-和-h"><a href="#React-createElement-和-h" class="headerlink" title="React.createElement 和 h"></a>React.createElement 和 h</h4><p><img src="http://static.zxinc520.com/blog/20190907/hro0P4sQFQug.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190907/3N0XehWXEtQa.png?imageslim" alt="mark"></p>
-<h4 id="何时-patch"><a href="#何时-patch" class="headerlink" title="何时 patch"></a>何时 patch</h4><ul>
-<li>初次渲染 - ReactDOM.render (&lt; App /&gt;,container)</li>
-<li>会触发 patch (container,vnode)</li>
-<li>re-render - setState</li>
-<li>会触发 patch (vnode,newVnode)</li>
-</ul>
-<h4 id="自定义组件的解析"><a href="#自定义组件的解析" class="headerlink" title="自定义组件的解析"></a>自定义组件的解析</h4><ul>
-<li>‘div’ - 直接渲染 &lt; div&gt; 即可，vdom 可以做到</li>
-<li>Input 和 List ，是自定义组件 （class），vdom 默认不认识</li>
-<li>因此 Input 和 List 定义的时候 必须声明 render 函数</li>
-<li>根据 props 初始化实例，然后执行实例的 render 函数</li>
-<li>render 函数返回的还是 vnode 对象</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/q3iTc0PViQbi.png?imageslim" alt="mark"></p>
-<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>为何需要 vdom：JSX 需要渲染成 html，数据驱动视图</li>
-<li>React.createElement 和 h ，都生成 vnode</li>
-<li>何时 patch：ReactDOM.render(…) 和 setState</li>
-<li>自定义组件的解析：初始化实例，然后执行 render</li>
-</ul>
-<h2 id="7-4-说一下-setState-的过程"><a href="#7-4-说一下-setState-的过程" class="headerlink" title="7-4 说一下 setState 的过程"></a>7-4 说一下 setState 的过程</h2><h3 id="知识点-4"><a href="#知识点-4" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>setState 的异步</li>
-<li>vue 修改属性也是 异步</li>
-<li>setState 的过程</li>
-</ul>
-<h4 id="setState-的异步"><a href="#setState-的异步" class="headerlink" title="setState 的异步"></a>setState 的异步</h4><p><img src="http://static.zxinc520.com/blog/20190907/z8fAo7IMaYcs.png?imageslim" alt="mark"></p>
-<h4 id="setState-为何需要异步？"><a href="#setState-为何需要异步？" class="headerlink" title="setState 为何需要异步？"></a>setState 为何需要异步？</h4><ul>
-<li>可能会一次执行 多次 setState</li>
-<li>你无法规定、限制用户如何使用 setState</li>
-<li>没必要每次 setState 都重新渲染，考虑性能</li>
-<li>即便是每次重新渲染，用户也看不到中间的效果</li>
-<li>只看到最后的结果即可</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/0E8yvUnt3JOn.png?imageslim" alt="mark"></p>
-<h4 id="vue-修改属性也是异步"><a href="#vue-修改属性也是异步" class="headerlink" title="vue 修改属性也是异步"></a>vue 修改属性也是异步</h4><ul>
-<li>效果、原因和 setState 一样</li>
-<li>对比记忆，印象深刻</li>
-</ul>
-<h4 id="vue-的整个实现流程"><a href="#vue-的整个实现流程" class="headerlink" title="vue 的整个实现流程"></a>vue 的整个实现流程</h4><ul>
-<li>第一步：解析模板成 render 函数</li>
-<li>第二步：响应式开始监听</li>
-<li>第三步：首次渲染，显示页面，且绑定依赖</li>
-<li>第四步：data 属性变化（ <strong>异步</strong> ），触发 rerender</li>
-</ul>
-<h5 id="data-属性变化"><a href="#data-属性变化" class="headerlink" title="data 属性变化"></a>data 属性变化</h5><ul>
-<li>修改属性，被响应式 的 set 监听到</li>
-<li>set 中执行 updataComponent （ <strong>异步</strong> ）</li>
-<li>updataComponent 重新执行 vm.render()</li>
-<li>生成的 vnode 和 prevVnode，通过 patch 进行比较</li>
-<li>渲染到 html 中</li>
-</ul>
-<h4 id="setState-的过程"><a href="#setState-的过程" class="headerlink" title="setState 的过程"></a>setState 的过程</h4><ul>
-<li>每个组件实例，都有 renderComponent 方法</li>
-<li>执行 renderComponent 会重新执行实例的 render</li>
-<li>render 函数返回 newVnode，然后拿到 preVnode</li>
-<li>执行 patch （preVnode，newVnode）</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* renderComponent方法 大致模拟*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  renderComponent() &#123;</span><br><span class="line">    <span class="keyword">const</span> preVnode = <span class="built_in">this</span>._vnode;</span><br><span class="line">    <span class="keyword">const</span> newVnode = <span class="built_in">this</span>.render();</span><br><span class="line">    patch(preVnode, newVnode);</span><br><span class="line">    <span class="built_in">this</span>._vnode = newVnode;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>setState 的异步：效果、原因</li>
-<li>vue 修改属性也是异步：效果、原因</li>
-<li>setState 的过程：最终走到 patch(preVnode, newVnode)</li>
-</ul>
-<h1 id="7-5-总结"><a href="#7-5-总结" class="headerlink" title="7-5 总结"></a>7-5 总结</h1><ul>
-<li><p>说一下对组件化的理解？</p>
-<ul>
-<li>组件的封装：封装视图、数据、变化逻辑</li>
-<li>组件的复用：props 传递、复用</li>
-</ul>
-</li>
-<li><p>JSX 本质是什么？</p>
-<ul>
-<li>JSX 语法（标签、JS 表达式、判断、循环、事件绑定）</li>
-<li>JSX 本质就是语法糖，需被解析成 JS 才能运行</li>
-<li>JSX 是独立的标准，可被其它项目使用</li>
-</ul>
-</li>
-<li><p>JSX 和 vdom 的关系？</p>
-<ul>
-<li>为何需要 vdom：JSX 需要渲染成 html，数据驱动视图</li>
-<li>React.createElement 和 h ，都生成 vnode</li>
-<li>何时 patch：ReactDOM.render(…) 和 setState</li>
-<li>自定义组件的解析：初始化实例，然后执行 render</li>
-</ul>
-</li>
-<li><p>说一下 setState 的过程</p>
-<ul>
-<li>setState 的异步：效果、原因</li>
-<li>vue 修改属性也是异步：效果、原因</li>
-<li>setState 的过程：最终走到 patch(preVnode, newVnode)</li>
-</ul>
-</li>
-</ul>
-<h2 id="7-6-React-Vs-vue"><a href="#7-6-React-Vs-vue" class="headerlink" title="7-6 React Vs vue"></a>7-6 React Vs vue</h2><h3 id="知识点-5"><a href="#知识点-5" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>两者的本质区别</li>
-<li>看模板和组件化的区别</li>
-<li>两者共同点</li>
-<li>总结问题的答案</li>
-</ul>
-<h4 id="两者的本质区别"><a href="#两者的本质区别" class="headerlink" title="两者的本质区别"></a>两者的本质区别</h4><ul>
-<li>vue - 本质是 MVVM 框架，由 MVC 发展而来</li>
-<li>React - 本质是前端组件化框架，有后端组件化发展而来</li>
-</ul>
-<h4 id="模板的区别"><a href="#模板的区别" class="headerlink" title="模板的区别"></a>模板的区别</h4><ul>
-<li>vue - 使用模板 （ 最初由 angular 提出）</li>
-<li>React - 使用 JSX</li>
-<li>**模板语法 **上，我更倾向于 JSX</li>
-<li><strong>模板分离</strong> 上，我更加倾向于 vue</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190907/3TJdcbF6Ud41.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190907/oPnkXYam0Ovp.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190907/O7ONMqnOcIxs.png?imageslim" alt="mark"></p>
-<ul>
-<li>模板应该 和 JS 逻辑分离</li>
-<li>回顾 ”开放封闭原则“</li>
-</ul>
-<h4 id="组件化的区别"><a href="#组件化的区别" class="headerlink" title="组件化的区别"></a>组件化的区别</h4><ul>
-<li>React 本身就是组件化，没有组件化就不是 React</li>
-<li>vue 也支持组件化，不过是在 MVVM 上的扩展</li>
-<li>查阅 vue 组件化的文档，洋洋洒洒很多（ 侧面反映 ）</li>
-<li>对于组件化，我更倾向于 React，做的彻底而清晰</li>
-</ul>
-<h4 id="两者的共同点"><a href="#两者的共同点" class="headerlink" title="两者的共同点"></a>两者的共同点</h4><ul>
-<li>都支持组件化</li>
-<li>都是数据驱动视图</li>
-</ul>
-<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>阐述一下对 React 和 Vue 的 认识<ul>
-<li>国内使用，首推 vue。文档更易读、易学、社区够大</li>
-<li>如果团队水平较高，推荐使用 React。组件化 和 JSX</li>
-</ul>
-</li>
-</ul>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
 
     </footer>
   </div>

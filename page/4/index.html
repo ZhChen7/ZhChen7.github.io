@@ -160,7 +160,7 @@
     
     
     <article
-  id="post-WeChatUp"
+  id="post-ReactTheory"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -171,239 +171,278 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/2019/09/05/WeChatUp/"
-    >微信小程序笔记上</a> 
+  <a class="article-title" href="/2019/09/07/ReactTheory/"
+    >组件化和 React</a> 
 </h2>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2019/09/05/WeChatUp/" class="article-date">
-  <time datetime="2019-09-05T09:07:39.000Z" itemprop="datePublished">2019-09-05</time>
+      <a href="/2019/09/07/ReactTheory/" class="article-date">
+  <time datetime="2019-09-07T14:32:45.000Z" itemprop="datePublished">2019-09-07</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a> / <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8A%E7%AF%87/">微信小程序上篇</a>
+    <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/">框架</a> / <a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/React/">React</a>
   </div>
    
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="微信小程序笔记上"><a href="#微信小程序笔记上" class="headerlink" title="微信小程序笔记上"></a>微信小程序笔记上</h1><blockquote>
-<p>微信小程序学习笔记上</p>
-<p>初步接触小程序</p>
-<p>基础内容介绍</p>
-<p>开发者文档</p>
-<p>app.js 全局生命周期函数</p>
-<p>WXML 数据绑定</p>
-<p>通过 wx.request 请求数据</p>
-<p>微信小程序里列表渲染</p>
-<p>页面相关事件处理函数</p>
-<p>True mastery of any skill takes a lifetime.</p>
-<p>对任何技能的掌握都需要一生的刻苦操练。</p>
+  <h1 id="组件化和-React"><a href="#组件化和-React" class="headerlink" title="组件化和 React"></a>组件化和 React</h1><blockquote>
+<p>本章先带领学生做一个 React 的实例，熟悉 React 开发环境、以及 <strong>组件化</strong> 的概念。然后，通过实例来讲解 React 的 <strong>实现原理</strong>，包括 <strong>JSX 的本质</strong> 、<strong>虚拟 DOM 和 JSX 的结合</strong>、以及 <strong>setState</strong> 。最后，<strong>对比 vue 和 React</strong> ，分析两者的异同。</p>
+<p>组件化和 React 高级面试知识点</p>
+<p>Think great thoughts and you will be great!</p>
+<p>心怀伟大的理想，你将会变得伟大。</p>
 </blockquote>
-<h1 id="小程序简介"><a href="#小程序简介" class="headerlink" title="小程序简介"></a>小程序简介</h1><blockquote>
-<p>小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</p>
-<p>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/introduction.html">相关介绍</a></p>
-<p><strong>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。但和常规的前端开发又有一些区别：</strong> <a target="_blank" rel="noopener" href="https://juejin.im/entry/581db98fa0bb9f0058abffea">可以参考</a></p>
-<ol>
-<li><strong>JavaScript</strong>: 微信小程序的 JavaScript 运行环境即不是 Browser 也不是 Node.js。它运行在微信 App 的上下文中，不能操作 Browser context 下的 DOM，也不能通过 N*ode.js 相关接口访问操作系统 API。所以，严格意义来讲，微信小程序并不是 Html5，虽然开发过程和用到的技术栈和 Html5 是相通的。</li>
-<li><strong>WXML：</strong>作为微信小程序的展示层，并不是使用 Html，而是自己发明的基于 XML 语法的描述。</li>
-<li><strong>WXSS：</strong>用来修饰展示层的样式。官方的描述是 “ WXSS (WeiXin Style Sheets) 是一套样式语言，用于描述 WXML 的组件样式。WXSS 用来决定 WXML 的组件应该怎么显示。” “我们的 WXSS 具有 CSS 大部分特性…我们对 CSS 进行了扩充以及修改。”基于 CSS2 还是 CSS3？大部分是哪些部分？是否支持 CSS3 里的动画？不得而知。</li>
-</ol>
-<h4 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h4><p><img src="http://static.zxinc520.com/blog/20190514/yTqqYeB2UoIS.png?imageslim" alt="mark"></p>
-<ol>
-<li><code>app.js</code>做为小程序的入口，里面有个 App 实例，每个小程序只会有一个 App 实例，小程序启动以后触发 onLaunch 函数执行，获取用户信息</li>
-<li><code>app.json</code>是小程序的所有全局配置，<code>pages</code>字段放置所有页面的路径，<code>window</code>字段定义所有页面的顶部背景颜色，文字颜色 详细配置请<a href="https://link.juejin.im/?target=https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html">戳这里 👇</a></li>
-<li><code>app.wxss</code>文件就是页面公用的样式，仅支持部分 css 选择器</li>
-<li><code>wxml</code>就是我们的 HTML 文件，常用标签为 <code>view</code> 、<code>text</code> 等，没有所谓的<code>div</code>、<code>span</code>、<code>p</code>一类的标签了，我们习惯称它们为组件</li>
-</ol>
-<hr>
-<blockquote>
-<p><strong>设计理念：</strong></p>
-<p>小程序内部可以理解成一个 mvvm 的框架，分为逻辑层和视图层，逻辑层将数据进行处理后发送给视图层，同时接受视图层的事件反馈。</p>
-</blockquote>
-<hr>
-<p><img src="http://static.zxinc520.com/blog/20190514/U6eXvlL8evmQ.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190514/m4UDxEkFa1ae.png?imageslim" alt="mark"></p>
-<h2 id="开始上手"><a href="#开始上手" class="headerlink" title="开始上手"></a>开始上手</h2><blockquote>
-<p><strong>开始正式学习</strong></p>
-<p>基础学习部分</p>
-</blockquote>
-<h3 id="加载一张图片"><a href="#加载一张图片" class="headerlink" title="加载一张图片"></a>加载一张图片</h3><p><img src="http://static.zxinc520.com/blog/20190514/GnYuPkAo16G5.png?imageslim" alt="mark"></p>
-<p>_简单使用样式_：</p>
-<p><img src="http://static.zxinc520.com/blog/20190514/gvNQzg8BaF74.png?imageslim" alt="mark"></p>
-<h2 id="WXSS"><a href="#WXSS" class="headerlink" title="WXSS"></a>WXSS</h2><blockquote>
-<p>WXSS (WeiXin Style Sheets)是一套样式语言，用于描述 WXML 的组件样式。</p>
-<p>WXSS 用来决定 WXML 的组件应该怎么显示。 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">可以参考官网</a></p>
-</blockquote>
-<p>为了适应广大的前端开发者，WXSS 具有 CSS 大部分特性。同时为了更适合开发微信小程序，WXSS 对 CSS 进行了扩充以及修改。</p>
-<p>与 CSS 相比，WXSS 扩展的特性有：</p>
-<ul>
-<li>尺寸单位</li>
-<li>样式导入</li>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>是否做过 React 开发？</li>
+<li>React 以及组件化的一些核心概念</li>
+<li>实现流程</li>
 </ul>
-<h2 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h2><p>​ <strong>rpx</strong>（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为 750rpx。如在 iPhone6 上，屏幕宽度为 375px，共有 750 个物理像素，则 750rpx = 375px = 750 物理像素，1rpx = 0.5px = 1 物理像素</p>
-<p><img src="http://static.zxinc520.com/blog/20190514/57Wa2m8PEEyp.png?imageslim" alt="mark"></p>
-<p><strong>建议：</strong> 开发微信小程序时设计师可以用 iPhone6 作为视觉稿的标准。</p>
-<p><strong>注意：</strong> 在较小的屏幕上不可避免的会有一些毛刺，请在开发时尽量避免这种情况。</p>
-<h2 id="全局样式与局部样式"><a href="#全局样式与局部样式" class="headerlink" title="全局样式与局部样式"></a>全局样式与局部样式</h2><p>定义在 app.wxss 中的样式为全局样式，作用于每一个页面。在 page 的 wxss 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 app.wxss 中相同的选择器。</p>
-<h2 id="开发者文档"><a href="#开发者文档" class="headerlink" title="开发者文档"></a>开发者文档</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/image.html">开发者文档</a></p>
-<p><strong>不会</strong> 或 <strong>忘了</strong> 就查文档！</p>
-</blockquote>
-<h3 id="image"><a href="#image" class="headerlink" title="image:"></a>image:</h3><p>​ <strong>解决图片缩放问题：</strong></p>
-<ul>
-<li>mode （ 常用下面 2 个属性值缩放图片 ）<ul>
-<li>aspectFit：缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。</li>
-<li>aspectFill：缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。</li>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
+<li>说一下对组件化的理解</li>
+<li>JSX 本质是什么？</li>
+<li>JSX 和 vdom 的关系？</li>
+<li>说一下 setState 的过程</li>
+<li>阐述一下对 React 和 Vue 的 认识</li>
+</ul>
+<h4 id="回顾-React"><a href="#回顾-React" class="headerlink" title="回顾 React"></a>回顾 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/">React</a></h4><ol>
+<li><p>创建一个基本的 React 应用</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/facebookincubator/create-react-app">Create React App</a> 是一个用于<strong>学习 React</strong> 的舒适环境，也是用 React 创建<strong>新的单页应用</strong>的最佳方式。</p>
+<p>它会配置你的开发环境，以便使你能够使用最新的 JavaScript 特性，提供良好的开发体验，并为生产环境优化你的应用程序。你需要在你的机器上安装 Node &gt;= 8.10 和 npm &gt;= 5.6。要创建项目，请执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br><span class="line">cd my-app</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用 React 实现 <strong>to-do-list</strong> ：</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Todo</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;</span><br><span class="line">      list: [],</span><br><span class="line">      title: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> list = <span class="built_in">this</span>.state.list;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          type=<span class="string">&quot;text&quot;</span></span><br><span class="line">          value=&#123;<span class="built_in">this</span>.state.title&#125;</span><br><span class="line">          onChange=&#123;<span class="built_in">this</span>.changeHandle.bind(<span class="built_in">this</span>)&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="built_in">this</span>.clickHandle.bind(<span class="built_in">this</span>)&#125;&gt;Submit&lt;/button&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &#123;list.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span> &#123;item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>;</span><br><span class="line">          &#125;)&#125;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  changeHandle(e) &#123;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      title: e.target.value,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  addTitle(title) &#123;</span><br><span class="line">    <span class="keyword">const</span> currentList = <span class="built_in">this</span>.state.list;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      list: currentList.concat(title),</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.state.list);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  clickHandle(e) &#123;</span><br><span class="line">    <span class="keyword">const</span> title = <span class="built_in">this</span>.state.title;</span><br><span class="line">    <span class="built_in">this</span>.addTitle(title);</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      title: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Todo;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190907/GRlG7LRoeKp7.gif" alt="mark"></p>
+<h2 id="7-1-说一下对组件化的理解"><a href="#7-1-说一下对组件化的理解" class="headerlink" title="7-1 说一下对组件化的理解"></a>7-1 说一下对组件化的理解</h2><h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>组件的 <strong>封装</strong></li>
+<li>组件的 <strong>复用</strong></li>
+</ul>
+<h4 id="组件的封装"><a href="#组件的封装" class="headerlink" title="组件的封装"></a>组件的封装</h4><ul>
+<li>视图</li>
+<li>数据</li>
+<li>变化逻辑 （ 数据驱动视图变化 ）</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/m1BCsjY31wOd.png?imageslim" alt="mark"></p>
+<h4 id="组件的-复用"><a href="#组件的-复用" class="headerlink" title="组件的 复用"></a>组件的 复用</h4><ul>
+<li>props 传递</li>
+<li>复用</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/dSD9f5yFTKYD.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190907/dig0u7rhRuJi.png?imageslim" alt="mark"></p>
+<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><ul>
+<li>说一下对组件化的理解？<ul>
+<li>组件的封装：封装视图、数据、变化逻辑</li>
+<li>组件的复用：props 传递、复用</li>
 </ul>
 </li>
 </ul>
-<p><img src="http://static.zxinc520.com/blog/20190520/XC3RPCh4fJdY.png?imageslim" alt="mark"></p>
-<h3 id="swiper"><a href="#swiper" class="headerlink" title="swiper"></a>swiper</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html">看开发者文档</a></p>
-<p>轮播组件：调用相应的标签及参数设置</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190520/PgOdEdCQrqvp.gif" alt="mark"></p>
-<h2 id="解读-app-json"><a href="#解读-app-json" class="headerlink" title="解读 app.json"></a>解读 app.json</h2><blockquote>
-<p>小程序根目录下的 <code>app.json</code> 文件用来对微信小程序进行全局配置。文件内容为一个 JSON 对象，有以下属性：</p>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">可以参考官网</a></p>
-</blockquote>
-<h3 id="pages"><a href="#pages" class="headerlink" title="pages"></a>pages</h3><blockquote>
-<p>用于指定小程序由哪些页面组成，每一项都对应一个页面的 路径（含文件名） 信息。文件名不需要写文件后缀，框架会自动去寻找对于位置的 <code>.json</code>, <code>.js</code>, <code>.wxml</code>, <code>.wxss</code> 四个文件进行处理。</p>
-</blockquote>
-<h3 id="window"><a href="#window" class="headerlink" title="window"></a>window</h3><blockquote>
-<p>用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
-</blockquote>
-<p>例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;window&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;navigationBarBackgroundColor&quot;</span>: <span class="string">&quot;#ffffff&quot;</span>,</span><br><span class="line">    <span class="string">&quot;navigationBarTextStyle&quot;</span>: <span class="string">&quot;black&quot;</span>,</span><br><span class="line">    <span class="string">&quot;navigationBarTitleText&quot;</span>: <span class="string">&quot;微信接口功能演示&quot;</span>,</span><br><span class="line">    <span class="string">&quot;backgroundColor&quot;</span>: <span class="string">&quot;#eeeeee&quot;</span>,</span><br><span class="line">    <span class="string">&quot;backgroundTextStyle&quot;</span>: <span class="string">&quot;light&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-2-JSX-本质是什么"><a href="#7-2-JSX-本质是什么" class="headerlink" title="7-2 JSX 本质是什么"></a>7-2 JSX 本质是什么</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>JSX 语法</li>
+<li>JSX 解析成 JS</li>
+<li>独立的标准</li>
+</ul>
+<h4 id="JSX-语法"><a href="#JSX-语法" class="headerlink" title="JSX 语法"></a>JSX 语法</h4><ul>
+<li>html 形式</li>
+<li>引入 JS 变量和表达式</li>
+<li>if … else …</li>
+<li>循环</li>
+<li>style 和 className</li>
+<li>事件</li>
+</ul>
+<h4 id="提出疑问"><a href="#提出疑问" class="headerlink" title="提出疑问"></a>提出疑问</h4><ul>
+<li>JSX 语法根本无法被浏览器所解析</li>
+<li>那么它如何在浏览器运行</li>
+</ul>
+<h4 id="JSX-解析"><a href="#JSX-解析" class="headerlink" title="JSX 解析"></a>JSX 解析</h4><ul>
+<li>JSX 其实是语法糖</li>
+<li>开发环境会将 JSX 编译成 JS 代码</li>
+<li>JSX 的写法 大大降低了学习成本和 编码工作量</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/Xy8TYGeoHcWC.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190907/yjXVnlK8oLfk.png?imageslim" alt="mark"></p>
+<h4 id="JSX-独立的标准"><a href="#JSX-独立的标准" class="headerlink" title="JSX 独立的标准"></a>JSX 独立的标准</h4><ul>
+<li>JSX 是 React 引入的，但不是 React 独有的</li>
+<li>React 已经将它作为一个独立的标准开放，其它项目也可用</li>
+<li>React.createElement 是可以自定义修改的</li>
+<li>说明：本身功能已经完备；和其它标准兼容和扩展性没问题</li>
+</ul>
+<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>JSX 本质是什么？<ul>
+<li>JSX 语法（标签、JS 表达式、判断、循环、事件绑定）</li>
+<li>JSX 本质就是语法糖，需被解析成 JS 才能运行</li>
+<li>JSX 是独立的标准，可被其它项目使用</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-3-JSX-和-vdom-的关系"><a href="#7-3-JSX-和-vdom-的关系" class="headerlink" title="7-3 JSX 和 vdom 的关系"></a>7-3 JSX 和 vdom 的关系</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>分析：为何需要 vdom</li>
+<li>React.createElement 和 h</li>
+<li>何时 patch？</li>
+<li>自定义组件的解析</li>
+</ul>
+<h4 id="为何需要-vdom"><a href="#为何需要-vdom" class="headerlink" title="为何需要 vdom"></a>为何需要 vdom</h4><ul>
+<li>vdom 是 React 初次推广开来的，结合 JSX</li>
+<li>JSX 就是模板，最终要渲染成 html</li>
+<li>初次渲染 + 修改 state 后的 re-render</li>
+<li>正好 符合 vdom 的应用场景</li>
+</ul>
+<h4 id="回顾-vdom"><a href="#回顾-vdom" class="headerlink" title="回顾 vdom"></a>回顾 <a target="_blank" rel="noopener" href="http://www.zxinc520.com/lcj/%225d63a1bce9920a5ce05e2c3b%22">vdom</a></h4><ul>
+<li>vdom 如何应用，核心 API 是 什么？<ul>
+<li>如何使用？ 可用 snabbdom 的 用法 来 举例</li>
+<li>核心 函数 ：h 函数，patch 函数</li>
+</ul>
+</li>
+</ul>
+<p><strong>核心 API</strong> ：</p>
+<ul>
+<li>h（’&lt;标签名&gt;’，{ … 属性 … }，[… 子元素 …]）</li>
+<li>h（’&lt;标签名&gt;’，{ … 属性 … }，[ ‘….’]）</li>
+<li>patch（container，vnode）</li>
+<li>patch（vnode，newVnode）</li>
+</ul>
+<h4 id="React-createElement-和-h"><a href="#React-createElement-和-h" class="headerlink" title="React.createElement 和 h"></a>React.createElement 和 h</h4><p><img src="http://static.zxinc520.com/blog/20190907/hro0P4sQFQug.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190907/3N0XehWXEtQa.png?imageslim" alt="mark"></p>
+<h4 id="何时-patch"><a href="#何时-patch" class="headerlink" title="何时 patch"></a>何时 patch</h4><ul>
+<li>初次渲染 - ReactDOM.render (&lt; App /&gt;,container)</li>
+<li>会触发 patch (container,vnode)</li>
+<li>re-render - setState</li>
+<li>会触发 patch (vnode,newVnode)</li>
+</ul>
+<h4 id="自定义组件的解析"><a href="#自定义组件的解析" class="headerlink" title="自定义组件的解析"></a>自定义组件的解析</h4><ul>
+<li>‘div’ - 直接渲染 &lt; div&gt; 即可，vdom 可以做到</li>
+<li>Input 和 List ，是自定义组件 （class），vdom 默认不认识</li>
+<li>因此 Input 和 List 定义的时候 必须声明 render 函数</li>
+<li>根据 props 初始化实例，然后执行实例的 render 函数</li>
+<li>render 函数返回的还是 vnode 对象</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/q3iTc0PViQbi.png?imageslim" alt="mark"></p>
+<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>为何需要 vdom：JSX 需要渲染成 html，数据驱动视图</li>
+<li>React.createElement 和 h ，都生成 vnode</li>
+<li>何时 patch：ReactDOM.render(…) 和 setState</li>
+<li>自定义组件的解析：初始化实例，然后执行 render</li>
+</ul>
+<h2 id="7-4-说一下-setState-的过程"><a href="#7-4-说一下-setState-的过程" class="headerlink" title="7-4 说一下 setState 的过程"></a>7-4 说一下 setState 的过程</h2><h3 id="知识点-4"><a href="#知识点-4" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>setState 的异步</li>
+<li>vue 修改属性也是 异步</li>
+<li>setState 的过程</li>
+</ul>
+<h4 id="setState-的异步"><a href="#setState-的异步" class="headerlink" title="setState 的异步"></a>setState 的异步</h4><p><img src="http://static.zxinc520.com/blog/20190907/z8fAo7IMaYcs.png?imageslim" alt="mark"></p>
+<h4 id="setState-为何需要异步？"><a href="#setState-为何需要异步？" class="headerlink" title="setState 为何需要异步？"></a>setState 为何需要异步？</h4><ul>
+<li>可能会一次执行 多次 setState</li>
+<li>你无法规定、限制用户如何使用 setState</li>
+<li>没必要每次 setState 都重新渲染，考虑性能</li>
+<li>即便是每次重新渲染，用户也看不到中间的效果</li>
+<li>只看到最后的结果即可</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/0E8yvUnt3JOn.png?imageslim" alt="mark"></p>
+<h4 id="vue-修改属性也是异步"><a href="#vue-修改属性也是异步" class="headerlink" title="vue 修改属性也是异步"></a>vue 修改属性也是异步</h4><ul>
+<li>效果、原因和 setState 一样</li>
+<li>对比记忆，印象深刻</li>
+</ul>
+<h4 id="vue-的整个实现流程"><a href="#vue-的整个实现流程" class="headerlink" title="vue 的整个实现流程"></a>vue 的整个实现流程</h4><ul>
+<li>第一步：解析模板成 render 函数</li>
+<li>第二步：响应式开始监听</li>
+<li>第三步：首次渲染，显示页面，且绑定依赖</li>
+<li>第四步：data 属性变化（ <strong>异步</strong> ），触发 rerender</li>
+</ul>
+<h5 id="data-属性变化"><a href="#data-属性变化" class="headerlink" title="data 属性变化"></a>data 属性变化</h5><ul>
+<li>修改属性，被响应式 的 set 监听到</li>
+<li>set 中执行 updataComponent （ <strong>异步</strong> ）</li>
+<li>updataComponent 重新执行 vm.render()</li>
+<li>生成的 vnode 和 prevVnode，通过 patch 进行比较</li>
+<li>渲染到 html 中</li>
+</ul>
+<h4 id="setState-的过程"><a href="#setState-的过程" class="headerlink" title="setState 的过程"></a>setState 的过程</h4><ul>
+<li>每个组件实例，都有 renderComponent 方法</li>
+<li>执行 renderComponent 会重新执行实例的 render</li>
+<li>render 函数返回 newVnode，然后拿到 preVnode</li>
+<li>执行 patch （preVnode，newVnode）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* renderComponent方法 大致模拟*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  renderComponent() &#123;</span><br><span class="line">    <span class="keyword">const</span> preVnode = <span class="built_in">this</span>._vnode;</span><br><span class="line">    <span class="keyword">const</span> newVnode = <span class="built_in">this</span>.render();</span><br><span class="line">    patch(preVnode, newVnode);</span><br><span class="line">    <span class="built_in">this</span>._vnode = newVnode;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="tabBar"><a href="#tabBar" class="headerlink" title="tabBar"></a>tabBar</h3><blockquote>
-<p>如果小程序是一个多 tab 应用（客户端窗口的底部或顶部有 tab 栏可以切换页面），可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;tabBar&quot;</span>: &#123;</span><br><span class="line">   <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#333&quot;</span>,</span><br><span class="line">   <span class="string">&quot;selectedColor&quot;</span>: <span class="string">&quot;#f30&quot;</span>,</span><br><span class="line">   <span class="string">&quot;list&quot;</span>: [&#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;首页&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/message/message&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;消息&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;个人中心&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;综合&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190521/OCDT2PNCaB4Y.png?imageslim" alt="mark"></p>
-<p><em>等等等… 不了解就看文档！</em></p>
-<p><strong>注意： 所以看开发者文档很重要！</strong></p>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">点一下就可以看了，别懒！</a></p>
-<h2 id="app-js-全局生命周期函数"><a href="#app-js-全局生命周期函数" class="headerlink" title="app.js 全局生命周期函数"></a>app.js 全局生命周期函数</h2><blockquote>
-<p>app.js 全局生命周期函数</p>
-</blockquote>
-<p><em>在 app.js 文件中</em> ， 定义了一些生命周期方法 ， onLaunch，onShow，onHide，onError，以及任意开发者添加的函数或者数据（通过 this 可以访问）</p>
-<p><strong>以下是各个生命周期方法作用和描述：</strong></p>
-<ol>
-<li><strong>onLaunch 生命周期函数</strong> –监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</li>
-<li><strong>onShow 生命周期函数</strong>–监听小程序显示 当小程序启动，或从后台进入前台显示，会触发 onShow</li>
-<li><strong>onHide 生命周期函数</strong>–监听小程序隐藏 当小程序从前台进入后台，会触发 onHide</li>
-<li><strong>onError 错误监听函数</strong> 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息</li>
-</ol>
-<p>其他 Any 开发者可以添加任意的函数或数据到 Object 参数中，用 this 可以访问</p>
-<p><em>index.js:</em> （个人感觉 和 <strong>Vue</strong> 真的好像，如果熟悉 Vue 的话，这理解起来应该没有难度。）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="comment">//获取应用实例</span></span><br><span class="line"><span class="keyword">const</span> app = getApp();</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    motto: <span class="string">&quot;Hello World&quot;</span>,</span><br><span class="line">    listarr: <span class="number">0</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</span></span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">option</span>) </span>&#123;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: <span class="string">&quot;https://www.baifubao.com/callback&quot;</span>,</span><br><span class="line">      success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">          listarr: res.statusCode,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：着重关注 onLoad 函数，因为使用最频繁！</strong></p>
-<h2 id="WXML-数据绑定"><a href="#WXML-数据绑定" class="headerlink" title="WXML 数据绑定"></a>WXML 数据绑定</h2><blockquote>
-<p>WXML 中的动态数据均来自对应 Page 的 data。</p>
-</blockquote>
-<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">&quot;Hello World!&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190526/Dr9a1AITnQo7.png?imageslim" alt="mark"></p>
-<h4 id="特别注意："><a href="#特别注意：" class="headerlink" title="特别注意："></a>特别注意：</h4><ol>
-<li>花括号和引号之间不能有空格</li>
-<li>不能直接写 checked=“false”，其计算结果是一个字符串，转成 boolean 类型后转为真值。</li>
-</ol>
-<h2 id="通过-wx-request-请求数据"><a href="#通过-wx-request-请求数据" class="headerlink" title="通过 wx.request 请求数据"></a>通过 wx.request 请求数据</h2><blockquote>
-<p>通过 wx.request 请求数据</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">wx.request(&#123;</span><br><span class="line">  url: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  data: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  header: &#123;&#125;,</span><br><span class="line">  method: <span class="string">&quot;GET&quot;</span>,</span><br><span class="line">  dataType: <span class="string">&quot;json&quot;</span>,</span><br><span class="line">  responseType: <span class="string">&quot;text&quot;</span>,</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;&#125;,</span><br><span class="line">  complete: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190527/x00Ledvp9GT7.png?imageslim" alt="mark"></p>
-<p><strong>setData</strong>：接受 <u>wx.request</u> 请求的数据，赋值给 Page 里面的 data（然后通过插值表达式渲染到页面）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="comment">//获取应用实例</span></span><br><span class="line"><span class="keyword">const</span> app = getApp();</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    motto: <span class="string">&quot;Hello World&quot;</span>,</span><br><span class="line">    listarr: <span class="number">0</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">option</span>) </span>&#123;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: <span class="string">&quot;https://www.baifubao.com/callback&quot;</span>,</span><br><span class="line">      success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">          listarr: res.statusCode,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="微信小程序里列表渲染"><a href="#微信小程序里列表渲染" class="headerlink" title="微信小程序里列表渲染"></a>微信小程序里列表渲染</h2><blockquote>
-<h3 id="wx-for"><a href="#wx-for" class="headerlink" title="wx:for"></a>wx:for</h3><p>在组件上使用 <code>wx:for</code> 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。</p>
-<p>默认数组的当前项的下标变量名默认为 <code>index</code>，数组当前项的变量名默认为 <code>item</code></p>
-</blockquote>
-<p><em>类比于 Vue：</em></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;example-1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span>&gt;</span>&#123;&#123; item.message &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><em>微信小程序里面：</em></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:<span class="keyword">for</span>=<span class="string">&quot;&#123;&#123;array&#125;&#125;&quot;</span>&gt;&#123;&#123;index&#125;&#125;: &#123;&#123;item.message&#125;&#125;&lt;/view&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    array: [</span><br><span class="line">      &#123;</span><br><span class="line">        message: <span class="string">&quot;foo&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        message: <span class="string">&quot;bar&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="wx-key"><a href="#wx-key" class="headerlink" title="wx:key"></a>wx:key</h4><p>​ <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/list.html">可以参考</a></p>
-<p>如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html">``</a> 中的输入内容，<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/switch.html">``</a>的选中状态），需要使用 <code>wx:key</code> 来指定列表中项目的唯一的标识符。</p>
-<ol>
-<li>字符串，代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。</li>
-<li>保留关键字 <code>*this</code> 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：</li>
-</ol>
-<p>当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。</p>
-<p><strong>如不提供 wx:key，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">switch</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;objectArray&#125;&#125;&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;unique&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: block;&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123;item.id&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;switch&quot;</span>&gt;</span>Switch<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;addToFront&quot;</span>&gt;</span>Add to the front<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">switch</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;numberArray&#125;&#125;&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;*this&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: block;&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123;item&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;addNumberToFront&quot;</span>&gt;</span>Add to the front<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    objectArray: [</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">5</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_5&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_4&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_3&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_2&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_1&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">0</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_0&quot;</span> &#125;,</span><br><span class="line">    ],</span><br><span class="line">    numberArray: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="页面相关事件处理函数"><a href="#页面相关事件处理函数" class="headerlink" title="页面相关事件处理函数"></a>页面相关事件处理函数</h2><blockquote>
-<p>页面相关事件处理函数（<strong>下拉刷新</strong>，<strong>滑到底部加载更多</strong>等）</p>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.startPullDownRefresh.html">可以参考</a></p>
-</blockquote>
-<p><strong>下拉事件和触底事件</strong>：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//页面相关事件处理函数---监听用户下拉动作</span></span><br><span class="line">   onPullDownRefresh:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">&#x27;下拉！&#x27;</span>)</span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="comment">//页面上拉触底事件的处理函数</span></span><br><span class="line">   onReachBottom:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">&#x27;上拉&#x27;</span>)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.showNavigationBarLoading.html">可以参考官方文档</a></p>
-<p>js 文件</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">函数 API</th>
-<th align="center">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">wx.showNavigationBarLoading(Object object)</td>
-<td align="center">在当前页面显示导航条加载动画</td>
-</tr>
-<tr>
-<td align="center">wx.setNavigationBarTitle(Object object)</td>
-<td align="center">动态设置当前页面的标题</td>
-</tr>
-<tr>
-<td align="center">wx.setNavigationBarColor(Object object)</td>
-<td align="center">设置页面导航条颜色</td>
-</tr>
-<tr>
-<td align="center">wx.hideNavigationBarLoading(Object object)</td>
-<td align="center">在当前页面隐藏导航条加载动画</td>
-</tr>
-</tbody></table>
-<p><img src="http://static.zxinc520.com/blog/20190603/DXIDRjESGUHv.gif" alt="mark"></p>
-<h2 id="界面交互"><a href="#界面交互" class="headerlink" title="界面交互"></a>界面交互</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html">参考官方文档</a></p>
-</blockquote>
-<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wx.showToast(&#123;</span><br><span class="line">  title: <span class="string">&quot;成功w&quot;</span>,</span><br><span class="line">  icon: <span class="string">&quot;success&quot;</span>,</span><br><span class="line">  duration: <span class="number">2000</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190603/fRajsw7UWlQc.gif" alt="mark"></p>
-<h2 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h2><blockquote>
-<p>下拉刷新( <strong>配合</strong> 页面<em>相关事件处理函数</em>—监听用户下拉动作)</p>
-</blockquote>
-<p><strong>index.json:</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;enablePullDownRefresh&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;backgroundTextStyle&quot;</span>: <span class="string">&quot;dark&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>index.js:</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//页面相关事件处理函数---监听用户下拉动作</span></span><br><span class="line"> onPullDownRefresh:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">&#x27;下拉！&#x27;</span>)</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://static.zxinc520.com/blog/20190603/bHEJTM3fLLsC.gif" alt="mark"></p>
+<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>setState 的异步：效果、原因</li>
+<li>vue 修改属性也是异步：效果、原因</li>
+<li>setState 的过程：最终走到 patch(preVnode, newVnode)</li>
+</ul>
+<h1 id="7-5-总结"><a href="#7-5-总结" class="headerlink" title="7-5 总结"></a>7-5 总结</h1><ul>
+<li><p>说一下对组件化的理解？</p>
+<ul>
+<li>组件的封装：封装视图、数据、变化逻辑</li>
+<li>组件的复用：props 传递、复用</li>
+</ul>
+</li>
+<li><p>JSX 本质是什么？</p>
+<ul>
+<li>JSX 语法（标签、JS 表达式、判断、循环、事件绑定）</li>
+<li>JSX 本质就是语法糖，需被解析成 JS 才能运行</li>
+<li>JSX 是独立的标准，可被其它项目使用</li>
+</ul>
+</li>
+<li><p>JSX 和 vdom 的关系？</p>
+<ul>
+<li>为何需要 vdom：JSX 需要渲染成 html，数据驱动视图</li>
+<li>React.createElement 和 h ，都生成 vnode</li>
+<li>何时 patch：ReactDOM.render(…) 和 setState</li>
+<li>自定义组件的解析：初始化实例，然后执行 render</li>
+</ul>
+</li>
+<li><p>说一下 setState 的过程</p>
+<ul>
+<li>setState 的异步：效果、原因</li>
+<li>vue 修改属性也是异步：效果、原因</li>
+<li>setState 的过程：最终走到 patch(preVnode, newVnode)</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-6-React-Vs-vue"><a href="#7-6-React-Vs-vue" class="headerlink" title="7-6 React Vs vue"></a>7-6 React Vs vue</h2><h3 id="知识点-5"><a href="#知识点-5" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>两者的本质区别</li>
+<li>看模板和组件化的区别</li>
+<li>两者共同点</li>
+<li>总结问题的答案</li>
+</ul>
+<h4 id="两者的本质区别"><a href="#两者的本质区别" class="headerlink" title="两者的本质区别"></a>两者的本质区别</h4><ul>
+<li>vue - 本质是 MVVM 框架，由 MVC 发展而来</li>
+<li>React - 本质是前端组件化框架，有后端组件化发展而来</li>
+</ul>
+<h4 id="模板的区别"><a href="#模板的区别" class="headerlink" title="模板的区别"></a>模板的区别</h4><ul>
+<li>vue - 使用模板 （ 最初由 angular 提出）</li>
+<li>React - 使用 JSX</li>
+<li>**模板语法 **上，我更倾向于 JSX</li>
+<li><strong>模板分离</strong> 上，我更加倾向于 vue</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190907/3TJdcbF6Ud41.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190907/oPnkXYam0Ovp.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190907/O7ONMqnOcIxs.png?imageslim" alt="mark"></p>
+<ul>
+<li>模板应该 和 JS 逻辑分离</li>
+<li>回顾 ”开放封闭原则“</li>
+</ul>
+<h4 id="组件化的区别"><a href="#组件化的区别" class="headerlink" title="组件化的区别"></a>组件化的区别</h4><ul>
+<li>React 本身就是组件化，没有组件化就不是 React</li>
+<li>vue 也支持组件化，不过是在 MVVM 上的扩展</li>
+<li>查阅 vue 组件化的文档，洋洋洒洒很多（ 侧面反映 ）</li>
+<li>对于组件化，我更倾向于 React，做的彻底而清晰</li>
+</ul>
+<h4 id="两者的共同点"><a href="#两者的共同点" class="headerlink" title="两者的共同点"></a>两者的共同点</h4><ul>
+<li>都支持组件化</li>
+<li>都是数据驱动视图</li>
+</ul>
+<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<li>阐述一下对 React 和 Vue 的 认识<ul>
+<li>国内使用，首推 vue。文档更易读、易学、社区够大</li>
+<li>如果团队水平较高，推荐使用 React。组件化 和 JSX</li>
+</ul>
+</li>
+</ul>
  
       <!-- reward -->
       
@@ -414,7 +453,7 @@
     
     <footer class="article-footer">
        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
 
     </footer>
   </div>
@@ -781,6 +820,272 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVVM/" rel="tag">MVVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E3%80%81%E6%A8%A1%E6%9D%BF%E8%A7%A3%E6%9E%90%E3%80%81%E6%B8%B2%E6%9F%93/" rel="tag">响应式、模板解析、渲染</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
+  id="post-WeChatUp"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/09/05/WeChatUp/"
+    >微信小程序笔记上</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/09/05/WeChatUp/" class="article-date">
+  <time datetime="2019-09-05T09:07:39.000Z" itemprop="datePublished">2019-09-05</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a> / <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8A%E7%AF%87/">微信小程序上篇</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="微信小程序笔记上"><a href="#微信小程序笔记上" class="headerlink" title="微信小程序笔记上"></a>微信小程序笔记上</h1><blockquote>
+<p>微信小程序学习笔记上</p>
+<p>初步接触小程序</p>
+<p>基础内容介绍</p>
+<p>开发者文档</p>
+<p>app.js 全局生命周期函数</p>
+<p>WXML 数据绑定</p>
+<p>通过 wx.request 请求数据</p>
+<p>微信小程序里列表渲染</p>
+<p>页面相关事件处理函数</p>
+<p>True mastery of any skill takes a lifetime.</p>
+<p>对任何技能的掌握都需要一生的刻苦操练。</p>
+</blockquote>
+<h1 id="小程序简介"><a href="#小程序简介" class="headerlink" title="小程序简介"></a>小程序简介</h1><blockquote>
+<p>小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</p>
+<p>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/introduction.html">相关介绍</a></p>
+<p><strong>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。但和常规的前端开发又有一些区别：</strong> <a target="_blank" rel="noopener" href="https://juejin.im/entry/581db98fa0bb9f0058abffea">可以参考</a></p>
+<ol>
+<li><strong>JavaScript</strong>: 微信小程序的 JavaScript 运行环境即不是 Browser 也不是 Node.js。它运行在微信 App 的上下文中，不能操作 Browser context 下的 DOM，也不能通过 N*ode.js 相关接口访问操作系统 API。所以，严格意义来讲，微信小程序并不是 Html5，虽然开发过程和用到的技术栈和 Html5 是相通的。</li>
+<li><strong>WXML：</strong>作为微信小程序的展示层，并不是使用 Html，而是自己发明的基于 XML 语法的描述。</li>
+<li><strong>WXSS：</strong>用来修饰展示层的样式。官方的描述是 “ WXSS (WeiXin Style Sheets) 是一套样式语言，用于描述 WXML 的组件样式。WXSS 用来决定 WXML 的组件应该怎么显示。” “我们的 WXSS 具有 CSS 大部分特性…我们对 CSS 进行了扩充以及修改。”基于 CSS2 还是 CSS3？大部分是哪些部分？是否支持 CSS3 里的动画？不得而知。</li>
+</ol>
+<h4 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h4><p><img src="http://static.zxinc520.com/blog/20190514/yTqqYeB2UoIS.png?imageslim" alt="mark"></p>
+<ol>
+<li><code>app.js</code>做为小程序的入口，里面有个 App 实例，每个小程序只会有一个 App 实例，小程序启动以后触发 onLaunch 函数执行，获取用户信息</li>
+<li><code>app.json</code>是小程序的所有全局配置，<code>pages</code>字段放置所有页面的路径，<code>window</code>字段定义所有页面的顶部背景颜色，文字颜色 详细配置请<a href="https://link.juejin.im/?target=https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html">戳这里 👇</a></li>
+<li><code>app.wxss</code>文件就是页面公用的样式，仅支持部分 css 选择器</li>
+<li><code>wxml</code>就是我们的 HTML 文件，常用标签为 <code>view</code> 、<code>text</code> 等，没有所谓的<code>div</code>、<code>span</code>、<code>p</code>一类的标签了，我们习惯称它们为组件</li>
+</ol>
+<hr>
+<blockquote>
+<p><strong>设计理念：</strong></p>
+<p>小程序内部可以理解成一个 mvvm 的框架，分为逻辑层和视图层，逻辑层将数据进行处理后发送给视图层，同时接受视图层的事件反馈。</p>
+</blockquote>
+<hr>
+<p><img src="http://static.zxinc520.com/blog/20190514/U6eXvlL8evmQ.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190514/m4UDxEkFa1ae.png?imageslim" alt="mark"></p>
+<h2 id="开始上手"><a href="#开始上手" class="headerlink" title="开始上手"></a>开始上手</h2><blockquote>
+<p><strong>开始正式学习</strong></p>
+<p>基础学习部分</p>
+</blockquote>
+<h3 id="加载一张图片"><a href="#加载一张图片" class="headerlink" title="加载一张图片"></a>加载一张图片</h3><p><img src="http://static.zxinc520.com/blog/20190514/GnYuPkAo16G5.png?imageslim" alt="mark"></p>
+<p>_简单使用样式_：</p>
+<p><img src="http://static.zxinc520.com/blog/20190514/gvNQzg8BaF74.png?imageslim" alt="mark"></p>
+<h2 id="WXSS"><a href="#WXSS" class="headerlink" title="WXSS"></a>WXSS</h2><blockquote>
+<p>WXSS (WeiXin Style Sheets)是一套样式语言，用于描述 WXML 的组件样式。</p>
+<p>WXSS 用来决定 WXML 的组件应该怎么显示。 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">可以参考官网</a></p>
+</blockquote>
+<p>为了适应广大的前端开发者，WXSS 具有 CSS 大部分特性。同时为了更适合开发微信小程序，WXSS 对 CSS 进行了扩充以及修改。</p>
+<p>与 CSS 相比，WXSS 扩展的特性有：</p>
+<ul>
+<li>尺寸单位</li>
+<li>样式导入</li>
+</ul>
+<h2 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h2><p>​ <strong>rpx</strong>（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为 750rpx。如在 iPhone6 上，屏幕宽度为 375px，共有 750 个物理像素，则 750rpx = 375px = 750 物理像素，1rpx = 0.5px = 1 物理像素</p>
+<p><img src="http://static.zxinc520.com/blog/20190514/57Wa2m8PEEyp.png?imageslim" alt="mark"></p>
+<p><strong>建议：</strong> 开发微信小程序时设计师可以用 iPhone6 作为视觉稿的标准。</p>
+<p><strong>注意：</strong> 在较小的屏幕上不可避免的会有一些毛刺，请在开发时尽量避免这种情况。</p>
+<h2 id="全局样式与局部样式"><a href="#全局样式与局部样式" class="headerlink" title="全局样式与局部样式"></a>全局样式与局部样式</h2><p>定义在 app.wxss 中的样式为全局样式，作用于每一个页面。在 page 的 wxss 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 app.wxss 中相同的选择器。</p>
+<h2 id="开发者文档"><a href="#开发者文档" class="headerlink" title="开发者文档"></a>开发者文档</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/image.html">开发者文档</a></p>
+<p><strong>不会</strong> 或 <strong>忘了</strong> 就查文档！</p>
+</blockquote>
+<h3 id="image"><a href="#image" class="headerlink" title="image:"></a>image:</h3><p>​ <strong>解决图片缩放问题：</strong></p>
+<ul>
+<li>mode （ 常用下面 2 个属性值缩放图片 ）<ul>
+<li>aspectFit：缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。</li>
+<li>aspectFill：缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190520/XC3RPCh4fJdY.png?imageslim" alt="mark"></p>
+<h3 id="swiper"><a href="#swiper" class="headerlink" title="swiper"></a>swiper</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html">看开发者文档</a></p>
+<p>轮播组件：调用相应的标签及参数设置</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190520/PgOdEdCQrqvp.gif" alt="mark"></p>
+<h2 id="解读-app-json"><a href="#解读-app-json" class="headerlink" title="解读 app.json"></a>解读 app.json</h2><blockquote>
+<p>小程序根目录下的 <code>app.json</code> 文件用来对微信小程序进行全局配置。文件内容为一个 JSON 对象，有以下属性：</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">可以参考官网</a></p>
+</blockquote>
+<h3 id="pages"><a href="#pages" class="headerlink" title="pages"></a>pages</h3><blockquote>
+<p>用于指定小程序由哪些页面组成，每一项都对应一个页面的 路径（含文件名） 信息。文件名不需要写文件后缀，框架会自动去寻找对于位置的 <code>.json</code>, <code>.js</code>, <code>.wxml</code>, <code>.wxss</code> 四个文件进行处理。</p>
+</blockquote>
+<h3 id="window"><a href="#window" class="headerlink" title="window"></a>window</h3><blockquote>
+<p>用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;window&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;navigationBarBackgroundColor&quot;</span>: <span class="string">&quot;#ffffff&quot;</span>,</span><br><span class="line">    <span class="string">&quot;navigationBarTextStyle&quot;</span>: <span class="string">&quot;black&quot;</span>,</span><br><span class="line">    <span class="string">&quot;navigationBarTitleText&quot;</span>: <span class="string">&quot;微信接口功能演示&quot;</span>,</span><br><span class="line">    <span class="string">&quot;backgroundColor&quot;</span>: <span class="string">&quot;#eeeeee&quot;</span>,</span><br><span class="line">    <span class="string">&quot;backgroundTextStyle&quot;</span>: <span class="string">&quot;light&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="tabBar"><a href="#tabBar" class="headerlink" title="tabBar"></a>tabBar</h3><blockquote>
+<p>如果小程序是一个多 tab 应用（客户端窗口的底部或顶部有 tab 栏可以切换页面），可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;tabBar&quot;</span>: &#123;</span><br><span class="line">   <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#333&quot;</span>,</span><br><span class="line">   <span class="string">&quot;selectedColor&quot;</span>: <span class="string">&quot;#f30&quot;</span>,</span><br><span class="line">   <span class="string">&quot;list&quot;</span>: [&#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;首页&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/message/message&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;消息&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;个人中心&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="string">&quot;pagePath&quot;</span>: <span class="string">&quot;pages/index/index&quot;</span>,</span><br><span class="line">     <span class="string">&quot;text&quot;</span>: <span class="string">&quot;综合&quot;</span>,</span><br><span class="line">     <span class="string">&quot;iconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span>,</span><br><span class="line">     <span class="string">&quot;selectedIconPath&quot;</span>: <span class="string">&quot;assets/tabs/icon1.png&quot;</span></span><br><span class="line">   &#125;]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190521/OCDT2PNCaB4Y.png?imageslim" alt="mark"></p>
+<p><em>等等等… 不了解就看文档！</em></p>
+<p><strong>注意： 所以看开发者文档很重要！</strong></p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">点一下就可以看了，别懒！</a></p>
+<h2 id="app-js-全局生命周期函数"><a href="#app-js-全局生命周期函数" class="headerlink" title="app.js 全局生命周期函数"></a>app.js 全局生命周期函数</h2><blockquote>
+<p>app.js 全局生命周期函数</p>
+</blockquote>
+<p><em>在 app.js 文件中</em> ， 定义了一些生命周期方法 ， onLaunch，onShow，onHide，onError，以及任意开发者添加的函数或者数据（通过 this 可以访问）</p>
+<p><strong>以下是各个生命周期方法作用和描述：</strong></p>
+<ol>
+<li><strong>onLaunch 生命周期函数</strong> –监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</li>
+<li><strong>onShow 生命周期函数</strong>–监听小程序显示 当小程序启动，或从后台进入前台显示，会触发 onShow</li>
+<li><strong>onHide 生命周期函数</strong>–监听小程序隐藏 当小程序从前台进入后台，会触发 onHide</li>
+<li><strong>onError 错误监听函数</strong> 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息</li>
+</ol>
+<p>其他 Any 开发者可以添加任意的函数或数据到 Object 参数中，用 this 可以访问</p>
+<p><em>index.js:</em> （个人感觉 和 <strong>Vue</strong> 真的好像，如果熟悉 Vue 的话，这理解起来应该没有难度。）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="comment">//获取应用实例</span></span><br><span class="line"><span class="keyword">const</span> app = getApp();</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    motto: <span class="string">&quot;Hello World&quot;</span>,</span><br><span class="line">    listarr: <span class="number">0</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</span></span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">option</span>) </span>&#123;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: <span class="string">&quot;https://www.baifubao.com/callback&quot;</span>,</span><br><span class="line">      success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">          listarr: res.statusCode,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：着重关注 onLoad 函数，因为使用最频繁！</strong></p>
+<h2 id="WXML-数据绑定"><a href="#WXML-数据绑定" class="headerlink" title="WXML 数据绑定"></a>WXML 数据绑定</h2><blockquote>
+<p>WXML 中的动态数据均来自对应 Page 的 data。</p>
+</blockquote>
+<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">&quot;Hello World!&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190526/Dr9a1AITnQo7.png?imageslim" alt="mark"></p>
+<h4 id="特别注意："><a href="#特别注意：" class="headerlink" title="特别注意："></a>特别注意：</h4><ol>
+<li>花括号和引号之间不能有空格</li>
+<li>不能直接写 checked=“false”，其计算结果是一个字符串，转成 boolean 类型后转为真值。</li>
+</ol>
+<h2 id="通过-wx-request-请求数据"><a href="#通过-wx-request-请求数据" class="headerlink" title="通过 wx.request 请求数据"></a>通过 wx.request 请求数据</h2><blockquote>
+<p>通过 wx.request 请求数据</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">wx.request(&#123;</span><br><span class="line">  url: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  data: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  header: &#123;&#125;,</span><br><span class="line">  method: <span class="string">&quot;GET&quot;</span>,</span><br><span class="line">  dataType: <span class="string">&quot;json&quot;</span>,</span><br><span class="line">  responseType: <span class="string">&quot;text&quot;</span>,</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;&#125;,</span><br><span class="line">  complete: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190527/x00Ledvp9GT7.png?imageslim" alt="mark"></p>
+<p><strong>setData</strong>：接受 <u>wx.request</u> 请求的数据，赋值给 Page 里面的 data（然后通过插值表达式渲染到页面）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="comment">//获取应用实例</span></span><br><span class="line"><span class="keyword">const</span> app = getApp();</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    motto: <span class="string">&quot;Hello World&quot;</span>,</span><br><span class="line">    listarr: <span class="number">0</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">option</span>) </span>&#123;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: <span class="string">&quot;https://www.baifubao.com/callback&quot;</span>,</span><br><span class="line">      success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">          listarr: res.statusCode,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="微信小程序里列表渲染"><a href="#微信小程序里列表渲染" class="headerlink" title="微信小程序里列表渲染"></a>微信小程序里列表渲染</h2><blockquote>
+<h3 id="wx-for"><a href="#wx-for" class="headerlink" title="wx:for"></a>wx:for</h3><p>在组件上使用 <code>wx:for</code> 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。</p>
+<p>默认数组的当前项的下标变量名默认为 <code>index</code>，数组当前项的变量名默认为 <code>item</code></p>
+</blockquote>
+<p><em>类比于 Vue：</em></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;example-1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span>&gt;</span>&#123;&#123; item.message &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>微信小程序里面：</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:<span class="keyword">for</span>=<span class="string">&quot;&#123;&#123;array&#125;&#125;&quot;</span>&gt;&#123;&#123;index&#125;&#125;: &#123;&#123;item.message&#125;&#125;&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    array: [</span><br><span class="line">      &#123;</span><br><span class="line">        message: <span class="string">&quot;foo&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        message: <span class="string">&quot;bar&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="wx-key"><a href="#wx-key" class="headerlink" title="wx:key"></a>wx:key</h4><p>​ <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/list.html">可以参考</a></p>
+<p>如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html">``</a> 中的输入内容，<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/switch.html">``</a>的选中状态），需要使用 <code>wx:key</code> 来指定列表中项目的唯一的标识符。</p>
+<ol>
+<li>字符串，代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。</li>
+<li>保留关键字 <code>*this</code> 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：</li>
+</ol>
+<p>当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。</p>
+<p><strong>如不提供 wx:key，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">switch</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;objectArray&#125;&#125;&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;unique&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: block;&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123;item.id&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;switch&quot;</span>&gt;</span>Switch<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;addToFront&quot;</span>&gt;</span>Add to the front<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">switch</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;numberArray&#125;&#125;&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;*this&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: block;&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123;item&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;addNumberToFront&quot;</span>&gt;</span>Add to the front<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    objectArray: [</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">5</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_5&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_4&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_3&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_2&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_1&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">0</span>, <span class="attr">unique</span>: <span class="string">&quot;unique_0&quot;</span> &#125;,</span><br><span class="line">    ],</span><br><span class="line">    numberArray: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="页面相关事件处理函数"><a href="#页面相关事件处理函数" class="headerlink" title="页面相关事件处理函数"></a>页面相关事件处理函数</h2><blockquote>
+<p>页面相关事件处理函数（<strong>下拉刷新</strong>，<strong>滑到底部加载更多</strong>等）</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.startPullDownRefresh.html">可以参考</a></p>
+</blockquote>
+<p><strong>下拉事件和触底事件</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//页面相关事件处理函数---监听用户下拉动作</span></span><br><span class="line">   onPullDownRefresh:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">&#x27;下拉！&#x27;</span>)</span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="comment">//页面上拉触底事件的处理函数</span></span><br><span class="line">   onReachBottom:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">&#x27;上拉&#x27;</span>)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.showNavigationBarLoading.html">可以参考官方文档</a></p>
+<p>js 文件</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">函数 API</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">wx.showNavigationBarLoading(Object object)</td>
+<td align="center">在当前页面显示导航条加载动画</td>
+</tr>
+<tr>
+<td align="center">wx.setNavigationBarTitle(Object object)</td>
+<td align="center">动态设置当前页面的标题</td>
+</tr>
+<tr>
+<td align="center">wx.setNavigationBarColor(Object object)</td>
+<td align="center">设置页面导航条颜色</td>
+</tr>
+<tr>
+<td align="center">wx.hideNavigationBarLoading(Object object)</td>
+<td align="center">在当前页面隐藏导航条加载动画</td>
+</tr>
+</tbody></table>
+<p><img src="http://static.zxinc520.com/blog/20190603/DXIDRjESGUHv.gif" alt="mark"></p>
+<h2 id="界面交互"><a href="#界面交互" class="headerlink" title="界面交互"></a>界面交互</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html">参考官方文档</a></p>
+</blockquote>
+<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wx.showToast(&#123;</span><br><span class="line">  title: <span class="string">&quot;成功w&quot;</span>,</span><br><span class="line">  icon: <span class="string">&quot;success&quot;</span>,</span><br><span class="line">  duration: <span class="number">2000</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190603/fRajsw7UWlQc.gif" alt="mark"></p>
+<h2 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h2><blockquote>
+<p>下拉刷新( <strong>配合</strong> 页面<em>相关事件处理函数</em>—监听用户下拉动作)</p>
+</blockquote>
+<p><strong>index.json:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;enablePullDownRefresh&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;backgroundTextStyle&quot;</span>: <span class="string">&quot;dark&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>index.js:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//页面相关事件处理函数---监听用户下拉动作</span></span><br><span class="line"> onPullDownRefresh:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">&#x27;下拉！&#x27;</span>)</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.zxinc520.com/blog/20190603/bHEJTM3fLLsC.gif" alt="mark"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li></ul>
 
     </footer>
   </div>
@@ -2228,208 +2533,6 @@
 <p><img src="http://static.zxinc520.com/blog/20190716/DOiHXt0yUzLP.png?imageslim" alt="mark"></p>
 </li>
 </ul>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-JsBasicKnowledge02"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/08/04/JsBasicKnowledge02/"
-    >前端JS基础面试技巧下</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/08/04/JsBasicKnowledge02/" class="article-date">
-  <time datetime="2019-08-04T08:44:08.000Z" itemprop="datePublished">2019-08-04</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/">JS 三座大山</a> / <a class="article-category-link" href="/categories/JS/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="前端-JS-基础面试技巧"><a href="#前端-JS-基础面试技巧" class="headerlink" title="前端 JS 基础面试技巧"></a>前端 JS 基础面试技巧</h1><blockquote>
-<p>前端 JS 基础面试技巧 – <strong>JS 基础知识下</strong></p>
-<p>JS 三座大山：<strong>原型原型链</strong> 、<strong>作用域闭包</strong> 、<strong>异步和单线程</strong> 。</p>
-<p>知识点：</p>
-<p>3-1 异步和单线程</p>
-<p>3-2 日期和 math</p>
-<ul>
-<li>日期</li>
-<li>Math</li>
-<li>数组 API</li>
-<li>对象 API</li>
-</ul>
-</blockquote>
-<h2 id="3-1-异步和单线程"><a href="#3-1-异步和单线程" class="headerlink" title="3-1 异步和单线程"></a>3-1 异步和单线程</h2><blockquote>
-<p>异步和单线程</p>
-<p>题目</p>
-<p>知识点</p>
-<p>解答</p>
-</blockquote>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>同步和异步的区别是什么？分别举一个同步和异步的例子</li>
-<li>一个关于 setTimeout 的笔试题</li>
-<li>前端使用异步的场景有哪些</li>
-</ul>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>什么是异步（对比同步）</li>
-<li>前端使用异步的场景</li>
-<li>异步个单线程</li>
-</ul>
-<h3 id="什么是异步"><a href="#什么是异步" class="headerlink" title="什么是异步"></a>什么是异步</h3><blockquote>
-<p>异步（Asynchronous）</p>
-<p>一般而言，操作分为发出调用和得到结果两步。发出调用后一直等待，直到拿到结果（这段时间不能做任何事）为 <strong>同步</strong> ；发出调用后不等待，继续执行下一个任务，就是 <strong>异步任务</strong> 。</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/667936441cb5">参考</a></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">100</span>);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">200</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">300</span>);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    100</span></span><br><span class="line"><span class="comment">    300</span></span><br><span class="line"><span class="comment">    200</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="何时需要异步？"><a href="#何时需要异步？" class="headerlink" title="何时需要异步？"></a>何时需要异步？</h4><ul>
-<li><p>在可能发生等待的情况</p>
-</li>
-<li><p>等待过程中不能像 alert 一样阻塞程序运行</p>
-</li>
-<li><p>因此，所有的 “ 等待情况” 都需要异步</p>
-</li>
-</ul>
-<h4 id="前端使用异步的场景"><a href="#前端使用异步的场景" class="headerlink" title="前端使用异步的场景"></a>前端使用异步的场景</h4><ul>
-<li><p>定时任务：<strong>setTimeout</strong>，<strong>setInterval</strong></p>
-</li>
-<li><p>网络请求：<strong>ajax 请求</strong>，<strong>动态</strong> &lt;**img**&gt; <strong>加载</strong></p>
-</li>
-<li><p><strong>事件绑定</strong></p>
-</li>
-</ul>
-<h3 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h3><blockquote>
-<p><strong>Javascript 是单线程的</strong> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/Mainz/p/3552717.html">参考</a></p>
-<p>JS 的单线程是指一个浏览器进程中只有一个 JS 的执行线程，同一时刻内只会有一段代码在执行</p>
-<p>在某个特定的时刻只有特定的代码能够被执行，并 <strong>阻塞</strong> 其它的代码。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">100</span>);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">200</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">300</span>);</span><br></pre></td></tr></table></figure>
-
-<p><strong>上面代码执行过程：</strong></p>
-<p><img src="http://static.zxinc520.com/blog/20190717/kEQlmncCXtel.png?imageslim" alt="mark"></p>
-<h4 id="重点总结"><a href="#重点总结" class="headerlink" title="重点总结"></a>重点总结</h4><ul>
-<li>异步和同步的区别</li>
-<li>异步和单线程的关系</li>
-<li>异步在前端的引用场景</li>
-</ul>
-<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><ul>
-<li><p>同步和异步的区别是什么？分别举一个同步和异步的例子</p>
-<ul>
-<li><p><em>同步</em> 是 <strong>阻塞模式</strong> ，<em>异步</em> 是 <strong>非阻塞模式</strong> 。</p>
-<p><em>同步</em> 就是指一个进程在执行某个请求的时候，若该请求需要一段时间才能返回信息，那么这个进程将会 <strong>一直等待下去</strong> ，知道收到返回信息才继续执行下去；</p>
-<p><em>异步</em> 是指进程 <strong>不需要一直等下去</strong> ，而是 <strong>继续执行下面的操作</strong>，不管其他进程的状态。当有消息返回式系统会通知进程进行处理，这样可以提高执行的效率。</p>
-</li>
-<li><p>alert 是 同步， setTimeout 是 异步</p>
-</li>
-</ul>
-</li>
-<li><p>一个关于 setTimeout 的笔试题</p>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">	1</span></span><br><span class="line"><span class="comment">    3</span></span><br><span class="line"><span class="comment">    5</span></span><br><span class="line"><span class="comment">    2</span></span><br><span class="line"><span class="comment">    4</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>前端使用异步的场景有哪些<ul>
-<li>定时任务：<strong>setTimeout</strong>，<strong>setInterval</strong></li>
-<li>网络请求：<strong>ajax 请求</strong>，<strong>动态</strong> &lt;**img**&gt; <strong>加载</strong></li>
-<li><strong>事件绑定</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="3-2-日期和-math"><a href="#3-2-日期和-math" class="headerlink" title="3-2 日期和 math"></a>3-2 日期和 math</h2><blockquote>
-<p>题目</p>
-<p>知识点</p>
-<p>解答</p>
-</blockquote>
-<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>获取 2017 -06 -10 格式的日期</li>
-<li>获取 随机数，要求是长度一致 的字符串格式</li>
-<li>写一个 能遍历对象 和数组 的通用 forEach 函数</li>
-</ul>
-<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>日期</li>
-<li>Math</li>
-<li>数组 API</li>
-<li>对象 API</li>
-</ul>
-<h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><blockquote>
-<p><strong>日期对象用于处理日期和时间。</strong></p>
-<p><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_obj_date.asp">JavaScript Date 对象 API</a></p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190717/3ijIzI0Frks1.png?imageslim" alt="mark"></p>
-<h4 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h4><blockquote>
-<p><strong>Math</strong> 是一个内置对象， 它具有数学常数和函数的属性和方法。不是一个函数对象。</p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math">Math Api</a></p>
-<p>描述：与其它全局对象不同的是, <code>Math</code> 不是一个构造器. <code>Math</code> 的所有属性和方法都是静态的. 你用到的常数 pi 可以用 <code>Math.PI</code> 表示,用 <code>x</code> 作参数 Math.sin(x)调用 sin 函数. JavaScript 中的常数, 是以全精度的实数定义的.</p>
-<p>Math.random() 在前端的作用：随时改变，清除缓存。</p>
-</blockquote>
-<h4 id="数组-API"><a href="#数组-API" class="headerlink" title="数组 API"></a>数组 API</h4><blockquote>
-<p><a target="_blank" rel="noopener" href="http://louiszhai.github.io/2017/04/28/array/#Array%E6%9E%84%E9%80%A0%E5%99%A8">参考</a></p>
-<p>详情可以参考我的博客：<a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d119841fd02ab26e068eb0a%22">JavaScript 数组那些事</a></p>
-</blockquote>
-<p><strong>面试官最常问的几个</strong> ：</p>
-<ul>
-<li>forEach 遍历所有元素</li>
-<li>every 判断所有元素是否都符合条件</li>
-<li>some 判断是否有至少一个元素符合条件</li>
-<li>sort 排序</li>
-<li>map 对元素重新组装，生成新数组</li>
-<li>filter 过滤符合条件的元素</li>
-</ul>
-<h4 id="对象-API"><a href="#对象-API" class="headerlink" title="对象 API"></a>对象 API</h4><blockquote>
-<p><strong>Object.prototype API</strong></p>
-<p><code>Object.prototype</code> 表示对象的原型对象<br><code>Object.prototype</code> 属性的属性特征</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2f43db2b656c">参考</a></p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190717/mOpzx9LK1xmu.png?imageslim" alt="mark"></p>
-<h3 id="解答-1"><a href="#解答-1" class="headerlink" title="解答"></a>解答</h3><ul>
-<li>获取 2019-07-17 格式的日期</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatDate</span>(<span class="params">dt</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!dt) &#123;</span><br><span class="line">    dt = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  <span class="keyword">var</span> year = dt.getFullYear();</span><br><span class="line">  <span class="keyword">var</span> month = dt.getMonth() + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> data = dt.getDate();</span><br><span class="line">  <span class="keyword">if</span> (month &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    month = <span class="string">&quot;0&quot;</span> + month;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (data &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    data = <span class="string">&quot;0&quot;</span> + data;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> year + <span class="string">&quot;-&quot;</span> + month + <span class="string">&quot;-&quot;</span> + data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(formatDate(dt));</span><br><span class="line"></span><br><span class="line"><span class="comment">//  2019-07-17</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取 随机数，要求是长度一致 的字符串格式</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> random = <span class="built_in">Math</span>.random();</span><br><span class="line">random = random + <span class="string">&quot;0000000000&quot;</span>;</span><br><span class="line">random = random.slice(<span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(random);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>写一个 能遍历对象 和数组 的通用 forEach 函数</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写一个 能遍历对象 和数组 的通用 forEach 函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">forEach</span>(<span class="params">obj, fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">    obj.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item, index</span>) </span>&#123;</span><br><span class="line">      fn(item, index);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">      fn(key, obj[key]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用  forEach 函数</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">x</span>: <span class="number">100</span>, <span class="attr">y</span>: <span class="number">200</span> &#125;;</span><br><span class="line"></span><br><span class="line">forEach(arr, <span class="function"><span class="keyword">function</span> (<span class="params">index, item</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index + <span class="string">&quot;---&quot;</span> + item);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">forEach(obj, <span class="function"><span class="keyword">function</span> (<span class="params">key, value</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key, value);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	2---1</span></span><br><span class="line"><span class="comment">    3---2</span></span><br><span class="line"><span class="comment">    x 100</span></span><br><span class="line"><span class="comment">    y 200</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
  
       <!-- reward -->
       
