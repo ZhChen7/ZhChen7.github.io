@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.7k</span>
+            <span class="post-count">1.6k</span>
         </span>
     </span>
 
@@ -99,7 +99,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">8 min</span>
+            <span class="post-count">7 min</span>
         </span>
     </span>
 </div>
@@ -126,33 +126,109 @@
 <li>依托 Vue.js 高效的组件化方案，Mint UI 做到了轻量化。即使全部引入，压缩后的文件体积也仅有 ~30kb (JS + CSS) gzip。</li>
 </ol>
 <p><strong>安装：</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 安装</span><br><span class="line"><span class="meta">#</span><span class="bash"> Vue 1.x</span></span><br><span class="line">npm install mint-ui@1 -S</span><br><span class="line"><span class="meta">#</span><span class="bash"> Vue 2.0</span></span><br><span class="line">npm install mint-ui -S</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&#x2F;&#x2F; 安装
+# Vue 1.x
+npm install mint-ui@1 -S
+# Vue 2.0
+npm install mint-ui -S<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>来自官网</strong>：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入全部组件</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> Mint <span class="keyword">from</span> <span class="string">&quot;mint-ui&quot;</span>;</span><br><span class="line">Vue.use(Mint);</span><br><span class="line"><span class="comment">// 按需引入部分组件</span></span><br><span class="line"><span class="keyword">import</span> &#123; Cell, Checklist &#125; <span class="keyword">from</span> <span class="string">&quot;minu-ui&quot;</span>;</span><br><span class="line">Vue.component(Cell.name, Cell);</span><br><span class="line">Vue.component(Checklist.name, Checklist);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 引入全部组件</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Mint <span class="token keyword">from</span> <span class="token string">"mint-ui"</span><span class="token punctuation">;</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Mint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 按需引入部分组件</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Cell<span class="token punctuation">,</span> Checklist <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"minu-ui"</span><span class="token punctuation">;</span>
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>Cell<span class="token punctuation">.</span>name<span class="token punctuation">,</span> Cell<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>Checklist<span class="token punctuation">.</span>name<span class="token punctuation">,</span> Checklist<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="项目演示："><a href="#项目演示：" class="headerlink" title="项目演示："></a><strong>项目演示：</strong></h3><p>项目目录：</p>
 <p><img src="http://static.zxinc520.com/blog/20190418/udiBT1HHpIk4.png?imageslim" alt="mark"></p>
 <p><strong>main.js:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span>;</span><br><span class="line">Vue.use(VueRouter);</span><br><span class="line"></span><br><span class="line"><span class="comment">//导入所以的 MintUI 组件</span></span><br><span class="line"><span class="comment">//导入 mint-ui</span></span><br><span class="line"><span class="keyword">import</span> MintUI <span class="keyword">from</span> <span class="string">&quot;mint-ui&quot;</span>; <span class="comment">//把所有的组件都导入进来</span></span><br><span class="line"><span class="comment">//这里可以 省略 node_modules 目录</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;mint-ui/lib/style.css&quot;</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(MintUI); <span class="comment">//把所有的组件，注册为全局的组件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//导入app组件</span></span><br><span class="line"><span class="keyword">import</span> app <span class="keyword">from</span> <span class="string">&quot;./App.vue&quot;</span>;</span><br><span class="line"><span class="comment">//导入 自定义路由模块</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&quot;./router.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    msg: <span class="string">&quot;123&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  render: <span class="function">(<span class="params">c</span>) =&gt;</span> c(app),</span><br><span class="line">  router,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">"vue-router"</span><span class="token punctuation">;</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//导入所以的 MintUI 组件</span>
+<span class="token comment">//导入 mint-ui</span>
+<span class="token keyword">import</span> MintUI <span class="token keyword">from</span> <span class="token string">"mint-ui"</span><span class="token punctuation">;</span> <span class="token comment">//把所有的组件都导入进来</span>
+<span class="token comment">//这里可以 省略 node_modules 目录</span>
+<span class="token keyword">import</span> <span class="token string">"mint-ui/lib/style.css"</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>MintUI<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//把所有的组件，注册为全局的组件</span>
+
+<span class="token comment">//导入app组件</span>
+<span class="token keyword">import</span> app <span class="token keyword">from</span> <span class="token string">"./App.vue"</span><span class="token punctuation">;</span>
+<span class="token comment">//导入 自定义路由模块</span>
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">"./router.js"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  el<span class="token operator">:</span> <span class="token string">"#app"</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    msg<span class="token operator">:</span> <span class="token string">"123"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">c</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">c</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  router<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>App.vue:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;mt-button type&#x3D;&quot;primary&quot; size&#x3D;&quot;large&quot;&gt;default&lt;&#x2F;mt-button&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;
+    &lt;mt-button type&#x3D;&quot;primary&quot; size&#x3D;&quot;large&quot;&gt;default&lt;&#x2F;mt-button&gt;
+    &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;
+    &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;
+    &lt;router-view&gt;&lt;&#x2F;router-view&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script&gt;&lt;&#x2F;script&gt;
+
+&lt;style&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="http://static.zxinc520.com/blog/20190418/L8Aec7UwlBhj.png?imageslim" alt="mark"></p>
 <h2 id="JS-components-使用"><a href="#JS-components-使用" class="headerlink" title="JS components 使用"></a>JS components 使用</h2><h4 id="例如：使用-Toast-组件"><a href="#例如：使用-Toast-组件" class="headerlink" title="例如：使用 Toast 组件"></a>例如：使用 <strong>Toast 组件</strong></h4><p>App.vue:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;mt-button type&#x3D;&quot;primary&quot; size&#x3D;&quot;large&quot; @click&#x3D;&quot;show&quot;&gt;default&lt;&#x2F;mt-button&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; Toast &#125; from &quot;mint-ui&quot;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    show() &#123;</span><br><span class="line">      Toast(&#123;</span><br><span class="line">        message: &quot;Upload Complete&quot;,</span><br><span class="line">        position: &quot;middle&quot;,</span><br><span class="line">        duration: 5000,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;
+    &lt;mt-button type&#x3D;&quot;primary&quot; size&#x3D;&quot;large&quot; @click&#x3D;&quot;show&quot;&gt;default&lt;&#x2F;mt-button&gt;
+    &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;
+    &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;
+    &lt;router-view&gt;&lt;&#x2F;router-view&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script&gt;
+import &#123; Toast &#125; from &quot;mint-ui&quot;;
+
+export default &#123;
+  data() &#123;
+    return &#123;&#125;;
+  &#125;,
+  methods: &#123;
+    show() &#123;
+      Toast(&#123;
+        message: &quot;Upload Complete&quot;,
+        position: &quot;middle&quot;,
+        duration: 5000,
+      &#125;);
+    &#125;,
+  &#125;,
+&#125;;
+&lt;&#x2F;script&gt;
+
+&lt;style&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="http://static.zxinc520.com/blog/20190418/4i9Jbv1iwEGP.gif" alt="mark"></p>
 <h2 id="使用-bootstrap-图标-配合-Toast-组件-使用"><a href="#使用-bootstrap-图标-配合-Toast-组件-使用" class="headerlink" title="使用 bootstrap 图标 配合 **Toast 组件 **使用"></a>使用 <strong>bootstrap 图标</strong> 配合 **Toast 组件 **使用</h2><ol>
 <li>安装 bootstrap 包</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i bootstrap@3.3.7 -S</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm i bootstrap@3.3.7 -S<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol start="2">
 <li>在 main.js 文件</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;bootstrap/dist/css/bootstrap.min.css&quot;</span>;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token string">"bootstrap/dist/css/bootstrap.min.css"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol start="3">
 <li>在 App.vue 文件里</li>
@@ -162,25 +238,94 @@
 <h4 id="自定义图标颜色"><a href="#自定义图标颜色" class="headerlink" title="自定义图标颜色"></a>自定义图标颜色</h4><p><img src="http://static.zxinc520.com/blog/20190418/7x5iyU8lwDzL.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190418/IX8tRWh9aU8d.gif" alt="mark"></p>
 <h2 id="模拟-完成接收数据-Toast-组件消失需求"><a href="#模拟-完成接收数据-Toast-组件消失需求" class="headerlink" title="模拟 完成接收数据 Toast 组件消失需求"></a>模拟 完成接收数据 Toast 组件消失需求</h2><h3 id="需求：-1s-后-Toast-组件消失需求"><a href="#需求：-1s-后-Toast-组件消失需求" class="headerlink" title="需求： 1s 后 Toast 组件消失需求"></a>需求： 1s 后 Toast 组件消失需求</h3><p><strong>App.vue:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;mt-button type&#x3D;&quot;primary&quot; size&#x3D;&quot;large&quot; @click&#x3D;&quot;show&quot;&gt;default&lt;&#x2F;mt-button&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; Toast &#125; from &quot;mint-ui&quot;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      instance: null,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    this.getList();</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    getList() &#123;</span><br><span class="line">      this.show();</span><br><span class="line">      setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">        this.instance.close();</span><br><span class="line">      &#125;, 1000);</span><br><span class="line">    &#125;,</span><br><span class="line">    show() &#123;</span><br><span class="line">      this.instance &#x3D; Toast(&#123;</span><br><span class="line">        message: &quot;Upload Complete&quot;,</span><br><span class="line">        duration: -1,</span><br><span class="line">        position: &quot;middle&quot;,</span><br><span class="line">        duration: 5000,</span><br><span class="line">        iconClass: &quot;glyphicon glyphicon-heart&quot;,</span><br><span class="line">        className: &quot;mytoast&quot;,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;
+    &lt;mt-button type&#x3D;&quot;primary&quot; size&#x3D;&quot;large&quot; @click&#x3D;&quot;show&quot;&gt;default&lt;&#x2F;mt-button&gt;
+    &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;
+    &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;
+    &lt;router-view&gt;&lt;&#x2F;router-view&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script&gt;
+import &#123; Toast &#125; from &quot;mint-ui&quot;;
+
+export default &#123;
+  data() &#123;
+    return &#123;
+      instance: null,
+    &#125;;
+  &#125;,
+  created() &#123;
+    this.getList();
+  &#125;,
+  methods: &#123;
+    getList() &#123;
+      this.show();
+      setTimeout(() &#x3D;&gt; &#123;
+        this.instance.close();
+      &#125;, 1000);
+    &#125;,
+    show() &#123;
+      this.instance &#x3D; Toast(&#123;
+        message: &quot;Upload Complete&quot;,
+        duration: -1,
+        position: &quot;middle&quot;,
+        duration: 5000,
+        iconClass: &quot;glyphicon glyphicon-heart&quot;,
+        className: &quot;mytoast&quot;,
+      &#125;);
+    &#125;,
+  &#125;,
+&#125;;
+&lt;&#x2F;script&gt;
+
+&lt;style&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="http://static.zxinc520.com/blog/20190418/qPQ3yPDUEMHo.gif" alt="mark"></p>
 <h2 id="babel-plugin-component-插件"><a href="#babel-plugin-component-插件" class="headerlink" title="babel-plugin-component 插件"></a>babel-plugin-component 插件</h2><p><strong>作用</strong>：为了项目整体内容不过于庞大，按需加载是许多第三方的库和插件必不可少的，于是使用了官方提供的按需加载插件<a href="https://link.juejin.im/?target=https://github.com/ElementUI/babel-plugin-component">babel-plugin-component</a></p>
 <h3 id="按需导入："><a href="#按需导入：" class="headerlink" title="按需导入："></a>按需导入：</h3><ol>
 <li>1.安装：</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-plugin-component -D</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm install babel-plugin-component -D<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol start="2">
 <li>2.修改 <strong>.babelrc</strong> 里面的 <strong>plugins</strong> ：</li>
 </ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;presets&quot;</span>: [<span class="string">&quot;env&quot;</span>, <span class="string">&quot;stage-0&quot;</span>],</span><br><span class="line">  <span class="attr">&quot;plugins&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;transform-runtime&quot;</span>,</span><br><span class="line">    [</span><br><span class="line">      <span class="string">&quot;component&quot;</span>,</span><br><span class="line">      [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">&quot;libraryName&quot;</span>: <span class="string">&quot;mint-ui&quot;</span>,</span><br><span class="line">          <span class="attr">&quot;style&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"presets"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"env"</span><span class="token punctuation">,</span> <span class="token string">"stage-0"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"plugins"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"transform-runtime"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span>
+      <span class="token string">"component"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span>
+        <span class="token punctuation">&#123;</span>
+          <span class="token property">"libraryName"</span><span class="token operator">:</span> <span class="token string">"mint-ui"</span><span class="token punctuation">,</span>
+          <span class="token property">"style"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="项目改造"><a href="#项目改造" class="headerlink" title="项目改造"></a>项目改造</h2><h4 id="按需导入"><a href="#按需导入" class="headerlink" title="按需导入"></a>按需导入</h4><p><strong>mian.js:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;mint-ui/lib/style.css&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按需导入</span></span><br><span class="line"><span class="keyword">import</span> &#123; Button &#125; <span class="keyword">from</span> <span class="string">&quot;mint-ui&quot;</span>;</span><br><span class="line">Vue.component(<span class="string">&quot;mybtn&quot;</span>, Button); <span class="comment">//导入自定义的 mybtn 按钮组件</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token string">"mint-ui/lib/style.css"</span><span class="token punctuation">;</span>
+
+<span class="token comment">//按需导入</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Button <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"mint-ui"</span><span class="token punctuation">;</span>
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"mybtn"</span><span class="token punctuation">,</span> Button<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//导入自定义的 mybtn 按钮组件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>App.vue:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;</span><br><span class="line">        &lt;mybtn type&#x3D;&quot;primary&quot;&gt;mybtn&lt;&#x2F;mybtn&gt;</span><br><span class="line">        &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;</span><br><span class="line">        &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;</span><br><span class="line">        &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;templat</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+    &lt;div&gt;
+        &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;
+        &lt;mybtn type&#x3D;&quot;primary&quot;&gt;mybtn&lt;&#x2F;mybtn&gt;
+        &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;account&lt;&#x2F;router-link&gt;
+        &lt;router-link to&#x3D;&quot;&#x2F;goodslist&quot;&gt;goodslist&lt;&#x2F;router-link&gt;
+        &lt;router-view&gt;&lt;&#x2F;router-view&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;templat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="http://static.zxinc520.com/blog/20190418/Kh82KQyT57d4.png?imageslim" alt="mark"></p>
 <h2 id="MUI"><a href="#MUI" class="headerlink" title="MUI"></a>MUI</h2><blockquote>
@@ -193,10 +338,12 @@
 <li>下载 MUI 包 从 github 上</li>
 </ol>
 <h3 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h3><p><strong>在 main.js 导入 MUI 包:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;./lib/dist/css/mui.min.css&quot;</span>;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token string">"./lib/dist/css/mui.min.css"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>在 App.vue 中使用（例如一个 按钮）：</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;mui-btn mui-btn-royal&quot;</span>&gt;</span></span><br><span class="line">  Badge button <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;mui-badge mui-badge-royal&quot;</span>&gt;</span>999<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mui-btn mui-btn-royal<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Badge button <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mui-badge mui-badge-royal<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>999<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="http://static.zxinc520.com/blog/20190418/TxVONoruT7Xq.png?imageslim" alt="mark"></p>
  

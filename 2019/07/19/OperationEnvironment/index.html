@@ -262,7 +262,12 @@
 <h3 id="优化示例"><a href="#优化示例" class="headerlink" title="优化示例"></a>优化示例</h3><blockquote>
 <p>展示几个优化示例</p>
 </blockquote>
-<h4 id="资源合并"><a href="#资源合并" class="headerlink" title="资源合并"></a>资源合并</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;a.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;b.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;c.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//资源合并</span></span><br><span class="line">&lt;script src=<span class="string">&quot;abc.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="资源合并"><a href="#资源合并" class="headerlink" title="资源合并"></a>资源合并</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"a.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"b.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"c.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token comment">//资源合并</span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"abc.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h4><ul>
 <li>通过连接名字控制缓存</li>

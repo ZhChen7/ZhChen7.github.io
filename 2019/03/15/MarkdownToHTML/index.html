@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">322</span>
+            <span class="post-count">332</span>
         </span>
     </span>
 
@@ -129,11 +129,49 @@
 <p>npm install marked –save</p>
 </blockquote>
 <h1 id="关键步骤"><a href="#关键步骤" class="headerlink" title="关键步骤"></a>关键步骤</h1><p>路由部分关键代码：router.js （ 里面的部分代码是关键 ）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line"></span><br><span class="line">router.get(<span class="string">&quot;/:docName&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    docId = req.params.docName.replace(<span class="regexp">/&quot;/g</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    publish.findById(docId, <span class="function"><span class="keyword">function</span> (<span class="params">err, publish</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="keyword">return</span> next(err)</span><br><span class="line">        &#125;</span><br><span class="line">        fs.readFile(__dirname + src + publish.publishMainBodyUrl + <span class="string">&#x27;.md&#x27;</span>,           <span class="string">&#x27;utf-8&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(err);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                htmlStr = marked(data.toString());</span><br><span class="line">                res.type(<span class="string">&#x27;html&#x27;</span>)</span><br><span class="line">                message.find(&#123;</span><br><span class="line">                    message_type: publish.publishMainBodyUrl</span><br><span class="line">                &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err, message</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                        <span class="keyword">return</span> next(err)</span><br><span class="line">                    &#125;</span><br><span class="line">                    message.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">                        e.UTCtodata = <span class="keyword">new</span> <span class="built_in">Date</span>(e.message_time).toLocaleString()</span><br><span class="line">                    &#125;)</span><br><span class="line">                    res.render(<span class="string">&#x27;MainBody.html&#x27;</span>, &#123;</span><br><span class="line">                        doc: htmlStr,</span><br><span class="line">                        publish: publish,</span><br><span class="line">                        message: message</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-Javascript" data-language="Javascript"><code class="language-Javascript">src
+
+router.get(&quot;&#x2F;:docName&quot;, function (req, res, next) &#123;
+    docId &#x3D; req.params.docName.replace(&#x2F;&quot;&#x2F;g, &#39;&#39;)
+    publish.findById(docId, function (err, publish) &#123;
+        if (err) &#123;
+            return next(err)
+        &#125;
+        fs.readFile(__dirname + src + publish.publishMainBodyUrl + &#39;.md&#39;,           &#39;utf-8&#39;, function (err, data) &#123;
+            if (err) &#123;
+                console.log(err);
+            &#125; else &#123;
+                htmlStr &#x3D; marked(data.toString());
+                res.type(&#39;html&#39;)
+                message.find(&#123;
+                    message_type: publish.publishMainBodyUrl
+                &#125;, function (err, message) &#123;
+                    if (err) &#123;
+                        return next(err)
+                    &#125;
+                    message.forEach(function (e) &#123;
+                        e.UTCtodata &#x3D; new Date(e.message_time).toLocaleString()
+                    &#125;)
+                    res.render(&#39;MainBody.html&#39;, &#123;
+                        doc: htmlStr,
+                        publish: publish,
+                        message: message
+                    &#125;);
+                &#125;)
+            &#125;
+        &#125;);
+    &#125;)
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>##</p>
 <p>MainBody.html: 用 art-template 模板渲染后台传来的数据</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">   &#123;&#123;@ doc &#125;&#125;或者  &lt;%- doc %&gt;</span></span><br><span class="line"><span class="comment"> （ @和- 很关键 ==&gt;原文输出语句不会对 HTML 内容进行转义处理，可能存在安全风险，请谨慎使用。这个坑害我多走了好多弯路。）</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;markfs&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123;@ doc &#125;&#125; <span class="comment">&lt;!-- 或者  &lt;%- doc %&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">&lt;!--
+   &#123;&#123;@ doc &#125;&#125;或者  &lt;%- doc %&gt;
+ （ @和- 很关键 &#x3D;&#x3D;&gt;原文输出语句不会对 HTML 内容进行转义处理，可能存在安全风险，请谨慎使用。这个坑害我多走了好多弯路。）
+--&gt;
+&lt;div id&#x3D;&quot;markfs&quot;&gt;
+    &#123;&#123;@ doc &#125;&#125; &lt;!-- 或者  &lt;%- doc %&gt; --&gt;
+&lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="http://static.zxinc520.com/blogimage/20190314/x6s26FzHS5go.png?imageslim" alt="g"></p>
  

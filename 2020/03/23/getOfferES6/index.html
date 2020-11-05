@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">6.5k</span>
+            <span class="post-count">6.4k</span>
         </span>
     </span>
 
@@ -154,7 +154,12 @@
 <p>let [aa, bb, cc] = [0, 1, 2];</p>
 </li>
 <li><p>对象解构赋值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; cnName, enName &#125; = &#123;</span><br><span class="line">  id: <span class="string">&quot;151521574&quot;</span>,</span><br><span class="line">  cnName: <span class="string">&quot;张生&quot;</span>,</span><br><span class="line">  enName: <span class="string">&quot;Ronnie&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(cnName, enName); <span class="comment">//&#x27;张生&#x27;，&#x27;Ronnie&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">&#123;</span> cnName<span class="token punctuation">,</span> enName <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  id<span class="token operator">:</span> <span class="token string">"151521574"</span><span class="token punctuation">,</span>
+  cnName<span class="token operator">:</span> <span class="token string">"张生"</span><span class="token punctuation">,</span>
+  enName<span class="token operator">:</span> <span class="token string">"Ronnie"</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>cnName<span class="token punctuation">,</span> enName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//'张生'，'Ronnie'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ul>
@@ -170,7 +175,9 @@
 <h3 id="5、Symbol"><a href="#5、Symbol" class="headerlink" title="5、Symbol"></a>5、Symbol</h3><ul>
 <li><p>是什么？</p>
 <p>symbols 是一种无法被重建的基本类型。这时 symbols 有点类似与对象创建的实例互相不相等的情况，但同时 symbols 又是一种无法被改变的基本类型数据。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s1 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">const</span> s2 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="built_in">console</span>.log(s1 === s2); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> s1 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> s2 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s1 <span class="token operator">===</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>作用</p>
 <ol>
@@ -201,7 +208,9 @@
 <li><p>特点：依赖必须提前声明好</p>
 </li>
 <li><p>简单实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">&quot;./index.js&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">code</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// code 就是index.js 返回的内容</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"./index.js"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">code</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// code 就是index.js 返回的内容</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
@@ -212,7 +221,9 @@
 <li><p>特点：支持动态引入依赖文件</p>
 </li>
 <li><p>简单实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> indexCode = <span class="built_in">require</span>(<span class="string">&quot;./index.js&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">require<span class="token punctuation">,</span> exports<span class="token punctuation">,</span> module</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> indexCode <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./index.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
@@ -300,10 +311,10 @@
 </ul>
 </li>
 <li><p>事件监听</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f1.on(<span class="string">&quot;done&quot;</span>, f2);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">f1<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"done"</span><span class="token punctuation">,</span> f2<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>发布订阅</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery.subscribe(<span class="string">&quot;done&quot;</span>, f2);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">jQuery<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">"done"</span><span class="token punctuation">,</span> f2<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>Promise</p>
 <ul>
@@ -398,7 +409,12 @@
 <p>调用 Generator 函数，返回一个遍历器对象，代表 Generator 函数的内部指针。以后，每次调用遍历器对象的 next 方法，就会返回一个有着 value 和 done 两个属性的对象。value 属性表示当前的内部状态的值，是 yield 表达式后面那个表达式的值；done 属性是一个布尔值，表示是否遍历结束。</p>
 </li>
 <li><p>demo</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fetch = <span class="built_in">require</span>(<span class="string">&quot;node-fetch&quot;</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> url = <span class="string">&quot;https://api.github.com/users/github&quot;</span>;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="keyword">yield</span> fetch(url);</span><br><span class="line">  <span class="built_in">console</span>.log(result.bio);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> fetch <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"node-fetch"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> url <span class="token operator">=</span> <span class="token string">"https://api.github.com/users/github"</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">fetch</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>bio<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
@@ -581,7 +597,11 @@
 <li><p>ES6 在 Object 原型上新增了 is()方法，做两个目标对象的相等比较，用来完善’===’方法。’===’方法中 NaN === NaN //false 其实是不合理的，Object.is 修复了这个小 bug。(Object.is(NaN, NaN) // true)</p>
 </li>
 <li><p>ES6 在 Object 原型上新增了 assign()方法，用于对象新增属性或者多个对象合并。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> source1 = &#123; <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> source2 = &#123; <span class="attr">c</span>: <span class="number">3</span> &#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(target, source1, source2);</span><br><span class="line">target; <span class="comment">// &#123;a:1, b:2, c:3&#125;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> target <span class="token operator">=</span> <span class="token punctuation">&#123;</span> a<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> source1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span> b<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> source2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span> c<span class="token operator">:</span> <span class="token number">3</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> source1<span class="token punctuation">,</span> source2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+target<span class="token punctuation">;</span> <span class="token comment">// &#123;a:1, b:2, c:3&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>ES6 在 Object 原型上新增了 getOwnPropertyDescriptors()方法，此方法增强了 ES5 中 getOwnPropertyDescriptor()方法，可以获取指定对象所有自身属性的描述对象。结合 defineProperties()方法，可以完美复制对象，包括复制 get 和 set 属性。</p>
 </li>
@@ -606,7 +626,13 @@
 <li><p>升级部分</p>
 <ul>
 <li><p>ES6 新增了双冒号运算符，用来取代以往的 bind，call,和 apply(浏览器暂不支持，Babel 已经支持转码)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">foo::bar;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line">bar.bind(foo);</span><br><span class="line"></span><br><span class="line">foo::bar(...arguments);</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line">bar.apply(foo, <span class="built_in">arguments</span>);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">foo<span class="token operator">:</span><span class="token operator">:</span>bar<span class="token punctuation">;</span>
+<span class="token comment">// 等同于</span>
+<span class="token function">bar</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+foo<span class="token operator">:</span><span class="token operator">:</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token operator">...</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 等同于</span>
+<span class="token function">bar</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>foo<span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ul>
@@ -661,12 +687,29 @@
 </ul>
 </li>
 </ul>
-<h3 id="20、-Iterator-和-for…of（Iterator-遍历器的实现）"><a href="#20、-Iterator-和-for…of（Iterator-遍历器的实现）" class="headerlink" title="20、 Iterator 和 for…of（Iterator 遍历器的实现）"></a>20、 Iterator 和 for…of（Iterator 遍历器的实现）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自定义迭代器</span></span><br><span class="line"><span class="keyword">let</span> a = makeiterator([<span class="number">1</span>, <span class="number">2</span>]);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeiterator</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> nextindex = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    next: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> nextindex &lt; arr.length</span><br><span class="line">        ? &#123; <span class="attr">value</span>: arr[nextindex++], <span class="attr">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">        : &#123; <span class="attr">value</span>: <span class="literal">undefined</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="20、-Iterator-和-for…of（Iterator-遍历器的实现）"><a href="#20、-Iterator-和-for…of（Iterator-遍历器的实现）" class="headerlink" title="20、 Iterator 和 for…of（Iterator 遍历器的实现）"></a>20、 Iterator 和 for…of（Iterator 遍历器的实现）</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//自定义迭代器</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token function">makeiterator</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">makeiterator</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> nextindex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+    <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> nextindex <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length
+        <span class="token operator">?</span> <span class="token punctuation">&#123;</span> value<span class="token operator">:</span> arr<span class="token punctuation">[</span>nextindex<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span>
+        <span class="token operator">:</span> <span class="token punctuation">&#123;</span> value<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Symbol.iterator遍历器接口</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>];</span><br><span class="line"><span class="keyword">let</span> iter = arr[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line"></span><br><span class="line">iter.next(); <span class="comment">// &#123; value: &#x27;a&#x27;, done: false &#125;</span></span><br><span class="line">iter.next(); <span class="comment">// &#123; value: &#x27;b&#x27;, done: false &#125;</span></span><br><span class="line">iter.next(); <span class="comment">// &#123; value: &#x27;c&#x27;, done: false &#125;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// Symbol.iterator遍历器接口</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> iter <span class="token operator">=</span> arr<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123; value: 'a', done: false &#125;</span>
+iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123; value: 'b', done: false &#125;</span>
+iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123; value: 'c', done: false &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="21、循环语法比较及使用场景（for、forEach、for…in、for…of）"><a href="#21、循环语法比较及使用场景（for、forEach、for…in、for…of）" class="headerlink" title="21、循环语法比较及使用场景（for、forEach、for…in、for…of）"></a>21、循环语法比较及使用场景（for、forEach、for…in、for…of）</h3><p>for 循环的速度是最快的,是最老的循环,也是优化得最好的,其次是 for-of 这个是 es6 才新增的循环非常好用,最慢是 for-in 我们可以作一下速度排序</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> &gt; <span class="keyword">for</span>-<span class="keyword">of</span> &gt; forEach &gt; filter &gt; map &gt; <span class="keyword">for</span>-<span class="keyword">in</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token operator">></span> <span class="token keyword">for</span><span class="token operator">-</span><span class="token keyword">of</span> <span class="token operator">></span> forEach <span class="token operator">></span> filter <span class="token operator">></span> map <span class="token operator">></span> <span class="token keyword">for</span><span class="token operator">-</span><span class="token keyword">in</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
  
       <!-- reward -->
       

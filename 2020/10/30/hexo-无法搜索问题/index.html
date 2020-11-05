@@ -119,13 +119,22 @@
 <li><code>文章中包含特殊字符</code></li>
 </ul>
 <h2 id="一、搜索插件的配置"><a href="#一、搜索插件的配置" class="headerlink" title="一、搜索插件的配置"></a>一、搜索插件的配置</h2><p>编辑 <code>站点配置文件</code>，新增以下内容到任意位置：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">search<span class="token operator">:</span>
+  path<span class="token operator">:</span> search<span class="token punctuation">.</span>xml
+  field<span class="token operator">:</span> post
+  format<span class="token operator">:</span> html
+  limit<span class="token operator">:</span> <span class="token number">10000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>编辑 <code>主题配置文件</code>，启用本地搜索功能：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line">local_search:</span><br><span class="line">  enable: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"># Local search
+local_search<span class="token operator">:</span>
+  enable<span class="token operator">:</span> <span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>安装搜索插件</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> npm install hexo-generator-searchdb --save</span><br><span class="line"></span><br><span class="line">+ hexo-generator-searchdb@<span class="number">1.0</span><span class="number">.8</span></span><br><span class="line">added <span class="number">119</span> packages <span class="keyword">in</span> <span class="number">8.327</span>s</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"> npm install hexo<span class="token operator">-</span>generator<span class="token operator">-</span>searchdb <span class="token operator">--</span>save
+
+<span class="token operator">+</span> hexo<span class="token operator">-</span>generator<span class="token operator">-</span>searchdb@<span class="token number">1.0</span><span class="token number">.8</span>
+added <span class="token number">119</span> packages <span class="token keyword">in</span> <span class="token number">8.327</span>s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 

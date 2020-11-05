@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">7.5k</span>
+            <span class="post-count">7.4k</span>
         </span>
     </span>
 
@@ -99,7 +99,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">28 min</span>
+            <span class="post-count">27 min</span>
         </span>
     </span>
 </div>
@@ -146,7 +146,14 @@
 <li><p>灵活：React 可以与已知的库或框架很好地配合。</p>
 </li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 速度快：在UI渲染过程中，React通过在虚拟DOM中的微操作来实现对实际DOM的局部更新。</span><br><span class="line">2. 跨浏览器兼容：虚拟DOM帮助我们解决了跨浏览器问题，它为我们提供了标准化的API，甚至在IE8中都是没问题的。</span><br><span class="line">3. 模块化：为你程序编写独立的模块化UI组件，这样当某个或某些组件出现问题是，可以方便地进行隔离。</span><br><span class="line">4. 单向数据流：Flux是一个用于在JavaScript应用中创建单向数据层的架构，它随着React视图库的开发而被Facebook概念化。</span><br><span class="line">5. 同构、纯粹的javascript：因为搜索引擎的爬虫程序依赖的是服务端响应而不是JavaScript的执行，预渲染你的应用有助于搜索引擎优化。</span><br><span class="line">6.兼容性好：比如使用RequireJS来加载和打包，而Browserify和Webpack适用于构建大型应用。它们使得那些艰难的任务不再让人望而生畏。</span><br><span class="line">缺点：</span><br><span class="line">React本身只是一个V而已，并不是一个完整的框架，所以如果是大型项目想要一套完整的框架的话，基本都需要加上ReactRouter和Flux才能写大型应用。</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1. 速度快：在UI渲染过程中，React通过在虚拟DOM中的微操作来实现对实际DOM的局部更新。
+2. 跨浏览器兼容：虚拟DOM帮助我们解决了跨浏览器问题，它为我们提供了标准化的API，甚至在IE8中都是没问题的。
+3. 模块化：为你程序编写独立的模块化UI组件，这样当某个或某些组件出现问题是，可以方便地进行隔离。
+4. 单向数据流：Flux是一个用于在JavaScript应用中创建单向数据层的架构，它随着React视图库的开发而被Facebook概念化。
+5. 同构、纯粹的javascript：因为搜索引擎的爬虫程序依赖的是服务端响应而不是JavaScript的执行，预渲染你的应用有助于搜索引擎优化。
+6.兼容性好：比如使用RequireJS来加载和打包，而Browserify和Webpack适用于构建大型应用。它们使得那些艰难的任务不再让人望而生畏。
+缺点：
+React本身只是一个V而已，并不是一个完整的框架，所以如果是大型项目想要一套完整的框架的话，基本都需要加上ReactRouter和Flux才能写大型应用。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="http://static.zxinc520.com/blog/20190423/7hBjb1epQFoH.webp" alt="mark"></p>
 <p>Vue ( <strong>目前市场上的主流</strong> ) 是尤雨溪编写的一个构建数据驱动的 Web 界面的库，准确来说不是一个框架，它聚焦在 V（view）视图层。</p>
@@ -161,7 +168,17 @@
 <li><p>插件化</p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">优点：</span><br><span class="line">1. 简单：官方文档很清晰，比 Angular 简单易学。</span><br><span class="line">2. 快速：异步批处理方式更新 DOM。</span><br><span class="line">3. 组合：用解耦的、可复用的组件组合你的应用程序。</span><br><span class="line">4. 紧凑：~18kb min+gzip，且无依赖。</span><br><span class="line">5. 强大：表达式 无需声明依赖的可推导属性 (computed properties)。</span><br><span class="line">6. 对模块友好：可以通过 NPM、Bower 或 Duo 安装，不强迫你所有的代码都遵循 Angular 的各种规定，使用场景更加灵活。</span><br><span class="line">缺点：</span><br><span class="line">1. 新生儿：Vue.js是一个新的项目，没有angular那么成熟。</span><br><span class="line">2. 影响度不是很大：google了一下，有关于Vue.js多样性或者说丰富性少于其他一些有名的库。</span><br><span class="line">3. 不支持IE8</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">优点：
+1. 简单：官方文档很清晰，比 Angular 简单易学。
+2. 快速：异步批处理方式更新 DOM。
+3. 组合：用解耦的、可复用的组件组合你的应用程序。
+4. 紧凑：~18kb min+gzip，且无依赖。
+5. 强大：表达式 无需声明依赖的可推导属性 (computed properties)。
+6. 对模块友好：可以通过 NPM、Bower 或 Duo 安装，不强迫你所有的代码都遵循 Angular 的各种规定，使用场景更加灵活。
+缺点：
+1. 新生儿：Vue.js是一个新的项目，没有angular那么成熟。
+2. 影响度不是很大：google了一下，有关于Vue.js多样性或者说丰富性少于其他一些有名的库。
+3. 不支持IE8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="http://static.zxinc520.com/blog/20190423/bu0preO1hhfc.webp" alt="mark"></p>
 <p>Angular（ <strong>最早</strong> ）是一款优秀的前端 JS 框架，已经被用于 Google 的多款产品当中。</p>
@@ -178,7 +195,18 @@
 <li><p>可嵌入、注入和测试</p>
 </li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">优点：</span><br><span class="line">1. 模板功能强大丰富，自带了极其丰富的angular指令。</span><br><span class="line">2. 是一个比较完善的前端框架，包含服务，模板，数据双向绑定，模块化，路由，过滤器，依赖注入等所有功能；</span><br><span class="line">3. 自定义指令，自定义指令后可以在项目中多次使用。</span><br><span class="line">4. ng模块化比较大胆的引入了Java的一些东西（依赖注入），能够很容易的写出可复用的代码，对于敏捷开发的团队来说非常有帮助。</span><br><span class="line">5. angularjs是互联网巨人谷歌开发，这也意味着他有一个坚实的基础和社区支持。</span><br><span class="line">缺点：</span><br><span class="line">1. angular 入门很容易 但深入后概念很多, 学习中较难理解.</span><br><span class="line">2. 文档例子非常少, 官方的文档基本只写了api, 一个例子都没有, 很多时候具体怎么用都是google来的, 或直接问misko,angular的作者.</span><br><span class="line">3. 对IE6/7 兼容不算特别好, 就是可以用jQuery自己手写代码解决一些.</span><br><span class="line">4. 指令的应用的最佳实践教程少, angular其实很灵活, 如果不看一些作者的使用原则,很容易写出 四不像的代码, 例如js中还是像jQuery的思想有很多dom操作.</span><br><span class="line">5. DI 依赖注入 如果代码压缩需要显示声明.</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">优点：
+1. 模板功能强大丰富，自带了极其丰富的angular指令。
+2. 是一个比较完善的前端框架，包含服务，模板，数据双向绑定，模块化，路由，过滤器，依赖注入等所有功能；
+3. 自定义指令，自定义指令后可以在项目中多次使用。
+4. ng模块化比较大胆的引入了Java的一些东西（依赖注入），能够很容易的写出可复用的代码，对于敏捷开发的团队来说非常有帮助。
+5. angularjs是互联网巨人谷歌开发，这也意味着他有一个坚实的基础和社区支持。
+缺点：
+1. angular 入门很容易 但深入后概念很多, 学习中较难理解.
+2. 文档例子非常少, 官方的文档基本只写了api, 一个例子都没有, 很多时候具体怎么用都是google来的, 或直接问misko,angular的作者.
+3. 对IE6&#x2F;7 兼容不算特别好, 就是可以用jQuery自己手写代码解决一些.
+4. 指令的应用的最佳实践教程少, angular其实很灵活, 如果不看一些作者的使用原则,很容易写出 四不像的代码, 例如js中还是像jQuery的思想有很多dom操作.
+5. DI 依赖注入 如果代码压缩需要显示声明.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="Vue-与-React-两个框架的区别和优势对比"><a href="#Vue-与-React-两个框架的区别和优势对比" class="headerlink" title="Vue 与 React 两个框架的区别和优势对比"></a><a target="_blank" rel="noopener" href="http://caibaojian.com/vue-vs-react.html">Vue 与 React 两个框架的区别和优势对比</a></h1><blockquote>
 <p>Vue 与 React 的区别： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/174e8028eabd">可以参考</a></p>
@@ -233,14 +261,23 @@
 </blockquote>
 <p>在 HTML DOM 中提供了遍历和修改节点的接口（API）。像<em>getElementById</em>或者<em>removeChild</em>这样的方法。我们一般使用 JavaScript 来操作 DOM，这是因为……好吧，天知道为什么。:)</p>
 <p>所以，只要我们想要动态修改网页的内容的时候，我们就修改 DOM。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> item = <span class="built_in">document</span>.getElementById(<span class="string">&quot;myLI&quot;</span>);</span><br><span class="line">item.parentNode.removeChild(item);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> item <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myLI"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+item<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>所谓<em>document</em>就是根节点的抽象，而<em>getElementById</em>，<em>parentNode</em>和<em>emoveChild</em>则是 HTML DOM API 中的方法。</p>
 <h2 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h2><p>首先 - 虚拟 DOM 不是 React 发明的，但是 React 用了它且免费提供。</p>
 <p>虚拟 DOM 是 HTML DOM 的抽象。它是轻量的，是从浏览器特定（Browser-specific，这里意指特定的浏览器需要特定的实现）实现细节中提取出来的。由于 DOM 本身就已经是一个抽象了，所以虚拟 DOM，实际上，是一个抽象的抽象。</p>
 <p>也许把虚拟 DOM 当做 React 的本地和简化版的 HTML DOM 更好。它允许 React 跳过既慢又限于特定浏览器的真实 DOM 操作，以在这个抽象世界中做自己的计算。</p>
 <p>常规 DOM 和虚拟 DOM 二者并没有什么大的不同。这也是为什么 React 代码的 JSX 部分可以看起来几乎跟纯 HTML 很像的原因。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> CommentBox = React.createClass(&#123;</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">&quot;commentBox&quot;</span>&gt;</span><br><span class="line">        &lt;div&gt;Hello, world! I am a CommentBox.&lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> CommentBox <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createClass</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"commentBox"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div<span class="token operator">></span>Hello<span class="token punctuation">,</span> world<span class="token operator">!</span> <span class="token constant">I</span> am a CommentBox<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>在大多数情况下，当你有一段 HTML 代码且想要将其写成一个 React 组件时，你只需要做这个。</p>
 <ol>
@@ -307,7 +344,10 @@
 <li>安装：运行：<code>npm i webpack-dev-server -D</code></li>
 <li>配置 <u>package.json</u></li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,</span><br><span class="line">    &quot;dev&quot;: &quot;webpack-dev-server&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack-dev-server"</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>可以在<u><em>webpack.config.js</em></u> 配置相应的 devServer（自动打开窗口，配置端口号，首页路径展示情况）</li>
@@ -331,7 +371,20 @@
 <li><p><u>在 webpack 配置对象中，需要将 babel-loader 添加到 module 列表中，就像下面这样</u></p>
 </li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/\.m?js$/</span>,</span><br><span class="line">      exclude: <span class="regexp">/(node_modules|bower_components)/</span>,</span><br><span class="line">      use: &#123;</span><br><span class="line">        loader: <span class="string">&quot;babel-loader&quot;</span>,</span><br><span class="line">        options: &#123;</span><br><span class="line">          presets: [<span class="string">&quot;@babel/preset-env&quot;</span>],</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  ];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">module<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+  rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      test<span class="token operator">:</span> <span class="token regex">/\.m?js$/</span><span class="token punctuation">,</span>
+      exclude<span class="token operator">:</span> <span class="token regex">/(node_modules|bower_components)/</span><span class="token punctuation">,</span>
+      use<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        loader<span class="token operator">:</span> <span class="token string">"babel-loader"</span><span class="token punctuation">,</span>
+        options<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+          presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"@babel/preset-env"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
 <h3 id="解决之前遇到的一个-BUG"><a href="#解决之前遇到的一个-BUG" class="headerlink" title="解决之前遇到的一个 BUG"></a>解决之前遇到的一个 BUG</h3><p><img src="http://static.zxinc520.com/blog/20190427/FnivOIm1VIRg.png?imageslim" alt="mark"></p>
@@ -353,14 +406,54 @@
 </ol>
 <p><u>尝试写一个 react 项目</u>：</p>
 <p><strong>index.js</strong>:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一步：导入包</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>; <span class="comment">//创建组件，虚拟DOM元素，生命周期</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">&quot;react-dom&quot;</span>; <span class="comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第二步：创建虚拟DOM元素</span></span><br><span class="line"><span class="comment">//参数1：创建的元素的类型，字符串，表示元素的名称</span></span><br><span class="line"><span class="comment">//参数2：是一个对象或 null，表示 当前这个DOM 元素的属性</span></span><br><span class="line"><span class="comment">//参数3：子节点（包括 其它 虚拟DOM 获取 文本子节点）</span></span><br><span class="line"><span class="comment">//参数n：其它子节点</span></span><br><span class="line"><span class="keyword">const</span> myh1 = React.createElement(</span><br><span class="line">  <span class="string">&quot;h1&quot;</span>,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">&quot;myh1&quot;</span>, <span class="attr">title</span>: <span class="string">&quot;this id h1&quot;</span> &#125;,</span><br><span class="line">  <span class="string">&quot;这是一个大大H1！&quot;</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">//第三步：使用 ReactDOM 把虚拟 DOM 渲染到页面上</span></span><br><span class="line"><span class="comment">//参数一：要渲染的那个虚拟DOM元素</span></span><br><span class="line"><span class="comment">//参数二：指定页面上的DOM元素，当作容器</span></span><br><span class="line">ReactDOM.render(myh1, <span class="built_in">document</span>.getElementById(<span class="string">&quot;app&quot;</span>));</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//第一步：导入包</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span> <span class="token comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span>
+
+<span class="token comment">//第二步：创建虚拟DOM元素</span>
+<span class="token comment">//参数1：创建的元素的类型，字符串，表示元素的名称</span>
+<span class="token comment">//参数2：是一个对象或 null，表示 当前这个DOM 元素的属性</span>
+<span class="token comment">//参数3：子节点（包括 其它 虚拟DOM 获取 文本子节点）</span>
+<span class="token comment">//参数n：其它子节点</span>
+<span class="token keyword">const</span> myh1 <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span>
+  <span class="token string">"h1"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token string">"myh1"</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">"this id h1"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token string">"这是一个大大H1！"</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//第三步：使用 ReactDOM 把虚拟 DOM 渲染到页面上</span>
+<span class="token comment">//参数一：要渲染的那个虚拟DOM元素</span>
+<span class="token comment">//参数二：指定页面上的DOM元素，当作容器</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>myh1<span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>index.html</strong>:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="http://static.zxinc520.com/blog/20190427/AHtHc973OThy.png?imageslim" alt="mark"></p>
 <h2 id="创建-DOM-结构"><a href="#创建-DOM-结构" class="headerlink" title="创建 DOM 结构"></a>创建 DOM 结构</h2><h3 id="方式一：（-基本不用）"><a href="#方式一：（-基本不用）" class="headerlink" title="方式一：（~基本不用）"></a>方式一：（~基本不用）</h3><p><strong>index.js</strong>:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一步：导入包</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>; <span class="comment">//创建组件，虚拟DOM元素，生命周期</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">&quot;react-dom&quot;</span>; <span class="comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第二步：创建虚拟DOM元素</span></span><br><span class="line"><span class="keyword">const</span> myh1 = React.createElement(</span><br><span class="line">  <span class="string">&quot;h1&quot;</span>,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">&quot;myh1&quot;</span>, <span class="attr">title</span>: <span class="string">&quot;this id h1&quot;</span> &#125;,</span><br><span class="line">  <span class="string">&quot;这是一个大大H1！&quot;</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> mydiv = React.createElement(<span class="string">&quot;div&quot;</span>, <span class="literal">null</span>, <span class="string">&quot;这是一个div元素&quot;</span>, myh1);</span><br><span class="line"></span><br><span class="line"><span class="comment">//第三步：使用 ReactDOM 把虚拟 DOM 渲染到页面上</span></span><br><span class="line">ReactDOM.render(mydiv, <span class="built_in">document</span>.getElementById(<span class="string">&quot;app&quot;</span>));</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//第一步：导入包</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span> <span class="token comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span>
+
+<span class="token comment">//第二步：创建虚拟DOM元素</span>
+<span class="token keyword">const</span> myh1 <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span>
+  <span class="token string">"h1"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token string">"myh1"</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">"this id h1"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token string">"这是一个大大H1！"</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> mydiv <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"这是一个div元素"</span><span class="token punctuation">,</span> myh1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//第三步：使用 ReactDOM 把虚拟 DOM 渲染到页面上</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>mydiv<span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="方式二：JSX-语法-（-important）"><a href="#方式二：JSX-语法-（-important）" class="headerlink" title="方式二：JSX 语法 （~ important）"></a>方式二：JSX 语法 （~ important）</h3><blockquote>
 <p>JSX 语法：看起来可能有些奇怪的标签语法既不是字符串也不是 HTML。</p>
@@ -371,10 +464,55 @@
 <p><img src="http://static.zxinc520.com/blog/20190427/NHy4KwgF4SNN.png?imageslim" alt="mark"></p>
 <p>原因：<u>少写了中括号。（粗心大意了）</u>不该！！<del>~</del></p>
 <p><strong>配置 <u>webpack.config.js</u></strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//配置 @babel/preset-react</span></span><br><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/\.m?js$/</span>,</span><br><span class="line">      exclude: <span class="regexp">/(node_modules|bower_components)/</span>,</span><br><span class="line">      use: &#123;</span><br><span class="line">        loader: <span class="string">&quot;babel-loader&quot;</span>,</span><br><span class="line">        options: &#123;</span><br><span class="line">          presets: [</span><br><span class="line">            <span class="string">&quot;@babel/preset-env&quot;</span>,</span><br><span class="line">            [</span><br><span class="line">              <span class="string">&quot;@babel/preset-react&quot;</span>,</span><br><span class="line">              &#123;</span><br><span class="line">                pragmaFrag: <span class="string">&quot;DomFrag&quot;</span>, <span class="comment">// default is React.Fragment</span></span><br><span class="line">                throwIfNamespace: <span class="literal">false</span>, <span class="comment">// defaults to true</span></span><br><span class="line">              &#125;,</span><br><span class="line">            ],</span><br><span class="line">          ],</span><br><span class="line">          plugins: [<span class="string">&quot;@babel/plugin-proposal-class-properties&quot;</span>],</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  ];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//配置 @babel/preset-react</span>
+module<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+  rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      test<span class="token operator">:</span> <span class="token regex">/\.m?js$/</span><span class="token punctuation">,</span>
+      exclude<span class="token operator">:</span> <span class="token regex">/(node_modules|bower_components)/</span><span class="token punctuation">,</span>
+      use<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        loader<span class="token operator">:</span> <span class="token string">"babel-loader"</span><span class="token punctuation">,</span>
+        options<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+          presets<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span>
+            <span class="token punctuation">[</span>
+              <span class="token string">"@babel/preset-react"</span><span class="token punctuation">,</span>
+              <span class="token punctuation">&#123;</span>
+                pragmaFrag<span class="token operator">:</span> <span class="token string">"DomFrag"</span><span class="token punctuation">,</span> <span class="token comment">// default is React.Fragment</span>
+                throwIfNamespace<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// defaults to true</span>
+              <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"@babel/plugin-proposal-class-properties"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
-<h5 id="在-JSX-中使用表达式：-JSX-中使用表达式"><a href="#在-JSX-中使用表达式：-JSX-中使用表达式" class="headerlink" title="在 JSX 中使用表达式： JSX 中使用表达式"></a><strong>在 JSX 中使用表达式</strong>：<a target="_blank" rel="noopener" href="https://react.docschina.org/docs/introducing-jsx.html"> JSX 中使用表达式</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一步：导入包</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>; <span class="comment">//创建组件，虚拟DOM元素，生命周期</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">&quot;react-dom&quot;</span>; <span class="comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;zc&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是h1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>, <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>这是h2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span>];</span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="string">&quot;周琛&quot;</span>, <span class="string">&quot;张三&quot;</span>, <span class="string">&quot;李四&quot;</span>, <span class="string">&quot;王五&quot;</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//第三步：使用 ReactDOM 把虚拟 DOM 渲染到页面上</span></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;div title=&#123;str&#125;&gt;</span><br><span class="line">    &#123;a + <span class="number">11</span>&#125;</span><br><span class="line">    &lt;hr /&gt;</span><br><span class="line">    &#123;arr&#125;</span><br><span class="line">    &lt;hr /&gt;</span><br><span class="line">    &#123;arr1.map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span>;</span><br><span class="line">    &#125;)&#125;</span><br><span class="line">  &lt;/div&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">&quot;app&quot;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h5 id="在-JSX-中使用表达式：-JSX-中使用表达式"><a href="#在-JSX-中使用表达式：-JSX-中使用表达式" class="headerlink" title="在 JSX 中使用表达式： JSX 中使用表达式"></a><strong>在 JSX 中使用表达式</strong>：<a target="_blank" rel="noopener" href="https://react.docschina.org/docs/introducing-jsx.html"> JSX 中使用表达式</a></h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//第一步：导入包</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span> <span class="token comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span>
+
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"zc"</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>h1<span class="token operator">></span>这是h1<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>h2<span class="token operator">></span>这是h2<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"周琛"</span><span class="token punctuation">,</span> <span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token string">"李四"</span><span class="token punctuation">,</span> <span class="token string">"王五"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">//第三步：使用 ReactDOM 把虚拟 DOM 渲染到页面上</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>div title<span class="token operator">=</span><span class="token punctuation">&#123;</span>str<span class="token punctuation">&#125;</span><span class="token operator">></span>
+    <span class="token punctuation">&#123;</span>a <span class="token operator">+</span> <span class="token number">11</span><span class="token punctuation">&#125;</span>
+    <span class="token operator">&lt;</span>hr <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token punctuation">&#123;</span>arr<span class="token punctuation">&#125;</span>
+    <span class="token operator">&lt;</span>hr <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token punctuation">&#123;</span>arr1<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token operator">&lt;</span>h3<span class="token operator">></span><span class="token punctuation">&#123;</span>item<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">></span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">,</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="http://static.zxinc520.com/blog/20190427/EfbH8hDEnVn0.png?imageslim" alt="mark"></p>
  

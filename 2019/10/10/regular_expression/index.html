@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.9k</span>
+            <span class="post-count">1.8k</span>
         </span>
     </span>
 
@@ -99,7 +99,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">8 min</span>
+            <span class="post-count">7 min</span>
         </span>
     </span>
 </div>
@@ -163,9 +163,15 @@
 </ul>
 </li>
 </ul>
-<h3 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\bis\b/g</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;he is dog ,he love she how are you is&quot;</span>.replace(reg, <span class="string">&quot;IS&quot;</span>));</span><br><span class="line"><span class="comment">// he IS dog ,he love she how are you IS</span></span><br></pre></td></tr></table></figure>
+<h3 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token regex">/\bis\b/g</span><span class="token punctuation">;</span>
 
-<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&quot;\\bis\\b&quot;</span>, <span class="string">&quot;g&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;he is dog ,he love she how are you is&quot;</span>.replace(reg, <span class="string">&quot;IS&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// he IS dog ,he love she how are you IS</span></span><br></pre></td></tr></table></figure>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"he is dog ,he love she how are you is"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>reg<span class="token punctuation">,</span> <span class="token string">"IS"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// he IS dog ,he love she how are you IS</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">"\\bis\\b"</span><span class="token punctuation">,</span> <span class="token string">"g"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"he is dog ,he love she how are you is"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>reg<span class="token punctuation">,</span> <span class="token string">"IS"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// he IS dog ,he love she how are you IS</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><p>在 JavaScript 中，<strong>正则表达式标志</strong>：</p>
 <ul>
@@ -333,37 +339,65 @@
 </tr>
 </tbody></table>
 <p><strong>字符类：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;a1b2c3d4&quot;</span>.replace(<span class="regexp">/[abc]/g</span>, <span class="string">&quot;X&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;X1X2X3d4&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"a1b2c3d4"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[abc]/g</span><span class="token punctuation">,</span> <span class="token string">"X"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"X1X2X3d4"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;a1b2c3d4&quot;</span>.replace(<span class="regexp">/[^abc]/g</span>, <span class="string">&quot;X&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;aXbXcXXX&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"a1b2c3d4"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[^abc]/g</span><span class="token punctuation">,</span> <span class="token string">"X"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"aXbXcXXX"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><strong>范围类：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;a1b2c3d4zcczx&quot;</span>.replace(<span class="regexp">/[a-z]/g</span>, <span class="string">&quot;Q&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;Q1Q2Q3Q4QQQQQ&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;a1b2c3d4zcczxAAAAAAA&quot;</span>.replace(<span class="regexp">/[a-zA-Z]/g</span>, <span class="string">&quot;Q&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;Q1Q2Q3Q4QQQQQQQQQQQQ&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;2016-09-12&quot;</span>.replace(<span class="regexp">/[0-9]/g</span>, <span class="string">&quot;A&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;AAAA-AA-AA&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;2016-09-12&quot;</span>.replace(<span class="regexp">/[0-9-]/g</span>, <span class="string">&quot;A&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;AAAAAAAAAA&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"a1b2c3d4zcczx"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[a-z]/g</span><span class="token punctuation">,</span> <span class="token string">"Q"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"Q1Q2Q3Q4QQQQQ"</span>
+
+<span class="token string">"a1b2c3d4zcczxAAAAAAA"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[a-zA-Z]/g</span><span class="token punctuation">,</span> <span class="token string">"Q"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"Q1Q2Q3Q4QQQQQQQQQQQQ"</span>
+
+<span class="token string">"2016-09-12"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[0-9]/g</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"AAAA-AA-AA"</span>
+
+<span class="token string">"2016-09-12"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[0-9-]/g</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"AAAAAAAAAA"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>预定义类：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20191009/FsMlDwV4Kfrh.png?imageslim" alt="mark"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//匹配一个 ab + 数字 + 任意字符 的字符串</span></span><br><span class="line">ab\d.</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//匹配一个 ab + 数字 + 任意字符 的字符串</span>
+ab\d<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><strong>边界：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20191009/UQyV6XeWDuqI.png?imageslim" alt="mark"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;this is a boy&quot;</span>.replace(<span class="regexp">/\bis\b/g</span>, <span class="string">&quot;IS&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;this IS a boy&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;@13@12331&quot;</span>.replace(<span class="regexp">/@./g</span>, <span class="string">&quot;Q&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;Q3Q2331&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;@13@12331&quot;</span>.replace(<span class="regexp">/^@./g</span>, <span class="string">&quot;Q&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;Q3@12331&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;@13@12331@&quot;</span>.replace(<span class="regexp">/.@$/g</span>, <span class="string">&quot;Q&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;@13@1233Q&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"this is a boy"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\bis\b/g</span><span class="token punctuation">,</span> <span class="token string">"IS"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"this IS a boy"</span>
+
+<span class="token string">"@13@12331"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/@./g</span><span class="token punctuation">,</span> <span class="token string">"Q"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"Q3Q2331"</span>
+
+<span class="token string">"@13@12331"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/^@./g</span><span class="token punctuation">,</span> <span class="token string">"Q"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"Q3@12331"</span>
+
+<span class="token string">"@13@12331@"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/.@$/g</span><span class="token punctuation">,</span> <span class="token string">"Q"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"@13@1233Q"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>量词：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20191009/KsjXw8IGYwJD.png?imageslim" alt="mark"></p>
 <p><strong>贪婪模式：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;12345678&quot;</span>.replace(<span class="regexp">/\d&#123;3,6&#125;/g</span>, <span class="string">&quot;a&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;a78&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"12345678"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\d&#123;3,6&#125;/g</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"a78"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><strong>非贪婪模式：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;12345678&quot;</span>.replace(<span class="regexp">/\d&#123;3,6&#125;?/g</span>, <span class="string">&quot;a&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;aa78&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"12345678"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\d&#123;3,6&#125;?/g</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"aa78"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><strong>分组：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;a1b2c3d4&quot;</span>.replace(<span class="regexp">/([a-zA-z]\d)&#123;3&#125;/g</span>, <span class="string">&quot;A&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;Ad4&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"a1b2c3d4"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/([a-zA-z]\d)&#123;3&#125;/g</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"Ad4"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><strong>或：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;123456789122312&quot;</span>.replace(<span class="regexp">/(123|456)/g</span>, <span class="string">&quot;A&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;AA789122312&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"123456789122312"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/(123|456)/g</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"AA789122312"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><strong>反向引用：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;2019-10-09&quot;</span>.replace(<span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/g</span>, <span class="string">&quot;$3/$2/$1&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;09/10/2019&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"2019-10-09"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/g</span><span class="token punctuation">,</span> <span class="token string">"$3/$2/$1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"09/10/2019"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><strong>前瞻：</strong></p>
 <ul>
@@ -373,7 +407,8 @@
 <li>符合和不符合特定断言称为 <strong>肯定/正向</strong> 匹配 和 <strong>否定/负向</strong> 匹配</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20191009/VS8ezfIwVH95.png?imageslim" alt="mark"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;a2*3&quot;</span>.replace(<span class="regexp">/\w(?=\d)/g</span>, <span class="string">&quot;A&quot;</span>);</span><br><span class="line"><span class="comment">//&quot;A2*3&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"a2*3"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\w(?=\d)/g</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"A2*3"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="对象属性"><a href="#对象属性" class="headerlink" title="对象属性"></a>对象属性</h3><ul>
 <li>global：是否全文搜索，默认 false</li>
@@ -385,7 +420,9 @@
 <h2 id="RegExp-prototype-test"><a href="#RegExp-prototype-test" class="headerlink" title="RegExp.prototype.test()"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">RegExp.prototype.test()</a></h2><blockquote>
 <p><code>test()</code> 方法执行一个检索，用来查看正则表达式与指定的字符串是否匹配。返回 <code>true</code> 或 <code>false</code>。</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/\w/</span>;</span><br><span class="line">reg1.test(<span class="string">&quot;a&quot;</span>);</span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> reg1 <span class="token operator">=</span> <span class="token regex">/\w/</span><span class="token punctuation">;</span>
+reg1<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>注意：/g（全局匹配 ） 使用 test 方法，结果不稳定！</p>
 <h2 id="RegExp-prototype-exec"><a href="#RegExp-prototype-exec" class="headerlink" title="RegExp.prototype.exec()"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec">RegExp.prototype.exec()</a></h2><blockquote>

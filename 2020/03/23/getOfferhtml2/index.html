@@ -306,7 +306,9 @@
 <li><p>使用 localStorage.setItem(key,value) 添加内容</p>
 </li>
 <li><p>使用 Storage 事件监听添加、修改、删除的动作</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onstorage = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;<span class="built_in">console</span>.log(e)&#125;</span><br><span class="line"><span class="comment">// 或者这样</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;storage&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> <span class="built_in">console</span>.log(e)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function-variable function">onstorage</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">&#125;</span>
+<span class="token comment">// 或者这样</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'storage'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
@@ -489,7 +491,13 @@
 <blockquote>
 <p>重排一定需要重绘</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var s = document.body.style;</span><br><span class="line">s.padding = &quot;2px&quot;; // 回流+重绘</span><br><span class="line">s.border = &quot;1px solid red&quot;; // 再一次 回流+重绘</span><br><span class="line">s.color = &quot;blue&quot;; // 重绘</span><br><span class="line">s.backgroundColor = &quot;#ccc&quot;; // 重绘</span><br><span class="line">s.fontSize = &quot;14px&quot;; // 再一次 回流+重绘</span><br><span class="line">document.body.appendChild(document.createTextNode(&#x27;abc!&#x27;));// 添加node，再一次 回流+重绘</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css">var s = document.body.style<span class="token punctuation">;</span>
+s.padding = <span class="token string">"2px"</span><span class="token punctuation">;</span> // 回流+重绘
+s.border = <span class="token string">"1px solid red"</span><span class="token punctuation">;</span> // 再一次 回流+重绘
+s.color = <span class="token string">"blue"</span><span class="token punctuation">;</span> // 重绘
+s.backgroundColor = <span class="token string">"#ccc"</span><span class="token punctuation">;</span> // 重绘
+s.fontSize = <span class="token string">"14px"</span><span class="token punctuation">;</span> // 再一次 回流+重绘
+document.body.<span class="token function">appendChild</span><span class="token punctuation">(</span>document.<span class="token function">createTextNode</span><span class="token punctuation">(</span><span class="token string">'abc!'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>// 添加node，再一次 回流+重绘<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h4><blockquote>
 <p>只是影响元素的外观，风格，而不会影响布局的，比如 background-color。则就叫称为重绘。</p>
