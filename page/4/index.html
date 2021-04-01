@@ -160,6 +160,407 @@
     
     
     <article
+  id="post-ComplexityAnalysis"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/09/11/ComplexityAnalysis/"
+    >面试中的复杂度分析</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/09/11/ComplexityAnalysis/" class="article-date">
+  <time datetime="2019-09-11T11:56:35.000Z" itemprop="datePublished">2019-09-11</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%8E%A9%E8%BD%AC%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/">玩转算法面试</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="面试中的复杂度分析"><a href="#面试中的复杂度分析" class="headerlink" title="面试中的复杂度分析"></a>面试中的复杂度分析</h1><blockquote>
+<p>很多同学一提起复杂度分析就头疼，马上想起了《算法导论》中复杂的数学推导。但其实在一般的企业面试中，对复杂度的分析要求并没有那么高，但也是绕不过去的坎儿。在这一章，和大家介绍一下，面试中需要掌握的复杂度分析。…</p>
+</blockquote>
+<h2 id="2-1-究竟什么是大-O（Big-O）"><a href="#2-1-究竟什么是大-O（Big-O）" class="headerlink" title="2-1 究竟什么是大 O（Big O）"></a>2-1 究竟什么是大 O（Big O）</h2><h4 id="大-O？"><a href="#大-O？" class="headerlink" title="大 O？"></a>大 O？</h4><ul>
+<li>n 表示数据规模</li>
+<li>O（f(n)）表示运行算法所需要执行的指令数，和 f(n) 成正比</li>
+</ul>
+<h4 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h4><ul>
+<li>二分查找法 O(logn) — 所需执行指令数 ：a * logn</li>
+<li>寻找 数组中的最大/最小值 O(n) — 所需执行指令数 ：b * n</li>
+<li>归并排序算法 O(nlogn) — 所需执行指令数 ：c * nlogn</li>
+<li>选择排序法 O(n^2) — 所需执行指令数 ：d * n^2</li>
+</ul>
+<h3 id="到底什么是-Big-O？"><a href="#到底什么是-Big-O？" class="headerlink" title="到底什么是 Big O？"></a>到底什么是 Big O？</h3><p><img src="http://static.zxinc520.com/blog/20190909/61aLQ2wE8prQ.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190909/2PO7UfwEDOpW.png?imageslim" alt="mark"></p>
+<p><strong>在学术界</strong>，严格来讲，O(f(n)) 表示算法执行的上界</p>
+<p>归并排序算法的时间复杂度是 O(nlogn)的，同时也是 O（n^2）</p>
+<p><strong>在业界</strong>，我们就使用 O 来表示算法执行的最低上界</p>
+<p>我们一般不会说归并排序是 O(n^2)的</p>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><ul>
+<li>O（nlogn + n）= O （nlogn）</li>
+<li>O（nlogn + n^2）=O（n^2）</li>
+</ul>
+<h4 id="无法判断"><a href="#无法判断" class="headerlink" title="无法判断"></a>无法判断</h4><ul>
+<li><p>O（AlogA + B） – A 与 B 无法确定</p>
+</li>
+<li><p>O（AlogA + B ^2）</p>
+</li>
+<li><p>对邻接表实现的图进行遍历</p>
+<ul>
+<li>时间复杂度：O（ V + E ）</li>
+</ul>
+</li>
+</ul>
+<h3 id="一个时间复杂度的问题"><a href="#一个时间复杂度的问题" class="headerlink" title="一个时间复杂度的问题"></a>一个时间复杂度的问题</h3><p>有一个字符串数组，将数组中的每一个字符串按照字母序排序；之后再将整个字符串数组按照字典序排序。整个操作的时间复杂度？</p>
+<p><img src="http://static.zxinc520.com/blog/20190909/8cfiXUHkirne.png?imageslim" alt="mark"></p>
+<p>正确解答：</p>
+<ul>
+<li>假设最长的字符串长度为 s ；数组中有 n 个字符串</li>
+<li>对每个字符串排序：O（slogs）</li>
+<li>将数组中的每一个字符串按照字母序排序：O（n * slog(s) ）</li>
+<li>将整个字符串数组按照字典序排序：O（s * nlog(n) ）</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190909/Q5nKtKe1dCi7.png?imageslim" alt="mark"></p>
+<h3 id="算法复杂度在有些情况是用例相关的"><a href="#算法复杂度在有些情况是用例相关的" class="headerlink" title="算法复杂度在有些情况是用例相关的"></a>算法复杂度在有些情况是用例相关的</h3><ul>
+<li><p>插入排序 O（n ^ 2）</p>
+<ul>
+<li>最差情况：O（n ^ 2）</li>
+<li>最好情况：O（n）</li>
+<li>平均情况：O（n ^ 2）</li>
+</ul>
+</li>
+<li><p>快速排序算法 O （nlogn）</p>
+<ul>
+<li>最差情况：O（n ^ 2）</li>
+<li>最好情况：O（ nlogn ）</li>
+<li>平均情况：O（ nlogn ）</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-对数据规模有一个概念"><a href="#2-2-对数据规模有一个概念" class="headerlink" title="2-2 对数据规模有一个概念"></a>2-2 对数据规模有一个概念</h2><h3 id="抛出问题"><a href="#抛出问题" class="headerlink" title="抛出问题"></a>抛出问题</h3><p>对 10 ^ 5 的数据进行选择排序，结果计算机假死？</p>
+<ul>
+<li>如果要想在 1s 之内解决问题：<ul>
+<li>O（n ^ 2）的算法可以处理大约 10 ^ 4 级别的数据</li>
+<li>O（ n ）的算法可以处理大约 10 ^ 8 级别的数据</li>
+<li>O（ nlogn ）的算法可以处理大约 10 ^7 级别的数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><ul>
+<li>多开一个辅助的数组：O（n）</li>
+<li>多开一个辅助的二维数组：O（n ^ 2）</li>
+<li>多开常数空间：O（1）</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190909/7uFcA2L2OHhI.png?imageslim" alt="mark"></p>
+<h2 id="2-3-简单的复杂度分析"><a href="#2-3-简单的复杂度分析" class="headerlink" title="2-3 简单的复杂度分析"></a>2-3 简单的复杂度分析</h2><h3 id="O（1）："><a href="#O（1）：" class="headerlink" title="O（1）："></a>O（1）：</h3><p><img src="http://static.zxinc520.com/blog/20190909/wmyLLvW5hvGh.png?imageslim" alt="mark"></p>
+<h3 id="O（-n-）："><a href="#O（-n-）：" class="headerlink" title="O（ n ）："></a>O（ n ）：</h3><p><img src="http://static.zxinc520.com/blog/20190909/R4zqgJ9zJqqs.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190909/fujJT4N78Ybh.png?imageslim" alt="mark"></p>
+<p>1/2 *n 次 swap 操作也是：O(n) 。</p>
+<h3 id="O（n-2）-选择排序"><a href="#O（n-2）-选择排序" class="headerlink" title="O（n ^ 2）: ( 选择排序 )"></a>O（n ^ 2）: ( 选择排序 )</h3><p><img src="http://static.zxinc520.com/blog/20190909/HPtrTeSx6DsB.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190909/rh5JcB9dA8ux.png?imageslim" alt="mark"></p>
+<p>并不是所有双重循环都是 O（n ^ 2）：例如 【因为里面的循环次数是固定的 】</p>
+<p><img src="http://static.zxinc520.com/blog/20190909/Vs0lBjzBPEi9.png?imageslim" alt="mark"></p>
+<p>下面算法是 O（logn）级别的： 【 自增并不是每次都加 1 】</p>
+<p><img src="http://static.zxinc520.com/blog/20190909/QJC2YLSAOdAk.png?imageslim" alt="mark"></p>
+<p>下面算法是 O（ sqrt (n) ）【 判断 n 是不是 一个素数】</p>
+<p><img src="http://static.zxinc520.com/blog/20190909/QeClcFN8EsWa.png?imageslim" alt="mark"></p>
+<h3 id="O（logn）：（-二分查找法-）"><a href="#O（logn）：（-二分查找法-）" class="headerlink" title="O（logn）：（ 二分查找法 ）"></a>O（logn）：（ 二分查找法 ）</h3><p><img src="http://static.zxinc520.com/blog/20190909/HCC3KITFnmlL.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190909/Y18HXPKRMICe.png?imageslim" alt="mark"></p>
+<h4 id="整形转成字符串"><a href="#整形转成字符串" class="headerlink" title="整形转成字符串"></a>整形转成字符串</h4><p><img src="http://static.zxinc520.com/blog/20190909/gDCAKNS0NtKo.png?imageslim" alt="mark"></p>
+<h3 id="log-以-2-为底-和-以-10-为底有区别吗"><a href="#log-以-2-为底-和-以-10-为底有区别吗" class="headerlink" title="log 以 2 为底 和 以 10 为底有区别吗"></a>log 以 2 为底 和 以 10 为底有区别吗</h3><p><img src="http://static.zxinc520.com/blog/20190909/hhkkzyo7uTJM.png?imageslim" alt="mark"></p>
+<h2 id="2-4-亲自试验自己算法的时间复杂度"><a href="#2-4-亲自试验自己算法的时间复杂度" class="headerlink" title="2-4 亲自试验自己算法的时间复杂度"></a>2-4 亲自试验自己算法的时间复杂度</h2><h3 id="复杂度实验"><a href="#复杂度实验" class="headerlink" title="复杂度实验"></a>复杂度实验</h3><p>实验，观察趋势</p>
+<p>每次 将数据规模提高两倍，看时间的变化</p>
+<h2 id="2-5-递归算法的复杂度分析"><a href="#2-5-递归算法的复杂度分析" class="headerlink" title="2-5 递归算法的复杂度分析"></a>2-5 递归算法的复杂度分析</h2><blockquote>
+<p>不是有递归的函数就一定是 O（ nlogn ）！</p>
+</blockquote>
+<h3 id="递归中进行一次递归调用的复杂度分析"><a href="#递归中进行一次递归调用的复杂度分析" class="headerlink" title="递归中进行一次递归调用的复杂度分析"></a>递归中进行一次递归调用的复杂度分析</h3><p>二分法使用递归：</p>
+<p><img src="http://static.zxinc520.com/blog/20190911/Vrm1PVyknLyf.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190911/HKc9QUhHzufd.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190911/Mrr5oypWBxGk.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190911/1hAzDU4ifP7w.png?imageslim" alt="mark"></p>
+<p>引申：上述 函数增加求 负次幂？</p>
+<h3 id="递归中进行多次递归调用"><a href="#递归中进行多次递归调用" class="headerlink" title="递归中进行多次递归调用"></a>递归中进行多次递归调用</h3><p><img src="http://static.zxinc520.com/blog/20190911/DmVGKhPNOvil.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190911/vlrGbmrXl4uo.png?imageslim" alt="mark"></p>
+<p>深度不一样，并不是所有 多次递归调用 的时间复杂度 为：O（2 ^ n）</p>
+<p><img src="http://static.zxinc520.com/blog/20190911/copG1I1hd0ya.png?imageslim" alt="mark"></p>
+<h4 id="递归函数的时间复杂度"><a href="#递归函数的时间复杂度" class="headerlink" title="递归函数的时间复杂度"></a>递归函数的时间复杂度</h4><p>查阅 <strong>主定理</strong> （面试一般不考察）</p>
+<h2 id="2-6-均摊时间复杂度分析（Amortized-Time-Analysis）"><a href="#2-6-均摊时间复杂度分析（Amortized-Time-Analysis）" class="headerlink" title="2-6 均摊时间复杂度分析（Amortized Time Analysis）"></a>2-6 均摊时间复杂度分析（Amortized Time Analysis）</h2><p><img src="http://static.zxinc520.com/blog/20190911/lH5rYQsGwqtN.png?imageslim" alt="mark"></p>
+<h2 id="2-7-避免复杂度的震荡"><a href="#2-7-避免复杂度的震荡" class="headerlink" title="2-7 避免复杂度的震荡"></a>2-7 避免复杂度的震荡</h2><p><img src="http://static.zxinc520.com/blog/20190911/glngyIU8g3Mi.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190911/AFsH4CLIkIE3.png?imageslim" alt="mark"></p>
+<h3 id="复杂度的震荡的解决方案"><a href="#复杂度的震荡的解决方案" class="headerlink" title="复杂度的震荡的解决方案"></a>复杂度的震荡的解决方案</h3><p><img src="http://static.zxinc520.com/blog/20190911/hwAvgAw9rUM1.png?imageslim" alt="mark"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/" rel="tag">复杂度分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7-O%EF%BC%9F/" rel="tag">大 O？</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/" rel="tag">算法面试</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
+  id="post-AlgorithmForTheInterview01"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/09/09/AlgorithmForTheInterview01/"
+    >算法面试到底是什么鬼</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/09/09/AlgorithmForTheInterview01/" class="article-date">
+  <time datetime="2019-09-09T02:43:24.000Z" itemprop="datePublished">2019-09-09</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%8E%A9%E8%BD%AC%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/">玩转算法面试</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="算法面试到底是什么鬼"><a href="#算法面试到底是什么鬼" class="headerlink" title="算法面试到底是什么鬼?"></a>算法面试到底是什么鬼?</h1><blockquote>
+<p>玩转算法面试 从真题到思维全面提升算法思维</p>
+<p>为了面试，更为了提升你的算法思维</p>
+<p>一提起算法面试，很多同学就会心有余悸。可其实，大多数企业的算法面试，并没有那么可怕。并不是一定要啃完整本《算法导论》，才能玩儿转算法面试；也并不是只有 ACM 参赛选手，才能笑傲算法面试。恰恰相反，大多数算法面试关注的算法思维，其实很基础。在这一章，和大家聊一聊，算法面试，到底是什么鬼？…</p>
+</blockquote>
+<h2 id="1-1-算法面试不仅仅是正确的回答问题"><a href="#1-1-算法面试不仅仅是正确的回答问题" class="headerlink" title="1-1 算法面试不仅仅是正确的回答问题"></a>1-1 算法面试不仅仅是正确的回答问题</h2><h4 id="算法面试是什么？"><a href="#算法面试是什么？" class="headerlink" title="算法面试是什么？"></a>算法面试是什么？</h4><ul>
+<li>让大家在面对面试中的算法问题时，有一个合理的思考路径<ul>
+<li>不代表能够“正确”回答每一个算法问题，但是合理的思考方向其实更重要，这也是正确完成算法面试问题的前提</li>
+<li>算法面试优秀不意味着技术面试优秀</li>
+<li>技术面试优秀不意味着能够拿到 Offer</li>
+</ul>
+</li>
+</ul>
+<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><h4 id="问题：对一组数据进行排序"><a href="#问题：对一组数据进行排序" class="headerlink" title="问题：对一组数据进行排序"></a>问题：对一组数据进行排序</h4><p>不假思索思考方向：</p>
+<ul>
+<li>快速排序算法 O（nlogn）</li>
+</ul>
+<p><strong>正确的方式</strong>是：应该和面试官探讨（ <strong>思考路径</strong> ）：</p>
+<ul>
+<li>这组数据有什么样的特征？<ul>
+<li>有没有可能包含有大量重复的元素？</li>
+<li>如果有这种可能的话，三路快排是更好的选择。</li>
+</ul>
+</li>
+<li>这组数据有什么样的特征？<ul>
+<li>是否大部分数据距离它正确的位置很近？是否近乎有序？</li>
+<li>如果是这样的话，插入排序是更好的选择</li>
+</ul>
+</li>
+<li>这组数据有什么样的特征？<ul>
+<li>是否数据的取值范围非常有限？比如对学生成绩排序</li>
+<li>如果是这样的话，计数排序是更好的选择</li>
+</ul>
+</li>
+<li>对排序有什么额外的要求？<ul>
+<li>是否需要稳定排序？</li>
+<li>如果是的话，归并排序是更好的选择</li>
+</ul>
+</li>
+<li>数据的存储状况是怎么样的？<ul>
+<li>是否是使用链表存储的？</li>
+<li>如果是的话，归并排序是更好的选择</li>
+</ul>
+</li>
+<li>数据的存储状态是怎样的？<ul>
+<li>数据的大小是否可以装载在内存里？</li>
+<li>数据量很大，或者内存很小，不足以装载在内存里，需要使用外排序算法</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-什么是“正确”的回答一个算法问题"><a href="#1-2-什么是“正确”的回答一个算法问题" class="headerlink" title="1-2 什么是“正确”的回答一个算法问题"></a>1-2 什么是“正确”的回答一个算法问题</h2><p><strong>正确</strong> 还包含对问题的独到见解；优化；代码规范；容错性</p>
+<p>如果是 非常难的问题，对你的竞争对手来说，也是难的。</p>
+<p>关键在于你所表达出的解决问题的思路</p>
+<p>甚至通过表达解题思路的方向，得出结论：这个问题的解决方案，应该在哪一个领域，我可以通过查阅或者进一步学习解决问题</p>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li>项目经历 和 项目中遇到的实际问题</li>
+<li>你遇到的印象最深的 bug 是什么？</li>
+<li>面向对象</li>
+<li>设计模式</li>
+<li>网络相关；安全相关；内存相关；并发相关</li>
+<li>系统设计；scalability</li>
+</ul>
+<p>技术面试只是面试的一部分。面试不仅仅是考察你的技术水平，还是了解你的过去以及形成的思考行为方式</p>
+<p>关于过去：参与项目至关重要</p>
+<h4 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h4><ul>
+<li>本科生<ul>
+<li>毕业设计</li>
+<li>其它课程设计(大作业，大一点的程序设计等等)</li>
+</ul>
+</li>
+<li>如何找到项目？<ul>
+<li>实习</li>
+<li>参与实战课程学习<ul>
+<li>慕课网</li>
+<li>Coursera</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>创建自己的项目<ul>
+<li>自己做小应用：计划表；备忘录；播放器…</li>
+<li>自己解决小问题：爬虫；数据分析；词频统计</li>
+<li>“不是项目” 的项目：一本优秀的技术书籍的代码整理等…</li>
+<li>分享：自己的技术博客；github 等等…</li>
+</ul>
+</li>
+</ul>
+<h4 id="行为类问题"><a href="#行为类问题" class="headerlink" title="行为类问题"></a>行为类问题</h4><p>通过过去了解你的思考行为方式？</p>
+<ul>
+<li>遇到的最大的挑战？</li>
+<li>犯过的错误？</li>
+<li>遭遇的失败？</li>
+<li>最享受的工作内容？</li>
+<li>遇到冲突的处理方式？</li>
+<li>做的最与众不同的事儿？</li>
+</ul>
+<h4 id="准备好合适的问题问面试官"><a href="#准备好合适的问题问面试官" class="headerlink" title="准备好合适的问题问面试官"></a>准备好合适的问题问面试官</h4><ul>
+<li>整个小组的大概运行模式是怎样的？</li>
+<li>整个项目的后续规划是如何的？</li>
+<li>这个产品中的某个问题是如何解决的？</li>
+<li>为什么会选择某些技术？标准？</li>
+<li>我对某个技术很感兴趣，在你的小组中我会有怎样的机会深入这种技术？</li>
+</ul>
+<p><strong>算法面试仍然是非常重要的一部分</strong></p>
+<h2 id="1-3-如何准备算法面试"><a href="#1-3-如何准备算法面试" class="headerlink" title="1-3 如何准备算法面试"></a>1-3 如何准备算法面试</h2><p>准备面试 和 准备算法面试 是两个概念</p>
+<p>算法面试 ，只是面试中的一个环节</p>
+<h2 id="算法面试并没有那么难"><a href="#算法面试并没有那么难" class="headerlink" title="算法面试并没有那么难"></a>算法面试并没有那么难</h2><ul>
+<li>远远不需要啃完一本 《算法导论》<ul>
+<li>过于强调理论证明</li>
+</ul>
+</li>
+<li>高级数据结构 和 算法面试提及的概率很低<ul>
+<li>红黑树</li>
+<li>计算几何</li>
+<li>B - Tree</li>
+<li>数论</li>
+<li>斐波那契堆</li>
+<li>FFT</li>
+</ul>
+</li>
+</ul>
+<p><strong>算法面试远远不需要达到信息学竞赛的水平</strong> 。</p>
+<p><img src="http://static.zxinc520.com/blog/20190908/CNmOn2PupuUn.png?imageslim" alt="mark"></p>
+<h3 id="算法面试的准备范围"><a href="#算法面试的准备范围" class="headerlink" title="算法面试的准备范围"></a>算法面试的准备范围</h3><ul>
+<li>不要轻视基础算法 和 数据结构，而只关注 “有意思” 的题目</li>
+</ul>
+<p>重点关注：</p>
+<ul>
+<li>各种排序算法</li>
+<li>基础数据结构和算法的实现：如堆、二叉树、图….</li>
+<li>基础数据结构的使用：如链表、栈、队列、哈希表、图、Trie、并查集…</li>
+<li>基础算法：深度优先、广度优先、二分查找、递归…</li>
+<li>基本算法思想：递归、分治、回溯搜索、贪心、动态规划…</li>
+</ul>
+<h3 id="选择合适的-OJ"><a href="#选择合适的-OJ" class="headerlink" title="选择合适的 OJ"></a>选择合适的 OJ</h3><blockquote>
+<p>OJ：online judge</p>
+<p>在线判题系统</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190908/iW0zhuflnMIs.png?imageslim" alt="mark"></p>
+<h3 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode-cn.com/">LeetCode</a> （ 源于真实的面试问题 ）</li>
+<li><a target="_blank" rel="noopener" href="https://www.hackerrank.com/">HackerRank</a> （ 对问题分类很详细 ，更难一点，辅助作用）</li>
+</ul>
+<p><strong>注意</strong>： 在学习和实践做题之间，要掌握平衡</p>
+<h2 id="1-4-解决算法面试问题的整体思路"><a href="#1-4-解决算法面试问题的整体思路" class="headerlink" title="1-4 解决算法面试问题的整体思路"></a>1-4 解决算法面试问题的整体思路</h2><h3 id="注意题目中的条件"><a href="#注意题目中的条件" class="headerlink" title="注意题目中的条件"></a>注意题目中的条件</h3><ul>
+<li>给定一个有序数组…<ul>
+<li><strong>有序</strong>： 是不是可以使用二分查找法</li>
+</ul>
+</li>
+<li>有一些题目中的条件本质是暗示：<ul>
+<li>设计一个 O（nlogn）的算法<ul>
+<li>分治法</li>
+</ul>
+</li>
+<li>无需考虑额外的空间<ul>
+<li>开辟额外的空间</li>
+</ul>
+</li>
+<li>数据规模大概是 10000<ul>
+<li>O（n 的二次方）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="当没有思路的时候"><a href="#当没有思路的时候" class="headerlink" title="当没有思路的时候"></a>当没有思路的时候</h3><ul>
+<li>自己给自己几个简单的测试用例，试验一下</li>
+<li>不要忽视暴力解法。暴力解法通常是思考的起点</li>
+</ul>
+<h4 id="不要忽视暴力法"><a href="#不要忽视暴力法" class="headerlink" title="不要忽视暴力法"></a>不要忽视暴力法</h4><p><img src="http://static.zxinc520.com/blog/20190908/4H4HSG2k68nE.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190908/DTm490pyX7Vm.png?imageslim" alt="mark"></p>
+<h2 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h2><h3 id="无头绪的思路"><a href="#无头绪的思路" class="headerlink" title="无头绪的思路"></a>无头绪的思路</h3><ul>
+<li>遍历常见的算法思路</li>
+<li>遍历常见的数据结构</li>
+<li>空间 和 时间的 交换 （ 哈希表 ）</li>
+<li>预处理信息 （ 排序 ）</li>
+<li>在瓶颈处寻找答案：O（nlogn）+ O（n ∧ 2）；O（n∧3）</li>
+</ul>
+<h3 id="实际编写问题"><a href="#实际编写问题" class="headerlink" title="实际编写问题"></a>实际编写问题</h3><ul>
+<li>极端条件的判断<ul>
+<li>数组为空？字符串为空？数量为 0? 指针为 NULL ？</li>
+</ul>
+</li>
+<li>变量名</li>
+<li>模块化，复用性</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/" rel="tag">算法面试</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-ReactTheory"
   class="article article-type-post"
   itemscope
@@ -3008,564 +3409,6 @@ result<span class="token punctuation">.</span><span class="token function">then<
 </article>
 
     
-    <article
-  id="post-IntroductionToCourse"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/08/04/IntroductionToCourse/"
-    >课程导论</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/08/04/IntroductionToCourse/" class="article-date">
-  <time datetime="2019-08-04T08:44:08.000Z" itemprop="datePublished">2019-08-04</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B7%B7%E5%90%88APP/">混合APP</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="课程导论"><a href="#课程导论" class="headerlink" title="课程导论"></a>课程导论</h1><blockquote>
-<p>课程导论：本章主要介绍课程的知识大纲，每个章节的解决顺序和主要内容。</p>
-<p>1- 1 导学</p>
-<p>1-2 课程重要提示</p>
-<p>1-3 架构</p>
-</blockquote>
-<h2 id="课程概述"><a href="#课程概述" class="headerlink" title="课程概述"></a>课程概述</h2><blockquote>
-<p><strong>做什么？</strong> ——讲解前端 JS 高级面试题</p>
-<p><strong>哪些部分？</strong> ——高级基础，框架原理，app 混合开发</p>
-<p><strong>技术？</strong> ——JS、ES6、虚拟 DOM、vueReact、hybrid</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190803/Q5w2nr68extL.png?imageslim" alt="mark"></p>
-<h3 id="课程安排"><a href="#课程安排" class="headerlink" title="课程安排"></a>课程安排</h3><ul>
-<li>高级基础</li>
-<li>框架原理</li>
-<li>App 混合开发</li>
-<li>热爱编程</li>
-</ul>
-<h4 id="课程安排-高级基础"><a href="#课程安排-高级基础" class="headerlink" title="课程安排-高级基础"></a>课程安排-高级基础</h4><ul>
-<li>ES6 常用语法：Class ,Module Promise 等</li>
-<li>原型高级应用：结合 jQuery 和 zepto 源码</li>
-<li>异步全面讲解：从原理到 jQuery 再到 Primise</li>
-</ul>
-<h4 id="课程安排-框架原理"><a href="#课程安排-框架原理" class="headerlink" title="课程安排-框架原理"></a>课程安排-框架原理</h4><ul>
-<li>虚拟 DOM：存在价值，如何使用，diff 算法</li>
-<li>vue：MVVM，vue 响应式、模板解析、渲染</li>
-<li>React：组件化，JSX、VDOM，setState</li>
-<li>对比：有主见，自圆其说</li>
-</ul>
-<h4 id="课程安排-App-混合开发"><a href="#课程安排-App-混合开发" class="headerlink" title="课程安排-App 混合开发"></a>课程安排-App 混合开发</h4><ul>
-<li>hybrid：基础、和 h5 对比，上线流程</li>
-<li>通讯：通讯原理，JS-Bridge 封装</li>
-</ul>
-<h4 id="课程安排-热爱编程"><a href="#课程安排-热爱编程" class="headerlink" title="课程安排- 热爱编程"></a>课程安排- 热爱编程</h4><ul>
-<li>读书</li>
-<li>博客</li>
-<li>开源</li>
-</ul>
-<h3 id="课程收获"><a href="#课程收获" class="headerlink" title="课程收获"></a>课程收获</h3><ul>
-<li>应对 JS 高级面试题</li>
-<li>从深度和广度都扩充了自己的知识体系</li>
-<li>学会如何高效学习</li>
-<li>深入理解常用框架的实现原理和 hybrid 应用</li>
-</ul>
-<h3 id="学习前提"><a href="#学习前提" class="headerlink" title="学习前提"></a>学习前提</h3><ul>
-<li>有 JavaScript 基础</li>
-<li>用过 node.js 和 npm 开发环境</li>
-<li>了解 vue 和 React （至少看过文档，做过 demo）</li>
-<li>热爱前端开发，有学习的欲望</li>
-</ul>
-<h3 id="课程优势"><a href="#课程优势" class="headerlink" title="课程优势"></a>课程优势</h3><ul>
-<li>针对高级 JS 面试中，面试官爱问 “源码” “实现”</li>
-<li>介绍常用框架实现原理的视频，网上稀缺</li>
-<li>会介绍 hybrid 原理和应用的视频，网上稀缺</li>
-<li>全部由实际工作经验总结而来，书上看不到</li>
-</ul>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hybrid/" rel="tag">hybrid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A6%82%E8%BF%B0/" rel="tag">知识点概述</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F-DOM/" rel="tag">虚拟 DOM</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-JsBasicKnowledge01"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/08/04/JsBasicKnowledge01/"
-    >前端JS基础面试技巧上</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/08/04/JsBasicKnowledge01/" class="article-date">
-  <time datetime="2019-08-04T08:44:08.000Z" itemprop="datePublished">2019-08-04</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/JS-%E4%B8%89%E5%BA%A7%E5%A4%A7%E5%B1%B1/">JS 三座大山</a> / <a class="article-category-link" href="/categories/JS/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="前端-JS-基础面试技巧"><a href="#前端-JS-基础面试技巧" class="headerlink" title="前端 JS 基础面试技巧"></a>前端 JS 基础面试技巧</h1><blockquote>
-<p>讲解 JS 基础语法相关的面试题，分析原理以及解答方法。这一章节讲解了基础知识的第一部分：变量的类型和计算。以及 JS “三座大山” —— 原型、作用域和异步中的： 原型和原型链、作用域和闭包。</p>
-<p>知识点：</p>
-<p>2-1 变量类型和计算</p>
-<p>2-2 原型和原型链</p>
-<p>2-3 函数声明和函数表达式</p>
-<p>2-4 作用域和闭包</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190715/A5zp7Ltc8RyD.png?imageslim" alt="mark"></p>
-<p><strong>关于面试</strong></p>
-<ul>
-<li>基层工程师 - <em>基础知识</em></li>
-<li>高级工程师 - <em>项目经验</em></li>
-<li>架构师 - <em>解决方案</em></li>
-</ul>
-<h2 id="先从几道面试题入手"><a href="#先从几道面试题入手" class="headerlink" title="先从几道面试题入手"></a>先从几道面试题入手</h2><ul>
-<li>JS 中使用 <strong>typeof</strong> 能得到的哪些类型？<ul>
-<li>考点：<em>JS 变量类型</em></li>
-</ul>
-</li>
-<li>何时使用 <strong>===</strong> 何时使用 **== **？<ul>
-<li>考点：<em>强制类型转换</em></li>
-</ul>
-</li>
-<li><strong>window.onload</strong> 和 <strong>DOMContentLoaded</strong> 的区别？<ul>
-<li>考点：<em>浏览器的渲染过程</em></li>
-</ul>
-</li>
-<li>用 JS 创建 10 个 a 标签，点击的时候弹出来对应的序号<ul>
-<li>考点：<em>作用域</em></li>
-</ul>
-</li>
-<li>简述如何实现一个<strong>模块加载器</strong>，实现类似 <strong>require.js</strong> 的基本功能<ul>
-<li>考点：<em>JS 模块化</em></li>
-</ul>
-</li>
-<li>实现数组的 <strong>随机排序</strong><ul>
-<li>考点：<em>JS 基础算法</em></li>
-</ul>
-</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190715/HysLOVvbjQLN.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190715/YKiIQGW864fb.png?imageslim" alt="mark"></p>
-<h1 id="知识体系"><a href="#知识体系" class="headerlink" title="知识体系"></a>知识体系</h1><blockquote>
-<p>题目</p>
-<p>知识点</p>
-<p>解答</p>
-</blockquote>
-<h2 id="2-1-变量类型和计算"><a href="#2-1-变量类型和计算" class="headerlink" title="2-1 变量类型和计算"></a>2-1 变量类型和计算</h2><blockquote>
-<p>2-1 变量类型和计算</p>
-<p>题目</p>
-<p>知识点</p>
-<p>解答</p>
-</blockquote>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>JS 中使用 <strong>typeof</strong> 能得到的哪些类型？</li>
-<li>何时使用 <strong>===</strong> 何时使用 **== **？</li>
-<li>JS 中有哪些 <strong>内置函数</strong></li>
-<li>JS 变量按照 <strong>存储方式</strong> 分为哪些类型，并描述其特点</li>
-<li>如何理解 <strong>JSON</strong></li>
-</ul>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>变量类型<ul>
-<li>值类型 vs 引用类型</li>
-<li>typeof 运算符 详解</li>
-</ul>
-</li>
-<li>变量计算</li>
-</ul>
-<h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><blockquote>
-<p>值类型 vs 引用类型</p>
-</blockquote>
-<h4 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h4><blockquote>
-<p><strong>值类型 (基本数据类型) 的值是按值访问的。</strong></p>
-<p>基本类型的值是<strong>不可变的</strong>，基本类型的比较是它们的<strong>值的比较</strong>，基本类型的变量是存放在 <strong>栈内存（Stack）里的</strong>。</p>
-<p><strong>JavaScript</strong> 数据<strong>类型</strong> 值<strong>类型</strong>(<strong>基本类型</strong>)：字符串（String）、数字(Number)、布尔(Boolean)、对空（Null）、未定义（Undefined）、Symbol (ES6 提供的新的类型)。</p>
-<p>6 种基本数据类型:<strong>string</strong>、<strong>number</strong>、<strong>boolean</strong>、<strong>undefined</strong>、<strong>null</strong> 、<strong>Symbol</strong> 。</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190715/Ss70W0DDyFPT.png?imageslim" alt="mark"></p>
-<h4 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h4><blockquote>
-<p><strong>引用类型的值是按引用访问的。</strong></p>
-<p>引用类型的值是<strong>可变的</strong>，引用类型的比较是<strong>引用的比较</strong>，引用类型的值是保存在 <strong>堆内存（Heap）中的对象（Object）</strong>。</p>
-<p>特点：无限制扩展属性</p>
-<p><strong>3 种</strong> 主要引用类型：对象（<strong>Object</strong>）、数组（<strong>Array</strong>）、函数（<strong>Function</strong>）</p>
-<p>细分的话，有：<code>Object 类型</code>、<code>Array 类型</code>、<code>Date 类型</code>、<code>RegExp 类型</code>、<code>Function 类型</code> 等。</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190715/znhFw1Srcm3D.png?imageslim" alt="mark"></p>
-<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><blockquote>
-<p><strong>值类型(基本类型) **+ **引用数据类型</strong></p>
-<p><u>7 种数据类型</u>：<strong>number</strong>、<strong>string</strong>、<strong>boolean</strong>、<strong>undefined</strong>、<strong>null</strong>、<strong>Symbol</strong> 、<strong>Object (Object、Array、Function)</strong> 。</p>
-</blockquote>
-<h4 id="typeof-运算符"><a href="#typeof-运算符" class="headerlink" title="typeof 运算符"></a>typeof 运算符</h4><blockquote>
-<p><strong>7</strong> 种类型：<strong>undefined</strong>、<strong>string</strong>、<strong>number</strong>、<strong>boolean</strong>、<strong>object</strong>、<strong>function</strong> 、<strong>symbol</strong>（ES6 提供的新的类型）</p>
-<p>注意：typeof <strong>null</strong> // object</p>
-<p>typeof 运算符 <strong>只能</strong> 区分 <strong>值类型</strong> 的 类型，对于引用类型的 <strong>对象</strong>、<strong>数组</strong> <strong>区分不出来</strong> 。</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190715/k3tYgoHSpYgy.png?imageslim" alt="mark"></p>
-<h3 id="变量计算"><a href="#变量计算" class="headerlink" title="变量计算"></a>变量计算</h3><blockquote>
-<p>这个主要针对值类型- 强制类型转换</p>
-</blockquote>
-<p><strong>4 种强制类型转换：</strong></p>
-<ul>
-<li>字符串拼接</li>
-<li>== 运算符</li>
-<li>if 语句</li>
-<li>逻辑运算</li>
-</ul>
-<h4 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h4><p><img src="http://static.zxinc520.com/blog/20190715/WBxaMX9CiLmz.png?imageslim" alt="mark"></p>
-<h4 id="运算符"><a href="#运算符" class="headerlink" title="== 运算符"></a>== 运算符</h4><p><img src="http://static.zxinc520.com/blog/20190715/PTp1mF5ulTVw.png?imageslim" alt="mark"></p>
-<h4 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h4><blockquote>
-<p>if 语句</p>
-<p><u>false 情况</u>：<strong>0</strong>、<strong>NaN</strong>、**’&lt;空字符串&gt;’<strong>、</strong>null<strong>、</strong>undefine** 、<strong>false</strong></p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190715/C387EiaoakPe.png?imageslim" alt="mark"></p>
-<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p><img src="http://static.zxinc520.com/blog/20190715/4sGRvRvO2x65.png?imageslim" alt="mark"></p>
-<h4 id="何时使用-和"><a href="#何时使用-和" class="headerlink" title="何时使用 === 和 =="></a>何时使用 === 和 ==</h4><blockquote>
-<p>何时使用 === 和 ==？</p>
-<p>解答：参考 jQuery 源码中推荐的写法，除了<strong>判断对象属性是否为空</strong> 和 <strong>看是否函数的参数为空 ** 的情况 ，其余的都用 **===</strong> 。</p>
-<p><code>==</code> : 只进行值的比较</p>
-<p><code>===</code> : 不仅进行值得比较，还要进行数据类型的比较</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190715/dfHpCgG4HQNR.png?imageslim" alt="mark"></p>
-<h4 id="JS-中的内置函数"><a href="#JS-中的内置函数" class="headerlink" title="JS 中的内置函数"></a>JS 中的内置函数</h4><blockquote>
-<p>JS 中的内置函数的作用</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190715/BDtLCAEhGEUX.png?imageslim" alt="mark"></p>
-<h4 id="JS-按存储方式区分变量类型"><a href="#JS-按存储方式区分变量类型" class="headerlink" title="JS 按存储方式区分变量类型"></a>JS 按存储方式区分变量类型</h4><blockquote>
-<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000006752076">参考 1</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/leiting/p/8081413.html">参考 2</a></p>
-<p>基本类型的值是不可变的</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190715/0cbg9UtuHTED.png?imageslim" alt="mark"></p>
-<h4 id="如何理解-JSON"><a href="#如何理解-JSON" class="headerlink" title="如何理解 JSON"></a>如何理解 JSON</h4><blockquote>
-<p>JS 内置对象，Math 也是内置对象</p>
-<p>注意：JSON 既是一个 JS <strong>内置对象</strong>，也是一种 <strong>数据格式</strong>。</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190715/5bkwAGYcMzH8.png?imageslim" alt="mark"></p>
-<h2 id="2-2-原型和原型链"><a href="#2-2-原型和原型链" class="headerlink" title="2-2 原型和原型链"></a>2-2 原型和原型链</h2><blockquote>
-<p>2-2 原型和原型链</p>
-<p>题目</p>
-<p>知识点</p>
-<p>解答</p>
-</blockquote>
-<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>如何准确判断一个变量是 <strong>数组类型</strong></li>
-<li>写一个原型链继承的例子</li>
-<li>描述 new 一个对象的过程</li>
-<li>zepto (或其他框架) 源码中如何使用原型链</li>
-</ul>
-<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>构造函数</li>
-<li>构造函数-扩展</li>
-<li>原型规则和示例</li>
-<li>原型链</li>
-<li>instanceof</li>
-</ul>
-<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><blockquote>
-<p>函数名 习惯 <strong>第一个字母大写</strong>（ 高级程序员规范）</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190715/aYlOy0sAIxjg.png?imageslim" alt="mark"></p>
-<h4 id="构造函数扩展"><a href="#构造函数扩展" class="headerlink" title="构造函数扩展"></a>构造函数扩展</h4><blockquote>
-<p>构造函数扩展</p>
-<p>函数扩展 —- <strong>语法糖</strong></p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190715/KAiPkbgM6g8k.png?imageslim" alt="mark"></p>
-<h4 id="5-条原型规则和示例"><a href="#5-条原型规则和示例" class="headerlink" title="5 条原型规则和示例"></a>5 条原型规则和示例</h4><blockquote>
-<p>5 条原型规则</p>
-<p><strong>原型规则</strong> 是学习 <strong>原型链</strong> 的基础</p>
-</blockquote>
-<p><strong>5 条原型规则 ：</strong></p>
-<ol>
-<li><p>所有的 <strong>引用类型</strong> (对象，数组，函数)，都具有对象特性，即可 <strong>自由扩展</strong> 属性（除了 null 以外）。</p>
-</li>
-<li><p>所有的 <strong>引用类型</strong> (对象，数组，函数)，都有一个<code>__proto__</code> （ <em>隐式原型</em> ）属性，属性值都是一个普通对象。</p>
-<p><img src="http://static.zxinc520.com/blog/20190715/i237crTwXpRw.png?imageslim" alt="mark"></p>
-</li>
-<li><p>所有的函数都有一个<code>prototype</code> （ <em>显示原型</em> ）属性，属性值是一个普通对象。</p>
-</li>
-<li><p>所有的引用类型(对象，数组，函数)，<code>__proto__</code>属性值指向它的构造函数的<code>prototype</code>属性值。</p>
-<p><img src="http://static.zxinc520.com/blog/20190715/gbOkNmykomux.png?imageslim" alt="mark"></p>
-</li>
-<li><p>当试图得到一个引用类型的某个属性时，如果这个对象本身没有这个属性，那么会去它的<code>__proto__</code>(即它的构造函数的<code>prototype</code>)中去找。</p>
-</li>
-</ol>
-<p><strong>示例</strong> ：</p>
-<p><img src="http://static.zxinc520.com/blog/20190715/CKA2EOYdkSQ5.png?imageslim" alt="mark"></p>
-<p><strong>循环自身的属性：</strong></p>
-<p><img src="http://static.zxinc520.com/blog/20190715/kAsCaFM5fgCq.png?imageslim" alt="mark"></p>
-<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><blockquote>
-<p>这种搜索的轨迹,形似一条长链, 又因 prototype 在这个游戏规则中充当链接的作用,于是我们把这种实例与原型的链条称作 <strong>原型链</strong></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/post/58f94c9bb123db411953691b">参考</a></p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190716/zjK7G9Pwib6K.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190716/hyX26borV0mF.png?imageslim" alt="mark"></p>
-<h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h4><blockquote>
-<p>用于 判断 <strong>引用类型</strong> 属于哪个 构造函数的方法</p>
-<p>**instanceof 运算符 ** 用于测试构造函数的 prototype 属性是否出现在对象的原型链中的任何位置</p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof">参看 MDN</a></p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190716/mHVNeyIgfsSE.png?imageslim" alt="mark"></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token parameter">make<span class="token punctuation">,</span> model<span class="token punctuation">,</span> year</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>make <span class="token operator">=</span> make<span class="token punctuation">;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>model <span class="token operator">=</span> model<span class="token punctuation">;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>year <span class="token operator">=</span> year<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">var</span> auto <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token string">"Honda"</span><span class="token punctuation">,</span> <span class="token string">"Accord"</span><span class="token punctuation">,</span> <span class="token number">1998</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>auto <span class="token keyword">instanceof</span> <span class="token class-name">Car</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//  true</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>auto <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><ul>
-<li><p>如何准确判断一个变量是 <strong>数组类型</strong></p>
-<ul>
-<li>arr instanceof Arrar</li>
-</ul>
-</li>
-<li><p>写一个原型链继承的例子、</p>
-</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Elem</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>elem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token class-name">Elem</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">html</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> elem <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>elem<span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    elem<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> val<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span> <span class="token comment">//链式操作</span>
-  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> elem<span class="token punctuation">.</span>innerText<span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token class-name">Elem</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">on</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">type<span class="token punctuation">,</span> fn</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> elem <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>elem<span class="token punctuation">;</span>
-  elem<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> fn<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-
-<span class="token keyword">var</span> div1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Elem</span><span class="token punctuation">(</span><span class="token string">"div1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-div1<span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">"&lt;p>hello world&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"clicked"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><p>描述 new 一个对象的过程</p>
-<p><img src="http://static.zxinc520.com/blog/20190716/fEURg05c9KBT.png?imageslim" alt="mark"></p>
-</li>
-<li><p>zepto (或其他框架) 源码中如何使用原型链</p>
-<p><img src="http://static.zxinc520.com/blog/20190716/6vDDJLlWz5AQ.png?imageslim" alt="mark"></p>
-</li>
-</ul>
-<h2 id="2-3-函数声明和函数表达式"><a href="#2-3-函数声明和函数表达式" class="headerlink" title="2-3 函数声明和函数表达式"></a>2-3 函数声明和函数表达式</h2><blockquote>
-<p>函数声明和函数表达式</p>
-</blockquote>
-<h4 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//执行</span>
-<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">//声明</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h4><blockquote>
-<p>把 var 定义的变量提前：相当于：先定义 <strong>var fn</strong> — &gt; 然后执行 <strong>fn()</strong></p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// TypeError: fn is not a function</span>
-<span class="token keyword">var</span> <span class="token function-variable function">fn</span><span class="token operator">=</span><span class="token keyword">function</span>（）<span class="token punctuation">&#123;</span>
-    <span class="token comment">// 表达式</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>相关的例子（函数执行的顺序）：</strong></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
-<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">fn</span><span class="token punctuation">(</span><span class="token string">"zhouchen"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">var</span> age<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//output：zhouchen 20</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">fn</span><span class="token punctuation">(</span><span class="token string">"zhouchen"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 参数的集合</span>
-  age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">var</span> age<span class="token punctuation">;</span>
-
-  <span class="token function">bar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">/*
-    &#123; '0': 'zhouchen' &#125;
-    zhouchen 20
-    100
-*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="2-4-作用域和闭包"><a href="#2-4-作用域和闭包" class="headerlink" title="2-4 作用域和闭包"></a>2-4 作用域和闭包</h2><blockquote>
-<p>作用域和闭包</p>
-<p>题目</p>
-<p>知识点</p>
-<p>解答</p>
-</blockquote>
-<h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>说一下对变量提升的理解</li>
-<li>说明 this 几种 不同的使用场景</li>
-<li>创建 10 个 a 标签，点击的时候弹出来对应的序号</li>
-<li>如何理解作用域</li>
-<li>实际开发中闭包的应用</li>
-</ul>
-<h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li><p>执行上下文</p>
-</li>
-<li><p>this</p>
-</li>
-<li><p>作用域</p>
-</li>
-<li><p>作用域链</p>
-</li>
-<li><p>闭包</p>
-</li>
-</ul>
-<h4 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h4><blockquote>
-<p>执行上下文</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190716/slpXIRmFPFUC.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190716/yGYEzQ0mBi3H.png?imageslim" alt="mark"></p>
-<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><blockquote>
-<p>this 要在 <strong>执行时</strong> 才能确定值，<strong>定义时</strong> 无法确认</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190716/y7uMvda2zozx.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190716/X4ErfYyomFle.png?imageslim" alt="mark"></p>
-<h4 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h4><blockquote>
-<p>任何一对花括号中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。</p>
-<p><strong>JS</strong> 并 <strong>不支持 块级作用域</strong>，它<strong>只支持 函数作用域</strong> ，<u>而且在一个函数中的<strong>任何位置定义的变量</strong> 在该函数中的 <strong>任何地方都是可见的</strong> 。</u></p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"zhouchen"</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// zhouchen</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="链式作用域"><a href="#链式作用域" class="headerlink" title="链式作用域"></a>链式作用域</h4><blockquote>
-<p><strong>如何从外部读取局部变量？</strong></p>
-<p>出于种种原因，我们有时候需要得到函数内的局部变量。但是，前面已经说过了，正常情况下，这是办不到的，只有通过变通方法才能实现。</p>
-<p>那就是在函数的内部，再定义一个函数。</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">999</span><span class="token punctuation">;</span>
-
-  <span class="token keyword">function</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token function">alert</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 999</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在上面的代码中，函数 f2 就被包括在函数 f1 内部，这时 f1 内部的所有局部变量，对 f2 都是可见的。但是反过来就不行，f2 内部的局部变量，对 f1 就是不可见的。这就是 Javascript 语言特有的 “<strong>链式作用域” 结构</strong>（chain scope），子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。</p>
-<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><blockquote>
-<p>上一节代码中的 f2 函数，就是闭包。</p>
-<p>简单来说：闭包就是 <strong>能够读取其他函数内部变量的函数</strong>。</p>
-<p>由于在 Javascript 语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成 <strong>定义在一个函数内部的函数</strong> 。</p>
-<p>所以，在本质上，<u>闭包就是将函数内部和函数外部连接起来的一座桥梁</u>。</p>
-<p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html">参考阮一峰的网络日志 </a></p>
-</blockquote>
-<h4 id="闭包的用途"><a href="#闭包的用途" class="headerlink" title="闭包的用途"></a>闭包的用途</h4><blockquote>
-<p>闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。</p>
-</blockquote>
-<h4 id="实际开发中闭包的应用"><a href="#实际开发中闭包的应用" class="headerlink" title="实际开发中闭包的应用"></a>实际开发中闭包的应用</h4><blockquote>
-<p>实际开发中闭包的应用</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190716/oAEdrQVxx55a.png?imageslim" alt="mark"></p>
-<h3 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h3><ul>
-<li><p>说一下对变量提升的理解</p>
-<ul>
-<li>变量定义</li>
-<li>函数声明 （ 注意和 函数表达式 的区别）</li>
-</ul>
-</li>
-<li><p>说明 this 几种 不同的使用场景</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40387601/article/details/80313884">参考 1</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_32067081/article/details/53047149">参考 2</a></li>
-</ul>
-</li>
-<li><p>创建 10 个 a 标签，点击的时候弹出来对应的序号</p>
-<p><img src="http://static.zxinc520.com/blog/20190716/jpCryHpWtFmQ.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190716/JOON77hWUAPT.png?imageslim" alt="mark"></p>
-</li>
-<li><p>如何理解作用域</p>
-<ul>
-<li>自由变量</li>
-<li>作用域连，即自由变量的查找</li>
-<li>闭包的两个场景</li>
-</ul>
-</li>
-<li><p>实际开发中闭包的应用</p>
-<p><img src="http://static.zxinc520.com/blog/20190716/DOiHXt0yUzLP.png?imageslim" alt="mark"></p>
-</li>
-</ul>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
   </article>
   
 
@@ -3583,7 +3426,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <ul>
       <li>
         Copyrights &copy;
-        2015-2020
+        2015-2021
         <i class="ri-heart-fill heart_icon"></i> zhou chen
       </li>
     </ul>

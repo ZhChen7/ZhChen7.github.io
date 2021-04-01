@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.zxinc520.com/2021/04/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E5%89%8D%E7%9E%BB%E5%8D%9A%E6%96%87%E5%9C%B0%E5%9D%80/</loc>
+    <lastmod>2021-04-01</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.zxinc520.com/2021/03/01/React%E6%BA%90%E7%A0%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/</loc>
+    <lastmod>2021-03-01</lastmod>
+  </url>
+  <url>
     <loc>https://blog.zxinc520.com/2020/10/12/React-%E9%AB%98%E7%BA%A7%E6%8C%87%E5%BC%95/</loc>
     <lastmod>2020-10-30</lastmod>
   </url>
@@ -73,11 +81,11 @@
     <lastmod>2020-03-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.zxinc520.com/2020/03/23/getOfferScopeandclosure/</loc>
+    <loc>https://blog.zxinc520.com/2020/03/23/getOfferPrototypesandprototypechains/</loc>
     <lastmod>2020-03-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.zxinc520.com/2020/03/23/getOfferPrototypesandprototypechains/</loc>
+    <loc>https://blog.zxinc520.com/2020/03/23/getOfferScopeandclosure/</loc>
     <lastmod>2020-03-23</lastmod>
   </url>
   <url>
