@@ -2691,7 +2691,7 @@ proxy<span class="token operator">:</span> <span class="token punctuation">&#123
 <h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><p>每个 React Router 应用程序的核心应该是路由器组件。对于 web 项目，react-router-dom 提供BrowserRouter和HashRouter路由器。两者之间的主要区别是它们存储URL和与Web服务器通信的方式。</p>
 <ul>
 <li>BrowserRouter 使用常规URL路径，创建一个像example.com/some/path这样真实的 URL ，但是他们要求正确的配置服务器。具体来说，您的 web 服务器需要在所有由 React Router 客户端管理的 URL 上处理相同的页面。<a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app">Create React App</a>在开发中即开即用地支持此功能，并附带有关如何配置生产服务器的说明。</li>
-<li>HashRouter 将当前位置存储在URL的哈希部分中，因此URL看起来类似于<a target="_blank" rel="noopener" href="http://example.com/#/your/page%E3%80%82%E7%94%B1%E4%BA%8E%E5%93%88%E5%B8%8C%E4%BB%8E%E4%B8%8D%E5%8F%91%E9%80%81%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%9B%A0%E6%AD%A4%E8%BF%99%E6%84%8F%E5%91%B3%E7%9D%80%E4%B8%8D%E9%9C%80%E8%A6%81%E7%89%B9%E6%AE%8A%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E3%80%82">http://example.com/#/your/page。由于哈希从不发送到服务器，因此这意味着不需要特殊的服务器配置。</a></li>
+<li>HashRouter 将当前位置存储在URL的哈希部分中，因此URL看起来类似于<a href="http://example.com/#/your/page%E3%80%82%E7%94%B1%E4%BA%8E%E5%93%88%E5%B8%8C%E4%BB%8E%E4%B8%8D%E5%8F%91%E9%80%81%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%9B%A0%E6%AD%A4%E8%BF%99%E6%84%8F%E5%91%B3%E7%9D%80%E4%B8%8D%E9%9C%80%E8%A6%81%E7%89%B9%E6%AE%8A%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E3%80%82">http://example.com/#/your/page。由于哈希从不发送到服务器，因此这意味着不需要特殊的服务器配置。</a></li>
 </ul>
 <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
 <li>你可以用 npm 或者 yarn 安装 React Router，由于我们在构建一个web app，所以我们在这个文档中使用 <code>react-router-dom</code></li>
