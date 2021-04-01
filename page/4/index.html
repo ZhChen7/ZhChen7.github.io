@@ -37,7 +37,7 @@
 
   
 
-<link rel="alternate" href="/atom.xml" title="菊 💗  琛" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="sunflower" type="application/atom+xml">
 </head>
 
 </html>
@@ -68,10 +68,10 @@
     
   <div class="cover-frame">
     <div class="bg-box">
-      <img src="/images/cover6.jpg" alt="image frame" />
+      <img src="/images/cover4.jpg" alt="image frame" />
     </div>
     <div class="cover-inner text-center text-white">
-      <h1><a href="/">菊 💗  琛</a></h1>
+      <h1><a href="/">sunflower</a></h1>
       <div id="subtitle-box">
         
         <span id="subtitle"></span>
@@ -97,7 +97,7 @@
   <script>
     try {
       var typed = new Typed("#subtitle", {
-        strings: ['爱情', '我们要珍惜所有的感动,', '因为那些都是转瞬即逝的美好。'],
+        strings: ['我们', '我们要珍惜所有的感动,', '入目无他人 四下皆是你！'],
         startDelay: 0,
         typeSpeed: 200,
         loop: true,
@@ -931,6 +931,619 @@ npm start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 
     
     <article
+  id="post-WeChatUp02"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/09/05/WeChatUp02/"
+    >微信小程序笔记下</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/09/05/WeChatUp02/" class="article-date">
+  <time datetime="2019-09-05T09:07:39.000Z" itemprop="datePublished">2019-09-05</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a> / <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8B%E7%AF%87/">微信小程序下篇</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="微信小程序笔记下"><a href="#微信小程序笔记下" class="headerlink" title="微信小程序笔记下"></a>微信小程序笔记下</h1><blockquote>
+<p>微信小程序笔记下</p>
+<p>input</p>
+<p>color 属性</p>
+<p>bindchange</p>
+<p>wxs 页面脚本</p>
+<p>微信小程序事件 <strong>冒泡 ** 和 事件</strong>传参**</p>
+<p>服务号、订阅号</p>
+<p>sdk</p>
+</blockquote>
+<h2 id="微信小程序组件"><a href="#微信小程序组件" class="headerlink" title="微信小程序组件"></a>微信小程序组件</h2><h3 id="表单组件"><a href="#表单组件" class="headerlink" title="表单组件"></a>表单组件</h3><h4 id="input"><a href="#input" class="headerlink" title="input"></a>input</h4><blockquote>
+<p>输入框。该组件是<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html">原生组件</a>，使用时请注意相关限制</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html">可以参考</a></p>
+</blockquote>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 输入框 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>password<span class="token punctuation">'</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>password<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>number<span class="token punctuation">'</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>number<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>idcard<span class="token punctuation">'</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>idcard<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>digit<span class="token punctuation">'</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>digit<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
+
+  <span class="token comment">&lt;!-- 单选框 --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio-group</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio-group</span><span class="token punctuation">></span></span>
+
+  <span class="token comment">&lt;!-- 多选框 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox-group</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox-group</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/iBUB5P8LKOTz.png?imageslim" alt="mark"></p>
+<h3 id="改变颜色"><a href="#改变颜色" class="headerlink" title="改变颜色"></a>改变颜色</h3><blockquote>
+<p><strong>color 属性</strong></p>
+</blockquote>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 单选框 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio-group</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#f30<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio-group</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- 多选框 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox-group</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#f30<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox-group</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/0lbNety1l8Nr.gif" alt="mark"></p>
+<ul>
+<li>checked：默认选中</li>
+<li>disabled: 禁用</li>
+</ul>
+<h3 id="bindchange"><a href="#bindchange" class="headerlink" title="bindchange"></a>bindchange</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/checkbox-group.html">checkbox-group</a>中选中项发生改变时触发 change 事件，detail = {value:[选中的 checkbox 的 value 的数组]}</p>
+<p><strong>单选框</strong> 和 <strong>复选框</strong> 都能用！</p>
+</blockquote>
+<p><strong>例如：</strong></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 单选框 --></span>
+&lt;radio-group ="radiobindchangefun" data-index="1">
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#f30<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nan<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nv<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio-group</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>index.js：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">radiobindchangefun</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>detail<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/HhwLwtgLFk7s.gif" alt="mark"></p>
+<h2 id="wxs-页面脚本"><a href="#wxs-页面脚本" class="headerlink" title="wxs 页面脚本"></a>wxs 页面脚本</h2><blockquote>
+<p>WXS（WeiXin Script）是小程序的一套脚本语言，结合 <code>WXML</code>，可以构建出页面的结构。</p>
+<p>WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。</p>
+<p><strong>用的相对不多</strong></p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/01wxs-module.html">WXS 模块</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/02variate.html">变量</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/03annotation.html">注释</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/04operator.html">运算符</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/05statement.html">语句</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/06datatype.html">数据类型</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/07basiclibrary.html">基础类库</a></li>
+</ul>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wxs</span> <span class="token attr-name">module</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>foo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  var sum=function(a,b)&#123; return a+b; &#125; module.exports.sum=sum
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>wxs</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>&#123;&#123;foo.sum(1,2)&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://static.zxinc520.com/blog/20190605/sEHFhCJgcSTT.png?imageslim" alt="mark"></p>
+<h2 id="微信小程序事件冒泡和事件传参"><a href="#微信小程序事件冒泡和事件传参" class="headerlink" title="微信小程序事件冒泡和事件传参"></a>微信小程序事件冒泡和事件传参</h2><blockquote>
+<p>微信小程序事件冒泡和事件传参</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html">参考</a></p>
+</blockquote>
+<h3 id="事件绑定和冒泡"><a href="#事件绑定和冒泡" class="headerlink" title="事件绑定和冒泡"></a>事件绑定和冒泡</h3><p>事件绑定的写法同组件的属性，以 key、value 的形式。</p>
+<ul>
+<li>key 以<code>bind</code>或<code>catch</code>开头，然后跟上事件的类型，如<code>bindtap</code>、<code>catchtouchstart</code>。自基础库版本 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">1.5.0</a> 起，在非<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html">原生组件</a>中，<code>bind</code>和<code>catch</code>后可以紧跟一个冒号，其含义不变，如<code>bind:tap</code>、<code>catch:touchstart</code>。</li>
+<li>value 是一个字符串，需要在对应的 Page 中定义同名的函数。不然当触发事件的时候会报错。</li>
+</ul>
+<p><code>bind</code>事件绑定<strong>不会阻止</strong>冒泡事件向上冒泡，<code>catch</code>事件绑定<strong>可以阻止</strong>冒泡事件向上冒泡。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ClickFatherEvent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>son<span class="token punctuation">"</span></span> <span class="token attr-name">catchtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ClickSonEvent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://static.zxinc520.com/blog/20190610/iYPyQKFs0uUh.gif" alt="mark"></p>
+<h3 id="事件传参"><a href="#事件传参" class="headerlink" title="事件传参"></a>事件传参</h3><blockquote>
+<p>自定义属性传参 ( <strong>data-index=”1”</strong> )</p>
+</blockquote>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ClickFatherEvent<span class="token punctuation">"</span></span> <span class="token attr-name">data-index</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>son<span class="token punctuation">"</span></span> <span class="token attr-name">catchtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ClickSonEvent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">ClickFatherEvent</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'father'</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>index<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://static.zxinc520.com/blog/20190611/QGePjx2yA28Q.gif" alt="mark"></p>
+<h2 id="服务号"><a href="#服务号" class="headerlink" title="服务号"></a>服务号</h2><blockquote>
+<p>服务号：为企业和组织提供更强大的业务服务与用户管理能力，主要偏向服务类交互（功能类似 12315，114，银行，提供绑定信息，服务交互的）；</p>
+<p>适用人群：媒体、企业、政府或其他组织。</p>
+<p>群发次数：服务号 1 个月（按自然月）内可发送 4 条群发消息。</p>
+<p><a target="_blank" rel="noopener" href="https://kf.qq.com/faq/120911VrYVrA150918fMZ77R.html?scene_id=kf3386">可以参考</a></p>
+</blockquote>
+<h2 id="订阅号"><a href="#订阅号" class="headerlink" title="订阅号"></a>订阅号</h2><blockquote>
+<h1 id="什么是订阅号？"><a href="#什么是订阅号？" class="headerlink" title="什么是订阅号？"></a>什么是订阅号？</h1><p>订阅号：为媒体和个人提供一种新的信息传播方式，主要功能是在微信侧给用户传达资讯；（功能类似报纸杂志，提供新闻信息或娱乐趣事）</p>
+<p>适用人群：个人、媒体、企业、政府或其他组织。</p>
+<p>群发次数：订阅号（认证用户、非认证用户）1 天内可群发 1 条消息。</p>
+</blockquote>
+<p><strong>温馨提示：</strong></p>
+<ol>
+<li>如果想用公众平台简单发发消息，做宣传推广服务，建议可选择订阅号；</li>
+<li>如果想用公众平台进行商品销售，建议可选择服务号，后续可认证再申请微信支付商户；</li>
+</ol>
+<h2 id="sdk"><a href="#sdk" class="headerlink" title="sdk"></a>sdk</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%8C%85">软件开发工具包</a>（缩写：<strong>SDK</strong>、外语全称：<strong>Software Development Kit）</strong>一般都是一些<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275">软件工程师</a>为特定的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%8C%85/10508451">软件包</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6/1471931">软件框架</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%A1%AC%E4%BB%B6/479446">硬件</a>平台、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/192">操作系统</a>等建立应用软件时的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/10464557">开发工具</a>的集合。 [1]</p>
+<p>软件开发工具包括广义上指<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BE%85%E5%8A%A9/1045139">辅助</a>开发某一类软件的相关文档、范例和工具的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%9B%86%E5%90%88/73081">集合</a>。</p>
+<p>软件开发工具包是一些被软件工程师用于为特定的软件包、软件框架、硬件平台、操作系统等创建应用软件的开发工具的集合，一般而言 SDK 即开发 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Windows">Windows</a> 平台下的应用程序所使用的 SDK。它可以简单的为某个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80/2317999">程序设计语言</a>提供<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%8F%A3/10418844">应用程序接口</a> <strong>API</strong>的一些文件，但也可能包括能与某种<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F/186978">嵌入式系统</a>通讯的复杂的硬件。一般的工具包括用于调试和其他用途的实用工具。SDK 还经常包括示例代码、支持性的技术注解或者其他的为基本参考资料澄清疑点的支持文档。</p>
+<p>为了鼓励开发者使用其系统或者语言，许多 SDK 是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%8D%E8%B4%B9/131326">免费</a>提供的。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275">软件工程师</a>通常从目标系统开发者那里获得软件开发包，也可以直接从互联网下载，有时也被作为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%90%A5%E9%94%80%E6%89%8B%E6%AE%B5">营销手段</a>。例如，营销公司会免费提供构建 SDK 以鼓励人们使用它，从而会吸引更多人由于能免费为其编程而购买其构件。</p>
+<p>SDK 可能附带了使其不能在不兼容的许可证下开发软件的许可证。例如产品供应商提供一个专有的 SDK 可能与自由软件开发抵触。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/GPL">GPL</a> 能使 SDK 与专有软件开发近乎不兼容。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/LGPL">LGPL</a> 下的 SDK 则没有这个问题。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/SDK/7815680">可参考官方解释</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">微信 JS-SDK 说明文档</a></p>
+</blockquote>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
+  id="post-WeChatUp"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/09/05/WeChatUp/"
+    >微信小程序笔记上</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/09/05/WeChatUp/" class="article-date">
+  <time datetime="2019-09-05T09:07:39.000Z" itemprop="datePublished">2019-09-05</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a> / <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8A%E7%AF%87/">微信小程序上篇</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="微信小程序笔记上"><a href="#微信小程序笔记上" class="headerlink" title="微信小程序笔记上"></a>微信小程序笔记上</h1><blockquote>
+<p>微信小程序学习笔记上</p>
+<p>初步接触小程序</p>
+<p>基础内容介绍</p>
+<p>开发者文档</p>
+<p>app.js 全局生命周期函数</p>
+<p>WXML 数据绑定</p>
+<p>通过 wx.request 请求数据</p>
+<p>微信小程序里列表渲染</p>
+<p>页面相关事件处理函数</p>
+<p>True mastery of any skill takes a lifetime.</p>
+<p>对任何技能的掌握都需要一生的刻苦操练。</p>
+</blockquote>
+<h1 id="小程序简介"><a href="#小程序简介" class="headerlink" title="小程序简介"></a>小程序简介</h1><blockquote>
+<p>小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</p>
+<p>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/introduction.html">相关介绍</a></p>
+<p><strong>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。但和常规的前端开发又有一些区别：</strong> <a target="_blank" rel="noopener" href="https://juejin.im/entry/581db98fa0bb9f0058abffea">可以参考</a></p>
+<ol>
+<li><strong>JavaScript</strong>: 微信小程序的 JavaScript 运行环境即不是 Browser 也不是 Node.js。它运行在微信 App 的上下文中，不能操作 Browser context 下的 DOM，也不能通过 N*ode.js 相关接口访问操作系统 API。所以，严格意义来讲，微信小程序并不是 Html5，虽然开发过程和用到的技术栈和 Html5 是相通的。</li>
+<li><strong>WXML：</strong>作为微信小程序的展示层，并不是使用 Html，而是自己发明的基于 XML 语法的描述。</li>
+<li><strong>WXSS：</strong>用来修饰展示层的样式。官方的描述是 “ WXSS (WeiXin Style Sheets) 是一套样式语言，用于描述 WXML 的组件样式。WXSS 用来决定 WXML 的组件应该怎么显示。” “我们的 WXSS 具有 CSS 大部分特性…我们对 CSS 进行了扩充以及修改。”基于 CSS2 还是 CSS3？大部分是哪些部分？是否支持 CSS3 里的动画？不得而知。</li>
+</ol>
+<h4 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h4><p><img src="http://static.zxinc520.com/blog/20190514/yTqqYeB2UoIS.png?imageslim" alt="mark"></p>
+<ol>
+<li><code>app.js</code>做为小程序的入口，里面有个 App 实例，每个小程序只会有一个 App 实例，小程序启动以后触发 onLaunch 函数执行，获取用户信息</li>
+<li><code>app.json</code>是小程序的所有全局配置，<code>pages</code>字段放置所有页面的路径，<code>window</code>字段定义所有页面的顶部背景颜色，文字颜色 详细配置请<a href="https://link.juejin.im/?target=https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html">戳这里 👇</a></li>
+<li><code>app.wxss</code>文件就是页面公用的样式，仅支持部分 css 选择器</li>
+<li><code>wxml</code>就是我们的 HTML 文件，常用标签为 <code>view</code> 、<code>text</code> 等，没有所谓的<code>div</code>、<code>span</code>、<code>p</code>一类的标签了，我们习惯称它们为组件</li>
+</ol>
+<hr>
+<blockquote>
+<p><strong>设计理念：</strong></p>
+<p>小程序内部可以理解成一个 mvvm 的框架，分为逻辑层和视图层，逻辑层将数据进行处理后发送给视图层，同时接受视图层的事件反馈。</p>
+</blockquote>
+<hr>
+<p><img src="http://static.zxinc520.com/blog/20190514/U6eXvlL8evmQ.png?imageslim" alt="mark"></p>
+<p><img src="http://static.zxinc520.com/blog/20190514/m4UDxEkFa1ae.png?imageslim" alt="mark"></p>
+<h2 id="开始上手"><a href="#开始上手" class="headerlink" title="开始上手"></a>开始上手</h2><blockquote>
+<p><strong>开始正式学习</strong></p>
+<p>基础学习部分</p>
+</blockquote>
+<h3 id="加载一张图片"><a href="#加载一张图片" class="headerlink" title="加载一张图片"></a>加载一张图片</h3><p><img src="http://static.zxinc520.com/blog/20190514/GnYuPkAo16G5.png?imageslim" alt="mark"></p>
+<p>_简单使用样式_：</p>
+<p><img src="http://static.zxinc520.com/blog/20190514/gvNQzg8BaF74.png?imageslim" alt="mark"></p>
+<h2 id="WXSS"><a href="#WXSS" class="headerlink" title="WXSS"></a>WXSS</h2><blockquote>
+<p>WXSS (WeiXin Style Sheets)是一套样式语言，用于描述 WXML 的组件样式。</p>
+<p>WXSS 用来决定 WXML 的组件应该怎么显示。 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">可以参考官网</a></p>
+</blockquote>
+<p>为了适应广大的前端开发者，WXSS 具有 CSS 大部分特性。同时为了更适合开发微信小程序，WXSS 对 CSS 进行了扩充以及修改。</p>
+<p>与 CSS 相比，WXSS 扩展的特性有：</p>
+<ul>
+<li>尺寸单位</li>
+<li>样式导入</li>
+</ul>
+<h2 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h2><p>​ <strong>rpx</strong>（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为 750rpx。如在 iPhone6 上，屏幕宽度为 375px，共有 750 个物理像素，则 750rpx = 375px = 750 物理像素，1rpx = 0.5px = 1 物理像素</p>
+<p><img src="http://static.zxinc520.com/blog/20190514/57Wa2m8PEEyp.png?imageslim" alt="mark"></p>
+<p><strong>建议：</strong> 开发微信小程序时设计师可以用 iPhone6 作为视觉稿的标准。</p>
+<p><strong>注意：</strong> 在较小的屏幕上不可避免的会有一些毛刺，请在开发时尽量避免这种情况。</p>
+<h2 id="全局样式与局部样式"><a href="#全局样式与局部样式" class="headerlink" title="全局样式与局部样式"></a>全局样式与局部样式</h2><p>定义在 app.wxss 中的样式为全局样式，作用于每一个页面。在 page 的 wxss 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 app.wxss 中相同的选择器。</p>
+<h2 id="开发者文档"><a href="#开发者文档" class="headerlink" title="开发者文档"></a>开发者文档</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/image.html">开发者文档</a></p>
+<p><strong>不会</strong> 或 <strong>忘了</strong> 就查文档！</p>
+</blockquote>
+<h3 id="image"><a href="#image" class="headerlink" title="image:"></a>image:</h3><p>​ <strong>解决图片缩放问题：</strong></p>
+<ul>
+<li>mode （ 常用下面 2 个属性值缩放图片 ）<ul>
+<li>aspectFit：缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。</li>
+<li>aspectFill：缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://static.zxinc520.com/blog/20190520/XC3RPCh4fJdY.png?imageslim" alt="mark"></p>
+<h3 id="swiper"><a href="#swiper" class="headerlink" title="swiper"></a>swiper</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html">看开发者文档</a></p>
+<p>轮播组件：调用相应的标签及参数设置</p>
+</blockquote>
+<p><img src="http://static.zxinc520.com/blog/20190520/PgOdEdCQrqvp.gif" alt="mark"></p>
+<h2 id="解读-app-json"><a href="#解读-app-json" class="headerlink" title="解读 app.json"></a>解读 app.json</h2><blockquote>
+<p>小程序根目录下的 <code>app.json</code> 文件用来对微信小程序进行全局配置。文件内容为一个 JSON 对象，有以下属性：</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">可以参考官网</a></p>
+</blockquote>
+<h3 id="pages"><a href="#pages" class="headerlink" title="pages"></a>pages</h3><blockquote>
+<p>用于指定小程序由哪些页面组成，每一项都对应一个页面的 路径（含文件名） 信息。文件名不需要写文件后缀，框架会自动去寻找对于位置的 <code>.json</code>, <code>.js</code>, <code>.wxml</code>, <code>.wxss</code> 四个文件进行处理。</p>
+</blockquote>
+<h3 id="window"><a href="#window" class="headerlink" title="window"></a>window</h3><blockquote>
+<p>用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
+</blockquote>
+<p>例如：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
+  <span class="token string">"window"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">"navigationBarBackgroundColor"</span><span class="token operator">:</span> <span class="token string">"#ffffff"</span><span class="token punctuation">,</span>
+    <span class="token string">"navigationBarTextStyle"</span><span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+    <span class="token string">"navigationBarTitleText"</span><span class="token operator">:</span> <span class="token string">"微信接口功能演示"</span><span class="token punctuation">,</span>
+    <span class="token string">"backgroundColor"</span><span class="token operator">:</span> <span class="token string">"#eeeeee"</span><span class="token punctuation">,</span>
+    <span class="token string">"backgroundTextStyle"</span><span class="token operator">:</span> <span class="token string">"light"</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="tabBar"><a href="#tabBar" class="headerlink" title="tabBar"></a>tabBar</h3><blockquote>
+<p>如果小程序是一个多 tab 应用（客户端窗口的底部或顶部有 tab 栏可以切换页面），可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"tabBar"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+   <span class="token string">"color"</span><span class="token operator">:</span> <span class="token string">"#333"</span><span class="token punctuation">,</span>
+   <span class="token string">"selectedColor"</span><span class="token operator">:</span> <span class="token string">"#f30"</span><span class="token punctuation">,</span>
+   <span class="token string">"list"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+     <span class="token string">"pagePath"</span><span class="token operator">:</span> <span class="token string">"pages/index/index"</span><span class="token punctuation">,</span>
+     <span class="token string">"text"</span><span class="token operator">:</span> <span class="token string">"首页"</span><span class="token punctuation">,</span>
+     <span class="token string">"iconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span><span class="token punctuation">,</span>
+     <span class="token string">"selectedIconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+   <span class="token punctuation">&#123;</span>
+     <span class="token string">"pagePath"</span><span class="token operator">:</span> <span class="token string">"pages/message/message"</span><span class="token punctuation">,</span>
+     <span class="token string">"text"</span><span class="token operator">:</span> <span class="token string">"消息"</span><span class="token punctuation">,</span>
+     <span class="token string">"iconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span><span class="token punctuation">,</span>
+     <span class="token string">"selectedIconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+   <span class="token punctuation">&#123;</span>
+     <span class="token string">"pagePath"</span><span class="token operator">:</span> <span class="token string">"pages/index/index"</span><span class="token punctuation">,</span>
+     <span class="token string">"text"</span><span class="token operator">:</span> <span class="token string">"个人中心"</span><span class="token punctuation">,</span>
+     <span class="token string">"iconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span><span class="token punctuation">,</span>
+     <span class="token string">"selectedIconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+   <span class="token punctuation">&#123;</span>
+     <span class="token string">"pagePath"</span><span class="token operator">:</span> <span class="token string">"pages/index/index"</span><span class="token punctuation">,</span>
+     <span class="token string">"text"</span><span class="token operator">:</span> <span class="token string">"综合"</span><span class="token punctuation">,</span>
+     <span class="token string">"iconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span><span class="token punctuation">,</span>
+     <span class="token string">"selectedIconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+ <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://static.zxinc520.com/blog/20190521/OCDT2PNCaB4Y.png?imageslim" alt="mark"></p>
+<p><em>等等等… 不了解就看文档！</em></p>
+<p><strong>注意： 所以看开发者文档很重要！</strong></p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">点一下就可以看了，别懒！</a></p>
+<h2 id="app-js-全局生命周期函数"><a href="#app-js-全局生命周期函数" class="headerlink" title="app.js 全局生命周期函数"></a>app.js 全局生命周期函数</h2><blockquote>
+<p>app.js 全局生命周期函数</p>
+</blockquote>
+<p><em>在 app.js 文件中</em> ， 定义了一些生命周期方法 ， onLaunch，onShow，onHide，onError，以及任意开发者添加的函数或者数据（通过 this 可以访问）</p>
+<p><strong>以下是各个生命周期方法作用和描述：</strong></p>
+<ol>
+<li><strong>onLaunch 生命周期函数</strong> –监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</li>
+<li><strong>onShow 生命周期函数</strong>–监听小程序显示 当小程序启动，或从后台进入前台显示，会触发 onShow</li>
+<li><strong>onHide 生命周期函数</strong>–监听小程序隐藏 当小程序从前台进入后台，会触发 onHide</li>
+<li><strong>onError 错误监听函数</strong> 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息</li>
+</ol>
+<p>其他 Any 开发者可以添加任意的函数或数据到 Object 参数中，用 this 可以访问</p>
+<p><em>index.js:</em> （个人感觉 和 <strong>Vue</strong> 真的好像，如果熟悉 Vue 的话，这理解起来应该没有难度。）</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//index.js</span>
+<span class="token comment">//获取应用实例</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">getApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    motto<span class="token operator">:</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span>
+    listarr<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token comment">//监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</span>
+  <span class="token function-variable function">onLoad</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">option</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      url<span class="token operator">:</span> <span class="token string">"https://www.baifubao.com/callback"</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+          listarr<span class="token operator">:</span> res<span class="token punctuation">.</span>statusCode<span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>注意：着重关注 onLoad 函数，因为使用最频繁！</strong></p>
+<h2 id="WXML-数据绑定"><a href="#WXML-数据绑定" class="headerlink" title="WXML 数据绑定"></a>WXML 数据绑定</h2><blockquote>
+<p>WXML 中的动态数据均来自对应 Page 的 data。</p>
+</blockquote>
+<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>&#123;&#123; message &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    message<span class="token operator">:</span> <span class="token string">"Hello World!"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://static.zxinc520.com/blog/20190526/Dr9a1AITnQo7.png?imageslim" alt="mark"></p>
+<h4 id="特别注意："><a href="#特别注意：" class="headerlink" title="特别注意："></a>特别注意：</h4><ol>
+<li>花括号和引号之间不能有空格</li>
+<li>不能直接写 checked=“false”，其计算结果是一个字符串，转成 boolean 类型后转为真值。</li>
+</ol>
+<h2 id="通过-wx-request-请求数据"><a href="#通过-wx-request-请求数据" class="headerlink" title="通过 wx.request 请求数据"></a>通过 wx.request 请求数据</h2><blockquote>
+<p>通过 wx.request 请求数据</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  url<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  header<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  method<span class="token operator">:</span> <span class="token string">"GET"</span><span class="token punctuation">,</span>
+  dataType<span class="token operator">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>
+  responseType<span class="token operator">:</span> <span class="token string">"text"</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">fail</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">complete</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://static.zxinc520.com/blog/20190527/x00Ledvp9GT7.png?imageslim" alt="mark"></p>
+<p><strong>setData</strong>：接受 <u>wx.request</u> 请求的数据，赋值给 Page 里面的 data（然后通过插值表达式渲染到页面）</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//index.js</span>
+<span class="token comment">//获取应用实例</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">getApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    motto<span class="token operator">:</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span>
+    listarr<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">onLoad</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">option</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      url<span class="token operator">:</span> <span class="token string">"https://www.baifubao.com/callback"</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+          listarr<span class="token operator">:</span> res<span class="token punctuation">.</span>statusCode<span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="微信小程序里列表渲染"><a href="#微信小程序里列表渲染" class="headerlink" title="微信小程序里列表渲染"></a>微信小程序里列表渲染</h2><blockquote>
+<h3 id="wx-for"><a href="#wx-for" class="headerlink" title="wx:for"></a>wx:for</h3><p>在组件上使用 <code>wx:for</code> 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。</p>
+<p>默认数组的当前项的下标变量名默认为 <code>index</code>，数组当前项的变量名默认为 <code>item</code></p>
+</blockquote>
+<p><em>类比于 Vue：</em></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item in items<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; item.message &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><em>微信小程序里面：</em></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>view wx<span class="token operator">:</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"&#123;&#123;array&#125;&#125;"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>index<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>item<span class="token punctuation">.</span>message<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    array<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        message<span class="token operator">:</span> <span class="token string">"foo"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span>
+        message<span class="token operator">:</span> <span class="token string">"bar"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="wx-key"><a href="#wx-key" class="headerlink" title="wx:key"></a>wx:key</h4><p>​ <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/list.html">可以参考</a></p>
+<p>如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html">``</a> 中的输入内容，<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/switch.html">``</a>的选中状态），需要使用 <code>wx:key</code> 来指定列表中项目的唯一的标识符。</p>
+<ol>
+<li>字符串，代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。</li>
+<li>保留关键字 <code>*this</code> 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：</li>
+</ol>
+<p>当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。</p>
+<p><strong>如不提供 wx:key，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</strong></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>switch</span> <span class="token attr-name"><span class="token namespace">wx:</span>for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123;objectArray&#125;&#125;<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">wx:</span>key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>unique<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  &#123;&#123;item.id&#125;&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>switch</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switch<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Switch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>addToFront<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Add to the front<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>switch</span> <span class="token attr-name"><span class="token namespace">wx:</span>for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123;numberArray&#125;&#125;<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">wx:</span>key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>*this<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  &#123;&#123;item&#125;&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>switch</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>addNumberToFront<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Add to the front<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    objectArray<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_5"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_4"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_3"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_2"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_1"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_0"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    numberArray<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="页面相关事件处理函数"><a href="#页面相关事件处理函数" class="headerlink" title="页面相关事件处理函数"></a>页面相关事件处理函数</h2><blockquote>
+<p>页面相关事件处理函数（<strong>下拉刷新</strong>，<strong>滑到底部加载更多</strong>等）</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.startPullDownRefresh.html">可以参考</a></p>
+</blockquote>
+<p><strong>下拉事件和触底事件</strong>：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//页面相关事件处理函数---监听用户下拉动作</span>
+   <span class="token function-variable function">onPullDownRefresh</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'下拉！'</span><span class="token punctuation">)</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+   <span class="token comment">//页面上拉触底事件的处理函数</span>
+   <span class="token function-variable function">onReachBottom</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'上拉'</span><span class="token punctuation">)</span>
+   <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.showNavigationBarLoading.html">可以参考官方文档</a></p>
+<p>js 文件</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">函数 API</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">wx.showNavigationBarLoading(Object object)</td>
+<td align="center">在当前页面显示导航条加载动画</td>
+</tr>
+<tr>
+<td align="center">wx.setNavigationBarTitle(Object object)</td>
+<td align="center">动态设置当前页面的标题</td>
+</tr>
+<tr>
+<td align="center">wx.setNavigationBarColor(Object object)</td>
+<td align="center">设置页面导航条颜色</td>
+</tr>
+<tr>
+<td align="center">wx.hideNavigationBarLoading(Object object)</td>
+<td align="center">在当前页面隐藏导航条加载动画</td>
+</tr>
+</tbody></table>
+<p><img src="http://static.zxinc520.com/blog/20190603/DXIDRjESGUHv.gif" alt="mark"></p>
+<h2 id="界面交互"><a href="#界面交互" class="headerlink" title="界面交互"></a>界面交互</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html">参考官方文档</a></p>
+</blockquote>
+<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">wx<span class="token punctuation">.</span><span class="token function">showToast</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  title<span class="token operator">:</span> <span class="token string">"成功w"</span><span class="token punctuation">,</span>
+  icon<span class="token operator">:</span> <span class="token string">"success"</span><span class="token punctuation">,</span>
+  duration<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://static.zxinc520.com/blog/20190603/fRajsw7UWlQc.gif" alt="mark"></p>
+<h2 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h2><blockquote>
+<p>下拉刷新( <strong>配合</strong> 页面<em>相关事件处理函数</em>—监听用户下拉动作)</p>
+</blockquote>
+<p><strong>index.json:</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
+  <span class="token string">"enablePullDownRefresh"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">"backgroundTextStyle"</span><span class="token operator">:</span> <span class="token string">"dark"</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>index.js:</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//页面相关事件处理函数---监听用户下拉动作</span>
+ <span class="token function-variable function">onPullDownRefresh</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'下拉！'</span><span class="token punctuation">)</span>
+ <span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://static.zxinc520.com/blog/20190603/bHEJTM3fLLsC.gif" alt="mark"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-VueTheory"
   class="article article-type-post"
   itemscope
@@ -1515,619 +2128,6 @@ var vm=new Vue(&#123;
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVVM/" rel="tag">MVVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E3%80%81%E6%A8%A1%E6%9D%BF%E8%A7%A3%E6%9E%90%E3%80%81%E6%B8%B2%E6%9F%93/" rel="tag">响应式、模板解析、渲染</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-WeChatUp"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/09/05/WeChatUp/"
-    >微信小程序笔记上</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/09/05/WeChatUp/" class="article-date">
-  <time datetime="2019-09-05T09:07:39.000Z" itemprop="datePublished">2019-09-05</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a> / <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8A%E7%AF%87/">微信小程序上篇</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="微信小程序笔记上"><a href="#微信小程序笔记上" class="headerlink" title="微信小程序笔记上"></a>微信小程序笔记上</h1><blockquote>
-<p>微信小程序学习笔记上</p>
-<p>初步接触小程序</p>
-<p>基础内容介绍</p>
-<p>开发者文档</p>
-<p>app.js 全局生命周期函数</p>
-<p>WXML 数据绑定</p>
-<p>通过 wx.request 请求数据</p>
-<p>微信小程序里列表渲染</p>
-<p>页面相关事件处理函数</p>
-<p>True mastery of any skill takes a lifetime.</p>
-<p>对任何技能的掌握都需要一生的刻苦操练。</p>
-</blockquote>
-<h1 id="小程序简介"><a href="#小程序简介" class="headerlink" title="小程序简介"></a>小程序简介</h1><blockquote>
-<p>小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</p>
-<p>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/introduction.html">相关介绍</a></p>
-<p><strong>微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。但和常规的前端开发又有一些区别：</strong> <a target="_blank" rel="noopener" href="https://juejin.im/entry/581db98fa0bb9f0058abffea">可以参考</a></p>
-<ol>
-<li><strong>JavaScript</strong>: 微信小程序的 JavaScript 运行环境即不是 Browser 也不是 Node.js。它运行在微信 App 的上下文中，不能操作 Browser context 下的 DOM，也不能通过 N*ode.js 相关接口访问操作系统 API。所以，严格意义来讲，微信小程序并不是 Html5，虽然开发过程和用到的技术栈和 Html5 是相通的。</li>
-<li><strong>WXML：</strong>作为微信小程序的展示层，并不是使用 Html，而是自己发明的基于 XML 语法的描述。</li>
-<li><strong>WXSS：</strong>用来修饰展示层的样式。官方的描述是 “ WXSS (WeiXin Style Sheets) 是一套样式语言，用于描述 WXML 的组件样式。WXSS 用来决定 WXML 的组件应该怎么显示。” “我们的 WXSS 具有 CSS 大部分特性…我们对 CSS 进行了扩充以及修改。”基于 CSS2 还是 CSS3？大部分是哪些部分？是否支持 CSS3 里的动画？不得而知。</li>
-</ol>
-<h4 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h4><p><img src="http://static.zxinc520.com/blog/20190514/yTqqYeB2UoIS.png?imageslim" alt="mark"></p>
-<ol>
-<li><code>app.js</code>做为小程序的入口，里面有个 App 实例，每个小程序只会有一个 App 实例，小程序启动以后触发 onLaunch 函数执行，获取用户信息</li>
-<li><code>app.json</code>是小程序的所有全局配置，<code>pages</code>字段放置所有页面的路径，<code>window</code>字段定义所有页面的顶部背景颜色，文字颜色 详细配置请<a href="https://link.juejin.im/?target=https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html">戳这里 👇</a></li>
-<li><code>app.wxss</code>文件就是页面公用的样式，仅支持部分 css 选择器</li>
-<li><code>wxml</code>就是我们的 HTML 文件，常用标签为 <code>view</code> 、<code>text</code> 等，没有所谓的<code>div</code>、<code>span</code>、<code>p</code>一类的标签了，我们习惯称它们为组件</li>
-</ol>
-<hr>
-<blockquote>
-<p><strong>设计理念：</strong></p>
-<p>小程序内部可以理解成一个 mvvm 的框架，分为逻辑层和视图层，逻辑层将数据进行处理后发送给视图层，同时接受视图层的事件反馈。</p>
-</blockquote>
-<hr>
-<p><img src="http://static.zxinc520.com/blog/20190514/U6eXvlL8evmQ.png?imageslim" alt="mark"></p>
-<p><img src="http://static.zxinc520.com/blog/20190514/m4UDxEkFa1ae.png?imageslim" alt="mark"></p>
-<h2 id="开始上手"><a href="#开始上手" class="headerlink" title="开始上手"></a>开始上手</h2><blockquote>
-<p><strong>开始正式学习</strong></p>
-<p>基础学习部分</p>
-</blockquote>
-<h3 id="加载一张图片"><a href="#加载一张图片" class="headerlink" title="加载一张图片"></a>加载一张图片</h3><p><img src="http://static.zxinc520.com/blog/20190514/GnYuPkAo16G5.png?imageslim" alt="mark"></p>
-<p>_简单使用样式_：</p>
-<p><img src="http://static.zxinc520.com/blog/20190514/gvNQzg8BaF74.png?imageslim" alt="mark"></p>
-<h2 id="WXSS"><a href="#WXSS" class="headerlink" title="WXSS"></a>WXSS</h2><blockquote>
-<p>WXSS (WeiXin Style Sheets)是一套样式语言，用于描述 WXML 的组件样式。</p>
-<p>WXSS 用来决定 WXML 的组件应该怎么显示。 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">可以参考官网</a></p>
-</blockquote>
-<p>为了适应广大的前端开发者，WXSS 具有 CSS 大部分特性。同时为了更适合开发微信小程序，WXSS 对 CSS 进行了扩充以及修改。</p>
-<p>与 CSS 相比，WXSS 扩展的特性有：</p>
-<ul>
-<li>尺寸单位</li>
-<li>样式导入</li>
-</ul>
-<h2 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h2><p>​ <strong>rpx</strong>（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为 750rpx。如在 iPhone6 上，屏幕宽度为 375px，共有 750 个物理像素，则 750rpx = 375px = 750 物理像素，1rpx = 0.5px = 1 物理像素</p>
-<p><img src="http://static.zxinc520.com/blog/20190514/57Wa2m8PEEyp.png?imageslim" alt="mark"></p>
-<p><strong>建议：</strong> 开发微信小程序时设计师可以用 iPhone6 作为视觉稿的标准。</p>
-<p><strong>注意：</strong> 在较小的屏幕上不可避免的会有一些毛刺，请在开发时尽量避免这种情况。</p>
-<h2 id="全局样式与局部样式"><a href="#全局样式与局部样式" class="headerlink" title="全局样式与局部样式"></a>全局样式与局部样式</h2><p>定义在 app.wxss 中的样式为全局样式，作用于每一个页面。在 page 的 wxss 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 app.wxss 中相同的选择器。</p>
-<h2 id="开发者文档"><a href="#开发者文档" class="headerlink" title="开发者文档"></a>开发者文档</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/image.html">开发者文档</a></p>
-<p><strong>不会</strong> 或 <strong>忘了</strong> 就查文档！</p>
-</blockquote>
-<h3 id="image"><a href="#image" class="headerlink" title="image:"></a>image:</h3><p>​ <strong>解决图片缩放问题：</strong></p>
-<ul>
-<li>mode （ 常用下面 2 个属性值缩放图片 ）<ul>
-<li>aspectFit：缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。</li>
-<li>aspectFill：缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。</li>
-</ul>
-</li>
-</ul>
-<p><img src="http://static.zxinc520.com/blog/20190520/XC3RPCh4fJdY.png?imageslim" alt="mark"></p>
-<h3 id="swiper"><a href="#swiper" class="headerlink" title="swiper"></a>swiper</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html">看开发者文档</a></p>
-<p>轮播组件：调用相应的标签及参数设置</p>
-</blockquote>
-<p><img src="http://static.zxinc520.com/blog/20190520/PgOdEdCQrqvp.gif" alt="mark"></p>
-<h2 id="解读-app-json"><a href="#解读-app-json" class="headerlink" title="解读 app.json"></a>解读 app.json</h2><blockquote>
-<p>小程序根目录下的 <code>app.json</code> 文件用来对微信小程序进行全局配置。文件内容为一个 JSON 对象，有以下属性：</p>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">可以参考官网</a></p>
-</blockquote>
-<h3 id="pages"><a href="#pages" class="headerlink" title="pages"></a>pages</h3><blockquote>
-<p>用于指定小程序由哪些页面组成，每一项都对应一个页面的 路径（含文件名） 信息。文件名不需要写文件后缀，框架会自动去寻找对于位置的 <code>.json</code>, <code>.js</code>, <code>.wxml</code>, <code>.wxss</code> 四个文件进行处理。</p>
-</blockquote>
-<h3 id="window"><a href="#window" class="headerlink" title="window"></a>window</h3><blockquote>
-<p>用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
-</blockquote>
-<p>例如：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
-  <span class="token string">"window"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token string">"navigationBarBackgroundColor"</span><span class="token operator">:</span> <span class="token string">"#ffffff"</span><span class="token punctuation">,</span>
-    <span class="token string">"navigationBarTextStyle"</span><span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
-    <span class="token string">"navigationBarTitleText"</span><span class="token operator">:</span> <span class="token string">"微信接口功能演示"</span><span class="token punctuation">,</span>
-    <span class="token string">"backgroundColor"</span><span class="token operator">:</span> <span class="token string">"#eeeeee"</span><span class="token punctuation">,</span>
-    <span class="token string">"backgroundTextStyle"</span><span class="token operator">:</span> <span class="token string">"light"</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="tabBar"><a href="#tabBar" class="headerlink" title="tabBar"></a>tabBar</h3><blockquote>
-<p>如果小程序是一个多 tab 应用（客户端窗口的底部或顶部有 tab 栏可以切换页面），可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"tabBar"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-   <span class="token string">"color"</span><span class="token operator">:</span> <span class="token string">"#333"</span><span class="token punctuation">,</span>
-   <span class="token string">"selectedColor"</span><span class="token operator">:</span> <span class="token string">"#f30"</span><span class="token punctuation">,</span>
-   <span class="token string">"list"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
-     <span class="token string">"pagePath"</span><span class="token operator">:</span> <span class="token string">"pages/index/index"</span><span class="token punctuation">,</span>
-     <span class="token string">"text"</span><span class="token operator">:</span> <span class="token string">"首页"</span><span class="token punctuation">,</span>
-     <span class="token string">"iconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span><span class="token punctuation">,</span>
-     <span class="token string">"selectedIconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span>
-   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-   <span class="token punctuation">&#123;</span>
-     <span class="token string">"pagePath"</span><span class="token operator">:</span> <span class="token string">"pages/message/message"</span><span class="token punctuation">,</span>
-     <span class="token string">"text"</span><span class="token operator">:</span> <span class="token string">"消息"</span><span class="token punctuation">,</span>
-     <span class="token string">"iconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span><span class="token punctuation">,</span>
-     <span class="token string">"selectedIconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span>
-   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-   <span class="token punctuation">&#123;</span>
-     <span class="token string">"pagePath"</span><span class="token operator">:</span> <span class="token string">"pages/index/index"</span><span class="token punctuation">,</span>
-     <span class="token string">"text"</span><span class="token operator">:</span> <span class="token string">"个人中心"</span><span class="token punctuation">,</span>
-     <span class="token string">"iconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span><span class="token punctuation">,</span>
-     <span class="token string">"selectedIconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span>
-   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-   <span class="token punctuation">&#123;</span>
-     <span class="token string">"pagePath"</span><span class="token operator">:</span> <span class="token string">"pages/index/index"</span><span class="token punctuation">,</span>
-     <span class="token string">"text"</span><span class="token operator">:</span> <span class="token string">"综合"</span><span class="token punctuation">,</span>
-     <span class="token string">"iconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span><span class="token punctuation">,</span>
-     <span class="token string">"selectedIconPath"</span><span class="token operator">:</span> <span class="token string">"assets/tabs/icon1.png"</span>
-   <span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
- <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="http://static.zxinc520.com/blog/20190521/OCDT2PNCaB4Y.png?imageslim" alt="mark"></p>
-<p><em>等等等… 不了解就看文档！</em></p>
-<p><strong>注意： 所以看开发者文档很重要！</strong></p>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">点一下就可以看了，别懒！</a></p>
-<h2 id="app-js-全局生命周期函数"><a href="#app-js-全局生命周期函数" class="headerlink" title="app.js 全局生命周期函数"></a>app.js 全局生命周期函数</h2><blockquote>
-<p>app.js 全局生命周期函数</p>
-</blockquote>
-<p><em>在 app.js 文件中</em> ， 定义了一些生命周期方法 ， onLaunch，onShow，onHide，onError，以及任意开发者添加的函数或者数据（通过 this 可以访问）</p>
-<p><strong>以下是各个生命周期方法作用和描述：</strong></p>
-<ol>
-<li><strong>onLaunch 生命周期函数</strong> –监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</li>
-<li><strong>onShow 生命周期函数</strong>–监听小程序显示 当小程序启动，或从后台进入前台显示，会触发 onShow</li>
-<li><strong>onHide 生命周期函数</strong>–监听小程序隐藏 当小程序从前台进入后台，会触发 onHide</li>
-<li><strong>onError 错误监听函数</strong> 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息</li>
-</ol>
-<p>其他 Any 开发者可以添加任意的函数或数据到 Object 参数中，用 this 可以访问</p>
-<p><em>index.js:</em> （个人感觉 和 <strong>Vue</strong> 真的好像，如果熟悉 Vue 的话，这理解起来应该没有难度。）</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//index.js</span>
-<span class="token comment">//获取应用实例</span>
-<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">getApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    motto<span class="token operator">:</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span>
-    listarr<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token comment">//监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</span>
-  <span class="token function-variable function">onLoad</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">option</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-      url<span class="token operator">:</span> <span class="token string">"https://www.baifubao.com/callback"</span><span class="token punctuation">,</span>
-      <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-          listarr<span class="token operator">:</span> res<span class="token punctuation">.</span>statusCode<span class="token punctuation">,</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>注意：着重关注 onLoad 函数，因为使用最频繁！</strong></p>
-<h2 id="WXML-数据绑定"><a href="#WXML-数据绑定" class="headerlink" title="WXML 数据绑定"></a>WXML 数据绑定</h2><blockquote>
-<p>WXML 中的动态数据均来自对应 Page 的 data。</p>
-</blockquote>
-<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>&#123;&#123; message &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    message<span class="token operator">:</span> <span class="token string">"Hello World!"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="http://static.zxinc520.com/blog/20190526/Dr9a1AITnQo7.png?imageslim" alt="mark"></p>
-<h4 id="特别注意："><a href="#特别注意：" class="headerlink" title="特别注意："></a>特别注意：</h4><ol>
-<li>花括号和引号之间不能有空格</li>
-<li>不能直接写 checked=“false”，其计算结果是一个字符串，转成 boolean 类型后转为真值。</li>
-</ol>
-<h2 id="通过-wx-request-请求数据"><a href="#通过-wx-request-请求数据" class="headerlink" title="通过 wx.request 请求数据"></a>通过 wx.request 请求数据</h2><blockquote>
-<p>通过 wx.request 请求数据</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  url<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-  data<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-  header<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  method<span class="token operator">:</span> <span class="token string">"GET"</span><span class="token punctuation">,</span>
-  dataType<span class="token operator">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>
-  responseType<span class="token operator">:</span> <span class="token string">"text"</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">fail</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">complete</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="http://static.zxinc520.com/blog/20190527/x00Ledvp9GT7.png?imageslim" alt="mark"></p>
-<p><strong>setData</strong>：接受 <u>wx.request</u> 请求的数据，赋值给 Page 里面的 data（然后通过插值表达式渲染到页面）</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//index.js</span>
-<span class="token comment">//获取应用实例</span>
-<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">getApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    motto<span class="token operator">:</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span>
-    listarr<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">onLoad</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">option</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-      url<span class="token operator">:</span> <span class="token string">"https://www.baifubao.com/callback"</span><span class="token punctuation">,</span>
-      <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-          listarr<span class="token operator">:</span> res<span class="token punctuation">.</span>statusCode<span class="token punctuation">,</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="微信小程序里列表渲染"><a href="#微信小程序里列表渲染" class="headerlink" title="微信小程序里列表渲染"></a>微信小程序里列表渲染</h2><blockquote>
-<h3 id="wx-for"><a href="#wx-for" class="headerlink" title="wx:for"></a>wx:for</h3><p>在组件上使用 <code>wx:for</code> 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。</p>
-<p>默认数组的当前项的下标变量名默认为 <code>index</code>，数组当前项的变量名默认为 <code>item</code></p>
-</blockquote>
-<p><em>类比于 Vue：</em></p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item in items<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; item.message &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><em>微信小程序里面：</em></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>view wx<span class="token operator">:</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"&#123;&#123;array&#125;&#125;"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>index<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>item<span class="token punctuation">.</span>message<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    array<span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">&#123;</span>
-        message<span class="token operator">:</span> <span class="token string">"foo"</span><span class="token punctuation">,</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-      <span class="token punctuation">&#123;</span>
-        message<span class="token operator">:</span> <span class="token string">"bar"</span><span class="token punctuation">,</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="wx-key"><a href="#wx-key" class="headerlink" title="wx:key"></a>wx:key</h4><p>​ <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/list.html">可以参考</a></p>
-<p>如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html">``</a> 中的输入内容，<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/switch.html">``</a>的选中状态），需要使用 <code>wx:key</code> 来指定列表中项目的唯一的标识符。</p>
-<ol>
-<li>字符串，代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。</li>
-<li>保留关键字 <code>*this</code> 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：</li>
-</ol>
-<p>当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。</p>
-<p><strong>如不提供 wx:key，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</strong></p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>switch</span> <span class="token attr-name"><span class="token namespace">wx:</span>for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123;objectArray&#125;&#125;<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">wx:</span>key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>unique<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  &#123;&#123;item.id&#125;&#125;
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>switch</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switch<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Switch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>addToFront<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Add to the front<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>switch</span> <span class="token attr-name"><span class="token namespace">wx:</span>for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123;numberArray&#125;&#125;<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">wx:</span>key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>*this<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  &#123;&#123;item&#125;&#125;
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>switch</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>addNumberToFront<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Add to the front<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    objectArray<span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_5"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_4"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_3"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_2"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_1"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-      <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> unique<span class="token operator">:</span> <span class="token string">"unique_0"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    numberArray<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="页面相关事件处理函数"><a href="#页面相关事件处理函数" class="headerlink" title="页面相关事件处理函数"></a>页面相关事件处理函数</h2><blockquote>
-<p>页面相关事件处理函数（<strong>下拉刷新</strong>，<strong>滑到底部加载更多</strong>等）</p>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.startPullDownRefresh.html">可以参考</a></p>
-</blockquote>
-<p><strong>下拉事件和触底事件</strong>：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//页面相关事件处理函数---监听用户下拉动作</span>
-   <span class="token function-variable function">onPullDownRefresh</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'下拉！'</span><span class="token punctuation">)</span>
-   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-   <span class="token comment">//页面上拉触底事件的处理函数</span>
-   <span class="token function-variable function">onReachBottom</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'上拉'</span><span class="token punctuation">)</span>
-   <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.showNavigationBarLoading.html">可以参考官方文档</a></p>
-<p>js 文件</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">函数 API</th>
-<th align="center">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">wx.showNavigationBarLoading(Object object)</td>
-<td align="center">在当前页面显示导航条加载动画</td>
-</tr>
-<tr>
-<td align="center">wx.setNavigationBarTitle(Object object)</td>
-<td align="center">动态设置当前页面的标题</td>
-</tr>
-<tr>
-<td align="center">wx.setNavigationBarColor(Object object)</td>
-<td align="center">设置页面导航条颜色</td>
-</tr>
-<tr>
-<td align="center">wx.hideNavigationBarLoading(Object object)</td>
-<td align="center">在当前页面隐藏导航条加载动画</td>
-</tr>
-</tbody></table>
-<p><img src="http://static.zxinc520.com/blog/20190603/DXIDRjESGUHv.gif" alt="mark"></p>
-<h2 id="界面交互"><a href="#界面交互" class="headerlink" title="界面交互"></a>界面交互</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html">参考官方文档</a></p>
-</blockquote>
-<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">wx<span class="token punctuation">.</span><span class="token function">showToast</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  title<span class="token operator">:</span> <span class="token string">"成功w"</span><span class="token punctuation">,</span>
-  icon<span class="token operator">:</span> <span class="token string">"success"</span><span class="token punctuation">,</span>
-  duration<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="http://static.zxinc520.com/blog/20190603/fRajsw7UWlQc.gif" alt="mark"></p>
-<h2 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h2><blockquote>
-<p>下拉刷新( <strong>配合</strong> 页面<em>相关事件处理函数</em>—监听用户下拉动作)</p>
-</blockquote>
-<p><strong>index.json:</strong></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
-  <span class="token string">"enablePullDownRefresh"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token string">"backgroundTextStyle"</span><span class="token operator">:</span> <span class="token string">"dark"</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>index.js:</strong></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//页面相关事件处理函数---监听用户下拉动作</span>
- <span class="token function-variable function">onPullDownRefresh</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'下拉！'</span><span class="token punctuation">)</span>
- <span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="http://static.zxinc520.com/blog/20190603/bHEJTM3fLLsC.gif" alt="mark"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-WeChatUp02"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/09/05/WeChatUp02/"
-    >微信小程序笔记下</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/09/05/WeChatUp02/" class="article-date">
-  <time datetime="2019-09-05T09:07:39.000Z" itemprop="datePublished">2019-09-05</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a> / <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8B%E7%AF%87/">微信小程序下篇</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="微信小程序笔记下"><a href="#微信小程序笔记下" class="headerlink" title="微信小程序笔记下"></a>微信小程序笔记下</h1><blockquote>
-<p>微信小程序笔记下</p>
-<p>input</p>
-<p>color 属性</p>
-<p>bindchange</p>
-<p>wxs 页面脚本</p>
-<p>微信小程序事件 <strong>冒泡 ** 和 事件</strong>传参**</p>
-<p>服务号、订阅号</p>
-<p>sdk</p>
-</blockquote>
-<h2 id="微信小程序组件"><a href="#微信小程序组件" class="headerlink" title="微信小程序组件"></a>微信小程序组件</h2><h3 id="表单组件"><a href="#表单组件" class="headerlink" title="表单组件"></a>表单组件</h3><h4 id="input"><a href="#input" class="headerlink" title="input"></a>input</h4><blockquote>
-<p>输入框。该组件是<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html">原生组件</a>，使用时请注意相关限制</p>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html">可以参考</a></p>
-</blockquote>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 输入框 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>password<span class="token punctuation">'</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>password<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>number<span class="token punctuation">'</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>number<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>idcard<span class="token punctuation">'</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>idcard<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>digit<span class="token punctuation">'</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>digit<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span>
-
-  <span class="token comment">&lt;!-- 单选框 --></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio-group</span><span class="token punctuation">></span></span>
-     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
-     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio-group</span><span class="token punctuation">></span></span>
-
-  <span class="token comment">&lt;!-- 多选框 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox-group</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox-group</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="http://static.zxinc520.com/blog/20190605/iBUB5P8LKOTz.png?imageslim" alt="mark"></p>
-<h3 id="改变颜色"><a href="#改变颜色" class="headerlink" title="改变颜色"></a>改变颜色</h3><blockquote>
-<p><strong>color 属性</strong></p>
-</blockquote>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 单选框 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio-group</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#f30<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio-group</span><span class="token punctuation">></span></span>
-
-<span class="token comment">&lt;!-- 多选框 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox-group</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#f30<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span><span class="token punctuation">></span></span>多选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox-group</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="http://static.zxinc520.com/blog/20190605/0lbNety1l8Nr.gif" alt="mark"></p>
-<ul>
-<li>checked：默认选中</li>
-<li>disabled: 禁用</li>
-</ul>
-<h3 id="bindchange"><a href="#bindchange" class="headerlink" title="bindchange"></a>bindchange</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/checkbox-group.html">checkbox-group</a>中选中项发生改变时触发 change 事件，detail = {value:[选中的 checkbox 的 value 的数组]}</p>
-<p><strong>单选框</strong> 和 <strong>复选框</strong> 都能用！</p>
-</blockquote>
-<p><strong>例如：</strong></p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 单选框 --></span>
-&lt;radio-group ="radiobindchangefun" data-index="1">
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#f30<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nan<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nv<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio-group</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>index.js：</strong></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">radiobindchangefun</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>detail<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="http://static.zxinc520.com/blog/20190605/HhwLwtgLFk7s.gif" alt="mark"></p>
-<h2 id="wxs-页面脚本"><a href="#wxs-页面脚本" class="headerlink" title="wxs 页面脚本"></a>wxs 页面脚本</h2><blockquote>
-<p>WXS（WeiXin Script）是小程序的一套脚本语言，结合 <code>WXML</code>，可以构建出页面的结构。</p>
-<p>WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。</p>
-<p><strong>用的相对不多</strong></p>
-</blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/01wxs-module.html">WXS 模块</a></li>
-<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/02variate.html">变量</a></li>
-<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/03annotation.html">注释</a></li>
-<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/04operator.html">运算符</a></li>
-<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/05statement.html">语句</a></li>
-<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/06datatype.html">数据类型</a></li>
-<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/07basiclibrary.html">基础类库</a></li>
-</ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wxs</span> <span class="token attr-name">module</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>foo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  var sum=function(a,b)&#123; return a+b; &#125; module.exports.sum=sum
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>wxs</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>&#123;&#123;foo.sum(1,2)&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="http://static.zxinc520.com/blog/20190605/sEHFhCJgcSTT.png?imageslim" alt="mark"></p>
-<h2 id="微信小程序事件冒泡和事件传参"><a href="#微信小程序事件冒泡和事件传参" class="headerlink" title="微信小程序事件冒泡和事件传参"></a>微信小程序事件冒泡和事件传参</h2><blockquote>
-<p>微信小程序事件冒泡和事件传参</p>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html">参考</a></p>
-</blockquote>
-<h3 id="事件绑定和冒泡"><a href="#事件绑定和冒泡" class="headerlink" title="事件绑定和冒泡"></a>事件绑定和冒泡</h3><p>事件绑定的写法同组件的属性，以 key、value 的形式。</p>
-<ul>
-<li>key 以<code>bind</code>或<code>catch</code>开头，然后跟上事件的类型，如<code>bindtap</code>、<code>catchtouchstart</code>。自基础库版本 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">1.5.0</a> 起，在非<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html">原生组件</a>中，<code>bind</code>和<code>catch</code>后可以紧跟一个冒号，其含义不变，如<code>bind:tap</code>、<code>catch:touchstart</code>。</li>
-<li>value 是一个字符串，需要在对应的 Page 中定义同名的函数。不然当触发事件的时候会报错。</li>
-</ul>
-<p><code>bind</code>事件绑定<strong>不会阻止</strong>冒泡事件向上冒泡，<code>catch</code>事件绑定<strong>可以阻止</strong>冒泡事件向上冒泡。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ClickFatherEvent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>son<span class="token punctuation">"</span></span> <span class="token attr-name">catchtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ClickSonEvent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="http://static.zxinc520.com/blog/20190610/iYPyQKFs0uUh.gif" alt="mark"></p>
-<h3 id="事件传参"><a href="#事件传参" class="headerlink" title="事件传参"></a>事件传参</h3><blockquote>
-<p>自定义属性传参 ( <strong>data-index=”1”</strong> )</p>
-</blockquote>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ClickFatherEvent<span class="token punctuation">"</span></span> <span class="token attr-name">data-index</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>son<span class="token punctuation">"</span></span> <span class="token attr-name">catchtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ClickSonEvent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">ClickFatherEvent</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'father'</span><span class="token punctuation">)</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>index<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="http://static.zxinc520.com/blog/20190611/QGePjx2yA28Q.gif" alt="mark"></p>
-<h2 id="服务号"><a href="#服务号" class="headerlink" title="服务号"></a>服务号</h2><blockquote>
-<p>服务号：为企业和组织提供更强大的业务服务与用户管理能力，主要偏向服务类交互（功能类似 12315，114，银行，提供绑定信息，服务交互的）；</p>
-<p>适用人群：媒体、企业、政府或其他组织。</p>
-<p>群发次数：服务号 1 个月（按自然月）内可发送 4 条群发消息。</p>
-<p><a target="_blank" rel="noopener" href="https://kf.qq.com/faq/120911VrYVrA150918fMZ77R.html?scene_id=kf3386">可以参考</a></p>
-</blockquote>
-<h2 id="订阅号"><a href="#订阅号" class="headerlink" title="订阅号"></a>订阅号</h2><blockquote>
-<h1 id="什么是订阅号？"><a href="#什么是订阅号？" class="headerlink" title="什么是订阅号？"></a>什么是订阅号？</h1><p>订阅号：为媒体和个人提供一种新的信息传播方式，主要功能是在微信侧给用户传达资讯；（功能类似报纸杂志，提供新闻信息或娱乐趣事）</p>
-<p>适用人群：个人、媒体、企业、政府或其他组织。</p>
-<p>群发次数：订阅号（认证用户、非认证用户）1 天内可群发 1 条消息。</p>
-</blockquote>
-<p><strong>温馨提示：</strong></p>
-<ol>
-<li>如果想用公众平台简单发发消息，做宣传推广服务，建议可选择订阅号；</li>
-<li>如果想用公众平台进行商品销售，建议可选择服务号，后续可认证再申请微信支付商户；</li>
-</ol>
-<h2 id="sdk"><a href="#sdk" class="headerlink" title="sdk"></a>sdk</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%8C%85">软件开发工具包</a>（缩写：<strong>SDK</strong>、外语全称：<strong>Software Development Kit）</strong>一般都是一些<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275">软件工程师</a>为特定的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%8C%85/10508451">软件包</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6/1471931">软件框架</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%A1%AC%E4%BB%B6/479446">硬件</a>平台、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/192">操作系统</a>等建立应用软件时的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/10464557">开发工具</a>的集合。 [1]</p>
-<p>软件开发工具包括广义上指<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BE%85%E5%8A%A9/1045139">辅助</a>开发某一类软件的相关文档、范例和工具的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%9B%86%E5%90%88/73081">集合</a>。</p>
-<p>软件开发工具包是一些被软件工程师用于为特定的软件包、软件框架、硬件平台、操作系统等创建应用软件的开发工具的集合，一般而言 SDK 即开发 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Windows">Windows</a> 平台下的应用程序所使用的 SDK。它可以简单的为某个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80/2317999">程序设计语言</a>提供<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%8F%A3/10418844">应用程序接口</a> <strong>API</strong>的一些文件，但也可能包括能与某种<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F/186978">嵌入式系统</a>通讯的复杂的硬件。一般的工具包括用于调试和其他用途的实用工具。SDK 还经常包括示例代码、支持性的技术注解或者其他的为基本参考资料澄清疑点的支持文档。</p>
-<p>为了鼓励开发者使用其系统或者语言，许多 SDK 是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%8D%E8%B4%B9/131326">免费</a>提供的。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275">软件工程师</a>通常从目标系统开发者那里获得软件开发包，也可以直接从互联网下载，有时也被作为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%90%A5%E9%94%80%E6%89%8B%E6%AE%B5">营销手段</a>。例如，营销公司会免费提供构建 SDK 以鼓励人们使用它，从而会吸引更多人由于能免费为其编程而购买其构件。</p>
-<p>SDK 可能附带了使其不能在不兼容的许可证下开发软件的许可证。例如产品供应商提供一个专有的 SDK 可能与自由软件开发抵触。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/GPL">GPL</a> 能使 SDK 与专有软件开发近乎不兼容。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/LGPL">LGPL</a> 下的 SDK 则没有这个问题。</p>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/SDK/7815680">可参考官方解释</a></p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">微信 JS-SDK 说明文档</a></p>
-</blockquote>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li></ul>
 
     </footer>
   </div>
@@ -3485,7 +3485,7 @@ result<span class="token punctuation">.</span><span class="token function">then<
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/logozc.jpg" alt="菊 💗  琛"></a>
+    <a href="/"><img src="/images/logozc.jpg" alt="sunflower"></a>
   </div>
   
   <ul class="nav nav-main">

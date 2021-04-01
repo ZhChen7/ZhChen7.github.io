@@ -37,7 +37,7 @@
 
   
 
-<link rel="alternate" href="/atom.xml" title="菊 💗  琛" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="sunflower" type="application/atom+xml">
 </head>
 
 </html>
@@ -173,7 +173,7 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/logozc.jpg" alt="菊 💗  琛"></a>
+    <a href="/"><img src="/images/logozc.jpg" alt="sunflower"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -431,6 +431,42 @@
         let $span = $($btn.find('span'));
         $span[0].innerText = 'COPIED';
         
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>        
         wait(function () { // 等待两秒钟后恢复
           $icon.removeClass('ri-checkbox-circle-line');
           $icon.addClass('ri-file-copy-2-line');
