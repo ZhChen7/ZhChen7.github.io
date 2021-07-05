@@ -114,30 +114,36 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="MVVM-和-vue"><a href="#MVVM-和-vue" class="headerlink" title="MVVM 和 vue"></a>MVVM 和 vue</h1><blockquote>
+  <h1 id="mvvm-和-vue"><a class="markdownIt-Anchor" href="#mvvm-和-vue">#</a> MVVM 和 vue</h1>
+<blockquote>
 <p>本章首先介绍了 <strong>jQuery 开发方式和框架开发方式的区别</strong> ，引导学生进入框架开发的思路转变。然后通过 MVC 模式引入 <strong>MVVM</strong> ，在两者比较让学生更快熟悉 MVVM 。最后结合实例，详细讲解 vue 的 <strong>实现原理</strong> ，包括 <strong>响应式</strong>、<strong>模板解析</strong>、<strong>渲染</strong> 这三大要素。…</p>
 <p>高级面试：<strong>vue 知识点</strong></p>
 <p>放弃该放弃的是无奈，放弃不该放弃的是无能，不放弃该放弃的是无知，不放弃不该放弃的是执著！</p>
 <p>It is helpless to give up the waiver. It is incompetence to give up what should not be given up. It is ignorance that does not give up the waiver. It is attachment that does not give up and should not give up!</p>
 </blockquote>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h3 id="知识点"><a class="markdownIt-Anchor" href="#知识点">#</a> 知识点</h3>
+<ul>
 <li>如何 理解 MVVM</li>
 <li>如何 实现 MVVM</li>
 <li>是否解读过 vue 源码</li>
 </ul>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
+<h3 id="题目"><a class="markdownIt-Anchor" href="#题目">#</a> 题目</h3>
+<ul>
 <li>说一下 使用 jQuery 和 使用框架的区别</li>
 <li>说一下 对 MVVM 的理解</li>
 <li>vue 中如何实现 <strong>响应式</strong></li>
 <li>vue 中如何解析 <strong>模板</strong></li>
 <li>vue 的 整个实现流程</li>
 </ul>
-<h2 id="使用-jQuery-和-使用框架的区别"><a href="#使用-jQuery-和-使用框架的区别" class="headerlink" title="使用 jQuery 和 使用框架的区别"></a>使用 jQuery 和 使用框架的区别</h2><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
+<h2 id="使用-jquery-和-使用框架的区别"><a class="markdownIt-Anchor" href="#使用-jquery-和-使用框架的区别">#</a> 使用 jQuery 和 使用框架的区别</h2>
+<h3 id="实现"><a class="markdownIt-Anchor" href="#实现">#</a> 实现</h3>
+<ul>
 <li>jQuery 实现 todo-list</li>
 <li>vue 实现 todo-list</li>
 <li>jQuery 和 框架的区别</li>
 </ul>
-<h4 id="jQuery-实现-todo-list"><a href="#jQuery-实现-todo-list" class="headerlink" title="jQuery 实现 todo-list"></a>jQuery 实现 todo-list</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<h4 id="jquery-实现-todo-list"><a class="markdownIt-Anchor" href="#jquery-实现-todo-list">#</a> jQuery 实现 todo-list</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -166,9 +172,9 @@
     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190902/BaCUCHQ12jJW.gif" alt="mark"></p>
-<h4 id="vue-实现-todo-list"><a href="#vue-实现-todo-list" class="headerlink" title="vue 实现 todo-list"></a>vue 实现 todo-list</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<h4 id="vue-实现-todo-list"><a class="markdownIt-Anchor" href="#vue-实现-todo-list">#</a> vue 实现 todo-list</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -203,70 +209,85 @@
     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190903/sQq0jR7s1E7E.gif" alt="mark"></p>
-<h3 id="两者的区别"><a href="#两者的区别" class="headerlink" title="两者的区别"></a>两者的区别</h3><ul>
+<h3 id="两者的区别"><a class="markdownIt-Anchor" href="#两者的区别">#</a> 两者的区别</h3>
+<ul>
 <li><strong>数据</strong> 和 <strong>视图</strong> 的分离</li>
 <li>以数据驱动视图</li>
 </ul>
-<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>说一下 使用 jQuery 和 使用框架的区别 ？<ul>
+<h3 id="问题解答"><a class="markdownIt-Anchor" href="#问题解答">#</a> 问题解答</h3>
+<ul>
+<li>说一下 使用 jQuery 和 使用框架的区别 ？
+<ul>
 <li><strong>数据</strong> 和 <strong>视图</strong> 的分离，<u>解耦</u>（ <em>开放封闭原则</em> ）</li>
 <li>以数据驱动视图，只关心数据变化，DOM 操作被封装</li>
 </ul>
 </li>
 </ul>
-<h2 id="说一下-对-MVVM-的理解"><a href="#说一下-对-MVVM-的理解" class="headerlink" title="说一下 对 MVVM 的理解"></a>说一下 对 MVVM 的理解</h2><blockquote>
+<h2 id="说一下-对-mvvm-的理解"><a class="markdownIt-Anchor" href="#说一下-对-mvvm-的理解">#</a> 说一下 对 MVVM 的理解</h2>
+<blockquote>
 <p>目前前端框架中，最为出色的要属 Vue 和 React 了，这俩个框架的核心理念都<strong>是数据驱动页面渲染</strong>，同时他们都是 MVVM 模式的框架，<strong>MVVM 模式</strong> 中的 M 还是固定表示 Modal，V 还是表死 View，这俩个基本都是不会发生变化，一个页面必然需要数据和渲染俩个部分，那么变化的是如何将 Modal 渲染到 View 的过程变了，在 MVVM 模式中，将 View 和 Modal 绑定在一起，只要 Modal 发生了变化，View 就会自动更新，不需要我们认为的再去写如何操作 DOM 更新的过程了</p>
 </blockquote>
-<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h3 id="知识点-2"><a class="markdownIt-Anchor" href="#知识点-2">#</a> 知识点</h3>
+<ul>
 <li>MVC</li>
 <li>MVVM</li>
 <li>关于 ViewModel</li>
 </ul>
-<h4 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h4><ul>
+<h4 id="mvc"><a class="markdownIt-Anchor" href="#mvc">#</a> MVC</h4>
+<ul>
 <li>M -Model 数据</li>
 <li>V - View 视图、界面</li>
 <li>C - Controller 控制器 、逻辑处理</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190903/k21xefObaEwr.png?imageslim" alt="mark"></p>
-<p><strong>MVC</strong>模式（Model–view–controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。</p>
+<p><strong>MVC</strong> 模式（Model–view–controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。</p>
 <p>在前端的 <strong>MVC 模式</strong> 中，M 还是表示 Modal 层，负责与后台交互数据，V 表示 View，负责页面上 DOM 的渲染，C 表示绑定在 DOM 元素上的事件，当 Controllor 中的事件被调用，会去调用 Modal 中的数据，然后交给 View 重新渲染数据</p>
-<h4 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h4><ul>
+<h4 id="mvvm"><a class="markdownIt-Anchor" href="#mvvm">#</a> MVVM</h4>
+<ul>
 <li>M - Model 模型、数据</li>
 <li>V - View 视图、模板（ 视图和模板是分离的 ）</li>
 <li>ViewModel - <strong>连接</strong> Model 和 View</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190903/23g0MdeUf9sw.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190903/1qFclAqzYLGt.png?imageslim" alt="mark"></p>
-<h4 id="关于-ViewModel"><a href="#关于-ViewModel" class="headerlink" title="关于 ViewModel"></a>关于 ViewModel</h4><ul>
+<h4 id="关于-viewmodel"><a class="markdownIt-Anchor" href="#关于-viewmodel">#</a> 关于 ViewModel</h4>
+<ul>
 <li>MVVM 不算是一种创新</li>
 <li>但其中的 ViewModel 确实是一种创新</li>
 <li>真正 结合前端场景应用的创建</li>
 </ul>
-<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>说一下 对 MVVM 的理解<ul>
+<h3 id="问题解答-2"><a class="markdownIt-Anchor" href="#问题解答-2">#</a> 问题解答</h3>
+<ul>
+<li>说一下 对 MVVM 的理解
+<ul>
 <li>MVVM - Model View ViewModel</li>
 <li>三者之间的联系。以及如何对应到各段代码</li>
 <li>ViewModel 的理解，联系 View 和 Model</li>
 </ul>
 </li>
 </ul>
-<h1 id="MVVM-框架的三大要素"><a href="#MVVM-框架的三大要素" class="headerlink" title="MVVM 框架的三大要素"></a>MVVM 框架的三大要素</h1><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ul>
+<h1 id="mvvm-框架的三大要素"><a class="markdownIt-Anchor" href="#mvvm-框架的三大要素">#</a> MVVM 框架的三大要素</h1>
+<h3 id="流程"><a class="markdownIt-Anchor" href="#流程">#</a> 流程</h3>
+<ul>
 <li>再次分析 demo</li>
 <li>三要素总结</li>
 </ul>
-<h3 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h3><ul>
+<h3 id="三要素"><a class="markdownIt-Anchor" href="#三要素">#</a> 三要素</h3>
+<ul>
 <li>响应式：vue 如何监听到 data 的每个属性变化？</li>
 <li>模板引擎：vue 的模板如何被解析，指令如何处理？</li>
 <li>渲染：vue 的模板如何被渲染成 html？以及渲染过程</li>
 </ul>
-<h2 id="vue-中如何实现响应式"><a href="#vue-中如何实现响应式" class="headerlink" title="vue 中如何实现响应式"></a>vue 中如何实现响应式</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h2 id="vue-中如何实现响应式"><a class="markdownIt-Anchor" href="#vue-中如何实现响应式">#</a> vue 中如何实现响应式</h2>
+<h3 id="知识点-3"><a class="markdownIt-Anchor" href="#知识点-3">#</a> 知识点</h3>
+<ul>
 <li>什么是响应式？</li>
 <li>Object.defineProperty</li>
 <li>模拟</li>
 </ul>
-<h4 id="什么是响应式？"><a href="#什么是响应式？" class="headerlink" title="什么是响应式？"></a>什么是响应式？</h4><ul>
+<h4 id="什么是响应式"><a class="markdownIt-Anchor" href="#什么是响应式">#</a> 什么是响应式？</h4>
+<ul>
 <li>修改 data 属性后，vue 立刻监听到</li>
 <li>data 属性被代理到 vm 上</li>
 <li>演示</li>
@@ -294,11 +315,11 @@
     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190904/h1SkefYXlHkn.gif" alt="mark"></p>
-<h4 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h4><blockquote>
-<p><code>Object.defineProperty()</code> 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。</p>
-<p><strong>语法</strong> ：Object.defineProperty(obj, prop, descriptor)</p>
+<h4 id="objectdefineproperty"><a class="markdownIt-Anchor" href="#objectdefineproperty">#</a> Object.defineProperty</h4>
+<blockquote>
+<p><code>Object.defineProperty()</code>  方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。</p>
+<p><strong>语法</strong> ：Object.defineProperty (obj, prop, descriptor)</p>
 <p><strong>参数</strong> ：</p>
 <p><u>Object.defineProperty(obj, prop, descriptor)</u></p>
 <p><strong>obj</strong> ：要在其上定义属性的对象。</p>
@@ -311,7 +332,6 @@
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//获取属性的时候，如何监听到？</span>
 obj<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">26</span><span class="token punctuation">;</span> <span class="token comment">//赋值属性的时候，如何监听到？</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><em>Object.defineProperty：</em></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"张三"</span><span class="token punctuation">;</span>
@@ -328,8 +348,8 @@ Object<span class="token punctuation">.</span><span class="token function">defin
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"list"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="模拟实现"><a href="#模拟实现" class="headerlink" title="模拟实现"></a>模拟实现</h3><blockquote>
+<h3 id="模拟实现"><a class="markdownIt-Anchor" href="#模拟实现">#</a> 模拟实现</h3>
+<blockquote>
 <p>模拟实现 Vue 如何监听 data</p>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/*
@@ -366,30 +386,39 @@ var vm=new Vue(&#123;
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190904/P570ewmXOdNX.gif" alt="mark"></p>
-<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>什么是响应式？<ul>
+<h3 id="问题解答-3"><a class="markdownIt-Anchor" href="#问题解答-3">#</a> 问题解答</h3>
+<ul>
+<li>什么是响应式？
+<ul>
 <li>关键是理解 Object.defineProperty</li>
 <li>将 data 的属性代理到 vm 上</li>
 </ul>
 </li>
 </ul>
-<h2 id="vue-中如何解析模板"><a href="#vue-中如何解析模板" class="headerlink" title="vue 中如何解析模板"></a>vue 中如何解析模板</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h2 id="vue-中如何解析模板"><a class="markdownIt-Anchor" href="#vue-中如何解析模板">#</a> vue 中如何解析模板</h2>
+<h3 id="知识点-4"><a class="markdownIt-Anchor" href="#知识点-4">#</a> 知识点</h3>
+<ul>
 <li>模板是什么？</li>
 <li>render 函数</li>
 <li>render 函数 与 vdom</li>
 </ul>
-<h4 id="模板是什么？"><a href="#模板是什么？" class="headerlink" title="模板是什么？"></a>模板是什么？</h4><ul>
-<li><p>本质：字符串</p>
+<h4 id="模板是什么"><a class="markdownIt-Anchor" href="#模板是什么">#</a> 模板是什么？</h4>
+<ul>
+<li>
+<p>本质：字符串</p>
 </li>
-<li><p>有逻辑，如 v-if 、v-for 等</p>
+<li>
+<p>有逻辑，如 v-if 、v-for 等</p>
 </li>
-<li><p>与 html 格式很像，但有很大区别</p>
+<li>
+<p>与 html 格式很像，但有很大区别</p>
 </li>
-<li><p>最终还要转换为 html 来显示</p>
+<li>
+<p>最终还要转换为 html 来显示</p>
 </li>
-<li><p><strong>模板最终必须转化成 JS 代码</strong> ，因为：</p>
+<li>
+<p><strong>模板最终必须转化成 JS 代码</strong> ，因为：</p>
 <ul>
 <li>有逻辑（v-if、v-for），必须用 JS 才能实现 （ 图灵完备 ）</li>
 <li>转换成 html 渲染页面，必须用 JS 才能实现</li>
@@ -406,8 +435,8 @@ var vm=new Vue(&#123;
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item in list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123;item&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="render-函数-with-的用法"><a href="#render-函数-with-的用法" class="headerlink" title="render 函数 - with 的用法"></a>render 函数 - with 的用法</h4><blockquote>
+<h4 id="render-函数-with-的用法"><a class="markdownIt-Anchor" href="#render-函数-with-的用法">#</a> render 函数 - with 的用法</h4>
+<blockquote>
 <p>with 的用法 — <strong>自己开发的代码尽量不要使用！</strong></p>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
@@ -425,7 +454,6 @@ var vm=new Vue(&#123;
   obj<span class="token punctuation">.</span><span class="token function">getAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   name<span class="token operator">:</span> <span class="token string">"张三"</span><span class="token punctuation">,</span>
   age<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
@@ -443,20 +471,23 @@ var vm=new Vue(&#123;
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token function">fn1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="render-函数"><a href="#render-函数" class="headerlink" title="render 函数"></a>render 函数</h4><p><img src="http://static.zxinc520.com/blog/20190905/igfqtojmzQ4H.png?imageslim" alt="mark"></p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<h4 id="render-函数"><a class="markdownIt-Anchor" href="#render-函数">#</a> render 函数</h4>
+<p><img src="http://static.zxinc520.com/blog/20190905/igfqtojmzQ4H.png?imageslim" alt="mark"></p>
+<h4 id="总结"><a class="markdownIt-Anchor" href="#总结">#</a> 总结</h4>
+<ul>
 <li>模板中所有信息都包含在了 render 函数中</li>
 <li>this 即 vm</li>
 <li>price 即 this.price 即 vm.price ，即 data 中的 price</li>
 <li>_c 即 this. _c 即 vm. _c</li>
 </ul>
-<h4 id="render-函数剖析"><a href="#render-函数剖析" class="headerlink" title="render 函数剖析"></a>render 函数剖析</h4><ul>
+<h4 id="render-函数剖析"><a class="markdownIt-Anchor" href="#render-函数剖析">#</a> render 函数剖析</h4>
+<ul>
 <li>从哪里可以看到 render 函数？</li>
 <li>复杂一点的例子，render 函数是什么样子的？</li>
 <li>v- if 、v-for 、v-on 都是怎么处理的？</li>
 </ul>
-<h4 id="看一下-todo-list-demo-的-render-函数"><a href="#看一下-todo-list-demo-的-render-函数" class="headerlink" title="看一下 todo-list demo 的 render 函数"></a>看一下 todo-list demo 的 render 函数</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h4 id="看一下-todo-list-demo-的-render-函数"><a class="markdownIt-Anchor" href="#看一下-todo-list-demo-的-render-函数">#</a> 看一下 todo-list demo 的 render 函数</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
@@ -465,7 +496,6 @@ var vm=new Vue(&#123;
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item in list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123;item&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">with</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> <span class="token function">_c</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> attrs<span class="token operator">:</span> <span class="token punctuation">&#123;</span> id<span class="token operator">:</span> <span class="token string">"app"</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
     <span class="token function">_c</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
@@ -500,14 +530,14 @@ var vm=new Vue(&#123;
     <span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>根据 todo-list demo 的 render 函数</li>
 <li>v- model 是怎么实现的？</li>
 <li>v-on :click 是怎么实现的？</li>
 <li>v- for 是怎么实现的？</li>
 </ul>
-<h4 id="重要"><a href="#重要" class="headerlink" title="重要"></a>重要</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/*
+<h4 id="重要"><a class="markdownIt-Anchor" href="#重要">#</a> 重要</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/*
     vue2.0 开始支持预编译
 
     开发环境 ：写模板
@@ -522,16 +552,20 @@ var vm=new Vue(&#123;
     编译 ： -> JS 代码
     
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><ul>
-<li><p>已经解决了 模板中 “逻辑” （v-for、v-if ）的问题</p>
+<h3 id="渲染"><a class="markdownIt-Anchor" href="#渲染">#</a> 渲染</h3>
+<ul>
+<li>
+<p>已经解决了 模板中 “逻辑” （v-for、v-if ）的问题</p>
 </li>
-<li><p>还剩下模板生成 html 问题</p>
+<li>
+<p>还剩下模板生成 html 问题</p>
 </li>
-<li><p>另外，vm._c 是什么？ render 函数 返回了什么？</p>
+<li>
+<p>另外，vm._c 是什么？ render 函数 返回了什么？</p>
 </li>
 </ul>
-<h5 id="先复习一下-vdom-的知识"><a href="#先复习一下-vdom-的知识" class="headerlink" title="先复习一下 vdom 的知识"></a>先复习一下 vdom 的知识</h5><blockquote>
+<h5 id="先复习一下-vdom-的知识"><a class="markdownIt-Anchor" href="#先复习一下-vdom-的知识">#</a> 先复习一下 vdom 的知识</h5>
+<blockquote>
 <p>可参考 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d63a1bce9920a5ce05e2c3b%22">vdom 篇</a></p>
 </blockquote>
 <p>vdom 的如何应用，核心 API 是什么？</p>
@@ -540,16 +574,19 @@ var vm=new Vue(&#123;
 <li>重做 之前的 demo</li>
 <li>核心 API</li>
 </ul>
-<h5 id="render-函数和-vdom"><a href="#render-函数和-vdom" class="headerlink" title="render 函数和 vdom"></a>render 函数和 vdom</h5><p><img src="http://static.zxinc520.com/blog/20190905/ldxxH0zJ4t3s.png?imageslim" alt="mark"></p>
+<h5 id="render-函数和-vdom"><a class="markdownIt-Anchor" href="#render-函数和-vdom">#</a> render 函数和 vdom</h5>
+<p><img src="http://static.zxinc520.com/blog/20190905/ldxxH0zJ4t3s.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190905/MykHq1vOBFyL.png?imageslim" alt="mark"></p>
 <ul>
 <li>updataComponent 中实现了 vdom 的 patch</li>
 <li>页面首次渲染执行 updataComponent</li>
 <li>data 中每次修改属性，执行 updataComponent</li>
 </ul>
-<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>vue 中如何解析 <strong>模板</strong><ul>
-<li>模板：字符串，有逻辑，嵌入 JS 变量……</li>
+<h3 id="问题解答-4"><a class="markdownIt-Anchor" href="#问题解答-4">#</a> 问题解答</h3>
+<ul>
+<li>vue 中如何解析 <strong>模板</strong>
+<ul>
+<li>模板：字符串，有逻辑，嵌入 JS 变量…</li>
 <li>模板必须转换成 JS 代码（有逻辑，渲染 html，JS 变量）</li>
 <li>render 函数是什么样子的</li>
 <li>render 函数执行是返回 vnode</li>
@@ -557,8 +594,11 @@ var vm=new Vue(&#123;
 </ul>
 </li>
 </ul>
-<h1 id="vue-的整个实现流程"><a href="#vue-的整个实现流程" class="headerlink" title="vue 的整个实现流程"></a>vue 的整个实现流程</h1><h3 id="整个实现流程"><a href="#整个实现流程" class="headerlink" title="整个实现流程"></a>整个实现流程</h3><ul>
-<li><p>第一步：解析模板成 render 函数</p>
+<h1 id="vue-的整个实现流程"><a class="markdownIt-Anchor" href="#vue-的整个实现流程">#</a> vue 的整个实现流程</h1>
+<h3 id="整个实现流程"><a class="markdownIt-Anchor" href="#整个实现流程">#</a> 整个实现流程</h3>
+<ul>
+<li>
+<p>第一步：解析模板成 render 函数</p>
 <ul>
 <li>with 的用法</li>
 <li>模板中的所有信息都被 render 函数 包含</li>
@@ -567,15 +607,17 @@ var vm=new Vue(&#123;
 <li>render 函数返回 vnode</li>
 </ul>
 </li>
-<li><p>第二步：响应式开始监听</p>
+<li>
+<p>第二步：响应式开始监听</p>
 <ul>
 <li>Object.defineProperty</li>
 <li>将 data 的属性代理到 vm 上</li>
 </ul>
 </li>
-<li><p>第三步：首次渲染，显示页面，且绑定依赖</p>
+<li>
+<p>第三步：首次渲染，显示页面，且绑定依赖</p>
 <ul>
-<li>初次渲染，执行 updataComponent ，执行 vm.render()</li>
+<li>初次渲染，执行 updataComponent ，执行 vm.render ()</li>
 <li>执行 render 函数，会访问到 vm.list 和 vm.title</li>
 <li>会被响应式的 get 方法监听到 （后面详细讲）</li>
 <li>执行 updataComponent ，会被 vdom 的 patch 方法</li>
@@ -590,17 +632,20 @@ var vm=new Vue(&#123;
 <li><strong>避免不必要的重复渲染</strong></li>
 </ul>
 </li>
-<li><p>第四步：data 属性变化，触发 rerender</p>
+<li>
+<p>第四步：data 属性变化，触发 rerender</p>
 <ul>
 <li>修改属性，被响应式 的 set 监听到</li>
 <li>set 中执行 updataComponent</li>
-<li>updataComponent 重新执行 vm.render()</li>
+<li>updataComponent 重新执行 vm.render ()</li>
 <li>生成的 vnode 和 prevVnode，通过 patch 进行比较</li>
 </ul>
 </li>
 </ul>
-<h3 id="问题解答-4"><a href="#问题解答-4" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>vue 的整个实现流程？<ul>
+<h3 id="问题解答-5"><a class="markdownIt-Anchor" href="#问题解答-5">#</a> 问题解答</h3>
+<ul>
+<li>vue 的整个实现流程？
+<ul>
 <li>第一步：解析模板成 render 函数</li>
 <li>第二步：响应式开始监听</li>
 <li>第三步：首次渲染，显示页面，且绑定依赖</li>
@@ -608,47 +653,60 @@ var vm=new Vue(&#123;
 </ul>
 </li>
 </ul>
-<h1 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h1><ul>
-<li><p>说一下 使用 jQuery 和 使用框架的区别</p>
+<h1 id="总结-2"><a class="markdownIt-Anchor" href="#总结-2">#</a> 总结</h1>
+<ul>
+<li>
+<p>说一下 使用 jQuery 和 使用框架的区别</p>
 <ul>
 <li><strong>数据</strong> 和 <strong>视图</strong> 的分离，<u>解耦</u>（ <em>开放封闭原则</em> ）</li>
 <li>以数据驱动视图，只关心数据变化，DOM 操作被封装</li>
 </ul>
 </li>
-<li><p>什么是 MVVM ？</p>
+<li>
+<p>什么是 MVVM ？</p>
 <ul>
-<li><p>MVVM - Model View ViewModel</p>
+<li>
+<p>MVVM - Model View ViewModel</p>
 </li>
-<li><p>三者之间的联系。以及如何对应到各段代码</p>
+<li>
+<p>三者之间的联系。以及如何对应到各段代码</p>
 </li>
-<li><p>ViewModel 的理解，联系 View 和 Model</p>
+<li>
+<p>ViewModel 的理解，联系 View 和 Model</p>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="三要素-1"><a href="#三要素-1" class="headerlink" title="三要素"></a>三要素</h3><ul>
-<li><p>响应式：vue 如何监听到 data 的每个属性变化？</p>
+<h3 id="三要素-2"><a class="markdownIt-Anchor" href="#三要素-2">#</a> 三要素</h3>
+<ul>
+<li>
+<p>响应式：vue 如何监听到 data 的每个属性变化？</p>
 </li>
-<li><p>模板引擎：vue 的模板如何被解析，指令如何处理？</p>
+<li>
+<p>模板引擎：vue 的模板如何被解析，指令如何处理？</p>
 </li>
-<li><p>渲染：vue 的模板如何被渲染成 html？以及渲染过程？</p>
+<li>
+<p>渲染：vue 的模板如何被渲染成 html？以及渲染过程？</p>
 </li>
-<li><p>Vue 如何实现响应式？</p>
+<li>
+<p>Vue 如何实现响应式？</p>
 <ul>
 <li>关键是理解 Object.defineProperty</li>
 <li>将 data 的属性代理到 vm 上</li>
 </ul>
 </li>
-<li><p>vue 中如何解析 <strong>模板</strong> ？</p>
+<li>
+<p>vue 中如何解析 <strong>模板</strong> ？</p>
 <ul>
-<li>模板：字符串，有逻辑，嵌入 JS 变量……</li>
+<li>模板：字符串，有逻辑，嵌入 JS 变量…</li>
 <li>模板必须转换成 JS 代码（有逻辑，渲染 html，JS 变量）</li>
 <li>render 函数是什么样子的</li>
 <li>render 函数执行是返回 vnode</li>
 <li>updataComponent</li>
 </ul>
 </li>
-<li><p>vue 的整个实现流程？</p>
+<li>
+<p>vue 的整个实现流程？</p>
 <ul>
 <li>第一步：解析模板成 render 函数</li>
 <li>第二步：响应式开始监听</li>
@@ -896,7 +954,7 @@ var vm=new Vue(&#123;
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

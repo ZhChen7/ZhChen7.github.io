@@ -115,7 +115,7 @@
     <div class="article-entry" itemprop="articleBody">
        
   <blockquote>
-<p>——先学习 Vue2.x</p>
+<p>—— 先学习 Vue2.x</p>
 <ul>
 <li>Vue3.0 并不是推倒从来，很多 2.x 内容依然被保存</li>
 </ul>
@@ -124,7 +124,8 @@
 <li>Vue3.0 采用 TS 重写，必须学 TS</li>
 </ul>
 </blockquote>
-<h3 id="一、Vue3-0-的六大亮点"><a href="#一、Vue3-0-的六大亮点" class="headerlink" title="一、Vue3.0 的六大亮点"></a>一、Vue3.0 的六大亮点</h3><ol>
+<h3 id="一-vue30-的六大亮点"><a class="markdownIt-Anchor" href="#一-vue30-的六大亮点">#</a> 一、Vue3.0 的六大亮点</h3>
+<ol>
 <li>Performance：<strong>性能比 Vue2.x 快 1.2 ～ 2 倍</strong></li>
 <li>Tree shaking support：<strong>按需编译，体积比 Vue2.x 更小</strong></li>
 <li>Composition API <strong>*</strong>：<strong>组合式 API（类似 React Hooks）</strong></li>
@@ -132,13 +133,16 @@
 <li>Custom Renderer API：<strong>暴露了自定义渲染 API</strong></li>
 <li>Fragment，Teleport（Protal），Suspense：<strong>更先进的组件</strong></li>
 </ol>
-<h3 id="二、Vue3-0-是如何变快的"><a href="#二、Vue3-0-是如何变快的" class="headerlink" title="二、Vue3.0 是如何变快的"></a>二、Vue3.0 是如何变快的</h3><blockquote>
+<h3 id="二-vue30-是如何变快的"><a class="markdownIt-Anchor" href="#二-vue30-是如何变快的">#</a> 二、Vue3.0 是如何变快的</h3>
+<blockquote>
 <p>Vue3 源码编译工具：<a target="_blank" rel="noopener" href="https://vue-next-template-explorer.netlify.app/#%7B%22src%22%3A%22%3Cdiv%20id%3D%5C%22app%5C%22%3E%5Cn%20%20%20%20%3Ch1%3E%E6%8A%80%E6%9C%AF%E6%91%B8%E9%B1%BC%3C%2Fh1%3E%5Cn%20%20%20%20%3Cp%3E%E4%BB%8A%E5%A4%A9%E5%A4%A9%E6%B0%94%E7%9C%9F%E4%B8%8D%E9%94%99%3C%2Fp%3E%5Cn%5Cn%20%20%20%20%3Cdiv%3E%7B%7Bname%7D%7D%3C%2Fdiv%3E%5Cn%20%20%20%20%3Cdiv%20%3Aclass%3D%5C%22%7Bred%3AisRed%7D%5C%22%3E%E6%91%B8%E9%B1%BC%E7%AC%A6%3C%2Fdiv%3E%5Cn%20%20%20%20%3Cbutton%20%40click%3D%5C%22handleClick%5C%22%3E%E6%88%B3%E6%88%91%3C%2Fbutton%3E%5Cn%20%20%20%20%5Cn%20%20%20%20%5Cn%3C%2Fdiv%3E%22%2C%22ssr%22%3Afalse%2C%22options%22%3A%7B%22mode%22%3A%22module%22%2C%22prefixIdentifiers%22%3Afalse%2C%22optimizeImports%22%3Afalse%2C%22hoistStatic%22%3Afalse%2C%22cacheHandlers%22%3Afalse%2C%22scopeId%22%3Anull%2C%22ssrCssVars%22%3A%22%7B%20color%20%7D%22%2C%22bindingMetadata%22%3A%7B%22TestComponent%22%3A%22setup%22%2C%22foo%22%3A%22setup%22%2C%22bar%22%3A%22props%22%7D%2C%22optimizeBindings%22%3Afalse%7D%7D">Vue3 模版编译工具</a></p>
 <p>Vue2.x 模版编译工具：<a target="_blank" rel="noopener" href="https://template-explorer.vuejs.org/#%3Cdiv%20id%3D%22app%22%3E%7B%7B%20msg%20%7D%7D%3C%2Fdiv%3E">Vue2.x 模版编译工具</a></p>
 </blockquote>
-<h3 id="1、diff-方法优化"><a href="#1、diff-方法优化" class="headerlink" title="1、diff 方法优化"></a>1、diff 方法优化</h3><ul>
+<h3 id="1-diff-方法优化"><a class="markdownIt-Anchor" href="#1-diff-方法优化">#</a> 1、diff 方法优化</h3>
+<ul>
 <li>Vue2 中的虚拟 DOM 是进行全亮的对比</li>
-<li>Vue3 新增了静态标记（PatchFlag）<ul>
+<li>Vue3 新增了静态标记（PatchFlag）
+<ul>
 <li>在与上次虚拟节点进行对比的时候，只对比带有 patch flag 的节点</li>
 <li>并且可以通过 flag 的信息得知当前节点要对比的具体内容</li>
 </ul>
@@ -166,8 +170,8 @@
   <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="2、hoistStatic-静态提升"><a href="#2、hoistStatic-静态提升" class="headerlink" title="2、hoistStatic 静态提升"></a>2、hoistStatic 静态提升</h3><ul>
+<h3 id="2-hoiststatic-静态提升"><a class="markdownIt-Anchor" href="#2-hoiststatic-静态提升">#</a> 2、hoistStatic 静态提升</h3>
+<ul>
 <li>Vue2 中无论元素是否参与更新，每次都会重新创建</li>
 <li>Vue3 中对于不参与更新的元素，只会被创建一次，之后会在每次渲染时被不停的复用</li>
 </ul>
@@ -202,8 +206,8 @@
 <span class="token punctuation">&#125;</span>
 
 <span class="token comment">// Check the console for the AST</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="3、cacheHandlers-事件侦听器缓存"><a href="#3、cacheHandlers-事件侦听器缓存" class="headerlink" title="3、cacheHandlers 事件侦听器缓存"></a>3、cacheHandlers 事件侦听器缓存</h3><ul>
+<h3 id="3-cachehandlers-事件侦听器缓存"><a class="markdownIt-Anchor" href="#3-cachehandlers-事件侦听器缓存">#</a> 3、cacheHandlers 事件侦听器缓存</h3>
+<ul>
 <li>默认情况下 onClick 会被视为动态绑定，所以每次都会去追踪它的变化</li>
 <li>但是因为是同一个函数，所以没有追踪变化，直接缓存起来复用即可</li>
 </ul>
@@ -227,8 +231,8 @@
 <span class="token punctuation">&#125;</span>
 
 <span class="token comment">// Check the console for the AST</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="4、SSR-渲染"><a href="#4、SSR-渲染" class="headerlink" title="4、SSR 渲染"></a>4、SSR 渲染</h3><ul>
+<h3 id="4-ssr-渲染"><a class="markdownIt-Anchor" href="#4-ssr-渲染">#</a> 4、SSR 渲染</h3>
+<ul>
 <li>当有大量静态的内容的时候，这些内容会被当作纯字符串推进一个 buffer 里面；即使存在动态绑定，会通过模版值嵌入进去，这样会比通过虚拟 dom 来渲染快上很多很多</li>
 <li>当静态内容大到一定的量级时候，会用_createStaticVNode 方法在客户端去生成一个 static node，这些静态 node，会被直接 innerHtml，就不需要创建对象，然后根据对象渲染</li>
 </ul>
@@ -514,7 +518,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

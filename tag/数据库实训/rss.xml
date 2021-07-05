@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;数据库实训&#34; tag</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Tue, 11 Jun 2019 18:10:52 +0800</pubDate>
+        <lastBuildDate>Tue, 11 Jun 2019 18:10:52 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2019/06/11/Database/</guid>
+            <title>大二数据库实验</title>
+            <link>http://example.com/2019/06/11/Database/</link>
+            <category>大二</category>
+            <category>数据库实训</category>
+            <pubDate>Tue, 11 Jun 2019 18:10:52 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;大二数据库实验&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#大二数据库实验&#34;&gt;#&lt;/a&gt; 大二数据库实验&lt;/h1&gt;
+&lt;h4 id=&#34;介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;数据库课程实验综合小实验（做一个项目实现增删改查功能）&lt;/p&gt;
+&lt;p&gt;大二下学期期末大作业！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;技术运用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#技术运用&#34;&gt;#&lt;/a&gt; 技术运用：&lt;/h3&gt;
+&lt;p&gt;​ &lt;u&gt;运用到的技术&lt;/u&gt;：&lt;strong&gt;bootstrap&lt;/strong&gt;+ &lt;strong&gt;art-template&lt;/strong&gt; + &lt;strong&gt;node.js&lt;/strong&gt; + &lt;strong&gt;mysql&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;课题&lt;/th&gt;
+&lt;th&gt;数据库&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;班级&lt;/td&gt;
+&lt;td&gt;1701&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;作者姓名&lt;/td&gt;
+&lt;td&gt;周琛&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;学号&lt;/td&gt;
+&lt;td&gt;2017115010124&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;所在院系&lt;/td&gt;
+&lt;td&gt;计算机信息与工程学院&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;学科专业名称&lt;/td&gt;
+&lt;td&gt;计算机科学与技术&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;导师及职称&lt;/td&gt;
+&lt;td&gt;童强&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;h2 id=&#34;一-实验目的与要求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-实验目的与要求&#34;&gt;#&lt;/a&gt; 一、实验目的与要求&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。&lt;/li&gt;
+&lt;li&gt;说明文档中有 node 连接数据库的关键代码说明。&lt;/li&gt;
+&lt;li&gt;给了一个实例代码，实现了对一张表的增删改查功能（说明文档中可以看到数据库及表的名称，和有关连接数据库和实现增删改查的关键代码）。&lt;/li&gt;
+&lt;li&gt;可以运行，实现对学生课程数据库的操作；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;二步骤操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二步骤操作&#34;&gt;#&lt;/a&gt; 二。步骤操作&lt;/h2&gt;
+&lt;h4 id=&#34;1-用-node-设计一个应用程序实现对平时实验数据库的增-删-改-查&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-用-node-设计一个应用程序实现对平时实验数据库的增-删-改-查&#34;&gt;#&lt;/a&gt; 1. 用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;效果图:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;用图说话：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190525/JWCuqSFLOqbB.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;mark视频&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mark视频&#34;&gt;#&lt;/a&gt; &lt;img src=&#34;http://static.zxinc520.com/blog/20190525/KHUkC8mo5c0L.png?imageslim&#34; alt=&#34;mark&#34;&gt; 视频:&lt;/h3&gt;
+&lt;video id=&#34;video&#34; controls=&#34;&#34; preload=&#34;none&#34; poster=&#34;http://static.zxinc520.com/blog/20190613/yhdLmF30B7EP.png?imageslim&#34;&gt;
+      &lt;source id=&#34;mp4&#34; src=&#34;http://static.zxinc520.com/bandicam%202019-05-28%2012-50-22-208.mp4&#34; type=&#34;video/mp4&#34;&gt;
+      &lt;/video&gt;
+&lt;h3 id=&#34;2-说明文档中有-node-连接数据库的关键代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-说明文档中有-node-连接数据库的关键代码&#34;&gt;#&lt;/a&gt; 2. 说明文档中有 node 连接数据库的关键代码&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文件 : mysql.js&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;作用：连接数据库，执行数据操作、 封装、暴露方法.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;mysql.js&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; mysql &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;mysql&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//执行数据操作、 封装、暴露方法&lt;/span&gt;
+module&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;exports &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;sql&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; params&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; callback&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token comment&#34;&gt;//1.创建链接&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; connection &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; mysql&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;createConnection&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      host&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;localhost&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      user&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;root&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      password&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;123456&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      database&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;zc&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token comment&#34;&gt;//每次使用的时候需要创建链接，数据操作完成之后要关闭连接&lt;/span&gt;
+    connection&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;connect&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;数据库链接失败&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;throw&lt;/span&gt; err&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+      &lt;span class=&#34;token comment&#34;&gt;//开始数据操作&lt;/span&gt;
+      &lt;span class=&#34;token comment&#34;&gt;//传入三个参数，第一个参数sql语句，第二个参数sql语句中需要的数据，第三个参数回调函数&lt;/span&gt;
+      connection&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;sql&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; params&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;err&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; results&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; fields&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+          console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;数据操作失败&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+          &lt;span class=&#34;token keyword&#34;&gt;throw&lt;/span&gt; err&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//将查询出来的数据返回给回调函数&lt;/span&gt;
+        callback &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;callback&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;results&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; fields&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//results作为数据操作后的结果，fields作为数据库连接的一些字段&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;//停止链接数据库，必须再查询语句后，要不然一调用这个方法，就直接停止链接，数据操作就会失败&lt;/span&gt;
+        connection&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+          &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+            console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;关闭数据库连接失败！&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+            &lt;span class=&#34;token keyword&#34;&gt;throw&lt;/span&gt; err&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+          &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;3实现了对一张表的增删改查功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3实现了对一张表的增删改查功能&#34;&gt;#&lt;/a&gt; 3. 实现了对一张表的增删改查功能&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;给了一个实例代码，实现了对一张表的增删改查功能（说明文档中可以看到数据库及表的名称，和有关连接数据库和实现增删改查的关键代码）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;添加功能实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#添加功能实现&#34;&gt;#&lt;/a&gt; 添加功能实现:&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;router&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;post&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/add&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;req&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; next&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; body &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; req&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; addSql &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;INSERT INTO user(id,username,tel) VALUES(?,?,?)&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; addSqlParams &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;id&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;username&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;tel&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  db&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;addSql&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; addSqlParams&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;result&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; fields&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;添加成功&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      err_code&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      message&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;OK&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;效果图:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190525/Q4p9PqfySpYr.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;删除功能实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#删除功能实现&#34;&gt;#&lt;/a&gt; 删除功能实现 :&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;router&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/delete&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;req&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; next&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; deleteSql &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;DELETE FROM user  WHERE id = ?&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; deleteSqlParams &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; req&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;query&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;id&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  db&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;deleteSql&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; deleteSqlParams&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;err&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; results&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;redirect&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;302&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;效果图:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190611/Gu16nhNmt2FM.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;修改功能实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#修改功能实现&#34;&gt;#&lt;/a&gt; 修改功能实现&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;router&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/fix&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;req&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; next&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  fixsql &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;SELECT * FROM user WHERE id = ?&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  fixSqlParams &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; req&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;query&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;id&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  db&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;fixsql&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; fixSqlParams&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;result&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;render&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;fix.html&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      result&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; result&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+router&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;post&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/fix&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;req&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; next&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;req&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  updatasql &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;UPDATE user SET username = ?,tel=? WHERE id = ?&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  updataSqlParams &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;req&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;username&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; req&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;tel&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; req&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;id&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  db&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;updatasql&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; updataSqlParams&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;err&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; results&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      err_code&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      message&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;OK&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;效果图:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190525/RdNGNjvSnJNF.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;查找功能实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查找功能实现&#34;&gt;#&lt;/a&gt; 查找功能实现&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;router&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;post&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/search&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;req&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; next&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;req&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  db&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;select * from user&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;result&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; fields&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;result&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    result&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;forEach&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;
+        e&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;id&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;indexOf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;req&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;||&lt;/span&gt;
+        e&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;username&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;indexOf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;req&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;||&lt;/span&gt;
+        e&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;tel&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;indexOf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;req&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        arr&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;e&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      err_code&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      message&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; arr&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;效果图:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190611/Ed1NKxGH1I4I.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4-运行程序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-运行程序&#34;&gt;#&lt;/a&gt; 4. 运行程序&lt;/h2&gt;
+&lt;p&gt;相关代码源代码以上传至码云，地址为:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/zxinc/sophomore_database_experiment&#34;&gt;源码地址&lt;/a&gt;&lt;/p&gt;
+&lt;video id=&#34;video&#34; controls=&#34;&#34; preload=&#34;none&#34; poster=&#34;http://static.zxinc520.com/blog/20190613/yhdLmF30B7EP.png?imageslim&#34;&gt;
+ &lt;source id=&#34;mp4&#34; src=&#34;http://static.zxinc520.com/bandicam%202019-05-28%2012-50-22-208.mp4&#34; type=&#34;video/mp4&#34;&gt;
+  &lt;/video&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

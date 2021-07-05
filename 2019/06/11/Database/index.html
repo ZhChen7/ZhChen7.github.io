@@ -114,11 +114,14 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="大二数据库实验"><a href="#大二数据库实验" class="headerlink" title="大二数据库实验"></a>大二数据库实验</h1><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><blockquote>
+  <h1 id="大二数据库实验"><a class="markdownIt-Anchor" href="#大二数据库实验">#</a> 大二数据库实验</h1>
+<h4 id="介绍"><a class="markdownIt-Anchor" href="#介绍">#</a> 介绍</h4>
+<blockquote>
 <p>数据库课程实验综合小实验（做一个项目实现增删改查功能）</p>
 <p>大二下学期期末大作业！</p>
 </blockquote>
-<h3 id="技术运用："><a href="#技术运用：" class="headerlink" title="技术运用："></a>技术运用：</h3><p>​ <u>运用到的技术</u>：<strong>bootstrap</strong>+ <strong>art-template</strong> + <strong>node.js</strong> + <strong>mysql</strong></p>
+<h3 id="技术运用"><a class="markdownIt-Anchor" href="#技术运用">#</a> 技术运用：</h3>
+<p>​ <u>运用到的技术</u>：<strong>bootstrap</strong>+ <strong>art-template</strong> + <strong>node.js</strong> + <strong>mysql</strong></p>
 <table>
 <thead>
 <tr>
@@ -126,7 +129,8 @@
 <th>数据库</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>班级</td>
 <td>1701</td>
 </tr>
@@ -150,24 +154,29 @@
 <td>导师及职称</td>
 <td>童强</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>​</p>
-<h2 id="一、实验目的与要求"><a href="#一、实验目的与要求" class="headerlink" title="一、实验目的与要求"></a>一、实验目的与要求</h2><ol>
+<h2 id="一-实验目的与要求"><a class="markdownIt-Anchor" href="#一-实验目的与要求">#</a> 一、实验目的与要求</h2>
+<ol>
 <li>用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。</li>
 <li>说明文档中有 node 连接数据库的关键代码说明。</li>
 <li>给了一个实例代码，实现了对一张表的增删改查功能（说明文档中可以看到数据库及表的名称，和有关连接数据库和实现增删改查的关键代码）。</li>
 <li>可以运行，实现对学生课程数据库的操作；</li>
 </ol>
-<h2 id="二-步骤操作"><a href="#二-步骤操作" class="headerlink" title="二.步骤操作"></a>二.步骤操作</h2><h4 id="1-用-node-设计一个应用程序，实现对平时实验数据库的增、删、改、查。"><a href="#1-用-node-设计一个应用程序，实现对平时实验数据库的增、删、改、查。" class="headerlink" title="1. 用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。"></a>1. 用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。</h4><p><strong>效果图:</strong></p>
+<h2 id="二步骤操作"><a class="markdownIt-Anchor" href="#二步骤操作">#</a> 二。步骤操作</h2>
+<h4 id="1-用-node-设计一个应用程序实现对平时实验数据库的增-删-改-查"><a class="markdownIt-Anchor" href="#1-用-node-设计一个应用程序实现对平时实验数据库的增-删-改-查">#</a> 1. 用 node 设计一个应用程序，实现对平时实验数据库的增、删、改、查。</h4>
+<p><strong>效果图:</strong></p>
 <p>用图说话：</p>
 <p><img src="http://static.zxinc520.com/blog/20190525/JWCuqSFLOqbB.png?imageslim" alt="mark"></p>
-<h3 id="视频"><a href="#视频" class="headerlink" title="视频:"></a><img src="http://static.zxinc520.com/blog/20190525/KHUkC8mo5c0L.png?imageslim" alt="mark">视频:</h3><video id="video" controls="" preload="none" poster="http://static.zxinc520.com/blog/20190613/yhdLmF30B7EP.png?imageslim">
+<h3 id="mark视频"><a class="markdownIt-Anchor" href="#mark视频">#</a> <img src="http://static.zxinc520.com/blog/20190525/KHUkC8mo5c0L.png?imageslim" alt="mark"> 视频:</h3>
+<video id="video" controls="" preload="none" poster="http://static.zxinc520.com/blog/20190613/yhdLmF30B7EP.png?imageslim">
       <source id="mp4" src="http://static.zxinc520.com/bandicam%202019-05-28%2012-50-22-208.mp4" type="video/mp4">
       </video>
-
-<h3 id="2-说明文档中有-node-连接数据库的关键代码"><a href="#2-说明文档中有-node-连接数据库的关键代码" class="headerlink" title="2. 说明文档中有 node 连接数据库的关键代码"></a>2. 说明文档中有 node 连接数据库的关键代码</h3><blockquote>
+<h3 id="2-说明文档中有-node-连接数据库的关键代码"><a class="markdownIt-Anchor" href="#2-说明文档中有-node-连接数据库的关键代码">#</a> 2. 说明文档中有 node 连接数据库的关键代码</h3>
+<blockquote>
 <p>文件 : mysql.js</p>
-<p><strong>作用: 连接数据库,执行数据操作、 封装、暴露方法.</strong></p>
+<p><strong>作用：连接数据库，执行数据操作、 封装、暴露方法.</strong></p>
 </blockquote>
 <p><strong>mysql.js</strong>:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> mysql <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"mysql"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -209,11 +218,12 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="3-实现了对一张表的增删改查功能"><a href="#3-实现了对一张表的增删改查功能" class="headerlink" title="3.实现了对一张表的增删改查功能"></a>3.实现了对一张表的增删改查功能</h2><blockquote>
+<h2 id="3实现了对一张表的增删改查功能"><a class="markdownIt-Anchor" href="#3实现了对一张表的增删改查功能">#</a> 3. 实现了对一张表的增删改查功能</h2>
+<blockquote>
 <p>给了一个实例代码，实现了对一张表的增删改查功能（说明文档中可以看到数据库及表的名称，和有关连接数据库和实现增删改查的关键代码）。</p>
 </blockquote>
-<h4 id="添加功能实现"><a href="#添加功能实现" class="headerlink" title="添加功能实现:"></a>添加功能实现:</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/add"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="添加功能实现"><a class="markdownIt-Anchor" href="#添加功能实现">#</a> 添加功能实现:</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/add"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">let</span> body <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> addSql <span class="token operator">=</span> <span class="token string">"INSERT INTO user(id,username,tel) VALUES(?,?,?)"</span><span class="token punctuation">;</span>
@@ -226,10 +236,10 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>效果图:</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190525/Q4p9PqfySpYr.png?imageslim" alt="mark"></p>
-<h4 id="删除功能实现"><a href="#删除功能实现" class="headerlink" title="删除功能实现 :"></a>删除功能实现 :</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/delete"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="删除功能实现"><a class="markdownIt-Anchor" href="#删除功能实现">#</a> 删除功能实现 :</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/delete"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">let</span> deleteSql <span class="token operator">=</span> <span class="token string">"DELETE FROM user  WHERE id = ?"</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> deleteSqlParams <span class="token operator">=</span> req<span class="token punctuation">.</span>query<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
   db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>deleteSql<span class="token punctuation">,</span> deleteSqlParams<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> results</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
@@ -239,10 +249,10 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token number">302</span><span class="token punctuation">,</span> <span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>效果图:</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190611/Gu16nhNmt2FM.png?imageslim" alt="mark"></p>
-<h4 id="修改功能实现"><a href="#修改功能实现" class="headerlink" title="修改功能实现"></a>修改功能实现</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/fix"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="修改功能实现"><a class="markdownIt-Anchor" href="#修改功能实现">#</a> 修改功能实现</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/fix"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   fixsql <span class="token operator">=</span> <span class="token string">"SELECT * FROM user WHERE id = ?"</span><span class="token punctuation">;</span>
   fixSqlParams <span class="token operator">=</span> req<span class="token punctuation">.</span>query<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
   db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>fixsql<span class="token punctuation">,</span> fixSqlParams<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
@@ -266,10 +276,10 @@ router<span class="token punctuation">.</span><span class="token function">post<
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>效果图:</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190525/RdNGNjvSnJNF.png?imageslim" alt="mark"></p>
-<h4 id="查找功能实现"><a href="#查找功能实现" class="headerlink" title="查找功能实现"></a>查找功能实现</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/search"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="查找功能实现"><a class="markdownIt-Anchor" href="#查找功能实现">#</a> 查找功能实现</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/search"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
   arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">"select * from user"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">result<span class="token punctuation">,</span> fields</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -289,10 +299,10 @@ router<span class="token punctuation">.</span><span class="token function">post<
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>效果图:</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190611/Ed1NKxGH1I4I.png?imageslim" alt="mark"></p>
-<h2 id="4-运行程序"><a href="#4-运行程序" class="headerlink" title="4. 运行程序"></a>4. 运行程序</h2><p>相关代码源代码以上传至码云,地址为:</p>
+<h2 id="4-运行程序"><a class="markdownIt-Anchor" href="#4-运行程序">#</a> 4. 运行程序</h2>
+<p>相关代码源代码以上传至码云，地址为:</p>
 <p><a target="_blank" rel="noopener" href="https://gitee.com/zxinc/sophomore_database_experiment">源码地址</a></p>
 <video id="video" controls="" preload="none" poster="http://static.zxinc520.com/blog/20190613/yhdLmF30B7EP.png?imageslim">
  <source id="mp4" src="http://static.zxinc520.com/bandicam%202019-05-28%2012-50-22-208.mp4" type="video/mp4">
@@ -536,7 +546,7 @@ router<span class="token punctuation">.</span><span class="token function">post<
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

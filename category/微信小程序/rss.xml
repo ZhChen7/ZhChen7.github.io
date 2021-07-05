@@ -1,0 +1,640 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;微信小程序&#34; category</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Thu, 05 Sep 2019 17:07:39 +0800</pubDate>
+        <lastBuildDate>Thu, 05 Sep 2019 17:07:39 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2019/09/05/WeChatUp/</guid>
+            <title>微信小程序笔记上</title>
+            <link>http://example.com/2019/09/05/WeChatUp/</link>
+            <category>微信小程序</category>
+            <pubDate>Thu, 05 Sep 2019 17:07:39 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;微信小程序笔记上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#微信小程序笔记上&#34;&gt;#&lt;/a&gt; 微信小程序笔记上&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微信小程序学习笔记上&lt;/p&gt;
+&lt;p&gt;初步接触小程序&lt;/p&gt;
+&lt;p&gt;基础内容介绍&lt;/p&gt;
+&lt;p&gt;开发者文档&lt;/p&gt;
+&lt;p&gt;app.js 全局生命周期函数&lt;/p&gt;
+&lt;p&gt;WXML 数据绑定&lt;/p&gt;
+&lt;p&gt;通过 wx.request 请求数据&lt;/p&gt;
+&lt;p&gt;微信小程序里列表渲染&lt;/p&gt;
+&lt;p&gt;页面相关事件处理函数&lt;/p&gt;
+&lt;p&gt;True mastery of any skill takes a lifetime.&lt;/p&gt;
+&lt;p&gt;对任何技能的掌握都需要一生的刻苦操练。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;小程序简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#小程序简介&#34;&gt;#&lt;/a&gt; 小程序简介&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。&lt;/p&gt;
+&lt;p&gt;微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/introduction.html&#34;&gt;相关介绍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;微信小程序使用了前端技术栈 JavaScript/WXML/WXSS。但和常规的前端开发又有一些区别：&lt;/strong&gt; &lt;a href=&#34;https://juejin.im/entry/581db98fa0bb9f0058abffea&#34;&gt;可以参考&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;: 微信小程序的 JavaScript 运行环境即不是 Browser 也不是 Node.js。它运行在微信 App 的上下文中，不能操作 Browser context 下的 DOM，也不能通过 N*ode.js 相关接口访问操作系统 API。所以，严格意义来讲，微信小程序并不是 Html5，虽然开发过程和用到的技术栈和 Html5 是相通的。&lt;/li&gt;
+&lt;li&gt;**WXML：** 作为微信小程序的展示层，并不是使用 Html，而是自己发明的基于 XML 语法的描述。&lt;/li&gt;
+&lt;li&gt;**WXSS：** 用来修饰展示层的样式。官方的描述是 “WXSS (WeiXin Style Sheets) 是一套样式语言，用于描述 WXML 的组件样式。WXSS 用来决定 WXML 的组件应该怎么显示。” “我们的 WXSS 具有 CSS 大部分特性… 我们对 CSS 进行了扩充以及修改。” 基于 CSS2 还是 CSS3？大部分是哪些部分？是否支持 CSS3 里的动画？不得而知。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;目录结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#目录结构&#34;&gt;#&lt;/a&gt; 目录结构：&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190514/yTqqYeB2UoIS.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;app.js&lt;/code&gt;  做为小程序的入口，里面有个 App 实例，每个小程序只会有一个 App 实例，小程序启动以后触发 onLaunch 函数执行，获取用户信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app.json&lt;/code&gt;  是小程序的所有全局配置， &lt;code&gt;pages&lt;/code&gt;  字段放置所有页面的路径， &lt;code&gt;window&lt;/code&gt;  字段定义所有页面的顶部背景颜色，文字颜色 详细配置请&lt;a href=&#34;https://link.juejin.im?target=https%3A%2F%2Fmp.weixin.qq.com%2Fdebug%2Fwxadoc%2Fdev%2Fframework%2Fconfig.html&#34;&gt;戳这里 👇&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app.wxss&lt;/code&gt;  文件就是页面公用的样式，仅支持部分 css 选择器&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wxml&lt;/code&gt;  就是我们的 HTML 文件，常用标签为  &lt;code&gt;view&lt;/code&gt;  、 &lt;code&gt;text&lt;/code&gt;  等，没有所谓的 &lt;code&gt;div&lt;/code&gt; 、 &lt;code&gt;span&lt;/code&gt; 、 &lt;code&gt;p&lt;/code&gt;  一类的标签了，我们习惯称它们为组件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;设计理念：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;小程序内部可以理解成一个 mvvm 的框架，分为逻辑层和视图层，逻辑层将数据进行处理后发送给视图层，同时接受视图层的事件反馈。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190514/U6eXvlL8evmQ.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190514/m4UDxEkFa1ae.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;开始上手&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#开始上手&#34;&gt;#&lt;/a&gt; 开始上手&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;开始正式学习&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;基础学习部分&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;加载一张图片&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#加载一张图片&#34;&gt;#&lt;/a&gt; 加载一张图片&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190514/GnYuPkAo16G5.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;简单使用样式&lt;/em&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190514/gvNQzg8BaF74.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wxss&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#wxss&#34;&gt;#&lt;/a&gt; WXSS&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;WXSS (WeiXin Style Sheets) 是一套样式语言，用于描述 WXML 的组件样式。&lt;/p&gt;
+&lt;p&gt;WXSS 用来决定 WXML 的组件应该怎么显示。 &lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html&#34;&gt;可以参考官网&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为了适应广大的前端开发者，WXSS 具有 CSS 大部分特性。同时为了更适合开发微信小程序，WXSS 对 CSS 进行了扩充以及修改。&lt;/p&gt;
+&lt;p&gt;与 CSS 相比，WXSS 扩展的特性有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;尺寸单位&lt;/li&gt;
+&lt;li&gt;样式导入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;尺寸单位&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#尺寸单位&#34;&gt;#&lt;/a&gt; 尺寸单位&lt;/h2&gt;
+&lt;p&gt;​ &lt;strong&gt;rpx&lt;/strong&gt;（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为 750rpx。如在 iPhone6 上，屏幕宽度为 375px，共有 750 个物理像素，则 750rpx = 375px = 750 物理像素，1rpx = 0.5px = 1 物理像素&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190514/57Wa2m8PEEyp.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;建议：&lt;/strong&gt; 开发微信小程序时设计师可以用 iPhone6 作为视觉稿的标准。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt; 在较小的屏幕上不可避免的会有一些毛刺，请在开发时尽量避免这种情况。&lt;/p&gt;
+&lt;h2 id=&#34;全局样式与局部样式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#全局样式与局部样式&#34;&gt;#&lt;/a&gt; 全局样式与局部样式&lt;/h2&gt;
+&lt;p&gt;定义在 app.wxss 中的样式为全局样式，作用于每一个页面。在 page 的 wxss 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 app.wxss 中相同的选择器。&lt;/p&gt;
+&lt;h2 id=&#34;开发者文档&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#开发者文档&#34;&gt;#&lt;/a&gt; 开发者文档&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/component/image.html&#34;&gt;开发者文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不会&lt;/strong&gt; 或 &lt;strong&gt;忘了&lt;/strong&gt; 就查文档！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;image&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#image&#34;&gt;#&lt;/a&gt; image:&lt;/h3&gt;
+&lt;p&gt;​ &lt;strong&gt;解决图片缩放问题：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mode （ 常用下面 2 个属性值缩放图片 ）
+&lt;ul&gt;
+&lt;li&gt;aspectFit：缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。&lt;/li&gt;
+&lt;li&gt;aspectFill：缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190520/XC3RPCh4fJdY.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;swiper&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#swiper&#34;&gt;#&lt;/a&gt; swiper&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html&#34;&gt;看开发者文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;轮播组件：调用相应的标签及参数设置&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190520/PgOdEdCQrqvp.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;解读-appjson&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解读-appjson&#34;&gt;#&lt;/a&gt; 解读 app.json&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;小程序根目录下的  &lt;code&gt;app.json&lt;/code&gt;  文件用来对微信小程序进行全局配置。文件内容为一个 JSON 对象，有以下属性：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html&#34;&gt;可以参考官网&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;pages&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pages&#34;&gt;#&lt;/a&gt; pages&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用于指定小程序由哪些页面组成，每一项都对应一个页面的 路径（含文件名） 信息。文件名不需要写文件后缀，框架会自动去寻找对于位置的  &lt;code&gt;.json&lt;/code&gt; ,  &lt;code&gt;.js&lt;/code&gt; ,  &lt;code&gt;.wxml&lt;/code&gt; ,  &lt;code&gt;.wxss&lt;/code&gt;  四个文件进行处理。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;window&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#window&#34;&gt;#&lt;/a&gt; window&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用于设置小程序的状态栏、导航条、标题、窗口背景色。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token string&#34;&gt;&#34;window&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token string&#34;&gt;&#34;navigationBarBackgroundColor&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;#ffffff&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token string&#34;&gt;&#34;navigationBarTextStyle&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;black&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token string&#34;&gt;&#34;navigationBarTitleText&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;微信接口功能演示&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token string&#34;&gt;&#34;backgroundColor&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;#eeeeee&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token string&#34;&gt;&#34;backgroundTextStyle&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;light&#34;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;tabbar&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tabbar&#34;&gt;#&lt;/a&gt; tabBar&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果小程序是一个多 tab 应用（客户端窗口的底部或顶部有 tab 栏可以切换页面），可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token string&#34;&gt;&#34;tabBar&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+   &lt;span class=&#34;token string&#34;&gt;&#34;color&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;#333&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+   &lt;span class=&#34;token string&#34;&gt;&#34;selectedColor&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;#f30&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+   &lt;span class=&#34;token string&#34;&gt;&#34;list&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;pagePath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;pages/index/index&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;text&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;首页&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;iconPath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;assets/tabs/icon1.png&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;selectedIconPath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;assets/tabs/icon1.png&#34;&lt;/span&gt;
+   &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+   &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;pagePath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;pages/message/message&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;text&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;消息&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;iconPath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;assets/tabs/icon1.png&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;selectedIconPath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;assets/tabs/icon1.png&#34;&lt;/span&gt;
+   &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+   &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;pagePath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;pages/index/index&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;text&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;个人中心&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;iconPath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;assets/tabs/icon1.png&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;selectedIconPath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;assets/tabs/icon1.png&#34;&lt;/span&gt;
+   &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+   &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;pagePath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;pages/index/index&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;text&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;综合&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;iconPath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;assets/tabs/icon1.png&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+     &lt;span class=&#34;token string&#34;&gt;&#34;selectedIconPath&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;assets/tabs/icon1.png&#34;&lt;/span&gt;
+   &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+ &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190521/OCDT2PNCaB4Y.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;等等等… 不了解就看文档！&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意： 所以看开发者文档很重要！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html&#34;&gt;点一下就可以看了，别懒！&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;appjs-全局生命周期函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#appjs-全局生命周期函数&#34;&gt;#&lt;/a&gt; app.js 全局生命周期函数&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;app.js 全局生命周期函数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;在 app.js 文件中&lt;/em&gt; ， 定义了一些生命周期方法 ， onLaunch，onShow，onHide，onError，以及任意开发者添加的函数或者数据（通过 this 可以访问）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;以下是各个生命周期方法作用和描述：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;onLaunch 生命周期函数&lt;/strong&gt; -- 监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;onShow 生命周期函数&lt;/strong&gt;–监听小程序显示 当小程序启动，或从后台进入前台显示，会触发 onShow&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;onHide 生命周期函数&lt;/strong&gt;–监听小程序隐藏 当小程序从前台进入后台，会触发 onHide&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;onError 错误监听函数&lt;/strong&gt; 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其他 Any 开发者可以添加任意的函数或数据到 Object 参数中，用 this 可以访问&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;index.js:&lt;/em&gt; （个人感觉 和 &lt;strong&gt;Vue&lt;/strong&gt; 真的好像，如果熟悉 Vue 的话，这理解起来应该没有难度。）&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//index.js&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//获取应用实例&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; app &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;getApp&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token function&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  data&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    motto&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Hello World&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    listarr&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token comment&#34;&gt;//监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;onLoad&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;option&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    wx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      url&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;https://www.baifubao.com/callback&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token function-variable function&#34;&gt;success&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;setData&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+          listarr&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;statusCode&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;注意：着重关注 onLoad 函数，因为使用最频繁！&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wxml-数据绑定&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#wxml-数据绑定&#34;&gt;#&lt;/a&gt; WXML 数据绑定&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;WXML 中的动态数据均来自对应 Page 的 data。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;内容&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内容&#34;&gt;#&lt;/a&gt; 内容&lt;/h3&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;view&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&amp;#123;&amp;#123; message &amp;#125;&amp;#125;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;view&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  data&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    message&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Hello World!&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190526/Dr9a1AITnQo7.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;特别注意&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#特别注意&#34;&gt;#&lt;/a&gt; 特别注意：&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;花括号和引号之间不能有空格&lt;/li&gt;
+&lt;li&gt;不能直接写 checked=“false”，其计算结果是一个字符串，转成 boolean 类型后转为真值。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;通过-wxrequest-请求数据&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#通过-wxrequest-请求数据&#34;&gt;#&lt;/a&gt; 通过 wx.request 请求数据&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;通过 wx.request 请求数据&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;wx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  url&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  data&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  header&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  method&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;GET&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  dataType&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  responseType&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;text&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;success&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;res&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;fail&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;complete&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190527/x00Ledvp9GT7.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;setData&lt;/strong&gt;：接受 &lt;u&gt;wx.request&lt;/u&gt; 请求的数据，赋值给 Page 里面的 data（然后通过插值表达式渲染到页面）&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//index.js&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//获取应用实例&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; app &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;getApp&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token function&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  data&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    motto&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Hello World&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    listarr&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;onLoad&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;option&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    wx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      url&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;https://www.baifubao.com/callback&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token function-variable function&#34;&gt;success&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;res&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+        &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;setData&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+          listarr&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;statusCode&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;微信小程序里列表渲染&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#微信小程序里列表渲染&#34;&gt;#&lt;/a&gt; 微信小程序里列表渲染&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;h3 id=&#34;wxfor&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#wxfor&#34;&gt;#&lt;/a&gt; wx:for&lt;/h3&gt;
+&lt;p&gt;在组件上使用  &lt;code&gt;wx:for&lt;/code&gt;  控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。&lt;/p&gt;
+&lt;p&gt;默认数组的当前项的下标变量名默认为  &lt;code&gt;index&lt;/code&gt; ，数组当前项的变量名默认为  &lt;code&gt;item&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;类比于 Vue：&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;ul&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;example-1&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;li&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;v-for&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;item in items&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&amp;#123;&amp;#123; item.message &amp;#125;&amp;#125;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;li&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;ul&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;微信小程序里面：&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;view wx&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&amp;#123;&amp;#123;array&amp;#125;&amp;#125;&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;index&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;item&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;message&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;view&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  data&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    array&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        message&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;foo&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        message&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;bar&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;wxkey&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#wxkey&#34;&gt;#&lt;/a&gt; wx:key&lt;/h4&gt;
+&lt;p&gt;​ &lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/list.html&#34;&gt;可以参考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 &lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/component/switch.html&#34;&gt; &lt;code&gt;](https://developers.weixin.qq.com/miniprogram/dev/component/input.html) 中的输入内容，[&lt;/code&gt; &lt;/a&gt;的选中状态），需要使用  &lt;code&gt;wx:key&lt;/code&gt;  来指定列表中项目的唯一的标识符。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;字符串，代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。&lt;/li&gt;
+&lt;li&gt;保留关键字  &lt;code&gt;*this&lt;/code&gt;  代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;如不提供 wx:key，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;switch&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;wx:&lt;/span&gt;for&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&amp;#123;&amp;#123;objectArray&amp;#125;&amp;#125;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;wx:&lt;/span&gt;key&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;unique&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token style-attr language-css&#34;&gt;&lt;span class=&#34;token attr-name&#34;&gt; &lt;span class=&#34;token attr-name&#34;&gt;style&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&#34;&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token property&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; block&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &amp;#123;&amp;#123;item.id&amp;#125;&amp;#125;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;switch&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;bindtap&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;switch&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Switch&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;bindtap&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;addToFront&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Add to the front&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;switch&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;wx:&lt;/span&gt;for&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&amp;#123;&amp;#123;numberArray&amp;#125;&amp;#125;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;wx:&lt;/span&gt;key&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;*this&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token style-attr language-css&#34;&gt;&lt;span class=&#34;token attr-name&#34;&gt; &lt;span class=&#34;token attr-name&#34;&gt;style&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;=&#34;&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token property&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; block&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &amp;#123;&amp;#123;item&amp;#125;&amp;#125;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;switch&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;bindtap&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;addNumberToFront&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Add to the front&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;Page&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  data&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    objectArray&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; id&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; unique&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;unique_5&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; id&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; unique&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;unique_4&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; id&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; unique&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;unique_3&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; id&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; unique&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;unique_2&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; id&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; unique&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;unique_1&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; id&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; unique&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;unique_0&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    numberArray&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;页面相关事件处理函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#页面相关事件处理函数&#34;&gt;#&lt;/a&gt; 页面相关事件处理函数&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;页面相关事件处理函数（&lt;strong&gt;下拉刷新&lt;/strong&gt;，&lt;strong&gt;滑到底部加载更多&lt;/strong&gt;等）&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.startPullDownRefresh.html&#34;&gt;可以参考&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;下拉事件和触底事件&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//页面相关事件处理函数---监听用户下拉动作&lt;/span&gt;
+   &lt;span class=&#34;token function-variable function&#34;&gt;onPullDownRefresh&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+     console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;下拉！&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+   &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+   &lt;span class=&#34;token comment&#34;&gt;//页面上拉触底事件的处理函数&lt;/span&gt;
+   &lt;span class=&#34;token function-variable function&#34;&gt;onReachBottom&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+     console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;上拉&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+   &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;导航栏&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#导航栏&#34;&gt;#&lt;/a&gt; 导航栏&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.showNavigationBarLoading.html&#34;&gt;可以参考官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;js 文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;函数 API&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;wx.showNavigationBarLoading(Object object)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;在当前页面显示导航条加载动画&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;wx.setNavigationBarTitle(Object object)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;动态设置当前页面的标题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;wx.setNavigationBarColor(Object object)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;设置页面导航条颜色&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;wx.hideNavigationBarLoading(Object object)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;在当前页面隐藏导航条加载动画&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190603/DXIDRjESGUHv.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;界面交互&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#界面交互&#34;&gt;#&lt;/a&gt; 界面交互&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html&#34;&gt;参考官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#示例代码&#34;&gt;#&lt;/a&gt; 示例代码&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;wx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;showToast&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  title&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;成功w&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  icon&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;success&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  duration&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2000&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190603/fRajsw7UWlQc.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;下拉刷新&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#下拉刷新&#34;&gt;#&lt;/a&gt; 下拉刷新&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;下拉刷新 ( &lt;strong&gt;配合&lt;/strong&gt; 页面&lt;em&gt;相关事件处理函数&lt;/em&gt; — 监听用户下拉动作)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;index.json:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token string&#34;&gt;&#34;enablePullDownRefresh&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token string&#34;&gt;&#34;backgroundTextStyle&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;dark&#34;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;index.js:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//页面相关事件处理函数---监听用户下拉动作&lt;/span&gt;
+ &lt;span class=&#34;token function-variable function&#34;&gt;onPullDownRefresh&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+   console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;下拉！&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+ &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190603/bHEJTM3fLLsC.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2019/09/05/WeChatUp02/</guid>
+            <title>微信小程序笔记下</title>
+            <link>http://example.com/2019/09/05/WeChatUp02/</link>
+            <category>微信小程序</category>
+            <pubDate>Thu, 05 Sep 2019 17:07:39 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;微信小程序笔记下&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#微信小程序笔记下&#34;&gt;#&lt;/a&gt; 微信小程序笔记下&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微信小程序笔记下&lt;/p&gt;
+&lt;p&gt;input&lt;/p&gt;
+&lt;p&gt;color 属性&lt;/p&gt;
+&lt;p&gt;bindchange&lt;/p&gt;
+&lt;p&gt;wxs 页面脚本&lt;/p&gt;
+&lt;p&gt;微信小程序事件 &lt;strong&gt;冒泡 ** 和 事件&lt;/strong&gt;传参 **&lt;/p&gt;
+&lt;p&gt;服务号、订阅号&lt;/p&gt;
+&lt;p&gt;sdk&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;微信小程序组件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#微信小程序组件&#34;&gt;#&lt;/a&gt; 微信小程序组件&lt;/h2&gt;
+&lt;h3 id=&#34;表单组件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#表单组件&#34;&gt;#&lt;/a&gt; 表单组件&lt;/h3&gt;
+&lt;h4 id=&#34;input&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#input&#34;&gt;#&lt;/a&gt; input&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;输入框。该组件是&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html&#34;&gt;原生组件&lt;/a&gt;，使用时请注意相关限制&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/component/input.html&#34;&gt;可以参考&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- 输入框 --&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;view&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;text&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;placeholder&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;text&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;input&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;password&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;placeholder&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;password&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;input&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;number&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;placeholder&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;number&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;input&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;idcard&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;placeholder&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;idcard&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;input&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;digit&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;placeholder&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;digit&lt;span class=&#34;token punctuation&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;input&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+  &lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- 单选框 --&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;radio-group&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+     &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;radio&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;单选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;radio&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+     &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;radio&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;单选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;radio&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;radio-group&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+  &lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- 多选框 --&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;checkbox-group&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+   &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;checkbox&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;多选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;checkbox&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+   &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;checkbox&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;多选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;checkbox&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+   &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;checkbox&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;多选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;checkbox&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;checkbox-group&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;view&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190605/iBUB5P8LKOTz.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;改变颜色&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#改变颜色&#34;&gt;#&lt;/a&gt; 改变颜色&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;color 属性&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- 单选框 --&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;radio-group&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;radio&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;#f30&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;单选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;radio&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;radio&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;单选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;radio&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;radio-group&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- 多选框 --&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;checkbox-group&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;checkbox&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;#f30&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;多选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;checkbox&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;checkbox&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;多选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;checkbox&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;checkbox&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;多选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;checkbox&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;checkbox-group&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190605/0lbNety1l8Nr.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;checked：默认选中&lt;/li&gt;
+&lt;li&gt;disabled: 禁用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;bindchange&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bindchange&#34;&gt;#&lt;/a&gt; bindchange&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p value:[选中的=&#34;&#34; checkbox=&#34;&#34; 的=&#34;&#34; value=&#34;&#34; 的数组]=&#34;&#34;&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/component/checkbox-group.html&#34;&gt;checkbox-group&lt;/a&gt; 中选中项发生改变时触发 change 事件，detail =&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;单选框&lt;/strong&gt; 和 &lt;strong&gt;复选框&lt;/strong&gt; 都能用！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;例如：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- 单选框 --&gt;&lt;/span&gt;
+&amp;lt;radio-group =&#34;radiobindchangefun&#34; data-index=&#34;1&#34;&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;radio&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;#f30&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;nan&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;单选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;radio&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;radio&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;nv&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;单选框&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;radio&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;radio-group&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;index.js：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;radiobindchangefun&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;e&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;detail&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190605/HhwLwtgLFk7s.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wxs-页面脚本&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#wxs-页面脚本&#34;&gt;#&lt;/a&gt; wxs 页面脚本&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;WXS（WeiXin Script）是小程序的一套脚本语言，结合  &lt;code&gt;WXML&lt;/code&gt; ，可以构建出页面的结构。&lt;/p&gt;
+&lt;p&gt;WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;用的相对不多&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/01wxs-module.html&#34;&gt;WXS 模块&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/02variate.html&#34;&gt;变量&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/03annotation.html&#34;&gt;注释&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/04operator.html&#34;&gt;运算符&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/05statement.html&#34;&gt;语句&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/06datatype.html&#34;&gt;数据类型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/07basiclibrary.html&#34;&gt;基础类库&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;wxs&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;module&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;foo&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  var sum=function(a,b)&amp;#123; return a+b; &amp;#125; module.exports.sum=sum
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;wxs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;view&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&amp;#123;&amp;#123;foo.sum(1,2)&amp;#125;&amp;#125;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;view&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190605/sEHFhCJgcSTT.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;微信小程序事件冒泡和事件传参&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#微信小程序事件冒泡和事件传参&#34;&gt;#&lt;/a&gt; 微信小程序事件冒泡和事件传参&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微信小程序事件冒泡和事件传参&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;事件绑定和冒泡&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#事件绑定和冒泡&#34;&gt;#&lt;/a&gt; 事件绑定和冒泡&lt;/h3&gt;
+&lt;p&gt;事件绑定的写法同组件的属性，以 key、value 的形式。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;key 以 &lt;code&gt;bind&lt;/code&gt;  或 &lt;code&gt;catch&lt;/code&gt;  开头，然后跟上事件的类型，如 &lt;code&gt;bindtap&lt;/code&gt; 、 &lt;code&gt;catchtouchstart&lt;/code&gt; 。自基础库版本 &lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html&#34;&gt;1.5.0&lt;/a&gt; 起，在非&lt;a href=&#34;https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html&#34;&gt;原生组件&lt;/a&gt;中， &lt;code&gt;bind&lt;/code&gt;  和 &lt;code&gt;catch&lt;/code&gt;  后可以紧跟一个冒号，其含义不变，如 &lt;code&gt;bind:tap&lt;/code&gt; 、 &lt;code&gt;catch:touchstart&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;value 是一个字符串，需要在对应的 Page 中定义同名的函数。不然当触发事件的时候会报错。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;bind&lt;/code&gt;  事件绑定&lt;strong&gt;不会阻止&lt;/strong&gt;冒泡事件向上冒泡， &lt;code&gt;catch&lt;/code&gt;  事件绑定&lt;strong&gt;可以阻止&lt;/strong&gt;冒泡事件向上冒泡。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;view&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;father&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;bindtap&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;ClickFatherEvent&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;view&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;son&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;catchtap&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;ClickSonEvent&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;view&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;view&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190610/iYPyQKFs0uUh.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;事件传参&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#事件传参&#34;&gt;#&lt;/a&gt; 事件传参&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;自定义属性传参 ( &lt;strong&gt;data-index=“1”&lt;/strong&gt; )&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;view&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;father&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;bindtap&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;ClickFatherEvent&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;data-index&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;1&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;view&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;son&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;catchtap&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;ClickSonEvent&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;view&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;view&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;ClickFatherEvent&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;father&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;event&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;currentTarget&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;dataset&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;index&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190611/QGePjx2yA28Q.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;服务号&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#服务号&#34;&gt;#&lt;/a&gt; 服务号&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;服务号：为企业和组织提供更强大的业务服务与用户管理能力，主要偏向服务类交互（功能类似 12315，114，银行，提供绑定信息，服务交互的）；&lt;/p&gt;
+&lt;p&gt;适用人群：媒体、企业、政府或其他组织。&lt;/p&gt;
+&lt;p&gt;群发次数：服务号 1 个月（按自然月）内可发送 4 条群发消息。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://kf.qq.com/faq/120911VrYVrA150918fMZ77R.html?scene_id=kf3386&#34;&gt;可以参考&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;订阅号&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#订阅号&#34;&gt;#&lt;/a&gt; 订阅号&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;h1 id=&#34;什么是订阅号&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是订阅号&#34;&gt;#&lt;/a&gt; 什么是订阅号？&lt;/h1&gt;
+&lt;p&gt;订阅号：为媒体和个人提供一种新的信息传播方式，主要功能是在微信侧给用户传达资讯；（功能类似报纸杂志，提供新闻信息或娱乐趣事）&lt;/p&gt;
+&lt;p&gt;适用人群：个人、媒体、企业、政府或其他组织。&lt;/p&gt;
+&lt;p&gt;群发次数：订阅号（认证用户、非认证用户）1 天内可群发 1 条消息。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;温馨提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果想用公众平台简单发发消息，做宣传推广服务，建议可选择订阅号；&lt;/li&gt;
+&lt;li&gt;如果想用公众平台进行商品销售，建议可选择服务号，后续可认证再申请微信支付商户；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;sdk&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#sdk&#34;&gt;#&lt;/a&gt; sdk&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%8C%85&#34;&gt;软件开发工具包&lt;/a&gt;（缩写：&lt;strong&gt;SDK&lt;/strong&gt;、外语全称：**Software Development Kit）** 一般都是一些&lt;a href=&#34;https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275&#34;&gt;软件工程师&lt;/a&gt;为特定的&lt;a href=&#34;https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%8C%85/10508451&#34;&gt;软件包&lt;/a&gt;、&lt;a href=&#34;https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6/1471931&#34;&gt;软件框架&lt;/a&gt;、&lt;a href=&#34;https://baike.baidu.com/item/%E7%A1%AC%E4%BB%B6/479446&#34;&gt;硬件&lt;/a&gt;平台、&lt;a href=&#34;https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/192&#34;&gt;操作系统&lt;/a&gt;等建立应用软件时的&lt;a href=&#34;https://baike.baidu.com/item/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/10464557&#34;&gt;开发工具&lt;/a&gt;的集合。 [1]&lt;/p&gt;
+&lt;p&gt;软件开发工具包括广义上指&lt;a href=&#34;https://baike.baidu.com/item/%E8%BE%85%E5%8A%A9/1045139&#34;&gt;辅助&lt;/a&gt;开发某一类软件的相关文档、范例和工具的&lt;a href=&#34;https://baike.baidu.com/item/%E9%9B%86%E5%90%88/73081&#34;&gt;集合&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;软件开发工具包是一些被软件工程师用于为特定的软件包、软件框架、硬件平台、操作系统等创建应用软件的开发工具的集合，一般而言 SDK 即开发 &lt;a href=&#34;https://baike.baidu.com/item/Windows&#34;&gt;Windows&lt;/a&gt; 平台下的应用程序所使用的 SDK。它可以简单的为某个&lt;a href=&#34;https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80/2317999&#34;&gt;程序设计语言&lt;/a&gt;提供&lt;a href=&#34;https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%8F%A3/10418844&#34;&gt;应用程序接口&lt;/a&gt; &lt;strong&gt;API&lt;/strong&gt; 的一些文件，但也可能包括能与某种&lt;a href=&#34;https://baike.baidu.com/item/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F/186978&#34;&gt;嵌入式系统&lt;/a&gt;通讯的复杂的硬件。一般的工具包括用于调试和其他用途的实用工具。SDK 还经常包括示例代码、支持性的技术注解或者其他的为基本参考资料澄清疑点的支持文档。&lt;/p&gt;
+&lt;p&gt;为了鼓励开发者使用其系统或者语言，许多 SDK 是&lt;a href=&#34;https://baike.baidu.com/item/%E5%85%8D%E8%B4%B9/131326&#34;&gt;免费&lt;/a&gt;提供的。&lt;a href=&#34;https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275&#34;&gt;软件工程师&lt;/a&gt;通常从目标系统开发者那里获得软件开发包，也可以直接从互联网下载，有时也被作为&lt;a href=&#34;https://baike.baidu.com/item/%E8%90%A5%E9%94%80%E6%89%8B%E6%AE%B5&#34;&gt;营销手段&lt;/a&gt;。例如，营销公司会免费提供构建 SDK 以鼓励人们使用它，从而会吸引更多人由于能免费为其编程而购买其构件。&lt;/p&gt;
+&lt;p&gt;SDK 可能附带了使其不能在不兼容的许可证下开发软件的许可证。例如产品供应商提供一个专有的 SDK 可能与自由软件开发抵触。&lt;a href=&#34;https://baike.baidu.com/item/GPL&#34;&gt;GPL&lt;/a&gt; 能使 SDK 与专有软件开发近乎不兼容。&lt;a href=&#34;https://baike.baidu.com/item/LGPL&#34;&gt;LGPL&lt;/a&gt; 下的 SDK 则没有这个问题。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://baike.baidu.com/item/SDK/7815680&#34;&gt;可参考官方解释&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;amp;id=mp1421141115&#34;&gt;微信 JS-SDK 说明文档&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

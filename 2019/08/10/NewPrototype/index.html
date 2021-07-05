@@ -114,29 +114,35 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><blockquote>
+  <h1 id="原型"><a class="markdownIt-Anchor" href="#原型">#</a> 原型</h1>
+<blockquote>
 <p>本章将结合 <strong>jQuery</strong> 和 <strong>zepto</strong> 源码来讲解原型的实际应用。通过 <strong>源码来分析</strong> jQuery 和 zepto 是如何使用原型的，以及通过它们的 <strong>插件机制</strong>，讲解 <strong>原型的扩展性</strong> 。</p>
 <p>《前端 JS 面试技巧》请参考我之前的博客： <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d2df2cdda85353d5ca8b83f%22">前端 JS 基础面试技巧</a></p>
 </blockquote>
-<h3 id="关于原型"><a href="#关于原型" class="headerlink" title="关于原型"></a>关于原型</h3><ul>
+<h3 id="关于原型"><a class="markdownIt-Anchor" href="#关于原型">#</a> 关于原型</h3>
+<ul>
 <li>《前端 JS 面试技巧》已经讲解过原型的 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d2df2cdda85353d5ca8b83f%22">基础知识</a></li>
 <li>高级面试题，光会原型基础还不够，还要实际应用</li>
 <li>zepto jquery 中如何用原型</li>
 <li>顺便也算是解读了 zepto 和 jquery 的部分源码</li>
 </ul>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
+<h3 id="题目"><a class="markdownIt-Anchor" href="#题目">#</a> 题目</h3>
+<ul>
 <li>说一个原型的实际应用</li>
 <li>原型如何体现它的扩展性</li>
 </ul>
-<h2 id="原型的实际应用"><a href="#原型的实际应用" class="headerlink" title="原型的实际应用"></a>原型的实际应用</h2><blockquote>
+<h2 id="原型的实际应用"><a class="markdownIt-Anchor" href="#原型的实际应用">#</a> 原型的实际应用</h2>
+<blockquote>
 <p>原型的实际应用</p>
 </blockquote>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h3 id="知识点"><a class="markdownIt-Anchor" href="#知识点">#</a> 知识点</h3>
+<ul>
 <li>jquery 和 zepto 的简单使用</li>
 <li>zepto 如何使用原型</li>
 <li>jquery 如何使用原型</li>
 </ul>
-<h4 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">></span>
+<h4 id="简单使用"><a class="markdownIt-Anchor" href="#简单使用">#</a> 简单使用</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">></span>
 <span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>head<span class="token operator">></span>
     <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
@@ -165,8 +171,8 @@
 <span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="zepto-如何使用原型"><a href="#zepto-如何使用原型" class="headerlink" title="zepto 如何使用原型"></a>zepto 如何使用原型</h4><blockquote>
+<h4 id="zepto-如何使用原型"><a class="markdownIt-Anchor" href="#zepto-如何使用原型">#</a> zepto 如何使用原型</h4>
+<blockquote>
 <p>源码中，这里的处理情况比较复杂。但因为本次只针对原型，因此这里就弱化了</p>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">window</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -209,8 +215,8 @@
 
   window<span class="token punctuation">.</span>$ <span class="token operator">=</span> $<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="jquery-如何使用原型"><a href="#jquery-如何使用原型" class="headerlink" title="jquery 如何使用原型"></a>jquery 如何使用原型</h4><blockquote>
+<h4 id="jquery-如何使用原型"><a class="markdownIt-Anchor" href="#jquery-如何使用原型">#</a> jquery 如何使用原型</h4>
+<blockquote>
 <p>简化了源码，重在讲解 jquery 如何使用原型</p>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//简化了源码，真实源码分支很多,选取部分代码</span>
@@ -247,20 +253,23 @@
   init<span class="token punctuation">.</span>prototype <span class="token operator">=</span> jQuery<span class="token punctuation">.</span>fn<span class="token punctuation">;</span>
   window<span class="token punctuation">.</span>$ <span class="token operator">=</span> jQuery<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<h3 id="问题解答"><a class="markdownIt-Anchor" href="#问题解答">#</a> 问题解答</h3>
+<ul>
 <li>描述一下 jquery 如何使用原型</li>
 <li>描述一下 zepto 如何使用原型</li>
 <li>再结合自己的项目经验，说一下自己开发的例子</li>
 </ul>
-<h2 id="如何体现原型的扩展性"><a href="#如何体现原型的扩展性" class="headerlink" title="如何体现原型的扩展性"></a>如何体现原型的扩展性</h2><blockquote>
+<h2 id="如何体现原型的扩展性"><a class="markdownIt-Anchor" href="#如何体现原型的扩展性">#</a> 如何体现原型的扩展性</h2>
+<blockquote>
 <p>体现原型的扩展性</p>
 </blockquote>
-<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h3 id="知识点-2"><a class="markdownIt-Anchor" href="#知识点-2">#</a> 知识点</h3>
+<ul>
 <li>总结 zepto 和 jquery 原型的使用</li>
 <li>插件机制</li>
 </ul>
-<h3 id="总结-zepto-和-jquery-原型的使用"><a href="#总结-zepto-和-jquery-原型的使用" class="headerlink" title="总结 zepto 和 jquery 原型的使用"></a>总结 zepto 和 jquery 原型的使用</h3><blockquote>
+<h3 id="总结-zepto-和-jquery-原型的使用"><a class="markdownIt-Anchor" href="#总结-zepto-和-jquery-原型的使用">#</a> 总结 zepto 和 jquery 原型的使用</h3>
+<blockquote>
 <p>总结 zepto 和 jquery 原型的使用</p>
 <p>相关 <strong>代码实现</strong> 请看上文 ：zepto 如何使用原型 和 jquery 如何使用原型</p>
 </blockquote>
@@ -276,27 +285,28 @@ jQuery<span class="token punctuation">.</span>fn <span class="token operator">=<
 
 <span class="token comment">//定义原型</span>
 init<span class="token punctuation">.</span>prototype <span class="token operator">=</span> jQuery<span class="token punctuation">.</span>fn<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>解答</strong> ：<u>因为要扩展插件</u> ，做一个简单的插件的例子</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 因为要扩展插件，做一个简单的插件的例子</span>
 $<span class="token punctuation">.</span>fn<span class="token punctuation">.</span><span class="token function-variable function">getNodeName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>nodeName<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>好处</strong>：</p>
 <ol>
 <li>只有 $ 会暴露在 window 全局变量</li>
 <li>将插件扩展统一到 $.fn.xxx 这一接口，方便使用</li>
 </ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li><p>说一个原型的实际应用</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结">#</a> 总结</h2>
+<ul>
+<li>
+<p>说一个原型的实际应用</p>
 <ul>
 <li>描述一下 jquery 如何使用 原型</li>
 <li>描述一下 zepto 如何使用 原型</li>
 <li>再结合自己的项目经验，说一下自己开发的例子</li>
 </ul>
 </li>
-<li><p>原型如何体现它的扩展性</p>
+<li>
+<p>原型如何体现它的扩展性</p>
 <ul>
 <li>说一下 jquery 和 zepto 的 插件机制</li>
 <li>结合自己的开发经验，做过的基于原型的插件</li>
@@ -542,7 +552,7 @@ $<span class="token punctuation">.</span>fn<span class="token punctuation">.</sp
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

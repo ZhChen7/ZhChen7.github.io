@@ -114,7 +114,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="hybrid"><a href="#hybrid" class="headerlink" title="hybrid"></a>hybrid</h1><blockquote>
+  <h1 id="hybrid"><a class="markdownIt-Anchor" href="#hybrid">#</a> hybrid</h1>
+<blockquote>
 <p>本章主要介绍 hybrid 的原理和应用。hybrid 基础部分要讲解 file 协议、webview、更新上线流程；另外，通过 h5 和 hybrid 的对比，来了解两者的异同和使用场景；最后讲解前端 JS 和客户端的通讯，包括通讯原理和 JS-bridge 的代码封装。…</p>
 <p>社会主流 <strong>大前端</strong> 的概念。</p>
 <p><strong>知识点</strong></p>
@@ -125,43 +126,51 @@
 <p>The greatest test of courage on earth is to bear defeat without losing heart.</p>
 <p>世界上对勇气的最大考验是忍受失败而不丧失信心。</p>
 </blockquote>
-<h3 id="hybrid-1"><a href="#hybrid-1" class="headerlink" title="hybrid"></a>hybrid</h3><ul>
+<h3 id="hybrid-2"><a class="markdownIt-Anchor" href="#hybrid-2">#</a> hybrid</h3>
+<ul>
 <li>移动端占大部分流量，已经远远超过 PC</li>
 <li>一线互联网公司都有自己的 App</li>
-<li>这些 App 中有很大比例的前端代码 ( 不要惊讶 )</li>
+<li>这些 App 中有很大比例的前端代码 (不要惊讶)</li>
 <li>拿微信举例，你每天浏览微信的内容，多少是前端？</li>
 </ul>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h3 id="知识点"><a class="markdownIt-Anchor" href="#知识点">#</a> 知识点</h3>
+<ul>
 <li>hybrid 是什么？ 为何用 hybrid ？</li>
 <li>介绍一下 hybrid 更新 和上线的流程？</li>
 <li>hybrid 和 h5 的 主要区别？</li>
 <li>前端 JS 和 客户端 如何通讯？</li>
 </ul>
-<h2 id="6-1-hybrid-是什么？-为何用-hybrid-？"><a href="#6-1-hybrid-是什么？-为何用-hybrid-？" class="headerlink" title="6-1 hybrid 是什么？ 为何用 hybrid ？"></a>6-1 hybrid 是什么？ 为何用 hybrid ？</h2><h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h2 id="6-1-hybrid-是什么-为何用-hybrid"><a class="markdownIt-Anchor" href="#6-1-hybrid-是什么-为何用-hybrid">#</a> 6-1 hybrid 是什么？ 为何用 hybrid ？</h2>
+<h3 id="知识点-2"><a class="markdownIt-Anchor" href="#知识点-2">#</a> 知识点</h3>
+<ul>
 <li>hybrid 文字解释</li>
 <li>存在价值，为何用 hybrid ？</li>
 <li>webview</li>
-<li>file：//协议</li>
+<li>file：// 协议</li>
 <li>hybrid 实现流程</li>
 </ul>
-<h4 id="hybrid-文字解释"><a href="#hybrid-文字解释" class="headerlink" title="hybrid 文字解释"></a>hybrid 文字解释</h4><ul>
+<h4 id="hybrid-文字解释"><a class="markdownIt-Anchor" href="#hybrid-文字解释">#</a> hybrid 文字解释</h4>
+<ul>
 <li>hybrid 即 “混合” ，即 前端 和客户端的混合开发</li>
 <li>需前端开发人员 和 客户端开发人员配合完成</li>
 <li>某些环节也可能涉及到 server 端</li>
 <li>注意：不要以为自己是前端就可以不理会客户端的知识</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190829/no77eoeMXoEi.png?imageslim" alt="mark"></p>
-<h4 id="hybrid-存在价值"><a href="#hybrid-存在价值" class="headerlink" title="hybrid 存在价值"></a>hybrid 存在价值</h4><ul>
+<h4 id="hybrid-存在价值"><a class="markdownIt-Anchor" href="#hybrid-存在价值">#</a> hybrid 存在价值</h4>
+<ul>
 <li>可以快速迭代更新【关键】（无需 app 审核，思考为何？–&gt; 前端部分能够快速更新上线）</li>
 <li>体验流畅 （ 和 NA 的体验基本类似 ）</li>
 <li>减少开发和沟通成本，双端公用一套代码</li>
 </ul>
-<h4 id="webview"><a href="#webview" class="headerlink" title="webview"></a>webview</h4><ul>
+<h4 id="webview"><a class="markdownIt-Anchor" href="#webview">#</a> webview</h4>
+<ul>
 <li>是 App 中的一个组件（app 可以有 webview，也可以没有）</li>
 <li>用于加载 h5 页面，即一个小型的浏览器 内核</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190829/I797MG2jf2xe.png?imageslim" alt="mark"></p>
-<h4 id="file-协议"><a href="#file-协议" class="headerlink" title="file 协议"></a>file 协议</h4><ul>
+<h4 id="file-协议"><a class="markdownIt-Anchor" href="#file-协议">#</a> file 协议</h4>
+<ul>
 <li>其实在一开始接触 html 开发，就已经使用了 file 协议</li>
 <li>只不过你当时没有 “协议” “标准” 等这些概念</li>
 <li>再次强调 “协议” “标准” 的重要性 ！！！</li>
@@ -171,9 +180,10 @@
 <p><em>两者的区别：</em></p>
 <ul>
 <li>file 协议：本地文件，快</li>
-<li>http(s) 协议：网络加载，慢</li>
+<li>http (s) 协议：网络加载，慢</li>
 </ul>
-<h4 id="hybrid-具体实现"><a href="#hybrid-具体实现" class="headerlink" title="hybrid 具体实现"></a>hybrid 具体实现</h4><ul>
+<h4 id="hybrid-具体实现"><a class="markdownIt-Anchor" href="#hybrid-具体实现">#</a> hybrid 具体实现</h4>
+<ul>
 <li>不是所有的场景都适合使用 hybrid</li>
 <li>使用 <strong>NA</strong> ：体验要求极致，变化不频繁（ 如头条的首页 ）</li>
 <li>使用 <strong>hybrid</strong> ：体验要求高，变化频繁（ 如头条的新闻详情页 ）</li>
@@ -187,25 +197,31 @@
 <li>使用 file 协议 加载静态页面</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190829/RIR0zOPUN22I.png?imageslim" alt="mark"></p>
-<h4 id="具体实现-–-遗留问题："><a href="#具体实现-–-遗留问题：" class="headerlink" title="具体实现 – 遗留问题："></a>具体实现 – 遗留问题：</h4><ul>
+<h4 id="具体实现-遗留问题"><a class="markdownIt-Anchor" href="#具体实现-遗留问题">#</a> 具体实现 – 遗留问题：</h4>
+<ul>
 <li>app 发布之后，静态文件如何实时更新？</li>
 <li>静态页面如何获取内容？</li>
 </ul>
-<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>hybrid 是什么？ 为何用 hybrid ？<ul>
+<h3 id="问题解答"><a class="markdownIt-Anchor" href="#问题解答">#</a> 问题解答</h3>
+<ul>
+<li>hybrid 是什么？ 为何用 hybrid ？
+<ul>
 <li>hybrid 即 “混合” ，即 前端 和客户端的混合开发</li>
 <li>hybrid 存在的核心意义在于快速迭代，无需审核</li>
 <li>hybrid 实现流程（图），以及 webview 和 file 协议</li>
 </ul>
 </li>
 </ul>
-<h2 id="6-2-hybrid-更新上线流程"><a href="#6-2-hybrid-更新上线流程" class="headerlink" title="6-2 hybrid 更新上线流程"></a>6-2 hybrid 更新上线流程</h2><ul>
+<h2 id="6-2-hybrid-更新上线流程"><a class="markdownIt-Anchor" href="#6-2-hybrid-更新上线流程">#</a> 6-2 hybrid 更新上线流程</h2>
+<ul>
 <li>回顾 hybrid 实现流程</li>
 <li>思考 （目的，实现途径）</li>
 <li>更新流程</li>
 </ul>
-<h4 id="回顾-hybrid-实现流程"><a href="#回顾-hybrid-实现流程" class="headerlink" title="回顾 hybrid 实现流程"></a>回顾 hybrid 实现流程</h4><p><img src="http://static.zxinc520.com/blog/20190829/aeHMDopqsrCy.png?imageslim" alt="mark"></p>
-<h4 id="思考-（目的，实现途径）"><a href="#思考-（目的，实现途径）" class="headerlink" title="思考 （目的，实现途径）"></a>思考 （目的，实现途径）</h4><p><img src="http://static.zxinc520.com/blog/20190829/wCDenA4EGmC8.png?imageslim" alt="mark"></p>
+<h4 id="回顾-hybrid-实现流程"><a class="markdownIt-Anchor" href="#回顾-hybrid-实现流程">#</a> 回顾 hybrid 实现流程</h4>
+<p><img src="http://static.zxinc520.com/blog/20190829/aeHMDopqsrCy.png?imageslim" alt="mark"></p>
+<h4 id="思考-目的实现途径"><a class="markdownIt-Anchor" href="#思考-目的实现途径">#</a> 思考 （目的，实现途径）</h4>
+<p><img src="http://static.zxinc520.com/blog/20190829/wCDenA4EGmC8.png?imageslim" alt="mark"></p>
 <ul>
 <li>要替换每个客户端的静态文件</li>
 <li>只能客户端来做（客户端是我们开发的）</li>
@@ -221,8 +237,10 @@
 <li>如果服务端本版本号大于客户端版本号，就去下载最新的 zip 包</li>
 <li>下载完之后解压包，然后将现有的文件覆盖</li>
 </ul>
-<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>介绍一下 hybrid 更新 和上线的流程？<ul>
+<h3 id="问题解答-2"><a class="markdownIt-Anchor" href="#问题解答-2">#</a> 问题解答</h3>
+<ul>
+<li>介绍一下 hybrid 更新 和上线的流程？
+<ul>
 <li>掌握流程图</li>
 <li>要点 1：服务端的版本和 zip 包维护</li>
 <li>要点 2：更新 zip 包之前，先对比版本号</li>
@@ -230,41 +248,52 @@
 </ul>
 </li>
 </ul>
-<h2 id="6-3hybrid-和-h5-的-主要区别？"><a href="#6-3hybrid-和-h5-的-主要区别？" class="headerlink" title="6-3hybrid 和 h5 的 主要区别？"></a>6-3hybrid 和 h5 的 主要区别？</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h2 id="6-3hybrid-和-h5-的-主要区别"><a class="markdownIt-Anchor" href="#6-3hybrid-和-h5-的-主要区别">#</a> 6-3hybrid 和 h5 的 主要区别？</h2>
+<h3 id="知识点-3"><a class="markdownIt-Anchor" href="#知识点-3">#</a> 知识点</h3>
+<ul>
 <li>优点</li>
 <li>缺点</li>
 <li>适用的场景</li>
 </ul>
-<h4 id="hybrid-优点"><a href="#hybrid-优点" class="headerlink" title="hybrid 优点"></a>hybrid 优点</h4><ul>
+<h4 id="hybrid-优点"><a class="markdownIt-Anchor" href="#hybrid-优点">#</a> hybrid 优点</h4>
+<ul>
 <li>体验更好，跟 NA 体验基本一致</li>
 <li>可快速迭代，无需 app 审核 【关键】</li>
 </ul>
-<h4 id="hybrid-缺点"><a href="#hybrid-缺点" class="headerlink" title="hybrid 缺点"></a>hybrid 缺点</h4><ul>
+<h4 id="hybrid-缺点"><a class="markdownIt-Anchor" href="#hybrid-缺点">#</a> hybrid 缺点</h4>
+<ul>
 <li>开发成本高。联调，测试，查 bug 都比较麻烦</li>
 <li>运维成本高。参考此前讲过的更新上线的流程</li>
 </ul>
-<h4 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h4><ul>
+<h4 id="适用场景"><a class="markdownIt-Anchor" href="#适用场景">#</a> 适用场景</h4>
+<ul>
 <li>hybrid ：产品的稳定功能，体验要求高，迭代频繁</li>
 <li>h5：单次的运营活动（如 xx 红包）或 不常用功能（反馈、举报页面等）</li>
 </ul>
-<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>hybrid 和 h5 的 主要区别？<ul>
+<h3 id="问题解答-3"><a class="markdownIt-Anchor" href="#问题解答-3">#</a> 问题解答</h3>
+<ul>
+<li>hybrid 和 h5 的 主要区别？
+<ul>
 <li>优点：体验好，可快速迭代</li>
 <li>缺点：开发成本高，运维成本高</li>
 <li>适用的场景：hybrid 适合产品型，h5 适合 运行型</li>
 </ul>
 </li>
 </ul>
-<h2 id="6-4-前端-JS-和-客户端-如何通讯？"><a href="#6-4-前端-JS-和-客户端-如何通讯？" class="headerlink" title="6-4 前端 JS 和 客户端 如何通讯？"></a>6-4 前端 JS 和 客户端 如何通讯？</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h2 id="6-4-前端-js-和-客户端-如何通讯"><a class="markdownIt-Anchor" href="#6-4-前端-js-和-客户端-如何通讯">#</a> 6-4 前端 JS 和 客户端 如何通讯？</h2>
+<h3 id="知识点-4"><a class="markdownIt-Anchor" href="#知识点-4">#</a> 知识点</h3>
+<ul>
 <li>回顾 之前遗留的问题</li>
 <li>JS 和 客户端通讯的基本形式</li>
 <li>schema 协议简介和使用</li>
 <li>schema 使用的封装</li>
 <li>内置上线</li>
 </ul>
-<h4 id="之前遗留的问题"><a href="#之前遗留的问题" class="headerlink" title="之前遗留的问题"></a>之前遗留的问题</h4><ul>
-<li>新闻详情页适用于 hybrid，前端如何 获取新闻内容 ？<ul>
-<li>不能用 ajax （http(s)协议）获取。第一： 跨域 ，第二 ：速度慢</li>
+<h4 id="之前遗留的问题"><a class="markdownIt-Anchor" href="#之前遗留的问题">#</a> 之前遗留的问题</h4>
+<ul>
+<li>新闻详情页适用于 hybrid，前端如何 获取新闻内容 ？
+<ul>
+<li>不能用 ajax （http (s) 协议）获取。第一： 跨域 ，第二 ：速度慢</li>
 <li>客户端获取新闻内容，然后 JS 通讯拿到内容，再渲染</li>
 </ul>
 </li>
@@ -275,14 +304,16 @@
 <li>JS 访问客户端能力，传递参数 和 回调函数</li>
 <li>客户端 通过 回调函数 返回内容</li>
 </ul>
-<h4 id="schema-协议简介和使用"><a href="#schema-协议简介和使用" class="headerlink" title="schema 协议简介和使用"></a>schema 协议简介和使用</h4><ul>
-<li>之前介绍了 http(s) 和 file 协议</li>
-<li>schema 协议 ——前端和客户端通讯的约定</li>
+<h4 id="schema-协议简介和使用"><a class="markdownIt-Anchor" href="#schema-协议简介和使用">#</a> schema 协议简介和使用</h4>
+<ul>
+<li>之前介绍了 http (s) 和 file 协议</li>
+<li>schema 协议 —— 前端和客户端通讯的约定</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190829/w3OphLjO8erc.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190829/QpzXgisk6E3y.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190829/RjgtefgjYzXH.png?imageslim" alt="mark"></p>
-<h4 id="模拟扫一扫前后端通讯"><a href="#模拟扫一扫前后端通讯" class="headerlink" title="模拟扫一扫前后端通讯"></a>模拟扫一扫前后端通讯</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<h4 id="模拟扫一扫前后端通讯"><a class="markdownIt-Anchor" href="#模拟扫一扫前后端通讯">#</a> 模拟扫一扫前后端通讯</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -314,11 +345,12 @@
     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="schema-使用的封装"><a href="#schema-使用的封装" class="headerlink" title="schema 使用的封装"></a>schema 使用的封装</h4><p><img src="http://static.zxinc520.com/blog/20190829/jcvC6T5SH3Pm.png?imageslim" alt="mark"></p>
+<h4 id="schema-使用的封装"><a class="markdownIt-Anchor" href="#schema-使用的封装">#</a> schema 使用的封装</h4>
+<p><img src="http://static.zxinc520.com/blog/20190829/jcvC6T5SH3Pm.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190829/fW8NCvLoYRAg.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190829/5Yhq6r9uLr7X.png?imageslim" alt="mark"></p>
-<h4 id="schema-封装代码"><a href="#schema-封装代码" class="headerlink" title="schema 封装代码"></a>schema 封装代码</h4><p><em>schema 使用的封装</em> ：</p>
+<h4 id="schema-封装代码"><a class="markdownIt-Anchor" href="#schema-封装代码">#</a> schema 封装代码</h4>
+<p><em>schema 使用的封装</em> ：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
@@ -354,7 +386,6 @@
     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><em>invoke.js</em> ：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// invoke.js</span>
 <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> <span class="token keyword">undefined</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -407,9 +438,10 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>前端 JS 和 客户端 如何通讯？<ul>
+<h3 id="问题解答-4"><a class="markdownIt-Anchor" href="#问题解答-4">#</a> 问题解答</h3>
+<ul>
+<li>前端 JS 和 客户端 如何通讯？
+<ul>
 <li>通讯的基本形式：调用能力，传递参数，监听回调</li>
 <li>对 schema 协议的理解和使用 （这个协议可理解为 ：定义了前端和客户端 通信的一个标准）</li>
 <li>调用 schema 代码的封装</li>
@@ -656,7 +688,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

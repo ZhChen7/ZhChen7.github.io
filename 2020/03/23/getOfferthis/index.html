@@ -114,7 +114,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="专题总结：this-指向问题"><a href="#专题总结：this-指向问题" class="headerlink" title="专题总结：this 指向问题"></a>专题总结：this 指向问题</h2><blockquote>
+  <h2 id="专题总结this-指向问题"><a class="markdownIt-Anchor" href="#专题总结this-指向问题">#</a> 专题总结：this 指向问题</h2>
+<blockquote>
 <p>拿到 字节跳动实习生 offer 总结</p>
 <p>回馈分享一波自己的知识点总结</p>
 </blockquote>
@@ -128,15 +129,19 @@
 <blockquote>
 <p>此篇 js - 【this 指向问题】 知识点： 全部弄懂了，面试很容易。</p>
 </blockquote>
-<h2 id="一、this-的四条绑定规则"><a href="#一、this-的四条绑定规则" class="headerlink" title="一、this 的四条绑定规则"></a>一、this 的四条绑定规则</h2><ol>
-<li><p>默认绑定</p>
+<h2 id="一-this-的四条绑定规则"><a class="markdownIt-Anchor" href="#一-this-的四条绑定规则">#</a> 一、this 的四条绑定规则</h2>
+<ol>
+<li>
+<p>默认绑定</p>
 <ul>
 <li>独立函数调用时，this 指向全局对象（window），如果使用严格模式，那么全局对象无法使用默认绑定， this 绑定至 undefined。</li>
 </ul>
 </li>
-<li><p>隐式绑定</p>
+<li>
+<p>隐式绑定</p>
 <ul>
-<li><p>函数 this 是指向调用者 （隐式指向）</p>
+<li>
+<p>函数 this 是指向调用者 （隐式指向）</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
@@ -145,15 +150,16 @@
   foo<span class="token operator">:</span> foo<span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 obj<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
-<li>obj1.obj2.foo(); // foo 中的 this 与 obj2 绑定</li>
+<li>obj1.obj2.foo (); //foo 中的 this 与 obj2 绑定</li>
 </ul>
 </li>
-<li><p>问题：隐式丢失</p>
+<li>
+<p>问题：隐式丢失</p>
 <ul>
 <li>描述：隐式丢失指的是函数中的 this 丢失绑定对象，即它会应用第 1 条的默认绑定规则，从而将 this 绑定到全局对象或者 undefined 上，取决于是否在严格模式下运行。</li>
-<li>以下情况会发生隐式丢失<ol>
+<li>以下情况会发生隐式丢失
+<ol>
 <li>绑定至上下文对象的函数被赋值给一个新的函数，然后调用这个新的函数时</li>
 <li>传入回调函数时</li>
 </ol>
@@ -162,24 +168,30 @@ obj<span class="token punctuation">.</span><span class="token function">foo</spa
 </li>
 </ul>
 </li>
-<li><p>显式绑定</p>
+<li>
+<p>显式绑定</p>
 <ul>
-<li>显式绑定的核心是 JavaScript 内置的 call(..) 和 apply(..) 方法，call 和 apply bind 的 this 第一个参数 （显示指向）</li>
+<li>显式绑定的核心是 JavaScript 内置的 call (…) 和 apply (…) 方法，call 和 apply bind 的 this 第一个参数 （显示指向）</li>
 </ul>
 </li>
-<li><p>new 绑定</p>
+<li>
+<p>new 绑定</p>
 <ul>
 <li>构造函数的 this 是 new 之后的新对象 （构造器）</li>
 </ul>
 </li>
 </ol>
-<h2 id="二、call-bind-apply"><a href="#二、call-bind-apply" class="headerlink" title="二、call bind apply"></a>二、call bind apply</h2><blockquote>
+<h2 id="二-call-bind-apply"><a class="markdownIt-Anchor" href="#二-call-bind-apply">#</a> 二、call bind apply</h2>
+<blockquote>
 <p>改变函数执行时的上下文（改变函数运行时的 this 指向）</p>
 </blockquote>
-<h3 id="2-1、apply"><a href="#2-1、apply" class="headerlink" title="2.1、apply"></a>2.1、apply</h3><ul>
-<li><p>第二个参数为数组</p>
+<h3 id="21-apply"><a class="markdownIt-Anchor" href="#21-apply">#</a> 2.1、apply</h3>
+<ul>
+<li>
+<p>第二个参数为数组</p>
 </li>
-<li><p>自定义实现</p>
+<li>
+<p>自定义实现</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 自定义apply函数</span>
 <span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">apply1</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> arg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token comment">//context为null或者是undefined时,设置默认值</span>
@@ -197,13 +209,15 @@ obj<span class="token punctuation">.</span><span class="token function">foo</spa
   <span class="token keyword">delete</span> obj<span class="token punctuation">.</span>fn<span class="token punctuation">;</span>
   <span class="token keyword">return</span> result<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 </li>
 </ul>
-<h3 id="2-2、call"><a href="#2-2、call" class="headerlink" title="2.2、call"></a>2.2、call</h3><ul>
-<li><p>第二个参数为参数列表</p>
+<h3 id="22-call"><a class="markdownIt-Anchor" href="#22-call">#</a> 2.2、call</h3>
+<ul>
+<li>
+<p>第二个参数为参数列表</p>
 </li>
-<li><p>自定义实现</p>
+<li>
+<p>自定义实现</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">call1</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> <span class="token operator">...</span>arg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     obj <span class="token operator">=</span> <span class="token keyword">typeof</span> window <span class="token operator">===</span> <span class="token string">"undefined"</span> <span class="token operator">?</span> global <span class="token operator">:</span> window<span class="token punctuation">;</span>
@@ -214,20 +228,23 @@ obj<span class="token punctuation">.</span><span class="token function">foo</spa
   <span class="token keyword">delete</span> obj<span class="token punctuation">.</span>fn<span class="token punctuation">;</span>
   <span class="token keyword">return</span> result<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 </li>
 </ul>
-<h3 id="2-3、bind"><a href="#2-3、bind" class="headerlink" title="2.3、bind"></a>2.3、bind</h3><ul>
-<li><p>特点</p>
+<h3 id="23-bind"><a class="markdownIt-Anchor" href="#23-bind">#</a> 2.3、bind</h3>
+<ul>
+<li>
+<p>特点</p>
 <ul>
 <li>返回一个函数</li>
 <li>可以传入参数（使用 bind 时和 bind 新生成的函数都可以传参）</li>
 <li>当 bind 返回的函数作为构造函数的时候，bind 时指定的 this 值会失效，但传入的参数依然生效</li>
 </ul>
 </li>
-<li><p>注意：bind 这个方法在 IE6~8 下不兼容</p>
+<li>
+<p>注意：bind 这个方法在 IE6~8 下不兼容</p>
 </li>
-<li><p>自定义实现</p>
+<li>
+<p>自定义实现</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">bind1</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> <span class="token operator">...</span>arg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     obj <span class="token operator">=</span> <span class="token keyword">typeof</span> window <span class="token operator">===</span> <span class="token string">"undefined"</span> <span class="token operator">?</span> global <span class="token operator">:</span> window<span class="token punctuation">;</span>
@@ -244,25 +261,29 @@ obj<span class="token punctuation">.</span><span class="token function">foo</spa
   bound<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> bound<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 </li>
 </ul>
-<h3 id="2-4、区别"><a href="#2-4、区别" class="headerlink" title="2.4、区别"></a>2.4、区别</h3><blockquote>
-<p>call 和 apply 改变了函数的 this 上下文后便执行该函数,而 bind 则是返回改变了上下文后的一个函数。</p>
+<h3 id="24-区别"><a class="markdownIt-Anchor" href="#24-区别">#</a> 2.4、区别</h3>
+<blockquote>
+<p>call 和 apply 改变了函数的 this 上下文后便执行该函数，而 bind 则是返回改变了上下文后的一个函数。</p>
 </blockquote>
-<h2 id="三、相关题目"><a href="#三、相关题目" class="headerlink" title="三、相关题目"></a>三、相关题目</h2><ol>
-<li><p>怎么利用 call、apply 来求一个数组中最大或者最小值</p>
+<h2 id="三-相关题目"><a class="markdownIt-Anchor" href="#三-相关题目">#</a> 三、相关题目</h2>
+<ol>
+<li>
+<p>怎么利用 call、apply 来求一个数组中最大或者最小值</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token operator">...</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> fn <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token operator">...</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>如何利用 call、apply 来做继承</p>
+<li>
+<p>如何利用 call、apply 来做继承</p>
 </li>
-<li><p>apply、call、bind 的区别和主要应用场景</p>
+<li>
+<p>apply、call、bind 的区别和主要应用场景</p>
 <ol>
-<li>将类数组/含有 length 属性的对象转化为数组</li>
+<li>将类数组 / 含有 length 属性的对象转化为数组</li>
 <li>求数组中的最大和最小值</li>
 <li>数组追加</li>
 <li>利用 call 和 apply 做继承</li>
@@ -509,7 +530,7 @@ Math<span class="token punctuation">.</span><span class="token function">max</sp
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

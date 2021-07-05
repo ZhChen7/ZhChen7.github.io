@@ -114,33 +114,39 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="组件化和-React"><a href="#组件化和-React" class="headerlink" title="组件化和 React"></a>组件化和 React</h1><blockquote>
+  <h1 id="组件化和-react"><a class="markdownIt-Anchor" href="#组件化和-react">#</a> 组件化和 React</h1>
+<blockquote>
 <p>本章先带领学生做一个 React 的实例，熟悉 React 开发环境、以及 <strong>组件化</strong> 的概念。然后，通过实例来讲解 React 的 <strong>实现原理</strong>，包括 <strong>JSX 的本质</strong> 、<strong>虚拟 DOM 和 JSX 的结合</strong>、以及 <strong>setState</strong> 。最后，<strong>对比 vue 和 React</strong> ，分析两者的异同。</p>
 <p>组件化和 React 高级面试知识点</p>
 <p>Think great thoughts and you will be great!</p>
 <p>心怀伟大的理想，你将会变得伟大。</p>
 </blockquote>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h3 id="知识点"><a class="markdownIt-Anchor" href="#知识点">#</a> 知识点</h3>
+<ul>
 <li>是否做过 React 开发？</li>
 <li>React 以及组件化的一些核心概念</li>
 <li>实现流程</li>
 </ul>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
+<h3 id="题目"><a class="markdownIt-Anchor" href="#题目">#</a> 题目</h3>
+<ul>
 <li>说一下对组件化的理解</li>
 <li>JSX 本质是什么？</li>
 <li>JSX 和 vdom 的关系？</li>
 <li>说一下 setState 的过程</li>
 <li>阐述一下对 React 和 Vue 的 认识</li>
 </ul>
-<h4 id="回顾-React"><a href="#回顾-React" class="headerlink" title="回顾 React"></a>回顾 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/">React</a></h4><ol>
-<li><p>创建一个基本的 React 应用</p>
+<h4 id="回顾-react"><a class="markdownIt-Anchor" href="#回顾-react">#</a> 回顾 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/">React</a></h4>
+<ol>
+<li>
+<p>创建一个基本的 React 应用</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/facebookincubator/create-react-app">Create React App</a> 是一个用于<strong>学习 React</strong> 的舒适环境，也是用 React 创建<strong>新的单页应用</strong>的最佳方式。</p>
 <p>它会配置你的开发环境，以便使你能够使用最新的 JavaScript 特性，提供良好的开发体验，并为生产环境优化你的应用程序。你需要在你的机器上安装 Node &gt;= 8.10 和 npm &gt;= 5.6。要创建项目，请执行：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npx create-react-app my-app
 cd my-app
 npm start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>用 React 实现 <strong>to-do-list</strong> ：</p>
+<li>
+<p>用 React 实现 <strong>to-do-list</strong> ：</p>
 </li>
 </ol>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> Component <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
@@ -197,37 +203,45 @@ npm start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <span class="token punctuation">&#125;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> Todo<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190907/GRlG7LRoeKp7.gif" alt="mark"></p>
-<h2 id="7-1-说一下对组件化的理解"><a href="#7-1-说一下对组件化的理解" class="headerlink" title="7-1 说一下对组件化的理解"></a>7-1 说一下对组件化的理解</h2><h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h2 id="7-1-说一下对组件化的理解"><a class="markdownIt-Anchor" href="#7-1-说一下对组件化的理解">#</a> 7-1 说一下对组件化的理解</h2>
+<h3 id="知识点-2"><a class="markdownIt-Anchor" href="#知识点-2">#</a> 知识点</h3>
+<ul>
 <li>组件的 <strong>封装</strong></li>
 <li>组件的 <strong>复用</strong></li>
 </ul>
-<h4 id="组件的封装"><a href="#组件的封装" class="headerlink" title="组件的封装"></a>组件的封装</h4><ul>
+<h4 id="组件的封装"><a class="markdownIt-Anchor" href="#组件的封装">#</a> 组件的封装</h4>
+<ul>
 <li>视图</li>
 <li>数据</li>
 <li>变化逻辑 （ 数据驱动视图变化 ）</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190907/m1BCsjY31wOd.png?imageslim" alt="mark"></p>
-<h4 id="组件的-复用"><a href="#组件的-复用" class="headerlink" title="组件的 复用"></a>组件的 复用</h4><ul>
+<h4 id="组件的-复用"><a class="markdownIt-Anchor" href="#组件的-复用">#</a> 组件的 复用</h4>
+<ul>
 <li>props 传递</li>
 <li>复用</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190907/dSD9f5yFTKYD.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190907/dig0u7rhRuJi.png?imageslim" alt="mark"></p>
-<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><ul>
-<li>说一下对组件化的理解？<ul>
+<h3 id="题目-2"><a class="markdownIt-Anchor" href="#题目-2">#</a> 题目</h3>
+<ul>
+<li>说一下对组件化的理解？
+<ul>
 <li>组件的封装：封装视图、数据、变化逻辑</li>
 <li>组件的复用：props 传递、复用</li>
 </ul>
 </li>
 </ul>
-<h2 id="7-2-JSX-本质是什么"><a href="#7-2-JSX-本质是什么" class="headerlink" title="7-2 JSX 本质是什么"></a>7-2 JSX 本质是什么</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h2 id="7-2-jsx-本质是什么"><a class="markdownIt-Anchor" href="#7-2-jsx-本质是什么">#</a> 7-2 JSX 本质是什么</h2>
+<h3 id="知识点-3"><a class="markdownIt-Anchor" href="#知识点-3">#</a> 知识点</h3>
+<ul>
 <li>JSX 语法</li>
 <li>JSX 解析成 JS</li>
 <li>独立的标准</li>
 </ul>
-<h4 id="JSX-语法"><a href="#JSX-语法" class="headerlink" title="JSX 语法"></a>JSX 语法</h4><ul>
+<h4 id="jsx-语法"><a class="markdownIt-Anchor" href="#jsx-语法">#</a> JSX 语法</h4>
+<ul>
 <li>html 形式</li>
 <li>引入 JS 变量和表达式</li>
 <li>if … else …</li>
@@ -235,45 +249,55 @@ npm start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <li>style 和 className</li>
 <li>事件</li>
 </ul>
-<h4 id="提出疑问"><a href="#提出疑问" class="headerlink" title="提出疑问"></a>提出疑问</h4><ul>
+<h4 id="提出疑问"><a class="markdownIt-Anchor" href="#提出疑问">#</a> 提出疑问</h4>
+<ul>
 <li>JSX 语法根本无法被浏览器所解析</li>
 <li>那么它如何在浏览器运行</li>
 </ul>
-<h4 id="JSX-解析"><a href="#JSX-解析" class="headerlink" title="JSX 解析"></a>JSX 解析</h4><ul>
+<h4 id="jsx-解析"><a class="markdownIt-Anchor" href="#jsx-解析">#</a> JSX 解析</h4>
+<ul>
 <li>JSX 其实是语法糖</li>
 <li>开发环境会将 JSX 编译成 JS 代码</li>
 <li>JSX 的写法 大大降低了学习成本和 编码工作量</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190907/Xy8TYGeoHcWC.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190907/yjXVnlK8oLfk.png?imageslim" alt="mark"></p>
-<h4 id="JSX-独立的标准"><a href="#JSX-独立的标准" class="headerlink" title="JSX 独立的标准"></a>JSX 独立的标准</h4><ul>
+<h4 id="jsx-独立的标准"><a class="markdownIt-Anchor" href="#jsx-独立的标准">#</a> JSX 独立的标准</h4>
+<ul>
 <li>JSX 是 React 引入的，但不是 React 独有的</li>
 <li>React 已经将它作为一个独立的标准开放，其它项目也可用</li>
 <li>React.createElement 是可以自定义修改的</li>
 <li>说明：本身功能已经完备；和其它标准兼容和扩展性没问题</li>
 </ul>
-<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>JSX 本质是什么？<ul>
+<h3 id="问题解答"><a class="markdownIt-Anchor" href="#问题解答">#</a> 问题解答</h3>
+<ul>
+<li>JSX 本质是什么？
+<ul>
 <li>JSX 语法（标签、JS 表达式、判断、循环、事件绑定）</li>
 <li>JSX 本质就是语法糖，需被解析成 JS 才能运行</li>
 <li>JSX 是独立的标准，可被其它项目使用</li>
 </ul>
 </li>
 </ul>
-<h2 id="7-3-JSX-和-vdom-的关系"><a href="#7-3-JSX-和-vdom-的关系" class="headerlink" title="7-3 JSX 和 vdom 的关系"></a>7-3 JSX 和 vdom 的关系</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h2 id="7-3-jsx-和-vdom-的关系"><a class="markdownIt-Anchor" href="#7-3-jsx-和-vdom-的关系">#</a> 7-3 JSX 和 vdom 的关系</h2>
+<h3 id="知识点-4"><a class="markdownIt-Anchor" href="#知识点-4">#</a> 知识点</h3>
+<ul>
 <li>分析：为何需要 vdom</li>
 <li>React.createElement 和 h</li>
 <li>何时 patch？</li>
 <li>自定义组件的解析</li>
 </ul>
-<h4 id="为何需要-vdom"><a href="#为何需要-vdom" class="headerlink" title="为何需要 vdom"></a>为何需要 vdom</h4><ul>
+<h4 id="为何需要-vdom"><a class="markdownIt-Anchor" href="#为何需要-vdom">#</a> 为何需要 vdom</h4>
+<ul>
 <li>vdom 是 React 初次推广开来的，结合 JSX</li>
 <li>JSX 就是模板，最终要渲染成 html</li>
 <li>初次渲染 + 修改 state 后的 re-render</li>
 <li>正好 符合 vdom 的应用场景</li>
 </ul>
-<h4 id="回顾-vdom"><a href="#回顾-vdom" class="headerlink" title="回顾 vdom"></a>回顾 <a target="_blank" rel="noopener" href="http://www.zxinc520.com/lcj/%225d63a1bce9920a5ce05e2c3b%22">vdom</a></h4><ul>
-<li>vdom 如何应用，核心 API 是 什么？<ul>
+<h4 id="回顾-vdom"><a class="markdownIt-Anchor" href="#回顾-vdom">#</a> 回顾 <a target="_blank" rel="noopener" href="http://www.zxinc520.com/lcj/%225d63a1bce9920a5ce05e2c3b%22">vdom</a></h4>
+<ul>
+<li>vdom 如何应用，核心 API 是 什么？
+<ul>
 <li>如何使用？ 可用 snabbdom 的 用法 来 举例</li>
 <li>核心 函数 ：h 函数，patch 函数</li>
 </ul>
@@ -282,39 +306,47 @@ npm start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <p><strong>核心 API</strong> ：</p>
 <ul>
 <li>h（’&lt;标签名&gt;’，{ … 属性 … }，[… 子元素 …]）</li>
-<li>h（’&lt;标签名&gt;’，{ … 属性 … }，[ ‘….’]）</li>
+<li>h（’&lt;标签名&gt;’，{ … 属性 … }，[ ‘…’]）</li>
 <li>patch（container，vnode）</li>
 <li>patch（vnode，newVnode）</li>
 </ul>
-<h4 id="React-createElement-和-h"><a href="#React-createElement-和-h" class="headerlink" title="React.createElement 和 h"></a>React.createElement 和 h</h4><p><img src="http://static.zxinc520.com/blog/20190907/hro0P4sQFQug.png?imageslim" alt="mark"></p>
+<h4 id="reactcreateelement-和-h"><a class="markdownIt-Anchor" href="#reactcreateelement-和-h">#</a> React.createElement 和 h</h4>
+<p><img src="http://static.zxinc520.com/blog/20190907/hro0P4sQFQug.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190907/3N0XehWXEtQa.png?imageslim" alt="mark"></p>
-<h4 id="何时-patch"><a href="#何时-patch" class="headerlink" title="何时 patch"></a>何时 patch</h4><ul>
-<li>初次渲染 - ReactDOM.render (&lt; App /&gt;,container)</li>
+<h4 id="何时-patch"><a class="markdownIt-Anchor" href="#何时-patch">#</a> 何时 patch</h4>
+<ul>
+<li>初次渲染 - ReactDOM.render (&lt;App /&gt;,container)</li>
 <li>会触发 patch (container,vnode)</li>
 <li>re-render - setState</li>
 <li>会触发 patch (vnode,newVnode)</li>
 </ul>
-<h4 id="自定义组件的解析"><a href="#自定义组件的解析" class="headerlink" title="自定义组件的解析"></a>自定义组件的解析</h4><ul>
-<li>‘div’ - 直接渲染 &lt; div&gt; 即可，vdom 可以做到</li>
+<h4 id="自定义组件的解析"><a class="markdownIt-Anchor" href="#自定义组件的解析">#</a> 自定义组件的解析</h4>
+<ul>
+<li>‘div’ - 直接渲染 &lt;div&gt; 即可，vdom 可以做到</li>
 <li>Input 和 List ，是自定义组件 （class），vdom 默认不认识</li>
 <li>因此 Input 和 List 定义的时候 必须声明 render 函数</li>
 <li>根据 props 初始化实例，然后执行实例的 render 函数</li>
 <li>render 函数返回的还是 vnode 对象</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190907/q3iTc0PViQbi.png?imageslim" alt="mark"></p>
-<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<h3 id="问题解答-2"><a class="markdownIt-Anchor" href="#问题解答-2">#</a> 问题解答</h3>
+<ul>
 <li>为何需要 vdom：JSX 需要渲染成 html，数据驱动视图</li>
 <li>React.createElement 和 h ，都生成 vnode</li>
-<li>何时 patch：ReactDOM.render(…) 和 setState</li>
+<li>何时 patch：ReactDOM.render (…) 和 setState</li>
 <li>自定义组件的解析：初始化实例，然后执行 render</li>
 </ul>
-<h2 id="7-4-说一下-setState-的过程"><a href="#7-4-说一下-setState-的过程" class="headerlink" title="7-4 说一下 setState 的过程"></a>7-4 说一下 setState 的过程</h2><h3 id="知识点-4"><a href="#知识点-4" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h2 id="7-4-说一下-setstate-的过程"><a class="markdownIt-Anchor" href="#7-4-说一下-setstate-的过程">#</a> 7-4 说一下 setState 的过程</h2>
+<h3 id="知识点-5"><a class="markdownIt-Anchor" href="#知识点-5">#</a> 知识点</h3>
+<ul>
 <li>setState 的异步</li>
 <li>vue 修改属性也是 异步</li>
 <li>setState 的过程</li>
 </ul>
-<h4 id="setState-的异步"><a href="#setState-的异步" class="headerlink" title="setState 的异步"></a>setState 的异步</h4><p><img src="http://static.zxinc520.com/blog/20190907/z8fAo7IMaYcs.png?imageslim" alt="mark"></p>
-<h4 id="setState-为何需要异步？"><a href="#setState-为何需要异步？" class="headerlink" title="setState 为何需要异步？"></a>setState 为何需要异步？</h4><ul>
+<h4 id="setstate-的异步"><a class="markdownIt-Anchor" href="#setstate-的异步">#</a> setState 的异步</h4>
+<p><img src="http://static.zxinc520.com/blog/20190907/z8fAo7IMaYcs.png?imageslim" alt="mark"></p>
+<h4 id="setstate-为何需要异步"><a class="markdownIt-Anchor" href="#setstate-为何需要异步">#</a> setState 为何需要异步？</h4>
+<ul>
 <li>可能会一次执行 多次 setState</li>
 <li>你无法规定、限制用户如何使用 setState</li>
 <li>没必要每次 setState 都重新渲染，考虑性能</li>
@@ -322,24 +354,28 @@ npm start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <li>只看到最后的结果即可</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190907/0E8yvUnt3JOn.png?imageslim" alt="mark"></p>
-<h4 id="vue-修改属性也是异步"><a href="#vue-修改属性也是异步" class="headerlink" title="vue 修改属性也是异步"></a>vue 修改属性也是异步</h4><ul>
+<h4 id="vue-修改属性也是异步"><a class="markdownIt-Anchor" href="#vue-修改属性也是异步">#</a> vue 修改属性也是异步</h4>
+<ul>
 <li>效果、原因和 setState 一样</li>
 <li>对比记忆，印象深刻</li>
 </ul>
-<h4 id="vue-的整个实现流程"><a href="#vue-的整个实现流程" class="headerlink" title="vue 的整个实现流程"></a>vue 的整个实现流程</h4><ul>
+<h4 id="vue-的整个实现流程"><a class="markdownIt-Anchor" href="#vue-的整个实现流程">#</a> vue 的整个实现流程</h4>
+<ul>
 <li>第一步：解析模板成 render 函数</li>
 <li>第二步：响应式开始监听</li>
 <li>第三步：首次渲染，显示页面，且绑定依赖</li>
 <li>第四步：data 属性变化（ <strong>异步</strong> ），触发 rerender</li>
 </ul>
-<h5 id="data-属性变化"><a href="#data-属性变化" class="headerlink" title="data 属性变化"></a>data 属性变化</h5><ul>
+<h5 id="data-属性变化"><a class="markdownIt-Anchor" href="#data-属性变化">#</a> data 属性变化</h5>
+<ul>
 <li>修改属性，被响应式 的 set 监听到</li>
 <li>set 中执行 updataComponent （ <strong>异步</strong> ）</li>
-<li>updataComponent 重新执行 vm.render()</li>
+<li>updataComponent 重新执行 vm.render ()</li>
 <li>生成的 vnode 和 prevVnode，通过 patch 进行比较</li>
 <li>渲染到 html 中</li>
 </ul>
-<h4 id="setState-的过程"><a href="#setState-的过程" class="headerlink" title="setState 的过程"></a>setState 的过程</h4><ul>
+<h4 id="setstate-的过程"><a class="markdownIt-Anchor" href="#setstate-的过程">#</a> setState 的过程</h4>
+<ul>
 <li>每个组件实例，都有 renderComponent 方法</li>
 <li>执行 renderComponent 会重新执行实例的 render</li>
 <li>render 函数返回 newVnode，然后拿到 preVnode</li>
@@ -356,56 +392,65 @@ npm start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
     <span class="token keyword">this</span><span class="token punctuation">.</span>_vnode <span class="token operator">=</span> newVnode<span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<h3 id="问题解答-3"><a class="markdownIt-Anchor" href="#问题解答-3">#</a> 问题解答</h3>
+<ul>
 <li>setState 的异步：效果、原因</li>
 <li>vue 修改属性也是异步：效果、原因</li>
-<li>setState 的过程：最终走到 patch(preVnode, newVnode)</li>
+<li>setState 的过程：最终走到 patch (preVnode, newVnode)</li>
 </ul>
-<h1 id="7-5-总结"><a href="#7-5-总结" class="headerlink" title="7-5 总结"></a>7-5 总结</h1><ul>
-<li><p>说一下对组件化的理解？</p>
+<h1 id="7-5-总结"><a class="markdownIt-Anchor" href="#7-5-总结">#</a> 7-5 总结</h1>
+<ul>
+<li>
+<p>说一下对组件化的理解？</p>
 <ul>
 <li>组件的封装：封装视图、数据、变化逻辑</li>
 <li>组件的复用：props 传递、复用</li>
 </ul>
 </li>
-<li><p>JSX 本质是什么？</p>
+<li>
+<p>JSX 本质是什么？</p>
 <ul>
 <li>JSX 语法（标签、JS 表达式、判断、循环、事件绑定）</li>
 <li>JSX 本质就是语法糖，需被解析成 JS 才能运行</li>
 <li>JSX 是独立的标准，可被其它项目使用</li>
 </ul>
 </li>
-<li><p>JSX 和 vdom 的关系？</p>
+<li>
+<p>JSX 和 vdom 的关系？</p>
 <ul>
 <li>为何需要 vdom：JSX 需要渲染成 html，数据驱动视图</li>
 <li>React.createElement 和 h ，都生成 vnode</li>
-<li>何时 patch：ReactDOM.render(…) 和 setState</li>
+<li>何时 patch：ReactDOM.render (…) 和 setState</li>
 <li>自定义组件的解析：初始化实例，然后执行 render</li>
 </ul>
 </li>
-<li><p>说一下 setState 的过程</p>
+<li>
+<p>说一下 setState 的过程</p>
 <ul>
 <li>setState 的异步：效果、原因</li>
 <li>vue 修改属性也是异步：效果、原因</li>
-<li>setState 的过程：最终走到 patch(preVnode, newVnode)</li>
+<li>setState 的过程：最终走到 patch (preVnode, newVnode)</li>
 </ul>
 </li>
 </ul>
-<h2 id="7-6-React-Vs-vue"><a href="#7-6-React-Vs-vue" class="headerlink" title="7-6 React Vs vue"></a>7-6 React Vs vue</h2><h3 id="知识点-5"><a href="#知识点-5" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h2 id="7-6-react-vs-vue"><a class="markdownIt-Anchor" href="#7-6-react-vs-vue">#</a> 7-6 React Vs vue</h2>
+<h3 id="知识点-6"><a class="markdownIt-Anchor" href="#知识点-6">#</a> 知识点</h3>
+<ul>
 <li>两者的本质区别</li>
 <li>看模板和组件化的区别</li>
 <li>两者共同点</li>
 <li>总结问题的答案</li>
 </ul>
-<h4 id="两者的本质区别"><a href="#两者的本质区别" class="headerlink" title="两者的本质区别"></a>两者的本质区别</h4><ul>
+<h4 id="两者的本质区别"><a class="markdownIt-Anchor" href="#两者的本质区别">#</a> 两者的本质区别</h4>
+<ul>
 <li>vue - 本质是 MVVM 框架，由 MVC 发展而来</li>
 <li>React - 本质是前端组件化框架，有后端组件化发展而来</li>
 </ul>
-<h4 id="模板的区别"><a href="#模板的区别" class="headerlink" title="模板的区别"></a>模板的区别</h4><ul>
+<h4 id="模板的区别"><a class="markdownIt-Anchor" href="#模板的区别">#</a> 模板的区别</h4>
+<ul>
 <li>vue - 使用模板 （ 最初由 angular 提出）</li>
 <li>React - 使用 JSX</li>
-<li>**模板语法 **上，我更倾向于 JSX</li>
+<li>** 模板语法 ** 上，我更倾向于 JSX</li>
 <li><strong>模板分离</strong> 上，我更加倾向于 vue</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190907/3TJdcbF6Ud41.png?imageslim" alt="mark"></p>
@@ -413,20 +458,24 @@ npm start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <p><img src="http://static.zxinc520.com/blog/20190907/O7ONMqnOcIxs.png?imageslim" alt="mark"></p>
 <ul>
 <li>模板应该 和 JS 逻辑分离</li>
-<li>回顾 ”开放封闭原则“</li>
+<li>回顾 ” 开放封闭原则 “</li>
 </ul>
-<h4 id="组件化的区别"><a href="#组件化的区别" class="headerlink" title="组件化的区别"></a>组件化的区别</h4><ul>
+<h4 id="组件化的区别"><a class="markdownIt-Anchor" href="#组件化的区别">#</a> 组件化的区别</h4>
+<ul>
 <li>React 本身就是组件化，没有组件化就不是 React</li>
 <li>vue 也支持组件化，不过是在 MVVM 上的扩展</li>
 <li>查阅 vue 组件化的文档，洋洋洒洒很多（ 侧面反映 ）</li>
 <li>对于组件化，我更倾向于 React，做的彻底而清晰</li>
 </ul>
-<h4 id="两者的共同点"><a href="#两者的共同点" class="headerlink" title="两者的共同点"></a>两者的共同点</h4><ul>
+<h4 id="两者的共同点"><a class="markdownIt-Anchor" href="#两者的共同点">#</a> 两者的共同点</h4>
+<ul>
 <li>都支持组件化</li>
 <li>都是数据驱动视图</li>
 </ul>
-<h3 id="问题解答-3"><a href="#问题解答-3" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>阐述一下对 React 和 Vue 的 认识<ul>
+<h3 id="问题解答-4"><a class="markdownIt-Anchor" href="#问题解答-4">#</a> 问题解答</h3>
+<ul>
+<li>阐述一下对 React 和 Vue 的 认识
+<ul>
 <li>国内使用，首推 vue。文档更易读、易学、社区够大</li>
 <li>如果团队水平较高，推荐使用 React。组件化 和 JSX</li>
 </ul>
@@ -671,7 +720,7 @@ npm start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

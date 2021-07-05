@@ -1,0 +1,653 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;webpack 后续问题&#34; tag</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Wed, 17 Apr 2019 21:28:36 +0800</pubDate>
+        <lastBuildDate>Wed, 17 Apr 2019 21:28:36 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2019/04/17/VueLearn06/</guid>
+            <title>webpack、webpack 后续问题</title>
+            <link>http://example.com/2019/04/17/VueLearn06/</link>
+            <category>webpack</category>
+            <category>vue</category>
+            <category>webpack 后续问题</category>
+            <pubDate>Wed, 17 Apr 2019 21:28:36 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;vue-第六天学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vue-第六天学习&#34;&gt;#&lt;/a&gt; Vue 第六天学习&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;file-loader（解决 webpack 打包图片路径问题，字体路径问题）&lt;/p&gt;
+&lt;p&gt;webpack 中 babel 的配置（处理高级的 es6 语法或者 es7 语法）&lt;/p&gt;
+&lt;p&gt;Vue 中的 render 函数&lt;/p&gt;
+&lt;p&gt;在 webpack 构建的项目中，使用 Vue 进行开发&lt;/p&gt;
+&lt;p&gt;export default 和 export 的使用方式&lt;/p&gt;
+&lt;p&gt;结合 webpack 使用 vue-router&lt;/p&gt;
+&lt;p&gt;组件中 style 标签 lang 属性和 scoped 属性的介绍&lt;/p&gt;
+&lt;p&gt;抽离路由模块&lt;/p&gt;
+&lt;p&gt;一个人如果不想输，就要不断学好眼前的东西，它们将来都会大有用处…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;webpack-后续问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#webpack-后续问题&#34;&gt;#&lt;/a&gt; webpack 后续问题&lt;/h2&gt;
+&lt;h5 id=&#34;问题webpack-打包图片路径问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#问题webpack-打包图片路径问题&#34;&gt;#&lt;/a&gt; 问题：Webpack 打包图片路径问题&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190415/EHGtOouC7m7W.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190415/67j7Iq3tsM4q.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;在页面中引入图片有两种方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#在页面中引入图片有两种方式&#34;&gt;#&lt;/a&gt; 在页面中引入图片有两种方式&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;img 标签引入&lt;/li&gt;
+&lt;li&gt;css 引入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;解决方案webpack-使用-file-loader-处理图片&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解决方案webpack-使用-file-loader-处理图片&#34;&gt;#&lt;/a&gt; 解决方案：Webpack 使用 file-loader 处理图片&lt;/h2&gt;
+&lt;h3 id=&#34;安装file-loader-包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装file-loader-包&#34;&gt;#&lt;/a&gt; 安装：&lt;strong&gt;file-loader&lt;/strong&gt; 包&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;运行  &lt;code&gt;npm i url-loader file-loader -D&lt;/code&gt;  来安装 &lt;strong&gt;file-loader&lt;/strong&gt; 包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190415/tFYCSVQRUkQu.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;配置 webpack.config.js 文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190415/cELvBLsveIEX.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;运行 &lt;code&gt; npm run dev&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190415/VVGGMT2828JL.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;file-loader-参数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#file-loader-参数&#34;&gt;#&lt;/a&gt; file-loader 参数&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;limit&lt;/code&gt;  给定的值，是图片的大小，单位是 byte，如果我们引用的 图片，&lt;strong&gt;大于 &lt;strong&gt;给定的值，则会被转为&lt;/strong&gt; base64 格式&lt;/strong&gt; 的字符串，如果，图片 ** 小于或等于 ** 给定的 limit 值，则不会被转为 base64 的 字符串&lt;br&gt;
+&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/XiEHyP6vdL8s.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/T1MukN0guNf5.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/FPE7T3OUKGxd.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;name&lt;/code&gt;  属性 使图片路径 url 不变&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/wX5GMiFDX3zF.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/9qKydj98tyeA.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;处理字体文件-路径问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#处理字体文件-路径问题&#34;&gt;#&lt;/a&gt; 处理字体文件 路径问题&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用 &lt;strong&gt;file-loader&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;问题描述：引入 bootstrap 字体图标库，但报错！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/1tjFUEn3NBee.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方案&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;配置 webpack.config.js&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;test&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token regex&#34;&gt;/\.(ttf|eot|svg|woff|woff2)$/&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;use&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;url-loader&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//这是 处理 字体文件的 loader&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/K7a1le382DJs.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;运行  &lt;code&gt;npm run dev&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;webpack-中-babel-的配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#webpack-中-babel-的配置&#34;&gt;#&lt;/a&gt; webpack 中 babel 的配置&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.babeljs.cn/docs/index.html&#34;&gt;babel 介绍 &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;问题描述&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;webpack 中默认只能处理一部分 es6 语法，一些更高级的 es6 语法或者 es7 语法 webpack 处理不了，这时候就需要借助第三方 loader 帮助 webpack 处理这些语法&lt;/li&gt;
+&lt;li&gt;class 是 es6 中提供的语法，是用来实现 es6 中面向对象编程的方式，class 和 static 与 Java 中类似&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/4zFaWW0Qqco2.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方案&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;通过 &lt;strong&gt;babel&lt;/strong&gt; 可以将高级语法转化为低级语法&lt;/li&gt;
+&lt;li&gt;安装，运行两个命令，安装两套包，去安装 babel 相关的功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;第一套包&lt;/strong&gt;： &lt;code&gt;npm i babel-core babel-loader babel-plugin-transform-runtime -D&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第二套包&lt;/strong&gt;： &lt;code&gt;npm i babel-preset-env babel-preset-stage-0 -D&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;打开 webpack 配置文件，在 module 节点写的 rules 数组中添加一个新的匹配规则&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;test&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token regex&#34;&gt;/\.js$/&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;use&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;babel-loader&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;exclude&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token regex&#34;&gt;/node_modules/&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/T3zLwVwLDPgf.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;!--在配置babel的loader规则时必须把node_module目录通过exclude排除--&gt;
+&lt;p&gt;&lt;strong&gt;排除 node_module 目录的原因:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果排除 node_module，babel 会把 node_module 目录下的所有第三方 js 文件都打包编译，这会非常消耗 CPU，同时打包速度非常慢&lt;/li&gt;
+&lt;li&gt;babel 把 node_module 中的 js 文件转化完毕项目也无法正常运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;在项目的根目录中新建一个叫做 &lt;strong&gt;.babelrc&lt;/strong&gt; 的 babel 配置文件，这个配置文件属于 &lt;strong&gt;json 格式&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token string&#34;&gt;&#34;presets&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;env&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;stage-0&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token string&#34;&gt;&#34;plugins&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;transform-runtime&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/Mddz8O6ipjPl.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;报错：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/6PopTItC2OrO.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;** 解决方案：** 执行  &lt;code&gt;npm i babel-loader@7&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/HJupUdf1JIBA.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;报错：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/dYb1bw19ID0Y.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;啊啊啊啊～～崩溃！！&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;修改之后还是跑不起来-醉了&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#修改之后还是跑不起来-醉了&#34;&gt;#&lt;/a&gt; 修改之后还是跑不起来 ---- 醉了！！&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/dK1vXd5NuoO4.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/sEpb3GoWOHIM.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;报错：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190416/vh340CYSUk0d.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;升级总结来自百度&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#升级总结来自百度&#34;&gt;#&lt;/a&gt; 升级总结（&lt;a href=&#34;https://segmentfault.com/a/1190000016458913&#34;&gt;来自百度&lt;/a&gt;）&lt;/h2&gt;
+&lt;h4 id=&#34;-babel-升级-7x-踩坑记录&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#-babel-升级-7x-踩坑记录&#34;&gt;#&lt;/a&gt; -babel 升级 7.X 踩坑记录&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;babel 包名改变，以前安装是  &lt;code&gt;npm i babel-*&lt;/code&gt;  现在安装 babel 系列需要写成  &lt;code&gt;npm i @babel/*&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.babelrc&lt;/code&gt;  文件写法改变， &lt;code&gt;preset plugins&lt;/code&gt;  等全部写成  &lt;code&gt;@babel/*&lt;/code&gt;  的形式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-shell&#34; data-language=&#34;shell&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;npm:
+- babel-preset-env
++ @babel&amp;#x2F;preset-env
+- babel-preset-react
++ @babel&amp;#x2F;preset-react
+- babel-preset-stage-0
+
+.babelrc:
+- &amp;quot;presets&amp;quot;: [&amp;quot;react&amp;quot;, &amp;quot;env&amp;quot;, &amp;quot;stage-0&amp;quot;, &amp;quot;mobx&amp;quot;]
++ &amp;quot;presets&amp;quot;: [&amp;quot;@babel&amp;#x2F;preset-react&amp;quot;, &amp;quot;@babel&amp;#x2F;preset-env&amp;quot;, &amp;quot;mobx&amp;quot;]&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;除了上述的 &lt;code&gt;preset&lt;/code&gt; ，我还用了 &lt;code&gt;babel-preset-mobx&lt;/code&gt; &lt;br&gt;
+ 但是没找到  &lt;code&gt;@babel/preset-mobx&lt;/code&gt; ，从&lt;a href=&#34;https://github.com/zwhitchcox/babel-preset-mobx/commits/master&#34;&gt; babel-preset-mobx git 提交日志&lt;/a&gt;上看，作者已经支持了最新的 &lt;code&gt;babel&lt;/code&gt; 。在之后的测试中，发现 &lt;code&gt;mobx&lt;/code&gt;  的功能也能正常使用。&lt;br&gt;
+另外，&lt;a href=&#34;https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets&#34;&gt;stage-* 已弃用&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;使用-vue-实例的-render-方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用-vue-实例的-render-方法&#34;&gt;#&lt;/a&gt; 使用 Vue 实例的 render 方法&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vue 推荐使用在绝大多数情况下使用 template 来创建你的 HTML。然而在一些场景中，你真的需要 JavaScript 的完全编程的能力，这就是 &lt;strong&gt;render 函数&lt;/strong&gt;，它比 template 更接近编译器。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;* 基本使用 **&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;app&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token script&#34;&gt;&lt;span class=&#34;token language-javascript&#34;&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; login &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    template&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&amp;lt;h1&gt;login 组件&amp;lt;/h1&gt;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; vm &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Vue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    el&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;#app&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    data&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    methods&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;render&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;createElement&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;createElement&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;login&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/El6GtYoXY4Wm.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;在-webpack-构建的项目中使用-vue-进行开发&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#在-webpack-构建的项目中使用-vue-进行开发&#34;&gt;#&lt;/a&gt; 在 webpack 构建的项目中，使用 Vue 进行开发&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在普通网页中如何使用 Vue
+&lt;ul&gt;
+&lt;li&gt;1. 使用 script 标签，引入 Vue 的包&lt;/li&gt;
+&lt;li&gt;2. 在 index 页面中，创建 一个 id 为 app div 容器&lt;/li&gt;
+&lt;li&gt;3. 通过 new Vue 得到一个 vm 的实例&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;重点在-webpack-中-尝试-使用-vue&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重点在-webpack-中-尝试-使用-vue&#34;&gt;#&lt;/a&gt; 重点：在 webpack 中 尝试 使用 Vue&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;直接导入 Vue 包&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/fl74cG8ej4BE.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;结果报错&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/wte2gIV3SL5L.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;!--注意：在webpack 中 使用 `import Vue from &#39;vue&#39;`导入的 Vue 构造函数，功能不完整，只提供了 **runtime-only** 的方式，并没有提供 像网页中--&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/FDsekOzOdqSz.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;-回顾-包的-查找-规则&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#-回顾-包的-查找-规则&#34;&gt;#&lt;/a&gt; - 回顾 ：包的 &lt;strong&gt;查找&lt;/strong&gt; 规则&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;找 项目根目录中有没有 node_modules 的文件夹&lt;/li&gt;
+&lt;li&gt;在 node_modules 中，根据包名，找对应的 vue 文件夹&lt;/li&gt;
+&lt;li&gt;在 vue 文件夹中，找 一个叫 package.json 的包配置文件&lt;/li&gt;
+&lt;li&gt;在 package.json 文件中，查找 一个 main 属性【mian 属性指定了这个包在被加载的时候的入口文件】&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;解决方案 1&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/Q2FwTyktL3nF.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方案 2&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/67SE8EyWVRmn.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方案 3（更优雅）：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/Cfv9yq1PVXPl.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;定义-文件形式-vue-组件-加载到页面上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义-文件形式-vue-组件-加载到页面上&#34;&gt;#&lt;/a&gt; 定义 文件形式 vue 组件 加载到页面上&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;例如&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/znhigwsi4kiE.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;报错：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/6ag81mxVMdjN.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原因：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;默认，webpack 无法打包 .vue 文件，需要安装 *&lt;em&gt; 相关的 loader&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;解决方案：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安装：执行  &lt;code&gt;npm i vue-loader vue-template-compiler -D&lt;/code&gt;  命令&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置 webpack.config.js 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;test&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token regex&#34;&gt;/\.vue$/&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;use&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;vue-loader&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; 	&lt;span class=&#34;token comment&#34;&gt;//处理 .vue后缀名的 loader&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/8cY6BeLLmNt2.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;结果：还是报错&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/VgCmomodVkuA.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;原因vue-loader-在-15之后的版本都是-vue-loader-的使用都是需要伴生-vueloaderplugin-的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原因vue-loader-在-15之后的版本都是-vue-loader-的使用都是需要伴生-vueloaderplugin-的&#34;&gt;#&lt;/a&gt; 原因：Vue-loader 在 15.* 之后的版本都是 vue-loader 的使用都是需要伴生 VueLoaderPlugin 的.&lt;/h4&gt;
+&lt;p&gt;解决：在 &lt;strong&gt;webpack.config.js&lt;/strong&gt; 中加入&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; VueLoaderPlugin &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;vue-loader/lib/plugin&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+module&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;exports &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  devtool&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;sourcemap&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  entry&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./js/entry.js&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  output&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    filename&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;bundle.js&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  plugins&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;VueLoaderPlugin&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  module&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/4zePeemdDl56.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用 render 函数 ：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/z60O8OR9qlLk.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/NG0rBbunP4N7.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;总结梳理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结梳理&#34;&gt;#&lt;/a&gt; 总结梳理：&lt;/h2&gt;
+&lt;h4 id=&#34;总结梳理-webpack-中如何使用-vue&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结梳理-webpack-中如何使用-vue&#34;&gt;#&lt;/a&gt; 总结梳理： webpack 中如何使用 vue&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安装 vue 的包： cnpm i vue -S&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;由于 在 webpack 中，推荐使用 .vue 这个组件模板文件定义组件，所以，需要安装 能解析这种文件的 loader ，执行命令：  &lt;code&gt;cnpm i vue-loader vue-template-complier -D&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 main.js 中，导入 vue 模块 import Vue from ‘vue’&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定义一个 .vue 结尾的组件，其中，组件有三部分组成： template script style&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 import login from ‘./login.vue’ 导入这个组件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建 vm 的实例 var vm = new Vue ({el: ‘#app’, render: c =&amp;gt; c (login) })&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在页面中创建一个 id 为 app 的 div 元素，作为我们 vm 实例要控制的区域；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;export-default-和-export-的使用方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#export-default-和-export-的使用方式&#34;&gt;#&lt;/a&gt; export default 和 export 的使用方式&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;基本使用：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-vue&#34; data-language=&#34;vue&#34;&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h3&amp;gt;这是登录组件，vue 文件定义出来的--&amp;#123;&amp;#123; msg &amp;#125;&amp;#125;&amp;lt;&amp;#x2F;h3&amp;gt;
+  &amp;lt;&amp;#x2F;div&amp;gt;
+&amp;lt;&amp;#x2F;template&amp;gt;
+
+&amp;lt;script&amp;gt;
+export default &amp;#123;
+  data() &amp;#123;
+    return &amp;#123;
+      msg: &amp;quot;哈哈哈&amp;quot;,
+    &amp;#125;;
+  &amp;#125;,
+  methods: &amp;#123;
+    show() &amp;#123;
+      console.log(&amp;quot;调用了 login.vue 中的show 方法！&amp;quot;);
+    &amp;#125;,
+  &amp;#125;,
+&amp;#125;;
+&amp;lt;&amp;#x2F;script&amp;gt;
+
+&amp;lt;style&amp;gt;&amp;lt;&amp;#x2F;style&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/VJ8FVeRYb0oV.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;exportimport-export-default-是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#exportimport-export-default-是什么&#34;&gt;#&lt;/a&gt; export，import ，export default 是什么？&lt;/h2&gt;
+&lt;p&gt;ES6 模块主要有两个功能：export 和 import&lt;br&gt;
+&lt;strong&gt;export&lt;/strong&gt; 用于对外输出本模块（一个文件可以理解为一个模块）变量的接口&lt;br&gt;
+&lt;strong&gt; import&lt;/strong&gt; 用于在一个模块中加载另一个含有 export 接口的模块。&lt;br&gt;
+也就是说使用 export 命令定义了模块的对外接口以后，其他 JS 文件就可以通过 import 命令加载这个模块（文件）。这几个都是 ES6 的语法。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;注意：export default 向外暴露的成员，可以使用任意的变量来接受&lt;/li&gt;
+&lt;li&gt;注意：在一个模块中，export default 只允许向外暴露一次&lt;/li&gt;
+&lt;li&gt;注意：在一个模块中，可以同时使用 export 和 export default 向外暴露成员&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;在 Node中，使用 &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; 名称&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;模块标识符&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+
+module&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;exports和 exports 来暴露成员&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;export-与-export-default&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#export-与-export-default&#34;&gt;#&lt;/a&gt; export 与 export default&lt;/h2&gt;
+&lt;p&gt;上面讲的是 export 和 import，但是 &lt;strong&gt;export&lt;/strong&gt; 跟 &lt;strong&gt;export default&lt;/strong&gt; 有什么区别呢？如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;export 与 export default 均可用于导出常量、函数、文件、模块等&lt;/li&gt;
+&lt;li&gt;你可以在其它文件或模块中通过 import+(常量 | 函数 | 文件 | 模块) 名的方式，将其导入，以便能够对其进行使用&lt;/li&gt;
+&lt;li&gt;在一个文件或模块中，export、import 可以有多个，export default 仅有一个，&lt;strong&gt;export default&lt;/strong&gt; 只能导出&lt;strong&gt;一个默认模块&lt;/strong&gt;，这个模块&lt;strong&gt;可以匿名&lt;/strong&gt;（ 引入的时候可以给这个模块取任意名字，例如 “obj”，且不需要用大括号括起来。）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;export ：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//demo1.js&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; str &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;hello world&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; a &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;对应的引入方式：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//demo2.js&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; str&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; f &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;demo1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;export default&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//demo1.js&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  a&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;hello&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  b&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;world&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;对应的引入方式：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//demo2.js&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; obj &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;demo1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;通过 export 方式导出，在导入时要&lt;strong&gt;加 { }&lt;/strong&gt;，export default 则 &lt;strong&gt;不需要&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这样来说其实很多时候 export 与 export default 可以实现同样的目的，只是用法有些区别。注意第四条，通过 export 方式导出，在导入时要加 { }，export default 则不需要。使用 export default 命令，为模块指定默认输出，这样就不需要知道所要加载模块的变量名。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; name&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;李四&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; name &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//import &amp;#123; name &amp;#125; from &#34;/.a.js&#34;&lt;/span&gt;
+可以写成：
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; name&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;李四&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt; name
+&lt;span class=&#34;token comment&#34;&gt;//import name from &#34;/.a.js&#34; 这里name不需要大括号&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;说明与比较new-vue-和-export-default&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#说明与比较new-vue-和-export-default&#34;&gt;#&lt;/a&gt; 说明与比较：new Vue () 和 export default {}？&lt;/h3&gt;
+&lt;p&gt;在生成、导出、导入、使用 Vue 组件的时候，像我这种新手就会常常被位于不同文件的  &lt;code&gt;new Vue()&lt;/code&gt;  和  &lt;code&gt;export default&amp;#123;&amp;#125;&lt;/code&gt;  搞得晕头转向。它们含义到底是什么，又有什么异同呢？&lt;/p&gt;
+&lt;p&gt;首先，Vue 是什么？ po 主的理解是 Vue 就是一个构造函数，生成的实例是一个巨大的对象，可以包含数据、模板、挂载元素、方法、生命周期钩子等选项。&lt;/p&gt;
+&lt;p&gt;所以渲染的时候，可以使用构造 Vue 实例的方式来渲染相应的 html 页面：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Vue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    el&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;#app&#39;&lt;/span&gt;
+    &lt;span class=&#34;token operator&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;那么 export default {} 又是来干嘛的？&lt;/p&gt;
+&lt;p&gt;这是在复用组件的时候用到的。假设我们写了一个单页面组件 A 文件，而在另一个文件 B 里面需要用到它，那么就要用 &lt;a href=&#34;http://es6.ruanyifeng.com/?search=%E7%9C%81%E7%95%A5&amp;amp;x=0&amp;amp;y=0#docs/module&#34;&gt;ES6 的 import/export 语法&lt;/a&gt; ，在文件 A 中定义输出接口  &lt;code&gt;export **&lt;/code&gt; ，在文件 B 中引入  &lt;code&gt;import **&lt;/code&gt; ，然后再生成一个 Vue 实例  &lt;code&gt;new Vue (**)&lt;/code&gt; ，把引入的组件用起来，这样就可以复用组件 A 去配合文件 B 生成 html 页面了。&lt;/p&gt;
+&lt;h2 id=&#34;结合-webpack-使用-vue-router&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结合-webpack-使用-vue-router&#34;&gt;#&lt;/a&gt; 结合 webpack 使用 vue-router&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;安装  &lt;code&gt;npm i vue-router -S &lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;p&gt;目录结构：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/MFFstwRsuS8S.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;main.js：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//在 webpack 构建的项目中，使用Vue 进行开发&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; Vue &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;../node_modules/vue/dist/vue.js&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//1. 导入 vue-router 包&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; VueRouter &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue-router&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//2. 手动安装&lt;/span&gt;
+Vue&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;VueRouter&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//导入app组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; app &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./App.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//导入 Account 组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; account &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./main/Account.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//导入 GoodsList 组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; goodslist &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./main/GoodsList.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//3. 创建路由对象&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; router &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;VueRouter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  routes&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/account&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; account &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/goodslist&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; goodslist &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; vm &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Vue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  el&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;#app&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  data&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    msg&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;12322&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;render&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;app&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  router&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//注意：App 这个组件，是通过 VM 实例的 render 函数，渲染出来的，render 函数如果要渲染 组件渲染出来的组件，只能是 el ：&#39;#app&#39; 所指定的 元素中&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//Account 和 GoodsList 组件，是通过 路由匹配监听到的，所以，这两个组件，只能展示到 属于 路由的 &amp;lt;router-view&gt;&amp;lt;/router-view&gt; 中去&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;App.vue:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-vue&#34; data-language=&#34;vue&#34;&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1&amp;gt;这是app组件&amp;lt;&amp;#x2F;h1&amp;gt;
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;account&amp;quot;&amp;gt;account&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;goodslist&amp;quot;&amp;gt;goodslist&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-view&amp;gt;&amp;lt;&amp;#x2F;router-view&amp;gt;
+  &amp;lt;&amp;#x2F;div&amp;gt;
+&amp;lt;&amp;#x2F;template&amp;gt;
+
+&amp;lt;script&amp;gt;&amp;lt;&amp;#x2F;script&amp;gt;
+&amp;lt;style&amp;gt;&amp;lt;&amp;#x2F;style&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/8RslBeQhHAvx.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;webpack-路由嵌套&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#webpack-路由嵌套&#34;&gt;#&lt;/a&gt; webpack - 路由嵌套&lt;/h2&gt;
+&lt;p&gt;目录结构：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/KpfhuMnyjazc.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;main.js:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//在 webpack 构建的项目中，使用Vue 进行开发&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; Vue &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;../node_modules/vue/dist/vue.js&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//1. 导入 vue-router 包&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; VueRouter &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue-router&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//2. 手动安装&lt;/span&gt;
+Vue&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;VueRouter&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//导入app组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; app &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./App.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//导入 Account 组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; account &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./main/Account.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//导入 GoodsList 组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; goodslist &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./main/GoodsList.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; login &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./son/login.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; register &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./son/register.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//3. 创建路由对象&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; router &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;VueRouter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  routes&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/account&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; account&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      children&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;login&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; login &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;register&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; register &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/goodslist&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; goodslist &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; vm &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Vue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  el&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;#app&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  data&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    msg&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;12322&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;render&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;app&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  router&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//注意：App 这个组件，是通过 VM 实例的 render 函数，渲染出来的，render 函数如果要渲染 组件渲染出来的组件，只能是 el ：&#39;#app&#39; 所指定的 元素中&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//Account 和 GoodsList 组件，是通过 路由匹配监听到的，所以，这两个组件，只能展示到 属于 路由的 &amp;lt;router-view&gt;&amp;lt;/router-view&gt; 中去&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;App.vue:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-vue&#34; data-language=&#34;vue&#34;&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1&amp;gt;这是app组件&amp;lt;&amp;#x2F;h1&amp;gt;
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;account&amp;quot;&amp;gt;account&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;goodslist&amp;quot;&amp;gt;goodslist&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-view&amp;gt;&amp;lt;&amp;#x2F;router-view&amp;gt;
+  &amp;lt;&amp;#x2F;div&amp;gt;
+&amp;lt;&amp;#x2F;template&amp;gt;
+
+&amp;lt;script&amp;gt;&amp;lt;&amp;#x2F;script&amp;gt;
+
+&amp;lt;style&amp;gt;&amp;lt;&amp;#x2F;style&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Account:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-vue&#34; data-language=&#34;vue&#34;&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1&amp;gt;这是Account组件&amp;lt;&amp;#x2F;h1&amp;gt;
+
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;account&amp;#x2F;login&amp;quot;&amp;gt;登录&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;account&amp;#x2F;register&amp;quot;&amp;gt;注册&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-view&amp;gt;&amp;lt;&amp;#x2F;router-view&amp;gt;
+  &amp;lt;&amp;#x2F;div&amp;gt;
+&amp;lt;&amp;#x2F;template&amp;gt;
+
+&amp;lt;script&amp;gt;&amp;lt;&amp;#x2F;script&amp;gt;
+
+&amp;lt;style&amp;gt;&amp;lt;&amp;#x2F;style&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/tSeVisl10K0W.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;组件中-style-标签-lang-属性和-scoped-属性的介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#组件中-style-标签-lang-属性和-scoped-属性的介绍&#34;&gt;#&lt;/a&gt; 组件中 style 标签 lang 属性和 scoped 属性的介绍&lt;/h2&gt;
+&lt;p&gt;**scoped：** 在子组件中设置 style 属性，如果不加 scoped 属性，如果是单页面程序，样式就会作用到全局中去，加了 scoped 属性以后，表示限制了该样式作用域只在该组件中。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-vue&#34; data-language=&#34;vue&#34;&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1&amp;gt;这是goods组件&amp;lt;&amp;#x2F;h1&amp;gt;
+  &amp;lt;&amp;#x2F;div&amp;gt;
+&amp;lt;&amp;#x2F;template&amp;gt;
+
+&amp;lt;script&amp;gt;&amp;lt;&amp;#x2F;script&amp;gt;
+
+&amp;lt;style scoped&amp;gt;
+div &amp;#123;
+  color: red;
+&amp;#125;
+&amp;lt;&amp;#x2F;style&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;**lang 属性：** 普通的 style 标签只支持普通的样式，如果想启用 scss 或 less, 需要为 style 设置 lang 属性&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-vue&#34; data-language=&#34;vue&#34;&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1&amp;gt;这是account组件&amp;lt;&amp;#x2F;h1&amp;gt;
+  &amp;lt;&amp;#x2F;div&amp;gt;
+&amp;lt;&amp;#x2F;template&amp;gt;
+
+&amp;lt;script&amp;gt;&amp;lt;&amp;#x2F;script&amp;gt;
+
+&amp;lt;style lang&amp;#x3D;&amp;quot;scss&amp;quot; scoped&amp;gt;
+body &amp;#123;
+  div &amp;#123;
+    font-style: italic;
+  &amp;#125;
+&amp;#125;
+&amp;lt;&amp;#x2F;style&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;抽离路由模块&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#抽离路由模块&#34;&gt;#&lt;/a&gt; 抽离路由模块&lt;/h2&gt;
+&lt;p&gt;目录结构：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190417/imC2sybXMC8G.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;main.js:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//在 webpack 构建的项目中，使用Vue 进行开发&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; Vue &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;../node_modules/vue/dist/vue.js&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//1. 导入 vue-router 包&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; VueRouter &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue-router&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//2. 手动安装&lt;/span&gt;
+Vue&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;VueRouter&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//导入app组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; app &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./App.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//导入 自定义路由模块&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; router &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./router.js&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; vm &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Vue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  el&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;#app&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  data&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    msg&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;12322&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;render&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;app&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  router&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//注意：App 这个组件，是通过 VM 实例的 render 函数，渲染出来的，render 函数如果要渲染 组件渲染出来的组件，只能是 el ：&#39;#app&#39; 所指定的 元素中&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//Account 和 GoodsList 组件，是通过 路由匹配监听到的，所以，这两个组件，只能展示到 属于 路由的 &amp;lt;router-view&gt;&amp;lt;/router-view&gt; 中去&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;router.js:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; VueRouter &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue-router&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//导入 Account 组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; account &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./main/Account.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//导入 GoodsList 组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; goodslist &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./main/GoodsList.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; login &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./son/login.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; register &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./son/register.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//3. 创建路由对象&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; router &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;VueRouter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  routes&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/account&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; account&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      children&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;login&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; login &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;register&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; register &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/goodslist&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; goodslist &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt; router&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

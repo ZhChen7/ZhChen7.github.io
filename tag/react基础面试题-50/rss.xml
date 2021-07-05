@@ -1,0 +1,754 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;react基础面试题-50&#34; tag</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Wed, 21 Oct 2020 15:04:17 +0800</pubDate>
+        <lastBuildDate>Wed, 21 Oct 2020 15:04:17 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2020/10/21/%E5%BF%85%E9%A1%BB%E8%A6%81%E4%BC%9A%E7%9A%84-50-%E4%B8%AA-React-%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+            <title>必须要会的 50 个 React 面试题</title>
+            <link>http://example.com/2020/10/21/%E5%BF%85%E9%A1%BB%E8%A6%81%E4%BC%9A%E7%9A%84-50-%E4%B8%AA-React-%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+            <category>React基础面试题-50</category>
+            <pubDate>Wed, 21 Oct 2020 15:04:17 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;react-面试题-参考&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#react-面试题-参考&#34;&gt;#&lt;/a&gt; &lt;strong&gt;React 面试题&lt;/strong&gt;  –  &lt;a href=&#34;https://juejin.im/post/6844903806715559943&#34;&gt;参考🔗&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;以下是面试官最有可能问到的 &lt;strong&gt;50 个 React 面试题和答案&lt;/strong&gt;。为方便你学习，我对它们进行了分类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基本知识&lt;/li&gt;
+&lt;li&gt;React 组件&lt;/li&gt;
+&lt;li&gt;React Redux&lt;/li&gt;
+&lt;li&gt;React 路由&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;基本知识&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本知识&#34;&gt;#&lt;/a&gt; &lt;strong&gt;基本知识&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;1-区分-real-dom-和-virtual-dom&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-区分-real-dom-和-virtual-dom&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1. 区分 Real DOM 和 Virtual DOM&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Real DOM&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Virtual DOM&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1. 更新缓慢。&lt;/td&gt;
+&lt;td&gt;1. 更新更快。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2. 可以直接更新 HTML。&lt;/td&gt;
+&lt;td&gt;2. 无法直接更新 HTML。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3. 如果元素更新，则创建新 DOM。&lt;/td&gt;
+&lt;td&gt;3. 如果元素更新，则更新 JSX 。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4. DOM 操作代价很高。&lt;/td&gt;
+&lt;td&gt;4. DOM 操作非常简单。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5. 消耗的内存较多。&lt;/td&gt;
+&lt;td&gt;5. 很少的内存消耗。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;2-什么是-react&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-什么是-react&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2. 什么是 React？&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;React 是 Facebook 在 2011 年开发的前端 JavaScript 库。&lt;/li&gt;
+&lt;li&gt;它遵循基于组件的方法，有助于构建可重用的 UI 组件。&lt;/li&gt;
+&lt;li&gt;它用于开发复杂和交互式的 Web 和移动 UI。&lt;/li&gt;
+&lt;li&gt;尽管它仅在 2015 年开源，但有一个很大的支持社区。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-react-有什么特点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-react-有什么特点&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3. React 有什么特点？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;React 的主要功能如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;它使用 ** 虚拟 DOM ** 而不是真正的 DOM。&lt;/li&gt;
+&lt;li&gt;它可以用&lt;strong&gt;服务器端渲染&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;它遵循&lt;strong&gt;单向数据流&lt;/strong&gt;或数据绑定。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;4-列出-react-的一些主要优点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-列出-react-的一些主要优点&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4. 列出 React 的一些主要优点。&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;React 的一些主要优点是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;它提高了应用的性能&lt;/li&gt;
+&lt;li&gt;可以方便地在客户端和服务器端使用&lt;/li&gt;
+&lt;li&gt;由于 JSX，代码的可读性很好&lt;/li&gt;
+&lt;li&gt;React 很容易与 Meteor，Angular 等其他框架集成&lt;/li&gt;
+&lt;li&gt;使用 React，编写 UI 测试用例变得非常容易&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;5-react-有哪些限制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5-react-有哪些限制&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5. React 有哪些限制？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;React 的限制如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;React 只是一个库，而不是一个完整的框架&lt;/li&gt;
+&lt;li&gt;它的库非常庞大，需要时间来理解&lt;/li&gt;
+&lt;li&gt;新手程序员可能很难理解&lt;/li&gt;
+&lt;li&gt;编码变得复杂，因为它使用内联模板和 JSX&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;6-什么是-jsx&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-什么是-jsx&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6. 什么是 JSX？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;JSX 是 J avaScript XML 的简写。是 React 使用的一种文件，它利用 JavaScript 的表现力和类似 HTML 的模板语法。这使得 HTML 文件非常容易理解。此文件能使应用非常可靠，并能够提高其性能。下面是 JSX 的一个例子：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;render()&amp;#123;
+    return(
+        &amp;lt;div&amp;gt;
+            &amp;lt;h1&amp;gt; Hello World from Edureka!!&amp;lt;&amp;#x2F;h1&amp;gt;
+        &amp;lt;&amp;#x2F;div&amp;gt;
+    );
+&amp;#125;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;7-你了解-virtual-dom-吗解释一下它的工作原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-你了解-virtual-dom-吗解释一下它的工作原理&#34;&gt;#&lt;/a&gt; &lt;strong&gt;7. 你了解 Virtual DOM 吗？解释一下它的工作原理。&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Virtual DOM 是一个轻量级的 JavaScript 对象，它最初只是 real DOM 的副本。它是一个节点树，它将元素、它们的属性和内容作为对象及其属性。 React 的渲染函数从 React 组件中创建一个节点树。然后它响应数据模型中的变化来更新该树，该变化是由用户或系统完成的各种动作引起的。&lt;/p&gt;
+&lt;p&gt;Virtual DOM 工作过程有三个简单的步骤。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;每当底层数据发生改变时，整个 UI 都将在 Virtual DOM 描述中重新渲染。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-gold-cdn.xitu.io/2019/3/25/169b42c3abe78a05?imageView2/0/w/1280/h/960/format/webp/ignore-error/1&#34; alt=&#34;Virtual DOM 1&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后计算之前 DOM 表示与新表示的之间的差异。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-gold-cdn.xitu.io/2019/3/25/169b42c3b5c6759a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1&#34; alt=&#34;Virtual DOM 2&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;完成计算后，将只用实际更改的内容更新 real DOM。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-gold-cdn.xitu.io/2019/3/25/169b42c3b5163360?imageView2/0/w/1280/h/960/format/webp/ignore-error/1&#34; alt=&#34;Virtual DOM 3&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;8-为什么浏览器无法读取-jsx&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8-为什么浏览器无法读取-jsx&#34;&gt;#&lt;/a&gt; &lt;strong&gt;8. 为什么浏览器无法读取 JSX？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;浏览器只能处理 JavaScript 对象，而不能读取常规 JavaScript 对象中的 JSX。所以为了使浏览器能够读取 JSX，首先，需要用像 Babel 这样的 JSX 转换器将 JSX 文件转换为 JavaScript 对象，然后再将其传给浏览器。&lt;/p&gt;
+&lt;h3 id=&#34;9-与-es5-相比react-的-es6-语法有何不同&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#9-与-es5-相比react-的-es6-语法有何不同&#34;&gt;#&lt;/a&gt; &lt;strong&gt;9. 与 ES5 相比，React 的 ES6 语法有何不同？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;以下语法是 ES5 与 ES6 中的区别：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;require 与 import&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;&amp;#x2F;&amp;#x2F; ES5
+var React &amp;#x3D; require(&amp;#39;react&amp;#39;);
+
+&amp;#x2F;&amp;#x2F; ES6
+import React from &amp;#39;react&amp;#39;;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;export 与 exports&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;&amp;#x2F;&amp;#x2F; ES5
+module.exports &amp;#x3D; Component;
+
+&amp;#x2F;&amp;#x2F; ES6
+export default Component;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;component 和 function&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;&amp;#x2F;&amp;#x2F; ES5
+var MyComponent &amp;#x3D; React.createClass(&amp;#123;
+    render: function() &amp;#123;
+        return
+			&amp;lt;h3&amp;gt;Hello Edureka!&amp;lt;&amp;#x2F;h3&amp;gt;;
+    &amp;#125;
+&amp;#125;);
+
+&amp;#x2F;&amp;#x2F; ES6
+class MyComponent extends React.Component &amp;#123;
+    render() &amp;#123;
+        return
+			&amp;lt;h3&amp;gt;Hello Edureka!&amp;lt;&amp;#x2F;h3&amp;gt;;
+    &amp;#125;
+&amp;#125;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;props&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;&amp;#x2F;&amp;#x2F; ES5
+var App &amp;#x3D; React.createClass(&amp;#123;
+    propTypes: &amp;#123; name: React.PropTypes.string &amp;#125;,
+    render: function() &amp;#123;
+        return
+			&amp;lt;h3&amp;gt;Hello, &amp;#123;this.props.name&amp;#125;!&amp;lt;&amp;#x2F;h3&amp;gt;;
+    &amp;#125;
+&amp;#125;);
+
+&amp;#x2F;&amp;#x2F; ES6
+class App extends React.Component &amp;#123;
+    render() &amp;#123;
+        return
+			&amp;lt;h3&amp;gt;Hello, &amp;#123;this.props.name&amp;#125;!&amp;lt;&amp;#x2F;h3&amp;gt;;
+    &amp;#125;
+&amp;#125;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;state&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;&amp;#x2F;&amp;#x2F; ES5
+var App &amp;#x3D; React.createClass(&amp;#123;
+    getInitialState: function() &amp;#123;
+        return &amp;#123; name: &amp;#39;world&amp;#39; &amp;#125;;
+    &amp;#125;,
+    render: function() &amp;#123;
+        return
+	        &amp;lt;h3&amp;gt;Hello, &amp;#123;this.state.name&amp;#125;!&amp;lt;&amp;#x2F;h3&amp;gt;;
+    &amp;#125;
+&amp;#125;);
+
+&amp;#x2F;&amp;#x2F; ES6
+class App extends React.Component &amp;#123;
+    constructor() &amp;#123;
+        super();
+        this.state &amp;#x3D; &amp;#123; name: &amp;#39;world&amp;#39; &amp;#125;;
+    &amp;#125;
+    render() &amp;#123;
+        return
+	        &amp;lt;h3&amp;gt;Hello, &amp;#123;this.state.name&amp;#125;!&amp;lt;&amp;#x2F;h3&amp;gt;;
+    &amp;#125;
+&amp;#125;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;10-react-与-angular-有何不同&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#10-react-与-angular-有何不同&#34;&gt;#&lt;/a&gt; &lt;strong&gt;10. React 与 Angular 有何不同？&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;主题&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;React&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Angular&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;1. 体系结构&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;只有 MVC 中的 View&lt;/td&gt;
+&lt;td&gt;完整的 MVC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;2. 渲染&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;可以在服务器端渲染&lt;/td&gt;
+&lt;td&gt;客户端渲染&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;3. DOM&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;使用 virtual DOM&lt;/td&gt;
+&lt;td&gt;使用 real DOM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;4. 数据绑定&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;单向数据绑定&lt;/td&gt;
+&lt;td&gt;双向数据绑定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;5. 调试&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;编译时调试&lt;/td&gt;
+&lt;td&gt;运行时调试&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;6. 作者&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;Facebook&lt;/td&gt;
+&lt;td&gt;Google&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;react-组件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#react-组件&#34;&gt;#&lt;/a&gt; &lt;strong&gt;React 组件&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;11-你理解在-react-中一切都是组件这句话&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#11-你理解在-react-中一切都是组件这句话&#34;&gt;#&lt;/a&gt; &lt;strong&gt;11. 你理解 “在 React 中，一切都是组件” 这句话。&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;组件是 React 应用 UI 的构建块。这些组件将整个 UI 分成小的独立并可重用的部分。每个组件彼此独立，而不会影响 UI 的其余部分。&lt;/p&gt;
+&lt;h3 id=&#34;12-解释-react-中-render-的目的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#12-解释-react-中-render-的目的&#34;&gt;#&lt;/a&gt; &lt;strong&gt;12. 解释 React 中 render () 的目的。&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;每个 React 组件强制要求必须有一个 &lt;strong&gt;render()&lt;/strong&gt;。它返回一个 React 元素，是原生 DOM 组件的表示。如果需要渲染多个 HTML 元素，则必须将它们组合在一个封闭标记内，例如  &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; 、 &lt;code&gt;&amp;lt;group&amp;gt;&lt;/code&gt; 、 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;  等。此函数必须保持纯净，即必须每次调用时都返回相同的结果。&lt;/p&gt;
+&lt;h3 id=&#34;13-如何将两个或多个组件嵌入到一个组件中&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#13-如何将两个或多个组件嵌入到一个组件中&#34;&gt;#&lt;/a&gt; &lt;strong&gt;13. 如何将两个或多个组件嵌入到一个组件中？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;可以通过以下方式将组件嵌入到一个组件中：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;class MyComponent extends React.Component&amp;#123;
+    render()&amp;#123;
+        return(
+			&amp;lt;div&amp;gt;
+            	&amp;lt;h1&amp;gt;Hello&amp;lt;&amp;#x2F;h1&amp;gt;
+                &amp;lt;Header&amp;#x2F;&amp;gt;
+            &amp;lt;&amp;#x2F;div&amp;gt;
+        );
+    &amp;#125;
+&amp;#125;
+class Header extends React.Component&amp;#123;
+    render()&amp;#123;
+        return
+			&amp;lt;h1&amp;gt;Header Component&amp;lt;&amp;#x2F;h1&amp;gt;
+   &amp;#125;;
+&amp;#125;
+ReactDOM.render(
+    &amp;lt;MyComponent&amp;#x2F;&amp;gt;, document.getElementById(&amp;#39;content&amp;#39;)
+);
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;14-什么是-props&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#14-什么是-props&#34;&gt;#&lt;/a&gt; &lt;strong&gt;14. 什么是 Props?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Props 是 React 中属性的简写。它们是只读组件，必须保持纯，即不可变。它们总是在整个应用中从父组件传递到子组件。子组件永远不能将 prop 送回父组件。这有助于维护单向数据流，通常用于呈现动态生成的数据。&lt;/p&gt;
+&lt;h3 id=&#34;15-react-中的状态是什么它是如何使用的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#15-react-中的状态是什么它是如何使用的&#34;&gt;#&lt;/a&gt; &lt;strong&gt;15. React 中的状态是什么？它是如何使用的？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;状态是 React 组件的核心，是数据的来源，必须尽可能简单。基本上状态是确定组件呈现和行为的对象。与 props 不同，它们是可变的，并创建动态和交互式组件。可以通过  &lt;code&gt;this.state()&lt;/code&gt;  访问它们。&lt;/p&gt;
+&lt;h3 id=&#34;16-区分状态和-props&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#16-区分状态和-props&#34;&gt;#&lt;/a&gt; &lt;strong&gt;16. 区分状态和 props&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;条件&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;State&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Props&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1. 从父组件中接收初始值&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2. 父组件可以改变值&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3. 在组件中设置默认值&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4. 在组件的内部变化&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5. 设置子组件的初始值&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6. 在子组件的内部更改&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;17-如何更新组件的状态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#17-如何更新组件的状态&#34;&gt;#&lt;/a&gt; &lt;strong&gt;17. 如何更新组件的状态？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;可以用  &lt;code&gt;this.setState()&lt;/code&gt;  更新组件的状态。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;class MyComponent extends React.Component &amp;#123;
+    constructor() &amp;#123;
+        super();
+        this.state &amp;#x3D; &amp;#123;
+            name: &amp;#39;Maxx&amp;#39;,
+            id: &amp;#39;101&amp;#39;
+        &amp;#125;
+    &amp;#125;
+    render()
+        &amp;#123;
+            setTimeout(()&amp;#x3D;&amp;gt;&amp;#123;this.setState(&amp;#123;name:&amp;#39;Jaeha&amp;#39;, id:&amp;#39;222&amp;#39;&amp;#125;)&amp;#125;,2000)
+            return (
+				&amp;lt;div&amp;gt;
+                	&amp;lt;h1&amp;gt;Hello &amp;#123;this.state.name&amp;#125;&amp;lt;&amp;#x2F;h1&amp;gt;
+					&amp;lt;h2&amp;gt;Your Id is &amp;#123;this.state.id&amp;#125;&amp;lt;&amp;#x2F;h2&amp;gt;
+                &amp;lt;&amp;#x2F;div&amp;gt;
+            );
+        &amp;#125;
+    &amp;#125;
+ReactDOM.render(
+    &amp;lt;MyComponent&amp;#x2F;&amp;gt;, document.getElementById(&amp;#39;content&amp;#39;)
+);
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;18-react-中的箭头函数是什么怎么用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#18-react-中的箭头函数是什么怎么用&#34;&gt;#&lt;/a&gt; &lt;strong&gt;18. React 中的箭头函数是什么？怎么用？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;箭头函数（&lt;strong&gt;=&amp;gt;&lt;/strong&gt;）是用于编写函数表达式的简短语法。这些函数允许正确绑定组件的上下文，因为在 ES6 中默认下不能使用自动绑定。使用高阶函数时，箭头函数非常有用。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;&amp;#x2F;&amp;#x2F;General way
+render() &amp;#123;
+    return(
+        &amp;lt;MyInput onChange &amp;#x3D; &amp;#123;this.handleChange.bind(this) &amp;#125; &amp;#x2F;&amp;gt;
+    );
+&amp;#125;
+&amp;#x2F;&amp;#x2F;With Arrow Function
+render() &amp;#123;
+    return(
+        &amp;lt;MyInput onChange &amp;#x3D; &amp;#123; (e)&amp;#x3D;&amp;gt;this.handleOnChange(e) &amp;#125; &amp;#x2F;&amp;gt;
+    );
+&amp;#125;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;19-区分有状态和无状态组件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#19-区分有状态和无状态组件&#34;&gt;#&lt;/a&gt; &lt;strong&gt;19. 区分有状态和无状态组件。&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;有状态组件&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;无状态组件&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1. 在内存中存储有关组件状态变化的信息&lt;/td&gt;
+&lt;td&gt;1. 计算组件的内部的状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2. 有权改变状态&lt;/td&gt;
+&lt;td&gt;2. 无权改变状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3. 包含过去、现在和未来可能的状态变化情况&lt;/td&gt;
+&lt;td&gt;3. 不包含过去，现在和未来可能发生的状态变化情况&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4. 接受无状态组件状态变化要求的通知，然后将 props 发送给他们。&lt;/td&gt;
+&lt;td&gt;4. 从有状态组件接收 props 并将其视为回调函数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;20-react-组件生命周期的阶段是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#20-react-组件生命周期的阶段是什么&#34;&gt;#&lt;/a&gt; &lt;strong&gt;20. React 组件生命周期的阶段是什么？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;React 组件的生命周期有三个不同的阶段：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;* 初始渲染阶段：* 这是组件即将开始其生命之旅并进入 DOM 的阶段。&lt;/li&gt;
+&lt;li&gt;* 更新阶段：* 一旦组件被添加到 DOM，它只有在 prop 或状态发生变化时才可能更新和重新渲染。这些只发生在这个阶段。&lt;/li&gt;
+&lt;li&gt;* 卸载阶段：* 这是组件生命周期的最后阶段，组件被销毁并从 DOM 中删除。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;21-详细解释-react-组件的生命周期方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#21-详细解释-react-组件的生命周期方法&#34;&gt;#&lt;/a&gt; &lt;strong&gt;21. 详细解释 React 组件的生命周期方法。&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;一些最重要的生命周期方法是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;*componentWillMount***&lt;/strong&gt;()** – 在渲染之前执行，在客户端和服务器端都会执行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;*componentDidMount***&lt;/strong&gt;()** – 仅在第一次渲染后在客户端执行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;*componentWillReceiveProps***&lt;/strong&gt;()** – 当从父类接收到 props 并且在调用另一个渲染器之前调用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;*shouldComponentUpdate***&lt;/strong&gt;()** – 根据特定条件返回 true 或 false。如果你希望更新组件，请返回&lt;strong&gt; true&lt;/strong&gt; 否则返回 **false**。默认情况下，它返回 false。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;*componentWillUpdate***&lt;/strong&gt;()** – 在 DOM 中进行渲染之前调用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;*componentDidUpdate***&lt;/strong&gt;()** – 在渲染发生后立即调用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;*componentWillUnmount***&lt;/strong&gt;()** – 从 DOM 卸载组件后调用。用于清理内存空间。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;22-react-中的事件是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#22-react-中的事件是什么&#34;&gt;#&lt;/a&gt; &lt;strong&gt;22. React 中的事件是什么？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;在 React 中，事件是对鼠标悬停、鼠标单击、按键等特定操作的触发反应。处理这些事件类似于处理 DOM 元素中的事件。但是有一些语法差异，如：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用驼峰命名法对事件命名而不是仅使用小写字母。&lt;/li&gt;
+&lt;li&gt;事件作为函数而不是字符串传递。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;事件参数重包含一组特定于事件的属性。每个事件类型都包含自己的属性和行为，只能通过其事件处理程序访问。&lt;/p&gt;
+&lt;h3 id=&#34;23-如何在-react-中创建一个事件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#23-如何在-react-中创建一个事件&#34;&gt;#&lt;/a&gt; &lt;strong&gt;23. 如何在 React 中创建一个事件？&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;class Display extends React.Component(&amp;#123;
+    show(evt) &amp;#123;
+        &amp;#x2F;&amp;#x2F; code
+    &amp;#125;,
+    render() &amp;#123;
+        &amp;#x2F;&amp;#x2F; Render the div with an onClick prop (value is a function)
+        return (
+            &amp;lt;div onClick&amp;#x3D;&amp;#123;this.show&amp;#125;&amp;gt;Click Me!&amp;lt;&amp;#x2F;div&amp;gt;
+        );
+    &amp;#125;
+&amp;#125;);
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;24-react-中的合成事件是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#24-react-中的合成事件是什么&#34;&gt;#&lt;/a&gt; &lt;strong&gt;24. React 中的合成事件是什么？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;合成事件是围绕浏览器原生事件充当跨浏览器包装器的对象。它们将不同浏览器的行为合并为一个 API。这样做是为了确保事件在不同浏览器中显示一致的属性。&lt;/p&gt;
+&lt;h3 id=&#34;25-你对-react-的-refs-有什么了解&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#25-你对-react-的-refs-有什么了解&#34;&gt;#&lt;/a&gt; &lt;strong&gt;25. 你对 React 的 refs 有什么了解？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Refs 是 React 中引用的简写。它是一个有助于存储对特定的 React 元素或组件的引用的属性，它将由组件渲染配置函数返回。用于对 render () 返回的特定元素或组件的引用。当需要进行 DOM 测量或向组件添加方法时，它们会派上用场。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;class ReferenceDemo extends React.Component&amp;#123;
+     display() &amp;#123;
+         const name &amp;#x3D; this.inputDemo.value;
+         document.getElementById(&amp;#39;disp&amp;#39;).innerHTML &amp;#x3D; name;
+     &amp;#125;
+render() &amp;#123;
+    return(
+          &amp;lt;div&amp;gt;
+            Name: &amp;lt;input type&amp;#x3D;&amp;quot;text&amp;quot; ref&amp;#x3D;&amp;#123;input &amp;#x3D;&amp;gt; this.inputDemo &amp;#x3D; input&amp;#125; &amp;#x2F;&amp;gt;
+            &amp;lt;button name&amp;#x3D;&amp;quot;Click&amp;quot; onClick&amp;#x3D;&amp;#123;this.display&amp;#125;&amp;gt;Click&amp;lt;&amp;#x2F;button&amp;gt;
+            &amp;lt;h2&amp;gt;Hello &amp;lt;span id&amp;#x3D;&amp;quot;disp&amp;quot;&amp;gt;&amp;lt;&amp;#x2F;span&amp;gt; !!!&amp;lt;&amp;#x2F;h2&amp;gt;
+          &amp;lt;&amp;#x2F;div&amp;gt;
+    );
+   &amp;#125;
+ &amp;#125;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;26-列出一些应该使用-refs-的情况&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#26-列出一些应该使用-refs-的情况&#34;&gt;#&lt;/a&gt; &lt;strong&gt;26. 列出一些应该使用 Refs 的情况。&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;以下是应该使用 refs 的情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;需要管理焦点、选择文本或媒体播放时&lt;/li&gt;
+&lt;li&gt;触发式动画&lt;/li&gt;
+&lt;li&gt;与第三方 DOM 库集成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;27-如何模块化-react-中的代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#27-如何模块化-react-中的代码&#34;&gt;#&lt;/a&gt; &lt;strong&gt;27. 如何模块化 React 中的代码？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;可以使用 export 和 import 属性来模块化代码。它们有助于在不同的文件中单独编写组件。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;&amp;#x2F;&amp;#x2F;ChildComponent.jsx
+export default class ChildComponent extends React.Component &amp;#123;
+    render() &amp;#123;
+        return(
+              &amp;lt;div&amp;gt;
+              	&amp;lt;h1&amp;gt;This is a child component&amp;lt;&amp;#x2F;h1&amp;gt;
+              &amp;lt;&amp;#x2F;div&amp;gt;
+        );
+    &amp;#125;
+&amp;#125;
+
+&amp;#x2F;&amp;#x2F;ParentComponent.jsx
+import ChildComponent from &amp;#39;.&amp;#x2F;childcomponent.js&amp;#39;;
+class ParentComponent extends React.Component &amp;#123;
+    render() &amp;#123;
+        return(
+             &amp;lt;div&amp;gt;
+                &amp;lt;App &amp;#x2F;&amp;gt;
+             &amp;lt;&amp;#x2F;div&amp;gt;
+        );
+    &amp;#125;
+&amp;#125;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;28-如何在-react-中创建表单&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#28-如何在-react-中创建表单&#34;&gt;#&lt;/a&gt; &lt;strong&gt;28. 如何在 React 中创建表单&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;React 表单类似于 HTML 表单。但是在 React 中，状态包含在组件的 state 属性中，并且只能通过  &lt;code&gt;setState()&lt;/code&gt;  更新。因此元素不能直接更新它们的状态，它们的提交是由 JavaScript 函数处理的。此函数可以完全访问用户输入到表单的数据。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;handleSubmit(event) &amp;#123;
+    alert(&amp;#39;A name was submitted: &amp;#39; + this.state.value);
+    event.preventDefault();
+&amp;#125;
+
+render() &amp;#123;
+    return (
+        &amp;lt;form onSubmit&amp;#x3D;&amp;#123;this.handleSubmit&amp;#125;&amp;gt;
+            &amp;lt;label&amp;gt;
+                Name:
+                &amp;lt;input type&amp;#x3D;&amp;quot;text&amp;quot; value&amp;#x3D;&amp;#123;this.state.value&amp;#125; onChange&amp;#x3D;&amp;#123;this.handleSubmit&amp;#125; &amp;#x2F;&amp;gt;
+            &amp;lt;&amp;#x2F;label&amp;gt;
+            &amp;lt;input type&amp;#x3D;&amp;quot;submit&amp;quot; value&amp;#x3D;&amp;quot;Submit&amp;quot; &amp;#x2F;&amp;gt;
+        &amp;lt;&amp;#x2F;form&amp;gt;
+    );
+&amp;#125;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;29-你对受控组件和非受控组件了解多少&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#29-你对受控组件和非受控组件了解多少&#34;&gt;#&lt;/a&gt; &lt;strong&gt;29. 你对受控组件和非受控组件了解多少？&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;受控组件&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;非受控组件&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1. 没有维持自己的状态&lt;/td&gt;
+&lt;td&gt;1. 保持着自己的状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2. 数据由父组件控制&lt;/td&gt;
+&lt;td&gt;2. 数据由 DOM 控制&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3. 通过 props 获取当前值，然后通过回调通知更改&lt;/td&gt;
+&lt;td&gt;3. Refs 用于获取其当前值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;30-什么是高阶组件hoc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#30-什么是高阶组件hoc&#34;&gt;#&lt;/a&gt; &lt;strong&gt;30. 什么是高阶组件（HOC）？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;高阶组件是重用组件逻辑的高级方法，是一种源于 React 的组件模式。 HOC 是自定义组件，在它之内包含另一个组件。它们可以接受子组件提供的任何动态，但不会修改或复制其输入组件中的任何行为。你可以认为 HOC 是 “纯（Pure）” 组件。&lt;/p&gt;
+&lt;h3 id=&#34;31-你能用-hoc-做什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#31-你能用-hoc-做什么&#34;&gt;#&lt;/a&gt; &lt;strong&gt;31. 你能用 HOC 做什么？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;HOC 可用于许多任务，例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;代码重用，逻辑和引导抽象&lt;/li&gt;
+&lt;li&gt;渲染劫持&lt;/li&gt;
+&lt;li&gt;状态抽象和控制&lt;/li&gt;
+&lt;li&gt;Props 控制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;32-什么是纯组件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#32-什么是纯组件&#34;&gt;#&lt;/a&gt; &lt;strong&gt;32. 什么是纯组件？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;纯（Pure）&lt;/em&gt; 组件是可以编写的最简单、最快的组件。它们可以替换任何只有 &lt;strong&gt;render()&lt;/strong&gt; 的组件。这些组件增强了代码的简单性和应用的性能。&lt;/p&gt;
+&lt;h3 id=&#34;33-react-中-key-的重要性是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#33-react-中-key-的重要性是什么&#34;&gt;#&lt;/a&gt; &lt;strong&gt;33. React 中 key 的重要性是什么？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;key 用于识别唯一的 Virtual DOM 元素及其驱动 UI 的相应数据。它们通过回收 DOM 中当前所有的元素来帮助 React 优化渲染。这些 key 必须是唯一的数字或字符串，React 只是重新排序元素而不是重新渲染它们。这可以提高应用程序的性能。&lt;/p&gt;
+&lt;h2 id=&#34;react-redux&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#react-redux&#34;&gt;#&lt;/a&gt; &lt;strong&gt;React Redux&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;34-mvc-框架的主要问题是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#34-mvc-框架的主要问题是什么&#34;&gt;#&lt;/a&gt; &lt;strong&gt;34. MVC 框架的主要问题是什么？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;以下是 MVC 框架的一些主要问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对 DOM 操作的代价非常高&lt;/li&gt;
+&lt;li&gt;程序运行缓慢且效率低下&lt;/li&gt;
+&lt;li&gt;内存浪费严重&lt;/li&gt;
+&lt;li&gt;由于循环依赖性，组件模型需要围绕 models 和 views 进行创建&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;35-解释一下-flux&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#35-解释一下-flux&#34;&gt;#&lt;/a&gt; &lt;strong&gt;35. 解释一下 Flux&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-gold-cdn.xitu.io/2019/3/25/169b42c4d3813a3e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1&#34; alt=&#34;flux&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Flux 是一种强制单向数据流的架构模式。它控制派生数据，并使用具有所有数据权限的中心 store 实现多个组件之间的通信。整个应用中的数据更新必须只能在此处进行。 Flux 为应用提供稳定性并减少运行时的错误。&lt;/p&gt;
+&lt;h3 id=&#34;36-什么是-redux&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#36-什么是-redux&#34;&gt;#&lt;/a&gt; &lt;strong&gt;36. 什么是 Redux？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Redux 是当今最热门的前端开发库之一。它是 JavaScript 程序的可预测状态容器，用于整个应用的状态管理。使用 Redux 开发的应用易于测试，可以在不同环境中运行，并显示一致的行为。&lt;/p&gt;
+&lt;h3 id=&#34;37-redux-遵循的三个原则是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#37-redux-遵循的三个原则是什么&#34;&gt;#&lt;/a&gt; &lt;strong&gt;37. Redux 遵循的三个原则是什么？&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;**&lt;em&gt; 单一事实来源：&lt;/em&gt;** 整个应用的状态存储在单个 store 中的对象 / 状态树里。单一状态树可以更容易地跟踪随时间的变化，并调试或检查应用程序。&lt;/li&gt;
+&lt;li&gt;**&lt;em&gt; 状态是只读的：&lt;/em&gt;** 改变状态的唯一方法是去触发一个动作。动作是描述变化的普通 JS 对象。就像 state 是数据的最小表示一样，该操作是对数据更改的最小表示。&lt;/li&gt;
+&lt;li&gt;**&lt;em&gt; 使用纯函数进行更改：&lt;/em&gt;** 为了指定状态树如何通过操作进行转换，你需要纯函数。纯函数是那些返回值仅取决于其参数值的函数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-gold-cdn.xitu.io/2019/3/25/169b42c501879053?imageView2/0/w/1280/h/960/format/webp/ignore-error/1&#34; alt=&#34;Store&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;38-你对单一事实来源有什么理解&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#38-你对单一事实来源有什么理解&#34;&gt;#&lt;/a&gt; &lt;strong&gt;38. 你对 “单一事实来源” 有什么理解？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Redux 使用 “Store” 将程序的整个状态存储在同一个地方。因此所有组件的状态都存储在 Store 中，并且它们从 Store 本身接收更新。单一状态树可以更容易地跟踪随时间的变化，并调试或检查程序。&lt;/p&gt;
+&lt;h3 id=&#34;39-列出-redux-的组件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#39-列出-redux-的组件&#34;&gt;#&lt;/a&gt; &lt;strong&gt;39. 列出 Redux 的组件。&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Redux 由以下组件组成：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Action&lt;/strong&gt; – 这是一个用来描述发生了什么事情的对象。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reducer&lt;/strong&gt; – 这是一个确定状态将如何变化的地方。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Store&lt;/strong&gt; – 整个程序的状态 / 对象树保存在 Store 中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;View&lt;/strong&gt; – 只显示 Store 提供的数据。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;40-数据如何通过-redux-流动&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#40-数据如何通过-redux-流动&#34;&gt;#&lt;/a&gt; &lt;strong&gt;40. 数据如何通过 Redux 流动？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-gold-cdn.xitu.io/2019/3/25/169b42c4958809d0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1&#34; alt=&#34;Data Flow in Redux&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;41-如何在-redux-中定义-action&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#41-如何在-redux-中定义-action&#34;&gt;#&lt;/a&gt; &lt;strong&gt;41. 如何在 Redux 中定义 Action？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;React 中的 Action 必须具有 type 属性，该属性指示正在执行的 ACTION 的类型。必须将它们定义为字符串常量，并且还可以向其添加更多的属性。在 Redux 中，action 被名为 Action Creators 的函数所创建。以下是 Action 和 Action Creator 的示例：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;function addTodo(text) &amp;#123;
+       return &amp;#123;
+                type: ADD_TODO,
+                 text
+    &amp;#125;
+&amp;#125;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;42-解释-reducer-的作用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#42-解释-reducer-的作用&#34;&gt;#&lt;/a&gt; &lt;strong&gt;42. 解释 Reducer 的作用。&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Reducers 是纯函数，它规定应用程序的状态怎样因响应 ACTION 而改变。Reducers 通过接受先前的状态和 action 来工作，然后它返回一个新的状态。它根据操作的类型确定需要执行哪种更新，然后返回新的值。如果不需要完成任务，它会返回原来的状态。&lt;/p&gt;
+&lt;h3 id=&#34;43-store-在-redux-中的意义是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#43-store-在-redux-中的意义是什么&#34;&gt;#&lt;/a&gt; &lt;strong&gt;43. Store 在 Redux 中的意义是什么？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Store 是一个 JavaScript 对象，它可以保存程序的状态，并提供一些方法来访问状态、调度操作和注册侦听器。应用程序的整个状态 / 对象树保存在单一存储中。因此，Redux 非常简单且是可预测的。我们可以将中间件传递到 store 来处理数据，并记录改变存储状态的各种操作。所有操作都通过 reducer 返回一个新状态。&lt;/p&gt;
+&lt;h3 id=&#34;44-redux-与-flux-有何不同&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#44-redux-与-flux-有何不同&#34;&gt;#&lt;/a&gt; &lt;strong&gt;44. Redux 与 Flux 有何不同？&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Flux&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Redux&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1. Store 包含状态和更改逻辑&lt;/td&gt;
+&lt;td&gt;1. Store 和更改逻辑是分开的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2. 有多个 Store&lt;/td&gt;
+&lt;td&gt;2. 只有一个 Store&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3. 所有 Store 都互不影响且是平级的&lt;/td&gt;
+&lt;td&gt;3. 带有分层 reducer 的单一 Store&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4. 有单一调度器&lt;/td&gt;
+&lt;td&gt;4. 没有调度器的概念&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5. React 组件订阅 store&lt;/td&gt;
+&lt;td&gt;5. 容器组件是有联系的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6. 状态是可变的&lt;/td&gt;
+&lt;td&gt;6. 状态是不可改变的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;45-redux-有哪些优点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#45-redux-有哪些优点&#34;&gt;#&lt;/a&gt; &lt;strong&gt;45. Redux 有哪些优点？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Redux 的优点如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;结果的可预测性 -&lt;/strong&gt; 由于总是存在一个真实来源，即 store ，因此不存在如何将当前状态与动作和应用的其他部分同步的问题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可维护性 -&lt;/strong&gt; 代码变得更容易维护，具有可预测的结果和严格的结构。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;服务器端渲染 -&lt;/strong&gt; 你只需将服务器上创建的 store 传到客户端即可。这对初始渲染非常有用，并且可以优化应用性能，从而提供更好的用户体验。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开发人员工具 -&lt;/strong&gt; 从操作到状态更改，开发人员可以实时跟踪应用中发生的所有事情。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;社区和生态系统 -&lt;/strong&gt; Redux 背后有一个巨大的社区，这使得它更加迷人。一个由才华横溢的人组成的大型社区为库的改进做出了贡献，并开发了各种应用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;易于测试 -&lt;/strong&gt; Redux 的代码主要是小巧、纯粹和独立的功能。这使代码可测试且独立。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;组织 -&lt;/strong&gt; Redux 准确地说明了代码的组织方式，这使得代码在团队使用时更加一致和简单。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;react-路由&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#react-路由&#34;&gt;#&lt;/a&gt; &lt;strong&gt;React 路由&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;46-什么是-react-路由&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#46-什么是-react-路由&#34;&gt;#&lt;/a&gt; &lt;strong&gt;46. 什么是 React 路由？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;React 路由是一个构建在 React 之上的强大的路由库，它有助于向应用程序添加新的屏幕和流。这使 URL 与网页上显示的数据保持同步。它负责维护标准化的结构和行为，并用于开发单页 Web 应用。 React 路由有一个简单的 API。&lt;/p&gt;
+&lt;h3 id=&#34;47-为什么-react-router-v4-中使用-switch-关键字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#47-为什么-react-router-v4-中使用-switch-关键字&#34;&gt;#&lt;/a&gt; &lt;strong&gt;47. 为什么 React Router v4 中使用 switch 关键字 ？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;虽然 &lt;strong&gt; &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;  ** 用于封装 Router 中的多个路由，当你想要仅显示要在多个定义的路线中呈现的单个路线时，可以使用 “switch” 关键字。使用时，&lt;/strong&gt; &lt;code&gt;&amp;lt;switch&amp;gt;&lt;/code&gt; ** 标记会按顺序将已定义的 URL 与已定义的路由进行匹配。找到第一个匹配项后，它将渲染指定的路径。从而绕过其它路线。&lt;/p&gt;
+&lt;h3 id=&#34;48-为什么需要-react-中的路由&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#48-为什么需要-react-中的路由&#34;&gt;#&lt;/a&gt; &lt;strong&gt;48. 为什么需要 React 中的路由？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Router 用于定义多个路由，当用户定义特定的 URL 时，如果此 URL 与 Router 内定义的任何 “路由” 的路径匹配，则用户将重定向到该特定路由。所以基本上我们需要在自己的应用中添加一个 Router 库，允许创建多个路由，每个路由都会向我们提供一个独特的视图&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;&amp;lt;switch&amp;gt;
+    &amp;lt;route exact path&amp;#x3D;’&amp;#x2F;’ component&amp;#x3D;&amp;#123;Home&amp;#125;&amp;#x2F;&amp;gt;
+    &amp;lt;route path&amp;#x3D;’&amp;#x2F;posts&amp;#x2F;:id’ component&amp;#x3D;&amp;#123;Newpost&amp;#125;&amp;#x2F;&amp;gt;
+    &amp;lt;route path&amp;#x3D;’&amp;#x2F;posts’   component&amp;#x3D;&amp;#123;Post&amp;#125;&amp;#x2F;&amp;gt;
+&amp;lt;&amp;#x2F;switch&amp;gt;
+复制代码&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;49-列出-react-router-的优点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#49-列出-react-router-的优点&#34;&gt;#&lt;/a&gt; &lt;strong&gt;49. 列出 React Router 的优点。&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;几个优点是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;就像 React 基于组件一样，在 React Router v4 中，API 是 &lt;em&gt;‘All About Components’&lt;/em&gt;。可以将 Router 可视化为单个根组件（&lt;strong&gt; &lt;code&gt;&amp;lt;BrowserRouter&amp;gt;&lt;/code&gt; &lt;/strong&gt;），其中我们将特定的子路由（&lt;strong&gt; &lt;code&gt;&amp;lt;route&amp;gt;&lt;/code&gt; &lt;/strong&gt;）包起来。&lt;/li&gt;
+&lt;li&gt;无需手动设置历史值：在 React Router v4 中，我们要做的就是将路由包装在 &lt;strong&gt; &lt;code&gt;&amp;lt;BrowserRouter&amp;gt;&lt;/code&gt; &lt;/strong&gt; 组件中。&lt;/li&gt;
+&lt;li&gt;包是分开的：共有三个包，分别用于 Web、Native 和 Core。这使我们应用更加紧凑。基于类似的编码风格很容易进行切换。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;50-react-router-与常规路由有何不同&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#50-react-router-与常规路由有何不同&#34;&gt;#&lt;/a&gt; &lt;strong&gt;50. React Router 与常规路由有何不同？&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;主题&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;常规路由&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;React 路由&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;参与的页面&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;每个视图对应一个新文件&lt;/td&gt;
+&lt;td&gt;只涉及单个 HTML 页面&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;URL 更改&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;HTTP 请求被发送到服务器并且接收相应的 HTML 页面&lt;/td&gt;
+&lt;td&gt;仅更改历史记录属性&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;体验&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;用户实际在每个视图的不同页面切换&lt;/td&gt;
+&lt;td&gt;用户认为自己正在不同的页面间切换&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

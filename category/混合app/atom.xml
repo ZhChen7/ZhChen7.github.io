@@ -1,0 +1,509 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>sunflower • Posts by &#34;混合app&#34; category</title>
+    <link href="http://example.com" />
+    <updated>2019-08-29T07:53:28.000Z</updated>
+    <category term="blog" />
+    <category term="个人博客" />
+    <category term="rem" />
+    <category term="less" />
+    <category term="art-template" />
+    <category term="算法面试" />
+    <category term="算法" />
+    <category term="大 O？" />
+    <category term="复杂度分析" />
+    <category term="大二" />
+    <category term="数据库实训" />
+    <category term="IDE" />
+    <category term="Git" />
+    <category term="模块化" />
+    <category term="构建工具" />
+    <category term="上线和回滚" />
+    <category term="ES6 模块化语法" />
+    <category term="babel" />
+    <category term="webpack" />
+    <category term="rollup" />
+    <category term="ES6" />
+    <category term="hybrid" />
+    <category term="虚拟 DOM" />
+    <category term="知识点概述" />
+    <category term="JS" />
+    <category term="实用工具" />
+    <category term="面试全面总结" />
+    <category term="JS 三座大山" />
+    <category term="学习实训" />
+    <category term="性能优化" />
+    <category term="加载过程" />
+    <category term="promise" />
+    <category term="异步解决方案" />
+    <category term="回调地狱" />
+    <category term="React" />
+    <category term="React源码" />
+    <category term="Vue3" />
+    <category term="vue" />
+    <category term="跑马灯" />
+    <category term="父子组件间通信" />
+    <category term="路由" />
+    <category term="监听事件（keyup ，watch ，computed ）" />
+    <category term="nrm" />
+    <category term="Mint-UI" />
+    <category term="MUI" />
+    <category term="MVVM" />
+    <category term="响应式、模板解析、渲染" />
+    <category term="微信小程序" />
+    <category term="单线程" />
+    <category term="event loop" />
+    <category term="异步的 Deferred" />
+    <category term="Promise" />
+    <category term="html" />
+    <category term="hexo" />
+    <category term="redux" />
+    <category term="UTC时间问题" />
+    <category term="正则表达式" />
+    <category term="虚拟DOM" />
+    <category term="博文" />
+    <category term="React-Router" />
+    <category term="React-Hooks" />
+    <category term="DOM" />
+    <category term="BOM" />
+    <category term="事件绑定" />
+    <category term="ajax 请求" />
+    <category term="储存" />
+    <category term="进程调度" />
+    <category term="过滤器" />
+    <category term="按键修饰符" />
+    <category term="指令" />
+    <category term="生命周期" />
+    <category term="过渡效果" />
+    <category term="组件" />
+    <category term="webpack 后续问题" />
+    <category term="数组" />
+    <category term="API" />
+    <category term="跨域" />
+    <category term="动画" />
+    <category term="事件" />
+    <category term="React基础面试题-50" />
+    <category term="数组相关操作" />
+    <category term="手撕代码" />
+    <category term="牛人面试题" />
+    <entry>
+        <id>http://example.com/2019/08/29/hybrid/</id>
+        <title>hybrid</title>
+        <link rel="alternate" href="http://example.com/2019/08/29/hybrid/"/>
+        <content type="html">&lt;h1 id=&#34;hybrid&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hybrid&#34;&gt;#&lt;/a&gt; hybrid&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本章主要介绍 hybrid 的原理和应用。hybrid 基础部分要讲解 file 协议、webview、更新上线流程；另外，通过 h5 和 hybrid 的对比，来了解两者的异同和使用场景；最后讲解前端 JS 和客户端的通讯，包括通讯原理和 JS-bridge 的代码封装。…&lt;/p&gt;
+&lt;p&gt;社会主流 &lt;strong&gt;大前端&lt;/strong&gt; 的概念。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;知识点&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;6-1 hybrid 是什么？ 为何用 hybrid ？&lt;/p&gt;
+&lt;p&gt;6-2 hybrid 更新上线流程&lt;/p&gt;
+&lt;p&gt;6-3 hybrid 和 h5 的 主要区别？&lt;/p&gt;
+&lt;p&gt;6-4 前端 JS 和 客户端 如何通讯？&lt;/p&gt;
+&lt;p&gt;The greatest test of courage on earth is to bear defeat without losing heart.&lt;/p&gt;
+&lt;p&gt;世界上对勇气的最大考验是忍受失败而不丧失信心。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;hybrid-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hybrid-2&#34;&gt;#&lt;/a&gt; hybrid&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;移动端占大部分流量，已经远远超过 PC&lt;/li&gt;
+&lt;li&gt;一线互联网公司都有自己的 App&lt;/li&gt;
+&lt;li&gt;这些 App 中有很大比例的前端代码 (不要惊讶)&lt;/li&gt;
+&lt;li&gt;拿微信举例，你每天浏览微信的内容，多少是前端？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;知识点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;hybrid 是什么？ 为何用 hybrid ？&lt;/li&gt;
+&lt;li&gt;介绍一下 hybrid 更新 和上线的流程？&lt;/li&gt;
+&lt;li&gt;hybrid 和 h5 的 主要区别？&lt;/li&gt;
+&lt;li&gt;前端 JS 和 客户端 如何通讯？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;6-1-hybrid-是什么-为何用-hybrid&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-1-hybrid-是什么-为何用-hybrid&#34;&gt;#&lt;/a&gt; 6-1 hybrid 是什么？ 为何用 hybrid ？&lt;/h2&gt;
+&lt;h3 id=&#34;知识点-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点-2&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;hybrid 文字解释&lt;/li&gt;
+&lt;li&gt;存在价值，为何用 hybrid ？&lt;/li&gt;
+&lt;li&gt;webview&lt;/li&gt;
+&lt;li&gt;file：// 协议&lt;/li&gt;
+&lt;li&gt;hybrid 实现流程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;hybrid-文字解释&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hybrid-文字解释&#34;&gt;#&lt;/a&gt; hybrid 文字解释&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;hybrid 即 “混合” ，即 前端 和客户端的混合开发&lt;/li&gt;
+&lt;li&gt;需前端开发人员 和 客户端开发人员配合完成&lt;/li&gt;
+&lt;li&gt;某些环节也可能涉及到 server 端&lt;/li&gt;
+&lt;li&gt;注意：不要以为自己是前端就可以不理会客户端的知识&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/no77eoeMXoEi.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;hybrid-存在价值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hybrid-存在价值&#34;&gt;#&lt;/a&gt; hybrid 存在价值&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;可以快速迭代更新【关键】（无需 app 审核，思考为何？–&amp;gt; 前端部分能够快速更新上线）&lt;/li&gt;
+&lt;li&gt;体验流畅 （ 和 NA 的体验基本类似 ）&lt;/li&gt;
+&lt;li&gt;减少开发和沟通成本，双端公用一套代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;webview&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#webview&#34;&gt;#&lt;/a&gt; webview&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;是 App 中的一个组件（app 可以有 webview，也可以没有）&lt;/li&gt;
+&lt;li&gt;用于加载 h5 页面，即一个小型的浏览器 内核&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/I797MG2jf2xe.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;file-协议&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#file-协议&#34;&gt;#&lt;/a&gt; file 协议&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;其实在一开始接触 html 开发，就已经使用了 file 协议&lt;/li&gt;
+&lt;li&gt;只不过你当时没有 “协议” “标准” 等这些概念&lt;/li&gt;
+&lt;li&gt;再次强调 “协议” “标准” 的重要性 ！！！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/kyXpWyLb4oVR.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/cxJ86AeO2374.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;两者的区别：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;file 协议：本地文件，快&lt;/li&gt;
+&lt;li&gt;http (s) 协议：网络加载，慢&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;hybrid-具体实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hybrid-具体实现&#34;&gt;#&lt;/a&gt; hybrid 具体实现&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;不是所有的场景都适合使用 hybrid&lt;/li&gt;
+&lt;li&gt;使用 &lt;strong&gt;NA&lt;/strong&gt; ：体验要求极致，变化不频繁（ 如头条的首页 ）&lt;/li&gt;
+&lt;li&gt;使用 &lt;strong&gt;hybrid&lt;/strong&gt; ：体验要求高，变化频繁（ 如头条的新闻详情页 ）&lt;/li&gt;
+&lt;li&gt;使用 &lt;strong&gt;h5&lt;/strong&gt; ：体验无要求，不常用（如举报、反馈等页面）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;具体实现&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前端 做好静态页面（html css js），将文件交给客户端&lt;/li&gt;
+&lt;li&gt;客户端拿到前端静态页面，以文件形式储存在 app 中&lt;/li&gt;
+&lt;li&gt;客户端 在一个 webview 中&lt;/li&gt;
+&lt;li&gt;使用 file 协议 加载静态页面&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/RIR0zOPUN22I.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;具体实现-遗留问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#具体实现-遗留问题&#34;&gt;#&lt;/a&gt; 具体实现 – 遗留问题：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;app 发布之后，静态文件如何实时更新？&lt;/li&gt;
+&lt;li&gt;静态页面如何获取内容？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;问题解答&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#问题解答&#34;&gt;#&lt;/a&gt; 问题解答&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;hybrid 是什么？ 为何用 hybrid ？
+&lt;ul&gt;
+&lt;li&gt;hybrid 即 “混合” ，即 前端 和客户端的混合开发&lt;/li&gt;
+&lt;li&gt;hybrid 存在的核心意义在于快速迭代，无需审核&lt;/li&gt;
+&lt;li&gt;hybrid 实现流程（图），以及 webview 和 file 协议&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;6-2-hybrid-更新上线流程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-2-hybrid-更新上线流程&#34;&gt;#&lt;/a&gt; 6-2 hybrid 更新上线流程&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;回顾 hybrid 实现流程&lt;/li&gt;
+&lt;li&gt;思考 （目的，实现途径）&lt;/li&gt;
+&lt;li&gt;更新流程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;回顾-hybrid-实现流程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#回顾-hybrid-实现流程&#34;&gt;#&lt;/a&gt; 回顾 hybrid 实现流程&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/aeHMDopqsrCy.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;思考-目的实现途径&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#思考-目的实现途径&#34;&gt;#&lt;/a&gt; 思考 （目的，实现途径）&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/wCDenA4EGmC8.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;要替换每个客户端的静态文件&lt;/li&gt;
+&lt;li&gt;只能客户端来做（客户端是我们开发的）&lt;/li&gt;
+&lt;li&gt;客户端去 server 下载最新的静态文件&lt;/li&gt;
+&lt;li&gt;我们维护 server 的静态文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/H6H3arUgJB6d.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;完整流程：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;分版本，有版本号，如 201803211015&lt;/li&gt;
+&lt;li&gt;将静态 文件压缩成 zip 包，上传到服务器&lt;/li&gt;
+&lt;li&gt;客户端每次启动，都去服务端检查版本号&lt;/li&gt;
+&lt;li&gt;如果服务端本版本号大于客户端版本号，就去下载最新的 zip 包&lt;/li&gt;
+&lt;li&gt;下载完之后解压包，然后将现有的文件覆盖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;问题解答-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#问题解答-2&#34;&gt;#&lt;/a&gt; 问题解答&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;介绍一下 hybrid 更新 和上线的流程？
+&lt;ul&gt;
+&lt;li&gt;掌握流程图&lt;/li&gt;
+&lt;li&gt;要点 1：服务端的版本和 zip 包维护&lt;/li&gt;
+&lt;li&gt;要点 2：更新 zip 包之前，先对比版本号&lt;/li&gt;
+&lt;li&gt;要点 3：zip 下载解压和覆盖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;6-3hybrid-和-h5-的-主要区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-3hybrid-和-h5-的-主要区别&#34;&gt;#&lt;/a&gt; 6-3hybrid 和 h5 的 主要区别？&lt;/h2&gt;
+&lt;h3 id=&#34;知识点-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点-3&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;优点&lt;/li&gt;
+&lt;li&gt;缺点&lt;/li&gt;
+&lt;li&gt;适用的场景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;hybrid-优点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hybrid-优点&#34;&gt;#&lt;/a&gt; hybrid 优点&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;体验更好，跟 NA 体验基本一致&lt;/li&gt;
+&lt;li&gt;可快速迭代，无需 app 审核 【关键】&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;hybrid-缺点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hybrid-缺点&#34;&gt;#&lt;/a&gt; hybrid 缺点&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;开发成本高。联调，测试，查 bug 都比较麻烦&lt;/li&gt;
+&lt;li&gt;运维成本高。参考此前讲过的更新上线的流程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;适用场景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#适用场景&#34;&gt;#&lt;/a&gt; 适用场景&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;hybrid ：产品的稳定功能，体验要求高，迭代频繁&lt;/li&gt;
+&lt;li&gt;h5：单次的运营活动（如 xx 红包）或 不常用功能（反馈、举报页面等）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;问题解答-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#问题解答-3&#34;&gt;#&lt;/a&gt; 问题解答&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;hybrid 和 h5 的 主要区别？
+&lt;ul&gt;
+&lt;li&gt;优点：体验好，可快速迭代&lt;/li&gt;
+&lt;li&gt;缺点：开发成本高，运维成本高&lt;/li&gt;
+&lt;li&gt;适用的场景：hybrid 适合产品型，h5 适合 运行型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;6-4-前端-js-和-客户端-如何通讯&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-4-前端-js-和-客户端-如何通讯&#34;&gt;#&lt;/a&gt; 6-4 前端 JS 和 客户端 如何通讯？&lt;/h2&gt;
+&lt;h3 id=&#34;知识点-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点-4&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;回顾 之前遗留的问题&lt;/li&gt;
+&lt;li&gt;JS 和 客户端通讯的基本形式&lt;/li&gt;
+&lt;li&gt;schema 协议简介和使用&lt;/li&gt;
+&lt;li&gt;schema 使用的封装&lt;/li&gt;
+&lt;li&gt;内置上线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;之前遗留的问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#之前遗留的问题&#34;&gt;#&lt;/a&gt; 之前遗留的问题&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;新闻详情页适用于 hybrid，前端如何 获取新闻内容 ？
+&lt;ul&gt;
+&lt;li&gt;不能用 ajax （http (s) 协议）获取。第一： 跨域 ，第二 ：速度慢&lt;/li&gt;
+&lt;li&gt;客户端获取新闻内容，然后 JS 通讯拿到内容，再渲染&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/MIj2ETWq9QH1.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;JS 和 客户端通讯的基本形式&lt;/em&gt; ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JS 访问客户端能力，传递参数 和 回调函数&lt;/li&gt;
+&lt;li&gt;客户端 通过 回调函数 返回内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;schema-协议简介和使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#schema-协议简介和使用&#34;&gt;#&lt;/a&gt; schema 协议简介和使用&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;之前介绍了 http (s) 和 file 协议&lt;/li&gt;
+&lt;li&gt;schema 协议 —— 前端和客户端通讯的约定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/w3OphLjO8erc.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/QpzXgisk6E3y.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/RjgtefgjYzXH.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;模拟扫一扫前后端通讯&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#模拟扫一扫前后端通讯&#34;&gt;#&lt;/a&gt; 模拟扫一扫前后端通讯&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token doctype&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&#34;token doctype-tag&#34;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&#34;token name&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;html&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;lang&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;en&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;head&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;charset&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;UTF-8&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;title&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Title&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;title&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;head&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;body&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;btn&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;扫一扫&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token script&#34;&gt;&lt;span class=&#34;token language-javascript&#34;&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;invokeScan&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        window&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;_invoke_scan_callback_&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;result&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+          &lt;span class=&#34;token function&#34;&gt;alert&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;result&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; iframe &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;createElement&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;iframe&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        iframe&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;style&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;display &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;none&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token comment&#34;&gt;// iframe.src = &#39;weixin://dl/scan&#39;  //重要&lt;/span&gt;
+        iframe&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;src &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;
+          &lt;span class=&#34;token string&#34;&gt;&#34;weixin://dl/scan?k1=v1&amp;amp;k2=v2&amp;amp;k3=v3&amp;amp;callback=_invoke_scan_callback_&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; body &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;appendChild&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;iframe&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;setTimeout&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+          body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;removeChild&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;iframe&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+          iframe &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+      document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getElementById&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;btn&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;addEventListener&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;click&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;invokeScan&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;body&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;html&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;schema-使用的封装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#schema-使用的封装&#34;&gt;#&lt;/a&gt; schema 使用的封装&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/jcvC6T5SH3Pm.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/fW8NCvLoYRAg.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190829/5Yhq6r9uLr7X.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;schema-封装代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#schema-封装代码&#34;&gt;#&lt;/a&gt; schema 封装代码&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;schema 使用的封装&lt;/em&gt; ：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token doctype&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&#34;token doctype-tag&#34;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&#34;token name&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;html&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;lang&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;en&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;head&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;charset&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;UTF-8&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;title&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Title&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;title&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;head&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;body&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;btn1&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;扫一扫&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;btn2&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;分享&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;invoke.js&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token script&#34;&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token script&#34;&gt;&lt;span class=&#34;token language-javascript&#34;&gt;
+      &lt;span class=&#34;token comment&#34;&gt;//调用扫一扫&lt;/span&gt;
+      document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getElementById&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;btn1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;addEventListener&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;click&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        window&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;invoke&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scan&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+      &lt;span class=&#34;token comment&#34;&gt;//调用分享&lt;/span&gt;
+      document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getElementById&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;btn2&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;addEventListener&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;click&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        window&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;invoke&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;share&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;
+          &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+            title&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;xxx&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+            content&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;yyy&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+          &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+          &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;relust&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+            &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;relust&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;error &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+              &lt;span class=&#34;token function&#34;&gt;alert&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;分享成功&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+              &lt;span class=&#34;token function&#34;&gt;alert&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;relust&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;message&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+          &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;body&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;html&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;invoke.js&lt;/em&gt; ：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;// invoke.js&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;window&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;undefined&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token comment&#34;&gt;//调用 schema 的封装&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;_invoke&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;action&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; callback&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token comment&#34;&gt;//拼装 schema 协议&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; schema &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;myapp://utils/&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; action&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token comment&#34;&gt;//拼接参数&lt;/span&gt;
+    schema &lt;span class=&#34;token operator&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;?a=a&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; key&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;key &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;hasOwnProperty&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;key&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        schema &lt;span class=&#34;token operator&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&amp;amp;&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; key &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;key&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+    &lt;span class=&#34;token comment&#34;&gt;//处理 callback&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; callbackName &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;typeof&lt;/span&gt; callback &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;string&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      callbackName &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; callback&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      callbackName &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; action &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; Date&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;now&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      window&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;callbackName&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; callback&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    schema &lt;span class=&#34;token operator&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;callback=callbackName&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token comment&#34;&gt;//触发&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; iframe &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;createElement&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;iframe&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    iframe&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;style&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;display &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;none&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    iframe&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;src &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; schema&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//重要&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; body &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;appendChild&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;iframe&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;setTimeout&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      body&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;removeChild&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;iframe&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      iframe &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+  &lt;span class=&#34;token comment&#34;&gt;//暴露到全局变量&lt;/span&gt;
+  window&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;invoke &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token function-variable function&#34;&gt;share&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; callback&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token function&#34;&gt;_invoke&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;share&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; callback&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token function-variable function&#34;&gt;scan&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; callback&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token function&#34;&gt;_invoke&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;scan&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; callback&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token function-variable function&#34;&gt;login&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; callback&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token function&#34;&gt;_invoke&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;login&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; callback&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;window&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;问题解答-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#问题解答-4&#34;&gt;#&lt;/a&gt; 问题解答&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;前端 JS 和 客户端 如何通讯？
+&lt;ul&gt;
+&lt;li&gt;通讯的基本形式：调用能力，传递参数，监听回调&lt;/li&gt;
+&lt;li&gt;对 schema 协议的理解和使用 （这个协议可理解为 ：定义了前端和客户端 通信的一个标准）&lt;/li&gt;
+&lt;li&gt;调用 schema 代码的封装&lt;/li&gt;
+&lt;li&gt;内置上线的好处：更快、更安全&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="hybrid" />
+        <updated>2019-08-29T07:53:28.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2019/08/04/IntroductionToCourse/</id>
+        <title>课程导论</title>
+        <link rel="alternate" href="http://example.com/2019/08/04/IntroductionToCourse/"/>
+        <content type="html">&lt;h1 id=&#34;课程导论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程导论&#34;&gt;#&lt;/a&gt; 课程导论&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;课程导论：本章主要介绍课程的知识大纲，每个章节的解决顺序和主要内容。&lt;/p&gt;
+&lt;p&gt;1- 1 导学&lt;/p&gt;
+&lt;p&gt;1-2 课程重要提示&lt;/p&gt;
+&lt;p&gt;1-3 架构&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;课程概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程概述&#34;&gt;#&lt;/a&gt; 课程概述&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;做什么？&lt;/strong&gt; —— 讲解前端 JS 高级面试题&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;哪些部分？&lt;/strong&gt; —— 高级基础，框架原理，app 混合开发&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;技术？&lt;/strong&gt; ——JS、ES6、虚拟 DOM、vueReact、hybrid&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190803/Q5w2nr68extL.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;课程安排&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程安排&#34;&gt;#&lt;/a&gt; 课程安排&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;高级基础&lt;/li&gt;
+&lt;li&gt;框架原理&lt;/li&gt;
+&lt;li&gt;App 混合开发&lt;/li&gt;
+&lt;li&gt;热爱编程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;课程安排-高级基础&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程安排-高级基础&#34;&gt;#&lt;/a&gt; 课程安排 - 高级基础&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;ES6 常用语法：Class ,Module Promise 等&lt;/li&gt;
+&lt;li&gt;原型高级应用：结合 jQuery 和 zepto 源码&lt;/li&gt;
+&lt;li&gt;异步全面讲解：从原理到 jQuery 再到 Primise&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;课程安排-框架原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程安排-框架原理&#34;&gt;#&lt;/a&gt; 课程安排 - 框架原理&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;虚拟 DOM：存在价值，如何使用，diff 算法&lt;/li&gt;
+&lt;li&gt;vue：MVVM，vue 响应式、模板解析、渲染&lt;/li&gt;
+&lt;li&gt;React：组件化，JSX、VDOM，setState&lt;/li&gt;
+&lt;li&gt;对比：有主见，自圆其说&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;课程安排-app-混合开发&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程安排-app-混合开发&#34;&gt;#&lt;/a&gt; 课程安排 - App 混合开发&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;hybrid：基础、和 h5 对比，上线流程&lt;/li&gt;
+&lt;li&gt;通讯：通讯原理，JS-Bridge 封装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;课程安排-热爱编程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程安排-热爱编程&#34;&gt;#&lt;/a&gt; 课程安排 - 热爱编程&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;读书&lt;/li&gt;
+&lt;li&gt;博客&lt;/li&gt;
+&lt;li&gt;开源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;课程收获&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程收获&#34;&gt;#&lt;/a&gt; 课程收获&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;应对 JS 高级面试题&lt;/li&gt;
+&lt;li&gt;从深度和广度都扩充了自己的知识体系&lt;/li&gt;
+&lt;li&gt;学会如何高效学习&lt;/li&gt;
+&lt;li&gt;深入理解常用框架的实现原理和 hybrid 应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;学习前提&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#学习前提&#34;&gt;#&lt;/a&gt; 学习前提&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;有 JavaScript 基础&lt;/li&gt;
+&lt;li&gt;用过 node.js 和 npm 开发环境&lt;/li&gt;
+&lt;li&gt;了解 vue 和 React （至少看过文档，做过 demo）&lt;/li&gt;
+&lt;li&gt;热爱前端开发，有学习的欲望&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;课程优势&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程优势&#34;&gt;#&lt;/a&gt; 课程优势&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;针对高级 JS 面试中，面试官爱问 “源码” “实现”&lt;/li&gt;
+&lt;li&gt;介绍常用框架实现原理的视频，网上稀缺&lt;/li&gt;
+&lt;li&gt;会介绍 hybrid 原理和应用的视频，网上稀缺&lt;/li&gt;
+&lt;li&gt;全部由实际工作经验总结而来，书上看不到&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="hybrid" />
+        <category term="虚拟 DOM" />
+        <category term="知识点概述" />
+        <updated>2019-08-04T08:44:08.000Z</updated>
+    </entry>
+</feed>

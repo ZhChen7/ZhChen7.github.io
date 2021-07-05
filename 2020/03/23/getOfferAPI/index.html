@@ -114,7 +114,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h4 id="面试专题总结：-API、数组、跨域、动画、事件"><a href="#面试专题总结：-API、数组、跨域、动画、事件" class="headerlink" title="面试专题总结： API、数组、跨域、动画、事件"></a>面试专题总结： API、数组、跨域、动画、事件</h4><blockquote>
+  <h4 id="面试专题总结-api-数组-跨域-动画-事件"><a class="markdownIt-Anchor" href="#面试专题总结-api-数组-跨域-动画-事件">#</a> 面试专题总结： API、数组、跨域、动画、事件</h4>
+<blockquote>
 <p>希望读者依此构建自己的知识树（思维导图）</p>
 <p>偷懒一下：可参考我自己总结思维导图 : <a target="_blank" rel="noopener" href="https://github.com/ZhChen7/Interview-mind-map">点这里</a></p>
 <p>附带：高频面试题积累文档。 来自于（学长、牛客网等平台）</p>
@@ -124,94 +125,117 @@
 <blockquote>
 <p>此篇 js - 【API、数组、跨域、动画、事件】 知识点： 全部弄懂了，面试很容易。</p>
 </blockquote>
-<h3 id="1、数组"><a href="#1、数组" class="headerlink" title="1、数组"></a>1、数组</h3><ul>
-<li>改变原数组的 API<ol>
+<h3 id="1-数组"><a class="markdownIt-Anchor" href="#1-数组">#</a> 1、数组</h3>
+<ul>
+<li>改变原数组的 API
+<ol>
 <li>push()</li>
 <li>unshift()</li>
 <li>pop()</li>
 <li>shift()</li>
 <li>reverse()</li>
-<li>splice(index, count, value1, value2….)<ul>
-<li>从索引位 index 处删除 count 个元素，插入 value1, value2 等元素，返回被删除的元素组成的新数组(改变原数组)</li>
+<li>splice(index, count, value1, value2…)
+<ul>
+<li>从索引位 index 处删除 count 个元素，插入 value1, value2 等元素，返回被删除的元素组成的新数组 (改变原数组)</li>
 </ul>
 </li>
 <li>sort()</li>
 </ol>
 </li>
-<li>不改变原数组的 API<ol>
-<li>join(value)<ul>
-<li>将数组用 value 连接为字符串，返回被连接后的字符串(不改变原数组)</li>
-<li>将数组用 value 连接为字符串，返回被连接后的字符串(不改变原数组)</li>
+<li>不改变原数组的 API
+<ol>
+<li>join(value)
+<ul>
+<li>将数组用 value 连接为字符串，返回被连接后的字符串 (不改变原数组)</li>
+<li>将数组用 value 连接为字符串，返回被连接后的字符串 (不改变原数组)</li>
 </ul>
 </li>
-<li>获取子数组，包含原数组索引 start 的值到索引 end 的值，不包含 end，返回获取的子数组(不改变原数组)</li>
-<li>toString()<ul>
-<li>将数组中的元素用逗号拼接成字符串，返回拼接后的字符串(不改变原数组)</li>
+<li>获取子数组，包含原数组索引 start 的值到索引 end 的值，不包含 end，返回获取的子数组 (不改变原数组)</li>
+<li>toString()
+<ul>
+<li>将数组中的元素用逗号拼接成字符串，返回拼接后的字符串 (不改变原数组)</li>
 </ul>
 </li>
-<li>indexOf(value)<ul>
-<li>从索引为 0 开始，检查数组中是否包含有 value，有则返回匹配到的第一个索引，没有则返回-1(不改变原数组)</li>
+<li>indexOf(value)
+<ul>
+<li>从索引为 0 开始，检查数组中是否包含有 value，有则返回匹配到的第一个索引，没有则返回 - 1 (不改变原数组)</li>
 </ul>
 </li>
-<li>lastIndexOf(value)<ul>
-<li>从最后的索引开始，检查数组找那个是否包含 value，有则返回匹配到的第一个索引，没有返回-1(不改变原数组)</li>
+<li>lastIndexOf(value)
+<ul>
+<li>从最后的索引开始，检查数组找那个是否包含 value，有则返回匹配到的第一个索引，没有返回 - 1 (不改变原数组)</li>
 </ul>
 </li>
-<li>concat(value)<ul>
-<li>将数组和(或)值连接成新数组，返回新数组(不改变原数组)</li>
+<li>concat(value)
+<ul>
+<li>将数组和 (或) 值连接成新数组，返回新数组 (不改变原数组)</li>
 </ul>
 </li>
-<li>forEach()<ul>
+<li>forEach()
+<ul>
 <li>对数组进行遍历循环，对数组中每一项运行给定函数，参数都是 function 类型，默认有传参，参数分别为：遍历数组内容、对应的数组索引、数组本身。没有返回值</li>
 </ul>
 </li>
-<li>map()<ul>
-<li>指“映射”，对数组中的每一项运行给定函数，返回每次函数调用的结果组成的新数组</li>
+<li>map()
+<ul>
+<li>指 “映射”，对数组中的每一项运行给定函数，返回每次函数调用的结果组成的新数组</li>
 </ul>
 </li>
-<li>filter()<ul>
-<li>“过滤”功能，数组中的每一项运行给定函数，返回满足过滤条件组成的数组</li>
+<li>filter()
+<ul>
+<li>“过滤” 功能，数组中的每一项运行给定函数，返回满足过滤条件组成的数组</li>
 </ul>
 </li>
-<li>every()<ul>
+<li>every()
+<ul>
 <li>判断数组中每一项都是否满足条件，只有所有项都满足条件，才会返回 true</li>
 </ul>
 </li>
-<li>some()<ul>
+<li>some()
+<ul>
 <li>判断数组中是否存在满足条件的项，只要有一项满足条件，就会返回 true</li>
 </ul>
 </li>
-<li>reduce()<ul>
+<li>reduce()
+<ul>
 <li>接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值</li>
 </ul>
 </li>
 </ol>
 </li>
 </ul>
-<h3 id="2、类数组转变为数组的方法"><a href="#2、类数组转变为数组的方法" class="headerlink" title="2、类数组转变为数组的方法"></a>2、类数组转变为数组的方法</h3><ul>
-<li>类数组的定义<ul>
+<h3 id="2-类数组转变为数组的方法"><a class="markdownIt-Anchor" href="#2-类数组转变为数组的方法">#</a> 2、类数组转变为数组的方法</h3>
+<ul>
+<li>类数组的定义
+<ul>
 <li>可以通过索引访问元素，并且拥有 length 属性</li>
 <li>没有数组的其他方法，例如 push ， forEach ， indexOf 等。</li>
 </ul>
 </li>
-<li>ES5<ul>
-<li>Array.prototype.slice.call() 等同于 [].slice.call(arguments)</li>
+<li>ES5
+<ul>
+<li>Array.prototype.slice.call () 等同于 [].slice.call (arguments)</li>
 </ul>
 </li>
-<li>ES6<ul>
+<li>ES6
+<ul>
 <li>Array.from()</li>
-<li>…扩展运算符</li>
+<li>… 扩展运算符</li>
 <li>for of 直接遍历类数组（iterator 接口）</li>
 </ul>
 </li>
 </ul>
-<h3 id="3、稀疏数组和密集数组"><a href="#3、稀疏数组和密集数组" class="headerlink" title="3、稀疏数组和密集数组"></a>3、稀疏数组和密集数组</h3><ul>
-<li>稀疏数组<ul>
-<li>是什么<ul>
+<h3 id="3-稀疏数组和密集数组"><a class="markdownIt-Anchor" href="#3-稀疏数组和密集数组">#</a> 3、稀疏数组和密集数组</h3>
+<ul>
+<li>稀疏数组
+<ul>
+<li>是什么
+<ul>
 <li>具有不连续索引的数组，其 length 属性值大于元素的个数。</li>
 </ul>
 </li>
-<li>造成稀疏数组的操作<ol>
+<li>造成稀疏数组的操作
+<ol>
 <li>delete 操作符</li>
 <li>构造函数</li>
 <li>在数组字面量中省略值</li>
@@ -219,18 +243,22 @@
 <li>指定数组长度大于当前数组长度</li>
 </ol>
 </li>
-<li>缺点<ul>
+<li>缺点
+<ul>
 <li>操作的不统一</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>密集数组<ul>
-<li>是什么<ul>
+<li>密集数组
+<ul>
+<li>是什么
+<ul>
 <li>具有连续索引的数组，其 length 属性值等于元素的个数。</li>
 </ul>
 </li>
-<li>创建方式<ol>
+<li>创建方式
+<ol>
 <li>Array.apply(null, Array(3)) || Array.apply(null, {length: 3})</li>
 <li>Array.from({length: 3})</li>
 <li>[…Array(4)]</li>
@@ -239,15 +267,19 @@
 </ul>
 </li>
 </ul>
-<h3 id="4、柯里化函数"><a href="#4、柯里化函数" class="headerlink" title="4、柯里化函数"></a>4、柯里化函数</h3><ul>
-<li><p>定义</p>
+<h3 id="4-柯里化函数"><a class="markdownIt-Anchor" href="#4-柯里化函数">#</a> 4、柯里化函数</h3>
 <ul>
-<li>柯里化, 即 Currying 的音译。 Currying 是编译原理层面实现多参函数的一个技术。</li>
+<li>
+<p>定义</p>
+<ul>
+<li>柯里化，即 Currying 的音译。 Currying 是编译原理层面实现多参函数的一个技术。</li>
 </ul>
 </li>
-<li><p>手写柯里化函数</p>
+<li>
+<p>手写柯里化函数</p>
 <ul>
-<li><p>ES5 写法</p>
+<li>
+<p>ES5 写法</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">currying</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> <span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>args<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> fn<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -258,18 +290,20 @@
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>ES6 写法（箭头函数）</p>
+<li>
+<p>ES6 写法（箭头函数）</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">currying</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> <span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token operator">=></span>
   args<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> fn<span class="token punctuation">.</span>length
     <span class="token operator">?</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>argments</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">currying</span><span class="token punctuation">(</span>fn<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">,</span> <span class="token operator">...</span>argments<span class="token punctuation">)</span>
     <span class="token operator">:</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="5、window-全局对象（BOM）"><a href="#5、window-全局对象（BOM）" class="headerlink" title="5、window 全局对象（BOM）"></a>5、window 全局对象（BOM）</h3><ol>
-<li>navigator 导航器对象<ul>
+<h3 id="5-window-全局对象bom"><a class="markdownIt-Anchor" href="#5-window-全局对象bom">#</a> 5、window 全局对象（BOM）</h3>
+<ol>
+<li>navigator 导航器对象
+<ul>
 <li>Navigator 对象包含有关浏览器的信息</li>
 <li>appCodeName 返回浏览器的代码名</li>
 <li>appName 返回浏览器的名称</li>
@@ -280,14 +314,17 @@
 </ul>
 </li>
 <li>screen 显示器对象</li>
-<li>history 历史对象<ul>
-<li>back() 返回前一个 URL</li>
-<li>forward() 返回下一个 URL</li>
-<li>go() 返回某个具体页面</li>
+<li>history 历史对象
+<ul>
+<li>back () 返回前一个 URL</li>
+<li>forward () 返回下一个 URL</li>
+<li>go () 返回某个具体页面</li>
 </ul>
 </li>
-<li>location 位置对象<ul>
-<li>属性<ul>
+<li>location 位置对象
+<ul>
+<li>属性
+<ul>
 <li>hash 设置或返回从井号 (#) 开始的 URL（锚）。</li>
 <li>host 设置或返回主机名和当前 URL 的端口号。</li>
 <li>hostname 设置或返回当前 URL 的主机名</li>
@@ -298,23 +335,28 @@
 <li>search 设置或返回从问号 (?) 开始的 URL（查询部分）。</li>
 </ul>
 </li>
-<li>方法<ul>
-<li>assign(URL) 加载新的文档</li>
-<li>reload() 重新加载当前页面</li>
-<li>replace(newURL) 用新的文档替换当前文档</li>
+<li>方法
+<ul>
+<li>assign (URL) 加载新的文档</li>
+<li>reload () 重新加载当前页面</li>
+<li>replace (newURL) 用新的文档替换当前文档</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>document 文档对象【DOM】</li>
 </ol>
-<h3 id="6、ajax-和-fetch"><a href="#6、ajax-和-fetch" class="headerlink" title="6、ajax 和 fetch"></a>6、ajax 和 fetch</h3><h4 id="6-1、Ajax"><a href="#6-1、Ajax" class="headerlink" title="6.1、Ajax"></a>6.1、Ajax</h4><ul>
-<li><p>本质</p>
+<h3 id="6-ajax-和-fetch"><a class="markdownIt-Anchor" href="#6-ajax-和-fetch">#</a> 6、ajax 和 fetch</h3>
+<h4 id="61-ajax"><a class="markdownIt-Anchor" href="#61-ajax">#</a> 6.1、Ajax</h4>
+<ul>
+<li>
+<p>本质</p>
 <ul>
 <li>是在 HTTP 协议的基础上以异步的方式与服务器进行通信.</li>
 </ul>
 </li>
-<li><p>封装原生 Ajax 请求</p>
+<li>
+<p>封装原生 Ajax 请求</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">ajaxGet</span><span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -326,28 +368,33 @@
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 </li>
 </ul>
-<h4 id="6-2、fetch"><a href="#6-2、fetch" class="headerlink" title="6.2、fetch"></a>6.2、fetch</h4><ul>
-<li><p>fetch 是什么</p>
+<h4 id="62-fetch"><a class="markdownIt-Anchor" href="#62-fetch">#</a> 6.2、fetch</h4>
+<ul>
+<li>
+<p>fetch 是什么</p>
 <ul>
 <li>Fetch 是浏览器提供的原生 AJAX 接口。</li>
 </ul>
 </li>
-<li><p>Fetch 为何出现？</p>
+<li>
+<p>Fetch 为何出现？</p>
 <ul>
 <li>由于原来的 XMLHttpRequest 不符合关注分离原则，且基于事件的模型在处理异步上已经没有现代的 Promise 等那么有优势。因此 Fetch 出现来解决这种问题。</li>
 </ul>
 </li>
-<li><p>Fetch API</p>
+<li>
+<p>Fetch API</p>
 <ul>
-<li><p>Fetch API 提供了能够用于操作一部分 HTTP 的 JavaScript 接口，比如 requests 和 responses。它同时也提供了一个全局的 fetch() 方法——能够简单的异步的获取资源。</p>
-<p>使用 window.fetch 函数可以代替以前的 $. ajax、$.get 和 $.post。</p>
+<li>
+<p>Fetch API 提供了能够用于操作一部分 HTTP 的 JavaScript 接口，比如 requests 和 responses。它同时也提供了一个全局的 fetch () 方法 —— 能够简单的异步的获取资源。</p>
+<p>使用 window.fetch 函数可以代替以前的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">.</mi><mi>a</mi><mi>j</mi><mi>a</mi><mi>x</mi><mtext>、</mtext></mrow><annotation encoding="application/x-tex">. ajax、</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord">.</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord cjk_fallback">、</span></span></span></span>.get 和 $.post。</p>
 </li>
 </ul>
 </li>
-<li><p>用法</p>
+<li>
+<p>用法</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"http://example.com/movies.json"</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -355,15 +402,17 @@
   <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">myJson</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myJson<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 </li>
 </ul>
-<h4 id="6-3、readyState（状态值）"><a href="#6-3、readyState（状态值）" class="headerlink" title="6.3、readyState（状态值）"></a>6.3、readyState（状态值）</h4><ul>
-<li>readyState 是什么<ul>
+<h4 id="63-readystate状态值"><a class="markdownIt-Anchor" href="#63-readystate状态值">#</a> 6.3、readyState（状态值）</h4>
+<ul>
+<li>readyState 是什么
+<ul>
 <li>readyState 是 XMLHttpRequest 对象的一个属性，用来标识当前 XMLHttpRequest 对象处于什么状态</li>
 </ul>
 </li>
-<li>5 个状态值<ul>
+<li>5 个状态值
+<ul>
 <li>0: 请求未初始化</li>
 <li>1: 载入，XMLHttpRequest 对象开始发送请求</li>
 <li>2: 载入完成，XMLHttpRequest 对象的请求发送完成</li>
@@ -372,25 +421,34 @@
 </ul>
 </li>
 </ul>
-<h4 id="6-4、status（状态码"><a href="#6-4、status（状态码" class="headerlink" title="6.4、status（状态码"></a>6.4、status（状态码</h4><ul>
-<li><p>status 是什么</p>
+<h4 id="64-status状态码"><a class="markdownIt-Anchor" href="#64-status状态码">#</a> 6.4、status（状态码</h4>
+<ul>
+<li>
+<p>status 是什么</p>
 <ul>
 <li>status 是 XMLHttpRequest 对象的一个属性，表示响应的 http 状态码</li>
 </ul>
 </li>
-<li><p>在 http1.1 协议下，http 状态码总共可分为 5 大类</p>
+<li>
+<p>在 http1.1 协议下，http 状态码总共可分为 5 大类</p>
 <ul>
-<li><p>1xx：信息响应类，表示接收到请求并且继续处理</p>
+<li>
+<p>1xx：信息响应类，表示接收到请求并且继续处理</p>
 </li>
-<li><p>2xx：处理成功响应类，表示动作被成功接收、理解和接受</p>
+<li>
+<p>2xx：处理成功响应类，表示动作被成功接收、理解和接受</p>
 </li>
-<li><p>3xx：重定向响应类，为了完成指定的动作，必须接受进一步处理</p>
+<li>
+<p>3xx：重定向响应类，为了完成指定的动作，必须接受进一步处理</p>
 </li>
-<li><p>4xx：客户端错误，客户请求包含语法错误或者是不能正确执行</p>
+<li>
+<p>4xx：客户端错误，客户请求包含语法错误或者是不能正确执行</p>
 </li>
-<li><p>5xx：服务端错误，服务器不能正确执行一个正确的请求</p>
+<li>
+<p>5xx：服务端错误，服务器不能正确执行一个正确的请求</p>
 </li>
-<li><p>一些常见的状态码为</p>
+<li>
+<p>一些常见的状态码为</p>
 <p>200 OK：成功，很棒。</p>
 <p>301 永久移动：已永久移动到新位置。</p>
 <p>302（临时移动）：暂时移到新位置。</p>
@@ -407,44 +465,55 @@
 </ul>
 </li>
 </ul>
-<h3 id="7、Web-端即时通讯技术"><a href="#7、Web-端即时通讯技术" class="headerlink" title="7、Web 端即时通讯技术"></a>7、Web 端即时通讯技术</h3><ul>
-<li><p>Web 端即时通讯技术是什么</p>
+<h3 id="7-web-端即时通讯技术"><a class="markdownIt-Anchor" href="#7-web-端即时通讯技术">#</a> 7、Web 端即时通讯技术</h3>
+<ul>
+<li>
+<p>Web 端即时通讯技术是什么</p>
 <p>即时通讯技术简单的说就是实现这样一种功能：服务器端可以即时地将数据的更新或变化反应到客户端，例如消息即时推送等功能都是通过这种技术实现的。但是在 Web 中，由于浏览器的限制，实现即时通讯需要借助一些方法。这种限制出现的主要原因是，一般的 Web 通信都是浏览器先发送请求到服务器，服务器再进行响应完成数据的现实更新。</p>
 </li>
-<li><p>大体可以分为两类</p>
+<li>
+<p>大体可以分为两类</p>
 <ol>
-<li>一种是在 HTTP 基础上实现的<ul>
+<li>一种是在 HTTP 基础上实现的
+<ul>
 <li>短轮询、comet 和 SSE</li>
 </ul>
 </li>
-<li>不是在 HTTP 基础上实现<ul>
+<li>不是在 HTTP 基础上实现
+<ul>
 <li>WebSocket</li>
 </ul>
 </li>
 </ol>
 </li>
-<li><p>如何模拟双向通信（四种方式）</p>
+<li>
+<p>如何模拟双向通信（四种方式）</p>
 <ul>
-<li>短轮询<ul>
+<li>短轮询
+<ul>
 <li>客户端定时向服务器发送 Ajax 请求，服务器接到请求后马上返回响应信息并关闭连接。</li>
 <li>优点 ： 后端编写容易</li>
 <li>缺点 ： 请求中大半是无用，浪费宽带和服务器资源</li>
 <li>适用 ： 小型应用</li>
 </ul>
 </li>
-<li>长轮询<ul>
+<li>长轮询
+<ul>
 <li>客户端向服务器发送 Ajax 请求，服务器接到请求后 hold 住连接，直到有新消息才返回响应信息并关闭连接，客户端处理完响应信息后再向服务器发送新的请求。</li>
 <li>优点 ：在无消息的情况下不会频繁的请求，耗费资源小</li>
-<li>缺点<ul>
+<li>缺点
+<ul>
 <li>服务器 hold 连接会消耗资源</li>
 <li>返回数据顺序无保证，难于管理维护</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>长连接<ul>
+<li>长连接
+<ul>
 <li>在页面嵌入一个隐藏 iframe，将这个隐藏 iframe 的 src 属性设为对一个长连接的请求或是采用 xhr 请求，服务器端就能源源不断的往客户端输入数据</li>
-<li>优点<ul>
+<li>优点
+<ul>
 <li>消息及时到达，不发无用请求</li>
 <li>管理起来也相对方便</li>
 </ul>
@@ -452,7 +521,8 @@
 <li>缺点：服务器维护一个长连接会增加开销</li>
 </ul>
 </li>
-<li>WebSocket<ul>
+<li>WebSocket
+<ul>
 <li>WebSocket 是 Html5 定义的一个新协议，与传统的 http 协议不同，该协议可以实现服务器与客户端之间全双工通信。简单来说，首先需要在客户端和服务器端建立起一个连接，这部分需要 http。连接一旦建立，客户端和服务器端就处于平等的地位，可以相互发送数据，不存在请求和响应的区别。</li>
 <li>优点：实现了双向通信</li>
 <li>缺点：服务器端的逻辑非常复杂</li>
@@ -461,45 +531,57 @@
 </ul>
 </li>
 </ul>
-<h4 id="四种-Web-即时通信技术比较"><a href="#四种-Web-即时通信技术比较" class="headerlink" title="四种 Web 即时通信技术比较"></a>四种 Web 即时通信技术比较</h4><ul>
-<li>从兼容性角度考虑，短轮询&gt;长轮询&gt;长连接 SSE&gt;WebSocket；</li>
-<li>从性能方面考虑，WebSocket&gt;长连接 SSE&gt;长轮询&gt;短轮询。</li>
+<h4 id="四种-web-即时通信技术比较"><a class="markdownIt-Anchor" href="#四种-web-即时通信技术比较">#</a> 四种 Web 即时通信技术比较</h4>
+<ul>
+<li>从兼容性角度考虑，短轮询 &gt; 长轮询 &gt; 长连接 SSE&gt;WebSocket；</li>
+<li>从性能方面考虑，WebSocket &gt; 长连接 SSE &gt; 长轮询 &gt; 短轮询。</li>
 </ul>
-<h3 id="8、跨域"><a href="#8、跨域" class="headerlink" title="8、跨域"></a>8、跨域</h3><ul>
-<li>跨域是什么<ul>
+<h3 id="8-跨域"><a class="markdownIt-Anchor" href="#8-跨域">#</a> 8、跨域</h3>
+<ul>
+<li>跨域是什么
+<ul>
 <li>跨域是指从一个域名的网页去请求另一个域名的资源。</li>
 <li>跨域的严格一点的定义是：只要 协议，域名，端口有任何一个的不同，就被当作是跨域</li>
 </ul>
 </li>
 </ul>
-<h4 id="6-种解决方案"><a href="#6-种解决方案" class="headerlink" title="6 种解决方案"></a>6 种解决方案</h4><ol>
-<li><p>跨域资源共享（CORS）</p>
+<h4 id="6-种解决方案"><a class="markdownIt-Anchor" href="#6-种解决方案">#</a> 6 种解决方案</h4>
+<ol>
+<li>
+<p>跨域资源共享（CORS）</p>
 <ul>
-<li><p>定义</p>
+<li>
+<p>定义</p>
 <ul>
 <li>定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。</li>
 </ul>
 </li>
-<li><p>基本思想</p>
+<li>
+<p>基本思想</p>
 <ul>
 <li>CORS 背后的基本思想就是使用自定义的 HTTP 头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败</li>
 </ul>
 </li>
-<li><p>两种请求</p>
+<li>
+<p>两种请求</p>
 <ul>
-<li>简单请求<ul>
+<li>简单请求
+<ul>
 <li>就是在头信息之中，增加一个 Origin 字段。</li>
 </ul>
 </li>
-<li>非简单请求<ul>
-<li>会在正式通信之前，增加一次 HTTP 查询请求，称为”预检”请求（preflight）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>服务端</p>
+<li>非简单请求
 <ul>
-<li><p>服务器端对于 CORS 的支持，主要就是通过设置 Access-Control-Allow-Origin 来进行的。如果浏览器检测到相应的设置，就可以允许 Ajax 进行跨域的访问</p>
+<li>会在正式通信之前，增加一次 HTTP 查询请求，称为 &quot;预检&quot; 请求（preflight）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>服务端</p>
+<ul>
+<li>
+<p>服务器端对于 CORS 的支持，主要就是通过设置 Access-Control-Allow-Origin 来进行的。如果浏览器检测到相应的设置，就可以允许 Ajax 进行跨域的访问</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//指定允许其他域名访问</span>
 <span class="token string">"Access-Control-Allow-Origin:*"</span><span class="token punctuation">;</span> <span class="token comment">//或指定域</span>
 <span class="token comment">//响应类型</span>
@@ -512,29 +594,36 @@
 </li>
 </ul>
 </li>
-<li><p>jsonp</p>
+<li>
+<p>jsonp</p>
 <ul>
-<li><p>jsonp 是什么</p>
+<li>
+<p>jsonp 是什么</p>
 <ul>
-<li>JSONP(JSON with Padding 填充式 json)是 JSON 的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。</li>
+<li>JSONP (JSON with Padding 填充式 json) 是 JSON 的一种 “使用模式”，可用于解决主流浏览器的跨域数据访问的问题。</li>
 </ul>
 </li>
-<li><p>两部分组成</p>
+<li>
+<p>两部分组成</p>
 <ul>
-<li>回调函数<ul>
+<li>回调函数
+<ul>
 <li>回调函数是当响应到来时应该在页面中调用的函数</li>
 </ul>
 </li>
-<li>数据<ul>
+<li>数据
+<ul>
 <li>而数据就是传入回调函数中的 JSON 数据。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>原理</p>
+<li>
+<p>原理</p>
 <p>通过 script 标签引入一个 js 文件，这个 js 文件载入成功后会执行我们在 url 参数中指定的函数，并且会把我们需要的 json 数据作为参数传入。所以 jsonp 是需要服务器端的页面进行相应的配合的。（即用 javascript 动态加载一个 script 文件，同时定义一个 callback 函数给 script 执行而已。）</p>
 </li>
-<li><p>模拟</p>
+<li>
+<p>模拟</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
     <span class="token keyword">function</span> <span class="token function">dosomething</span><span class="token punctuation">(</span><span class="token parameter">jsondata</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         <span class="token comment">//处理获得的json数据</span>
@@ -542,26 +631,31 @@
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"http://example.com/data.php?callback=dosomething"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>缺点</p>
+<li>
+<p>缺点</p>
 <ul>
-<li>我们都知道 JSONP 可以实现解决 GET 请求的跨域问题,但是不能解决 POST 请求的跨域问题.</li>
+<li>我们都知道 JSONP 可以实现解决 GET 请求的跨域问题，但是不能解决 POST 请求的跨域问题.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>document.domain</p>
+<li>
+<p>document.domain</p>
 <ul>
-<li><p>方法</p>
+<li>
+<p>方法</p>
 <ul>
 <li>通过修改 document.domain 来跨子域</li>
 </ul>
 </li>
-<li><p>注意</p>
+<li>
+<p>注意</p>
 <ul>
 <li>域必须相我们只能把 document.domain 设置成自身或更高一级的父域，且主同。</li>
 </ul>
 </li>
-<li><p>例如：</p>
+<li>
+<p>例如：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>iframe id <span class="token operator">=</span> <span class="token string">"iframe"</span> src<span class="token operator">=</span><span class="token string">"http://example.com/b.html"</span> onload <span class="token operator">=</span> <span class="token string">"test()"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>iframe<span class="token operator">></span>
 <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
     document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'example.com'</span><span class="token punctuation">;</span><span class="token comment">//设置成主域</span>
@@ -569,39 +663,48 @@
     <span class="token punctuation">&#125;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>作用域</p>
+<li>
+<p>作用域</p>
 <ul>
 <li>修改 document.domain 的方法只适用于不同子域的框架间的交互。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>window.name</p>
+<li>
+<p><a target="_blank" rel="noopener" href="http://window.name">window.name</a></p>
 <ul>
-<li>window.name 是什么<ul>
+<li><a target="_blank" rel="noopener" href="http://window.name">window.name</a> 是什么
+<ul>
 <li>是一个可读可写的属性，有个很有意思的跨页面特性</li>
 </ul>
 </li>
-<li>方法<ul>
-<li>页面如果设置了 window.name，即使进行了页面跳转到了其他页面，这个 window.name 还是会保留。</li>
+<li>方法
+<ul>
+<li>页面如果设置了 <a target="_blank" rel="noopener" href="http://window.name">window.name</a>，即使进行了页面跳转到了其他页面，这个 <a target="_blank" rel="noopener" href="http://window.name">window.name</a> 还是会保留。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>postMessage</p>
+<li>
+<p>postMessage</p>
 <ul>
-<li><p>定义</p>
-<p>postMessage 是 html5 引入的 API,postMessage()方法允许来自不同源的脚本采用异步方式进行有效的通信,可以实现跨文本文档,多窗口,跨域消息传递.多用于窗口间数据通信,这也使它成为跨域通信的一种有效的解决方案.</p>
+<li>
+<p>定义</p>
+<p>postMessage 是 html5 引入的 API,postMessage () 方法允许来自不同源的脚本采用异步方式进行有效的通信，可以实现跨文本文档，多窗口，跨域消息传递。多用于窗口间数据通信，这也使它成为跨域通信的一种有效的解决方案.</p>
 </li>
-<li><p>方法使用</p>
+<li>
+<p>方法使用</p>
 <ul>
-<li><p>发送数据</p>
+<li>
+<p>发送数据</p>
 <ul>
 <li>otherWindow.postMessage(message, targetOrigin, [transfer]);</li>
-<li>otherWindow 【窗口的一个引用,比如 iframe 的 contentWindow 属性】</li>
+<li>otherWindow 【窗口的一个引用，比如 iframe 的 contentWindow 属性】</li>
 </ul>
 </li>
-<li><p>接收数据</p>
+<li>
+<p>接收数据</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"message"</span><span class="token punctuation">,</span> receiveMessage<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">function</span> <span class="token function">receiveMessage</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">var</span> origin <span class="token operator">=</span> event<span class="token punctuation">.</span>origin<span class="token punctuation">;</span>
@@ -610,42 +713,52 @@
 </li>
 </ul>
 </li>
-<li><p>postMessage 的使用场景</p>
+<li>
+<p>postMessage 的使用场景</p>
 <ol>
-<li>跨域通信(包括 GET 请求和 POST 请求)</li>
-<li>WebWorker<ul>
-<li>Web Worker 的使用场景<ul>
-<li>用于收集埋点数据,可以用于大量复杂的数据计算,复杂的图像处理,大数据的处理.因为它不会阻碍主线程的正常执行和页面 UI 的渲染.</li>
+<li>跨域通信 (包括 GET 请求和 POST 请求)</li>
+<li>WebWorker
+<ul>
+<li>Web Worker 的使用场景
+<ul>
+<li>用于收集埋点数据，可以用于大量复杂的数据计算，复杂的图像处理，大数据的处理。因为它不会阻碍主线程的正常执行和页面 UI 的渲染.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Service Worker<ul>
+<li>Service Worker
+<ul>
 <li>离线存储的一个最佳的解决方案</li>
 </ul>
 </li>
 </ol>
 </li>
 </ul>
-<h5 id="WebWorker-和-Service-Worker-的关系"><a href="#WebWorker-和-Service-Worker-的关系" class="headerlink" title="WebWorker 和 Service Worker 的关系"></a>WebWorker 和 Service Worker 的关系</h5><ul>
-<li>相同点<ul>
+<h5 id="webworker-和-service-worker-的关系"><a class="markdownIt-Anchor" href="#webworker-和-service-worker-的关系">#</a> WebWorker 和 Service Worker 的关系</h5>
+<ul>
+<li>相同点
+<ul>
 <li>相同点是在常规的 js 引擎线程以外开辟了新的 js 线程去处理一些不适合在主线程上处理的业务</li>
 </ul>
 </li>
-<li>不同点<ul>
-<li>Web Worker 式服务于特定页面的,而 Service Worker 在被注册安装之后能够在多个页面使用</li>
-<li>Service Worker 常驻在浏览器中,不会因为页面的关闭而被销毁.本质上,它是一个后台线程,只有你主动终结,或者浏览器回收,这个线程才会结束.</li>
-<li>生命周期,可调用的 API 也不同</li>
+<li>不同点
+<ul>
+<li>Web Worker 式服务于特定页面的，而 Service Worker 在被注册安装之后能够在多个页面使用</li>
+<li>Service Worker 常驻在浏览器中，不会因为页面的关闭而被销毁。本质上，它是一个后台线程，只有你主动终结，或者浏览器回收，这个线程才会结束.</li>
+<li>生命周期，可调用的 API 也不同</li>
 </ul>
 </li>
 </ul>
 <ol start="6">
-<li><p>代理服务器</p>
+<li>
+<p>代理服务器</p>
 <ul>
-<li><p>定义</p>
-<p>代理，也称正向代理，是指一个位于客户端和目标服务器(target server)之间的服务器，为了从目标服务器取得内容，客户端向代理发送一个请求并指定目标(目标服务器)，然后代理向目标服务器转交请求并将获得的内容返回给客户端。</p>
+<li>
+<p>定义</p>
+<p>代理，也称正向代理，是指一个位于客户端和目标服务器 (target server) 之间的服务器，为了从目标服务器取得内容，客户端向代理发送一个请求并指定目标 (目标服务器)，然后代理向目标服务器转交请求并将获得的内容返回给客户端。</p>
 </li>
-<li><p>代理服务器，需要做以下几个步骤</p>
+<li>
+<p>代理服务器，需要做以下几个步骤</p>
 <ol>
 <li>接受客户端 请求 。</li>
 <li>将 请求 转发给服务器</li>
@@ -656,9 +769,11 @@
 </ul>
 </li>
 </ol>
-<h5 id="CORS-和-JSONP-对比"><a href="#CORS-和-JSONP-对比" class="headerlink" title="CORS 和 JSONP 对比"></a>CORS 和 JSONP 对比</h5><ul>
+<h5 id="cors-和-jsonp-对比"><a class="markdownIt-Anchor" href="#cors-和-jsonp-对比">#</a> CORS 和 JSONP 对比</h5>
+<ul>
 <li>CORS 与 JSONP 相比，无疑更为先进、方便和可靠。</li>
-<li>区别<ol>
+<li>区别
+<ol>
 <li>JSONP 只能实现 GET 请求，而 CORS 支持所有类型的 HTTP 请求。</li>
 <li>使用 CORS，开发者可以使用普通的 XMLHttpRequest 发起请求和获得数据，比起 JSONP 有更好的错误处理。</li>
 <li>JSONP 主要被老的浏览器支持，它们往往不支持 CORS，而绝大多数现代浏览器都已经支持了 CORS）。</li>
@@ -667,77 +782,99 @@
 </ul>
 </li>
 </ol>
-<h3 id="9、动画"><a href="#9、动画" class="headerlink" title="9、动画"></a>9、动画</h3><blockquote>
+<h3 id="9-动画"><a class="markdownIt-Anchor" href="#9-动画">#</a> 9、动画</h3>
+<blockquote>
 <p>requestanimationframe 的出现替代 setTimeout 完成动画。</p>
 </blockquote>
 <ul>
-<li>setTimeout<ul>
+<li>setTimeout
+<ul>
 <li>setTimeout 其实就是通过设置一个间隔时间来不断的改变图像的位置，从而达到动画效果的。但利用 seTimeout 实现的动画在某些低端机上会出现卡顿、抖动的现象。导致 setTimeout 的执行步调和屏幕的刷新步调不一致，从而引起丢帧现象。</li>
-<li>原因<ol>
+<li>原因
+<ol>
 <li>setTimeout 的执行时间并不是确定的。setTimeout 任务被放进了异步队列中，只有当主线程上的任务执行完以后，才会去检查该队列里的任务是否需要开始执行，因此 setTimeout 的实际执行时间一般要比其设定的时间晚一些。</li>
 <li>刷新频率受屏幕分辨率和屏幕尺寸的影响，因此不同设备的屏幕刷新频率可能会不同，而 setTimeout 只能设置一个固定的时间间隔，这个时间不一定和屏幕的刷新时间相同。</li>
 </ol>
 </li>
 </ul>
 </li>
-<li>requestanimationframe<ul>
+<li>requestanimationframe
+<ul>
 <li>html5 为了满足高性能动画的需求而提供的 API，表意是请求动画帧。</li>
 </ul>
 </li>
 </ul>
-<h4 id="requestanimationframe-相比-setTimeout"><a href="#requestanimationframe-相比-setTimeout" class="headerlink" title="requestanimationframe 相比 setTimeout"></a>requestanimationframe 相比 setTimeout</h4><ul>
-<li>优势<ol>
+<h4 id="requestanimationframe-相比-settimeout"><a class="markdownIt-Anchor" href="#requestanimationframe-相比-settimeout">#</a> requestanimationframe 相比 setTimeout</h4>
+<ul>
+<li>优势
+<ol>
 <li>与 setTimeout 相比，requestAnimationFrame 最大的优势是由系统来决定回调函数的执行时机。</li>
 <li>它能保证回调函数在屏幕每一次的刷新间隔中只被执行一次，这样就不会引起丢帧现象，也不会导致动画出现卡顿的问题。</li>
 </ol>
 </li>
 </ul>
-<h3 id="10、事件"><a href="#10、事件" class="headerlink" title="10、事件"></a>10、事件</h3><ul>
-<li><p>事件流</p>
+<h3 id="10-事件"><a class="markdownIt-Anchor" href="#10-事件">#</a> 10、事件</h3>
+<ul>
+<li>
+<p>事件流</p>
 <p>事件流描述的是从页面中接收事件的顺序，IE 和 Netscape 提出来差不多完全相反的事件流的概念，IE 事件流是事件冒泡流，Netscape 事件流是事件捕获流。</p>
 </li>
-<li><p>DOM 事件级别</p>
+<li>
+<p>DOM 事件级别</p>
 <ul>
-<li><p>DOM0 事件</p>
+<li>
+<p>DOM0 事件</p>
 <ul>
-<li><p>定义</p>
+<li>
+<p>定义</p>
 <p>通过文档对象（document）获取元素引用，使用 DOM0 级方法指定的事件处理程序被认为是元素的方法，处理程序是在元素的作用域进行的，程序中 this 是引用的是当前元素。</p>
 </li>
-<li><p>3 个特点</p>
+<li>
+<p>3 个特点</p>
 <ol>
-<li><p>触发时机：DOM0 级的事件处理程式只能在事件冒泡阶段触发。</p>
+<li>
+<p>触发时机：DOM0 级的事件处理程式只能在事件冒泡阶段触发。</p>
 </li>
-<li><p>每个属性只能绑定一个事件</p>
+<li>
+<p>每个属性只能绑定一个事件</p>
 </li>
-<li><p>this 指针的指向</p>
+<li>
+<p>this 指针的指向</p>
 <p>用 DOM0 级的方式绑定事件是在元素对象的作用域内运行，因此在事件函数内的 this 属性不是引用全局对象，而是引用当前元素对象</p>
 </li>
 </ol>
 </li>
 </ul>
 </li>
-<li><p>DOM2 事件</p>
+<li>
+<p>DOM2 事件</p>
 <ul>
-<li><p>定义</p>
-<p>’DOM2 级事件’定义了两个方法，用于处理指定和删除事件处理程序的操作：addEventListener()和 removeEventListener();所有的 DOM 节点都包含这两种方法。</p>
+<li>
+<p>定义</p>
+<p>’DOM2 级事件’定义了两个方法，用于处理指定和删除事件处理程序的操作：addEventListener () 和 removeEventListener (); 所有的 DOM 节点都包含这两种方法。</p>
 </li>
-<li><p>DOM2 级事件规定的事件流包括三个阶段</p>
+<li>
+<p>DOM2 级事件规定的事件流包括三个阶段</p>
 <ul>
 <li>事件捕获阶段</li>
 <li>处于目标阶段</li>
 <li>事件冒泡阶段</li>
 </ul>
 </li>
-<li><p>优点</p>
+<li>
+<p>优点</p>
 <p>可以添加多个事件处理程序</p>
 </li>
 </ul>
 </li>
-<li><p>DOM3 级</p>
+<li>
+<p>DOM3 级</p>
 <ul>
-<li><p>DOM3 级事件就是在 DOM2 基础上增加了更多的事件类型</p>
+<li>
+<p>DOM3 级事件就是在 DOM2 基础上增加了更多的事件类型</p>
 </li>
-<li><p>UI 事件，当用户与页面上的元素交互时触发，如：load、scroll</p>
+<li>
+<p>UI 事件，当用户与页面上的元素交互时触发，如：load、scroll</p>
 <p>焦点事件，当元素获得或失去焦点时触发，如：blur、focus</p>
 <p>鼠标事件，当用户通过鼠标在页面执行操作时触发如：dbclick、mouseup</p>
 <p>滚轮事件，当使用鼠标滚轮或类似设备时触发，如：mousewheel</p>
@@ -750,28 +887,36 @@
 </li>
 </ul>
 </li>
-<li><p>机制</p>
+<li>
+<p>机制</p>
 <ol>
-<li><p>冒泡机制</p>
+<li>
+<p>冒泡机制</p>
 <p>事件会从最内层的元素开始发生，一直向上传播，直到 document 对象。</p>
 </li>
-<li><p>捕获机制</p>
-<p>网景提出另一种事件流名为事件捕获(event capturing)。与事件冒泡相反，事件会从最外层开始发生，直到最具体的元素。</p>
+<li>
+<p>捕获机制</p>
+<p>网景提出另一种事件流名为事件捕获 (event capturing)。与事件冒泡相反，事件会从最外层开始发生，直到最具体的元素。</p>
 </li>
 </ol>
 </li>
-<li><p>事件代理</p>
+<li>
+<p>事件代理</p>
 <ul>
-<li><p>定义</p>
+<li>
+<p>定义</p>
 <p>JavaScript 高级程序设计上讲：事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
 </li>
-<li><p>关键</p>
+<li>
+<p>关键</p>
 <p>Event 对象提供了一个属性叫 target，可以返回事件的目标节点，我们成为事件源</p>
 </li>
-<li><p>适合用事件委托的事件</p>
+<li>
+<p>适合用事件委托的事件</p>
 <p>click，mousedown，mouseup，keydown，keyup，keypress</p>
 </li>
-<li><p>不合适</p>
+<li>
+<p>不合适</p>
 <p>mousemove，每次都要计算它的位置，非常不好把控，在不如说 focus，blur 之类的，本身就没用冒泡的特性，自然就不能用事件委托了</p>
 </li>
 </ul>
@@ -1016,7 +1161,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

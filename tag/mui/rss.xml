@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;mui&#34; tag</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Thu, 18 Apr 2019 18:18:48 +0800</pubDate>
+        <lastBuildDate>Thu, 18 Apr 2019 18:18:48 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2019/04/18/VueLearn07/</guid>
+            <title>Mint-UI、MUI</title>
+            <link>http://example.com/2019/04/18/VueLearn07/</link>
+            <category>vue</category>
+            <category>Mint-UI</category>
+            <category>MUI</category>
+            <pubDate>Thu, 18 Apr 2019 18:18:48 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;vue-第七天学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vue-第七天学习&#34;&gt;#&lt;/a&gt; Vue 第七天学习&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mint-UI 学习&lt;/p&gt;
+&lt;p&gt;MUI&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;mint-ui&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mint-ui&#34;&gt;#&lt;/a&gt; Mint-UI&lt;/h2&gt;
+&lt;h3 id=&#34;基于-vuejs-的移动端组件库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基于-vuejs-的移动端组件库&#34;&gt;#&lt;/a&gt; 基于 Vue.js 的移动端组件库&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;特性介绍：&lt;/strong&gt;&lt;a href=&#34;http://mint-ui.github.io/#!/zh-cn&#34;&gt;Mint-UI 官网&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Mint UI 包含丰富的 CSS 和 JS 组件，能够满足日常的移动端开发需要。通过它，可以快速构建出风格统一的页面，提升开发效率。&lt;/li&gt;
+&lt;li&gt;真正意义上的按需加载组件。可以只加载声明过的组件及其样式文件，无需再纠结文件体积过大。&lt;/li&gt;
+&lt;li&gt;考虑到移动端的性能门槛，Mint UI 采用 CSS3 处理各种动效，避免浏览器进行不必要的重绘和重排，从而使用户获得流畅顺滑的体验。&lt;/li&gt;
+&lt;li&gt;依托 Vue.js 高效的组件化方案，Mint UI 做到了轻量化。即使全部引入，压缩后的文件体积也仅有～30kb (JS + CSS) gzip。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;安装：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-shell&#34; data-language=&#34;shell&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;&amp;#x2F;&amp;#x2F; 安装
+# Vue 1.x
+npm install mint-ui@1 -S
+# Vue 2.0
+npm install mint-ui -S&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;来自官网&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;// 引入全部组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; Vue &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; Mint &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;mint-ui&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+Vue&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;Mint&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;// 按需引入部分组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; Cell&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; Checklist &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;minu-ui&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+Vue&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;component&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;Cell&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; Cell&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+Vue&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;component&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;Checklist&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; Checklist&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;项目演示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#项目演示&#34;&gt;#&lt;/a&gt; &lt;strong&gt;项目演示：&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;项目目录：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190418/udiBT1HHpIk4.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;main.js:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; Vue &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; VueRouter &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue-router&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+Vue&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;VueRouter&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//导入所以的 MintUI 组件&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//导入 mint-ui&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; MintUI &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;mint-ui&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//把所有的组件都导入进来&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//这里可以 省略 node_modules 目录&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;mint-ui/lib/style.css&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+Vue&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;MintUI&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//把所有的组件，注册为全局的组件&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//导入app组件&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; app &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./App.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//导入 自定义路由模块&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; router &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./router.js&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; vm &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Vue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  el&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;#app&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  data&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    msg&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;123&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;render&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;app&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  router&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;App.vue:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-vue&#34; data-language=&#34;vue&#34;&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1&amp;gt;这是app组件&amp;lt;&amp;#x2F;h1&amp;gt;
+    &amp;lt;mt-button type&amp;#x3D;&amp;quot;primary&amp;quot; size&amp;#x3D;&amp;quot;large&amp;quot;&amp;gt;default&amp;lt;&amp;#x2F;mt-button&amp;gt;
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;account&amp;quot;&amp;gt;account&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;goodslist&amp;quot;&amp;gt;goodslist&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-view&amp;gt;&amp;lt;&amp;#x2F;router-view&amp;gt;
+  &amp;lt;&amp;#x2F;div&amp;gt;
+&amp;lt;&amp;#x2F;template&amp;gt;
+
+&amp;lt;script&amp;gt;&amp;lt;&amp;#x2F;script&amp;gt;
+
+&amp;lt;style&amp;gt;&amp;lt;&amp;#x2F;style&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190418/L8Aec7UwlBhj.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;js-components-使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#js-components-使用&#34;&gt;#&lt;/a&gt; JS components 使用&lt;/h2&gt;
+&lt;h4 id=&#34;例如使用-toast-组件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#例如使用-toast-组件&#34;&gt;#&lt;/a&gt; 例如：使用 &lt;strong&gt;Toast 组件&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;App.vue:&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-vue&#34; data-language=&#34;vue&#34;&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1&amp;gt;这是app组件&amp;lt;&amp;#x2F;h1&amp;gt;
+    &amp;lt;mt-button type&amp;#x3D;&amp;quot;primary&amp;quot; size&amp;#x3D;&amp;quot;large&amp;quot; @click&amp;#x3D;&amp;quot;show&amp;quot;&amp;gt;default&amp;lt;&amp;#x2F;mt-button&amp;gt;
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;account&amp;quot;&amp;gt;account&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;goodslist&amp;quot;&amp;gt;goodslist&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-view&amp;gt;&amp;lt;&amp;#x2F;router-view&amp;gt;
+  &amp;lt;&amp;#x2F;div&amp;gt;
+&amp;lt;&amp;#x2F;template&amp;gt;
+
+&amp;lt;script&amp;gt;
+import &amp;#123; Toast &amp;#125; from &amp;quot;mint-ui&amp;quot;;
+
+export default &amp;#123;
+  data() &amp;#123;
+    return &amp;#123;&amp;#125;;
+  &amp;#125;,
+  methods: &amp;#123;
+    show() &amp;#123;
+      Toast(&amp;#123;
+        message: &amp;quot;Upload Complete&amp;quot;,
+        position: &amp;quot;middle&amp;quot;,
+        duration: 5000,
+      &amp;#125;);
+    &amp;#125;,
+  &amp;#125;,
+&amp;#125;;
+&amp;lt;&amp;#x2F;script&amp;gt;
+
+&amp;lt;style&amp;gt;&amp;lt;&amp;#x2F;style&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190418/4i9Jbv1iwEGP.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;使用-bootstrap-图标-配合-toast-组件-使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用-bootstrap-图标-配合-toast-组件-使用&#34;&gt;#&lt;/a&gt; 使用 &lt;strong&gt;bootstrap 图标&lt;/strong&gt; 配合 **Toast 组件 ** 使用&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;安装 bootstrap 包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-shell&#34; data-language=&#34;shell&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;npm i bootstrap@3.3.7 -S&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;在 main.js 文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;bootstrap/dist/css/bootstrap.min.css&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;在 App.vue 文件里&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190418/07pVWBGzLVEB.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190418/9NNEMXf71zIY.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;自定义图标颜色&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自定义图标颜色&#34;&gt;#&lt;/a&gt; 自定义图标颜色&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190418/7x5iyU8lwDzL.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190418/IX8tRWh9aU8d.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;模拟-完成接收数据-toast-组件消失需求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#模拟-完成接收数据-toast-组件消失需求&#34;&gt;#&lt;/a&gt; 模拟 完成接收数据 Toast 组件消失需求&lt;/h2&gt;
+&lt;h3 id=&#34;需求-1s-后-toast-组件消失需求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#需求-1s-后-toast-组件消失需求&#34;&gt;#&lt;/a&gt; 需求： 1s 后 Toast 组件消失需求&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;App.vue:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-vue&#34; data-language=&#34;vue&#34;&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1&amp;gt;这是app组件&amp;lt;&amp;#x2F;h1&amp;gt;
+    &amp;lt;mt-button type&amp;#x3D;&amp;quot;primary&amp;quot; size&amp;#x3D;&amp;quot;large&amp;quot; @click&amp;#x3D;&amp;quot;show&amp;quot;&amp;gt;default&amp;lt;&amp;#x2F;mt-button&amp;gt;
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;account&amp;quot;&amp;gt;account&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;goodslist&amp;quot;&amp;gt;goodslist&amp;lt;&amp;#x2F;router-link&amp;gt;
+    &amp;lt;router-view&amp;gt;&amp;lt;&amp;#x2F;router-view&amp;gt;
+  &amp;lt;&amp;#x2F;div&amp;gt;
+&amp;lt;&amp;#x2F;template&amp;gt;
+
+&amp;lt;script&amp;gt;
+import &amp;#123; Toast &amp;#125; from &amp;quot;mint-ui&amp;quot;;
+
+export default &amp;#123;
+  data() &amp;#123;
+    return &amp;#123;
+      instance: null,
+    &amp;#125;;
+  &amp;#125;,
+  created() &amp;#123;
+    this.getList();
+  &amp;#125;,
+  methods: &amp;#123;
+    getList() &amp;#123;
+      this.show();
+      setTimeout(() &amp;#x3D;&amp;gt; &amp;#123;
+        this.instance.close();
+      &amp;#125;, 1000);
+    &amp;#125;,
+    show() &amp;#123;
+      this.instance &amp;#x3D; Toast(&amp;#123;
+        message: &amp;quot;Upload Complete&amp;quot;,
+        duration: -1,
+        position: &amp;quot;middle&amp;quot;,
+        duration: 5000,
+        iconClass: &amp;quot;glyphicon glyphicon-heart&amp;quot;,
+        className: &amp;quot;mytoast&amp;quot;,
+      &amp;#125;);
+    &amp;#125;,
+  &amp;#125;,
+&amp;#125;;
+&amp;lt;&amp;#x2F;script&amp;gt;
+
+&amp;lt;style&amp;gt;&amp;lt;&amp;#x2F;style&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190418/qPQ3yPDUEMHo.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;babel-plugin-component-插件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#babel-plugin-component-插件&#34;&gt;#&lt;/a&gt; babel-plugin-component 插件&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;作用&lt;/strong&gt;：为了项目整体内容不过于庞大，按需加载是许多第三方的库和插件必不可少的，于是使用了官方提供的按需加载插件&lt;a href=&#34;https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2FElementUI%2Fbabel-plugin-component&#34;&gt; babel-plugin-component&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;按需导入&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#按需导入&#34;&gt;#&lt;/a&gt; 按需导入：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;1. 安装：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-shell&#34; data-language=&#34;shell&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;npm install babel-plugin-component -D&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;2. 修改 &lt;strong&gt;.babelrc&lt;/strong&gt; 里面的 &lt;strong&gt;plugins&lt;/strong&gt; ：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-json&#34; data-language=&#34;json&#34;&gt;&lt;code class=&#34;language-json&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token property&#34;&gt;&#34;presets&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;env&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;stage-0&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token property&#34;&gt;&#34;plugins&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;token string&#34;&gt;&#34;transform-runtime&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+      &lt;span class=&#34;token string&#34;&gt;&#34;component&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+          &lt;span class=&#34;token property&#34;&gt;&#34;libraryName&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;mint-ui&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+          &lt;span class=&#34;token property&#34;&gt;&#34;style&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;项目改造&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#项目改造&#34;&gt;#&lt;/a&gt; 项目改造&lt;/h2&gt;
+&lt;h4 id=&#34;按需导入-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#按需导入-2&#34;&gt;#&lt;/a&gt; 按需导入&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;mian.js:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;mint-ui/lib/style.css&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//按需导入&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; Button &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;mint-ui&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+Vue&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;component&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;mybtn&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; Button&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//导入自定义的 mybtn 按钮组件&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;App.vue:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-vue&#34; data-language=&#34;vue&#34;&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;
+    &amp;lt;div&amp;gt;
+        &amp;lt;h1&amp;gt;这是app组件&amp;lt;&amp;#x2F;h1&amp;gt;
+        &amp;lt;mybtn type&amp;#x3D;&amp;quot;primary&amp;quot;&amp;gt;mybtn&amp;lt;&amp;#x2F;mybtn&amp;gt;
+        &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;account&amp;quot;&amp;gt;account&amp;lt;&amp;#x2F;router-link&amp;gt;
+        &amp;lt;router-link to&amp;#x3D;&amp;quot;&amp;#x2F;goodslist&amp;quot;&amp;gt;goodslist&amp;lt;&amp;#x2F;router-link&amp;gt;
+        &amp;lt;router-view&amp;gt;&amp;lt;&amp;#x2F;router-view&amp;gt;
+    &amp;lt;&amp;#x2F;div&amp;gt;
+&amp;lt;&amp;#x2F;templat&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190418/Kh82KQyT57d4.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mui&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mui&#34;&gt;#&lt;/a&gt; MUI&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意： MUI 不同于 Mint-UI，MUI 只是开发出来的一套好用的代码片段，里面提供了配套的样式、配套的 HTML 代码段，类似于 Bootstrap； 而 Mint-UI，是真正的组件库，是使用 Vue 技术封装出来的 成套的组件，可以无缝的和 VUE 项目进行集成开发；&lt;br&gt;
+因此，从体验上来说， Mint-UI 体验更好，因为这是别人帮我们开发好的现成的 Vue 组件；&lt;br&gt;
+从体验上来说， MUI 和 Bootstrap 类似；&lt;br&gt;
+理论上，任何项目都可以使用 MUI 或 Bootstrap，但是，MInt-UI 只适用于 Vue 项目；&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;**mui 框架：** 性能和体验的差距，一直是 mobile app 开发者放弃 HTML5 的首要原因。 浏览器天生的切页白屏、不忍直视的转页动画、浮动元素的抖动、无法流畅下拉刷新等问题，这些都让 HTML5 开发者倍感挫败，尤其拿到 Android 低端机运行，摔手机的心都有； 另一方面，浏览器默认控件样式又少又丑，制作一个漂亮的控件非常麻烦，也有一些制作简单的 ui 框架但性能低下。&lt;/p&gt;
+&lt;p&gt;mui 框架有效的解决了这些问题，这是一个可以方便开发出高性能 App 的框架，也是目前最接近原生 App 效果的框架。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt; MUI 并不能使用 npm 去下载，需要自己手动从 github 上，下载现成的包，自己解压出来，然后手动拷贝到项目中使用；&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;下载 MUI 包 从 github 上&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用：&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;在 main.js 导入 MUI 包:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;./lib/dist/css/mui.min.css&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;在 App.vue 中使用（例如一个 按钮）：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;button&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;mui-btn mui-btn-royal&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  Badge button &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;mui-badge mui-badge-royal&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;999&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;span&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190418/TxVONoruT7Xq.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

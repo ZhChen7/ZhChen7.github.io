@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>sunflower • Posts by &#34;this 指向问题&#34; category</title>
+    <link href="http://example.com" />
+    <updated>2020-03-23T09:35:29.000Z</updated>
+    <category term="blog" />
+    <category term="个人博客" />
+    <category term="rem" />
+    <category term="less" />
+    <category term="art-template" />
+    <category term="算法面试" />
+    <category term="算法" />
+    <category term="大 O？" />
+    <category term="复杂度分析" />
+    <category term="大二" />
+    <category term="数据库实训" />
+    <category term="IDE" />
+    <category term="Git" />
+    <category term="模块化" />
+    <category term="构建工具" />
+    <category term="上线和回滚" />
+    <category term="ES6 模块化语法" />
+    <category term="babel" />
+    <category term="webpack" />
+    <category term="rollup" />
+    <category term="ES6" />
+    <category term="hybrid" />
+    <category term="虚拟 DOM" />
+    <category term="知识点概述" />
+    <category term="JS" />
+    <category term="实用工具" />
+    <category term="面试全面总结" />
+    <category term="JS 三座大山" />
+    <category term="学习实训" />
+    <category term="性能优化" />
+    <category term="加载过程" />
+    <category term="promise" />
+    <category term="异步解决方案" />
+    <category term="回调地狱" />
+    <category term="React" />
+    <category term="React源码" />
+    <category term="Vue3" />
+    <category term="vue" />
+    <category term="跑马灯" />
+    <category term="父子组件间通信" />
+    <category term="路由" />
+    <category term="监听事件（keyup ，watch ，computed ）" />
+    <category term="nrm" />
+    <category term="Mint-UI" />
+    <category term="MUI" />
+    <category term="MVVM" />
+    <category term="响应式、模板解析、渲染" />
+    <category term="微信小程序" />
+    <category term="单线程" />
+    <category term="event loop" />
+    <category term="异步的 Deferred" />
+    <category term="Promise" />
+    <category term="html" />
+    <category term="hexo" />
+    <category term="redux" />
+    <category term="UTC时间问题" />
+    <category term="正则表达式" />
+    <category term="虚拟DOM" />
+    <category term="博文" />
+    <category term="React-Router" />
+    <category term="React-Hooks" />
+    <category term="DOM" />
+    <category term="BOM" />
+    <category term="事件绑定" />
+    <category term="ajax 请求" />
+    <category term="储存" />
+    <category term="进程调度" />
+    <category term="过滤器" />
+    <category term="按键修饰符" />
+    <category term="指令" />
+    <category term="生命周期" />
+    <category term="过渡效果" />
+    <category term="组件" />
+    <category term="webpack 后续问题" />
+    <category term="数组" />
+    <category term="API" />
+    <category term="跨域" />
+    <category term="动画" />
+    <category term="事件" />
+    <category term="React基础面试题-50" />
+    <category term="数组相关操作" />
+    <category term="手撕代码" />
+    <category term="牛人面试题" />
+    <entry>
+        <id>http://example.com/2020/03/23/getOfferthis/</id>
+        <title>this 指向问题</title>
+        <link rel="alternate" href="http://example.com/2020/03/23/getOfferthis/"/>
+        <content type="html">&lt;h2 id=&#34;专题总结this-指向问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#专题总结this-指向问题&#34;&gt;#&lt;/a&gt; 专题总结：this 指向问题&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;拿到 字节跳动实习生 offer 总结&lt;/p&gt;
+&lt;p&gt;回馈分享一波自己的知识点总结&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;希望读者依此构建自己的知识树（思维导图）&lt;/p&gt;
+&lt;p&gt;偷懒一下：可参考我自己总结思维导图 : &lt;a href=&#34;https://github.com/ZhChen7/Interview-mind-map&#34;&gt;点这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;附带：高频面试题积累文档。 来自于（学长、牛客网等平台）&lt;/p&gt;
+&lt;p&gt;自己开发的博客地址：&lt;a href=&#34;http://zxinc520.com/&#34;&gt;zxinc520.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;github 地址: &lt;a href=&#34;https://github.com/ZhChen7&#34;&gt;点击&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此篇 js - 【this 指向问题】 知识点： 全部弄懂了，面试很容易。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;一-this-的四条绑定规则&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-this-的四条绑定规则&#34;&gt;#&lt;/a&gt; 一、this 的四条绑定规则&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;默认绑定&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;独立函数调用时，this 指向全局对象（window），如果使用严格模式，那么全局对象无法使用默认绑定， this 绑定至 undefined。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;隐式绑定&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;函数 this 是指向调用者 （隐式指向）&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; obj &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  a&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  foo&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; foo&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+obj&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 2&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;obj1.obj2.foo (); //foo 中的 this 与 obj2 绑定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;问题：隐式丢失&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;描述：隐式丢失指的是函数中的 this 丢失绑定对象，即它会应用第 1 条的默认绑定规则，从而将 this 绑定到全局对象或者 undefined 上，取决于是否在严格模式下运行。&lt;/li&gt;
+&lt;li&gt;以下情况会发生隐式丢失
+&lt;ol&gt;
+&lt;li&gt;绑定至上下文对象的函数被赋值给一个新的函数，然后调用这个新的函数时&lt;/li&gt;
+&lt;li&gt;传入回调函数时&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;显式绑定&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;显式绑定的核心是 JavaScript 内置的 call (…) 和 apply (…) 方法，call 和 apply bind 的 this 第一个参数 （显示指向）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;new 绑定&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;构造函数的 this 是 new 之后的新对象 （构造器）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;二-call-bind-apply&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二-call-bind-apply&#34;&gt;#&lt;/a&gt; 二、call bind apply&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;改变函数执行时的上下文（改变函数运行时的 this 指向）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;21-apply&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#21-apply&#34;&gt;#&lt;/a&gt; 2.1、apply&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;第二个参数为数组&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自定义实现&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;// 自定义apply函数&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;Function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;prototype&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function-variable function&#34;&gt;apply1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;obj&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; arg&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token comment&#34;&gt;//context为null或者是undefined时,设置默认值&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;obj&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    obj &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;typeof&lt;/span&gt; window &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;undefined&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt; global &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; window&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  obj&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;fn &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; result &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token comment&#34;&gt;//undefined 或者 是 null 不是 Iterator 对象，不能被 ...&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arg &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;undefined&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;||&lt;/span&gt; arg &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    result &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; obj&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arg&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    result &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; obj&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;...&lt;/span&gt;arg&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;delete&lt;/span&gt; obj&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;fn&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; result&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;22-call&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#22-call&#34;&gt;#&lt;/a&gt; 2.2、call&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;第二个参数为参数列表&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自定义实现&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token class-name&#34;&gt;Function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;prototype&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function-variable function&#34;&gt;call1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;obj&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;...&lt;/span&gt;arg&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;obj&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    obj &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;typeof&lt;/span&gt; window &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;undefined&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt; global &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; window&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  obj&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;fn &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; result &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  result &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; obj&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;...&lt;/span&gt;arg&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;delete&lt;/span&gt; obj&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;fn&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; result&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;23-bind&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#23-bind&#34;&gt;#&lt;/a&gt; 2.3、bind&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;特点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;返回一个函数&lt;/li&gt;
+&lt;li&gt;可以传入参数（使用 bind 时和 bind 新生成的函数都可以传参）&lt;/li&gt;
+&lt;li&gt;当 bind 返回的函数作为构造函数的时候，bind 时指定的 this 值会失效，但传入的参数依然生效&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;注意：bind 这个方法在 IE6~8 下不兼容&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自定义实现&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token class-name&#34;&gt;Function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;prototype&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function-variable function&#34;&gt;bind1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;obj&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;...&lt;/span&gt;arg&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;obj&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    obj &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;typeof&lt;/span&gt; window &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;undefined&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt; global &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; window&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; self &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; args &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; arg&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  f&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;prototype &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;prototype&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;token function-variable function&#34;&gt;bound&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; res &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;...&lt;/span&gt;args&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;...&lt;/span&gt;arguments&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; _this &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;instanceof&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; obj&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;apply&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;_this&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  bound&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;prototype &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; bound&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;24-区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#24-区别&#34;&gt;#&lt;/a&gt; 2.4、区别&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;call 和 apply 改变了函数的 this 上下文后便执行该函数，而 bind 则是返回改变了上下文后的一个函数。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;三-相关题目&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三-相关题目&#34;&gt;#&lt;/a&gt; 三、相关题目&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;怎么利用 call、apply 来求一个数组中最大或者最小值&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;19&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+Math&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;call&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;...&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+Math&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;apply&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; arr&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; fn &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; Math&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;...&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如何利用 call、apply 来做继承&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;apply、call、bind 的区别和主要应用场景&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将类数组 / 含有 length 属性的对象转化为数组&lt;/li&gt;
+&lt;li&gt;求数组中的最大和最小值&lt;/li&gt;
+&lt;li&gt;数组追加&lt;/li&gt;
+&lt;li&gt;利用 call 和 apply 做继承&lt;/li&gt;
+&lt;li&gt;判断变量类型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="面试全面总结" />
+        <updated>2020-03-23T09:35:29.000Z</updated>
+    </entry>
+</feed>

@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>sunflower • Posts by &#34;md转html&#34; category</title>
+    <link href="http://example.com" />
+    <updated>2019-03-15T08:44:07.000Z</updated>
+    <category term="blog" />
+    <category term="个人博客" />
+    <category term="rem" />
+    <category term="less" />
+    <category term="art-template" />
+    <category term="算法面试" />
+    <category term="算法" />
+    <category term="大 O？" />
+    <category term="复杂度分析" />
+    <category term="大二" />
+    <category term="数据库实训" />
+    <category term="IDE" />
+    <category term="Git" />
+    <category term="模块化" />
+    <category term="构建工具" />
+    <category term="上线和回滚" />
+    <category term="ES6 模块化语法" />
+    <category term="babel" />
+    <category term="webpack" />
+    <category term="rollup" />
+    <category term="ES6" />
+    <category term="hybrid" />
+    <category term="虚拟 DOM" />
+    <category term="知识点概述" />
+    <category term="JS" />
+    <category term="实用工具" />
+    <category term="面试全面总结" />
+    <category term="JS 三座大山" />
+    <category term="学习实训" />
+    <category term="性能优化" />
+    <category term="加载过程" />
+    <category term="promise" />
+    <category term="异步解决方案" />
+    <category term="回调地狱" />
+    <category term="React" />
+    <category term="React源码" />
+    <category term="Vue3" />
+    <category term="vue" />
+    <category term="跑马灯" />
+    <category term="父子组件间通信" />
+    <category term="路由" />
+    <category term="监听事件（keyup ，watch ，computed ）" />
+    <category term="nrm" />
+    <category term="Mint-UI" />
+    <category term="MUI" />
+    <category term="MVVM" />
+    <category term="响应式、模板解析、渲染" />
+    <category term="微信小程序" />
+    <category term="单线程" />
+    <category term="event loop" />
+    <category term="异步的 Deferred" />
+    <category term="Promise" />
+    <category term="html" />
+    <category term="hexo" />
+    <category term="redux" />
+    <category term="UTC时间问题" />
+    <category term="正则表达式" />
+    <category term="虚拟DOM" />
+    <category term="博文" />
+    <category term="React-Router" />
+    <category term="React-Hooks" />
+    <category term="DOM" />
+    <category term="BOM" />
+    <category term="事件绑定" />
+    <category term="ajax 请求" />
+    <category term="储存" />
+    <category term="进程调度" />
+    <category term="过滤器" />
+    <category term="按键修饰符" />
+    <category term="指令" />
+    <category term="生命周期" />
+    <category term="过渡效果" />
+    <category term="组件" />
+    <category term="webpack 后续问题" />
+    <category term="数组" />
+    <category term="API" />
+    <category term="跨域" />
+    <category term="动画" />
+    <category term="事件" />
+    <category term="React基础面试题-50" />
+    <category term="数组相关操作" />
+    <category term="手撕代码" />
+    <category term="牛人面试题" />
+    <entry>
+        <id>http://example.com/2019/03/15/MarkdownToHTML/</id>
+        <title>MarkdownToHtml</title>
+        <link rel="alternate" href="http://example.com/2019/03/15/MarkdownToHTML/"/>
+        <content type="html">&lt;h1 id=&#34;markdowntohtml&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#markdowntohtml&#34;&gt;#&lt;/a&gt; MarkdownToHtml&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将 Markdown 文档转换为 HTML 显示&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#说明&#34;&gt;#&lt;/a&gt; 说明&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本应用是采用 node.js + Express 搭建的&lt;/p&gt;
+&lt;p&gt;运用的模板：art-template&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aui.github.io/art-template/zh-cn/docs/index.html&#34;&gt;art-template&lt;/a&gt; 是一个简约、超快的模板引擎。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;准备工作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#准备工作&#34;&gt;#&lt;/a&gt; 准备工作&lt;/h1&gt;
+&lt;p&gt;我把 &lt;em&gt;&lt;a href=&#34;http://MarkdownToHTML.md&#34;&gt;MarkdownToHTML.md&lt;/a&gt;&lt;/em&gt; 放在目录 &lt;strong&gt;public/doc&lt;/strong&gt; 下（放在那里看你心情咯！）&lt;/p&gt;
+&lt;h2 id=&#34;安装-marked&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装-marked&#34;&gt;#&lt;/a&gt; 安装 marked&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;npm install marked --save&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;关键步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关键步骤&#34;&gt;#&lt;/a&gt; 关键步骤&lt;/h1&gt;
+&lt;p&gt;路由部分关键代码：router.js （ 里面的部分代码是关键 ）&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-Javascript&#34; data-language=&#34;Javascript&#34;&gt;&lt;code class=&#34;language-Javascript&#34;&gt;src
+
+router.get(&amp;quot;&amp;#x2F;:docName&amp;quot;, function (req, res, next) &amp;#123;
+    docId &amp;#x3D; req.params.docName.replace(&amp;#x2F;&amp;quot;&amp;#x2F;g, &amp;#39;&amp;#39;)
+    publish.findById(docId, function (err, publish) &amp;#123;
+        if (err) &amp;#123;
+            return next(err)
+        &amp;#125;
+        fs.readFile(__dirname + src + publish.publishMainBodyUrl + &amp;#39;.md&amp;#39;,           &amp;#39;utf-8&amp;#39;, function (err, data) &amp;#123;
+            if (err) &amp;#123;
+                console.log(err);
+            &amp;#125; else &amp;#123;
+                htmlStr &amp;#x3D; marked(data.toString());
+                res.type(&amp;#39;html&amp;#39;)
+                message.find(&amp;#123;
+                    message_type: publish.publishMainBodyUrl
+                &amp;#125;, function (err, message) &amp;#123;
+                    if (err) &amp;#123;
+                        return next(err)
+                    &amp;#125;
+                    message.forEach(function (e) &amp;#123;
+                        e.UTCtodata &amp;#x3D; new Date(e.message_time).toLocaleString()
+                    &amp;#125;)
+                    res.render(&amp;#39;MainBody.html&amp;#39;, &amp;#123;
+                        doc: htmlStr,
+                        publish: publish,
+                        message: message
+                    &amp;#125;);
+                &amp;#125;)
+            &amp;#125;
+        &amp;#125;);
+    &amp;#125;)
+&amp;#125;)&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
+&lt;p&gt;MainBody.html: 用 art-template 模板渲染后台传来的数据&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-HTML&#34; data-language=&#34;HTML&#34;&gt;&lt;code class=&#34;language-HTML&#34;&gt;&amp;lt;!--
+   &amp;#123;&amp;#123;@ doc &amp;#125;&amp;#125;或者  &amp;lt;%- doc %&amp;gt;
+ （ @和- 很关键 &amp;#x3D;&amp;#x3D;&amp;gt;原文输出语句不会对 HTML 内容进行转义处理，可能存在安全风险，请谨慎使用。这个坑害我多走了好多弯路。）
+--&amp;gt;
+&amp;lt;div id&amp;#x3D;&amp;quot;markfs&amp;quot;&amp;gt;
+    &amp;#123;&amp;#123;@ doc &amp;#125;&amp;#125; &amp;lt;!-- 或者  &amp;lt;%- doc %&amp;gt; --&amp;gt;
+&amp;lt;&amp;#x2F;div&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;效果展示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#效果展示&#34;&gt;#&lt;/a&gt; 效果展示&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blogimage/20190314/x6s26FzHS5go.png?imageslim&#34; alt=&#34;g&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="art-template" />
+        <updated>2019-03-15T08:44:07.000Z</updated>
+    </entry>
+</feed>

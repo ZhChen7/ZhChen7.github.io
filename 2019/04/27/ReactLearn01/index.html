@@ -114,7 +114,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="React-学习第一天"><a href="#React-学习第一天" class="headerlink" title="React 学习第一天"></a>React 学习第一天</h1><blockquote>
+  <h1 id="react-学习第一天"><a class="markdownIt-Anchor" href="#react-学习第一天">#</a> React 学习第一天</h1>
+<blockquote>
 <p>ReactJS 简介</p>
 <p>ReactJS 的背景和原理</p>
 <p>三大主流前端框架 React、Vue、Angular</p>
@@ -122,28 +123,37 @@
 <p>React（虚拟 DOM，DIff 算法）</p>
 <p>创建基本的 webpack4.x 项目（ 并且解决了之前的一个 bug ）</p>
 <p>在项目中使用 react</p>
-<p>把圈子变小 把语言变干净 把成绩往上提 把故事往心里收 现在想要的三年后都会有 ！o(<em>￣ ▽ ￣</em>)ブ</p>
+<p>把圈子变小 把语言变干净 把成绩往上提 把故事往心里收 现在想要的三年后都会有 ！o (<em>￣ ▽ ￣</em>) ブ</p>
 </blockquote>
-<h2 id="1、ReactJS-简介"><a href="#1、ReactJS-简介" class="headerlink" title="1、ReactJS 简介"></a>1、ReactJS 简介</h2><p>React 起源于 Facebook 的内部项目，因为该公司对市场上所有 JavaScript MVC 框架，都不满意，就决定自己写一套，用来架设 Instagram 的网站。做出来以后，发现这套东西很好用，就在 2013 年 5 月开源了。由于 React 的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越多的人开始关注和使用，认为它可能是将来 Web 开发的主流工具。</p>
-<h2 id="2、ReactJS-的背景和原理"><a href="#2、ReactJS-的背景和原理" class="headerlink" title="2、ReactJS 的背景和原理"></a>2、ReactJS 的背景和原理</h2><p>在 Web 开发中，我们总需要将变化的数据实时反应到 UI 上，这时就需要对 DOM 进行操作。而复杂或频繁的 DOM 操作通常是性能瓶颈产生的原因（如何进行高性能的复杂 DOM 操作通常是衡量一个前端开发人员技能的重要指标）。</p>
+<h2 id="1-reactjs-简介"><a class="markdownIt-Anchor" href="#1-reactjs-简介">#</a> 1、ReactJS 简介</h2>
+<p>React 起源于 Facebook 的内部项目，因为该公司对市场上所有 JavaScript MVC 框架，都不满意，就决定自己写一套，用来架设 Instagram 的网站。做出来以后，发现这套东西很好用，就在 2013 年 5 月开源了。由于 React 的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越多的人开始关注和使用，认为它可能是将来 Web 开发的主流工具。</p>
+<h2 id="2-reactjs-的背景和原理"><a class="markdownIt-Anchor" href="#2-reactjs-的背景和原理">#</a> 2、ReactJS 的背景和原理</h2>
+<p>在 Web 开发中，我们总需要将变化的数据实时反应到 UI 上，这时就需要对 DOM 进行操作。而复杂或频繁的 DOM 操作通常是性能瓶颈产生的原因（如何进行高性能的复杂 DOM 操作通常是衡量一个前端开发人员技能的重要指标）。</p>
 <p>React 为此引入了虚拟 DOM（Virtual DOM）的机制：在浏览器端用 Javascript 实现了一套 DOM API。基于 React 进行开发时所有的 DOM 构造都是通过虚拟 DOM 进行，每当数据变化时，React 都会重新构建整个 DOM 树，然后 React 将当前整个 DOM 树和上一次的 DOM 树进行对比，得到 DOM 结构的区别，然后仅仅将需要变化的部分进行实际的浏览器 DOM 更新。而且 React 能够批处理虚拟 DOM 的刷新，在一个事件循环（Event Loop）内的两次数据变化会被合并，例如你连续的先将节点内容从 A 变成 B，然后又从 B 变成 A，React 会认为 UI 不发生任何变化，而如果通过手动控制，这种逻辑通常是极其复杂的。尽管每一次都需要构造完整的虚拟 DOM 树，但是因为虚拟 DOM 是内存数据，性能是极高的，而对实际 DOM 进行操作的仅仅是 Diff 部分，因而能达到提高性能的目的。这样，在保证性能的同时，开发者将不再需要关注某个数据的变化如何更新到一个或多个具体的 DOM 元素，而只需要关心在任意一个数据状态下，整个界面是如何 Render 的。</p>
 <p>如果你像在 90 年代那样写过服务器端 Render 的纯 Web 页面那么应该知道，服务器端所要做的就是根据数据 Render 出 HTML 送到浏览器端。如果这时因为用户的一个点击需要改变某个状态文字，那么也是通过刷新整个页面来完成的。服务器端并不需要知道是哪一小段 HTML 发生了变化，而只需要根据数据刷新整个页面。换句话说，任何 UI 的变化都是通过整体刷新来完成的。而 React 将这种开发模式以高性能的方式带到了前端，每做一点界面的更新，你都可以认为刷新了整个页面。至于如何进行局部更新以保证性能，则是 React 框架要完成的事情。</p>
 <p>借用 Facebook 介绍 React 的视频中聊天应用的例子，当一条新的消息过来时，你的开发过程需要知道哪条数据过来了，如何将新的 DOM 结点添加到当前 DOM 树上；而基于 React 的开发思路，你永远只需要关心数据整体，两次数据之间的 UI 如何变化，则完全交给框架去做。可以看到，使用 React 大大降低了逻辑复杂性，意味着开发难度降低，可能产生 Bug 的机会也更少。</p>
 <hr>
-<h4 id="清楚理解两个概念："><a href="#清楚理解两个概念：" class="headerlink" title="清楚理解两个概念："></a>清楚理解两个概念：</h4><ol>
-<li><p>**ibrary(库)**：小而巧的库，只提供特定的 API；优点就是 船小好调头。可以很方便的从一个库切换到另外的库；但是代码几乎不会改变。</p>
+<h4 id="清楚理解两个概念"><a class="markdownIt-Anchor" href="#清楚理解两个概念">#</a> 清楚理解两个概念：</h4>
+<ol>
+<li>
+<p><strong>ibrary (库)</strong>：小而巧的库，只提供特定的 API；优点就是 船小好调头。可以很方便的从一个库切换到另外的库；但是代码几乎不会改变。</p>
 </li>
-<li><p>**Framework(框架)**：大而全的是框架；框架提供了一整套的解决方案；所以，如果在项目中间，想切换到另外的框架，是比较困难的。</p>
+<li>
+<p><strong>Framework (框架)</strong>：大而全的是框架；框架提供了一整套的解决方案；所以，如果在项目中间，想切换到另外的框架，是比较困难的。</p>
 </li>
 </ol>
-<h1 id="三大主流前端框架-React、Vue、Angular"><a href="#三大主流前端框架-React、Vue、Angular" class="headerlink" title="三大主流前端框架 React、Vue、Angular"></a>三大主流前端框架 React、Vue、Angular</h1><p><img src="http://static.zxinc520.com/blog/20190423/Q4Mrbn6pFhYJ.jpg?imageslim" alt="mark"></p>
+<h1 id="三大主流前端框架-react-vue-angular"><a class="markdownIt-Anchor" href="#三大主流前端框架-react-vue-angular">#</a> 三大主流前端框架 React、Vue、Angular</h1>
+<p><img src="http://static.zxinc520.com/blog/20190423/Q4Mrbn6pFhYJ.jpg?imageslim" alt="mark"></p>
 <p>React（ <strong>最流行</strong> ）起源于 Facebook 的内部项目，用来架设 Instagram 的网站， 并于 2013 年 5 月开源。React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。它有以下的<strong>特性</strong>：</p>
 <ol>
-<li><p>声明式设计：React 采用声明范式，可以轻松描述应用。</p>
+<li>
+<p>声明式设计：React 采用声明范式，可以轻松描述应用。</p>
 </li>
-<li><p>高效：React 通过对 DOM 的模拟，最大限度地减少与 DOM 的交互。</p>
+<li>
+<p>高效：React 通过对 DOM 的模拟，最大限度地减少与 DOM 的交互。</p>
 </li>
-<li><p>灵活：React 可以与已知的库或框架很好地配合。</p>
+<li>
+<p>灵活：React 可以与已知的库或框架很好地配合。</p>
 </li>
 </ol>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1. 速度快：在UI渲染过程中，React通过在虚拟DOM中的微操作来实现对实际DOM的局部更新。
@@ -154,18 +164,21 @@
 6.兼容性好：比如使用RequireJS来加载和打包，而Browserify和Webpack适用于构建大型应用。它们使得那些艰难的任务不再让人望而生畏。
 缺点：
 React本身只是一个V而已，并不是一个完整的框架，所以如果是大型项目想要一套完整的框架的话，基本都需要加上ReactRouter和Flux才能写大型应用。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190423/7hBjb1epQFoH.webp" alt="mark"></p>
 <p>Vue ( <strong>目前市场上的主流</strong> ) 是尤雨溪编写的一个构建数据驱动的 Web 界面的库，准确来说不是一个框架，它聚焦在 V（view）视图层。</p>
-<p>_它有以下的特性_：</p>
+<p><em>它有以下的特性</em>：</p>
 <ol>
-<li><p>轻量级的框架</p>
+<li>
+<p>轻量级的框架</p>
 </li>
-<li><p>双向数据绑定</p>
+<li>
+<p>双向数据绑定</p>
 </li>
-<li><p>指令</p>
+<li>
+<p>指令</p>
 </li>
-<li><p>插件化</p>
+<li>
+<p>插件化</p>
 </li>
 </ol>
 <pre class="line-numbers language-none"><code class="language-none">优点：
@@ -179,20 +192,24 @@ React本身只是一个V而已，并不是一个完整的框架，所以如果�
 1. 新生儿：Vue.js是一个新的项目，没有angular那么成熟。
 2. 影响度不是很大：google了一下，有关于Vue.js多样性或者说丰富性少于其他一些有名的库。
 3. 不支持IE8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190423/bu0preO1hhfc.webp" alt="mark"></p>
 <p>Angular（ <strong>最早</strong> ）是一款优秀的前端 JS 框架，已经被用于 Google 的多款产品当中。</p>
-<p>_它有以下的特性_：</p>
+<p><em>它有以下的特性</em>：</p>
 <ol>
-<li><p>良好的应用程序结构</p>
+<li>
+<p>良好的应用程序结构</p>
 </li>
-<li><p>双向数据绑定</p>
+<li>
+<p>双向数据绑定</p>
 </li>
-<li><p>指令</p>
+<li>
+<p>指令</p>
 </li>
-<li><p>HTML 模板</p>
+<li>
+<p>HTML 模板</p>
 </li>
-<li><p>可嵌入、注入和测试</p>
+<li>
+<p>可嵌入、注入和测试</p>
 </li>
 </ol>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">优点：
@@ -207,17 +224,17 @@ React本身只是一个V而已，并不是一个完整的框架，所以如果�
 3. 对IE6&#x2F;7 兼容不算特别好, 就是可以用jQuery自己手写代码解决一些.
 4. 指令的应用的最佳实践教程少, angular其实很灵活, 如果不看一些作者的使用原则,很容易写出 四不像的代码, 例如js中还是像jQuery的思想有很多dom操作.
 5. DI 依赖注入 如果代码压缩需要显示声明.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="Vue-与-React-两个框架的区别和优势对比"><a href="#Vue-与-React-两个框架的区别和优势对比" class="headerlink" title="Vue 与 React 两个框架的区别和优势对比"></a><a target="_blank" rel="noopener" href="http://caibaojian.com/vue-vs-react.html">Vue 与 React 两个框架的区别和优势对比</a></h1><blockquote>
+<h1 id="vue-与-react-两个框架的区别和优势对比"><a class="markdownIt-Anchor" href="#vue-与-react-两个框架的区别和优势对比">#</a> <a target="_blank" rel="noopener" href="http://caibaojian.com/vue-vs-react.html">Vue 与 React 两个框架的区别和优势对比</a></h1>
+<blockquote>
 <p>Vue 与 React 的区别： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/174e8028eabd">可以参考</a></p>
 </blockquote>
 <p><a href="">如果你喜欢用模板搭建应用（或者有这个想法），请选择 Vue</a></p>
 <p>Vue 应用的默认选项是把 markup 放在 HTML 文件中。数据绑定表达式采用的是和 Angular 相似的 mustache 语法，而指令（特殊的 HTML 属性）用来向模板添加功能。</p>
 <p>相比之下，React 应用不使用模板，它要求开发者借助 JSX 在 JavaScript 中创建 DOM。</p>
 <p>对于来自标准 Web 开发方式的新开发者，模板更容易理解。但是一些资深开发者也喜欢模板，因为模板可以更好的把布局和功能分割开来，还可以使用 Pug 之类的模板引擎。</p>
-<p>但是使用模板的代价是不得不学习所有的 HTML 扩展语法，而渲染函数只需要会标准的 HTML 和 JavaScript。而且比起模板，渲染函数更加容易调试和<a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=http://lib.csdn.net/base/softwaretest">测试</a>。当然你不应该因为这方面的原因错过 Vue，因为在 Vue2.0 中提供了使用模板或者渲染函数的选项。</p>
-<p><a href="">如果你喜欢简单和“能用就行”的东西，请选择 Vue</a></p>
-<p>一个简单的 Vue 项目可以不需要转译直接运行在浏览器中，所以使用 Vue 可以像使用<a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=http://lib.csdn.net/base/jquery">jQuery</a>一样简单。当然这对于 React 来说在技术上也是可行的，但是典型的 React 代码是重度依赖于 JSX 和诸如 class 之类的 ES6 特性的。</p>
+<p>但是使用模板的代价是不得不学习所有的 HTML 扩展语法，而渲染函数只需要会标准的 HTML 和 JavaScript。而且比起模板，渲染函数更加容易调试和<a target="_blank" rel="noopener" href="https://link.jianshu.com?t=http://lib.csdn.net/base/softwaretest">测试</a>。当然你不应该因为这方面的原因错过 Vue，因为在 Vue2.0 中提供了使用模板或者渲染函数的选项。</p>
+<p><a href="">如果你喜欢简单和 “能用就行” 的东西，请选择 Vue</a></p>
+<p>一个简单的 Vue 项目可以不需要转译直接运行在浏览器中，所以使用 Vue 可以像使用<a target="_blank" rel="noopener" href="https://link.jianshu.com?t=http://lib.csdn.net/base/jquery"> jQuery</a> 一样简单。当然这对于 React 来说在技术上也是可行的，但是典型的 React 代码是重度依赖于 JSX 和诸如 class 之类的 ES6 特性的。</p>
 <p>Vue 的简单在程序设计的时候体现更深，让我们来比较一下两个框架是怎样处理应用数据的（也就是 state）。</p>
 <p>React 中是通过比较当前 state 和前一个 state 来决定何时在 DOM 中进行重渲染以及渲染的内容，因此需要不可变（immutable）的 state。</p>
 <p>Vue 中的数据是可变（mutated）的，所以同样的操作看起来更加简洁。</p>
@@ -231,16 +248,18 @@ React本身只是一个V而已，并不是一个完整的框架，所以如果�
 <p>相比之下，Javascript 模板可以组织成具有很好的分解性和干（DRY）代码的组件，干代码的可重用性和可测试性更好。Vue 也有组件系统和渲染函数，但是 React 的渲染系统可配置性更强，还有诸如浅（shallow）渲染的特性，和 React 的测试工具结合起来使用，使代码的可测试性和可维护性更好。</p>
 <p>与此同时，React 的 immutable 应用状态可能写起来不够简洁，但它在大型应用中意义非凡，因为透明度和可测试性在大型项目中变得至关重要。</p>
 <p><a href="">如果你想要一个同时适用于 Web 端和原生 APP 的框架，请选择 React</a></p>
-<p><a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=http://lib.csdn.net/base/reactnative">React Native</a>是一个使用 Javascript 构建移动端原生应用程序（<a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=http://lib.csdn.net/base/ios">iOS</a>，<a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=http://lib.csdn.net/base/android">Android</a>）的库。 它与 React.js 相同，只是不使用 Web 组件，而是使用原生组件。 如果你学过 React.js，很快就能上手 React Native，反之亦然。</p>
+<p><a target="_blank" rel="noopener" href="https://link.jianshu.com?t=http://lib.csdn.net/base/reactnative">React Native</a> 是一个使用 Javascript 构建移动端原生应用程序（<a target="_blank" rel="noopener" href="https://link.jianshu.com?t=http://lib.csdn.net/base/ios">iOS</a>，<a target="_blank" rel="noopener" href="https://link.jianshu.com?t=http://lib.csdn.net/base/android">Android</a>）的库。 它与 React.js 相同，只是不使用 Web 组件，而是使用原生组件。 如果你学过 React.js，很快就能上手 React Native，反之亦然。</p>
 <p>它的意义在于，开发者只需要一套知识和工具就能开发 Web 应用和移动端原生应用。如果你想同时做 Web 端开发和移动端开发，React 为你准备了一份大礼。</p>
 <p>阿里的 Weex 也是一个跨平台 UI 项目，目前它以 Vue 为灵感，使用了许多相同的语法，同时计划在未来完全集成 Vue，然而集成的时间和细节还不清楚。因为 Vue 将 HTML 模板作为它设计的核心部分，并且现有特性不支持自定义渲染，因此很难看出目前的 Vue.js 的跨平台能力能像 React 和 React Native 一样强大。</p>
 <p><a href="">如果你想要最大的生态系统，请选择 React</a></p>
 <p>毫无疑问，React 是目前最受欢迎的前端框架。它在 NPM 上每个月的下载量超过了 250 万次，相比之下，Vue 是 22.5 万次。人气不仅仅是一个肤浅的数字，这意味着更多的文章，教程和更多 Stack Overflow 的解答，还意味有着更多的工具和插件可以在项目中使用，让开发者不再孤立无援。</p>
 <p>这两个框架都是开源的，但是 React 诞生于 Facebook，有 Facebook 背书，它的开发者和 Facebook 都承诺会持续维护 React。相比之下，Vue 是独立开发者尤雨溪的作品。尤雨溪目前在全职维护 Vue，也有一些公司资助 Vue，但是规模和 Facebook 和 Google 没得比。不过请对 Vue 的团队放心，它的小规模和独立性并没有成为劣势，Vue 有着固定的发布周期，甚至更令人称道的是，Github 上 Vue 只有 54 个 open issue，3456 个 closed issue，作为对比，React 有多达 530 个 open issue，3447 个 closed issue。</p>
-<h4 id="总结一下，我们发现的，Vue-的优势是："><a href="#总结一下，我们发现的，Vue-的优势是：" class="headerlink" title="总结一下，我们发现的，Vue 的优势是："></a>总结一下，我们发现的，Vue 的优势是：</h4><p>模板和渲染函数的弹性选择</p>
+<h4 id="总结一下我们发现的vue-的优势是"><a class="markdownIt-Anchor" href="#总结一下我们发现的vue-的优势是">#</a> 总结一下，我们发现的，Vue 的优势是：</h4>
+<p>模板和渲染函数的弹性选择</p>
 <p>简单的语法和项目配置</p>
 <p>更快的渲染速度和更小的体积</p>
-<h4 id="React-的优势是："><a href="#React-的优势是：" class="headerlink" title="React 的优势是："></a>React 的优势是：</h4><p>更适合大型应用和更好的可测试性</p>
+<h4 id="react-的优势是"><a class="markdownIt-Anchor" href="#react-的优势是">#</a> React 的优势是：</h4>
+<p>更适合大型应用和更好的可测试性</p>
 <p>Web 端和移动端原生 APP 通吃</p>
 <p>更大的生态系统，更多的支持和好用的工具</p>
 <p>然而，React 和 Vue 都是很优秀的框架，它们之间的相似之处多过不同之处，并且大部分的优秀功能是相通的：</p>
@@ -250,22 +269,25 @@ React本身只是一个V而已，并不是一个完整的框架，所以如果�
 <p>服务端渲染</p>
 <p>集成路由工具，打包工具，状态管理工具的难度低</p>
 <p>优秀的支持和社区</p>
-<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="1-虚拟-DOM（Virtual-Document-Object-Model）"><a href="#1-虚拟-DOM（Virtual-Document-Object-Model）" class="headerlink" title="1. 虚拟 DOM（Virtual Document Object Model）"></a>1. 虚拟 DOM（Virtual Document Object Model）</h3><ul>
+<h2 id="react"><a class="markdownIt-Anchor" href="#react">#</a> React</h2>
+<h3 id="1-虚拟-domvirtual-document-object-model"><a class="markdownIt-Anchor" href="#1-虚拟-domvirtual-document-object-model">#</a> 1. 虚拟 DOM（Virtual Document Object Model）</h3>
+<ul>
 <li>DOM 的本质什么：浏览器中的概念，用 JS 对象来表示 页面上的 元素，并提供了操作 DOM 对象的 API。</li>
 <li>什么是 React 中的虚拟 DOM：是框架中的概念，是 程序员 用 JS 对象来模拟 页面上的 DOM 和 DOM 嵌套。</li>
 </ul>
-<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><p>先直接说一下，DOM 意思是<strong>文档对象模型（Dcoument Object Model）</strong>，它是一个结构化文本的抽象。对于 Web 开发者，这个文本是一段 HTML 代码，DOM 也就被叫做 HTML DOM。HTML 的元素在 DOM 中变成了节点。</p>
+<h2 id="dom"><a class="markdownIt-Anchor" href="#dom">#</a> DOM</h2>
+<p>先直接说一下，DOM 意思是<strong>文档对象模型（Dcoument Object Model）</strong>，它是一个结构化文本的抽象。对于 Web 开发者，这个文本是一段 HTML 代码，DOM 也就被叫做 HTML DOM。HTML 的元素在 DOM 中变成了节点。</p>
 <p>所以，HTML 是一段文本，DOM 就是这段文本在内存中的表示。</p>
 <blockquote>
 <p>可以对比一个程序的一个进程实例。对于一个程序，可以存在多个进程，就像一段同样的 HTML 可以有多个 DOM 一样。（例：同一个页面被多个 tab 加载）。</p>
 </blockquote>
-<p>在 HTML DOM 中提供了遍历和修改节点的接口（API）。像<em>getElementById</em>或者<em>removeChild</em>这样的方法。我们一般使用 JavaScript 来操作 DOM，这是因为……好吧，天知道为什么。:)</p>
+<p>在 HTML DOM 中提供了遍历和修改节点的接口（API）。像<em> getElementById</em> 或者<em> removeChild</em> 这样的方法。我们一般使用 JavaScript 来操作 DOM，这是因为…… 好吧，天知道为什么。😃</p>
 <p>所以，只要我们想要动态修改网页的内容的时候，我们就修改 DOM。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> item <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myLI"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 item<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>所谓<em>document</em>就是根节点的抽象，而<em>getElementById</em>，<em>parentNode</em>和<em>emoveChild</em>则是 HTML DOM API 中的方法。</p>
-<h2 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h2><p>首先 - 虚拟 DOM 不是 React 发明的，但是 React 用了它且免费提供。</p>
+<p>所谓<em> document</em> 就是根节点的抽象，而<em> getElementById</em>，<em>parentNode</em> 和<em> emoveChild</em> 则是 HTML DOM API 中的方法。</p>
+<h2 id="虚拟-dom"><a class="markdownIt-Anchor" href="#虚拟-dom">#</a> 虚拟 DOM</h2>
+<p>首先 - 虚拟 DOM 不是 React 发明的，但是 React 用了它且免费提供。</p>
 <p>虚拟 DOM 是 HTML DOM 的抽象。它是轻量的，是从浏览器特定（Browser-specific，这里意指特定的浏览器需要特定的实现）实现细节中提取出来的。由于 DOM 本身就已经是一个抽象了，所以虚拟 DOM，实际上，是一个抽象的抽象。</p>
 <p>也许把虚拟 DOM 当做 React 的本地和简化版的 HTML DOM 更好。它允许 React 跳过既慢又限于特定浏览器的真实 DOM 操作，以在这个抽象世界中做自己的计算。</p>
 <p>常规 DOM 和虚拟 DOM 二者并没有什么大的不同。这也是为什么 React 代码的 JSX 部分可以看起来几乎跟纯 HTML 很像的原因。</p>
@@ -278,7 +300,6 @@ item<span class="token punctuation">.</span>parentNode<span class="token punctua
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在大多数情况下，当你有一段 HTML 代码且想要将其写成一个 React 组件时，你只需要做这个。</p>
 <ol>
 <li>在 render 方法中返回 HTML 代码；</li>
@@ -286,28 +307,35 @@ item<span class="token punctuation">.</span>parentNode<span class="token punctua
 </ol>
 <p>二者之间还有一些，相当细微的区别。</p>
 <ul>
-<li>虚拟 DOM 的这些属性不在真实的 DOM 中出现——key，ref 和 dangerouslySetInnerHTML。<a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/special-non-dom-attributes.html">查看更多</a></li>
+<li>虚拟 DOM 的这些属性不在真实的 DOM 中出现 ——key，ref 和 dangerouslySetInnerHTML。<a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/special-non-dom-attributes.html">查看更多</a></li>
 <li>React 范的 DOM 引入了<a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/dom-differences.html">一些限制</a></li>
 </ul>
-<h2 id="为什么需要虚拟-DOM？"><a href="#为什么需要虚拟-DOM？" class="headerlink" title="为什么需要虚拟 DOM？"></a>为什么需要虚拟 DOM？</h2><p>先介绍浏览器加载一个 HTML 文件需要做哪些事，帮助我们理解为什么我们需要虚拟 DOM。webkit 引擎的处理流程，一图胜千言：</p>
+<h2 id="为什么需要虚拟-dom"><a class="markdownIt-Anchor" href="#为什么需要虚拟-dom">#</a> 为什么需要虚拟 DOM？</h2>
+<p>先介绍浏览器加载一个 HTML 文件需要做哪些事，帮助我们理解为什么我们需要虚拟 DOM。webkit 引擎的处理流程，一图胜千言：</p>
 <p><img src="http://static.zxinc520.com/blog/20190425/tKU23C1t4RLN.webp" alt="mark"></p>
 <p>所有浏览器的引擎工作流程都差不多，如上图大致分 5 步：创建 DOM tree –&gt; 创建 Style Rules -&gt; 构建 Render tree -&gt; 布局 Layout –&gt; 绘制 Painting</p>
 <ul>
-<li><p>第一步，用 HTML 分析器，分析 HTML 元素，构建一颗 DOM 树。</p>
+<li>
+<p>第一步，用 HTML 分析器，分析 HTML 元素，构建一颗 DOM 树。</p>
 </li>
-<li><p>第二步：用 CSS 分析器，分析 CSS 文件和元素上的 inline 样式，生成页面的样式表。</p>
+<li>
+<p>第二步：用 CSS 分析器，分析 CSS 文件和元素上的 inline 样式，生成页面的样式表。</p>
 </li>
-<li><p>第三步：将上面的 DOM 树和样式表，关联起来，构建一颗 Render 树。这一过程又称为 Attachment。每个 DOM 节点都有 attach 方法，接受样式信息，返回一个 render 对象（又名 renderer）。这些 render 对象最终会被构建成一颗 Render 树。</p>
+<li>
+<p>第三步：将上面的 DOM 树和样式表，关联起来，构建一颗 Render 树。这一过程又称为 Attachment。每个 DOM 节点都有 attach 方法，接受样式信息，返回一个 render 对象（又名 renderer）。这些 render 对象最终会被构建成一颗 Render 树。</p>
 </li>
-<li><p>第四步：有了 Render 树后，浏览器开始布局，会为每个 Render 树上的节点确定一个在显示屏上出现的精确坐标值。</p>
+<li>
+<p>第四步：有了 Render 树后，浏览器开始布局，会为每个 Render 树上的节点确定一个在显示屏上出现的精确坐标值。</p>
 </li>
-<li><p>第五步：Render 数有了，节点显示的位置坐标也有了，最后就是调用每个节点的 paint 方法，让它们显示出来。</p>
+<li>
+<p>第五步：Render 数有了，节点显示的位置坐标也有了，最后就是调用每个节点的 paint 方法，让它们显示出来。</p>
 </li>
 </ul>
 <p>当你用传统的源生 api 或 jQuery 去操作 DOM 时，浏览器会从构建 DOM 树开始从头到尾执行一遍流程。比如当你在一次操作时，需要更新 10 个 DOM 节点，理想状态是一次性构建完 DOM 树，再执行后续操作。但浏览器没这么智能，收到第一个更新 DOM 请求后，并不知道后续还有 9 次更新操作，因此会马上执行流程，最终执行 10 次流程。显然例如计算 DOM 节点的坐标值等都是白白浪费性能，可能这次计算完，紧接着的下一个 DOM 更新请求，这个节点的坐标值就变了，前面的一次计算是无用功。</p>
 <p>即使计算机硬件一直在更新迭代，操作 DOM 的代价仍旧是昂贵的，频繁操作还是会出现页面卡顿，影响用户的体验。真实的 DOM 节点，哪怕一个最简单的 div 也包含着很多属性，可以打印出来直观感受一下：</p>
 <p>虚拟 DOM 就是为了解决这个浏览器性能问题而被设计出来的。例如前面的例子，假如一次操作中有 10 次更新 DOM 的动作，虚拟 DOM 不会立即操作 DOM，而是将这 10 次更新的 diff 内容保存到本地的一个 js 对象中，最终将这个 js 对象一次性 attach 到 DOM 树上，通知浏览器去执行绘制工作，这样可以避免大量的无谓的计算量。</p>
-<h2 id="Virtual-DOM-算法"><a href="#Virtual-DOM-算法" class="headerlink" title="Virtual DOM 算法"></a>Virtual DOM 算法</h2><p>可以用新渲染的对象树去和旧的树进行对比，记录这两棵树差异。记录下来的不同就是我们需要对页面真正的 DOM 操作，然后把它们应用在真正的 DOM 树上，页面就变更了。这样就可以做到：视图的结构确实是整个全新渲染了，但是最后操作 DOM 的时候确实只变更有不同的地方。</p>
+<h2 id="virtual-dom-算法"><a class="markdownIt-Anchor" href="#virtual-dom-算法">#</a> Virtual DOM 算法</h2>
+<p>可以用新渲染的对象树去和旧的树进行对比，记录这两棵树差异。记录下来的不同就是我们需要对页面真正的 DOM 操作，然后把它们应用在真正的 DOM 树上，页面就变更了。这样就可以做到：视图的结构确实是整个全新渲染了，但是最后操作 DOM 的时候确实只变更有不同的地方。</p>
 <p>这就是所谓的 Virtual DOM 算法。包括几个步骤：</p>
 <ol>
 <li>用 JavaScript 对象结构表示 DOM 树的结构；然后用这个树构建一个真正的 DOM 树，插到文档当中</li>
@@ -315,18 +343,27 @@ item<span class="token punctuation">.</span>parentNode<span class="token punctua
 <li>把 2 所记录的差异应用到步骤 1 所构建的真正的 DOM 树上，视图就更新了</li>
 </ol>
 <p>Virtual DOM 本质上就是在 JS 和 DOM 之间做了一个缓存。可以类比 CPU 和硬盘，既然硬盘这么慢，我们就在它们之间加个缓存：既然 DOM 这么慢，我们就在它们 JS 和 DOM 之间加个缓存。CPU（JS）只操作内存（Virtual DOM），最后的时候再把变更写入硬盘（DOM）。</p>
-<h2 id="DIff-算法"><a href="#DIff-算法" class="headerlink" title="DIff 算法"></a>DIff 算法</h2><p>比较两棵 DOM 树的差异是 Virtual DOM 算法最核心的部分.简单的说就是新旧虚拟 dom 的比较，如果有差异就以新的为准，然后再插入的真实的 dom 中，重新渲染。、 借网络一张图片说明:</p>
+<h2 id="diff-算法"><a class="markdownIt-Anchor" href="#diff-算法">#</a> DIff 算法</h2>
+<p>比较两棵 DOM 树的差异是 Virtual DOM 算法最核心的部分。简单的说就是新旧虚拟 dom 的比较，如果有差异就以新的为准，然后再插入的真实的 dom 中，重新渲染。、 借网络一张图片说明:</p>
 <p><img src="http://static.zxinc520.com/blog/20190427/TBHlLkPiRjat.webp" alt="mark"></p>
-<p><strong>比较只会在同层级进行, 不会跨层级比较。</strong><br>比较后会出现四种情况：<br>1、此节点是否被移除 -&gt; 添加新的节点<br>2、属性是否被改变 -&gt; 旧属性改为新属性<br>3、文本内容被改变-&gt; 旧内容改为新内容<br>4、节点要被整个替换 -&gt; 结构完全不相同 移除整个替换</p>
-<h2 id="创建基本的-webpack4-x-项目"><a href="#创建基本的-webpack4-x-项目" class="headerlink" title="创建基本的 webpack4.x 项目"></a>创建基本的 webpack4.x 项目</h2><ol>
-<li>运行 <code>npm init -y</code>快速初始化下项目</li>
+<p><strong>比较只会在同层级进行，不会跨层级比较。</strong><br>
+比较后会出现四种情况：<br>
+1、此节点是否被移除 -&gt; 添加新的节点<br>
+ 2、属性是否被改变 -&gt; 旧属性改为新属性<br>
+ 3、文本内容被改变 -&gt; 旧内容改为新内容<br>
+ 4、节点要被整个替换 -&gt; 结构完全不相同 移除整个替换</p>
+<h2 id="创建基本的-webpack4x-项目"><a class="markdownIt-Anchor" href="#创建基本的-webpack4x-项目">#</a> 创建基本的 webpack4.x 项目</h2>
+<ol>
+<li>运行  <code>npm init -y</code>  快速初始化下项目</li>
 <li>在项目根目录创建 <strong>src</strong> 源代码目录 和 <strong>dist</strong> 产品目录</li>
 <li>在 src 目录下创建 index.html</li>
-<li>使用 npm 安装 webpack，运行 <code>npm i webpack webpack-cli -D</code></li>
-<li>注意：webpack4.x 提供了 约定大于配置的概念；目的是为了尽量减少 配置文件的体积。<ul>
-<li>默认约定了<ul>
-<li>打包的入口是 <code>src</code> -&gt;<code> index.js</code></li>
-<li>打包的输出文件是 <code>dist</code> -&gt; <code>main.js</code></li>
+<li>使用 npm 安装 webpack，运行  <code>npm i webpack webpack-cli -D</code></li>
+<li>注意：webpack4.x 提供了 约定大于配置的概念；目的是为了尽量减少 配置文件的体积。
+<ul>
+<li>默认约定了
+<ul>
+<li>打包的入口是  <code>src</code>  -&gt; <code> index.js</code></li>
+<li>打包的输出文件是  <code>dist</code>  -&gt;  <code>main.js</code></li>
 <li>4.x 中新增的 mode 项：<u>development</u> 和 <u>production</u></li>
 </ul>
 </li>
@@ -337,38 +374,42 @@ item<span class="token punctuation">.</span>parentNode<span class="token punctua
 <p><a target="_blank" rel="noopener" href="https://www.webpackjs.com/concepts/mode/">mode 介绍</a></p>
 <p>​ <strong>mode</strong> 参数：（<u>development</u> 和 <u>production</u> ）：决定了 配置代码 （压缩代码体积）是否被压缩。</p>
 <p><img src="http://static.zxinc520.com/blog/20190427/3EKcIY3d4kos.png?imageslim" alt="mark"></p>
-<h3 id="配置-webpack-dev-server-自动打包"><a href="#配置-webpack-dev-server-自动打包" class="headerlink" title="配置 webpack-dev-server (自动打包)"></a>配置 webpack-dev-server (自动打包)</h3><blockquote>
+<h3 id="配置-webpack-dev-server-自动打包"><a class="markdownIt-Anchor" href="#配置-webpack-dev-server-自动打包">#</a> 配置 webpack-dev-server (自动打包)</h3>
+<blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/webpack/webpack-dev-server">webpack-dev-server</a> 能够用于快速开发应用程序</p>
 </blockquote>
 <ol>
-<li>安装：运行：<code>npm i webpack-dev-server -D</code></li>
+<li>安装：运行： <code>npm i webpack-dev-server -D</code></li>
 <li>配置 <u>package.json</u></li>
 </ol>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
     <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="token punctuation">,</span>
     <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack-dev-server"</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>可以在<u><em>webpack.config.js</em></u> 配置相应的 devServer（自动打开窗口，配置端口号，首页路径展示情况）</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190427/oznoq3LcPA3S.png?imageslim" alt="mark"></p>
-<h3 id="配置-html-webpack-plugin"><a href="#配置-html-webpack-plugin" class="headerlink" title="配置 html-webpack-plugin"></a>配置 html-webpack-plugin</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/jantimon/html-webpack-plugin"><code>HtmlWebpackPlugin</code></a>简化了 HTML 文件的创建，以便为你的 webpack 包提供服务。这对于在文件名中包含每次会随着编译而发生变化哈希的 webpack bundle 尤其有用。 你可以让插件为你生成一个 HTML 文件，使用<a target="_blank" rel="noopener" href="https://lodash.com/docs#template">lodash 模板</a>提供你自己的模板，或使用你自己的<a target="_blank" rel="noopener" href="https://webpack.docschina.org/loaders">loader</a>。</p>
+<h3 id="配置-html-webpack-plugin"><a class="markdownIt-Anchor" href="#配置-html-webpack-plugin">#</a> 配置 html-webpack-plugin</h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/jantimon/html-webpack-plugin"> <code>HtmlWebpackPlugin</code> </a> 简化了 HTML 文件的创建，以便为你的 webpack 包提供服务。这对于在文件名中包含每次会随着编译而发生变化哈希的 webpack bundle 尤其有用。 你可以让插件为你生成一个 HTML 文件，使用<a target="_blank" rel="noopener" href="https://lodash.com/docs#template"> lodash 模板</a>提供你自己的模板，或使用你自己的<a target="_blank" rel="noopener" href="https://webpack.docschina.org/loaders"> loader</a>。</p>
 </blockquote>
 <ol>
-<li>安装：运行：<code>npm i html-webpack-plugin -D</code></li>
+<li>安装：运行： <code>npm i html-webpack-plugin -D</code></li>
 <li>配置 <u>package.json</u></li>
 </ol>
 <p><img src="http://static.zxinc520.com/blog/20190427/uzkbRIjYKMqF.png?imageslim" alt="mark"></p>
-<h3 id="配置-Babel"><a href="#配置-Babel" class="headerlink" title="配置 Babel"></a>配置 Babel</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://babeljs.io/">Babel</a>是一个广泛使用的转码器，可以将 ES6 代码转为 ES5 代码</p>
+<h3 id="配置-babel"><a class="markdownIt-Anchor" href="#配置-babel">#</a> 配置 Babel</h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://babeljs.io/">Babel</a> 是一个广泛使用的转码器，可以将 ES6 代码转为 ES5 代码</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://webpack.docschina.org/loaders/babel-loader/#%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3"> webpack 中使用 Babel 官方文档 </a></p>
 <ol>
-<li><p>安装 <code>npm install -D babel-loader @babel/core @babel/preset-env webpack</code></p>
+<li>
+<p>安装  <code>npm install -D babel-loader @babel/core @babel/preset-env webpack</code></p>
 </li>
-<li><p><u>在 webpack 配置对象中，需要将 babel-loader 添加到 module 列表中，就像下面这样</u></p>
+<li>
+<p><u>在 webpack 配置对象中，需要将 babel-loader 添加到 module 列表中，就像下面这样</u></p>
 </li>
 </ol>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">module<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
@@ -385,22 +426,24 @@ item<span class="token punctuation">.</span>parentNode<span class="token punctua
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-<h3 id="解决之前遇到的一个-BUG"><a href="#解决之前遇到的一个-BUG" class="headerlink" title="解决之前遇到的一个 BUG"></a>解决之前遇到的一个 BUG</h3><p><img src="http://static.zxinc520.com/blog/20190427/FnivOIm1VIRg.png?imageslim" alt="mark"></p>
+<h3 id="解决之前遇到的一个-bug"><a class="markdownIt-Anchor" href="#解决之前遇到的一个-bug">#</a> 解决之前遇到的一个 BUG</h3>
+<p><img src="http://static.zxinc520.com/blog/20190427/FnivOIm1VIRg.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190416/vh340CYSUk0d.png?imageslim" alt="1556355771552"></p>
 <p><strong>解决方案</strong>：</p>
 <ol>
-<li>安装：<code>npm i @babel/plugin-proposal-class-properties -D</code></li>
-<li>配置 <code>webpack.config.js</code></li>
+<li>安装： <code>npm i @babel/plugin-proposal-class-properties -D</code></li>
+<li>配置  <code>webpack.config.js</code></li>
 </ol>
 <p><img src="http://static.zxinc520.com/blog/20190427/OWlsS3uCQONs.png?imageslim" alt="mark"></p>
 <p><strong>运行结果</strong>：</p>
 <p><img src="http://static.zxinc520.com/blog/20190427/gHK6mpqXfQca.png?imageslim" alt="mark"></p>
-<h2 id="在项目中使用-react"><a href="#在项目中使用-react" class="headerlink" title="在项目中使用 react"></a>在项目中使用 react</h2><ol>
-<li>运行 <code>npm i react react-dom -s</code> 安装包<ul>
+<h2 id="在项目中使用-react"><a class="markdownIt-Anchor" href="#在项目中使用-react">#</a> 在项目中使用 react</h2>
+<ol>
+<li>运行  <code>npm i react react-dom -s</code>  安装包
+<ul>
 <li>react：专门用于创建组件和虚拟 DOM 的，同时组件的生命周期都在这个包中</li>
-<li>react-dom：专门进行 DOM 操作的，最主要的应用场景，就是 ReactDOM.render()</li>
+<li>react-dom：专门进行 DOM 操作的，最主要的应用场景，就是 ReactDOM.render ()</li>
 </ul>
 </li>
 </ol>
@@ -425,7 +468,6 @@ item<span class="token punctuation">.</span>parentNode<span class="token punctua
 <span class="token comment">//参数一：要渲染的那个虚拟DOM元素</span>
 <span class="token comment">//参数二：指定页面上的DOM元素，当作容器</span>
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>myh1<span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>index.html</strong>:</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -437,9 +479,10 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190427/AHtHc973OThy.png?imageslim" alt="mark"></p>
-<h2 id="创建-DOM-结构"><a href="#创建-DOM-结构" class="headerlink" title="创建 DOM 结构"></a>创建 DOM 结构</h2><h3 id="方式一：（-基本不用）"><a href="#方式一：（-基本不用）" class="headerlink" title="方式一：（~基本不用）"></a>方式一：（~基本不用）</h3><p><strong>index.js</strong>:</p>
+<h2 id="创建-dom-结构"><a class="markdownIt-Anchor" href="#创建-dom-结构">#</a> 创建 DOM 结构</h2>
+<h3 id="方式一~基本不用"><a class="markdownIt-Anchor" href="#方式一~基本不用">#</a> 方式一：（~ 基本不用）</h3>
+<p><strong>index.js</strong>:</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//第一步：导入包</span>
 <span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
 <span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span> <span class="token comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span>
@@ -454,15 +497,15 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 
 <span class="token comment">//第三步：使用 ReactDOM 把虚拟 DOM 渲染到页面上</span>
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>mydiv<span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="方式二：JSX-语法-（-important）"><a href="#方式二：JSX-语法-（-important）" class="headerlink" title="方式二：JSX 语法 （~ important）"></a>方式二：JSX 语法 （~ important）</h3><blockquote>
+<h3 id="方式二jsx-语法-~-important"><a class="markdownIt-Anchor" href="#方式二jsx-语法-~-important">#</a> 方式二：JSX 语法 （~ important）</h3>
+<blockquote>
 <p>JSX 语法：看起来可能有些奇怪的标签语法既不是字符串也不是 HTML。</p>
 <p>JSX 语法的本质，还是在运行的时候，被转换成了 <u><strong>React.createElement 形式</strong></u>来执行的</p>
 </blockquote>
 <p>使用 <strong>babel</strong> 将 JSX 语法转换为 <u>React.createElement 形式</u> <a target="_blank" rel="noopener" href="https://react.docschina.org/docs/introducing-jsx.html">JSX 官方详细介绍</a></p>
-<p>关键包：运行 <code>npm install --save-dev @babel/preset-react</code> <a target="_blank" rel="noopener" href="https://babeljs.io/docs/en/babel-preset-react">可以参考 babel 官方文档</a></p>
+<p>关键包：运行  <code>npm install --save-dev @babel/preset-react</code>  <a target="_blank" rel="noopener" href="https://babeljs.io/docs/en/babel-preset-react">可以参考 babel 官方文档</a></p>
 <p><img src="http://static.zxinc520.com/blog/20190427/NHy4KwgF4SNN.png?imageslim" alt="mark"></p>
-<p>原因：<u>少写了中括号。（粗心大意了）</u>不该！！<del>~</del></p>
+<p>原因：<u>少写了中括号。（粗心大意了）</u>不该！！~~~</p>
 <p><strong>配置 <u>webpack.config.js</u></strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//配置 @babel/preset-react</span>
 module<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
@@ -489,9 +532,9 @@ module<span class="token operator">:</span> <span class="token punctuation">&#12
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-<h5 id="在-JSX-中使用表达式：-JSX-中使用表达式"><a href="#在-JSX-中使用表达式：-JSX-中使用表达式" class="headerlink" title="在 JSX 中使用表达式： JSX 中使用表达式"></a><strong>在 JSX 中使用表达式</strong>：<a target="_blank" rel="noopener" href="https://react.docschina.org/docs/introducing-jsx.html"> JSX 中使用表达式</a></h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//第一步：导入包</span>
+<h5 id="在-jsx-中使用表达式-jsx-中使用表达式"><a class="markdownIt-Anchor" href="#在-jsx-中使用表达式-jsx-中使用表达式">#</a> <strong>在 JSX 中使用表达式</strong>：<a target="_blank" rel="noopener" href="https://react.docschina.org/docs/introducing-jsx.html"> JSX 中使用表达式</a></h5>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//第一步：导入包</span>
 <span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
 <span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span> <span class="token comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span>
 
@@ -513,7 +556,6 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190427/EfbH8hDEnVn0.png?imageslim" alt="mark"></p>
  
       <!-- reward -->
@@ -754,7 +796,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

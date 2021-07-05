@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">145</span>
+            <span class="post-count">146</span>
         </span>
     </span>
 
@@ -114,34 +114,32 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="一般Hexo博客无法搜索主要有2种以下情况"><a href="#一般Hexo博客无法搜索主要有2种以下情况" class="headerlink" title="一般Hexo博客无法搜索主要有2种以下情况:"></a>一般<code>Hexo</code>博客无法搜索主要有<code>2</code>种以下情况:</h2><ul>
+  <h2 id="一般hexo博客无法搜索主要有2种以下情况"><a class="markdownIt-Anchor" href="#一般hexo博客无法搜索主要有2种以下情况">#</a> 一般 <code>Hexo</code>  博客无法搜索主要有 <code>2</code>  种以下情况:</h2>
+<ul>
 <li><code>搜索插件没有配置好</code></li>
 <li><code>文章中包含特殊字符</code></li>
 </ul>
-<h2 id="一、搜索插件的配置"><a href="#一、搜索插件的配置" class="headerlink" title="一、搜索插件的配置"></a>一、搜索插件的配置</h2><p>编辑 <code>站点配置文件</code>，新增以下内容到任意位置：</p>
+<h2 id="一-搜索插件的配置"><a class="markdownIt-Anchor" href="#一-搜索插件的配置">#</a> 一、搜索插件的配置</h2>
+<p>编辑  <code>站点配置文件</code> ，新增以下内容到任意位置：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">search<span class="token operator">:</span>
   path<span class="token operator">:</span> search<span class="token punctuation">.</span>xml
   field<span class="token operator">:</span> post
   format<span class="token operator">:</span> html
   limit<span class="token operator">:</span> <span class="token number">10000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>编辑 <code>主题配置文件</code>，启用本地搜索功能：</p>
+<p>编辑  <code>主题配置文件</code> ，启用本地搜索功能：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"># Local search
 local_search<span class="token operator">:</span>
   enable<span class="token operator">:</span> <span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>安装搜索插件</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"> npm install hexo<span class="token operator">-</span>generator<span class="token operator">-</span>searchdb <span class="token operator">--</span>save
 
 <span class="token operator">+</span> hexo<span class="token operator">-</span>generator<span class="token operator">-</span>searchdb@<span class="token number">1.0</span><span class="token number">.8</span>
 added <span class="token number">119</span> packages <span class="token keyword">in</span> <span class="token number">8.327</span>s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-<h2 id="二、文章中特殊字符"><a href="#二、文章中特殊字符" class="headerlink" title="二、文章中特殊字符"></a>二、文章中特殊字符</h2><h3 id="检查-search-mxl-的状态"><a href="#检查-search-mxl-的状态" class="headerlink" title="检查 search.mxl 的状态"></a>检查 search.mxl 的状态</h3><p><img src="http://static.zxinc520.com/uPic/ggSet1.png" alt="ggSet1"></p>
-<h3 id="浏览器直接访问search-xml文件看看"><a href="#浏览器直接访问search-xml文件看看" class="headerlink" title="浏览器直接访问search.xml文件看看:"></a>浏览器直接访问<code>search.xml</code>文件看看:</h3><p><img src="http://static.zxinc520.com/uPic/8ZPJND.png" alt="8ZPJND"></p>
+<h2 id="二-文章中特殊字符"><a class="markdownIt-Anchor" href="#二-文章中特殊字符">#</a> 二、文章中特殊字符</h2>
+<h3 id="检查-searchmxl-的状态"><a class="markdownIt-Anchor" href="#检查-searchmxl-的状态">#</a> 检查 search.mxl 的状态</h3>
+<p><img src="http://static.zxinc520.com/uPic/ggSet1.png" alt="ggSet1"></p>
+<h3 id="浏览器直接访问searchxml文件看看"><a class="markdownIt-Anchor" href="#浏览器直接访问searchxml文件看看">#</a> 浏览器直接访问 <code>search.xml</code>  文件看看:</h3>
+<p><img src="http://static.zxinc520.com/uPic/8ZPJND.png" alt="8ZPJND"></p>
  
       <!-- reward -->
       
@@ -381,7 +379,7 @@ added <span class="token number">119</span> packages <span class="token keyword"
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

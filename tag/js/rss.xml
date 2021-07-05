@@ -1,0 +1,825 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;js&#34; tag</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Sun, 04 Aug 2019 16:44:08 +0800</pubDate>
+        <lastBuildDate>Sun, 04 Aug 2019 16:44:08 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2019/08/04/JsBasicKnowledge01/</guid>
+            <title>前端JS基础面试技巧上</title>
+            <link>http://example.com/2019/08/04/JsBasicKnowledge01/</link>
+            <category>JS</category>
+            <pubDate>Sun, 04 Aug 2019 16:44:08 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;前端-js-基础面试技巧&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前端-js-基础面试技巧&#34;&gt;#&lt;/a&gt; 前端 JS 基础面试技巧&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;讲解 JS 基础语法相关的面试题，分析原理以及解答方法。这一章节讲解了基础知识的第一部分：变量的类型和计算。以及 JS “三座大山” —— 原型、作用域和异步中的： 原型和原型链、作用域和闭包。&lt;/p&gt;
+&lt;p&gt;知识点：&lt;/p&gt;
+&lt;p&gt;2-1 变量类型和计算&lt;/p&gt;
+&lt;p&gt;2-2 原型和原型链&lt;/p&gt;
+&lt;p&gt;2-3 函数声明和函数表达式&lt;/p&gt;
+&lt;p&gt;2-4 作用域和闭包&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/A5zp7Ltc8RyD.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关于面试&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基层工程师 - &lt;em&gt;基础知识&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;高级工程师 - &lt;em&gt;项目经验&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;架构师 - &lt;em&gt;解决方案&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;先从几道面试题入手&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#先从几道面试题入手&#34;&gt;#&lt;/a&gt; 先从几道面试题入手&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;JS 中使用 &lt;strong&gt;typeof&lt;/strong&gt; 能得到的哪些类型？
+&lt;ul&gt;
+&lt;li&gt;考点：&lt;em&gt;JS 变量类型&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;何时使用 &lt;strong&gt;===&lt;/strong&gt; 何时使用 **== **？
+&lt;ul&gt;
+&lt;li&gt;考点：&lt;em&gt;强制类型转换&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;window.onload&lt;/strong&gt; 和 &lt;strong&gt;DOMContentLoaded&lt;/strong&gt; 的区别？
+&lt;ul&gt;
+&lt;li&gt;考点：&lt;em&gt;浏览器的渲染过程&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;用 JS 创建 10 个 a 标签，点击的时候弹出来对应的序号
+&lt;ul&gt;
+&lt;li&gt;考点：&lt;em&gt;作用域&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;简述如何实现一个&lt;strong&gt;模块加载器&lt;/strong&gt;，实现类似 &lt;strong&gt;require.js&lt;/strong&gt; 的基本功能
+&lt;ul&gt;
+&lt;li&gt;考点：&lt;em&gt;JS 模块化&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;实现数组的 &lt;strong&gt;随机排序&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;考点：&lt;em&gt;JS 基础算法&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/HysLOVvbjQLN.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/YKiIQGW864fb.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;知识体系&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识体系&#34;&gt;#&lt;/a&gt; 知识体系&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题目&lt;/p&gt;
+&lt;p&gt;知识点&lt;/p&gt;
+&lt;p&gt;解答&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;2-1-变量类型和计算&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-1-变量类型和计算&#34;&gt;#&lt;/a&gt; 2-1 变量类型和计算&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2-1 变量类型和计算&lt;/p&gt;
+&lt;p&gt;题目&lt;/p&gt;
+&lt;p&gt;知识点&lt;/p&gt;
+&lt;p&gt;解答&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;题目&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目&#34;&gt;#&lt;/a&gt; 题目&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;JS 中使用 &lt;strong&gt;typeof&lt;/strong&gt; 能得到的哪些类型？&lt;/li&gt;
+&lt;li&gt;何时使用 &lt;strong&gt;===&lt;/strong&gt; 何时使用 **== **？&lt;/li&gt;
+&lt;li&gt;JS 中有哪些 &lt;strong&gt;内置函数&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;JS 变量按照 &lt;strong&gt;存储方式&lt;/strong&gt; 分为哪些类型，并描述其特点&lt;/li&gt;
+&lt;li&gt;如何理解 &lt;strong&gt;JSON&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;知识点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;变量类型
+&lt;ul&gt;
+&lt;li&gt;值类型 vs 引用类型&lt;/li&gt;
+&lt;li&gt;typeof 运算符 详解&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;变量计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;变量类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量类型&#34;&gt;#&lt;/a&gt; 变量类型&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;值类型 vs 引用类型&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;值类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#值类型&#34;&gt;#&lt;/a&gt; 值类型&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;值类型 (基本数据类型) 的值是按值访问的。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;基本类型的值是&lt;strong&gt;不可变的&lt;/strong&gt;，基本类型的比较是它们的&lt;strong&gt;值的比较&lt;/strong&gt;，基本类型的变量是存放在 &lt;strong&gt;栈内存（Stack）里的&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JavaScript&lt;/strong&gt; 数据&lt;strong&gt;类型&lt;/strong&gt; 值&lt;strong&gt;类型&lt;/strong&gt; (&lt;strong&gt;基本类型&lt;/strong&gt;)：字符串（String）、数字 (Number)、布尔 (Boolean)、对空（Null）、未定义（Undefined）、Symbol (ES6 提供的新的类型)。&lt;/p&gt;
+&lt;p&gt;6 种基本数据类型:&lt;strong&gt;string&lt;/strong&gt;、&lt;strong&gt;number&lt;/strong&gt;、&lt;strong&gt;boolean&lt;/strong&gt;、&lt;strong&gt;undefined&lt;/strong&gt;、&lt;strong&gt;null&lt;/strong&gt; 、&lt;strong&gt;Symbol&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/Ss70W0DDyFPT.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;引用类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#引用类型&#34;&gt;#&lt;/a&gt; 引用类型&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;引用类型的值是按引用访问的。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;引用类型的值是&lt;strong&gt;可变的&lt;/strong&gt;，引用类型的比较是&lt;strong&gt;引用的比较&lt;/strong&gt;，引用类型的值是保存在 &lt;strong&gt;堆内存（Heap）中的对象（Object）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;特点：无限制扩展属性&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3 种&lt;/strong&gt; 主要引用类型：对象（&lt;strong&gt;Object&lt;/strong&gt;）、数组（&lt;strong&gt;Array&lt;/strong&gt;）、函数（&lt;strong&gt;Function&lt;/strong&gt;）&lt;/p&gt;
+&lt;p&gt;细分的话，有： &lt;code&gt;Object 类型&lt;/code&gt; 、 &lt;code&gt;Array 类型&lt;/code&gt; 、 &lt;code&gt;Date 类型&lt;/code&gt; 、 &lt;code&gt;RegExp 类型&lt;/code&gt; 、 &lt;code&gt;Function 类型&lt;/code&gt;  等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/znhFw1Srcm3D.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;数据类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数据类型&#34;&gt;#&lt;/a&gt; 数据类型&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;** 值类型 (基本类型) **+ &lt;strong&gt;引用数据类型&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;7 种数据类型&lt;/u&gt;：&lt;strong&gt;number&lt;/strong&gt;、&lt;strong&gt;string&lt;/strong&gt;、&lt;strong&gt;boolean&lt;/strong&gt;、&lt;strong&gt;undefined&lt;/strong&gt;、&lt;strong&gt;null&lt;/strong&gt;、&lt;strong&gt;Symbol&lt;/strong&gt; 、&lt;strong&gt;Object (Object、Array、Function)&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;typeof-运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#typeof-运算符&#34;&gt;#&lt;/a&gt; typeof 运算符&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;7&lt;/strong&gt; 种类型：&lt;strong&gt;undefined&lt;/strong&gt;、&lt;strong&gt;string&lt;/strong&gt;、&lt;strong&gt;number&lt;/strong&gt;、&lt;strong&gt;boolean&lt;/strong&gt;、&lt;strong&gt;object&lt;/strong&gt;、&lt;strong&gt;function&lt;/strong&gt; 、&lt;strong&gt;symbol&lt;/strong&gt;（ES6 提供的新的类型）&lt;/p&gt;
+&lt;p&gt;注意：typeof &lt;strong&gt;null&lt;/strong&gt; // object&lt;/p&gt;
+&lt;p&gt;typeof 运算符 &lt;strong&gt;只能&lt;/strong&gt; 区分 &lt;strong&gt;值类型&lt;/strong&gt; 的 类型，对于引用类型的 &lt;strong&gt;对象&lt;/strong&gt;、&lt;strong&gt;数组&lt;/strong&gt; &lt;strong&gt;区分不出来&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/k3tYgoHSpYgy.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;变量计算&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量计算&#34;&gt;#&lt;/a&gt; 变量计算&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这个主要针对值类型 - 强制类型转换&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;4 种强制类型转换：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;字符串拼接&lt;/li&gt;
+&lt;li&gt;== 运算符&lt;/li&gt;
+&lt;li&gt;if 语句&lt;/li&gt;
+&lt;li&gt;逻辑运算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;字符串拼接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串拼接&#34;&gt;#&lt;/a&gt; 字符串拼接&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/WBxaMX9CiLmz.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运算符&#34;&gt;#&lt;/a&gt; == 运算符&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/PTp1mF5ulTVw.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;if-语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#if-语句&#34;&gt;#&lt;/a&gt; if 语句&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;if 语句&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;false 情况&lt;/u&gt;：&lt;strong&gt;0&lt;/strong&gt;、&lt;strong&gt;NaN&lt;/strong&gt;、&lt;strong&gt;’&amp;lt;空字符串&amp;gt;’&lt;/strong&gt;、&lt;strong&gt;null&lt;/strong&gt;、&lt;strong&gt;undefine&lt;/strong&gt; 、&lt;strong&gt;false&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/C387EiaoakPe.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;逻辑运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#逻辑运算符&#34;&gt;#&lt;/a&gt; 逻辑运算符&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/4sGRvRvO2x65.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;何时使用-和&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#何时使用-和&#34;&gt;#&lt;/a&gt; 何时使用 === 和 ==&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;何时使用 === 和 ==？&lt;/p&gt;
+&lt;p&gt;解答：参考 jQuery 源码中推荐的写法，除了&lt;strong&gt;判断对象属性是否为空&lt;/strong&gt; 和 ** 看是否函数的参数为空 ** 的情况 ，其余的都用 &lt;strong&gt;===&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;==&lt;/code&gt;  : 只进行值的比较&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;===&lt;/code&gt;  : 不仅进行值得比较，还要进行数据类型的比较&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/dfHpCgG4HQNR.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;js-中的内置函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#js-中的内置函数&#34;&gt;#&lt;/a&gt; JS 中的内置函数&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;JS 中的内置函数的作用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/BDtLCAEhGEUX.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;js-按存储方式区分变量类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#js-按存储方式区分变量类型&#34;&gt;#&lt;/a&gt; JS 按存储方式区分变量类型&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000006752076&#34;&gt;参考 1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/leiting/p/8081413.html&#34;&gt;参考 2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;基本类型的值是不可变的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/0cbg9UtuHTED.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;如何理解-json&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何理解-json&#34;&gt;#&lt;/a&gt; 如何理解 JSON&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;JS 内置对象，Math 也是内置对象&lt;/p&gt;
+&lt;p&gt;注意：JSON 既是一个 JS &lt;strong&gt;内置对象&lt;/strong&gt;，也是一种 &lt;strong&gt;数据格式&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/5bkwAGYcMzH8.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-2-原型和原型链&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-2-原型和原型链&#34;&gt;#&lt;/a&gt; 2-2 原型和原型链&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2-2 原型和原型链&lt;/p&gt;
+&lt;p&gt;题目&lt;/p&gt;
+&lt;p&gt;知识点&lt;/p&gt;
+&lt;p&gt;解答&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;题目-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目-2&#34;&gt;#&lt;/a&gt; 题目&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;如何准确判断一个变量是 &lt;strong&gt;数组类型&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;写一个原型链继承的例子&lt;/li&gt;
+&lt;li&gt;描述 new 一个对象的过程&lt;/li&gt;
+&lt;li&gt;zepto (或其他框架) 源码中如何使用原型链&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;知识点-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点-2&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;构造函数&lt;/li&gt;
+&lt;li&gt;构造函数 - 扩展&lt;/li&gt;
+&lt;li&gt;原型规则和示例&lt;/li&gt;
+&lt;li&gt;原型链&lt;/li&gt;
+&lt;li&gt;instanceof&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;构造函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#构造函数&#34;&gt;#&lt;/a&gt; 构造函数&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;函数名 习惯 &lt;strong&gt;第一个字母大写&lt;/strong&gt;（ 高级程序员规范）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/aYlOy0sAIxjg.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;构造函数扩展&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#构造函数扩展&#34;&gt;#&lt;/a&gt; 构造函数扩展&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;构造函数扩展&lt;/p&gt;
+&lt;p&gt;函数扩展 ---- &lt;strong&gt;语法糖&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/KAiPkbgM6g8k.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;5-条原型规则和示例&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5-条原型规则和示例&#34;&gt;#&lt;/a&gt; 5 条原型规则和示例&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;5 条原型规则&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原型规则&lt;/strong&gt; 是学习 &lt;strong&gt;原型链&lt;/strong&gt; 的基础&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;5 条原型规则 ：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;所有的 &lt;strong&gt;引用类型&lt;/strong&gt; (对象，数组，函数)，都具有对象特性，即可 &lt;strong&gt;自由扩展&lt;/strong&gt; 属性（除了 null 以外）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;所有的 &lt;strong&gt;引用类型&lt;/strong&gt; (对象，数组，函数)，都有一个 &lt;code&gt;__proto__&lt;/code&gt;  （ &lt;em&gt;隐式原型&lt;/em&gt; ）属性，属性值都是一个普通对象。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/i237crTwXpRw.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;所有的函数都有一个 &lt;code&gt;prototype&lt;/code&gt;  （ &lt;em&gt;显示原型&lt;/em&gt; ）属性，属性值是一个普通对象。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;所有的引用类型 (对象，数组，函数)， &lt;code&gt;__proto__&lt;/code&gt; 属性值指向它的构造函数的 &lt;code&gt;prototype&lt;/code&gt;  属性值。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/gbOkNmykomux.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当试图得到一个引用类型的某个属性时，如果这个对象本身没有这个属性，那么会去它的 &lt;code&gt;__proto__&lt;/code&gt; (即它的构造函数的 &lt;code&gt;prototype&lt;/code&gt; ) 中去找。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt; ：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/CKA2EOYdkSQ5.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;循环自身的属性：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190715/kAsCaFM5fgCq.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;原型链&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原型链&#34;&gt;#&lt;/a&gt; 原型链&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这种搜索的轨迹，形似一条长链，又因 prototype 在这个游戏规则中充当链接的作用，于是我们把这种实例与原型的链条称作 &lt;strong&gt;原型链&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/58f94c9bb123db411953691b&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/zjK7G9Pwib6K.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/hyX26borV0mF.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;instanceof&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#instanceof&#34;&gt;#&lt;/a&gt; instanceof&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用于 判断 &lt;strong&gt;引用类型&lt;/strong&gt; 属于哪个 构造函数的方法&lt;/p&gt;
+&lt;p&gt;**instanceof 运算符 ** 用于测试构造函数的 prototype 属性是否出现在对象的原型链中的任何位置&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof&#34;&gt;参看 MDN&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/mHVNeyIgfsSE.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Car&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;make&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; model&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; year&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;make &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; make&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;model &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; model&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;year &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; year&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; auto &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Car&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Honda&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Accord&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1998&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;auto &lt;span class=&#34;token keyword&#34;&gt;instanceof&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Car&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//  true&lt;/span&gt;
+
+console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;auto &lt;span class=&#34;token keyword&#34;&gt;instanceof&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Object&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// true&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;解答&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解答&#34;&gt;#&lt;/a&gt; 解答&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如何准确判断一个变量是 &lt;strong&gt;数组类型&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;arr instanceof Arrar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;写一个原型链继承的例子、&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Elem&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;elem &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getElementById&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;id&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token class-name&#34;&gt;Elem&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;prototype&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function-variable function&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;val&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; elem &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;elem&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;val&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    elem&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;innerHTML &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//链式操作&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; elem&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;innerText&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;Elem&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;prototype&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function-variable function&#34;&gt;on&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;type&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; elem &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;elem&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  elem&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;addEventListener&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;type&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; fn&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; div1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Elem&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;div1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+div1&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&amp;lt;p&gt;hello world&amp;lt;/p&gt;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;click&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token function&#34;&gt;alert&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;clicked&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;描述 new 一个对象的过程&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/fEURg05c9KBT.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;zepto (或其他框架) 源码中如何使用原型链&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/6vDDJLlWz5AQ.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-3-函数声明和函数表达式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-3-函数声明和函数表达式&#34;&gt;#&lt;/a&gt; 2-3 函数声明和函数表达式&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;函数声明和函数表达式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;函数声明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数声明&#34;&gt;#&lt;/a&gt; 函数声明&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//执行&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token comment&#34;&gt;//声明&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;函数表达式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数表达式&#34;&gt;#&lt;/a&gt; 函数表达式&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;把 var 定义的变量提前：相当于：先定义 &lt;strong&gt;var fn&lt;/strong&gt; — &amp;gt; 然后执行 &lt;strong&gt;fn()&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// TypeError: fn is not a function&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;token function-variable function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;（）&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token comment&#34;&gt;// 表达式&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;相关的例子（函数执行的顺序）：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// undefined&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; a &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;zhouchen&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  age &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; age&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; age&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//output：zhouchen 20&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;zhouchen&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arguments&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 参数的集合&lt;/span&gt;
+  age &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; age&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; age&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;token function&#34;&gt;bar&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;bar&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;num&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;/*
+    &amp;#123; &#39;0&#39;: &#39;zhouchen&#39; &amp;#125;
+    zhouchen 20
+    100
+*/&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;2-4-作用域和闭包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-4-作用域和闭包&#34;&gt;#&lt;/a&gt; 2-4 作用域和闭包&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作用域和闭包&lt;/p&gt;
+&lt;p&gt;题目&lt;/p&gt;
+&lt;p&gt;知识点&lt;/p&gt;
+&lt;p&gt;解答&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;题目-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目-3&#34;&gt;#&lt;/a&gt; 题目&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;说一下对变量提升的理解&lt;/li&gt;
+&lt;li&gt;说明 this 几种 不同的使用场景&lt;/li&gt;
+&lt;li&gt;创建 10 个 a 标签，点击的时候弹出来对应的序号&lt;/li&gt;
+&lt;li&gt;如何理解作用域&lt;/li&gt;
+&lt;li&gt;实际开发中闭包的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;知识点-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点-3&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;执行上下文&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;this&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;作用域&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;作用域链&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;闭包&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;执行上下文&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#执行上下文&#34;&gt;#&lt;/a&gt; 执行上下文&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;执行上下文&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/slpXIRmFPFUC.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/yGYEzQ0mBi3H.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;this&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#this&#34;&gt;#&lt;/a&gt; this&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;this 要在 &lt;strong&gt;执行时&lt;/strong&gt; 才能确定值，&lt;strong&gt;定义时&lt;/strong&gt; 无法确认&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/y7uMvda2zozx.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/X4ErfYyomFle.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;块级作用域&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#块级作用域&#34;&gt;#&lt;/a&gt; 块级作用域&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;任何一对花括号中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JS&lt;/strong&gt; 并 &lt;strong&gt;不支持 块级作用域&lt;/strong&gt;，它&lt;strong&gt;只支持 函数作用域&lt;/strong&gt; ，&lt;u&gt;而且在一个函数中的&lt;strong&gt;任何位置定义的变量&lt;/strong&gt; 在该函数中的 &lt;strong&gt;任何地方都是可见的&lt;/strong&gt; 。&lt;/u&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; name &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;zhouchen&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// zhouchen&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;链式作用域&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#链式作用域&#34;&gt;#&lt;/a&gt; 链式作用域&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;如何从外部读取局部变量？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;出于种种原因，我们有时候需要得到函数内的局部变量。但是，前面已经说过了，正常情况下，这是办不到的，只有通过变通方法才能实现。&lt;/p&gt;
+&lt;p&gt;那就是在函数的内部，再定义一个函数。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;f1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;999&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;f2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;alert&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 999&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在上面的代码中，函数 f2 就被包括在函数 f1 内部，这时 f1 内部的所有局部变量，对 f2 都是可见的。但是反过来就不行，f2 内部的局部变量，对 f1 就是不可见的。这就是 Javascript 语言特有的 &amp;quot;&lt;strong&gt;链式作用域&amp;quot; 结构&lt;/strong&gt;（chain scope），子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。&lt;/p&gt;
+&lt;h4 id=&#34;闭包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#闭包&#34;&gt;#&lt;/a&gt; 闭包&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上一节代码中的 f2 函数，就是闭包。&lt;/p&gt;
+&lt;p&gt;简单来说：闭包就是 &lt;strong&gt;能够读取其他函数内部变量的函数&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;由于在 Javascript 语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成 &lt;strong&gt;定义在一个函数内部的函数&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;所以，在本质上，&lt;u&gt;闭包就是将函数内部和函数外部连接起来的一座桥梁&lt;/u&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html&#34;&gt;参考阮一峰的网络日志 &lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;闭包的用途&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#闭包的用途&#34;&gt;#&lt;/a&gt; 闭包的用途&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;实际开发中闭包的应用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实际开发中闭包的应用&#34;&gt;#&lt;/a&gt; 实际开发中闭包的应用&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;实际开发中闭包的应用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/oAEdrQVxx55a.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;解题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解题&#34;&gt;#&lt;/a&gt; 解题&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;说一下对变量提升的理解&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变量定义&lt;/li&gt;
+&lt;li&gt;函数声明 （ 注意和 函数表达式 的区别）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;说明 this 几种 不同的使用场景&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_40387601/article/details/80313884&#34;&gt;参考 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/sinat_32067081/article/details/53047149&#34;&gt;参考 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建 10 个 a 标签，点击的时候弹出来对应的序号&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/jpCryHpWtFmQ.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/JOON77hWUAPT.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如何理解作用域&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自由变量&lt;/li&gt;
+&lt;li&gt;作用域连，即自由变量的查找&lt;/li&gt;
+&lt;li&gt;闭包的两个场景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;实际开发中闭包的应用&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190716/DOiHXt0yUzLP.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2019/08/04/JsBasicKnowledge02/</guid>
+            <title>前端JS基础面试技巧下</title>
+            <link>http://example.com/2019/08/04/JsBasicKnowledge02/</link>
+            <category>JS</category>
+            <pubDate>Sun, 04 Aug 2019 16:44:08 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;前端-js-基础面试技巧&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前端-js-基础面试技巧&#34;&gt;#&lt;/a&gt; 前端 JS 基础面试技巧&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前端 JS 基础面试技巧 – &lt;strong&gt;JS 基础知识下&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;JS 三座大山：&lt;strong&gt;原型原型链&lt;/strong&gt; 、&lt;strong&gt;作用域闭包&lt;/strong&gt; 、&lt;strong&gt;异步和单线程&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;知识点：&lt;/p&gt;
+&lt;p&gt;3-1 异步和单线程&lt;/p&gt;
+&lt;p&gt;3-2 日期和 math&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;日期&lt;/li&gt;
+&lt;li&gt;Math&lt;/li&gt;
+&lt;li&gt;数组 API&lt;/li&gt;
+&lt;li&gt;对象 API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;3-1-异步和单线程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-1-异步和单线程&#34;&gt;#&lt;/a&gt; 3-1 异步和单线程&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;异步和单线程&lt;/p&gt;
+&lt;p&gt;题目&lt;/p&gt;
+&lt;p&gt;知识点&lt;/p&gt;
+&lt;p&gt;解答&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;题目&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目&#34;&gt;#&lt;/a&gt; 题目&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;同步和异步的区别是什么？分别举一个同步和异步的例子&lt;/li&gt;
+&lt;li&gt;一个关于 setTimeout 的笔试题&lt;/li&gt;
+&lt;li&gt;前端使用异步的场景有哪些&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;知识点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;什么是异步（对比同步）&lt;/li&gt;
+&lt;li&gt;前端使用异步的场景&lt;/li&gt;
+&lt;li&gt;异步个单线程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;什么是异步&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是异步&#34;&gt;#&lt;/a&gt; 什么是异步&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;异步（Asynchronous）&lt;/p&gt;
+&lt;p&gt;一般而言，操作分为发出调用和得到结果两步。发出调用后一直等待，直到拿到结果（这段时间不能做任何事）为 &lt;strong&gt;同步&lt;/strong&gt; ；发出调用后不等待，继续执行下一个任务，就是 &lt;strong&gt;异步任务&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/667936441cb5&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;setTimeout&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;300&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;/*
+    100
+    300
+    200
+*/&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;何时需要异步&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#何时需要异步&#34;&gt;#&lt;/a&gt; 何时需要异步？&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在可能发生等待的情况&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等待过程中不能像 alert 一样阻塞程序运行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因此，所有的 “等待情况” 都需要异步&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;前端使用异步的场景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前端使用异步的场景&#34;&gt;#&lt;/a&gt; 前端使用异步的场景&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;定时任务：&lt;strong&gt;setTimeout&lt;/strong&gt;，&lt;strong&gt;setInterval&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网络请求：&lt;strong&gt;ajax 请求&lt;/strong&gt;，&lt;strong&gt;动态&lt;/strong&gt; &amp;lt;&lt;strong&gt;img&lt;/strong&gt;&amp;gt; &lt;strong&gt;加载&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;事件绑定&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;单线程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单线程&#34;&gt;#&lt;/a&gt; 单线程&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Javascript 是单线程的&lt;/strong&gt; &lt;a href=&#34;https://www.cnblogs.com/Mainz/p/3552717.html&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;JS 的单线程是指一个浏览器进程中只有一个 JS 的执行线程，同一时刻内只会有一段代码在执行&lt;/p&gt;
+&lt;p&gt;在某个特定的时刻只有特定的代码能够被执行，并 &lt;strong&gt;阻塞&lt;/strong&gt; 其它的代码。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;setTimeout&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;300&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;上面代码执行过程：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190717/kEQlmncCXtel.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;重点总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重点总结&#34;&gt;#&lt;/a&gt; 重点总结&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;异步和同步的区别&lt;/li&gt;
+&lt;li&gt;异步和单线程的关系&lt;/li&gt;
+&lt;li&gt;异步在前端的引用场景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解答&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解答&#34;&gt;#&lt;/a&gt; 解答&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;同步和异步的区别是什么？分别举一个同步和异步的例子&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;同步&lt;/em&gt; 是 &lt;strong&gt;阻塞模式&lt;/strong&gt; ，&lt;em&gt;异步&lt;/em&gt; 是 &lt;strong&gt;非阻塞模式&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;同步&lt;/em&gt; 就是指一个进程在执行某个请求的时候，若该请求需要一段时间才能返回信息，那么这个进程将会 &lt;strong&gt;一直等待下去&lt;/strong&gt; ，知道收到返回信息才继续执行下去；&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;异步&lt;/em&gt; 是指进程 &lt;strong&gt;不需要一直等下去&lt;/strong&gt; ，而是 &lt;strong&gt;继续执行下面的操作&lt;/strong&gt;，不管其他进程的状态。当有消息返回式系统会通知进程进行处理，这样可以提高执行的效率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;alert 是 同步， setTimeout 是 异步&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一个关于 setTimeout 的笔试题&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;setTimeout&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token function&#34;&gt;setTimeout&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;/* 
+	1
+    3
+    5
+    2
+    4
+*/&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;前端使用异步的场景有哪些
+&lt;ul&gt;
+&lt;li&gt;定时任务：&lt;strong&gt;setTimeout&lt;/strong&gt;，&lt;strong&gt;setInterval&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;网络请求：&lt;strong&gt;ajax 请求&lt;/strong&gt;，&lt;strong&gt;动态&lt;/strong&gt; &amp;lt;&lt;strong&gt;img&lt;/strong&gt;&amp;gt; &lt;strong&gt;加载&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;事件绑定&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-2-日期和-math&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-2-日期和-math&#34;&gt;#&lt;/a&gt; 3-2 日期和 math&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题目&lt;/p&gt;
+&lt;p&gt;知识点&lt;/p&gt;
+&lt;p&gt;解答&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;题目-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目-2&#34;&gt;#&lt;/a&gt; 题目&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;获取 2017 -06 -10 格式的日期&lt;/li&gt;
+&lt;li&gt;获取 随机数，要求是长度一致 的字符串格式&lt;/li&gt;
+&lt;li&gt;写一个 能遍历对象 和数组 的通用 forEach 函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;知识点-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点-2&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;日期&lt;/li&gt;
+&lt;li&gt;Math&lt;/li&gt;
+&lt;li&gt;数组 API&lt;/li&gt;
+&lt;li&gt;对象 API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;日期&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#日期&#34;&gt;#&lt;/a&gt; 日期&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;日期对象用于处理日期和时间。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.w3school.com.cn/jsref/jsref_obj_date.asp&#34;&gt;JavaScript Date 对象 API&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190717/3ijIzI0Frks1.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;math&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#math&#34;&gt;#&lt;/a&gt; Math&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Math&lt;/strong&gt; 是一个内置对象， 它具有数学常数和函数的属性和方法。不是一个函数对象。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math&#34;&gt;Math Api&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;描述：与其它全局对象不同的是， &lt;code&gt;Math&lt;/code&gt;  不是一个构造器.  &lt;code&gt;Math&lt;/code&gt;  的所有属性和方法都是静态的。你用到的常数 pi 可以用  &lt;code&gt;Math.PI&lt;/code&gt;  表示，用  &lt;code&gt;x&lt;/code&gt;  作参数 Math.sin (x) 调用 sin 函数. JavaScript 中的常数，是以全精度的实数定义的.&lt;/p&gt;
+&lt;p&gt;Math.random () 在前端的作用：随时改变，清除缓存。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;数组-api&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组-api&#34;&gt;#&lt;/a&gt; 数组 API&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://louiszhai.github.io/2017/04/28/array/#Array%E6%9E%84%E9%80%A0%E5%99%A8&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;详情可以参考我的博客：&lt;a href=&#34;http://zxinc520.com/lcj/%225d119841fd02ab26e068eb0a%22&#34;&gt;JavaScript 数组那些事&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;面试官最常问的几个&lt;/strong&gt; ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;forEach 遍历所有元素&lt;/li&gt;
+&lt;li&gt;every 判断所有元素是否都符合条件&lt;/li&gt;
+&lt;li&gt;some 判断是否有至少一个元素符合条件&lt;/li&gt;
+&lt;li&gt;sort 排序&lt;/li&gt;
+&lt;li&gt;map 对元素重新组装，生成新数组&lt;/li&gt;
+&lt;li&gt;filter 过滤符合条件的元素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;对象-api&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对象-api&#34;&gt;#&lt;/a&gt; 对象 API&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Object.prototype API&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Object.prototype&lt;/code&gt;  表示对象的原型对象&lt;br&gt;
+ &lt;code&gt;Object.prototype&lt;/code&gt;  属性的属性特征&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/2f43db2b656c&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190717/mOpzx9LK1xmu.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;解答-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解答-2&#34;&gt;#&lt;/a&gt; 解答&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;获取 2019-07-17 格式的日期&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;formatDate&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;dt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;dt&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    dt &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Date&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; dt &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Date&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; year &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; dt&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getFullYear&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; month &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; dt&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getMonth&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; data &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; dt&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getDate&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;month &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    month &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;0&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; month&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    data &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;0&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; year &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;-&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; month &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;-&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; data&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; dt &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Date&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;formatDate&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;dt&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//  2019-07-17&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;获取 随机数，要求是长度一致 的字符串格式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; random &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; Math&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;random&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+random &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; random &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;0000000000&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+random &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; random&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;slice&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;random&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;写一个 能遍历对象 和数组 的通用 forEach 函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;// 写一个 能遍历对象 和数组 的通用 forEach 函数&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;forEach&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;obj&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;obj &lt;span class=&#34;token keyword&#34;&gt;instanceof&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    obj&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;forEach&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;item&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; index&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;item&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; index&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; key &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; obj&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token function&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;key&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; obj&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;key&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;// 使用  forEach 函数&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; obj &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; x&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; y&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;200&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token function&#34;&gt;forEach&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;index&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; item&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;index &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;---&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; item&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token function&#34;&gt;forEach&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;obj&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;key&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; value&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;key&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; value&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;/*
+	2---1
+    3---2
+    x 100
+    y 200
+*/&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

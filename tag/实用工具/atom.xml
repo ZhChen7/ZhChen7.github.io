@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>sunflower • Posts by &#34;实用工具&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2020-09-22T02:25:15.000Z</updated>
+    <category term="blog" />
+    <category term="个人博客" />
+    <category term="rem" />
+    <category term="less" />
+    <category term="art-template" />
+    <category term="算法面试" />
+    <category term="算法" />
+    <category term="大 O？" />
+    <category term="复杂度分析" />
+    <category term="大二" />
+    <category term="数据库实训" />
+    <category term="IDE" />
+    <category term="Git" />
+    <category term="模块化" />
+    <category term="构建工具" />
+    <category term="上线和回滚" />
+    <category term="ES6 模块化语法" />
+    <category term="babel" />
+    <category term="webpack" />
+    <category term="rollup" />
+    <category term="ES6" />
+    <category term="hybrid" />
+    <category term="虚拟 DOM" />
+    <category term="知识点概述" />
+    <category term="JS" />
+    <category term="实用工具" />
+    <category term="面试全面总结" />
+    <category term="JS 三座大山" />
+    <category term="学习实训" />
+    <category term="性能优化" />
+    <category term="加载过程" />
+    <category term="promise" />
+    <category term="异步解决方案" />
+    <category term="回调地狱" />
+    <category term="React" />
+    <category term="React源码" />
+    <category term="Vue3" />
+    <category term="vue" />
+    <category term="跑马灯" />
+    <category term="父子组件间通信" />
+    <category term="路由" />
+    <category term="监听事件（keyup ，watch ，computed ）" />
+    <category term="nrm" />
+    <category term="Mint-UI" />
+    <category term="MUI" />
+    <category term="MVVM" />
+    <category term="响应式、模板解析、渲染" />
+    <category term="微信小程序" />
+    <category term="单线程" />
+    <category term="event loop" />
+    <category term="异步的 Deferred" />
+    <category term="Promise" />
+    <category term="html" />
+    <category term="hexo" />
+    <category term="redux" />
+    <category term="UTC时间问题" />
+    <category term="正则表达式" />
+    <category term="虚拟DOM" />
+    <category term="博文" />
+    <category term="React-Router" />
+    <category term="React-Hooks" />
+    <category term="DOM" />
+    <category term="BOM" />
+    <category term="事件绑定" />
+    <category term="ajax 请求" />
+    <category term="储存" />
+    <category term="进程调度" />
+    <category term="过滤器" />
+    <category term="按键修饰符" />
+    <category term="指令" />
+    <category term="生命周期" />
+    <category term="过渡效果" />
+    <category term="组件" />
+    <category term="webpack 后续问题" />
+    <category term="数组" />
+    <category term="API" />
+    <category term="跨域" />
+    <category term="动画" />
+    <category term="事件" />
+    <category term="React基础面试题-50" />
+    <category term="数组相关操作" />
+    <category term="手撕代码" />
+    <category term="牛人面试题" />
+    <entry>
+        <id>http://example.com/2020/09/22/Mactoolinto/</id>
+        <title>mac 实用工具</title>
+        <link rel="alternate" href="http://example.com/2020/09/22/Mactoolinto/"/>
+        <content type="html">&lt;h2 id=&#34;macos-图床客户端-upic&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#macos-图床客户端-upic&#34;&gt;#&lt;/a&gt; macOS 图床客户端 uPic&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;uPic 介绍&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;uPic 采用 Swift 原生开发，通过调用各个服务商的 API 接口实现。体积小、速度快。支持多种图床：&lt;a href=&#34;https://sm.ms/&#34;&gt;smms&lt;/a&gt;, &lt;a href=&#34;https://www.upyun.com/products/file-storage&#34;&gt;又拍云 USS&lt;/a&gt;, &lt;a href=&#34;https://www.qiniu.com/products/kodo&#34;&gt;七牛云 KODO&lt;/a&gt;, &lt;a href=&#34;https://www.aliyun.com/product/oss/&#34;&gt;阿里云 OSS&lt;/a&gt;, &lt;a href=&#34;https://cloud.tencent.com/product/cos&#34;&gt;腾讯云 COS&lt;/a&gt;, &lt;a href=&#34;https://cloud.baidu.com/product/bos.html&#34;&gt;百度云 BOS&lt;/a&gt;, &lt;a href=&#34;https://weibo.com/&#34;&gt;微博&lt;/a&gt;，&lt;a href=&#34;https://github.com/settings/tokens&#34;&gt;Github&lt;/a&gt;, &lt;a href=&#34;https://gitee.com/profile/personal_access_tokens&#34;&gt;码云 Gitee&lt;/a&gt;, &lt;a href=&#34;https://aws.amazon.com/cn/s3/&#34;&gt;Amazon S3&lt;/a&gt;, &lt;a href=&#34;https://imgur.com/&#34;&gt;Imgur&lt;/a&gt;, &lt;a href=&#34;https://blog.svend.cc/upic/tutorials/custom&#34;&gt;自定义上传服务&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;支持多种常用的输出格式，并且提供上传前图片压缩功能 (支持 JPG、PNG)。等等一些小功能…&lt;/p&gt;
+&lt;p&gt;用法介绍：&lt;a href=&#34;https://blog.svend.cc/upic/&#34;&gt;https://blog.svend.cc/upic/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载方式：从 &lt;a href=&#34;https://github.com/gee1k/uPic/releases&#34;&gt;Github release&lt;/a&gt; 下载。&lt;br&gt;
+&lt;strong&gt;如果访问 Github 下载困难的，可以从&lt;a href=&#34;https://gitee.com/gee1k/uPic/releases&#34;&gt; Gitee release&lt;/a&gt; 下载。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/uPic/0usjjR.jpg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;parallels-desktop-虚拟机破解版&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#parallels-desktop-虚拟机破解版&#34;&gt;#&lt;/a&gt; parallels desktop 虚拟机破解版&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;百度网盘：链接: &lt;a href=&#34;https://pan.baidu.com/s/1fq_q5VZCto92mhzT8qUtrQ&#34;&gt;https://pan.baidu.com/s/1fq_q5VZCto92mhzT8qUtrQ&lt;/a&gt;  密码: dkia&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Parallels Desktop 是一款运行在 Mac 电脑上的极为优秀的&lt;a href=&#34;https://baike.baidu.com/item/%E8%99%9A%E6%8B%9F%E6%9C%BA&#34;&gt;虚拟机&lt;/a&gt;软件，用户可以在 Mac OS X 下非常方便运行 Windows、Linux 等操作系统及应用，用户不必繁琐重复地重启电脑即可在 Win 与 Mac 之间切换甚至同时使用它们。&lt;/p&gt;
+&lt;h3 id=&#34;系统要求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#系统要求&#34;&gt;#&lt;/a&gt; 系统要求&lt;/h3&gt;
+&lt;h3 id=&#34;硬件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#硬件&#34;&gt;#&lt;/a&gt; 硬件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;配置 Intel Core 2 Duo / Core i3 / Core i5 / Core i7 / Core i9 / Intel Core M / Xeon 处理器的 Mac 电脑&lt;/li&gt;
+&lt;li&gt;最低 4GB 内存（16GB 更佳）&lt;/li&gt;
+&lt;li&gt;引导卷（Macintosh HD）需要配置 500MB 的磁盘空间以用于安装 Parallels Desktop 应用程序&lt;/li&gt;
+&lt;li&gt;虚拟机的额外磁盘空间（由安装的操作系统以及应用程序决定，例如，Windows 10 至少需要 16GB）&lt;/li&gt;
+&lt;li&gt;推荐采用 SSD 驱动器以提升系统性能&lt;/li&gt;
+&lt;li&gt;需要联网以用于产品激活和部分功能的使用 [1]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;软件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#软件&#34;&gt;#&lt;/a&gt; 软件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS Catalina 10.15&lt;/li&gt;
+&lt;li&gt;macOS Mojave 10.14&lt;/li&gt;
+&lt;li&gt;macOS High Sierra 10.13&lt;/li&gt;
+&lt;li&gt;macOS Sierra 10.12&lt;/li&gt;
+&lt;li&gt;DirectX 11 最低满足 macOS Mojave 10.14，若满足 macOS 10.15 Catalina 则更佳 [1]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/uPic/U16E2j.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;switchhosts&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#switchhosts&#34;&gt;#&lt;/a&gt; SwitchHosts&lt;/h2&gt;
+&lt;p&gt;SwitchHosts 是一个管理、快速切换 Hosts 小工具，开源软件，一键切换 Hosts 配置，非常实用，高效。&lt;br&gt;
+开发 Web 过程成，部署有多套环境，网址域名都相同，部署在不同的服务器上，有开发环境、测试环境、预发布环境、生产环境。经常要切换 Hosts 来访问，测试以及验证 bug，如果纯手工修改这会花掉不少时间，而且这个过程毫无乐趣可言。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/uPic/39bQ8O.png&#34; alt=&#34;39bQ8O&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/uPic/HCzyQU.png&#34; alt=&#34;HCzyQU&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mindmaster&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mindmaster&#34;&gt;#&lt;/a&gt; Mindmaster&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;破解版：链接: &lt;a href=&#34;https://pan.baidu.com/s/1JRZrSSWJEUg0Smn2FpLKcA&#34;&gt;https://pan.baidu.com/s/1JRZrSSWJEUg0Smn2FpLKcA&lt;/a&gt;  密码: t239&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;MindMaster 思维导图 [1] 是&lt;a href=&#34;https://baike.baidu.com/item/%E6%B7%B1%E5%9C%B3%E5%B8%82%E4%BA%BF%E5%9B%BE%E8%BD%AF%E4%BB%B6%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&#34;&gt;深圳市亿图软件有限公司&lt;/a&gt;推出的一款跨平台思维导图软件。 [2] 软件提供了丰富的智能布局、多样性的展示模式、结合精美的设计元素和预置的主题样式，努力帮用户打造一款真正的效率工具。 [2]&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/uPic/gQGOkP.png&#34; alt=&#34;gQGOkP&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;windows10-ios&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#windows10-ios&#34;&gt;#&lt;/a&gt; Windows10 IOS&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;百度网盘下载：链接: &lt;a href=&#34;https://pan.baidu.com/s/1pGba4uRJAAW0Bnn6foi_8A&#34;&gt;https://pan.baidu.com/s/1pGba4uRJAAW0Bnn6foi_8A&lt;/a&gt;  密码: r79s&lt;/p&gt;
+&lt;p&gt;配合 parallels desktop 虚拟机使用&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="实用工具" />
+        <updated>2020-09-22T02:25:15.000Z</updated>
+    </entry>
+</feed>

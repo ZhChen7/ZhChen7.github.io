@@ -114,7 +114,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="前端-JS-基础面试技巧"><a href="#前端-JS-基础面试技巧" class="headerlink" title="前端 JS 基础面试技巧"></a>前端 JS 基础面试技巧</h1><blockquote>
+  <h1 id="前端-js-基础面试技巧"><a class="markdownIt-Anchor" href="#前端-js-基础面试技巧">#</a> 前端 JS 基础面试技巧</h1>
+<blockquote>
 <p>前端 JS 基础面试技巧 – <strong>JS 基础知识下</strong></p>
 <p>JS 三座大山：<strong>原型原型链</strong> 、<strong>作用域闭包</strong> 、<strong>异步和单线程</strong> 。</p>
 <p>知识点：</p>
@@ -127,23 +128,27 @@
 <li>对象 API</li>
 </ul>
 </blockquote>
-<h2 id="3-1-异步和单线程"><a href="#3-1-异步和单线程" class="headerlink" title="3-1 异步和单线程"></a>3-1 异步和单线程</h2><blockquote>
+<h2 id="3-1-异步和单线程"><a class="markdownIt-Anchor" href="#3-1-异步和单线程">#</a> 3-1 异步和单线程</h2>
+<blockquote>
 <p>异步和单线程</p>
 <p>题目</p>
 <p>知识点</p>
 <p>解答</p>
 </blockquote>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ul>
+<h3 id="题目"><a class="markdownIt-Anchor" href="#题目">#</a> 题目</h3>
+<ul>
 <li>同步和异步的区别是什么？分别举一个同步和异步的例子</li>
 <li>一个关于 setTimeout 的笔试题</li>
 <li>前端使用异步的场景有哪些</li>
 </ul>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h3 id="知识点"><a class="markdownIt-Anchor" href="#知识点">#</a> 知识点</h3>
+<ul>
 <li>什么是异步（对比同步）</li>
 <li>前端使用异步的场景</li>
 <li>异步个单线程</li>
 </ul>
-<h3 id="什么是异步"><a href="#什么是异步" class="headerlink" title="什么是异步"></a>什么是异步</h3><blockquote>
+<h3 id="什么是异步"><a class="markdownIt-Anchor" href="#什么是异步">#</a> 什么是异步</h3>
+<blockquote>
 <p>异步（Asynchronous）</p>
 <p>一般而言，操作分为发出调用和得到结果两步。发出调用后一直等待，直到拿到结果（这段时间不能做任何事）为 <strong>同步</strong> ；发出调用后不等待，继续执行下一个任务，就是 <strong>异步任务</strong> 。</p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/667936441cb5">参考</a></p>
@@ -158,24 +163,32 @@ console<span class="token punctuation">.</span><span class="token function">log<
     300
     200
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="何时需要异步？"><a href="#何时需要异步？" class="headerlink" title="何时需要异步？"></a>何时需要异步？</h4><ul>
-<li><p>在可能发生等待的情况</p>
+<h4 id="何时需要异步"><a class="markdownIt-Anchor" href="#何时需要异步">#</a> 何时需要异步？</h4>
+<ul>
+<li>
+<p>在可能发生等待的情况</p>
 </li>
-<li><p>等待过程中不能像 alert 一样阻塞程序运行</p>
+<li>
+<p>等待过程中不能像 alert 一样阻塞程序运行</p>
 </li>
-<li><p>因此，所有的 “ 等待情况” 都需要异步</p>
-</li>
-</ul>
-<h4 id="前端使用异步的场景"><a href="#前端使用异步的场景" class="headerlink" title="前端使用异步的场景"></a>前端使用异步的场景</h4><ul>
-<li><p>定时任务：<strong>setTimeout</strong>，<strong>setInterval</strong></p>
-</li>
-<li><p>网络请求：<strong>ajax 请求</strong>，<strong>动态</strong> &lt;**img**&gt; <strong>加载</strong></p>
-</li>
-<li><p><strong>事件绑定</strong></p>
+<li>
+<p>因此，所有的 “等待情况” 都需要异步</p>
 </li>
 </ul>
-<h3 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h3><blockquote>
+<h4 id="前端使用异步的场景"><a class="markdownIt-Anchor" href="#前端使用异步的场景">#</a> 前端使用异步的场景</h4>
+<ul>
+<li>
+<p>定时任务：<strong>setTimeout</strong>，<strong>setInterval</strong></p>
+</li>
+<li>
+<p>网络请求：<strong>ajax 请求</strong>，<strong>动态</strong> &lt;<strong>img</strong>&gt; <strong>加载</strong></p>
+</li>
+<li>
+<p><strong>事件绑定</strong></p>
+</li>
+</ul>
+<h3 id="单线程"><a class="markdownIt-Anchor" href="#单线程">#</a> 单线程</h3>
+<blockquote>
 <p><strong>Javascript 是单线程的</strong> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/Mainz/p/3552717.html">参考</a></p>
 <p>JS 的单线程是指一个浏览器进程中只有一个 JS 的执行线程，同一时刻内只会有一段代码在执行</p>
 <p>在某个特定的时刻只有特定的代码能够被执行，并 <strong>阻塞</strong> 其它的代码。</p>
@@ -185,26 +198,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>上面代码执行过程：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190717/kEQlmncCXtel.png?imageslim" alt="mark"></p>
-<h4 id="重点总结"><a href="#重点总结" class="headerlink" title="重点总结"></a>重点总结</h4><ul>
+<h4 id="重点总结"><a class="markdownIt-Anchor" href="#重点总结">#</a> 重点总结</h4>
+<ul>
 <li>异步和同步的区别</li>
 <li>异步和单线程的关系</li>
 <li>异步在前端的引用场景</li>
 </ul>
-<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><ul>
-<li><p>同步和异步的区别是什么？分别举一个同步和异步的例子</p>
+<h3 id="解答"><a class="markdownIt-Anchor" href="#解答">#</a> 解答</h3>
 <ul>
-<li><p><em>同步</em> 是 <strong>阻塞模式</strong> ，<em>异步</em> 是 <strong>非阻塞模式</strong> 。</p>
+<li>
+<p>同步和异步的区别是什么？分别举一个同步和异步的例子</p>
+<ul>
+<li>
+<p><em>同步</em> 是 <strong>阻塞模式</strong> ，<em>异步</em> 是 <strong>非阻塞模式</strong> 。</p>
 <p><em>同步</em> 就是指一个进程在执行某个请求的时候，若该请求需要一段时间才能返回信息，那么这个进程将会 <strong>一直等待下去</strong> ，知道收到返回信息才继续执行下去；</p>
 <p><em>异步</em> 是指进程 <strong>不需要一直等下去</strong> ，而是 <strong>继续执行下面的操作</strong>，不管其他进程的状态。当有消息返回式系统会通知进程进行处理，这样可以提高执行的效率。</p>
 </li>
-<li><p>alert 是 同步， setTimeout 是 异步</p>
+<li>
+<p>alert 是 同步， setTimeout 是 异步</p>
 </li>
 </ul>
 </li>
-<li><p>一个关于 setTimeout 的笔试题</p>
+<li>
+<p>一个关于 setTimeout 的笔试题</p>
 </li>
 </ul>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -224,43 +242,49 @@ console<span class="token punctuation">.</span><span class="token function">log<
     2
     4
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
-<li>前端使用异步的场景有哪些<ul>
+<li>前端使用异步的场景有哪些
+<ul>
 <li>定时任务：<strong>setTimeout</strong>，<strong>setInterval</strong></li>
-<li>网络请求：<strong>ajax 请求</strong>，<strong>动态</strong> &lt;**img**&gt; <strong>加载</strong></li>
+<li>网络请求：<strong>ajax 请求</strong>，<strong>动态</strong> &lt;<strong>img</strong>&gt; <strong>加载</strong></li>
 <li><strong>事件绑定</strong></li>
 </ul>
 </li>
 </ul>
-<h2 id="3-2-日期和-math"><a href="#3-2-日期和-math" class="headerlink" title="3-2 日期和 math"></a>3-2 日期和 math</h2><blockquote>
+<h2 id="3-2-日期和-math"><a class="markdownIt-Anchor" href="#3-2-日期和-math">#</a> 3-2 日期和 math</h2>
+<blockquote>
 <p>题目</p>
 <p>知识点</p>
 <p>解答</p>
 </blockquote>
-<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><ul>
+<h3 id="题目-2"><a class="markdownIt-Anchor" href="#题目-2">#</a> 题目</h3>
+<ul>
 <li>获取 2017 -06 -10 格式的日期</li>
 <li>获取 随机数，要求是长度一致 的字符串格式</li>
 <li>写一个 能遍历对象 和数组 的通用 forEach 函数</li>
 </ul>
-<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h3 id="知识点-2"><a class="markdownIt-Anchor" href="#知识点-2">#</a> 知识点</h3>
+<ul>
 <li>日期</li>
 <li>Math</li>
 <li>数组 API</li>
 <li>对象 API</li>
 </ul>
-<h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><blockquote>
+<h4 id="日期"><a class="markdownIt-Anchor" href="#日期">#</a> 日期</h4>
+<blockquote>
 <p><strong>日期对象用于处理日期和时间。</strong></p>
 <p><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/jsref/jsref_obj_date.asp">JavaScript Date 对象 API</a></p>
 </blockquote>
 <p><img src="http://static.zxinc520.com/blog/20190717/3ijIzI0Frks1.png?imageslim" alt="mark"></p>
-<h4 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h4><blockquote>
+<h4 id="math"><a class="markdownIt-Anchor" href="#math">#</a> Math</h4>
+<blockquote>
 <p><strong>Math</strong> 是一个内置对象， 它具有数学常数和函数的属性和方法。不是一个函数对象。</p>
 <p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math">Math Api</a></p>
-<p>描述：与其它全局对象不同的是, <code>Math</code> 不是一个构造器. <code>Math</code> 的所有属性和方法都是静态的. 你用到的常数 pi 可以用 <code>Math.PI</code> 表示,用 <code>x</code> 作参数 Math.sin(x)调用 sin 函数. JavaScript 中的常数, 是以全精度的实数定义的.</p>
-<p>Math.random() 在前端的作用：随时改变，清除缓存。</p>
+<p>描述：与其它全局对象不同的是， <code>Math</code>  不是一个构造器.  <code>Math</code>  的所有属性和方法都是静态的。你用到的常数 pi 可以用  <code>Math.PI</code>  表示，用  <code>x</code>  作参数 Math.sin (x) 调用 sin 函数. JavaScript 中的常数，是以全精度的实数定义的.</p>
+<p>Math.random () 在前端的作用：随时改变，清除缓存。</p>
 </blockquote>
-<h4 id="数组-API"><a href="#数组-API" class="headerlink" title="数组 API"></a>数组 API</h4><blockquote>
+<h4 id="数组-api"><a class="markdownIt-Anchor" href="#数组-api">#</a> 数组 API</h4>
+<blockquote>
 <p><a target="_blank" rel="noopener" href="http://louiszhai.github.io/2017/04/28/array/#Array%E6%9E%84%E9%80%A0%E5%99%A8">参考</a></p>
 <p>详情可以参考我的博客：<a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d119841fd02ab26e068eb0a%22">JavaScript 数组那些事</a></p>
 </blockquote>
@@ -273,13 +297,16 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>map 对元素重新组装，生成新数组</li>
 <li>filter 过滤符合条件的元素</li>
 </ul>
-<h4 id="对象-API"><a href="#对象-API" class="headerlink" title="对象 API"></a>对象 API</h4><blockquote>
+<h4 id="对象-api"><a class="markdownIt-Anchor" href="#对象-api">#</a> 对象 API</h4>
+<blockquote>
 <p><strong>Object.prototype API</strong></p>
-<p><code>Object.prototype</code> 表示对象的原型对象<br><code>Object.prototype</code> 属性的属性特征</p>
+<p><code>Object.prototype</code>  表示对象的原型对象<br>
+ <code>Object.prototype</code>  属性的属性特征</p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2f43db2b656c">参考</a></p>
 </blockquote>
 <p><img src="http://static.zxinc520.com/blog/20190717/mOpzx9LK1xmu.png?imageslim" alt="mark"></p>
-<h3 id="解答-1"><a href="#解答-1" class="headerlink" title="解答"></a>解答</h3><ul>
+<h3 id="解答-2"><a class="markdownIt-Anchor" href="#解答-2">#</a> 解答</h3>
+<ul>
 <li>获取 2019-07-17 格式的日期</li>
 </ul>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">formatDate</span><span class="token punctuation">(</span><span class="token parameter">dt</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -303,7 +330,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">formatDate</span><span class="token punctuation">(</span>dt<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">//  2019-07-17</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>获取 随机数，要求是长度一致 的字符串格式</li>
 </ul>
@@ -311,7 +337,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 random <span class="token operator">=</span> random <span class="token operator">+</span> <span class="token string">"0000000000"</span><span class="token punctuation">;</span>
 random <span class="token operator">=</span> random<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>random<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>写一个 能遍历对象 和数组 的通用 forEach 函数</li>
 </ul>
@@ -585,7 +610,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

@@ -1,0 +1,631 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>sunflower • Posts by &#34;git&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2019-07-19T09:57:31.000Z</updated>
+    <category term="blog" />
+    <category term="个人博客" />
+    <category term="rem" />
+    <category term="less" />
+    <category term="art-template" />
+    <category term="算法面试" />
+    <category term="算法" />
+    <category term="大 O？" />
+    <category term="复杂度分析" />
+    <category term="大二" />
+    <category term="数据库实训" />
+    <category term="IDE" />
+    <category term="Git" />
+    <category term="模块化" />
+    <category term="构建工具" />
+    <category term="上线和回滚" />
+    <category term="ES6 模块化语法" />
+    <category term="babel" />
+    <category term="webpack" />
+    <category term="rollup" />
+    <category term="ES6" />
+    <category term="hybrid" />
+    <category term="虚拟 DOM" />
+    <category term="知识点概述" />
+    <category term="JS" />
+    <category term="实用工具" />
+    <category term="面试全面总结" />
+    <category term="JS 三座大山" />
+    <category term="学习实训" />
+    <category term="性能优化" />
+    <category term="加载过程" />
+    <category term="promise" />
+    <category term="异步解决方案" />
+    <category term="回调地狱" />
+    <category term="React" />
+    <category term="React源码" />
+    <category term="Vue3" />
+    <category term="vue" />
+    <category term="跑马灯" />
+    <category term="父子组件间通信" />
+    <category term="路由" />
+    <category term="监听事件（keyup ，watch ，computed ）" />
+    <category term="nrm" />
+    <category term="Mint-UI" />
+    <category term="MUI" />
+    <category term="MVVM" />
+    <category term="响应式、模板解析、渲染" />
+    <category term="微信小程序" />
+    <category term="单线程" />
+    <category term="event loop" />
+    <category term="异步的 Deferred" />
+    <category term="Promise" />
+    <category term="html" />
+    <category term="hexo" />
+    <category term="redux" />
+    <category term="UTC时间问题" />
+    <category term="正则表达式" />
+    <category term="虚拟DOM" />
+    <category term="博文" />
+    <category term="React-Router" />
+    <category term="React-Hooks" />
+    <category term="DOM" />
+    <category term="BOM" />
+    <category term="事件绑定" />
+    <category term="ajax 请求" />
+    <category term="储存" />
+    <category term="进程调度" />
+    <category term="过滤器" />
+    <category term="按键修饰符" />
+    <category term="指令" />
+    <category term="生命周期" />
+    <category term="过渡效果" />
+    <category term="组件" />
+    <category term="webpack 后续问题" />
+    <category term="数组" />
+    <category term="API" />
+    <category term="跨域" />
+    <category term="动画" />
+    <category term="事件" />
+    <category term="React基础面试题-50" />
+    <category term="数组相关操作" />
+    <category term="手撕代码" />
+    <category term="牛人面试题" />
+    <entry>
+        <id>http://example.com/2019/07/19/DevelopmentEnvironment/</id>
+        <title>开发环境</title>
+        <link rel="alternate" href="http://example.com/2019/07/19/DevelopmentEnvironment/"/>
+        <content type="html">&lt;h1 id=&#34;开发环境&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#开发环境&#34;&gt;#&lt;/a&gt; 开发环境&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;讲解在面试过程中，面试官可能会问及的前端开发环境的问题，例如 &lt;strong&gt;IDE&lt;/strong&gt; ，&lt;strong&gt;Git&lt;/strong&gt; ，&lt;strong&gt;模块化&lt;/strong&gt; ，&lt;strong&gt;打包工具&lt;/strong&gt; ，&lt;strong&gt;上线流程&lt;/strong&gt; ，这些类别的题目。&lt;/p&gt;
+&lt;p&gt;知识点：&lt;/p&gt;
+&lt;p&gt;7-1 IDE&lt;/p&gt;
+&lt;p&gt;7-2 Git&lt;/p&gt;
+&lt;p&gt;7-3 模块化&lt;/p&gt;
+&lt;p&gt;7-4 构建工具&lt;/p&gt;
+&lt;p&gt;7-5 上线和回滚&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;关于开发环境&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关于开发环境&#34;&gt;#&lt;/a&gt; 关于开发环境&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;面试官想通过开发环境了解面试者的经验&lt;/li&gt;
+&lt;li&gt;开发环境，最能体现工作产出的效率&lt;/li&gt;
+&lt;li&gt;会以聊天的形式为主，而不是出具体的问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;知识点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点&#34;&gt;#&lt;/a&gt; 知识点&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;IDE&lt;/strong&gt; ，&lt;strong&gt;Git&lt;/strong&gt; ，&lt;strong&gt;JS 模块化&lt;/strong&gt; ，&lt;strong&gt;打包工具&lt;/strong&gt; ，&lt;strong&gt;上线流程&lt;/strong&gt; ，&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;IDE （ 写代码的效率 ）&lt;/li&gt;
+&lt;li&gt;git （ 代码版本管理 ，多人协作开发 ）&lt;/li&gt;
+&lt;li&gt;JS 模块化&lt;/li&gt;
+&lt;li&gt;打包工具&lt;/li&gt;
+&lt;li&gt;上线回滚的流程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;7-1-ide&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-1-ide&#34;&gt;#&lt;/a&gt; 7-1 IDE&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;webstorm （ 我平常基本用的就是 &lt;strong&gt;webstorm&lt;/strong&gt; ）&lt;/li&gt;
+&lt;li&gt;sublime&lt;/li&gt;
+&lt;li&gt;vscode&lt;/li&gt;
+&lt;li&gt;atom&lt;/li&gt;
+&lt;li&gt;插件 插件 插件 ！！！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190719/MxVs8IUJKDhO.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190719/QNC5aBgIVByU.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;千万不要说你使用 Dreamweaver 或者 notpad ++&lt;/li&gt;
+&lt;li&gt;不做 .net 也不要用 Visual Studio&lt;/li&gt;
+&lt;li&gt;不做 java 也不要用 eclipse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;7-2-git&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-2-git&#34;&gt;#&lt;/a&gt; 7-2 Git&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Git 详细介绍：可参考的的博客：&lt;a href=&#34;http://zxinc520.com/lcj/%225d285a027b8c9f7d8dc4f627%22&#34;&gt;Git 篇&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;正式项目都需要代码版本管理&lt;/li&gt;
+&lt;li&gt;大型项目需要多人协作开发&lt;/li&gt;
+&lt;li&gt;Git 和 linux 是一个作者&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;7-3-模块化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-3-模块化&#34;&gt;#&lt;/a&gt; 7-3 模块化&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;模块化编程就是通过组合一些&lt;strong&gt;相对独立可复用的模块&lt;/strong&gt;来进行功能的实现，其最核心的两部分是&lt;strong&gt;定义模块&lt;/strong&gt;和&lt;strong&gt;引入模块&lt;/strong&gt;；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;定义模块时，每个模块内部的执行逻辑是不被外部感知的，只是导出（暴露）出部分方法和数据；&lt;/li&gt;
+&lt;li&gt;引入模块时，同步 / 异步去加载待引入的代码，执行并获取到其暴露的方法和数据；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;模块化的发展情况&lt;/strong&gt; ：无模块化–&amp;gt;CommonJS 规范–&amp;gt;AMD 规范–&amp;gt;CMD 规范–&amp;gt;ES6 模块化&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/5b6c222a6fb9a04fde5af4ee&#34;&gt;Javascript 模块化指北&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/5b4420e7f265da0f4b7a7b27&#34;&gt;这一次，我要弄懂 javascript 的模块化&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;知识点-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点-2&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;不使用模块化的情况&lt;/li&gt;
+&lt;li&gt;使用模块化&lt;/li&gt;
+&lt;li&gt;AMD&lt;/li&gt;
+&lt;li&gt;CommonJS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;无模块化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#无模块化&#34;&gt;#&lt;/a&gt; 无模块化&lt;/h4&gt;
+&lt;p&gt;script 标签引入 js 文件，相互罗列，但是被依赖的放在前面，否则使用就会报错。如下：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;jquery.js&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+　　&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;jquery_scroller.js&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+　　&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;main.js&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+　　&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;other1.js&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+　　&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;other2.js&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+　　&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;other3.js&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​ 即简单的将所有的 js 文件统统放在一起。但是这些文件的顺序还不能出错，比如 jquery 需要先引入，才能引入 jquery 插件，才能在其他的文件中使用 jquery。缺点很明显：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;污染全局作用域&lt;/li&gt;
+&lt;li&gt;维护成本高&lt;/li&gt;
+&lt;li&gt;依赖关系不明显&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;amd-规范&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#amd-规范&#34;&gt;#&lt;/a&gt; AMD 规范&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;异步模块定义（&lt;strong&gt;AMD&lt;/strong&gt;）API 指定了一种定义模块的机制，以便可以异步加载模块及其依赖项。这特别适用于浏览器环境，其中模块的同步加载会导致性能，可用性，调试和跨域访问问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;require.js &lt;a href=&#34;https://requirejs.org/&#34;&gt;https://requirejs.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;全局 define 函数&lt;/li&gt;
+&lt;li&gt;全局 require 函数&lt;/li&gt;
+&lt;li&gt;依赖 JS 会自动、异步加载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;AMD 标准中，定义了下面三个 API：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;module&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; callback&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;id&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;depends&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; callback&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+require&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;即通过 define 来&lt;strong&gt;定义&lt;/strong&gt;一个模块，然后使用 require 来&lt;strong&gt;加载&lt;/strong&gt;一个模块，使用 require.config () 指定引用路径。&lt;/p&gt;
+&lt;h4 id=&#34;举例说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#举例说明&#34;&gt;#&lt;/a&gt; 举例说明：&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script
+  src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js&#34;&lt;/span&gt;
+  data&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;main&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;./main.js&#34;&lt;/span&gt;
+&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;main.js:&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;./a.js&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; data &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Date&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  a&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;printDate&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;a.js:&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;./a-util.js&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;aUtil&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; a &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token function-variable function&#34;&gt;printDate&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;aUtil&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;aGetFormatDate&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; a&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;a-util.js:&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;./util.js&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;util&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; aUtil &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token function-variable function&#34;&gt;aGetFormatDate&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getFormatDate&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; aUtil&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;util.js:&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token function&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; util &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token function-variable function&#34;&gt;getFormatDate&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; type&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;type &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;2019-07-19&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;type &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;2019年6月20日&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; util&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190719/tVkLYFlEzrtH.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;commonjs&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#commonjs&#34;&gt;#&lt;/a&gt; CommonJS&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2009 年 ry 发布 Node.js 的第一个版本，CommonJS 作为其中最核心的特性之一，适用于服务端下的场景；历年来的考察和时间的洗礼，以及前端工程化对其的充分支持，CommonJS 被广泛运用于 Node.js 和浏览器；&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;// Core Module&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; cp &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;child_process&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;// Npm Module&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; axios &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;axios&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;// Custom Module&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; foo &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;./foo&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+module&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;exports &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; axios &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+exports&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;foo &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; foo&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;规范&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;module (Object): 模块本身&lt;/li&gt;
+&lt;li&gt;exports (*): 模块的导出部分，即暴露出来的内容&lt;/li&gt;
+&lt;li&gt;require (Function): 加载模块的函数，获得目标模块的导出值（基础类型为复制，引用类型为浅拷贝），可以加载内置模块、npm 模块和自定义模块。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;nodejs 模块化规范，现在被大量用前端，原因&lt;/strong&gt; ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前端开发依赖的插件课库，都可以从 npm 中获取&lt;/li&gt;
+&lt;li&gt;构建工具的高度自动化，使得使用 npm 的成本非常低&lt;/li&gt;
+&lt;li&gt;CommonJS 不会异步加载 JS ，而是同步一次性加载出来&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;使用-commonjs&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用-commonjs&#34;&gt;#&lt;/a&gt; 使用 CommonJS&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;module&lt;/strong&gt; (Object)、&lt;strong&gt;exports&lt;/strong&gt; (*)、&lt;strong&gt;require&lt;/strong&gt; (Function)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//util.ls&lt;/span&gt;
+module&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;export &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;getFormatDate&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; type&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;type &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;2019-07-19&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;type &lt;span class=&#34;token operator&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;2019年6月20日&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//a-util.js&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; util &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;util.js&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+module&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;export &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token function-variable function&#34;&gt;aGetFormatDate&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getFormatDate&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;特性总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#特性总结&#34;&gt;#&lt;/a&gt; 特性总结&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;同步执行模块声明和引入逻辑，分析一些复杂的依赖引用（如循环依赖）时需注意；&lt;/li&gt;
+&lt;li&gt;缓存机制，性能更优，同时限制了内存占用；&lt;/li&gt;
+&lt;li&gt;Module 模块可供改造的灵活度高，可以实现一些定制需求（如热更新、任意文件类型模块支持）；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;amd-和-commonjs-的使用场景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#amd-和-commonjs-的使用场景&#34;&gt;#&lt;/a&gt; AMD 和 CommonJS 的使用场景&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;需要异步加载 JS ，使用 AMD&lt;/li&gt;
+&lt;li&gt;使用了 npm 之后建议使用 CommonJS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;重点总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重点总结&#34;&gt;#&lt;/a&gt; 重点总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;AMD&lt;/li&gt;
+&lt;li&gt;CommonJS&lt;/li&gt;
+&lt;li&gt;两者的区别&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;7-4-构建工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-4-构建工具&#34;&gt;#&lt;/a&gt; 7-4 构建工具&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们一定会感叹前端技术发展之快，各种可以提高开发效率的新思想和框架层出不穷。但是他们都有一个共同特点：源代码无法直接运行，必须通过转换后才能正常运行。&lt;/p&gt;
+&lt;p&gt;比如：Grunt 、Gulp、FIS 3、&lt;strong&gt;Webpack&lt;/strong&gt; …&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/entry/5ae5c8c9f265da0b9f400d8e&#34;&gt;前端构建工具发展及其比较&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://zxinc520.com/lcj/%225cb181596d3d4a5cb52b65c9%22&#34;&gt;webpack 学习可参考我的博客 &lt;/a&gt; 和 &lt;a href=&#34;http://zxinc520.com/lcj/%225cb72a04009ae94788aa0d7f%22&#34;&gt;我的另一篇博客&lt;/a&gt; 均有 涉及。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;构建工具就是做这件事，将源代码转换成可以执行的 JavaScript、CSS、HTML 代码，包括如下内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;代码转换：将 TypeScript 编译成 JavaScript、将 SCSS 编译成 CSS 等。&lt;/li&gt;
+&lt;li&gt;文件优化：压缩 JavaScript、CSS、HTML 代码，压缩合并图片等。&lt;/li&gt;
+&lt;li&gt;代码分割：提取多个页面的公共代码，提取首屏不需要执行部分代码让其异步记在。&lt;/li&gt;
+&lt;li&gt;模块合并：在采用模块化的项目里会有很多个模块和文件，需要通过构建功能将模块分类合并成一个文件。&lt;/li&gt;
+&lt;li&gt;自动刷新：监听本地源代码变化，自动重新构建、刷新浏览器。&lt;/li&gt;
+&lt;li&gt;代码校验：在代码被提交到仓库前需要校验代码是否符合规范，以及单元测试是否通过。&lt;/li&gt;
+&lt;li&gt;自动发布：更新代码后，自动构建出线上发布代码并传输给发布系统。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;构建其实是工程化、自动化思想在前端开发中的体现，将一系列流程用代码去实现，让代码自动化地执行这一系列复杂的流程。构建为前端开发注入了更大的活力，解放了我们的生产力。&lt;/p&gt;
+&lt;p&gt;历史上先后出现了一系列构建工具，他们各有优缺点。由于前端工程师很熟悉 JavaScript，Node.js 又可以胜任所有构建需求，所以大多数构建工具都是用 Node.js 开发的。&lt;/p&gt;
+&lt;h2 id=&#34;7-5-上线和回滚&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-5-上线和回滚&#34;&gt;#&lt;/a&gt; 7-5 上线和回滚&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;不会有具体的问题，交流询问的方式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;知识点-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点-3&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;上线和回滚的基本流程&lt;/li&gt;
+&lt;li&gt;linux 基本命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;上线和回滚的基本流程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#上线和回滚的基本流程&#34;&gt;#&lt;/a&gt; 上线和回滚的基本流程&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;是非常重要的开发环节&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;各个公司的具体流程不同&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;由专门的工具后者系统完成，我们无需关心细节&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果你没有参与过，面试时也要说出要点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;只讲要点，具体实现无法讲解&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;上线流程要点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#上线流程要点&#34;&gt;#&lt;/a&gt; 上线流程要点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;将测试完成的代码提交到 git 版本库的 master 分支&lt;/li&gt;
+&lt;li&gt;将当前服务器的代码全部打包并记录版本号，备份&lt;/li&gt;
+&lt;li&gt;将 master 分支的代码提交覆盖到线上服务器，生成新版本号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;回滚的流程要点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#回滚的流程要点&#34;&gt;#&lt;/a&gt; 回滚的流程要点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;将当前服务器的代码打包并记录版本号，备份&lt;/li&gt;
+&lt;li&gt;将备份的上一个版本号解压，覆盖到线上服务器，并生成新的版本号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;linux-基本命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux-基本命令&#34;&gt;#&lt;/a&gt; linux 基本命令&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;服务器使用 linux 居多，server 版，只有命令行&lt;/li&gt;
+&lt;li&gt;测试环境要匹配线上环境，因此也是 linux&lt;/li&gt;
+&lt;li&gt;经常需要登录测试机来自己配置，获取数据&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="IDE" />
+        <category term="Git" />
+        <category term="模块化" />
+        <category term="构建工具" />
+        <category term="上线和回滚" />
+        <updated>2019-07-19T09:57:31.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2019/07/12/gitLearning/</id>
+        <title>Git 学习</title>
+        <link rel="alternate" href="http://example.com/2019/07/12/gitLearning/"/>
+        <content type="html">&lt;h1 id=&#34;git-学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git-学习&#34;&gt;#&lt;/a&gt; Git 学习&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Git 学习&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Git 的优势&lt;/p&gt;
+&lt;p&gt;Git 与 SVN 的主要区别&lt;/p&gt;
+&lt;p&gt;安装 Git&lt;/p&gt;
+&lt;p&gt;初始化 Git 仓储 /（仓库）&lt;/p&gt;
+&lt;p&gt;配置使用者的用户名和邮箱&lt;/p&gt;
+&lt;p&gt;把代码 存储到仓库中&lt;/p&gt;
+&lt;p&gt;Git 查看日志&lt;/p&gt;
+&lt;p&gt;Git 版本回退&lt;/p&gt;
+&lt;p&gt;Git 分支的新建与合并&lt;/p&gt;
+&lt;p&gt;上传至 github&lt;/p&gt;
+&lt;p&gt;通过 ssh 方式 上传 代码&lt;/p&gt;
+&lt;p&gt;push 和 pull 简写&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;什么是-git&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是-git&#34;&gt;#&lt;/a&gt; 什么是 Git？&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;git – fast 版本控制&lt;/p&gt;
+&lt;p&gt;Git 是由 “Linux 之父” &lt;strong&gt;Linus Torvalds&lt;/strong&gt; 创建的。因为他发现找不到满意的方案来管理 Linux Kernel 联合开发的版本控制，就自己写了 Git。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/&#34;&gt;官方网站&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Git 是一个&lt;a href=&#34;https://git-scm.com/about/free-and-open-source&#34;&gt;免费的开源&lt;/a&gt; 分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有事务&lt;/li&gt;
+&lt;li&gt;Git &lt;a href=&#34;https://git-scm.com/doc&#34;&gt;易于学习&lt;/a&gt;， &lt;a href=&#34;https://git-scm.com/about/small-and-fast&#34;&gt;占地面积小，具有闪电般快速的性能&lt;/a&gt;。它超越了 Subversion，CVS，Perforce 和 ClearCase 等 SCM 工具，具有&lt;a href=&#34;https://git-scm.com/about/branching-and-merging&#34;&gt;廉价本地分支&lt;/a&gt;，便捷的&lt;a href=&#34;https://git-scm.com/about/staging-area&#34;&gt;临时区域&lt;/a&gt;和 &lt;a href=&#34;https://git-scm.com/about/distributed&#34;&gt;多个工作流程等功能&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;git-的优势&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git-的优势&#34;&gt;#&lt;/a&gt; Git 的优势&lt;/h3&gt;
+&lt;p&gt;说到优势，那么自然是相对与 SVN 而言的&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;** 版本库本地化，支持离线提交，相对独立不影响协同开发。** 每个开发者都拥有自己的版本控制库，在自己的版本库上可以任意的执行提交代码、创建分支等行为。例如，开发者认为自己提交的代码有问题？没关系，因为版本库是自己的，回滚历史、反复提交、归并分支并不会影响到其他开发者。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;** 更少的 “仓库污染”。**git 对于每个工程只会产生一个.git 目录，这个工程所有的版本控制信息都在这个目录中，不会像 SVN 那样在每个目录下都产生.svn 目录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;** 把内容按元数据方式存储，完整克隆版本库。** 所有版本信息位于.git 目录中，它是处于你的机器上的一个克隆版的版本库，它拥有中心版本库上所有的东西，例如标签、分支、版本记录等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;** 支持快速切换分支方便合并，比较合并性能好。** 在同一目录下即可切换不同的分支，方便合并，且合并文件速度比 SVN 快。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;** 分布式版本库，无单点故障，内容完整性好。** 内容存储使用的是 SHA-1 哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;git-与-svn-的主要区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git-与-svn-的主要区别&#34;&gt;#&lt;/a&gt; Git 与 SVN 的主要区别&lt;/h3&gt;
+&lt;p&gt;Git 是&lt;strong&gt;分布式&lt;/strong&gt; SCM，而 SVN 是基于&lt;strong&gt;服务器&lt;/strong&gt;的，也就是说每个开发者本地都有一套 git 库，每个人维护自己的版本（或者合并其他人的版本），而 SVN 是每个人写完代码后都及时的 checkin 到服务器上，进行合并。&lt;/p&gt;
+&lt;h3 id=&#34;安装-git&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装-git&#34;&gt;#&lt;/a&gt; 安装 Git&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496&#34;&gt;廖雪峰的官方网站 git 安装&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;鼠标 &lt;strong&gt;右键&lt;/strong&gt;，选中  &lt;code&gt;Git Bash Here&lt;/code&gt;  在里面输入相关命令：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/litoDVMJqNVb.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;使用-git&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用-git&#34;&gt;#&lt;/a&gt; 使用 Git&lt;/h2&gt;
+&lt;h3 id=&#34;初始化-git-仓储仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初始化-git-仓储仓库&#34;&gt;#&lt;/a&gt; 初始化 Git 仓储 /（仓库）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;新建&lt;/strong&gt;一个文件夹&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/9NbV1d2Bf3H2.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;进入&lt;/strong&gt;文件夹，鼠标&lt;strong&gt;右键&lt;/strong&gt; 选中  &lt;code&gt;Git Bash Here&lt;/code&gt; ，输入命令  &lt;code&gt;git init&lt;/code&gt;  回车。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/PApIqKpihnsJ.gif&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置使用者的用户名和邮箱&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置使用者的用户名和邮箱&#34;&gt;#&lt;/a&gt; 配置使用者的用户名和邮箱&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;配置使用者的用户名和邮箱 （自报家门）, 每一次备份都会把当前备份者的信息存储起来。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;配置用户名&lt;/strong&gt; ：  &lt;code&gt;git config --global user.name &amp;quot;zhouchen&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;配置邮箱&lt;/strong&gt;：  &lt;code&gt;git config --global user.email &amp;quot;1583741285@qq.com&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;配置使用者的&lt;strong&gt;用户名&lt;/strong&gt;：&lt;strong&gt;进入&lt;/strong&gt;文件夹，鼠标&lt;strong&gt;右键&lt;/strong&gt; 选中  &lt;code&gt;Git Bash Here&lt;/code&gt; ，&lt;/p&gt;
+&lt;p&gt;输入命令  &lt;code&gt;git config --global user.name &amp;quot;zhouchen&amp;quot;&lt;/code&gt;  回车 。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/FUG7gTH6S2Mh.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;同样的配置使用者的 &lt;strong&gt;邮箱&lt;/strong&gt;：&lt;strong&gt;进入&lt;/strong&gt;文件夹，鼠标&lt;strong&gt;右键&lt;/strong&gt; 选中  &lt;code&gt;Git Bash Here&lt;/code&gt; ，&lt;/p&gt;
+&lt;p&gt;输入命令  &lt;code&gt;git config --global user.email &amp;quot;1583741285@qq.com&amp;quot;&lt;/code&gt;  回车 。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/p62Mz0UPYcY9.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;把代码-存储到仓库中&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#把代码-存储到仓库中&#34;&gt;#&lt;/a&gt; 把代码 存储到仓库中&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;把代码 存储到仓库中&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;需求&lt;/strong&gt;：将 &lt;a href=&#34;http://readme.md&#34;&gt;readme.md&lt;/a&gt; 文件 存储到仓库中&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/KwUDn18LHU1f.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;进入&lt;/strong&gt;文件夹，鼠标&lt;strong&gt;右键&lt;/strong&gt; 选中  &lt;code&gt;Git Bash Here&lt;/code&gt; ，&lt;/p&gt;
+&lt;p&gt;输入命令  &lt;code&gt;git add ./readme.md&lt;/code&gt;  回车 。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/P1DnSzDuSOBO.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;紧接上一步，输入命令  &lt;code&gt;git commit -m &amp;quot;add Introductions&amp;quot;&lt;/code&gt;  回车 。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;u&gt;add Introductions&lt;/u&gt;----- 可以自定义，一个辅助的解释 &lt;strong&gt;说明&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/FqHM4n7stzsF.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;查看提交状态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查看提交状态&#34;&gt;#&lt;/a&gt; 查看提交状态&lt;/h4&gt;
+&lt;p&gt;命令： &lt;code&gt;git status&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/85IXkLM5Wusf.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;add-补充-添加到大门口&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#add-补充-添加到大门口&#34;&gt;#&lt;/a&gt; add 补充 – 添加到大门口&lt;/h4&gt;
+&lt;p&gt;命令 ： &lt;code&gt;git add .&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;一次性-放入仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一次性-放入仓库&#34;&gt;#&lt;/a&gt; 一次性 – 放入仓库&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;合并 add 和 commit 命令&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;命令： &lt;code&gt;git commit --all -m &amp;quot;这是一次性的操作&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;git-查看日志&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git-查看日志&#34;&gt;#&lt;/a&gt; Git 查看日志&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;查看日志 ---- 能够查看自己提交的信息&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git log&lt;/code&gt; ：查看历史提交的日志&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git log --oneline&lt;/code&gt;  可以看到精简版的日志&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;命令： &lt;code&gt;git log&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/PBubR1jYW0fX.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;命令： &lt;code&gt;git log --oneline&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/bDLltWMjdSo2.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;git-版本回退&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git-版本回退&#34;&gt;#&lt;/a&gt; Git 版本回退&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;git 版本回退&lt;/p&gt;
+&lt;p&gt;场景：如果最后一次提交的代码有误，可以通过 git 版本回退，回到代码无误的那一个状态。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;根据索引回退&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#根据索引回退&#34;&gt;#&lt;/a&gt; 根据索引回退&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;使用命令  &lt;code&gt;git log --oneline&lt;/code&gt;  查看状态&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/3RDzcU0Fo8Vy.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;命令： &lt;code&gt;git reset --hard Head~0 &lt;/code&gt;  ( 向后退 &lt;strong&gt;0&lt;/strong&gt; 次)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/Uobb7X1EwPUd.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;命令： &lt;code&gt;git reset --hard Head~1&lt;/code&gt;  （向后退 &lt;strong&gt;1&lt;/strong&gt; 次）；此时代码回退了&lt;strong&gt;一次&lt;/strong&gt; 。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/3lM4UYpv7mQw.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190711/rwuTTeqbAFNc.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;通过版本号回退&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#通过版本号回退&#34;&gt;#&lt;/a&gt; 通过版本号回退&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;通过版本号回退&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/VsLjP0uf8h8D.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;命令： &lt;code&gt;git reset --hard ac97cbc &lt;/code&gt;  回车执行&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/puqQzAUO57un.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/4b2kofXa5m3B.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;git-reflog&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git-reflog&#34;&gt;#&lt;/a&gt; git reflog&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以看到每一次切换版本记录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;命令： &lt;code&gt;git reflog&lt;/code&gt;  查看总体记录&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/rIsddoYu54q2.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;git-分支的新建与合并&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git-分支的新建与合并&#34;&gt;#&lt;/a&gt; Git 分支的新建与合并&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;git 创建分支&lt;/p&gt;
+&lt;p&gt;运用场景：放开发者只开发完成部分代码，想保存代码，为了能够后续继续开发，可以创建分支。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;现在让我们来看一个简单的分支与合并的例子，实际工作中大体也会用到这样的工作流程：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;开发某个网站。&lt;/li&gt;
+&lt;li&gt;为实现某个新的需求，创建一个分支。&lt;/li&gt;
+&lt;li&gt;在这个分支上开展工作。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;假设此时，你突然接到一个电话说有个很严重的问题需要紧急修补，那么可以按照下面的方式处理：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;返回到原先已经发布到生产服务器上的分支。&lt;/li&gt;
+&lt;li&gt;为这次紧急修补建立一个新分支，并在其中修复问题。&lt;/li&gt;
+&lt;li&gt;通过测试后，回到生产服务器所在的分支，将修补分支合并进来，然后再推送到生产服务器上。&lt;/li&gt;
+&lt;li&gt;切换到之前实现新需求的分支，继续工作。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;git-分支的新建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git-分支的新建&#34;&gt;#&lt;/a&gt; Git 分支的新建&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;新建分支&lt;/strong&gt; ：命令： &lt;code&gt;git branch &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/vCIxtjnYlgsu.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;查看分支信息&lt;/strong&gt; ：命令： &lt;code&gt;git branch&lt;/code&gt;  （ &lt;strong&gt;绿色&lt;/strong&gt; --&amp;gt; 代表正处于此分支）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/R3t4POgEphiO.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;切换分支&lt;/strong&gt; ：命令  &lt;code&gt;git checkout dev&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/MQQVVoNGu41k.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;在分支中提交部分代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#在分支中提交部分代码&#34;&gt;#&lt;/a&gt; 在分支中提交部分代码&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;类似于主分支 提交（一样）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/gBcACkrl5Gxf.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;git-合并分支&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git-合并分支&#34;&gt;#&lt;/a&gt; Git 合并分支&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;合并分支&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;需求&lt;/strong&gt;：将 dev 分支 合并到主分支（master 分支）上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;切换到 &lt;strong&gt;master&lt;/strong&gt; 分支：命令： &lt;code&gt;git checkout master&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/bKIzXXwv3Xnm.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;合并 dev 分支 到 master 分支上：命令： &lt;code&gt;git merge dev&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/uMQR0k4u6qTT.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;查看自己的提交记录 命令： &lt;code&gt;git log --oneline&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/gu7FKi6tGBkf.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;上传至-github&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#上传至-github&#34;&gt;#&lt;/a&gt; 上传至 github&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;git push [地址] master&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.liaoxuefeng.com/wiki/896043488029600/900937935629664&#34;&gt;参考廖雪峰的官方网站 github 篇&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;【地址】：例如：&lt;a href=&#34;https://github.com/ZhChen7/Travel.git&#34;&gt;https://github.com/ZhChen7/Travel.git&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git push&lt;/strong&gt; 推项目到 github： &lt;code&gt;git push [地址] master&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;从-github-拉下项目&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#从-github-拉下项目&#34;&gt;#&lt;/a&gt; 从 github 拉下项目&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;github 拉下项目&lt;/p&gt;
+&lt;p&gt;【地址】：例如：&lt;a href=&#34;https://github.com/ZhChen7/Travel.git&#34;&gt;https://github.com/ZhChen7/Travel.git&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git pull&lt;/strong&gt; 从 github 拉下项目 ： &lt;code&gt;git pull [地址] master&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;git clone&lt;/strong&gt; 从 github 复制项目（往往在第一次使用）： &lt;code&gt;git clone [地址]&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;通过-ssh-方式-上传-代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#通过-ssh-方式-上传-代码&#34;&gt;#&lt;/a&gt; 通过 ssh 方式 上传 代码&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;公钥 和 私钥 ；两者之间是有关联的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;生成 &lt;strong&gt;公钥&lt;/strong&gt; 和 &lt;strong&gt;私钥&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;命令： &lt;code&gt;ssh-keygen -t rsa -C &amp;lt;邮箱&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/2GKvEKipn11B.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/9qHzNoUvBgy2.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;找到生成的文件&lt;/strong&gt; ：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/DPxGphRT9AXv.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;给自己的 github 配置 ssh&lt;/strong&gt; ：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190712/eK9KUtgXVIrN.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;提交冲突&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#提交冲突&#34;&gt;#&lt;/a&gt; 提交冲突&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先 &lt;strong&gt;pull&lt;/strong&gt; 还是 先 &lt;strong&gt;push&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;应用场景：多人共同提交时，产生提交冲突时。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;解决方案&lt;/strong&gt;：&lt;strong&gt;先 pull&lt;/strong&gt; 然后 &lt;strong&gt;后 push&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;push-和-pull-简写&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#push-和-pull-简写&#34;&gt;#&lt;/a&gt; push 和 pull 简写&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;push 和 pull 简写&lt;/p&gt;
+&lt;p&gt;【地址简写】： &lt;code&gt;git remote add &amp;lt;变量名&amp;gt; &amp;lt;远程地址&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;配置远程地址&lt;/strong&gt;（设置别名）：方便每一次不用输入很长的地址&lt;/p&gt;
+&lt;p&gt;命令： &lt;code&gt;git remote add origin git@github.com:ZhChen7/Travel.git&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;即：为  &lt;code&gt;git@github.com:ZhChen7/Travel.git&lt;/code&gt;  设置别名： **origin **&lt;/p&gt;
+&lt;h4 id=&#34;默认关联&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#默认关联&#34;&gt;#&lt;/a&gt; 默认关联&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当我们在 push 时，加上 &lt;strong&gt;-u 参数&lt;/strong&gt; ，那么在&lt;strong&gt;下次 push 时&lt;/strong&gt;；只用 写  &lt;code&gt;git push&lt;/code&gt;  即可上传代码。&lt;/p&gt;
+&lt;p&gt;（加上 &lt;strong&gt;-u&lt;/strong&gt; 之后，git 会把当前分支 与 远程指定的分支 进行&lt;strong&gt;关联&lt;/strong&gt;）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下次 直接写  &lt;code&gt;git push&lt;/code&gt;  相当于 写  &lt;code&gt;git push origin master&lt;/code&gt;  。&lt;/p&gt;
+</content>
+        <category term="Git" />
+        <updated>2019-07-12T09:59:30.000Z</updated>
+    </entry>
+</feed>

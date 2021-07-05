@@ -1,0 +1,1211 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>sunflower • Posts by &#34;html&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2020-03-23T09:18:21.000Z</updated>
+    <category term="blog" />
+    <category term="个人博客" />
+    <category term="rem" />
+    <category term="less" />
+    <category term="art-template" />
+    <category term="算法面试" />
+    <category term="算法" />
+    <category term="大 O？" />
+    <category term="复杂度分析" />
+    <category term="大二" />
+    <category term="数据库实训" />
+    <category term="IDE" />
+    <category term="Git" />
+    <category term="模块化" />
+    <category term="构建工具" />
+    <category term="上线和回滚" />
+    <category term="ES6 模块化语法" />
+    <category term="babel" />
+    <category term="webpack" />
+    <category term="rollup" />
+    <category term="ES6" />
+    <category term="hybrid" />
+    <category term="虚拟 DOM" />
+    <category term="知识点概述" />
+    <category term="JS" />
+    <category term="实用工具" />
+    <category term="面试全面总结" />
+    <category term="JS 三座大山" />
+    <category term="学习实训" />
+    <category term="性能优化" />
+    <category term="加载过程" />
+    <category term="promise" />
+    <category term="异步解决方案" />
+    <category term="回调地狱" />
+    <category term="React" />
+    <category term="React源码" />
+    <category term="Vue3" />
+    <category term="vue" />
+    <category term="跑马灯" />
+    <category term="父子组件间通信" />
+    <category term="路由" />
+    <category term="监听事件（keyup ，watch ，computed ）" />
+    <category term="nrm" />
+    <category term="Mint-UI" />
+    <category term="MUI" />
+    <category term="MVVM" />
+    <category term="响应式、模板解析、渲染" />
+    <category term="微信小程序" />
+    <category term="单线程" />
+    <category term="event loop" />
+    <category term="异步的 Deferred" />
+    <category term="Promise" />
+    <category term="html" />
+    <category term="hexo" />
+    <category term="redux" />
+    <category term="UTC时间问题" />
+    <category term="正则表达式" />
+    <category term="虚拟DOM" />
+    <category term="博文" />
+    <category term="React-Router" />
+    <category term="React-Hooks" />
+    <category term="DOM" />
+    <category term="BOM" />
+    <category term="事件绑定" />
+    <category term="ajax 请求" />
+    <category term="储存" />
+    <category term="进程调度" />
+    <category term="过滤器" />
+    <category term="按键修饰符" />
+    <category term="指令" />
+    <category term="生命周期" />
+    <category term="过渡效果" />
+    <category term="组件" />
+    <category term="webpack 后续问题" />
+    <category term="数组" />
+    <category term="API" />
+    <category term="跨域" />
+    <category term="动画" />
+    <category term="事件" />
+    <category term="React基础面试题-50" />
+    <category term="数组相关操作" />
+    <category term="手撕代码" />
+    <category term="牛人面试题" />
+    <entry>
+        <id>http://example.com/2020/03/23/getOfferhtml2/</id>
+        <title>html 面试考点全面总结下篇</title>
+        <link rel="alternate" href="http://example.com/2020/03/23/getOfferhtml2/"/>
+        <content type="html">&lt;h2 id=&#34;html-面试考点全面总结下篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#html-面试考点全面总结下篇&#34;&gt;#&lt;/a&gt; html 面试考点全面总结下篇&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;拿到 字节跳动实习生 offer 总结&lt;/p&gt;
+&lt;p&gt;回馈分享一波自己的知识点总结&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;希望读者依此构建自己的知识树（思维导图）&lt;/p&gt;
+&lt;p&gt;偷懒一下：可参考我自己总结思维导图 : &lt;a href=&#34;https://github.com/ZhChen7/Interview-mind-map&#34;&gt;点这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;附带：高频面试题积累文档。 来自于（学长、牛客网等平台）&lt;/p&gt;
+&lt;p&gt;自己开发的博客地址：&lt;a href=&#34;http://zxinc520.com/&#34;&gt;zxinc520.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;github 地址: &lt;a href=&#34;https://github.com/ZhChen7&#34;&gt;点击&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此篇 html 共总结 22 大知识点： 全部弄懂了，面试很容易。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;11-label-标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#11-label-标签&#34;&gt;#&lt;/a&gt; 11、label 标签&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作用：用于定义表单控件的关系，点击时自动将焦点移至相关联的控件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;两个有用属性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#两个有用属性&#34;&gt;#&lt;/a&gt; 两个有用属性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;for
+&lt;ul&gt;
+&lt;li&gt;关联相关控件&lt;/li&gt;
+&lt;li&gt;通过控件 id 关联&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;accessKey ：设置访问快捷键 例如：accesskey=“h”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt; ：该标签不能为 a 和 button 标签的后代&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;12-link-与-import&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#12-link-与-import&#34;&gt;#&lt;/a&gt; 12、link 与 @import&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;link ：建议使用&lt;/p&gt;
+&lt;p&gt;@import ：慎用 【会造成 “无样式内容闪烁”】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;link-与-import-区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#link-与-import-区别&#34;&gt;#&lt;/a&gt; link 与 @import 区别&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;从属和作用
+&lt;ul&gt;
+&lt;li&gt;link 是 HTML 提供的标签
+&lt;ul&gt;
+&lt;li&gt;可以加载 css&lt;/li&gt;
+&lt;li&gt;可以定义 rel 等属性（rel 属性规定当前文档与被链接文档之间的关系。） 【技巧：这里引申到 预加载知识：可以关注 Resource Hint 标准 — &lt;strong&gt;页面加载性能利器&lt;/strong&gt;】&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;@import 是 css 提供的语法
+&lt;ul&gt;
+&lt;li&gt;只有导入样式表的作用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;加载顺序
+&lt;ul&gt;
+&lt;li&gt;link 在页面加载时 css 同时被加载&lt;/li&gt;
+&lt;li&gt;@import 引入的 css 需要等页面加载后再加载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;兼容性问题
+&lt;ul&gt;
+&lt;li&gt;link 是 HTML 提供的语法，没有兼容性问题&lt;/li&gt;
+&lt;li&gt;@import 是 css2.1 提供的语法，ie5 以上才兼容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DOM 可控性
+&lt;ul&gt;
+&lt;li&gt;js 可以通过插入 link 标签来改变样式&lt;/li&gt;
+&lt;li&gt;js 不可以通过 @import 去引入新的 css 文件来改变样式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;13-target&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#13-target&#34;&gt;#&lt;/a&gt; 13、target&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;属性作用：指定所连接的页面在浏览器窗口中的打开方式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;属性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#属性&#34;&gt;#&lt;/a&gt; 属性&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;_self（默认值）：在当前窗口打开&lt;/li&gt;
+&lt;li&gt;_blank： 在新窗口中打开&lt;/li&gt;
+&lt;li&gt;_parent ： 在父级窗口打开&lt;/li&gt;
+&lt;li&gt;_top ： 在顶级窗口打开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;14-部分标签属性区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#14-部分标签属性区别&#34;&gt;#&lt;/a&gt; 14、部分标签 / 属性区别&lt;/h3&gt;
+&lt;h4 id=&#34;标签区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#标签区别&#34;&gt;#&lt;/a&gt; 标签区别&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;title 和 h1
+&lt;ul&gt;
+&lt;li&gt;title ：只表示是个标题&lt;/li&gt;
+&lt;li&gt;h1-h7
+&lt;ul&gt;
+&lt;li&gt;表示层次明确的标题&lt;/li&gt;
+&lt;li&gt;对页面信息的抓取有帮助&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;b 与 strong
+&lt;ul&gt;
+&lt;li&gt;b：展示为粗体&lt;/li&gt;
+&lt;li&gt;strong
+&lt;ul&gt;
+&lt;li&gt;标明重点内容，有语气加强的含义 u&lt;/li&gt;
+&lt;li&gt;使用阅读设备时，会重读&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;i 与 em
+&lt;ul&gt;
+&lt;li&gt;i：展示为斜体&lt;/li&gt;
+&lt;li&gt;em：表示强调的文本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;属性区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#属性区别&#34;&gt;#&lt;/a&gt; 属性区别&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;src 与 href
+&lt;ul&gt;
+&lt;li&gt;src：引入；将指定资源应用到文档内.&lt;/li&gt;
+&lt;li&gt;href：引用；建立与当前文档之间的链接.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;【img】title 和 alt
+&lt;ul&gt;
+&lt;li&gt;title
+&lt;ul&gt;
+&lt;li&gt;全局属性&lt;/li&gt;
+&lt;li&gt;提供关于元素的额外信息&lt;/li&gt;
+&lt;li&gt;鼠标移至显示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;alt
+&lt;ul&gt;
+&lt;li&gt;用于图片无法加载时显示&lt;/li&gt;
+&lt;li&gt;web Quality（无障碍）易访问的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;15-shadow-dom影子-dom&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#15-shadow-dom影子-dom&#34;&gt;#&lt;/a&gt; 15、Shadow DOM（影子 DOM）&lt;/h3&gt;
+&lt;h4 id=&#34;是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#是什么&#34;&gt;#&lt;/a&gt; 是什么？&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;浏览器的一种能力 ：渲染时插入独立的 DOM 树&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;特点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#特点&#34;&gt;#&lt;/a&gt; 特点？&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;与原始 DOM 完全隔离&lt;/li&gt;
+&lt;li&gt;具有自己的元素和样式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;作用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#作用&#34;&gt;#&lt;/a&gt; 作用？&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;封装需要隔离外部的文档细节 / 组件&lt;/li&gt;
+&lt;li&gt;防止开发人员随意修改样式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;使用方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用方式&#34;&gt;#&lt;/a&gt; 使用方式？&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Node1.attachShadow(Node2)&lt;/li&gt;
+&lt;li&gt;Node2.innerHTML = …&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;16-浏览器的数据存储方式有哪些&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#16-浏览器的数据存储方式有哪些&#34;&gt;#&lt;/a&gt; 16、浏览器的数据存储方式有哪些&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;分为三类来讲：&lt;/p&gt;
+&lt;p&gt;cookie 、localStorage 和 sessionStorage 、userData。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;cookie&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cookie&#34;&gt;#&lt;/a&gt; cookie&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;h5 之前，存储主要用 cookies，缺点是在请求头上带着数据，导致流量增加。大小限制 4k&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;创建目的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#创建目的&#34;&gt;#&lt;/a&gt; 创建目的&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;为了保持 HTTP 的状态&lt;/li&gt;
+&lt;li&gt;为了识别用户信息而储存在本地上的数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;特点-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#特点-2&#34;&gt;#&lt;/a&gt; 特点&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;可储存大小为 4k&lt;/li&gt;
+&lt;li&gt;储存个数有限制（各浏览器不同）&lt;/li&gt;
+&lt;li&gt;有效时间在设置的 cookie 过期时间之前一直有效&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;localstorage-和-sessionstorage&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#localstorage-和-sessionstorage&#34;&gt;#&lt;/a&gt; localStorage 和 sessionStorage&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建目的：便于客户端储存数据&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;相同点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#相同点&#34;&gt;#&lt;/a&gt; 相同点&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;都由 HTML5 Web Storage API 提供&lt;/li&gt;
+&lt;li&gt;在本地保存&lt;/li&gt;
+&lt;li&gt;可储存大小 5M 以上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;不同点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#不同点&#34;&gt;#&lt;/a&gt; 不同点&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;有效时间不同
+&lt;ul&gt;
+&lt;li&gt;localStorage（以键值对 (Key-Value) 的方式存储）
+&lt;ul&gt;
+&lt;li&gt;储存持久数据&lt;/li&gt;
+&lt;li&gt;浏览器关闭后数据不丢失除非主动清除数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;sessionStorage
+&lt;ul&gt;
+&lt;li&gt;数据在当前浏览器关闭后自动删除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;作用域不同
+&lt;ul&gt;
+&lt;li&gt;localStorage 在所有同源窗口中都是共享的；cookie 也是在所有同源窗口中都是共享的。&lt;/li&gt;
+&lt;li&gt;sessionStorage 不在不同的浏览器页面中共享，即使是同一个页面&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;安全性：需要注意的是，不是什么数据都适合放在 Cookie、localStorage 和 sessionStorage 中的，因为它们保存在本地容易被篡改，使用它们的时候，需要时刻注意是否有代码存在 XSS 注入的风险。所以千万不要用它们存储你系统中的敏感数据。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;userdata&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#userdata&#34;&gt;#&lt;/a&gt; userData&lt;/h4&gt;
+&lt;h5 id=&#34;特点-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#特点-3&#34;&gt;#&lt;/a&gt; 特点&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;IE 专属 ：早期 IE 浏览器用来本地储存数据用的&lt;/li&gt;
+&lt;li&gt;以文件的形式保存在磁盘上 ：持久化储存方式&lt;/li&gt;
+&lt;li&gt;可以设置失效日期&lt;/li&gt;
+&lt;li&gt;可储存大小 1MB 左右&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：使用 IE 条件注释来避免其它浏览器载入上述代码 &amp;lt;&lt;em&gt;!–[if IE]&amp;gt;&amp;lt;[end If]–&lt;/em&gt; &amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;17-如何实现标签页面的通信&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#17-如何实现标签页面的通信&#34;&gt;#&lt;/a&gt; 17、如何实现标签页面的通信&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;方法一 ：使用 localStorage&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用 localStorage.setItem (key,value) 添加内容&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 Storage 事件监听添加、修改、删除的动作&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;window&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function-variable function&#34;&gt;onstorage&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;e&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;// 或者这样&lt;/span&gt;
+window&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;addEventListener&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;storage&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;e&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;方法二：使用 cookie+setInterval&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将要传递的信息储存在 cookie 中&lt;/li&gt;
+&lt;li&gt;每隔一定时间读取 cookie 信息，获取要传递的信息&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;具体描述&lt;/strong&gt; ：1、在页面 A 设置一个使用 setInterval 定时器不断刷新，检查 Cookies 的值是否发生变化，如果变化就进行刷新的操作。 2、由于 Cookies 是在同域可读的，所以在页面 B 审核的时候改变 Cookies 的值，页面 A 自然是可以拿到的。这样做确实可以实现我想要的功能，但是这样的方法相当浪费资源。虽然在这个性能过盛的时代，浪费不浪费也感觉不出来，但是这种实现方案，确实不够优雅。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;方法三 ：websocket 通讯（HTML5）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;定义：WebSocket 是 HTML5 新增的协议，它的目的是在浏览器和服务器之间建立一个不受限的双向通信的通道，比如说，服务器可以在任意时刻发送消息给浏览器。&lt;/li&gt;
+&lt;li&gt;WebSocket 连接必须由浏览器发起，特点
+&lt;ul&gt;
+&lt;li&gt;建立在 TCP 协议之上，服务器端的实现比较容易。&lt;/li&gt;
+&lt;li&gt;与 HTTP 协议有着良好的兼容性。默认端口也是 80 和 443，并且握手阶段采用 HTTP 协议，因此握手时不容易屏蔽，能通过各种 HTTP 代理服务器。&lt;/li&gt;
+&lt;li&gt;数据格式比较轻量，性能开销小，通信高效。&lt;/li&gt;
+&lt;li&gt;可以发送文本，也可以发送二进制数据。&lt;/li&gt;
+&lt;li&gt;没有同源限制，客户端可以与任意服务器通信。&lt;/li&gt;
+&lt;li&gt;协议标识符是 ws（如果加密，则为 wss），服务器网址就是&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SharedWorker（html5 浏览器的新特性 SharedWorker）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本质还是单线程，只是利用了浏览器不同 JS 引擎&lt;/li&gt;
+&lt;li&gt;必须在服务器上才跑得动&lt;/li&gt;
+&lt;li&gt;IE 未兼容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;18-谈谈-cookie-和-session-的区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#18-谈谈-cookie-和-session-的区别&#34;&gt;#&lt;/a&gt; 18、谈谈 cookie 和 session 的区别&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;共同点：记录用户状态&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#区别&#34;&gt;#&lt;/a&gt; 区别：&lt;/h4&gt;
+&lt;h5 id=&#34;cookie-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cookie-2&#34;&gt;#&lt;/a&gt; cookie&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;什么是 Cookie？&lt;/p&gt;
+&lt;p&gt;HTTP Cookie（也叫 Web Cookie 或浏览器 Cookie）是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上。通常，它用于告知服务端两个请求是否来自同一浏览器，如保持用户的登录状态。Cookie 使基于无状态的 HTTP 协议记录稳定的状态信息成为了可能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;采用的是在客户端保持状态的方案 ： 即运行在客户端&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;有大小限制，存储个数有限&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;有安全隐患 ：通过某些手法可以篡改本地储存的信息来欺骗客户端&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持跨域名访问&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;session&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#session&#34;&gt;#&lt;/a&gt; session&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;什么是 Session？&lt;/p&gt;
+&lt;p&gt;Session 代表着服务器和客户端一次会话的过程。Session 对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 Session 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当客户端关闭会话，或者 Session 超时失效时会话结束。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;采用的是在服务端保持状态的方案： 即运行在服务端&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;没有大小限制和服务器内存大小有关&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;过多会增加服务器压力&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;仅在他所在的域名内有效&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;cookie-和-session-流程介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cookie-和-session-流程介绍&#34;&gt;#&lt;/a&gt; cookie 和 session 流程介绍&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1、用户第一次请求服务器的时候，服务器根据用户提交的相关信息，创建创建对应的 Session ，请求返回时将此 Session 的唯一标识信息 SessionID 返回给浏览器，浏览器接收到服务器返回的 SessionID 信息后，会将此信息存入到 Cookie 中，同时 Cookie 记录此 SessionID 属于哪个域名。&lt;/p&gt;
+&lt;p&gt;2、当用户第二次访问服务器的时候，请求会自动判断此域名下是否存在 Cookie 信息，如果存在自动将 Cookie 信息也发送给服务端，服务端会从 Cookie 中获取 SessionID，再根据 SessionID 查找对应的 Session 信息，如果没有找到说明用户没有登录或者登录失效，如果找到 Session 证明用户已经登录可执行后面操作。&lt;/p&gt;
+&lt;p&gt;3、根据以上流程可知，SessionID 是连接 Cookie 和 Session 的一道桥梁，大部分系统也是根据此原理来验证用户登录状态。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;181-既然服务端是根据-cookie-中的信息判断用户是否登录那么如果浏览器中禁止了-cookie如何保障整个机制的正常运转&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#181-既然服务端是根据-cookie-中的信息判断用户是否登录那么如果浏览器中禁止了-cookie如何保障整个机制的正常运转&#34;&gt;#&lt;/a&gt; 18.1、既然服务端是根据 Cookie 中的信息判断用户是否登录，那么如果浏览器中禁止了 Cookie，如何保障整个机制的正常运转&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;第一种方案，每次请求中都携带一个 SessionID 的参数，也可以 Post 的方式提交，也可以在请求的地址后面拼接 xxx?SessionID=123456…。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第二种方案，Token 机制。Token 机制多用于 App 客户端和服务器交互的模式，也可以用于 Web 端做用户状态管理。&lt;/p&gt;
+&lt;p&gt;Token 的意思是 “令牌”，是服务端生成的一串字符串，作为客户端进行请求的一个标识。Token 机制和 Cookie 和 Session 的使用机制比较类似。&lt;/p&gt;
+&lt;p&gt;当用户第一次登录后，服务器根据提交的用户信息生成一个 Token，响应时将 Token 返回给客户端，以后客户端只需带上这个 Token 前来请求数据即可，无需再次登录验证。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;182-如何考虑分布式-session-问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#182-如何考虑分布式-session-问题&#34;&gt;#&lt;/a&gt; 18.2、如何考虑分布式 Session 问题？&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;在互联网公司为了可以支撑更大的流量，后端往往需要多台服务器共同来支撑前端用户请求，那如果用户在 A 服务器登录了，第二次请求跑到服务 B 就会出现登录失效问题。&lt;/li&gt;
+&lt;li&gt;分布式 Session 一般会有以下几种解决方案
+&lt;ul&gt;
+&lt;li&gt;Nginx ip_hash 策略，服务端使用 Nginx 代理，每个请求按访问 IP 的 hash 分配，这样来自同一 IP 固定访问一个后台服务器，避免了在服务器 A 创建 Session，第二次分发到服务器 B 的现象。&lt;/li&gt;
+&lt;li&gt;Session 复制，任何一个服务器上的 Session 发生改变（增删改），该节点会把这个 Session 的所有内容序列化，然后广播给所有其它节点。&lt;/li&gt;
+&lt;li&gt;共享 Session，服务端无状态话，将用户的 Session 等信息使用缓存中间件来统一管理，保障分发到每一个服务器的响应结果都一致。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;183-cookie-和-session-各自优势&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#183-cookie-和-session-各自优势&#34;&gt;#&lt;/a&gt; 18.3、cookie 和 session 各自优势&lt;/h4&gt;
+&lt;h5 id=&#34;cookie-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cookie-3&#34;&gt;#&lt;/a&gt; cookie&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;极高的扩展性和可用性&lt;/li&gt;
+&lt;li&gt;不需要使用大量服务器资源&lt;/li&gt;
+&lt;li&gt;简单性 Cookie 是一种基于文本的轻量结构，包含简单的键值对，结构简单。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;session-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#session-2&#34;&gt;#&lt;/a&gt; session&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;易于读写&lt;/li&gt;
+&lt;li&gt;易于站点的用户化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;184cookie-和-session-常见攻击方式及解决方案&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#184cookie-和-session-常见攻击方式及解决方案&#34;&gt;#&lt;/a&gt; 18.4：cookie 和 session 常见攻击方式及解决方案&lt;/h4&gt;
+&lt;h5 id=&#34;cookie-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cookie-4&#34;&gt;#&lt;/a&gt; cookie&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;具体
+&lt;ul&gt;
+&lt;li&gt;直接访问 Cookie 文件查找想要的机密文件&lt;/li&gt;
+&lt;li&gt;进行 Cookie 信息传递时被截取&lt;/li&gt;
+&lt;li&gt;攻击者伪造 Cookie 信息，客户端获取后进行操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;解决方案
+&lt;ul&gt;
+&lt;li&gt;不要早 Cookie 中保存敏感信息&lt;/li&gt;
+&lt;li&gt;不要早 Cookie 中保存没有经过加密的或者容易被解密的敏感信息&lt;/li&gt;
+&lt;li&gt;对从客户端获取得的 Cookie 信息进行严格校验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;session-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#session-3&#34;&gt;#&lt;/a&gt; session&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;具体
+&lt;ul&gt;
+&lt;li&gt;会话劫持（通过获取用户 Session ID 后，使用该 Session ID 登录目标账号）&lt;/li&gt;
+&lt;li&gt;会话固定（诱骗受害者使用攻击者指定的会话标识 Session ID 的攻击手段）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;解决方案
+&lt;ul&gt;
+&lt;li&gt;使用 User-Agent 检测请求的一致性，设置 HttpOnly，可以防止客户端脚本访问这个 Cookie，从而有效的防止 XSS 攻击；关闭透明化 Session ID；更改 Session 名称&lt;/li&gt;
+&lt;li&gt;用户登录时生成新的 Session ID&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;19-谈谈对-websocket-的认识&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#19-谈谈对-websocket-的认识&#34;&gt;#&lt;/a&gt; 19、谈谈对 WebSocket 的认识&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建原因：HTTP 协议只能由客户端发起 单向连接&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;191-是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#191-是什么&#34;&gt;#&lt;/a&gt; 19.1、是什么？&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML5 中的协议，支持持久连接&lt;/li&gt;
+&lt;li&gt;WebSocket 是基于 HTTP 协议的 ： 借用了 Http 协议来完成一部分握手&lt;/li&gt;
+&lt;li&gt;是真正意义上的双向绑定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;192-websocket-区别-http-协议&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#192-websocket-区别-http-协议&#34;&gt;#&lt;/a&gt; 19.2、WebSocket 区别 http 协议&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;http 协议 不支持持久性连接&lt;/li&gt;
+&lt;li&gt;HTTP1.1 中出现 keep-alive，合并多个 http 请求&lt;/li&gt;
+&lt;li&gt;HTTP 的生命周期通过 Request 来界定 ： 一个 Request 对应一个 Response&lt;/li&gt;
+&lt;li&gt;Response 是被动的，不能主动发起&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;193-如何模拟双向通信&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#193-如何模拟双向通信&#34;&gt;#&lt;/a&gt; 19.3、如何模拟双向通信&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;短轮询
+&lt;ul&gt;
+&lt;li&gt;客户端定时向服务器发送 Ajax 请求，服务器接到请求后马上返回响应信息并关闭连接。&lt;/li&gt;
+&lt;li&gt;优点 ： 后端编写容易&lt;/li&gt;
+&lt;li&gt;缺点 ： 请求中大半是无用，浪费宽带和服务器资源&lt;/li&gt;
+&lt;li&gt;适用 ： 小型应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;长轮询
+&lt;ul&gt;
+&lt;li&gt;客户端向服务器发送 Ajax 请求，服务器接到请求后 hold 住连接，直到有新消息才返回响应信息并关闭连接，客户端处理完响应信息后再向服务器发送新的请求。&lt;/li&gt;
+&lt;li&gt;优点 ：在无消息的情况下不会频繁的请求，耗费资源小&lt;/li&gt;
+&lt;li&gt;缺点
+&lt;ul&gt;
+&lt;li&gt;服务器 hold 连接会消耗资源&lt;/li&gt;
+&lt;li&gt;返回数据顺序无保证，难于管理维护&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;长连接
+&lt;ul&gt;
+&lt;li&gt;在页面嵌入一个隐藏 iframe，将这个隐藏 iframe 的 src 属性设为对一个长连接的请求或是采用 xhr 请求，服务器端就能源源不断的往客户端输入数据&lt;/li&gt;
+&lt;li&gt;优点
+&lt;ul&gt;
+&lt;li&gt;消息及时到达，不发无用请求&lt;/li&gt;
+&lt;li&gt;管理起来也相对方便&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;缺点：服务器维护一个长连接会增加开销&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;20-渲染-了解网页渲染流程与优化技巧&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#20-渲染-了解网页渲染流程与优化技巧&#34;&gt;#&lt;/a&gt; 20、渲染 | 了解网页渲染流程与优化技巧&lt;/h3&gt;
+&lt;h4 id=&#34;201-生成网页步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#201-生成网页步骤&#34;&gt;#&lt;/a&gt; 20.1、生成网页步骤&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML 代码转成 DOM（Document Object Model）： 解析 HTML 生成&lt;/li&gt;
+&lt;li&gt;CSS 代码转化成 CSSOM（CSS Object Model）： 解析 CSS 生成&lt;/li&gt;
+&lt;li&gt;结合 DOM 和 CSSOM 生成一颗渲染树： 包含每个节点的视觉信息&lt;/li&gt;
+&lt;li&gt;生成布局（layout）： 将所有渲染树的所有节点进行平面合成&lt;/li&gt;
+&lt;li&gt;将布局绘制（paint）在屏幕上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;202-重新渲染-重排回流和重绘&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#202-重新渲染-重排回流和重绘&#34;&gt;#&lt;/a&gt; 20.2、重新渲染 （重排【回流】和重绘）&lt;/h4&gt;
+&lt;h5 id=&#34;重排回流&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重排回流&#34;&gt;#&lt;/a&gt; 重排（回流）&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;重新生成布局&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;布局改了就一定会重排&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#布局改了就一定会重排&#34;&gt;#&lt;/a&gt; 布局改了就一定会重排&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;添加或删除可见的 DOM 元素&lt;/li&gt;
+&lt;li&gt;元素位置改变&lt;/li&gt;
+&lt;li&gt;元素尺寸改变 —— 边距、填充、边框、宽度和高度&lt;/li&gt;
+&lt;li&gt;内容改变 —— 比如文本改变或者图片大小改变而引起的计算值宽度和高度改变；&lt;/li&gt;
+&lt;li&gt;页面渲染器初始化&lt;/li&gt;
+&lt;li&gt;浏览器窗口尺寸改变 ——resize 事件发生时；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;重排一定需要重绘&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;line-numbers language-css&#34; data-language=&#34;css&#34;&gt;&lt;code class=&#34;language-css&#34;&gt;var s = document.body.style&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+s.padding = &lt;span class=&#34;token string&#34;&gt;&#34;2px&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; // 回流+重绘
+s.border = &lt;span class=&#34;token string&#34;&gt;&#34;1px solid red&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; // 再一次 回流+重绘
+s.color = &lt;span class=&#34;token string&#34;&gt;&#34;blue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; // 重绘
+s.backgroundColor = &lt;span class=&#34;token string&#34;&gt;&#34;#ccc&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; // 重绘
+s.fontSize = &lt;span class=&#34;token string&#34;&gt;&#34;14px&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; // 再一次 回流+重绘
+document.body.&lt;span class=&#34;token function&#34;&gt;appendChild&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;document.&lt;span class=&#34;token function&#34;&gt;createTextNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;abc!&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;// 添加node，再一次 回流+重绘&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;重绘&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重绘&#34;&gt;#&lt;/a&gt; 重绘&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;只是影响元素的外观，风格，而不会影响布局的，比如 background-color。则就叫称为重绘。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;重新渲染出现情况&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重新渲染出现情况&#34;&gt;#&lt;/a&gt; 重新渲染出现情况&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;修改 DOM&lt;/li&gt;
+&lt;li&gt;修改样式表&lt;/li&gt;
+&lt;li&gt;用户事件
+&lt;ul&gt;
+&lt;li&gt;鼠标悬停&lt;/li&gt;
+&lt;li&gt;页面滚动&lt;/li&gt;
+&lt;li&gt;输入框输入文字&lt;/li&gt;
+&lt;li&gt;改变窗口等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;21-性能优化技巧&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#21-性能优化技巧&#34;&gt;#&lt;/a&gt; 21、性能优化技巧&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;回答性能优化问题时：分两层阐述：&lt;/p&gt;
+&lt;p&gt;1、底层：重排【回流】和重绘层级 — 下面针对此层&lt;/p&gt;
+&lt;p&gt;2、应用层（雅虎军规 35 条）— 在性能优化专题会仔细分析。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;211-减少重新渲染频率&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#211-减少重新渲染频率&#34;&gt;#&lt;/a&gt; 21.1、减少重新渲染频率&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;DOM 的多个读 / 写操作应该放在一起。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不要两个读操作之间，加入一个写操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果某个样式是通过重排得到的，那么最好缓存结果。避免下一次用到的时候又要重排&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不要一条条地改变样式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过改变 class，csstext，一次改变样式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;尽量使用离线 DOM，而不是真实的网页 DOM，来改变元素样式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;例如&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;操作 Document Fragment 对象&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cloneNode 克隆节点操作后替换&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用虚拟 DOM 的脚本库，比如 React，vue 等&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;很新颖（嘻嘻）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;设为 dispaly：none（需要一次重排和重绘）后进行 n 次操作，最后再恢复显示（需要一次重排和重绘）&lt;/li&gt;
+&lt;li&gt;用两次重新渲染，取代了可能 n（可能是个大树）次的重新渲染&lt;/li&gt;
+&lt;li&gt;只有在必要的时候，才将元素的 display 属性为可见&lt;/li&gt;
+&lt;li&gt;visibility:hidden 的元素只对重绘有影响，不影响重排&lt;/li&gt;
+&lt;li&gt;隐藏后不可见的元素读写不影响重排和重绘&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;使用调整重新渲染的方法 ： 可以大幅度提高网页性能&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 window.requestAnimationFrame () 方法
+&lt;ul&gt;
+&lt;li&gt;作用：将某些代码放到下一次重新渲染时执行&lt;/li&gt;
+&lt;li&gt;适用
+&lt;ul&gt;
+&lt;li&gt;页面滚动事件的监听函数&lt;/li&gt;
+&lt;li&gt;网页动画&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;使用 window.requestdleCallback () 方法
+&lt;ul&gt;
+&lt;li&gt;暂时就 Chrome 支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;212-减少渲染成本&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#212-减少渲染成本&#34;&gt;#&lt;/a&gt; 21.2、减少渲染成本&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;position 属性为 absolute 或 fixed 的元素，重排的开销会比较小&lt;/p&gt;
+&lt;p&gt;因为它们脱离文档，不用考虑他们对其他元素的影响，所以用 absolute，而少用 float&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;22-html5-概括&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#22-html5-概括&#34;&gt;#&lt;/a&gt; 22、HTML5 概括&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HTML（超文本标记语言 HyperText Markup Language）的最新本版本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;新增特性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#新增特性&#34;&gt;#&lt;/a&gt; 新增特性&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;语义化元素 推荐使用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新的通讯方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;WebSockets&lt;/li&gt;
+&lt;li&gt;重新绘制界面 布局没改，样式改了，需要重绘，不一定重排&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缓存&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;应用程序缓存
+&lt;ul&gt;
+&lt;li&gt;使用方式
+&lt;ul&gt;
+&lt;li&gt;&amp;lt;&lt;em&gt;html manifest=“demo.appcache”&lt;/em&gt; &amp;gt;&lt;/li&gt;
+&lt;li&gt;manifest 文件的建议的文件扩展名是：&amp;quot;.appcache&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;优点
+&lt;ul&gt;
+&lt;li&gt;离线浏览 - 用户可在应用离线时使用它们&lt;/li&gt;
+&lt;li&gt;更快速度 - 已缓存资源加载得更快&lt;/li&gt;
+&lt;li&gt;减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;浏览器缓存
+&lt;ul&gt;
+&lt;li&gt;Web Storage
+&lt;ul&gt;
+&lt;li&gt;localStorage&lt;/li&gt;
+&lt;li&gt;sessionStorage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多媒体&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;audio&lt;/li&gt;
+&lt;li&gt;video&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3D &amp;amp; 图像&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;canvas&lt;/li&gt;
+&lt;li&gt;WebGL：用 canvas 元素中的 API 实现 3D 图像功能&lt;/li&gt;
+&lt;li&gt;svg ：基于 XML 直接嵌入到 HTML 中的矢量图形格式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;性能 &amp;amp; 集成&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Web workers&lt;/p&gt;
+&lt;p&gt;Web Worker 是为了解决 JavaScript 在浏览器环境中没有多线程的问题。正常形况下，浏览器执行某段程序的时候会阻塞直到运行结束后在恢复到正常状态，而 HTML5 的 Web Worker 就是为了解决这个问题，提升程序的执行效率。 所以 Web Worker 的最佳使用场景是执行一些开销较大的数据处理或计算任务。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;web worker 的创建&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;worker 是一个对象，通过构造函数 Worker 创建，参数就是一个 js 文件的路径；文件中的 js 代码将运行在主线程之外的 worker 线程；&lt;/li&gt;
+&lt;li&gt;例如：var myWorker = new Worker (‘worker.js’);&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;History API ：允许对浏览器历史记录进行操作&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;XMLHttpRequest Level 2 (（XHR）对象可以与服务器交互。)&lt;/p&gt;
+&lt;p&gt;新版本功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以设置 HTTP 请求的时限&lt;/li&gt;
+&lt;li&gt;可以使用 FormData 对象管理表单数据。&lt;/li&gt;
+&lt;li&gt;可以上传文件。&lt;/li&gt;
+&lt;li&gt;可以请求不同域名下的数据（跨域请求）&lt;/li&gt;
+&lt;li&gt;可以获取服务器端的二进制数据&lt;/li&gt;
+&lt;li&gt;可以获得数据传输的进度信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;老版本的缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;只支持文本数据的传送，无法用来读取和上传二进制文件。&lt;/li&gt;
+&lt;li&gt;传送和接收数据时，没有进度信息，只能提示有没有完成。&lt;/li&gt;
+&lt;li&gt;受到 &amp;quot;同域限制&amp;quot;（Same Origin Policy），只能向同一域名的服务器请求数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;contentEditable&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;让元素的区域可编辑&lt;/li&gt;
+&lt;li&gt;已标准化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;requestAnimationFrame ： 允许控制动画渲染以获得更优性能&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拖放 API draggable 属性、拖放事件 (dragstart、drag、dragenter、dragleave、dragover、drap、dragend)、dataTransfer 对象&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;全屏 API&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在线和离线事件&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设备访问&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;carnera ：能够操作计算机的摄像头&lt;/li&gt;
+&lt;li&gt;地理位置定位 Geolocation&lt;/li&gt;
+&lt;li&gt;触控事件&lt;/li&gt;
+&lt;li&gt;检测设备方向 ：横向还是竖向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="面试全面总结" />
+        <category term="html" />
+        <updated>2020-03-23T09:18:21.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2020/03/23/getOfferhtml1/</id>
+        <title>html 面试考点全面总结上篇</title>
+        <link rel="alternate" href="http://example.com/2020/03/23/getOfferhtml1/"/>
+        <content type="html">&lt;h2 id=&#34;html-面试考点全面总结上篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#html-面试考点全面总结上篇&#34;&gt;#&lt;/a&gt; html 面试考点全面总结上篇&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;拿到 字节跳动实习生 offer 总结&lt;/p&gt;
+&lt;p&gt;回馈分享一波自己的知识点总结&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;希望读者依此构建自己的知识树（思维导图）&lt;/p&gt;
+&lt;p&gt;偷懒一下：可参考我自己总结思维导图 : &lt;a href=&#34;https://github.com/ZhChen7/Interview-mind-map&#34;&gt;点这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;附带：高频面试题积累文档。 来自于（学长、牛客网等平台）&lt;/p&gt;
+&lt;p&gt;自己开发的博客地址：&lt;a href=&#34;http://zxinc520.com/&#34;&gt;zxinc520.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;github 地址: &lt;a href=&#34;https://github.com/ZhChen7&#34;&gt;点击&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此篇 html 共总结 22 大知识点： 全部弄懂了，面试很容易。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;1-浏览器页面由哪三层构成&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-浏览器页面由哪三层构成&#34;&gt;#&lt;/a&gt; 1、浏览器页面由哪三层构成&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;结构层
+&lt;ul&gt;
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;li&gt;构建文件结构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;表示层
+&lt;ul&gt;
+&lt;li&gt;css&lt;/li&gt;
+&lt;li&gt;设置文档呈现效果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;行为层
+&lt;ul&gt;
+&lt;li&gt;JS 和 DOM 脚本&lt;/li&gt;
+&lt;li&gt;实现文档的行为&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-语义化-谈谈-html5-语义化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-语义化-谈谈-html5-语义化&#34;&gt;#&lt;/a&gt; 2、语义化 | 谈谈 html5 语义化&lt;/h3&gt;
+&lt;h4 id=&#34;21-什么是语义化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#21-什么是语义化&#34;&gt;#&lt;/a&gt; 2.1、什么是语义化？&lt;/h4&gt;
+&lt;p&gt;HTML5 的语义化指的是合理使用语义化的标签来创建页面结构，如 header,footer,nav，从标签上即可以直观的知道这个标签的作用，而不是滥用 div。&lt;/p&gt;
+&lt;h4 id=&#34;22-语义化的优点有&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#22-语义化的优点有&#34;&gt;#&lt;/a&gt; 2.2、语义化的优点有&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;代码结构清晰，易于阅读，利于开发和维护&lt;/li&gt;
+&lt;li&gt;提高用户体验，在样式加载失败时，页面结构清晰&lt;/li&gt;
+&lt;li&gt;方便其他设备解析（如屏幕阅读器）根据语义渲染网页。&lt;/li&gt;
+&lt;li&gt;有利于搜索引擎优化（SEO），搜索引擎爬虫会根据不同的标签来赋予不同的权重&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;23-常用语义化标签有哪些&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#23-常用语义化标签有哪些&#34;&gt;#&lt;/a&gt; 2.3、常用语义化标签有哪些&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;article | aside | nav | section | header | footer&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;3-html5-元素分类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-html5-元素分类&#34;&gt;#&lt;/a&gt; 3、HTML5 元素分类&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;结构性元素
+&lt;ul&gt;
+&lt;li&gt;section：在 web 页面应用中，该元素也可以用于区域章节表述；&lt;/li&gt;
+&lt;li&gt;header：页面主题上的头部，注意区别于 head 元素；&lt;/li&gt;
+&lt;li&gt;footer：页面的底部（页脚）；&lt;/li&gt;
+&lt;li&gt;nav：是专门用于菜单导航、链接导航的元素，是 navigator 的缩写；&lt;/li&gt;
+&lt;li&gt;article：用于表示一篇文章的主题部分，一般为文字集中显示的区域；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;级块性元素
+&lt;ul&gt;
+&lt;li&gt;aside：用以表达注记、贴士、侧栏、摘要、插入的引用等作为补充主体的内容；&lt;/li&gt;
+&lt;li&gt;figure：是对多个元素进行组合并展示的元素，通常与 figcaption 联合使用；&lt;/li&gt;
+&lt;li&gt;code：表示一段代码块；&lt;/li&gt;
+&lt;li&gt;dialog：用于表达人与人之间的对话，该元素还包括 dt 和 dd 这两个组合元素，他们常常同时使用。dt 用于表示说话者，而 dd 用来表示说话者的内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;行内语义性元素
+&lt;ul&gt;
+&lt;li&gt;meter：表示特定范围内的数值，可用于工资、数量、百分比等；&lt;/li&gt;
+&lt;li&gt;time：表示时间值；&lt;/li&gt;
+&lt;li&gt;progress：用来表示进度条，可通过对其 max、min、step 等属性进行控制，完成对进度的表示和监视；&lt;/li&gt;
+&lt;li&gt;video：视频元素，用于支持和实现视频（含视频流）文件的直接播放，支持缓冲预载和多种视频媒体格式；&lt;/li&gt;
+&lt;li&gt;audio：音频元素，用于支持和实现音频（音频流）文件的直接播放，支持缓冲预载和多种音频媒体格式；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;交互性元素
+&lt;ul&gt;
+&lt;li&gt;details：用来表示一段具体的内容，但是内容默认可能不显示，通过某种手段（如单击）与 legend 交互才会显示出来；&lt;/li&gt;
+&lt;li&gt;datagrid：用来控制客户端数据与显示，可以由动态脚本及时更新；&lt;/li&gt;
+&lt;li&gt;menu：主要用于交互菜单；&lt;/li&gt;
+&lt;li&gt;command：用来处理命令按钮。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;4-常见空元素&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-常见空元素&#34;&gt;#&lt;/a&gt; 4、常见空元素&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;含义&lt;/strong&gt; ：没有元素内容标记的内容【也称自闭合元素】&lt;/p&gt;
+&lt;p&gt;常用的空元素：&lt;/p&gt;
+&lt;meta&gt; &lt;br&gt; &lt;hr&gt; &lt;input&gt; &lt;img&gt; &lt;link&gt;
+&lt;h3 id=&#34;5-表单增强-新增的-input-类型及属性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5-表单增强-新增的-input-类型及属性&#34;&gt;#&lt;/a&gt; 5、表单增强 | 新增的 input 类型及属性&lt;/h3&gt;
+&lt;h4 id=&#34;51-新类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#51-新类型&#34;&gt;#&lt;/a&gt; 5.1、新类型&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;color ：用于指定颜色的控件&lt;/li&gt;
+&lt;li&gt;number：用于输入浮点数的控件&lt;/li&gt;
+&lt;li&gt;tel：用于输入电话号码的控件；换行会被自动从输入的值中移除 A，但不会执行其他语法。可以使用属性，比如 pattern 和 maxlength 来约束控件输入的值。恰当的时候，可以应用 :valid 和 :invalid CSS 伪类。&lt;/li&gt;
+&lt;li&gt;email：用于编辑 e-mail 的字段。 合适的时候可以使用 :valid 和 :invalid CSS 伪类。&lt;/li&gt;
+&lt;li&gt;url ：用于编辑 URL 的字段&lt;/li&gt;
+&lt;li&gt;range ：用于输入不精确值控件&lt;/li&gt;
+&lt;li&gt;search ：用于输入搜索字符串的单行文本字段。换行会被从输入的值中自动移除。&lt;/li&gt;
+&lt;li&gt;与时间相关
+&lt;ul&gt;
+&lt;li&gt;date ： 用于输入日期的控件（年，月，日，不包括时间）&lt;/li&gt;
+&lt;li&gt;time ： 用于输入不含时区的时间控件&lt;/li&gt;
+&lt;li&gt;datatime 【已弃用】 ： 用于输入日期和时间的控件（小时，分钟， 秒，基于 UTC 时区的一小部分。 此功能已从 WHATWG HTML 中删除。&lt;/li&gt;
+&lt;li&gt;datetime-local ： 用于输入日期时间控件，不包含时区&lt;/li&gt;
+&lt;li&gt;month ： 用于输入年月的控件，不带时区&lt;/li&gt;
+&lt;li&gt;week ： 用于输入一个由星期 - 年组成的日期，日期不包括时&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;52-新属性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#52-新属性&#34;&gt;#&lt;/a&gt; 5.2、新属性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;placeholder&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;required 必填项&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;list 属性规定输入域的 datalist。datalist 是输入域的选项列表&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pattern 定义正则&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;autofocus 属性规定在页面加载时，域自动地获得焦点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;readonly 该字段只读，不能修改&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;autocomplete 属性规定 form 或 input 域应该拥有自动完成功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;min/max / step&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;min、max 和 step 属性用于为包含数字或日期的 input 类型规定限定（约束）。&lt;/p&gt;
+&lt;p&gt;max 属性规定输入域所允许的最大值。&lt;/p&gt;
+&lt;p&gt;min 属性规定输入域所允许的最小值。&lt;/p&gt;
+&lt;p&gt;step 属性为输入域规定合法的数字间隔（如果 step=“3”，则合法的数是 -3,0,3,6 等）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6-认识-svg&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-认识-svg&#34;&gt;#&lt;/a&gt; 6、认识 SVG&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;含义&lt;/strong&gt; ：可缩放矢量图形（Scalable Vector Graphics，SVG），是一种用于描述基于二维的矢量图形的，基于 XML 的标记语言。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键词&lt;/strong&gt;：【基于 XML】【矢量】 【图像格式】&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;特点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;矢量
+&lt;ul&gt;
+&lt;li&gt;可以任意缩放&lt;/li&gt;
+&lt;li&gt;不会破坏图像的清晰度和细节&lt;/li&gt;
+&lt;li&gt;边缘清晰，适用任何分辨率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;文本独立 文字独立于图像&lt;/li&gt;
+&lt;li&gt;文件小 下载快&lt;/li&gt;
+&lt;li&gt;颜色控制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;61-svg-与-html5-的-canvas-各有什么优点哪个更有前途&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#61-svg-与-html5-的-canvas-各有什么优点哪个更有前途&#34;&gt;#&lt;/a&gt; 6.1、SVG 与 HTML5 的 canvas 各有什么优点，哪个更有前途？&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Canvas 是使用 JavaScript 程序绘图 (动态生成)，SVG 是使用 XML 文档描述来绘图。&lt;br&gt;
+从这点来看：SVG 更适合用来做动态交互，而且 SVG 绘图很容易编辑，只需要增加或移除相应的元素就可以了。&lt;br&gt;
+同时 SVG 是基于矢量的，所有它能够很好的处理图形大小的改变。Canvas 是基于位图的图像，它不能够改变大小，只能缩放显示；所以说 Canvas 更适合用来实现类似于 Flash 能做的事情 (当然现在 Canvas 与 Flash 相比还有一些不够完善的地方)。&lt;br&gt;
+关于最后一点二者谁更有前途：从上面我们可以知道二者是有不同用途的，作为一个开发者，你应该做的是理解应用程序的具体需求并选择正确的技术来实现它。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;7-浏览器内核&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-浏览器内核&#34;&gt;#&lt;/a&gt; 7、浏览器内核&lt;/h3&gt;
+&lt;h4 id=&#34;71-认识内核&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#71-认识内核&#34;&gt;#&lt;/a&gt; 7.1、认识内核&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;渲染引擎 ：渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息&lt;/li&gt;
+&lt;li&gt;JS 引擎
+&lt;ul&gt;
+&lt;li&gt;解析和执行 JavaScript 来实现网页的动态效果&lt;/li&gt;
+&lt;li&gt;引擎越来越独立，内核就倾向于只指渲染引擎&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;72-主流浏览器所用的内核&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#72-主流浏览器所用的内核&#34;&gt;#&lt;/a&gt; 7.2、主流浏览器所用的内核&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;IE 浏览器 Trident 内核&lt;/li&gt;
+&lt;li&gt;谷歌浏览器（chrome）
+&lt;ul&gt;
+&lt;li&gt;Webkit（之前使用）&lt;/li&gt;
+&lt;li&gt;blink 内核&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Opera 浏览器
+&lt;ul&gt;
+&lt;li&gt;blink 内核&lt;/li&gt;
+&lt;li&gt;Presto 内核（之前使用）
+&lt;ul&gt;
+&lt;li&gt;渲染速度的优化达到了极致&lt;/li&gt;
+&lt;li&gt;牺牲了兼容性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;火狐浏览器（Firefox）
+&lt;ul&gt;
+&lt;li&gt;Gecko 内核 ： 代码完全公开，可开发程度很高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Safari 浏览器 ：苹果公司 webkit 内核&lt;/li&gt;
+&lt;li&gt;国产浏览器
+&lt;ul&gt;
+&lt;li&gt;双内核（一个负责兼容，一个负责速度）&lt;/li&gt;
+&lt;li&gt;常用
+&lt;ul&gt;
+&lt;li&gt;Trident + webkit&lt;/li&gt;
+&lt;li&gt;Trident + blink&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;8-web-标准以及-w3c&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8-web-标准以及-w3c&#34;&gt;#&lt;/a&gt; 8、WEB 标准以及 W3C&lt;/h3&gt;
+&lt;h4 id=&#34;81-web-标准&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#81-web-标准&#34;&gt;#&lt;/a&gt; 8.1、web 标准&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;分为结构、表现、行为&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;web-标准是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#web-标准是什么&#34;&gt;#&lt;/a&gt; web 标准是什么？&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一系列标准的集合：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;结构化标准语言&lt;/li&gt;
+&lt;li&gt;表现标准语言&lt;/li&gt;
+&lt;li&gt;行为标准语言&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;web-标准诞生原因&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#web-标准诞生原因&#34;&gt;#&lt;/a&gt; web 标准诞生原因？&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为了解决因浏览器版本不同、软硬件设备不同导致的需多版本开发的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;82-w3c&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#82-w3c&#34;&gt;#&lt;/a&gt; 8.2、W3C&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;W3C 对 web 标准提出规范化要求&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;一结构要求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一结构要求&#34;&gt;#&lt;/a&gt; 一：结构要求：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;遵循的好处
+&lt;ul&gt;
+&lt;li&gt;提升搜索引擎对页面的抓取效率&lt;/li&gt;
+&lt;li&gt;对 SEO 很有帮助&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;具体
+&lt;ul&gt;
+&lt;li&gt;标签字母要小写&lt;/li&gt;
+&lt;li&gt;标签要闭合&lt;/li&gt;
+&lt;li&gt;标签不允许随便嵌套&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;二表现与行为要求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二表现与行为要求&#34;&gt;#&lt;/a&gt; 二：表现与行为要求：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;遵循的好处
+&lt;ul&gt;
+&lt;li&gt;使用户浏览者更方便的阅读&lt;/li&gt;
+&lt;li&gt;使网页开发者之间更好的交流&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;具体
+&lt;ul&gt;
+&lt;li&gt;尽量使用外链 css 样式表和 js 脚本：提高页面渲染速度&lt;/li&gt;
+&lt;li&gt;页面尽量少用行间样式表 ： 使结构和表现分离&lt;/li&gt;
+&lt;li&gt;标签 id 和 class 等属性名要见文知义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;9-doctypedtd&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#9-doctypedtd&#34;&gt;#&lt;/a&gt; 9、Doctype（DTD）&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作用 ： 声明文档的类型风格&lt;/p&gt;
+&lt;p&gt;告诉浏览器采用何种渲染模式解析页面&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;91-渲染模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#91-渲染模式&#34;&gt;#&lt;/a&gt; 9.1、渲染模式&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;怪异模式（兼容模式、混杂模式）
+&lt;ul&gt;
+&lt;li&gt;服务于旧式规则&lt;/li&gt;
+&lt;li&gt;页面以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;标准模式（严格模式）
+&lt;ul&gt;
+&lt;li&gt;服务于标准规则&lt;/li&gt;
+&lt;li&gt;标准模式的排版 和 JS 运作模式都是以该浏览器支持的最高标准运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;近似标准模式
+&lt;ul&gt;
+&lt;li&gt;基本是标准模型&lt;/li&gt;
+&lt;li&gt;有一些是自己的调整&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;意义&lt;/strong&gt;：严格模式与混杂模式存在的意义与其来源密切相关，如果说只存在严格模式，那么许多旧网站必然受到影响，如果只存在混杂模式，那么会回到当时浏览器大战时的混乱，每个浏览器都有自己的解析模式。&lt;/p&gt;
+&lt;h4 id=&#34;92-标准模式和混杂模式的区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#92-标准模式和混杂模式的区别&#34;&gt;#&lt;/a&gt; 9.2、标准模式和混杂模式的区别？&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;** 盒模型的处理差异：** 标准 CSS 盒模型的宽度和高度等于内容区的高度和宽度，不包含内边距和边框，而 IE6 之前的浏览器实现的盒模型的宽高计算方式是包含内边距和边框的。因此，对于 IE，怪异模式和标准模式下的盒模型宽高计算方式是不一样的；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;** 行内元素的垂直对齐：** 很多早期的浏览器对齐图片至包含它们的盒子的下边框，虽然 CSS 的规范要求它们被对齐至盒内文本的基线。标准模式下，基于 Gecko 的浏览器将会对齐至基线，而在 quirks 模式下它们会对齐至底部。最直接的例子就是图片的显示。在标准模式下，图片并不是与父元素的下边框对齐的，如果仔细观察，你会发现图片与父元素下边框之间存在一点小空隙。那是因为标准模式下，图片是基线对齐的。而怪异模式下，则不存在这个问题。具体请看这篇文章 &lt;a href=&#34;https://link.jianshu.com?t=http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/&#34;&gt;CSS 深入理解 vertical-align 和 line-height 的基友关系&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;93-标准模式和严格模式的区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#93-标准模式和严格模式的区别&#34;&gt;#&lt;/a&gt; 9.3、标准模式和严格模式的区别？&lt;/h4&gt;
+&lt;p&gt;严格模式主要有以下限制：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变量必须声明后再使用&lt;/li&gt;
+&lt;li&gt;函数的参数不能有同名属性，否则报错&lt;/li&gt;
+&lt;li&gt;不能使用 with 语句&lt;/li&gt;
+&lt;li&gt;不能对只读属性赋值，否则报错&lt;/li&gt;
+&lt;li&gt;不能使用前缀 0 表示八进制数，否则报错&lt;/li&gt;
+&lt;li&gt;不能删除不可删除的属性，否则报错&lt;/li&gt;
+&lt;li&gt;不能删除变量 delete prop，会报错，只能删除属性 delete global [prop]&lt;/li&gt;
+&lt;li&gt;eval 不会在它的外层作用域引入变量&lt;/li&gt;
+&lt;li&gt;eval 和 arguments 不能被重新赋值&lt;/li&gt;
+&lt;li&gt;arguments 不会自动反映函数参数的变化&lt;/li&gt;
+&lt;li&gt;不能使用 arguments.callee&lt;/li&gt;
+&lt;li&gt;不能使用 arguments.caller&lt;/li&gt;
+&lt;li&gt;禁止 this 指向全局对象&lt;/li&gt;
+&lt;li&gt;不能使用 fn.caller 和 fn.arguments 获取函数调用的堆栈&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;10-meta-标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#10-meta-标签&#34;&gt;#&lt;/a&gt; 10、meta 标签&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;lt;&lt;em&gt;meta&lt;/em&gt; &amp;gt; 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;101-四个属性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#101-四个属性&#34;&gt;#&lt;/a&gt; 10.1、四个属性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;http-equiv 【重要关键词】
+&lt;ul&gt;
+&lt;li&gt;content-type
+&lt;ul&gt;
+&lt;li&gt;定义字符编码&lt;/li&gt;
+&lt;li&gt;不推荐使用 改用 charset 属性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;refresh：指定以秒为单位，执行重载和重定向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;name 【 重要关键词】
+&lt;ul&gt;
+&lt;li&gt;application-name：应用程序名称&lt;/li&gt;
+&lt;li&gt;keywords ： keywords 用来告诉搜索引擎你网页的关键字是什么&lt;/li&gt;
+&lt;li&gt;author ： 当前页的作者名&lt;/li&gt;
+&lt;li&gt;viewport
+&lt;ul&gt;
+&lt;li&gt;设置浏览器视口&lt;/li&gt;
+&lt;li&gt;重要关键字
+&lt;ul&gt;
+&lt;li&gt;width ： 视口宽度&lt;/li&gt;
+&lt;li&gt;*-scale （initial-scale）： 缩放相关&lt;/li&gt;
+&lt;li&gt;user-scalable ： 是否可以手动缩放&lt;/li&gt;
+&lt;li&gt;例如：&amp;lt;&lt;em&gt;meta name=“viewport” content=“width=device-width, initial-scale=1, maximum-scale=1”&lt;/em&gt; &amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;description description 用来告诉搜索引擎你的网站主要内容&lt;/li&gt;
+&lt;li&gt;content ：具体描述 、不能单独存在&lt;/li&gt;
+&lt;li&gt;charset（HTML5）：推荐使用 utf-8 简化了不同脚本对文件中字符的处理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;102-meta-标签的作用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#102-meta-标签的作用&#34;&gt;#&lt;/a&gt; 10.2、meta 标签的作用&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;搜索引擎优化（SEO）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定义页面使用语言&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自动刷新并指向新的页面&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;实现网页转换时的动态效果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;控制页面缓冲&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网页定级评价&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;控制网页显示的窗口&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h6 id=&#34;&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h6&gt;
+&lt;h6 id=&#34;-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#-2&#34;&gt;#&lt;/a&gt; &lt;/h6&gt;
+</content>
+        <category term="面试全面总结" />
+        <category term="html" />
+        <updated>2020-03-23T09:14:53.000Z</updated>
+    </entry>
+</feed>

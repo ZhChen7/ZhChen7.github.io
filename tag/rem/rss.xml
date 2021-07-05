@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;rem&#34; tag</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Tue, 19 Mar 2019 11:11:20 +0800</pubDate>
+        <lastBuildDate>Tue, 19 Mar 2019 11:11:20 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2019/03/19/AdaptiveSkill/</guid>
+            <title>适配技巧和组件化思想</title>
+            <link>http://example.com/2019/03/19/AdaptiveSkill/</link>
+            <category>rem</category>
+            <category>less</category>
+            <category>art-template</category>
+            <pubDate>Tue, 19 Mar 2019 11:11:20 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;你一定要会的适配技巧和组件化思想&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#你一定要会的适配技巧和组件化思想&#34;&gt;#&lt;/a&gt; 你一定要会的适配技巧和组件化思想&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;rem：利用它能实现强大的屏幕适配布局&lt;/p&gt;
+&lt;p&gt;less：Less 是一门 CSS 预处理语言，它扩展了 CSS 语言，增加了变量、Mixin、函数等特性，使 CSS 更易维护和扩展。(代表的有 less，Sass，stylus)&lt;/p&gt;
+&lt;p&gt;模板引擎：art-template（实现组件化，代码不复用，提高开发效率）(当然还有很多其它好用的模板引擎，但原理上基本一样。)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#说明&#34;&gt;#&lt;/a&gt; 说明&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;本文将介绍以 rem（结合流式布局）+less（为代表）的适配方式&lt;/li&gt;
+&lt;li&gt;模板引擎上以将以 art-template 举例说明。（模板引擎 ==&amp;gt; 这里特指用于 Web 开发的模板引擎，是为了使&lt;a href=&#34;https://baike.baidu.com/item/%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2&#34;&gt;用户界面&lt;/a&gt;与业务数据（内容）分离而产生的，它可以生成特定格式的文档，用于网站的模板引擎就会生成一个标准的&lt;a href=&#34;https://baike.baidu.com/item/HTML&#34;&gt; HTML&lt;/a&gt; 文档。）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;需求分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#需求分析&#34;&gt;#&lt;/a&gt; 需求分析&lt;/h2&gt;
+&lt;p&gt;为什么 &lt;strong&gt;rem+less&lt;/strong&gt; 会产生？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;rem&lt;/strong&gt; ：&lt;u&gt;rem 是相对长度单位，相对于根元素 font-size 计算值的倍数（通俗来讲，相对于 html 字体大小）&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;这种需求主要产生在移动端，因为随着科学水平的发展，手机产业发展非常迅速，作为一个前端工作者，大量的手机页面需要我们去书写，而现在市面上的手机大小不一（分辨率各不相同），一种适配所有手机的页面开发模式需求应由而生。（px 为一种固定的像素单位，不太适合需求），之后&lt;strong&gt;流式布局，响应式布局&lt;/strong&gt;等随之产生，rem 的作用也逐渐凸显出来。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;如何使用-remless-呢&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何使用-remless-呢&#34;&gt;#&lt;/a&gt; 如何使用 rem+less 呢？&lt;/h4&gt;
+&lt;p&gt;===&amp;gt; 新建个 less 目录，在里面做如下操作：&lt;/p&gt;
+&lt;p&gt;1. 新建 variable.less（名字随便都可以，反正这是一个表示变量的 less 文件）&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;@charset &lt;span class=&#34;token string&#34;&gt;&#34;utf-8&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//适配主流设备&lt;/span&gt;
+@adapterDeviceList&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;750&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;720&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;640&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;540&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;529&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;480&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;434&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;414&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;400&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;384&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;375&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;360&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;320&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//设计稿尺寸&lt;/span&gt;
+@psdwidth&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;529&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;//就是你参考的设计稿的尺寸&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;/*
+    预设基准值
+    我习惯设100px，这样感觉用起来比较方便。比如：32px可以写作32rem/@baseFontSize
+*/&lt;/span&gt;
+@baseFontSize&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;px&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//设备种类数量&lt;/span&gt;
+@len&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;@adapterDeviceList&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2. 新建 mixins.less（这是一个表示函数的 less 文件）&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;/*
+  这类似一个循环（定义一个函数），只是less没有跟js差不多的for循环啥滴，所以只能通过这种方式来实现一个循环。
+*/&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;adapterMixin&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;@index&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;@index &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  @&lt;span class=&#34;token function&#34;&gt;media&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;min&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;width&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;extract&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;@adapterDeviceList&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;@index&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    html&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      font&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;size&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; @baseFontSize&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;@psdwidth&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;extract&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;@adapterDeviceList&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;@index&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;adapterMixin&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;@index &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3. 新建 adapter.less（调用函数）&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;adapterMixin&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;@len&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;4. 新建 index.less (主入口)&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;@charset &lt;span class=&#34;token string&#34;&gt;&#34;utf-8&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+@&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;variable&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+@&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;mixins&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+@&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;adapter&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;5. 在网页中引用&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-html&#34; data-language=&#34;html&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;link&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;rel&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;stylesheet&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;text/less&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;/less/index.less&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token script&#34;&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;http://lesscss.org/&#34;&gt;less 官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;说明：在网页中直接引用 less 文件是不行的，一定要加一个 less.min.js 来解析 less 文件，这样浏览器才能认识。&lt;/p&gt;
+&lt;p&gt;在完成上述操作后，你已基本完成 &lt;strong&gt;rem+less&lt;/strong&gt; 的适配方式。接下来在 less 文件中 （像素单位 px 将可以用 rem/@baseFontSize 来代替），你的页面将适配所有大小的容器。&lt;/p&gt;
+&lt;h2 id=&#34;组件化思想&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#组件化思想&#34;&gt;#&lt;/a&gt; 组件化思想&lt;/h2&gt;
+&lt;h4 id=&#34;需求分析-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#需求分析-2&#34;&gt;#&lt;/a&gt; 需求分析：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;随着要写大量的页面，页面的重复，冗杂等问题相应而出。为了解决这种重复的问题，组件化思想出来了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;什么是组件化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是组件化&#34;&gt;#&lt;/a&gt; 什么是组件化&lt;/h4&gt;
+&lt;p&gt;组件化并不是前端所特有的，一些其他的语言或者桌面程序等，都具有组件化的先例。确切的说，只要有 UI 层的展示，就必定有可以组件化的地方。简单来说，组件就是将一段 UI 样式和其对应的功能作为独立的整体去看待，无论这个整体放在哪里去使用，它都具有一样的功能和样式，从而实现复用，这种整体化的细想就是组件化。不难看出，组件化设计就是为了增加复用性，灵活性，提高系统设计，从而提高开发效率。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;css 实现代码分离（组件化思想）：可以用 less，Sass，stylus。&lt;a href=&#34;http://lesscss.org/&#34;&gt;less 官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;html 实现代码分离（组件化思想）：可以用模板引擎 ---- 如 &lt;a href=&#34;https://aui.github.io/art-template/docs/&#34;&gt;art-template&lt;/a&gt; 等…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;art-template 是一个简约、超快的模板引擎。它采用作用域预声明的技术来优化模板渲染速度，从而获得接近 JavaScript 极限的运行性能，并且同时支持 NodeJS 和浏览器。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;拥有接近 JavaScript 渲染极限的的性能&lt;/li&gt;
+&lt;li&gt;调试友好：语法、运行时错误日志精确到模板所在行；支持在模板文件上打断点（Webpack Loader）&lt;/li&gt;
+&lt;li&gt;支持 Express、Koa、Webpack&lt;/li&gt;
+&lt;li&gt;支持模板继承与子模板&lt;/li&gt;
+&lt;li&gt;浏览器版本仅 6KB 大小&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;详情介绍： &lt;a href=&#34;https://aui.github.io/art-template/zh-cn/docs/index.html&#34;&gt;art-template 官网&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;1. 适配技巧和组件化思想是你必不可少的技能&lt;/li&gt;
+&lt;li&gt;2. 组件化思想将是未来主流方向（React、Vue、Angular 三大前端主流框架）&lt;/li&gt;
+&lt;li&gt;3. 多做项目 ===&amp;gt; 体会这种组件化开发思想和适配方案。&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

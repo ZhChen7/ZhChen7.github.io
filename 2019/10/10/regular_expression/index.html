@@ -114,8 +114,9 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><blockquote>
-<p>正则表达式是用于匹配字符串中字符组合的模式。在 JavaScript 中，正则表达式也是对象。这些模式被用于 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/RegExp"><code>RegExp</code></a> 的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec"><code>exec</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"><code>test</code></a> 方法, 以及 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/String"><code>String</code></a> 的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match"><code>match</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"><code>matchAll</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace"><code>replace</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/search"><code>search</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split"><code>split</code></a> 方法。本章介绍 JavaScript <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions">正则表达式</a>。</p>
+  <h1 id="正则表达式"><a class="markdownIt-Anchor" href="#正则表达式">#</a> 正则表达式</h1>
+<blockquote>
+<p>正则表达式是用于匹配字符串中字符组合的模式。在 JavaScript 中，正则表达式也是对象。这些模式被用于 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/RegExp"> <code>RegExp</code> </a> 的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec"> <code>exec</code> </a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"> <code>test</code> </a> 方法，以及 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/String"> <code>String</code> </a> 的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match"> <code>match</code> </a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"> <code>matchAll</code> </a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace"> <code>replace</code> </a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/search"> <code>search</code> </a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split"> <code>split</code> </a> 方法。本章介绍 JavaScript <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions">正则表达式</a>。</p>
 </blockquote>
 <p>辅助正则可视化网站：<a target="_blank" rel="noopener" href="https://regexper.com/">https://regexper.com/</a></p>
 <p><strong>使用正则表达式的方法</strong></p>
@@ -126,76 +127,89 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec"><code>exec</code></a></td>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec"> <code>exec</code> </a></td>
 <td>一个在字符串中执行查找匹配的 RegExp 方法，它返回一个数组（未匹配到则返回 null）。</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"><code>test</code></a></td>
+<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"> <code>test</code> </a></td>
 <td>一个在字符串中测试是否匹配的 RegExp 方法，它返回 true 或 false。</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match"><code>match</code></a></td>
+<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match"> <code>match</code> </a></td>
 <td>一个在字符串中执行查找匹配的 String 方法，它返回一个数组，在未匹配到时会返回 null。</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"><code>matchAll</code></a></td>
+<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"> <code>matchAll</code> </a></td>
 <td>一个在字符串中执行查找所有匹配的 String 方法，它返回一个迭代器（iterator）。</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/search"><code>search</code></a></td>
-<td>一个在字符串中测试匹配的 String 方法，它返回匹配到的位置索引，或者在失败时返回-1。</td>
+<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/search"> <code>search</code> </a></td>
+<td>一个在字符串中测试匹配的 String 方法，它返回匹配到的位置索引，或者在失败时返回 - 1。</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace"><code>replace</code></a></td>
+<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace"> <code>replace</code> </a></td>
 <td>一个在字符串中执行查找匹配的 String 方法，并且使用替换字符串替换掉匹配到的子字符串。</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split"><code>split</code></a></td>
-<td>一个使用正则表达式或者一个固定字符串分隔一个字符串，并将分隔后的子字符串存储到数组中的 <code>String</code> 方法。</td>
+<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split"> <code>split</code> </a></td>
+<td>一个使用正则表达式或者一个固定字符串分隔一个字符串，并将分隔后的子字符串存储到数组中的  <code>String</code>  方法。</td>
 </tr>
-</tbody></table>
-<h2 id="REGEXP-对象"><a href="#REGEXP-对象" class="headerlink" title="REGEXP 对象"></a>REGEXP 对象</h2><ul>
+</tbody>
+</table>
+<h2 id="regexp-对象"><a class="markdownIt-Anchor" href="#regexp-对象">#</a> REGEXP 对象</h2>
+<ul>
 <li>JavaScript 通过内置函数对象 RegExp 支持正则表达式</li>
-<li>有两种方法实例化 RegExp 对象<ul>
+<li>有两种方法实例化 RegExp 对象
+<ul>
 <li>字面量</li>
 <li>构造函数</li>
 </ul>
 </li>
 </ul>
-<h3 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token regex">/\bis\b/g</span><span class="token punctuation">;</span>
+<h3 id="字面量"><a class="markdownIt-Anchor" href="#字面量">#</a> 字面量</h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token regex">/\bis\b/g</span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"he is dog ,he love she how are you is"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>reg<span class="token punctuation">,</span> <span class="token string">"IS"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// he IS dog ,he love she how are you IS</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">"\\bis\\b"</span><span class="token punctuation">,</span> <span class="token string">"g"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="构造函数"><a class="markdownIt-Anchor" href="#构造函数">#</a> 构造函数</h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">"\\bis\\b"</span><span class="token punctuation">,</span> <span class="token string">"g"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"he is dog ,he love she how are you is"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>reg<span class="token punctuation">,</span> <span class="token string">"IS"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">// he IS dog ,he love she how are you IS</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><p>在 JavaScript 中，<strong>正则表达式标志</strong>：</p>
+<h4 id="修饰符"><a class="markdownIt-Anchor" href="#修饰符">#</a> 修饰符</h4>
+<p>在 JavaScript 中，<strong>正则表达式标志</strong>：</p>
 <ul>
-<li><p><code>i</code></p>
+<li>
+<p><code>i</code></p>
 <p>不区分大小写搜索。</p>
 </li>
-<li><p><code>g</code></p>
+<li>
+<p><code>g</code></p>
 <p>全局搜索。</p>
 </li>
-<li><p><code>m</code></p>
+<li>
+<p><code>m</code></p>
 <p>多行搜索。</p>
 </li>
-<li><p><code>u</code></p>
+<li>
+<p><code>u</code></p>
 <p>使用 unicode 码的模式进行匹配。</p>
 </li>
-<li><p><code>y</code></p>
-<p>执行“粘性”搜索,匹配从目标字符串的当前位置开始，可以使用 y 标志。</p>
+<li>
+<p><code>y</code></p>
+<p>执行 “粘性” 搜索，匹配从目标字符串的当前位置开始，可以使用 y 标志。</p>
 </li>
-<li><p><code>s</code></p>
-<p>允许 <code>.</code> 匹配换行符。</p>
+<li>
+<p><code>s</code></p>
+<p>允许  <code>.</code>  匹配换行符。</p>
 </li>
 </ul>
-<h4 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h4><ul>
-<li>正则表达式由两种基本字符类型组成：<ul>
+<h4 id="元字符"><a class="markdownIt-Anchor" href="#元字符">#</a> 元字符</h4>
+<ul>
+<li>正则表达式由两种基本字符类型组成：
+<ul>
 <li>原义文本字符</li>
 <li>元字符</li>
 </ul>
@@ -209,9 +223,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>\</td>
-<td>将下一个字符标记为特殊字符或字面值。例如，n 匹配字符 _n_，而 \n 匹配换行符。序列 \ 匹配 \，而 ( 匹配 (。</td>
+<td>将下一个字符标记为特殊字符或字面值。例如，n 匹配字符 <em>n</em>，而 \n 匹配换行符。序列 \ 匹配 \，而 ( 匹配 (。</td>
 </tr>
 <tr>
 <td>^</td>
@@ -223,15 +238,15 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </tr>
 <tr>
 <td>*</td>
-<td>零次或更多次匹配前面的字符。例如，zo* 匹配 <em>z</em> 或 <em>zoo\</em>。</td>
+<td>零次或更多次匹配前面的字符。例如，zo* 匹配 <em>z</em> 或 *zoo*。</td>
 </tr>
 <tr>
 <td>+</td>
-<td>一次或更多次匹配前面的字符。例如，zo+ 匹配 _zoo_，但是不匹配 _z_。</td>
+<td>一次或更多次匹配前面的字符。例如，zo+ 匹配 <em>zoo</em>，但是不匹配 <em>z</em>。</td>
 </tr>
 <tr>
 <td>?</td>
-<td>零次或一次匹配前面的字符。例如，a?ve? 匹配 <em>never</em> 中的 _ve_。</td>
+<td>零次或一次匹配前面的字符。例如，a?ve? 匹配 <em>never</em> 中的 <em>ve</em>。</td>
 </tr>
 <tr>
 <td>.</td>
@@ -243,27 +258,27 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </tr>
 <tr>
 <td>x|y</td>
-<td>匹配 x 或 y。 例如，z|wood 匹配 <em>z</em> 或 <em>wood_。(z|w)oo 匹配 _zoo</em> 或 _wood_。</td>
+<td>匹配 x 或 y。 例如，z|wood 匹配 <em>z</em> 或 <em>wood</em>。(z|w) oo 匹配 <em>zoo</em> 或 <em>wood</em>。</td>
 </tr>
 <tr>
-<td>{n}</td>
-<td>n 是一个非负整数。精确匹配 n 次。例如，o{2} 不匹配 <em>Bob</em> 中的 <em>o_，但是匹配 _foooood</em> 中的前两个 _o_。</td>
+<td n=""></td>
+<td>n 是一个非负整数。精确匹配 n 次。例如，o {2} 不匹配 <em>Bob</em> 中的 <em>o</em>，但是匹配 <em>foooood</em> 中的前两个 <em>o</em>。</td>
 </tr>
 <tr>
-<td>{n,}</td>
-<td>在此表达式中，n 是一个非负整数。至少 n 次匹配前面的字符。例如，o{2,} 不匹配 <em>Bob</em> 中的 <em>o_，但是匹配 _foooood</em> 中的所有 _o_。o{1,} 表达式等效于 o+，o{0,} 等效于 o*。</td>
+<td n,=""></td>
+<td>在此表达式中，n 是一个非负整数。至少 n 次匹配前面的字符。例如，o {2,} 不匹配 <em>Bob</em> 中的 <em>o</em>，但是匹配 <em>foooood</em> 中的所有 <em>o</em>。o {1,} 表达式等效于 o+，o {0,} 等效于 o*。</td>
 </tr>
 <tr>
-<td>{n,m}</td>
-<td>m 和 n 变量是非负整数。至少 n 次且至多 m 次匹配前面的字符。例如，o{1,3} 匹配 <em>fooooood</em> 中的前三个 _o_。o{0,1} 表达式等效于 o?。</td>
+<td n,m=""></td>
+<td>m 和 n 变量是非负整数。至少 n 次且至多 m 次匹配前面的字符。例如，o {1,3} 匹配 <em>fooooood</em> 中的前三个 <em>o</em>。o {0,1} 表达式等效于 o?。</td>
 </tr>
 <tr>
 <td>[xyz]</td>
-<td>一个字符集。匹配任意一个包含的字符。例如，[abc] 匹配 <em>plain</em> 中的 _a_。</td>
+<td>一个字符集。匹配任意一个包含的字符。例如，[abc] 匹配 <em>plain</em> 中的 <em>a</em>。</td>
 </tr>
 <tr>
 <td>[^xyz]</td>
-<td>一个否定字符集。匹配任何未包含的字符。例如，[^abc] 匹配 <em>plain</em> 中的 _p_。</td>
+<td>一个否定字符集。匹配任何未包含的字符。例如，[^abc] 匹配 <em>plain</em> 中的 <em>p</em>。</td>
 </tr>
 <tr>
 <td>[a-z]</td>
@@ -279,11 +294,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </tr>
 <tr>
 <td>\b</td>
-<td>匹配某个单词边界，即，某个单词和空格之间的位置。例如，er\b 匹配 <em>never</em> 中的 <em>er_，但是不匹配 _verb</em> 中的 _er_。</td>
+<td>匹配某个单词边界，即，某个单词和空格之间的位置。例如，er\b 匹配 <em>never</em> 中的 <em>er</em>，但是不匹配 <em>verb</em> 中的 <em>er</em>。</td>
 </tr>
 <tr>
 <td>\B</td>
-<td>匹配非单词边界。ea*r\B 表达式匹配 <em>never early</em> 中的 <em>ear\</em>。</td>
+<td>匹配非单词边界。ea*r\B 表达式匹配 <em>never early</em> 中的 *ear*。</td>
 </tr>
 <tr>
 <td>\d</td>
@@ -337,14 +352,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <td>\Z</td>
 <td>仅匹配字符串的结尾，或者结尾的换行符之前。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>字符类：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"a1b2c3d4"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[abc]/g</span><span class="token punctuation">,</span> <span class="token string">"X"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//"X1X2X3d4"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"a1b2c3d4"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[^abc]/g</span><span class="token punctuation">,</span> <span class="token string">"X"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//"aXbXcXXX"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>范围类：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"a1b2c3d4zcczx"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[a-z]/g</span><span class="token punctuation">,</span> <span class="token string">"Q"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//"Q1Q2Q3Q4QQQQQ"</span>
@@ -357,12 +371,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token string">"2016-09-12"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[0-9-]/g</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//"AAAAAAAAAA"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>预定义类：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20191009/FsMlDwV4Kfrh.png?imageslim" alt="mark"></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//匹配一个 ab + 数字 + 任意字符 的字符串</span>
 ab\d<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>边界：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20191009/UQyV6XeWDuqI.png?imageslim" alt="mark"></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"this is a boy"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\bis\b/g</span><span class="token punctuation">,</span> <span class="token string">"IS"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -376,58 +388,53 @@ ab\d<span class="token punctuation">.</span><span aria-hidden="true" class="line
 
 <span class="token string">"@13@12331@"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/.@$/g</span><span class="token punctuation">,</span> <span class="token string">"Q"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//"@13@1233Q"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>量词：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20191009/KsjXw8IGYwJD.png?imageslim" alt="mark"></p>
 <p><strong>贪婪模式：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"12345678"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\d&#123;3,6&#125;/g</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//"a78"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>非贪婪模式：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"12345678"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\d&#123;3,6&#125;?/g</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//"aa78"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>分组：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"a1b2c3d4"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/([a-zA-z]\d)&#123;3&#125;/g</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//"Ad4"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>或：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"123456789122312"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/(123|456)/g</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//"AA789122312"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>反向引用：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"2019-10-09"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/g</span><span class="token punctuation">,</span> <span class="token string">"$3/$2/$1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//"09/10/2019"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>前瞻：</strong></p>
 <ul>
-<li>正则表达式从文本头部向尾部开始解析，文本尾部方向，称为“前”</li>
-<li><strong>前瞻</strong> 就是正则表达式匹配到规则的时候，向前检查是否符合断言，后顾/后瞻 方向相反</li>
+<li>正则表达式从文本头部向尾部开始解析，文本尾部方向，称为 “前”</li>
+<li><strong>前瞻</strong> 就是正则表达式匹配到规则的时候，向前检查是否符合断言，后顾 / 后瞻 方向相反</li>
 <li>JavaScript 不支持 后顾</li>
-<li>符合和不符合特定断言称为 <strong>肯定/正向</strong> 匹配 和 <strong>否定/负向</strong> 匹配</li>
+<li>符合和不符合特定断言称为 <strong>肯定 / 正向</strong> 匹配 和 <strong>否定 / 负向</strong> 匹配</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20191009/VS8ezfIwVH95.png?imageslim" alt="mark"></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"a2*3"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\w(?=\d)/g</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//"A2*3"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="对象属性"><a href="#对象属性" class="headerlink" title="对象属性"></a>对象属性</h3><ul>
+<h3 id="对象属性"><a class="markdownIt-Anchor" href="#对象属性">#</a> 对象属性</h3>
+<ul>
 <li>global：是否全文搜索，默认 false</li>
 <li>ignore case：是否大小写敏感，默认是 false</li>
 <li>multiline：多行搜索，默认值是 false</li>
 <li>lastIndex: 是当前表达式匹配内容的最后一个字符的下一个位置</li>
 <li>source：正则表达式的文本字符串</li>
 </ul>
-<h2 id="RegExp-prototype-test"><a href="#RegExp-prototype-test" class="headerlink" title="RegExp.prototype.test()"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">RegExp.prototype.test()</a></h2><blockquote>
-<p><code>test()</code> 方法执行一个检索，用来查看正则表达式与指定的字符串是否匹配。返回 <code>true</code> 或 <code>false</code>。</p>
+<h2 id="regexpprototypetest"><a class="markdownIt-Anchor" href="#regexpprototypetest">#</a> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">RegExp.prototype.test()</a></h2>
+<blockquote>
+<p><code>test()</code>  方法执行一个检索，用来查看正则表达式与指定的字符串是否匹配。返回  <code>true</code>  或  <code>false</code> 。</p>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> reg1 <span class="token operator">=</span> <span class="token regex">/\w/</span><span class="token punctuation">;</span>
 reg1<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>注意：/g（全局匹配 ） 使用 test 方法，结果不稳定！</p>
-<h2 id="RegExp-prototype-exec"><a href="#RegExp-prototype-exec" class="headerlink" title="RegExp.prototype.exec()"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec">RegExp.prototype.exec()</a></h2><blockquote>
-<p><code>exec() </code>方法在一个指定字符串中执行一个搜索匹配。返回一个结果数组或 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/null"><code>null</code></a>。</p>
-<p>如果你只是为了判断是否匹配（true 或 false），可以使用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"><code>RegExp.test()</code></a> 方法，或者 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/search"><code>String.search()</code></a> 方法。</p>
+<h2 id="regexpprototypeexec"><a class="markdownIt-Anchor" href="#regexpprototypeexec">#</a> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec">RegExp.prototype.exec()</a></h2>
+<blockquote>
+<p><code>exec() </code> 方法在一个指定字符串中执行一个搜索匹配。返回一个结果数组或 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/null"> <code>null</code> </a>。</p>
+<p>如果你只是为了判断是否匹配（true 或 false），可以使用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"> <code>RegExp.test()</code> </a> 方法，或者 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/search"> <code>String.search()</code> </a> 方法。</p>
 </blockquote>
  
       <!-- reward -->
@@ -668,7 +675,7 @@ reg1<span class="token punctuation">.</span><span class="token function">test</s
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

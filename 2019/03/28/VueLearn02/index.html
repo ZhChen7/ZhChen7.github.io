@@ -114,12 +114,14 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Vue-第二天"><a href="#Vue-第二天" class="headerlink" title="Vue 第二天"></a>Vue 第二天</h1><blockquote>
+  <h1 id="vue-第二天"><a class="markdownIt-Anchor" href="#vue-第二天">#</a> Vue 第二天</h1>
+<blockquote>
 <p>以做案例逐渐深入学习</p>
 <p>打好基础很重要！</p>
 <p><em>believe in yourself</em></p>
 </blockquote>
-<h2 id="品牌列表案例"><a href="#品牌列表案例" class="headerlink" title="品牌列表案例"></a>品牌列表案例</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h2 id="品牌列表案例"><a class="markdownIt-Anchor" href="#品牌列表案例">#</a> 品牌列表案例</h2>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel panel-primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-heading<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>添加品牌<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
@@ -187,12 +189,13 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190328/IdnBfABbITPK.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blogimage/20190328/62jdzeY5BOrT.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blogimage/20190328/bSDUCjvTlY6Y.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blogimage/20190328/qNRshJrorrew.png?imageslim" alt="mark"></p>
-<h3 id="增加搜索功能"><a href="#增加搜索功能" class="headerlink" title="增加搜索功能"></a>增加搜索功能</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item in search(keywords)<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item.id<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h3 id="增加搜索功能"><a class="markdownIt-Anchor" href="#增加搜索功能">#</a> 增加搜索功能</h3>
+<h4 id="方法一"><a class="markdownIt-Anchor" href="#方法一">#</a> 方法一</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item in search(keywords)<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item.id<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>&#123;&#123;item.id&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>&#123;&#123;item.name&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>&#123;&#123;item.ctime&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
@@ -211,8 +214,8 @@
       <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="方法二-使用-filter"><a href="#方法二-使用-filter" class="headerlink" title="方法二 (使用 filter)"></a>方法二 (使用 filter)</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<h4 id="方法二-使用-filter"><a class="markdownIt-Anchor" href="#方法二-使用-filter">#</a> 方法二 (使用 filter)</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
   methods<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
       <span class="token function">search</span><span class="token punctuation">(</span><span class="token parameter">keywords</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//根据关键字进行数据的搜索</span>
           <span class="token keyword">let</span> newList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
@@ -229,15 +232,15 @@
       <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190328/mtKxnpNYuRqG.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blogimage/20190328/m5EeSUQtLPF8.png?imageslim" alt="mark"></p>
-<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><h3 id="全局过滤器"><a href="#全局过滤器" class="headerlink" title="全局过滤器"></a>全局过滤器</h3><p><strong>过滤器的定义语法</strong>：<u>Vue.filter(‘过滤器的名称’,function(){})</u></p>
+<h2 id="过滤器"><a class="markdownIt-Anchor" href="#过滤器">#</a> 过滤器</h2>
+<h3 id="全局过滤器"><a class="markdownIt-Anchor" href="#全局过滤器">#</a> 全局过滤器</h3>
+<p><strong>过滤器的定义语法</strong>：<u>Vue.filter (‘过滤器的名称’,function (){})</u></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//过滤器中的function，第一个参数，已经被规定死了，永远都是 过滤器 管道符前面 传递过来的数据</span>
 Vue<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token string">"过滤器的名称"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> data <span class="token operator">+</span> <span class="token string">"123"</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>写一个例子</strong></p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; msg | msgFormat&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
@@ -254,9 +257,9 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190328/E2cejpC39vcl.png?imageslim" alt="mark"></p>
-<h4 id="使用过滤器时（传参数）"><a href="#使用过滤器时（传参数）" class="headerlink" title="使用过滤器时（传参数）"></a>使用过滤器时（传参数）</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; msg | msgFormat('开心快乐')&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<h4 id="使用过滤器时传参数"><a class="markdownIt-Anchor" href="#使用过滤器时传参数">#</a> 使用过滤器时（传参数）</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; msg | msgFormat('开心快乐')&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
   <span class="token comment">//定义一个Vue 全局的过滤器 名字叫做 msgFormat</span>
   Vue<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token string">"msgFormat"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">msg<span class="token punctuation">,</span> arg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -271,8 +274,8 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="使用过滤器时（传多个参数）"><a href="#使用过滤器时（传多个参数）" class="headerlink" title="使用过滤器时（传多个参数）"></a>使用过滤器时（传多个参数）</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; msg | msgFormat('开心快乐','123')&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<h4 id="使用过滤器时传多个参数"><a class="markdownIt-Anchor" href="#使用过滤器时传多个参数">#</a> 使用过滤器时（传多个参数）</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; msg | msgFormat('开心快乐','123')&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
   <span class="token comment">//定义一个Vue 全局的过滤器 名字叫做 msgFormat</span>
   Vue<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token string">"msgFormat"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">msg<span class="token punctuation">,</span> arg<span class="token punctuation">,</span> arg2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -287,9 +290,9 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190328/fhuGqD3vbBl5.png?imageslim" alt="mark"></p>
-<h4 id="使用过滤器时（多次调用）"><a href="#使用过滤器时（多次调用）" class="headerlink" title="使用过滤器时（多次调用）"></a>使用过滤器时（多次调用）</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; msg | msgFormat('开心快乐','123') | test&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<h4 id="使用过滤器时多次调用"><a class="markdownIt-Anchor" href="#使用过滤器时多次调用">#</a> 使用过滤器时（多次调用）</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; msg | msgFormat('开心快乐','123') | test&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
   <span class="token comment">//定义一个Vue 全局的过滤器 名字叫做 msgFormat</span>
   Vue<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token string">"msgFormat"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">msg<span class="token punctuation">,</span> arg<span class="token punctuation">,</span> arg2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -309,9 +312,10 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190328/1l2JyRlfFVKL.png?imageslim" alt="mark"></p>
-<h2 id="修改品牌列表案例，进行时间的格式化"><a href="#修改品牌列表案例，进行时间的格式化" class="headerlink" title="修改品牌列表案例，进行时间的格式化"></a>修改品牌列表案例，进行时间的格式化</h2><h3 id="关键代码："><a href="#关键代码：" class="headerlink" title="关键代码："></a>关键代码：</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>&#123;&#123;item.ctime | dataFormat&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+<h2 id="修改品牌列表案例进行时间的格式化"><a class="markdownIt-Anchor" href="#修改品牌列表案例进行时间的格式化">#</a> 修改品牌列表案例，进行时间的格式化</h2>
+<h3 id="关键代码"><a class="markdownIt-Anchor" href="#关键代码">#</a> 关键代码：</h3>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>&#123;&#123;item.ctime | dataFormat&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
   <span class="token comment">//全局的过滤器,进行时间的格式化</span>
   Vue<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token string">"dataFormat"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -324,9 +328,9 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
     <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>y<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>m<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>d<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190328/or9QSA0r1Adn.png?imageslim" alt="mark"></p>
-<h4 id="功能改进"><a href="#功能改进" class="headerlink" title="功能改进"></a>功能改进</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>&#123;&#123;item.ctime | dataFormat('')&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+<h4 id="功能改进"><a class="markdownIt-Anchor" href="#功能改进">#</a> 功能改进</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>&#123;&#123;item.ctime | dataFormat('')&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
   <span class="token comment">//全局的过滤器,进行时间的格式化</span>
   Vue<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token string">"dataFormat"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data<span class="token punctuation">,</span> pattern</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -346,9 +350,9 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190328/ow9K3Omz64dG.png?imageslim" alt="mark"></p>
-<h3 id="局部过滤器"><a href="#局部过滤器" class="headerlink" title="局部过滤器"></a>局部过滤器</h3><blockquote>
+<h3 id="局部过滤器"><a class="markdownIt-Anchor" href="#局部过滤器">#</a> 局部过滤器</h3>
+<blockquote>
 <!--定义一个私有的过滤器（局部）-->
 </blockquote>
 <p>过滤器调用的时候，采用的是<strong>就近原则</strong>，<u>如果私有过滤器和全局过滤器名称一致了</u>，这时候<strong>优先调用私有过滤器</strong></p>
@@ -385,12 +389,14 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190328/AfDdXTwFOveq.png?imageslim" alt="mark"></p>
-<h3 id="时间补-0-的情况（如：2019-03-29-21-48-20）"><a href="#时间补-0-的情况（如：2019-03-29-21-48-20）" class="headerlink" title="时间补 0 的情况（如：2019-03-29 21:48:20）"></a>时间补 0 的情况（如：2019-03-29 21:48:20）</h3><h4 id="padStart-的运用"><a href="#padStart-的运用" class="headerlink" title="padStart()的运用"></a>padStart()的运用</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> m <span class="token operator">=</span> <span class="token punctuation">(</span>dt<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="时间补-0-的情况如2019-03-29-214820"><a class="markdownIt-Anchor" href="#时间补-0-的情况如2019-03-29-214820">#</a> 时间补 0 的情况（如：2019-03-29 21:48:20）</h3>
+<h4 id="padstart的运用"><a class="markdownIt-Anchor" href="#padstart的运用">#</a> padStart () 的运用</h4>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> m <span class="token operator">=</span> <span class="token punctuation">(</span>dt<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> d <span class="token operator">=</span> dt<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h2><h4 id="按回车键添加数据（不用按添加按钮）"><a href="#按回车键添加数据（不用按添加按钮）" class="headerlink" title="按回车键添加数据（不用按添加按钮）"></a>按回车键添加数据（不用按添加按钮）</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+<h2 id="按键修饰符"><a class="markdownIt-Anchor" href="#按键修饰符">#</a> 按键修饰符</h2>
+<h4 id="按回车键添加数据不用按添加按钮"><a class="markdownIt-Anchor" href="#按回车键添加数据不用按添加按钮">#</a> 按回车键添加数据（不用按添加按钮）</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
   <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>
   <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span>
   <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span>
@@ -398,8 +404,8 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
   <span class="token attr-name">@keyup.enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add<span class="token punctuation">"</span></span>
 <span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn  btn-primary<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>添加<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="自定义全局按键修饰符"><a href="#自定义全局按键修饰符" class="headerlink" title="自定义全局按键修饰符"></a>自定义全局按键修饰符</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+<h4 id="自定义全局按键修饰符"><a class="markdownIt-Anchor" href="#自定义全局按键修饰符">#</a> 自定义全局按键修饰符</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
   <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>
   <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span>
   <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span>
@@ -410,9 +416,11 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
   <span class="token comment">//自定义全局按键修饰符</span>
   Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>keyCodes<span class="token punctuation">.</span>f2 <span class="token operator">=</span> <span class="token number">113</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190329/2DmzaiYUgToA.gif" alt="mark"></p>
-<h2 id="自定义全局（私有）的指令"><a href="#自定义全局（私有）的指令" class="headerlink" title="自定义全局（私有）的指令"></a>自定义全局（私有）的指令</h2><h3 id="自定义全局指令"><a href="#自定义全局指令" class="headerlink" title="自定义全局指令"></a>自定义全局指令</h3><h4 id="自定义一个自动获取焦点的指令（v-focus）"><a href="#自定义一个自动获取焦点的指令（v-focus）" class="headerlink" title="自定义一个自动获取焦点的指令（v-focus）"></a>自定义一个自动获取焦点的指令（v-focus）</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//参数一：指令的名称，在定义的时候，指令的名称前面，不需要加 v- 前缀，</span>
+<h2 id="自定义全局私有的指令"><a class="markdownIt-Anchor" href="#自定义全局私有的指令">#</a> 自定义全局（私有）的指令</h2>
+<h3 id="自定义全局指令"><a class="markdownIt-Anchor" href="#自定义全局指令">#</a> 自定义全局指令</h3>
+<h4 id="自定义一个自动获取焦点的指令v-focus"><a class="markdownIt-Anchor" href="#自定义一个自动获取焦点的指令v-focus">#</a> 自定义一个自动获取焦点的指令（v-focus）</h4>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//参数一：指令的名称，在定义的时候，指令的名称前面，不需要加 v- 前缀，</span>
 <span class="token comment">//在调用的时候，必须 在指令名称前 加上 v- 前缀来调用</span>
 <span class="token comment">//参数二：是一个对象，在这个对象身上，有一些指令相关的函数，这些函数可以在特定的阶段执行相关的操作</span>
 Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">"focus"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
@@ -432,36 +440,50 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
     <span class="token comment">//当vNode更新的时候，会执行 updated，可能会触发多次</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>一个指令定义对象可以提供如下几个钩子函数 (均为可选)：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ftxc/p/8086008.html">参考文档</a></p>
 <ul>
-<li><p>bind：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。</p>
+<li>
+<p>bind：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。</p>
 </li>
-<li><p>inserted：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。</p>
+<li>
+<p>inserted：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。</p>
 </li>
-<li><p>update：所在组件的 VNode 更新时调用，但是可能发生在其子 VNode 更新之前。指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新 (详细的钩子函数参数见下)。</p>
+<li>
+<p>update：所在组件的 VNode 更新时调用，但是可能发生在其子 VNode 更新之前。指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新 (详细的钩子函数参数见下)。</p>
 </li>
-<li><p>componentUpdated：指令所在组件的 VNode 及其子 VNode 全部更新后调用。</p>
+<li>
+<p>componentUpdated：指令所在组件的 VNode 及其子 VNode 全部更新后调用。</p>
 </li>
-<li><p>unbind：只调用一次，指令与元素解绑时调用。</p>
+<li>
+<p>unbind：只调用一次，指令与元素解绑时调用。</p>
 </li>
-<li><p>指令钩子函数会被传入以下参数：</p>
+<li>
+<p>指令钩子函数会被传入以下参数：</p>
 <ul>
 <li>el：指令所绑定的元素，可以用来直接操作 DOM 。</li>
-<li>binding：一个对象，包含以下属性：<br>name：指令名，不包括 v- 前缀。<br>value：指令的绑定值，例如：v-my-directive=”1 + 1” 中，绑定值为 2。<br>oldValue：指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。无论值是否改变都可用。<br>expression：字符串形式的指令表达式。例如 v-my-directive=”1 + 1” 中，表达式为 “1 + 1”。<br>arg：传给指令的参数，可选。例如 v-my-directive:foo 中，参数为 “foo”。<br>modifiers：一个包含修饰符的对象。例如：v-my-directive.foo.bar 中，修饰符对象为 { foo: true, bar: true }。<br>vnode：Vue 编译生成的虚拟节点。移步 VNode API 来了解更多详情。<br>oldVnode：上一个虚拟节点，仅在 update 和 componentUpdated 钩子中可用。</li>
+<li>binding：一个对象，包含以下属性：<br>
+name：指令名，不包括 v- 前缀。<br>
+value：指令的绑定值，例如：v-my-directive=“1 + 1” 中，绑定值为 2。<br>
+oldValue：指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。无论值是否改变都可用。<br>
+expression：字符串形式的指令表达式。例如 v-my-directive=“1 + 1” 中，表达式为 “1 + 1”。<br>
+arg：传给指令的参数，可选。例如 v-my-directive:foo 中，参数为 “foo”。<br>
+modifiers：一个包含修饰符的对象。例如：v-my-directive.foo.bar 中，修饰符对象为 {foo: true, bar: true}。<br>
+vnode：Vue 编译生成的虚拟节点。移步 VNode API 来了解更多详情。<br>
+oldVnode：上一个虚拟节点，仅在 update 和 componentUpdated 钩子中可用。</li>
 </ul>
 </li>
 </ul>
 <p><img src="http://static.zxinc520.com/blogimage/20190329/QfOUnkjKHsEA.png?imageslim" alt="mark"></p>
-<h4 id="自定义一个-设置字体颜色的-指令（v-color）"><a href="#自定义一个-设置字体颜色的-指令（v-color）" class="headerlink" title="自定义一个 设置字体颜色的 指令（v-color）"></a>自定义一个 设置字体颜色的 指令（v-color）</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//样式，只要通过指令绑定了元素，不管这个元素有没有被插入到页面中去，这个元素肯定有了一个内联的样式</span>
+<h4 id="自定义一个-设置字体颜色的-指令v-color"><a class="markdownIt-Anchor" href="#自定义一个-设置字体颜色的-指令v-color">#</a> 自定义一个 设置字体颜色的 指令（v-color）</h4>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//样式，只要通过指令绑定了元素，不管这个元素有没有被插入到页面中去，这个元素肯定有了一个内联的样式</span>
 <span class="token comment">//将来元素肯定会显示到页面中去，这时候，浏览器的渲染引擎必然会解析样式，应用给这个元素</span>
 <span class="token function-variable function">bind</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'red'</span>
     <span class="token comment">//和样式相关的操作，一般都可以在 bind 执行</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="自定义一个-设置字体颜色的-指令-传参数"><a href="#自定义一个-设置字体颜色的-指令-传参数" class="headerlink" title="自定义一个 设置字体颜色的 指令 ( 传参数 )"></a>自定义一个 设置字体颜色的 指令 ( 传参数 )</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+<h4 id="自定义一个-设置字体颜色的-指令-传参数"><a class="markdownIt-Anchor" href="#自定义一个-设置字体颜色的-指令-传参数">#</a> 自定义一个 设置字体颜色的 指令 (传参数)</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
   <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span>
   <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span>
   <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>
@@ -479,9 +501,9 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190329/mnJeqSiyTLNO.png?imageslim" alt="mark"></p>
-<h3 id="自定义私有指令"><a href="#自定义私有指令" class="headerlink" title="自定义私有指令"></a>自定义私有指令</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> vm1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+<h3 id="自定义私有指令"><a class="markdownIt-Anchor" href="#自定义私有指令">#</a> 自定义私有指令</h3>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> vm1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
   el<span class="token operator">:</span> <span class="token string">"#app1"</span><span class="token punctuation">,</span>
   data<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   methods<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
@@ -494,20 +516,19 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="函数简写"><a href="#函数简写" class="headerlink" title="函数简写"></a>函数简写</h4><p>大多数情况下，我们可能想在 <code>bind</code> 和 <code>update</code> 钩子上做重复动作，并且不想关心其它的钩子函数。可以这样写:</p>
+<h4 id="函数简写"><a class="markdownIt-Anchor" href="#函数简写">#</a> 函数简写</h4>
+<p>大多数情况下，我们可能想在  <code>bind</code>  和  <code>update</code>  钩子上做重复动作，并且不想关心其它的钩子函数。可以这样写:</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">"color-swatch"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> binding<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>例如：自定义一个字体大小的指令</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">directives<span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token comment">//自定义私有指令</span>
         <span class="token string">'fontsize'</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">//这个 function 等同于 把代码写到 bind 和 	update 中去</span>
             el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>binding<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">'px'</span>
         <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Vue-实例的生命周期"><a href="#Vue-实例的生命周期" class="headerlink" title="Vue 实例的生命周期"></a>Vue 实例的生命周期</h2><ol>
+<h2 id="vue-实例的生命周期"><a class="markdownIt-Anchor" href="#vue-实例的生命周期">#</a> Vue 实例的生命周期</h2>
+<ol>
 <li>生命周期钩子 = 生命周期函数 = 生命周期事件</li>
 <li>举例说明：</li>
 </ol>
@@ -570,10 +591,9 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190330/4A8AYanLcI7i.png?imageslim" alt="mark"></p>
-<h2 id="Vue-resource-实现-get，post，jsonp-请求"><a href="#Vue-resource-实现-get，post，jsonp-请求" class="headerlink" title="Vue-resource 实现 get，post，jsonp 请求"></a>Vue-resource 实现 get，post，jsonp 请求</h2><!--除了Vue-resource之外，还可以使用 `axios` 的第三方包实现数据的请求-->
-
+<h2 id="vue-resource-实现-getpostjsonp-请求"><a class="markdownIt-Anchor" href="#vue-resource-实现-getpostjsonp-请求">#</a> Vue-resource 实现 get，post，jsonp 请求</h2>
+<!--除了Vue-resource之外，还可以使用 `axios` 的第三方包实现数据的请求-->
 <p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/both-eyes/p/10122243.html"> Vue-resource 和 axios 的区别</a></p>
 <p><strong>Vue-resource 的基本使用</strong></p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../../vue.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
@@ -596,7 +616,6 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190330/sND0YtQhlkeL.png?imageslim" alt="mark"></p>
 <ul>
 <li>get，post，jsonp 请求</li>
@@ -876,7 +895,7 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

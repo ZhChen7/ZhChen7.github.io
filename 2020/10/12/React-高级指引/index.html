@@ -114,27 +114,28 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="无障碍表单"><a href="#无障碍表单" class="headerlink" title="无障碍表单"></a>无障碍表单</h2><h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><p>所有的 HTML 表单控制，例如 <code>&lt;input&gt;</code> 和 <code>&lt;textarea&gt;</code> ，都需要被标注来实现无障碍辅助功能。我们需要提供屏幕朗读器以解释性标注。</p>
+  <h2 id="无障碍表单"><a class="markdownIt-Anchor" href="#无障碍表单">#</a> 无障碍表单</h2>
+<h3 id="标记"><a class="markdownIt-Anchor" href="#标记">#</a> 标记</h3>
+<p>所有的 HTML 表单控制，例如  <code>&lt;input&gt;</code>  和  <code>&lt;textarea&gt;</code>  ，都需要被标注来实现无障碍辅助功能。我们需要提供屏幕朗读器以解释性标注。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>label htmlFor<span class="token operator">=</span><span class="token string">"namedInput"</span><span class="token operator">></span>Name<span class="token operator">:</span><span class="token operator">&lt;</span><span class="token operator">/</span>label<span class="token operator">></span>
 <span class="token operator">&lt;</span>input id<span class="token operator">=</span><span class="token string">"namedInput"</span> type<span class="token operator">=</span><span class="token string">"text"</span> name<span class="token operator">=</span><span class="token string">"name"</span><span class="token operator">/</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-
-
-<h2 id="Refs-转发"><a href="#Refs-转发" class="headerlink" title="Refs 转发"></a>Refs 转发</h2><blockquote>
+<h2 id="refs-转发"><a class="markdownIt-Anchor" href="#refs-转发">#</a> Refs 转发</h2>
+<blockquote>
 <p>Ref 转发是一项将 <a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/refs-and-the-dom.html">ref</a> 自动地通过组件传递到其一子组件的技巧。对于大多数应用中的组件来说，这通常不是必需的。但其对某些组件，尤其是可重用的组件库是很有用的。最常见的案例如下所述。</p>
-<p>简单来说 — 进行DOM操作  – 官方建议不要优先使用Ref，而考虑使用state</p>
+<p>简单来说 — 进行 DOM 操作  – 官方建议不要优先使用 Ref，而考虑使用 state</p>
 </blockquote>
-<h3 id="react-提供3种方式进行-ref使用"><a href="#react-提供3种方式进行-ref使用" class="headerlink" title="react 提供3种方式进行 ref使用"></a>react 提供3种方式进行 ref使用</h3><ol>
+<h3 id="react-提供3种方式进行-ref使用"><a class="markdownIt-Anchor" href="#react-提供3种方式进行-ref使用">#</a> react 提供 3 种方式进行 ref 使用</h3>
+<ol>
 <li>字符串的方式</li>
-<li>回调函数 ( 推荐 )<ul>
-<li>就是在dom节点上或者组件上挂载函数，函数的形参 试dom节点，达到的效果和字符串是一样的，都是获取值的引用</li>
+<li>回调函数 (推荐)
+<ul>
+<li>就是在 dom 节点上或者组件上挂载函数，函数的形参 试 dom 节点，达到的效果和字符串是一样的，都是获取值的引用</li>
 </ul>
 </li>
-<li>React.createRef() —  react16.3新提供的方式。</li>
+<li>React.createRef () —  react16.3 新提供的方式。</li>
 </ol>
-<h4 id="字符串的方式"><a href="#字符串的方式" class="headerlink" title="字符串的方式"></a>字符串的方式</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
+<h4 id="字符串的方式"><a class="markdownIt-Anchor" href="#字符串的方式">#</a> 字符串的方式</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
   <span class="token function">hanle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>refs<span class="token punctuation">.</span>demoref<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
@@ -149,10 +150,8 @@
 		<span class="token punctuation">)</span>
 	<span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
+<h4 id="回调函数"><a class="markdownIt-Anchor" href="#回调函数">#</a> 回调函数</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
       <span class="token function">hanle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>demoref<span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token punctuation">&#125;</span>
@@ -172,10 +171,8 @@
     <span class="token punctuation">&#125;</span>
 
     ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>MyComponent <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h4 id="React-createRef"><a href="#React-createRef" class="headerlink" title="React.createRef"></a>React.createRef</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
+<h4 id="reactcreateref"><a class="markdownIt-Anchor" href="#reactcreateref">#</a> React.createRef</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>myRef <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createRef</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -193,15 +190,11 @@
 <span class="token punctuation">&#125;</span>
 
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>MyComponent <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-<h2 id="Fragments"><a href="#Fragments" class="headerlink" title="Fragments"></a>Fragments</h2><blockquote>
+<h2 id="fragments"><a class="markdownIt-Anchor" href="#fragments">#</a> Fragments</h2>
+<blockquote>
 <p>React 中的一个常见模式是一个组件返回多个元素。Fragments 允许你将子列表分组，而无需向 DOM 添加额外节点。</p>
 </blockquote>
-<p>有时，语义化的 HTML 会被破坏。比如当在 JSX 中使用 <code>&lt;div&gt;</code> 元素来实现 React 代码功能的时候，又或是在使用列表（<code>&lt;ol&gt;</code>， <code>&lt;ul&gt;</code> 和 <code>&lt;dl&gt;</code>）和 HTML <code>&lt;table&gt;</code> 时。 在这种情况下，我们应该使用 <a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/fragments.html">React Fragments</a> 来组合各个组件</p>
+<p>有时，语义化的 HTML 会被破坏。比如当在 JSX 中使用  <code>&lt;div&gt;</code>  元素来实现 React 代码功能的时候，又或是在使用列表（ <code>&lt;ol&gt;</code> ，  <code>&lt;ul&gt;</code>  和  <code>&lt;dl&gt;</code> ）和 HTML  <code>&lt;table&gt;</code>  时。 在这种情况下，我们应该使用 <a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/fragments.html">React Fragments</a> 来组合各个组件</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Columns</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
@@ -212,8 +205,8 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="短语法"><a href="#短语法" class="headerlink" title="短语法"></a>短语法</h3><p>你可以使用一种新的，且更简短的语法来声明 Fragments。它看起来像空标签：</p>
+<h3 id="短语法"><a class="markdownIt-Anchor" href="#短语法">#</a> 短语法</h3>
+<p>你可以使用一种新的，且更简短的语法来声明 Fragments。它看起来像空标签：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Columns</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
@@ -224,8 +217,8 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="带-key-的-Fragments"><a href="#带-key-的-Fragments" class="headerlink" title="带 key 的 Fragments"></a>带 key 的 Fragments</h3><p>使用显式 <code>&lt;React.Fragment&gt;</code> 语法声明的片段可能具有 key。一个使用场景是将一个集合映射到一个 Fragments 数组 - 举个例子，创建一个描述列表：</p>
+<h3 id="带-key-的-fragments"><a class="markdownIt-Anchor" href="#带-key-的-fragments">#</a> 带 key 的 Fragments</h3>
+<p>使用显式  <code>&lt;React.Fragment&gt;</code>  语法声明的片段可能具有 key。一个使用场景是将一个集合映射到一个 Fragments 数组 - 举个例子，创建一个描述列表：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Glossary</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
     <span class="token operator">&lt;</span>dl<span class="token operator">></span>
@@ -239,23 +232,26 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     <span class="token operator">&lt;</span><span class="token operator">/</span>dl<span class="token operator">></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><code>key</code> 是唯一可以传递给 <code>Fragment</code> 的属性。未来我们可能会添加对其他属性的支持，例如事件。</p>
-<h2 id="Refs-and-the-DOM"><a href="#Refs-and-the-DOM" class="headerlink" title="Refs and the DOM"></a>Refs and the DOM</h2><blockquote>
+<p><code>key</code>  是唯一可以传递给  <code>Fragment</code>  的属性。未来我们可能会添加对其他属性的支持，例如事件。</p>
+<h2 id="refs-and-the-dom"><a class="markdownIt-Anchor" href="#refs-and-the-dom">#</a> Refs and the DOM</h2>
+<blockquote>
 <p>Refs 提供了一种方式，允许我们访问 DOM 节点或在 render 方法中创建的 React 元素</p>
 </blockquote>
 <p>在典型的 React 数据流中，<a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/components-and-props.html">props</a> 是父组件与子组件交互的唯一方式。要修改一个子组件，你需要使用新的 props 来重新渲染它。但是，在某些情况下，你需要在典型数据流之外强制修改子组件。被修改的子组件可能是一个 React 组件的实例，也可能是一个 DOM 元素。对于这两种情况，React 都提供了解决办法。</p>
-<h3 id="何时使用-Refs"><a href="#何时使用-Refs" class="headerlink" title="何时使用 Refs"></a>何时使用 Refs</h3><p>下面是几个适合使用 refs 的情况：</p>
+<h3 id="何时使用-refs"><a class="markdownIt-Anchor" href="#何时使用-refs">#</a> 何时使用 Refs</h3>
+<p>下面是几个适合使用 refs 的情况：</p>
 <ul>
 <li>管理焦点，文本选择或媒体播放。</li>
 <li>触发强制动画。</li>
 <li>集成第三方 DOM 库。</li>
 </ul>
 <p>避免使用 refs 来做任何可以通过声明式实现来完成的事情。</p>
-<p>举个例子，避免在 <code>Dialog</code> 组件里暴露 <code>open()</code> 和 <code>close()</code> 方法，最好传递 <code>isOpen</code> 属性。</p>
-<h3 id="勿过度使用-Refs"><a href="#勿过度使用-Refs" class="headerlink" title="勿过度使用 Refs"></a>勿过度使用 Refs</h3><p>你可能首先会想到使用 refs 在你的 app 中“让事情发生”。如果是这种情况，请花一点时间，认真再考虑一下 state 属性应该被安排在哪个组件层中。通常你会想明白，让更高的组件层级拥有这个 state，是更恰当的。查看 <a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/lifting-state-up.html">状态提升</a> 以获取更多有关示例。</p>
-<h3 id="创建-Refs"><a href="#创建-Refs" class="headerlink" title="创建 Refs"></a>创建 Refs</h3><blockquote>
-<p> React.createRef</p>
+<p>举个例子，避免在  <code>Dialog</code>  组件里暴露  <code>open()</code>  和  <code>close()</code>  方法，最好传递  <code>isOpen</code>  属性。</p>
+<h3 id="勿过度使用-refs"><a class="markdownIt-Anchor" href="#勿过度使用-refs">#</a> 勿过度使用 Refs</h3>
+<p>你可能首先会想到使用 refs 在你的 app 中 “让事情发生”。如果是这种情况，请花一点时间，认真再考虑一下 state 属性应该被安排在哪个组件层中。通常你会想明白，让更高的组件层级拥有这个 state，是更恰当的。查看 <a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/lifting-state-up.html">状态提升</a> 以获取更多有关示例。</p>
+<h3 id="创建-refs"><a class="markdownIt-Anchor" href="#创建-refs">#</a> 创建 Refs</h3>
+<blockquote>
+<p>React.createRef</p>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -266,10 +262,8 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     <span class="token keyword">return</span> <span class="token operator">&lt;</span>div ref<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>myRef<span class="token punctuation">&#125;</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h4 id="为-DOM-元素添加-ref"><a href="#为-DOM-元素添加-ref" class="headerlink" title="为 DOM 元素添加 ref"></a>为 DOM 元素添加 ref</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
+<h4 id="为-dom-元素添加-ref"><a class="markdownIt-Anchor" href="#为-dom-元素添加-ref">#</a> 为 DOM 元素添加 ref</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>myRef <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createRef</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -287,10 +281,8 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <span class="token punctuation">&#125;</span>
 
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>MyComponent <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h4 id="为-class-组件添加-Ref"><a href="#为-class-组件添加-Ref" class="headerlink" title="为 class 组件添加 Ref"></a>为 class 组件添加 Ref</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">AutoFocusTextInput</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
+<h4 id="为-class-组件添加-ref"><a class="markdownIt-Anchor" href="#为-class-组件添加-ref">#</a> 为 class 组件添加 Ref</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">AutoFocusTextInput</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>textInput <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createRef</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -306,12 +298,12 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="Refs-与函数组件"><a href="#Refs-与函数组件" class="headerlink" title="Refs 与函数组件"></a>Refs 与函数组件</h4><blockquote>
-<p>默认情况下，<strong>你不能在函数组件上使用 <code>ref</code> 属性</strong>，因为它们没有实例</p>
+<h4 id="refs-与函数组件"><a class="markdownIt-Anchor" href="#refs-与函数组件">#</a> Refs 与函数组件</h4>
+<blockquote>
+<p>默认情况下，<strong>你不能在函数组件上使用  <code>ref</code>  属性</strong>，因为它们没有实例</p>
 </blockquote>
-<p>如果要在函数组件中使用 <code>ref</code>，你可以使用 <a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/forwarding-refs.html"><code>forwardRef</code></a>（可与 <a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/hooks-reference.html#useimperativehandle"><code>useImperativeHandle</code></a> 结合使用），或者可以将该组件转化为 class 组件。</p>
-<p>不管怎样，你可以<strong>在函数组件内部使用 <code>ref</code> 属性</strong>，只要它指向一个 DOM 元素或 class 组件：</p>
+<p>如果要在函数组件中使用  <code>ref</code> ，你可以使用 <a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/forwarding-refs.html"> <code>forwardRef</code> </a>（可与 <a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/hooks-reference.html#useimperativehandle"> <code>useImperativeHandle</code> </a> 结合使用），或者可以将该组件转化为 class 组件。</p>
+<p>不管怎样，你可以<strong>在函数组件内部使用  <code>ref</code>  属性</strong>，只要它指向一个 DOM 元素或 class 组件：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">CustomTextInput</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token comment">// 这里必须声明 textInput，这样 ref 才可以引用它</span>
   <span class="token keyword">const</span> textInput <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -333,7 +325,6 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
  
       <!-- reward -->
       
@@ -573,7 +564,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

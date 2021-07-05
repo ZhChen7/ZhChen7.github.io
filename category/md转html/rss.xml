@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;md转html&#34; category</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Fri, 15 Mar 2019 16:44:07 +0800</pubDate>
+        <lastBuildDate>Fri, 15 Mar 2019 16:44:07 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2019/03/15/MarkdownToHTML/</guid>
+            <title>MarkdownToHtml</title>
+            <link>http://example.com/2019/03/15/MarkdownToHTML/</link>
+            <category>art-template</category>
+            <pubDate>Fri, 15 Mar 2019 16:44:07 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;markdowntohtml&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#markdowntohtml&#34;&gt;#&lt;/a&gt; MarkdownToHtml&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将 Markdown 文档转换为 HTML 显示&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#说明&#34;&gt;#&lt;/a&gt; 说明&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本应用是采用 node.js + Express 搭建的&lt;/p&gt;
+&lt;p&gt;运用的模板：art-template&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aui.github.io/art-template/zh-cn/docs/index.html&#34;&gt;art-template&lt;/a&gt; 是一个简约、超快的模板引擎。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;准备工作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#准备工作&#34;&gt;#&lt;/a&gt; 准备工作&lt;/h1&gt;
+&lt;p&gt;我把 &lt;em&gt;&lt;a href=&#34;http://MarkdownToHTML.md&#34;&gt;MarkdownToHTML.md&lt;/a&gt;&lt;/em&gt; 放在目录 &lt;strong&gt;public/doc&lt;/strong&gt; 下（放在那里看你心情咯！）&lt;/p&gt;
+&lt;h2 id=&#34;安装-marked&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装-marked&#34;&gt;#&lt;/a&gt; 安装 marked&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;npm install marked --save&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;关键步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关键步骤&#34;&gt;#&lt;/a&gt; 关键步骤&lt;/h1&gt;
+&lt;p&gt;路由部分关键代码：router.js （ 里面的部分代码是关键 ）&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-Javascript&#34; data-language=&#34;Javascript&#34;&gt;&lt;code class=&#34;language-Javascript&#34;&gt;src
+
+router.get(&amp;quot;&amp;#x2F;:docName&amp;quot;, function (req, res, next) &amp;#123;
+    docId &amp;#x3D; req.params.docName.replace(&amp;#x2F;&amp;quot;&amp;#x2F;g, &amp;#39;&amp;#39;)
+    publish.findById(docId, function (err, publish) &amp;#123;
+        if (err) &amp;#123;
+            return next(err)
+        &amp;#125;
+        fs.readFile(__dirname + src + publish.publishMainBodyUrl + &amp;#39;.md&amp;#39;,           &amp;#39;utf-8&amp;#39;, function (err, data) &amp;#123;
+            if (err) &amp;#123;
+                console.log(err);
+            &amp;#125; else &amp;#123;
+                htmlStr &amp;#x3D; marked(data.toString());
+                res.type(&amp;#39;html&amp;#39;)
+                message.find(&amp;#123;
+                    message_type: publish.publishMainBodyUrl
+                &amp;#125;, function (err, message) &amp;#123;
+                    if (err) &amp;#123;
+                        return next(err)
+                    &amp;#125;
+                    message.forEach(function (e) &amp;#123;
+                        e.UTCtodata &amp;#x3D; new Date(e.message_time).toLocaleString()
+                    &amp;#125;)
+                    res.render(&amp;#39;MainBody.html&amp;#39;, &amp;#123;
+                        doc: htmlStr,
+                        publish: publish,
+                        message: message
+                    &amp;#125;);
+                &amp;#125;)
+            &amp;#125;
+        &amp;#125;);
+    &amp;#125;)
+&amp;#125;)&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
+&lt;p&gt;MainBody.html: 用 art-template 模板渲染后台传来的数据&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-HTML&#34; data-language=&#34;HTML&#34;&gt;&lt;code class=&#34;language-HTML&#34;&gt;&amp;lt;!--
+   &amp;#123;&amp;#123;@ doc &amp;#125;&amp;#125;或者  &amp;lt;%- doc %&amp;gt;
+ （ @和- 很关键 &amp;#x3D;&amp;#x3D;&amp;gt;原文输出语句不会对 HTML 内容进行转义处理，可能存在安全风险，请谨慎使用。这个坑害我多走了好多弯路。）
+--&amp;gt;
+&amp;lt;div id&amp;#x3D;&amp;quot;markfs&amp;quot;&amp;gt;
+    &amp;#123;&amp;#123;@ doc &amp;#125;&amp;#125; &amp;lt;!-- 或者  &amp;lt;%- doc %&amp;gt; --&amp;gt;
+&amp;lt;&amp;#x2F;div&amp;gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;效果展示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#效果展示&#34;&gt;#&lt;/a&gt; 效果展示&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blogimage/20190314/x6s26FzHS5go.png?imageslim&#34; alt=&#34;g&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

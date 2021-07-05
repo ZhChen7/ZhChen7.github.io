@@ -114,13 +114,14 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="关于我的博客"><a href="#关于我的博客" class="headerlink" title="关于我的博客"></a>关于我的博客</h2><blockquote>
+  <h2 id="关于我的博客"><a class="markdownIt-Anchor" href="#关于我的博客">#</a> 关于我的博客</h2>
+<blockquote>
 <p>我在写的过程中遇到的问题以及相应的解决办法：</p>
 </blockquote>
-<h3 id="1-侧边栏固定问题"><a href="#1-侧边栏固定问题" class="headerlink" title="1.侧边栏固定问题"></a>1.侧边栏固定问题</h3><p>​ 问题：因为我做的博客主要适配移动端，不是 pc 端，pc 端的侧边栏固定应该是很简单的，如下代码就行：</p>
+<h3 id="1侧边栏固定问题"><a class="markdownIt-Anchor" href="#1侧边栏固定问题">#</a> 1. 侧边栏固定问题</h3>
+<p>​ 问题：因为我做的博客主要适配移动端，不是 pc 端，pc 端的侧边栏固定应该是很简单的，如下代码就行：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">position: fixed; top: 0; left: 0;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>因为 position: fixed 属性总是<em>相对于</em>浏览器窗口来对元素进行定位。 而我想随着浏览器窗口的缩小，让我移动端的侧边栏总是固定有效视口的左上角，说说我的解决方案，我是用 js 控制的(一觉醒来突然想通了，想想我为什么不用 js 解决呢)</p>
+<p>因为 position: fixed 属性总是<em>相对于</em>浏览器窗口来对元素进行定位。 而我想随着浏览器窗口的缩小，让我移动端的侧边栏总是固定有效视口的左上角，说说我的解决方案，我是用 js 控制的 (一觉醒来突然想通了，想想我为什么不用 js 解决呢)</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> <span class="token function-variable function">sideBar_Position</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">let</span> Width <span class="token operator">=</span> window<span class="token punctuation">.</span>innerWidth<span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>Width <span class="token operator">></span> <span class="token number">900</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -135,14 +136,14 @@
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>效果：![侧边栏位置固定]</p>
 <p><img src="http://static.zxinc520.com/blog/20190525/hModlCjlfsUO.png?imageslim" alt="mark"></p>
-<h3 id="2-侧边栏消失问题"><a href="#2-侧边栏消失问题" class="headerlink" title="2.侧边栏消失问题"></a>2.侧边栏消失问题</h3><p>我想我的侧边栏应该有 2 种消失方案：1. 点击消失</p>
-<p>​ 2.滑动消失</p>
+<h3 id="2侧边栏消失问题"><a class="markdownIt-Anchor" href="#2侧边栏消失问题">#</a> 2. 侧边栏消失问题</h3>
+<p>我想我的侧边栏应该有 2 种消失方案：1. 点击消失</p>
+<p>​ 2. 滑动消失</p>
 <p>解决方案：</p>
 <ol>
-<li>点击消失 ==&gt; 准备就用 jquery 的 show(),和 hide() , 就弄简单点。</li>
+<li>点击消失 ==&gt; 准备就用 jquery 的 show (), 和 hide () , 就弄简单点。</li>
 <li>滑动消失 ==&gt;</li>
 </ol>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".sidebar"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"touchstart"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -176,9 +177,9 @@
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>问题：可是写完之后发现了一个问题，当用滑动消失侧边栏后，再一次打开侧边栏，点击事件失效了（我一直没还搞懂，求懂滴大神指点指点）。</p>
-<h6 id="3-列表动态跳转问题，列表跳转和分类列表跳转冲突问题（node-js）"><a href="#3-列表动态跳转问题，列表跳转和分类列表跳转冲突问题（node-js）" class="headerlink" title="3.列表动态跳转问题，列表跳转和分类列表跳转冲突问题（node.js）,"></a>3.列表动态跳转问题，列表跳转和分类列表跳转冲突问题（node.js）,</h6><p>–解决方案：</p>
+<h6 id="3列表动态跳转问题列表跳转和分类列表跳转冲突问题nodejs"><a class="markdownIt-Anchor" href="#3列表动态跳转问题列表跳转和分类列表跳转冲突问题nodejs">#</a> 3. 列表动态跳转问题，列表跳转和分类列表跳转冲突问题（node.js）,</h6>
+<p>–解决方案：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/:docName"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">let</span> docId <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>docName<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/"/g</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token regex">/[0-9]/</span><span class="token punctuation">;</span>
@@ -269,21 +270,23 @@
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="4-UTC-时间问题"><a href="#4-UTC-时间问题" class="headerlink" title="4:UTC 时间问题"></a>4:UTC 时间问题</h3><p>问题：将时间类型数据保存到 mongodb 数据库中，拿出来时发现时间变成 类似于：2019-03-15T08:44:07.842Z — 这种 UTC 时间，这是 mongodb 数据库本身就存在的问题，自己遇到这个问题的时候，百度了很多文档，参考了很多人的解决办法，但还是不知道怎么解决，</p>
+<h3 id="4utc-时间问题"><a class="markdownIt-Anchor" href="#4utc-时间问题">#</a> 4:UTC 时间问题</h3>
+<p>问题：将时间类型数据保存到 mongodb 数据库中，拿出来时发现时间变成 类似于：2019-03-15T08:44:07.842Z — 这种 UTC 时间，这是 mongodb 数据库本身就存在的问题，自己遇到这个问题的时候，百度了很多文档，参考了很多人的解决办法，但还是不知道怎么解决，</p>
 <p>最终好不容易想到了一种解决方案：</p>
-<h6 id=""><a href="#" class="headerlink" title=""></a><img src="http://static.zxinc520.com/blogimage/20190318/YiqUFRbvNCQv.png?imageslim" alt="mark"></h6><p><img src="http://static.zxinc520.com/blogimage/20190318/SSDuionkzdwv.png?imageslim" alt="mark"></p>
+<h6 id="mark"><a class="markdownIt-Anchor" href="#mark">#</a> <img src="http://static.zxinc520.com/blogimage/20190318/YiqUFRbvNCQv.png?imageslim" alt="mark"></h6>
+<p><img src="http://static.zxinc520.com/blogimage/20190318/SSDuionkzdwv.png?imageslim" alt="mark"></p>
 <p>有人会说为什么不把转变好的时间赋给原来的 UTC 时间属性，我一开始就这样写的，可是就是赋值不上去，</p>
 <p>最终终于发现原因：因为一个是字符串，一个是对象，根本无法相互赋值。我随后也想过把对象转变为字符串然后进行赋值，可最终还是不行。无奈之下，我只好转换了思路，用了我一开始的方案，把问题解决了。</p>
 <ol start="5">
-<li><h3 id="分页效果（我参考了网上的做法—–这里是全部加载完成后做的假分页）"><a href="#分页效果（我参考了网上的做法—–这里是全部加载完成后做的假分页）" class="headerlink" title="分页效果（我参考了网上的做法—–这里是全部加载完成后做的假分页）"></a>分页效果（我参考了网上的做法—–这里是全部加载完成后做的假分页）</h3><p>解决方案：</p>
+<li>
+<h3 id="分页效果我参考了网上的做法-这里是全部加载完成后做的假分页"><a class="markdownIt-Anchor" href="#分页效果我参考了网上的做法-这里是全部加载完成后做的假分页">#</a> 分页效果（我参考了网上的做法 ----- 这里是全部加载完成后做的假分页）</h3>
+<p>解决方案：</p>
 <p>html</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pageBox<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>prev<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>上一页<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pageNav<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>next<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>下一页<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>css：那你自己写把。加油！</p>
 <p>js</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -382,7 +385,6 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>效果：</p>
 <p><img src="http://static.zxinc520.com/blogimage/20190318/3QianS1bAQ43.png?imageslim" alt="mark"></p>
 </li>
@@ -627,7 +629,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

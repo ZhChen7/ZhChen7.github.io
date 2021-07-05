@@ -114,7 +114,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Vue-第六天学习"><a href="#Vue-第六天学习" class="headerlink" title="Vue 第六天学习"></a>Vue 第六天学习</h1><blockquote>
+  <h1 id="vue-第六天学习"><a class="markdownIt-Anchor" href="#vue-第六天学习">#</a> Vue 第六天学习</h1>
+<blockquote>
 <p>file-loader（解决 webpack 打包图片路径问题，字体路径问题）</p>
 <p>webpack 中 babel 的配置（处理高级的 es6 语法或者 es7 语法）</p>
 <p>Vue 中的 render 函数</p>
@@ -125,14 +126,19 @@
 <p>抽离路由模块</p>
 <p>一个人如果不想输，就要不断学好眼前的东西，它们将来都会大有用处…</p>
 </blockquote>
-<h2 id="webpack-后续问题"><a href="#webpack-后续问题" class="headerlink" title="webpack 后续问题"></a>webpack 后续问题</h2><h5 id="问题：Webpack-打包图片路径问题"><a href="#问题：Webpack-打包图片路径问题" class="headerlink" title="问题：Webpack 打包图片路径问题"></a>问题：Webpack 打包图片路径问题</h5><p><img src="http://static.zxinc520.com/blog/20190415/EHGtOouC7m7W.png?imageslim" alt="mark"></p>
+<h2 id="webpack-后续问题"><a class="markdownIt-Anchor" href="#webpack-后续问题">#</a> webpack 后续问题</h2>
+<h5 id="问题webpack-打包图片路径问题"><a class="markdownIt-Anchor" href="#问题webpack-打包图片路径问题">#</a> 问题：Webpack 打包图片路径问题</h5>
+<p><img src="http://static.zxinc520.com/blog/20190415/EHGtOouC7m7W.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190415/67j7Iq3tsM4q.png?imageslim" alt="mark"></p>
-<h4 id="在页面中引入图片有两种方式"><a href="#在页面中引入图片有两种方式" class="headerlink" title="在页面中引入图片有两种方式"></a>在页面中引入图片有两种方式</h4><ul>
+<h4 id="在页面中引入图片有两种方式"><a class="markdownIt-Anchor" href="#在页面中引入图片有两种方式">#</a> 在页面中引入图片有两种方式</h4>
+<ul>
 <li>img 标签引入</li>
 <li>css 引入</li>
 </ul>
-<h2 id="解决方案：Webpack-使用-file-loader-处理图片"><a href="#解决方案：Webpack-使用-file-loader-处理图片" class="headerlink" title="解决方案：Webpack 使用 file-loader 处理图片"></a>解决方案：Webpack 使用 file-loader 处理图片</h2><h3 id="安装：file-loader-包"><a href="#安装：file-loader-包" class="headerlink" title="安装：file-loader 包"></a>安装：<strong>file-loader</strong> 包</h3><ol>
-<li>运行 <code>npm i url-loader file-loader -D</code> 来安装 <strong>file-loader</strong> 包</li>
+<h2 id="解决方案webpack-使用-file-loader-处理图片"><a class="markdownIt-Anchor" href="#解决方案webpack-使用-file-loader-处理图片">#</a> 解决方案：Webpack 使用 file-loader 处理图片</h2>
+<h3 id="安装file-loader-包"><a class="markdownIt-Anchor" href="#安装file-loader-包">#</a> 安装：<strong>file-loader</strong> 包</h3>
+<ol>
+<li>运行  <code>npm i url-loader file-loader -D</code>  来安装 <strong>file-loader</strong> 包</li>
 </ol>
 <p><img src="http://static.zxinc520.com/blog/20190415/tFYCSVQRUkQu.png?imageslim" alt="mark"></p>
 <p>​</p>
@@ -141,20 +147,25 @@
 </ol>
 <p><img src="http://static.zxinc520.com/blog/20190415/cELvBLsveIEX.png?imageslim" alt="mark"></p>
 <ol start="3">
-<li>运行<code> npm run dev</code></li>
+<li>运行 <code> npm run dev</code></li>
 </ol>
 <p><img src="http://static.zxinc520.com/blog/20190415/VVGGMT2828JL.gif" alt="mark"></p>
-<h3 id="file-loader-参数"><a href="#file-loader-参数" class="headerlink" title="file-loader 参数"></a>file-loader 参数</h3><ul>
-<li><p><code>limit</code> 给定的值，是图片的大小，单位是 byte，如果我们引用的 图片，<strong>大于 **给定的值，则会被转为</strong>base64 格式** 的字符串，如果，图片**小于或等于 **给定的 limit 值，则不会被转为 base64 的 字符串<br><img src="http://static.zxinc520.com/blog/20190416/XiEHyP6vdL8s.png?imageslim" alt="mark"></p>
+<h3 id="file-loader-参数"><a class="markdownIt-Anchor" href="#file-loader-参数">#</a> file-loader 参数</h3>
+<ul>
+<li>
+<p><code>limit</code>  给定的值，是图片的大小，单位是 byte，如果我们引用的 图片，<strong>大于 <strong>给定的值，则会被转为</strong> base64 格式</strong> 的字符串，如果，图片 ** 小于或等于 ** 给定的 limit 值，则不会被转为 base64 的 字符串<br>
+<img src="http://static.zxinc520.com/blog/20190416/XiEHyP6vdL8s.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190416/T1MukN0guNf5.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190416/FPE7T3OUKGxd.png?imageslim" alt="mark"></p>
 </li>
-<li><p><code>name</code> 属性 使图片路径 url 不变</p>
+<li>
+<p><code>name</code>  属性 使图片路径 url 不变</p>
 </li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190416/wX5GMiFDX3zF.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190416/9qKydj98tyeA.png?imageslim" alt="mark"></p>
-<h2 id="处理字体文件-路径问题"><a href="#处理字体文件-路径问题" class="headerlink" title="处理字体文件 路径问题"></a>处理字体文件 路径问题</h2><blockquote>
+<h2 id="处理字体文件-路径问题"><a class="markdownIt-Anchor" href="#处理字体文件-路径问题">#</a> 处理字体文件 路径问题</h2>
+<blockquote>
 <p>使用 <strong>file-loader</strong></p>
 </blockquote>
 <p>问题描述：引入 bootstrap 字体图标库，但报错！</p>
@@ -164,12 +175,12 @@
 <li>配置 webpack.config.js</li>
 </ol>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span>test<span class="token operator">:</span><span class="token regex">/\.(ttf|eot|svg|woff|woff2)$/</span><span class="token punctuation">,</span>use<span class="token operator">:</span><span class="token string">'url-loader'</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token comment">//这是 处理 字体文件的 loader</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190417/K7a1le382DJs.png?imageslim" alt="mark"></p>
 <ol start="2">
-<li>运行 <code>npm run dev</code></li>
+<li>运行  <code>npm run dev</code></li>
 </ol>
-<h1 id="webpack-中-babel-的配置"><a href="#webpack-中-babel-的配置" class="headerlink" title="webpack 中 babel 的配置"></a>webpack 中 babel 的配置</h1><p><a target="_blank" rel="noopener" href="https://www.babeljs.cn/docs/index.html">babel 介绍 </a></p>
+<h1 id="webpack-中-babel-的配置"><a class="markdownIt-Anchor" href="#webpack-中-babel-的配置">#</a> webpack 中 babel 的配置</h1>
+<p><a target="_blank" rel="noopener" href="https://www.babeljs.cn/docs/index.html">babel 介绍 </a></p>
 <p><strong>问题描述</strong>：</p>
 <ol>
 <li>webpack 中默认只能处理一部分 es6 语法，一些更高级的 es6 语法或者 es7 语法 webpack 处理不了，这时候就需要借助第三方 loader 帮助 webpack 处理这些语法</li>
@@ -182,17 +193,15 @@
 <li>安装，运行两个命令，安装两套包，去安装 babel 相关的功能</li>
 </ol>
 <ul>
-<li><strong>第一套包</strong>：<code>npm i babel-core babel-loader babel-plugin-transform-runtime -D</code></li>
-<li><strong>第二套包</strong>：<code>npm i babel-preset-env babel-preset-stage-0 -D</code></li>
+<li><strong>第一套包</strong>： <code>npm i babel-core babel-loader babel-plugin-transform-runtime -D</code></li>
+<li><strong>第二套包</strong>： <code>npm i babel-preset-env babel-preset-stage-0 -D</code></li>
 </ul>
 <ol start="3">
 <li>打开 webpack 配置文件，在 module 节点写的 rules 数组中添加一个新的匹配规则</li>
 </ol>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span>test<span class="token operator">:</span><span class="token regex">/\.js$/</span><span class="token punctuation">,</span>use<span class="token operator">:</span><span class="token string">'babel-loader'</span><span class="token punctuation">,</span>exclude<span class="token operator">:</span><span class="token regex">/node_modules/</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190416/T3zLwVwLDPgf.png?imageslim" alt="mark"></p>
 <!--在配置babel的loader规则时必须把node_module目录通过exclude排除-->
-
 <p><strong>排除 node_module 目录的原因:</strong></p>
 <ul>
 <li>如果排除 node_module，babel 会把 node_module 目录下的所有第三方 js 文件都打包编译，这会非常消耗 CPU，同时打包速度非常慢</li>
@@ -205,22 +214,24 @@
     <span class="token string">"presets"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"env"</span><span class="token punctuation">,</span><span class="token string">"stage-0"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token string">"plugins"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"transform-runtime"</span><span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190416/Mddz8O6ipjPl.png?imageslim" alt="mark"></p>
 <p><strong>报错：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190416/6PopTItC2OrO.png?imageslim" alt="mark"></p>
-<p><strong>解决方案：</strong>执行 <code>npm i babel-loader@7</code></p>
+<p>** 解决方案：** 执行  <code>npm i babel-loader@7</code></p>
 <p><img src="http://static.zxinc520.com/blog/20190416/HJupUdf1JIBA.png?imageslim" alt="mark"></p>
 <p><strong>报错：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190416/dYb1bw19ID0Y.png?imageslim" alt="mark"></p>
-<p><strong>啊啊啊啊~~ 崩溃！！</strong></p>
-<h2 id="修改之后还是跑不起来—-醉了！！"><a href="#修改之后还是跑不起来—-醉了！！" class="headerlink" title="修改之后还是跑不起来—-醉了！！"></a>修改之后还是跑不起来—-醉了！！</h2><p><img src="http://static.zxinc520.com/blog/20190416/dK1vXd5NuoO4.png?imageslim" alt="mark"></p>
+<p><strong>啊啊啊啊～～崩溃！！</strong></p>
+<h2 id="修改之后还是跑不起来-醉了"><a class="markdownIt-Anchor" href="#修改之后还是跑不起来-醉了">#</a> 修改之后还是跑不起来 ---- 醉了！！</h2>
+<p><img src="http://static.zxinc520.com/blog/20190416/dK1vXd5NuoO4.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190416/sEpb3GoWOHIM.png?imageslim" alt="mark"></p>
 <p><strong>报错：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190416/vh340CYSUk0d.png?imageslim" alt="mark"></p>
-<h2 id="升级总结（来自百度）"><a href="#升级总结（来自百度）" class="headerlink" title="升级总结（来自百度）"></a>升级总结（<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016458913">来自百度</a>）</h2><h4 id="babel-升级-7-X-踩坑记录"><a href="#babel-升级-7-X-踩坑记录" class="headerlink" title="-babel 升级 7.X 踩坑记录"></a>-babel 升级 7.X 踩坑记录</h4><ol>
-<li>babel 包名改变，以前安装是 <code>npm i babel-*</code> 现在安装 babel 系列需要写成 <code>npm i @babel/*</code></li>
-<li><code>.babelrc</code> 文件写法改变，<code>preset plugins</code> 等全部写成 <code>@babel/*</code> 的形式</li>
+<h2 id="升级总结来自百度"><a class="markdownIt-Anchor" href="#升级总结来自百度">#</a> 升级总结（<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016458913">来自百度</a>）</h2>
+<h4 id="-babel-升级-7x-踩坑记录"><a class="markdownIt-Anchor" href="#-babel-升级-7x-踩坑记录">#</a> -babel 升级 7.X 踩坑记录</h4>
+<ol>
+<li>babel 包名改变，以前安装是  <code>npm i babel-*</code>  现在安装 babel 系列需要写成  <code>npm i @babel/*</code></li>
+<li><code>.babelrc</code>  文件写法改变， <code>preset plugins</code>  等全部写成  <code>@babel/*</code>  的形式</li>
 </ol>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm:
 - babel-preset-env
@@ -232,12 +243,14 @@
 .babelrc:
 - &quot;presets&quot;: [&quot;react&quot;, &quot;env&quot;, &quot;stage-0&quot;, &quot;mobx&quot;]
 + &quot;presets&quot;: [&quot;@babel&#x2F;preset-react&quot;, &quot;@babel&#x2F;preset-env&quot;, &quot;mobx&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>除了上述的<code>preset</code>，我还用了<code>babel-preset-mobx</code><br>但是没找到 <code>@babel/preset-mobx</code>，从<a target="_blank" rel="noopener" href="https://github.com/zwhitchcox/babel-preset-mobx/commits/master">babel-preset-mobx git 提交日志</a>上看，作者已经支持了最新的<code>babel</code>。在之后的测试中，发现<code>mobx</code>的功能也能正常使用。<br>另外，<a target="_blank" rel="noopener" href="https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets">stage-*已弃用</a></p>
-<h2 id="使用-Vue-实例的-render-方法"><a href="#使用-Vue-实例的-render-方法" class="headerlink" title="使用 Vue 实例的 render 方法"></a>使用 Vue 实例的 render 方法</h2><blockquote>
+<p>除了上述的 <code>preset</code> ，我还用了 <code>babel-preset-mobx</code> <br>
+ 但是没找到  <code>@babel/preset-mobx</code> ，从<a target="_blank" rel="noopener" href="https://github.com/zwhitchcox/babel-preset-mobx/commits/master"> babel-preset-mobx git 提交日志</a>上看，作者已经支持了最新的 <code>babel</code> 。在之后的测试中，发现 <code>mobx</code>  的功能也能正常使用。<br>
+另外，<a target="_blank" rel="noopener" href="https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets">stage-* 已弃用</a></p>
+<h2 id="使用-vue-实例的-render-方法"><a class="markdownIt-Anchor" href="#使用-vue-实例的-render-方法">#</a> 使用 Vue 实例的 render 方法</h2>
+<blockquote>
 <p>Vue 推荐使用在绝大多数情况下使用 template 来创建你的 HTML。然而在一些场景中，你真的需要 JavaScript 的完全编程的能力，这就是 <strong>render 函数</strong>，它比 template 更接近编译器。</p>
 </blockquote>
-<p>*基本使用**</p>
+<p>* 基本使用 **</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">let</span> login <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
@@ -253,26 +266,28 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190417/El6GtYoXY4Wm.png?imageslim" alt="mark"></p>
-<h2 id="在-webpack-构建的项目中，使用-Vue-进行开发"><a href="#在-webpack-构建的项目中，使用-Vue-进行开发" class="headerlink" title="在 webpack 构建的项目中，使用 Vue 进行开发"></a>在 webpack 构建的项目中，使用 Vue 进行开发</h2><ul>
-<li>在普通网页中如何使用 Vue<ul>
-<li>1.使用 script 标签，引入 Vue 的包</li>
-<li>2.在 index 页面中，创建 一个 id 为 app div 容器</li>
-<li>3.通过 new Vue 得到一个 vm 的实例</li>
+<h2 id="在-webpack-构建的项目中使用-vue-进行开发"><a class="markdownIt-Anchor" href="#在-webpack-构建的项目中使用-vue-进行开发">#</a> 在 webpack 构建的项目中，使用 Vue 进行开发</h2>
+<ul>
+<li>在普通网页中如何使用 Vue
+<ul>
+<li>1. 使用 script 标签，引入 Vue 的包</li>
+<li>2. 在 index 页面中，创建 一个 id 为 app div 容器</li>
+<li>3. 通过 new Vue 得到一个 vm 的实例</li>
 </ul>
 </li>
 </ul>
-<h2 id="重点：在-webpack-中-尝试-使用-Vue"><a href="#重点：在-webpack-中-尝试-使用-Vue" class="headerlink" title="重点：在 webpack 中 尝试 使用 Vue"></a>重点：在 webpack 中 尝试 使用 Vue</h2><ol>
+<h2 id="重点在-webpack-中-尝试-使用-vue"><a class="markdownIt-Anchor" href="#重点在-webpack-中-尝试-使用-vue">#</a> 重点：在 webpack 中 尝试 使用 Vue</h2>
+<ol>
 <li><strong>直接导入 Vue 包</strong>：</li>
 </ol>
 <p><img src="http://static.zxinc520.com/blog/20190417/fl74cG8ej4BE.png?imageslim" alt="mark"></p>
 <p><strong>结果报错</strong>：</p>
 <p><img src="http://static.zxinc520.com/blog/20190417/wte2gIV3SL5L.png?imageslim" alt="mark"></p>
 <!--注意：在webpack 中 使用 `import Vue from 'vue'`导入的 Vue 构造函数，功能不完整，只提供了 **runtime-only** 的方式，并没有提供 像网页中-->
-
 <p><img src="http://static.zxinc520.com/blog/20190417/FDsekOzOdqSz.png?imageslim" alt="mark"></p>
-<h4 id="回顾-：包的-查找-规则"><a href="#回顾-：包的-查找-规则" class="headerlink" title="- 回顾 ：包的 查找 规则"></a>- 回顾 ：包的 <strong>查找</strong> 规则</h4><ol>
+<h4 id="-回顾-包的-查找-规则"><a class="markdownIt-Anchor" href="#-回顾-包的-查找-规则">#</a> - 回顾 ：包的 <strong>查找</strong> 规则</h4>
+<ol>
 <li>找 项目根目录中有没有 node_modules 的文件夹</li>
 <li>在 node_modules 中，根据包名，找对应的 vue 文件夹</li>
 <li>在 vue 文件夹中，找 一个叫 package.json 的包配置文件</li>
@@ -284,27 +299,30 @@
 <p><img src="http://static.zxinc520.com/blog/20190417/67SE8EyWVRmn.png?imageslim" alt="mark"></p>
 <p><strong>解决方案 3（更优雅）：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190417/Cfv9yq1PVXPl.png?imageslim" alt="mark"></p>
-<h2 id="定义-文件形式-vue-组件-加载到页面上"><a href="#定义-文件形式-vue-组件-加载到页面上" class="headerlink" title="定义 文件形式 vue 组件 加载到页面上"></a>定义 文件形式 vue 组件 加载到页面上</h2><p><strong>例如</strong>：</p>
+<h2 id="定义-文件形式-vue-组件-加载到页面上"><a class="markdownIt-Anchor" href="#定义-文件形式-vue-组件-加载到页面上">#</a> 定义 文件形式 vue 组件 加载到页面上</h2>
+<p><strong>例如</strong>：</p>
 <p><img src="http://static.zxinc520.com/blog/20190417/znhigwsi4kiE.png?imageslim" alt="mark"></p>
 <p><strong>报错：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190417/6ag81mxVMdjN.png?imageslim" alt="mark"></p>
 <p><strong>原因：</strong></p>
 <ul>
-<li>默认，webpack 无法打包 .vue 文件，需要安装 *<em>相关的 loader</em></li>
+<li>默认，webpack 无法打包 .vue 文件，需要安装 *<em> 相关的 loader</em></li>
 </ul>
 <p><strong>解决方案：</strong></p>
 <ol>
-<li><p>安装：执行 <code>npm i vue-loader vue-template-compiler -D</code> 命令</p>
+<li>
+<p>安装：执行  <code>npm i vue-loader vue-template-compiler -D</code>  命令</p>
 </li>
-<li><p>配置 webpack.config.js 文件</p>
+<li>
+<p>配置 webpack.config.js 文件</p>
 </li>
 </ol>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span>test<span class="token operator">:</span><span class="token regex">/\.vue$/</span><span class="token punctuation">,</span>use<span class="token operator">:</span><span class="token string">'vue-loader'</span><span class="token punctuation">&#125;</span> 	<span class="token comment">//处理 .vue后缀名的 loader</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190417/8cY6BeLLmNt2.png?imageslim" alt="mark"></p>
 <p>结果：还是报错</p>
 <p><img src="http://static.zxinc520.com/blog/20190417/VgCmomodVkuA.png?imageslim" alt="mark"></p>
-<h4 id="原因：Vue-loader-在-15-之后的版本都是-vue-loader-的使用都是需要伴生-VueLoaderPlugin-的"><a href="#原因：Vue-loader-在-15-之后的版本都是-vue-loader-的使用都是需要伴生-VueLoaderPlugin-的" class="headerlink" title="原因：Vue-loader 在 15.*之后的版本都是 vue-loader 的使用都是需要伴生 VueLoaderPlugin 的."></a>原因：Vue-loader 在 15.*之后的版本都是 vue-loader 的使用都是需要伴生 VueLoaderPlugin 的.</h4><p>解决：在 <strong>webpack.config.js</strong> 中加入</p>
+<h4 id="原因vue-loader-在-15之后的版本都是-vue-loader-的使用都是需要伴生-vueloaderplugin-的"><a class="markdownIt-Anchor" href="#原因vue-loader-在-15之后的版本都是-vue-loader-的使用都是需要伴生-vueloaderplugin-的">#</a> 原因：Vue-loader 在 15.* 之后的版本都是 vue-loader 的使用都是需要伴生 VueLoaderPlugin 的.</h4>
+<p>解决：在 <strong>webpack.config.js</strong> 中加入</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> VueLoaderPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"vue-loader/lib/plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   devtool<span class="token operator">:</span> <span class="token string">"sourcemap"</span><span class="token punctuation">,</span>
@@ -315,27 +333,36 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">VueLoaderPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   module<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190417/4zePeemdDl56.png?imageslim" alt="mark"></p>
 <p><strong>使用 render 函数 ：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190417/z60O8OR9qlLk.png?imageslim" alt="mark"><img src="http://static.zxinc520.com/blog/20190417/NG0rBbunP4N7.png?imageslim" alt="mark"></p>
-<h2 id="总结梳理："><a href="#总结梳理：" class="headerlink" title="总结梳理："></a>总结梳理：</h2><h4 id="总结梳理：-webpack-中如何使用-vue"><a href="#总结梳理：-webpack-中如何使用-vue" class="headerlink" title="总结梳理： webpack 中如何使用 vue"></a>总结梳理： webpack 中如何使用 vue</h4><ol>
-<li><p>安装 vue 的包： cnpm i vue -S</p>
+<h2 id="总结梳理"><a class="markdownIt-Anchor" href="#总结梳理">#</a> 总结梳理：</h2>
+<h4 id="总结梳理-webpack-中如何使用-vue"><a class="markdownIt-Anchor" href="#总结梳理-webpack-中如何使用-vue">#</a> 总结梳理： webpack 中如何使用 vue</h4>
+<ol>
+<li>
+<p>安装 vue 的包： cnpm i vue -S</p>
 </li>
-<li><p>由于 在 webpack 中，推荐使用 .vue 这个组件模板文件定义组件，所以，需要安装 能解析这种文件的 loader ，执行命令： <code>cnpm i vue-loader vue-template-complier -D</code></p>
+<li>
+<p>由于 在 webpack 中，推荐使用 .vue 这个组件模板文件定义组件，所以，需要安装 能解析这种文件的 loader ，执行命令：  <code>cnpm i vue-loader vue-template-complier -D</code></p>
 </li>
-<li><p>在 main.js 中，导入 vue 模块 import Vue from ‘vue’</p>
+<li>
+<p>在 main.js 中，导入 vue 模块 import Vue from ‘vue’</p>
 </li>
-<li><p>定义一个 .vue 结尾的组件，其中，组件有三部分组成： template script style</p>
+<li>
+<p>定义一个 .vue 结尾的组件，其中，组件有三部分组成： template script style</p>
 </li>
-<li><p>使用 import login from ‘./login.vue’ 导入这个组件</p>
+<li>
+<p>使用 import login from ‘./login.vue’ 导入这个组件</p>
 </li>
-<li><p>创建 vm 的实例 var vm = new Vue({ el: ‘#app’, render: c =&gt; c(login) })</p>
+<li>
+<p>创建 vm 的实例 var vm = new Vue ({el: ‘#app’, render: c =&gt; c (login) })</p>
 </li>
-<li><p>在页面中创建一个 id 为 app 的 div 元素，作为我们 vm 实例要控制的区域；</p>
+<li>
+<p>在页面中创建一个 id 为 app 的 div 元素，作为我们 vm 实例要控制的区域；</p>
 </li>
 </ol>
-<h2 id="export-default-和-export-的使用方式"><a href="#export-default-和-export-的使用方式" class="headerlink" title="export default 和 export 的使用方式"></a>export default 和 export 的使用方式</h2><p><strong>基本使用：</strong></p>
+<h2 id="export-default-和-export-的使用方式"><a class="markdownIt-Anchor" href="#export-default-和-export-的使用方式">#</a> export default 和 export 的使用方式</h2>
+<p><strong>基本使用：</strong></p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
     &lt;h3&gt;这是登录组件，vue 文件定义出来的--&#123;&#123; msg &#125;&#125;&lt;&#x2F;h3&gt;
@@ -358,9 +385,12 @@ export default &#123;
 &lt;&#x2F;script&gt;
 
 &lt;style&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190417/VJ8FVeRYb0oV.png?imageslim" alt="mark"></p>
-<h2 id="export，import-，export-default-是什么？"><a href="#export，import-，export-default-是什么？" class="headerlink" title="export，import ，export default 是什么？"></a>export，import ，export default 是什么？</h2><p>ES6 模块主要有两个功能：export 和 import<br><strong>export</strong> 用于对外输出本模块（一个文件可以理解为一个模块）变量的接口<br><strong>import</strong> 用于在一个模块中加载另一个含有 export 接口的模块。<br>也就是说使用 export 命令定义了模块的对外接口以后，其他 JS 文件就可以通过 import 命令加载这个模块（文件）。这几个都是 ES6 的语法。</p>
+<h2 id="exportimport-export-default-是什么"><a class="markdownIt-Anchor" href="#exportimport-export-default-是什么">#</a> export，import ，export default 是什么？</h2>
+<p>ES6 模块主要有两个功能：export 和 import<br>
+<strong>export</strong> 用于对外输出本模块（一个文件可以理解为一个模块）变量的接口<br>
+<strong> import</strong> 用于在一个模块中加载另一个含有 export 接口的模块。<br>
+也就是说使用 export 命令定义了模块的对外接口以后，其他 JS 文件就可以通过 import 命令加载这个模块（文件）。这几个都是 ES6 的语法。</p>
 <ul>
 <li>注意：export default 向外暴露的成员，可以使用任意的变量来接受</li>
 <li>注意：在一个模块中，export default 只允许向外暴露一次</li>
@@ -369,11 +399,11 @@ export default &#123;
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">在 Node中，使用 <span class="token keyword">var</span> 名称<span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'模块标识符'</span><span class="token punctuation">)</span>
 
 module<span class="token punctuation">.</span>exports和 exports 来暴露成员<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="export-与-export-default"><a href="#export-与-export-default" class="headerlink" title="export 与 export default"></a>export 与 export default</h2><p>上面讲的是 export 和 import，但是 <strong>export</strong> 跟 <strong>export default</strong> 有什么区别呢？如下：</p>
+<h2 id="export-与-export-default"><a class="markdownIt-Anchor" href="#export-与-export-default">#</a> export 与 export default</h2>
+<p>上面讲的是 export 和 import，但是 <strong>export</strong> 跟 <strong>export default</strong> 有什么区别呢？如下：</p>
 <ol>
 <li>export 与 export default 均可用于导出常量、函数、文件、模块等</li>
-<li>你可以在其它文件或模块中通过 import+(常量 | 函数 | 文件 | 模块)名的方式，将其导入，以便能够对其进行使用</li>
+<li>你可以在其它文件或模块中通过 import+(常量 | 函数 | 文件 | 模块) 名的方式，将其导入，以便能够对其进行使用</li>
 <li>在一个文件或模块中，export、import 可以有多个，export default 仅有一个，<strong>export default</strong> 只能导出<strong>一个默认模块</strong>，这个模块<strong>可以匿名</strong>（ 引入的时候可以给这个模块取任意名字，例如 “obj”，且不需要用大括号括起来。）</li>
 </ol>
 <p><strong>export ：</strong></p>
@@ -383,26 +413,22 @@ module<span class="token punctuation">.</span>exports和 exports 来暴露成员
 <span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>对应的引入方式：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//demo2.js</span>
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> str<span class="token punctuation">,</span> f <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"demo1"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>export default</strong>：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//demo1.js</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
   a<span class="token operator">:</span> <span class="token string">"hello"</span><span class="token punctuation">,</span>
   b<span class="token operator">:</span> <span class="token string">"world"</span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>对应的引入方式：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//demo2.js</span>
 <span class="token keyword">import</span> obj <span class="token keyword">from</span> <span class="token string">"demo1"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <ol start="4">
-<li>通过 export 方式导出，在导入时要<strong>加 { }**，export default 则 **不需要</strong></li>
+<li>通过 export 方式导出，在导入时要<strong>加 { }</strong>，export default 则 <strong>不需要</strong></li>
 </ol>
-<p>这样来说其实很多时候 export 与 export default 可以实现同样的目的，只是用法有些区别。注意第四条，通过 export 方式导出，在导入时要加{ }，export default 则不需要。使用 export default 命令，为模块指定默认输出，这样就不需要知道所要加载模块的变量名。</p>
+<p>这样来说其实很多时候 export 与 export default 可以实现同样的目的，只是用法有些区别。注意第四条，通过 export 方式导出，在导入时要加 { }，export default 则不需要。使用 export default 命令，为模块指定默认输出，这样就不需要知道所要加载模块的变量名。</p>
 <p>例如：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> name<span class="token operator">=</span><span class="token string">"李四"</span><span class="token punctuation">;</span>
 <span class="token keyword">export</span> <span class="token punctuation">&#123;</span> name <span class="token punctuation">&#125;</span>
@@ -411,19 +437,19 @@ module<span class="token punctuation">.</span>exports和 exports 来暴露成员
 <span class="token keyword">var</span> name<span class="token operator">=</span><span class="token string">"李四"</span><span class="token punctuation">;</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> name
 <span class="token comment">//import name from "/.a.js" 这里name不需要大括号</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="说明与比较：new-Vue-和-export-default-？"><a href="#说明与比较：new-Vue-和-export-default-？" class="headerlink" title="说明与比较：new Vue() 和 export default {}？"></a>说明与比较：new Vue() 和 export default {}？</h3><p>在生成、导出、导入、使用 Vue 组件的时候，像我这种新手就会常常被位于不同文件的 <code>new Vue()</code> 和 <code>export default&#123;&#125;</code> 搞得晕头转向。它们含义到底是什么，又有什么异同呢？</p>
+<h3 id="说明与比较new-vue-和-export-default"><a class="markdownIt-Anchor" href="#说明与比较new-vue-和-export-default">#</a> 说明与比较：new Vue () 和 export default {}？</h3>
+<p>在生成、导出、导入、使用 Vue 组件的时候，像我这种新手就会常常被位于不同文件的  <code>new Vue()</code>  和  <code>export default&#123;&#125;</code>  搞得晕头转向。它们含义到底是什么，又有什么异同呢？</p>
 <p>首先，Vue 是什么？ po 主的理解是 Vue 就是一个构造函数，生成的实例是一个巨大的对象，可以包含数据、模板、挂载元素、方法、生命周期钩子等选项。</p>
 <p>所以渲染的时候，可以使用构造 Vue 实例的方式来渲染相应的 html 页面：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
     el<span class="token operator">:</span> <span class="token string">'#app'</span>
     <span class="token operator">...</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>那么 export default {} 又是来干嘛的？</p>
-<p>这是在复用组件的时候用到的。假设我们写了一个单页面组件 A 文件，而在另一个文件 B 里面需要用到它，那么就要用 <a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/?search=%E7%9C%81%E7%95%A5&x=0&y=0#docs/module">ES6 的 import/export 语法</a> ，在文件 A 中定义输出接口 <code>export **</code>，在文件 B 中引入 <code>import **</code>，然后再生成一个 Vue 实例 <code>new Vue (**)</code>，把引入的组件用起来，这样就可以复用组件 A 去配合文件 B 生成 html 页面了。</p>
-<h2 id="结合-webpack-使用-vue-router"><a href="#结合-webpack-使用-vue-router" class="headerlink" title="结合 webpack 使用 vue-router"></a>结合 webpack 使用 vue-router</h2><ol>
-<li>安装 <code>npm i vue-router -S </code></li>
+<p>这是在复用组件的时候用到的。假设我们写了一个单页面组件 A 文件，而在另一个文件 B 里面需要用到它，那么就要用 <a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/?search=%E7%9C%81%E7%95%A5&amp;x=0&amp;y=0#docs/module">ES6 的 import/export 语法</a> ，在文件 A 中定义输出接口  <code>export **</code> ，在文件 B 中引入  <code>import **</code> ，然后再生成一个 Vue 实例  <code>new Vue (**)</code> ，把引入的组件用起来，这样就可以复用组件 A 去配合文件 B 生成 html 页面了。</p>
+<h2 id="结合-webpack-使用-vue-router"><a class="markdownIt-Anchor" href="#结合-webpack-使用-vue-router">#</a> 结合 webpack 使用 vue-router</h2>
+<ol>
+<li>安装  <code>npm i vue-router -S </code></li>
 </ol>
 <p>例：</p>
 <p>目录结构：</p>
@@ -463,7 +489,6 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <span class="token comment">//注意：App 这个组件，是通过 VM 实例的 render 函数，渲染出来的，render 函数如果要渲染 组件渲染出来的组件，只能是 el ：'#app' 所指定的 元素中</span>
 
 <span class="token comment">//Account 和 GoodsList 组件，是通过 路由匹配监听到的，所以，这两个组件，只能展示到 属于 路由的 &lt;router-view>&lt;/router-view> 中去</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>App.vue:</strong></p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
@@ -476,9 +501,9 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 
 &lt;script&gt;&lt;&#x2F;script&gt;
 &lt;style&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190417/8RslBeQhHAvx.gif" alt="mark"></p>
-<h2 id="webpack-路由嵌套"><a href="#webpack-路由嵌套" class="headerlink" title="webpack-路由嵌套"></a>webpack-路由嵌套</h2><p>目录结构：</p>
+<h2 id="webpack-路由嵌套"><a class="markdownIt-Anchor" href="#webpack-路由嵌套">#</a> webpack - 路由嵌套</h2>
+<p>目录结构：</p>
 <p><img src="http://static.zxinc520.com/blog/20190417/KpfhuMnyjazc.png?imageslim" alt="mark"></p>
 <p><strong>main.js:</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//在 webpack 构建的项目中，使用Vue 进行开发</span>
@@ -525,7 +550,6 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <span class="token comment">//注意：App 这个组件，是通过 VM 实例的 render 函数，渲染出来的，render 函数如果要渲染 组件渲染出来的组件，只能是 el ：'#app' 所指定的 元素中</span>
 
 <span class="token comment">//Account 和 GoodsList 组件，是通过 路由匹配监听到的，所以，这两个组件，只能展示到 属于 路由的 &lt;router-view>&lt;/router-view> 中去</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>App.vue:</strong></p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
@@ -539,7 +563,6 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 &lt;script&gt;&lt;&#x2F;script&gt;
 
 &lt;style&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>Account:</strong></p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
@@ -554,9 +577,9 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 &lt;script&gt;&lt;&#x2F;script&gt;
 
 &lt;style&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190417/tSeVisl10K0W.gif" alt="mark"></p>
-<h2 id="组件中-style-标签-lang-属性和-scoped-属性的介绍"><a href="#组件中-style-标签-lang-属性和-scoped-属性的介绍" class="headerlink" title="组件中 style 标签 lang 属性和 scoped 属性的介绍"></a>组件中 style 标签 lang 属性和 scoped 属性的介绍</h2><p><strong>scoped：</strong>在子组件中设置 style 属性，如果不加 scoped 属性，如果是单页面程序，样式就会作用到全局中去，加了 scoped 属性以后，表示限制了该样式作用域只在该组件中。</p>
+<h2 id="组件中-style-标签-lang-属性和-scoped-属性的介绍"><a class="markdownIt-Anchor" href="#组件中-style-标签-lang-属性和-scoped-属性的介绍">#</a> 组件中 style 标签 lang 属性和 scoped 属性的介绍</h2>
+<p>**scoped：** 在子组件中设置 style 属性，如果不加 scoped 属性，如果是单页面程序，样式就会作用到全局中去，加了 scoped 属性以后，表示限制了该样式作用域只在该组件中。</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
     &lt;h1&gt;这是goods组件&lt;&#x2F;h1&gt;
@@ -570,8 +593,7 @@ div &#123;
   color: red;
 &#125;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>lang 属性：</strong>普通的 style 标签只支持普通的样式,如果想启用 scss 或 less,需要为 style 设置 lang 属性</p>
+<p>**lang 属性：** 普通的 style 标签只支持普通的样式，如果想启用 scss 或 less, 需要为 style 设置 lang 属性</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
     &lt;h1&gt;这是account组件&lt;&#x2F;h1&gt;
@@ -587,8 +609,8 @@ body &#123;
   &#125;
 &#125;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="抽离路由模块"><a href="#抽离路由模块" class="headerlink" title="抽离路由模块"></a>抽离路由模块</h2><p>目录结构：</p>
+<h2 id="抽离路由模块"><a class="markdownIt-Anchor" href="#抽离路由模块">#</a> 抽离路由模块</h2>
+<p>目录结构：</p>
 <p><img src="http://static.zxinc520.com/blog/20190417/imC2sybXMC8G.png?imageslim" alt="mark"></p>
 <p><strong>main.js:</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//在 webpack 构建的项目中，使用Vue 进行开发</span>
@@ -615,7 +637,6 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <span class="token comment">//注意：App 这个组件，是通过 VM 实例的 render 函数，渲染出来的，render 函数如果要渲染 组件渲染出来的组件，只能是 el ：'#app' 所指定的 元素中</span>
 
 <span class="token comment">//Account 和 GoodsList 组件，是通过 路由匹配监听到的，所以，这两个组件，只能展示到 属于 路由的 &lt;router-view>&lt;/router-view> 中去</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>router.js:</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">"vue-router"</span><span class="token punctuation">;</span>
 
@@ -881,7 +902,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;虚拟 dom&#34; tag</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Sun, 04 Aug 2019 16:44:08 +0800</pubDate>
+        <lastBuildDate>Sun, 04 Aug 2019 16:44:08 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2019/08/04/IntroductionToCourse/</guid>
+            <title>课程导论</title>
+            <link>http://example.com/2019/08/04/IntroductionToCourse/</link>
+            <category>hybrid</category>
+            <category>虚拟 DOM</category>
+            <category>知识点概述</category>
+            <pubDate>Sun, 04 Aug 2019 16:44:08 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;课程导论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程导论&#34;&gt;#&lt;/a&gt; 课程导论&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;课程导论：本章主要介绍课程的知识大纲，每个章节的解决顺序和主要内容。&lt;/p&gt;
+&lt;p&gt;1- 1 导学&lt;/p&gt;
+&lt;p&gt;1-2 课程重要提示&lt;/p&gt;
+&lt;p&gt;1-3 架构&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;课程概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程概述&#34;&gt;#&lt;/a&gt; 课程概述&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;做什么？&lt;/strong&gt; —— 讲解前端 JS 高级面试题&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;哪些部分？&lt;/strong&gt; —— 高级基础，框架原理，app 混合开发&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;技术？&lt;/strong&gt; ——JS、ES6、虚拟 DOM、vueReact、hybrid&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190803/Q5w2nr68extL.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;课程安排&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程安排&#34;&gt;#&lt;/a&gt; 课程安排&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;高级基础&lt;/li&gt;
+&lt;li&gt;框架原理&lt;/li&gt;
+&lt;li&gt;App 混合开发&lt;/li&gt;
+&lt;li&gt;热爱编程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;课程安排-高级基础&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程安排-高级基础&#34;&gt;#&lt;/a&gt; 课程安排 - 高级基础&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;ES6 常用语法：Class ,Module Promise 等&lt;/li&gt;
+&lt;li&gt;原型高级应用：结合 jQuery 和 zepto 源码&lt;/li&gt;
+&lt;li&gt;异步全面讲解：从原理到 jQuery 再到 Primise&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;课程安排-框架原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程安排-框架原理&#34;&gt;#&lt;/a&gt; 课程安排 - 框架原理&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;虚拟 DOM：存在价值，如何使用，diff 算法&lt;/li&gt;
+&lt;li&gt;vue：MVVM，vue 响应式、模板解析、渲染&lt;/li&gt;
+&lt;li&gt;React：组件化，JSX、VDOM，setState&lt;/li&gt;
+&lt;li&gt;对比：有主见，自圆其说&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;课程安排-app-混合开发&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程安排-app-混合开发&#34;&gt;#&lt;/a&gt; 课程安排 - App 混合开发&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;hybrid：基础、和 h5 对比，上线流程&lt;/li&gt;
+&lt;li&gt;通讯：通讯原理，JS-Bridge 封装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;课程安排-热爱编程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程安排-热爱编程&#34;&gt;#&lt;/a&gt; 课程安排 - 热爱编程&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;读书&lt;/li&gt;
+&lt;li&gt;博客&lt;/li&gt;
+&lt;li&gt;开源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;课程收获&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程收获&#34;&gt;#&lt;/a&gt; 课程收获&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;应对 JS 高级面试题&lt;/li&gt;
+&lt;li&gt;从深度和广度都扩充了自己的知识体系&lt;/li&gt;
+&lt;li&gt;学会如何高效学习&lt;/li&gt;
+&lt;li&gt;深入理解常用框架的实现原理和 hybrid 应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;学习前提&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#学习前提&#34;&gt;#&lt;/a&gt; 学习前提&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;有 JavaScript 基础&lt;/li&gt;
+&lt;li&gt;用过 node.js 和 npm 开发环境&lt;/li&gt;
+&lt;li&gt;了解 vue 和 React （至少看过文档，做过 demo）&lt;/li&gt;
+&lt;li&gt;热爱前端开发，有学习的欲望&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;课程优势&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程优势&#34;&gt;#&lt;/a&gt; 课程优势&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;针对高级 JS 面试中，面试官爱问 “源码” “实现”&lt;/li&gt;
+&lt;li&gt;介绍常用框架实现原理的视频，网上稀缺&lt;/li&gt;
+&lt;li&gt;会介绍 hybrid 原理和应用的视频，网上稀缺&lt;/li&gt;
+&lt;li&gt;全部由实际工作经验总结而来，书上看不到&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

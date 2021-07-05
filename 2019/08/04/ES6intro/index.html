@@ -114,32 +114,38 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="ES6-语法"><a href="#ES6-语法" class="headerlink" title="ES6 语法"></a>ES6 语法</h1><blockquote>
+  <h1 id="es6-语法"><a class="markdownIt-Anchor" href="#es6-语法">#</a> ES6 语法</h1>
+<blockquote>
 <p>本章主要讲解工作中最常用的 ES6 语法，包括 <strong>Module Class Promise</strong> 等语法，还会介绍使用 <strong>babel webpack rollup</strong> 来搭建 ES6 编译环境。</p>
 <p><a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/">ECMAScript 6 入门</a></p>
 </blockquote>
-<h2 id="ES6-使用"><a href="#ES6-使用" class="headerlink" title="ES6 使用"></a>ES6 使用</h2><ul>
+<h2 id="es6-使用"><a class="markdownIt-Anchor" href="#es6-使用">#</a> ES6 使用</h2>
+<ul>
 <li>开发环境已经普及使用</li>
 <li>浏览器环境却支持不好（ 需要开发环境编译 ）</li>
 <li>内容很多，重点了解常用语法</li>
 <li>面试：开发环境的使用 + 重点语法的掌握</li>
 </ul>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<h3 id="问题"><a class="markdownIt-Anchor" href="#问题">#</a> 问题</h3>
+<ul>
 <li>ES6 模块化如何使用，开发环境如何打包</li>
 <li>Class 和 普通构造函数 有何区别 ？</li>
 <li>Promise 的基本使用和原理</li>
 <li>总结一下 ES6 其它常用功能</li>
 </ul>
-<h2 id="2-1-ES6-模块化语法"><a href="#2-1-ES6-模块化语法" class="headerlink" title="2-1 ES6 模块化语法"></a>2-1 ES6 模块化语法</h2><blockquote>
+<h2 id="2-1-es6-模块化语法"><a class="markdownIt-Anchor" href="#2-1-es6-模块化语法">#</a> 2-1 ES6 模块化语法</h2>
+<blockquote>
 <p>ES6 模块化如何使用，开发环境如何打包</p>
 </blockquote>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><p><strong>ES6 模块化如何使用，开发环境如何打包:</strong></p>
+<h3 id="知识点"><a class="markdownIt-Anchor" href="#知识点">#</a> 知识点</h3>
+<p><strong>ES6 模块化如何使用，开发环境如何打包:</strong></p>
 <ul>
 <li>模块化的基本语法</li>
 <li>开发环境的配置</li>
 <li>关于 JS 众多 模块化标准</li>
 </ul>
-<h4 id="export-语法"><a href="#export-语法" class="headerlink" title="export 语法"></a>export 语法</h4><blockquote>
+<h4 id="export-语法"><a class="markdownIt-Anchor" href="#export-语法">#</a> export 语法</h4>
+<blockquote>
 <p>export 语法</p>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/*util1.js*/</span>
@@ -162,22 +168,25 @@
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>util1<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">fn1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">fn2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="开发环境-babel"><a href="#开发环境-babel" class="headerlink" title="开发环境 - babel"></a>开发环境 - babel</h4><blockquote>
+<h4 id="开发环境-babel"><a class="markdownIt-Anchor" href="#开发环境-babel">#</a> 开发环境 - babel</h4>
+<blockquote>
 <p>Babel 是一个 JavaScript 编译器。<a target="_blank" rel="noopener" href="https://babeljs.io/">官网</a></p>
 <p>使用技巧 可参考 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cc4640d9b3032095d9e5754%22">React 学习第一天 ：webpack 中使用 Babel 配置</a></p>
 <p>和 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cb72a04009ae94788aa0d7f%22">Vue 第六天学习 ：webpack 中 babel 的配置</a></p>
 </blockquote>
-<h4 id="开发环境-webpack"><a href="#开发环境-webpack" class="headerlink" title="开发环境 - webpack"></a>开发环境 - webpack</h4><blockquote>
+<h4 id="开发环境-webpack"><a class="markdownIt-Anchor" href="#开发环境-webpack">#</a> 开发环境 - webpack</h4>
+<blockquote>
 <p>开发环境 - webpack - <em>webpack</em> 是一个模块打包器 <a target="_blank" rel="noopener" href="https://webpack.js.org/">官网</a></p>
 <p>详情 可参考我的博客：<a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cb181596d3d4a5cb52b65c9%22">Vue 第五天：webpack</a> 和 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cb72a04009ae94788aa0d7f%22">Vue 第六天学习：深入 webpack</a> 以及 <a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cc4640d9b3032095d9e5754%22">React 学习第一天：创建基本的 webpack4.x 项目 </a></p>
 </blockquote>
-<h4 id="rollup-js"><a href="#rollup-js" class="headerlink" title="rollup.js"></a>rollup.js</h4><blockquote>
+<h4 id="rollupjs"><a class="markdownIt-Anchor" href="#rollupjs">#</a> rollup.js</h4>
+<blockquote>
 <p>概述 (Overview) <a target="_blank" rel="noopener" href="https://www.rollupjs.com/guide/zh">中文文档</a> <a target="_blank" rel="noopener" href="https://rollupjs.org/guide/en/">官网</a></p>
 <p>Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大块复杂的代码，例如 library 或应用程序。Rollup 对代码模块使用新的标准化格式，这些标准都包含在 JavaScript 的 ES6 版本中，而不是以前的特殊解决方案，如 CommonJS 和 AMD。ES6 模块可以使你自由、无缝地使用你最喜爱的 library 中那些最有用独立函数，而你的项目不必携带其他未使用的代码。ES6 模块最终还是要由浏览器原生实现，但当前 Rollup 可以使你提前体验</p>
 <p><strong>rollup 功能单一（极致） ，webpack 功能强大</strong></p>
 </blockquote>
-<h4 id="关于-JS-众多-模块化标准"><a href="#关于-JS-众多-模块化标准" class="headerlink" title="关于 JS 众多 模块化标准"></a>关于 JS 众多 模块化标准</h4><blockquote>
+<h4 id="关于-js-众多-模块化标准"><a class="markdownIt-Anchor" href="#关于-js-众多-模块化标准">#</a> 关于 JS 众多 模块化标准</h4>
+<blockquote>
 <p>关于 JS 众多 模块化标准</p>
 <p>详情可参考我的博客：<a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225d31940b724e8113740499b3%22">开发环境： 模块化</a></p>
 </blockquote>
@@ -190,23 +199,28 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>nodejs 积极支持，浏览器尚未统一</li>
 <li>你可以自造 lib，但是不要自造标准</li>
 </ul>
-<h3 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
+<h3 id="问题解答"><a class="markdownIt-Anchor" href="#问题解答">#</a> 问题解答</h3>
+<ul>
 <li>语法：import export （注意有无 default）</li>
 <li>环境：babel 编译 ES6 语法，模块化可用 webpack 和 rollup</li>
 <li>扩展：说一下自己对模块化标准统一的期待</li>
 </ul>
-<h2 id="2-2-Class-和-普通构造函数有何区别"><a href="#2-2-Class-和-普通构造函数有何区别" class="headerlink" title="2-2 Class 和 普通构造函数有何区别"></a>2-2 Class 和 普通构造函数有何区别</h2><blockquote>
+<h2 id="2-2-class-和-普通构造函数有何区别"><a class="markdownIt-Anchor" href="#2-2-class-和-普通构造函数有何区别">#</a> 2-2 Class 和 普通构造函数有何区别</h2>
+<blockquote>
 <p>Class 和 普通构造函数有何区别</p>
 <p><a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cd03896bd482e21ac46a9d4%22">我的博客：React 学习第二天：了解 class</a></p>
 </blockquote>
-<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h3 id="知识点-2"><a class="markdownIt-Anchor" href="#知识点-2">#</a> 知识点</h3>
+<ul>
 <li>JS 构造函数</li>
 <li>Class 基本语法</li>
 <li>语法糖</li>
 <li>继承</li>
 </ul>
-<h3 id="问题解答-1"><a href="#问题解答-1" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>Class 和 普通构造函数 有何区别 ？<ul>
+<h3 id="问题解答-2"><a class="markdownIt-Anchor" href="#问题解答-2">#</a> 问题解答</h3>
+<ul>
+<li>Class 和 普通构造函数 有何区别 ？
+<ul>
 <li>Class 在语法上更加贴合面向对象的写法</li>
 <li>Class 实现继承更加易读、易理解</li>
 <li>更易于写 java 等后端语言的使用</li>
@@ -214,14 +228,17 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 </li>
 </ul>
-<h2 id="2-3-Promise-的基本使用"><a href="#2-3-Promise-的基本使用" class="headerlink" title="2-3 Promise 的基本使用"></a>2-3 Promise 的基本使用</h2><h3 id="Promise-的基本使用"><a href="#Promise-的基本使用" class="headerlink" title="Promise 的基本使用"></a>Promise 的基本使用</h3><blockquote>
+<h2 id="2-3-promise-的基本使用"><a class="markdownIt-Anchor" href="#2-3-promise-的基本使用">#</a> 2-3 Promise 的基本使用</h2>
+<h3 id="promise-的基本使用"><a class="markdownIt-Anchor" href="#promise-的基本使用">#</a> Promise 的基本使用</h3>
+<blockquote>
 <p>可参考我的博客：<a target="_blank" rel="noopener" href="http://zxinc520.com/lcj/%225cbb3bf05733fa0a66088c80%22">Promise 详细分析</a></p>
 </blockquote>
 <ul>
 <li>Callback Hell</li>
 <li>Promise 语法</li>
 </ul>
-<h4 id="Callback-Hell"><a href="#Callback-Hell" class="headerlink" title="Callback Hell"></a>Callback Hell</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">loadImg</span><span class="token punctuation">(</span><span class="token parameter">src<span class="token punctuation">,</span> callback<span class="token punctuation">,</span> fail</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="callback-hell"><a class="markdownIt-Anchor" href="#callback-hell">#</a> Callback Hell</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">loadImg</span><span class="token punctuation">(</span><span class="token parameter">src<span class="token punctuation">,</span> callback<span class="token punctuation">,</span> fail</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">var</span> img <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"img"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   img<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token function">callback</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -243,8 +260,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="Promise-语法"><a href="#Promise-语法" class="headerlink" title="Promise 语法"></a>Promise 语法</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">loadImg</span><span class="token punctuation">(</span><span class="token parameter">src</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="promise-语法"><a class="markdownIt-Anchor" href="#promise-语法">#</a> Promise 语法</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">loadImg</span><span class="token punctuation">(</span><span class="token parameter">src</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">const</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">var</span> img <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"img"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     img<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -274,30 +291,39 @@ result<span class="token punctuation">.</span><span class="token function">then<
 result<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">img</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>img<span class="token punctuation">.</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="问题解答-2"><a href="#问题解答-2" class="headerlink" title="问题解答"></a>问题解答</h3><ul>
-<li>Promise 的基本使用和原理?<ul>
+<h3 id="问题解答-3"><a class="markdownIt-Anchor" href="#问题解答-3">#</a> 问题解答</h3>
+<ul>
+<li>Promise 的基本使用和原理？
+<ul>
 <li>new Promise 实例，而且要 return</li>
 <li>new Promise 时要传入函数，函数有 resolve, reject 两个参数</li>
-<li>成功时执行 resolve() 失败时执行 reject()</li>
+<li>成功时执行 resolve () 失败时执行 reject ()</li>
 <li>then 监听结果</li>
 </ul>
 </li>
 </ul>
-<h2 id="2-4-总结一下-ES6-其它常用功能"><a href="#2-4-总结一下-ES6-其它常用功能" class="headerlink" title="2-4 总结一下 ES6 其它常用功能"></a>2-4 总结一下 ES6 其它常用功能</h2><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<h2 id="2-4-总结一下-es6-其它常用功能"><a class="markdownIt-Anchor" href="#2-4-总结一下-es6-其它常用功能">#</a> 2-4 总结一下 ES6 其它常用功能</h2>
+<h3 id="知识点-3"><a class="markdownIt-Anchor" href="#知识点-3">#</a> 知识点</h3>
+<ul>
 <li>let/const</li>
-<li>多行字符串/模板变量</li>
+<li>多行字符串 / 模板变量</li>
 <li>解构赋值</li>
 <li>块级作用域</li>
 <li>函数默认参数</li>
 <li>箭头函数</li>
 </ul>
-<h4 id="let-const"><a href="#let-const" class="headerlink" title="let/const"></a>let/const</h4><p><img src="http://static.zxinc520.com/blog/20190804/IjRCPysI3ja5.png?imageslim" alt="mark"></p>
-<h4 id="多行字符串-模板变量"><a href="#多行字符串-模板变量" class="headerlink" title="多行字符串/模板变量"></a>多行字符串/模板变量</h4><p><img src="http://static.zxinc520.com/blog/20190804/cmkreCVTvB3f.png?imageslim" alt="mark"></p>
-<h4 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h4><p><img src="http://static.zxinc520.com/blog/20190804/tkv3jll7XPJG.png?imageslim" alt="mark"></p>
-<h4 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h4><p><img src="http://static.zxinc520.com/blog/20190804/vqFw5Cyt1Okg.png?imageslim" alt="mark"></p>
-<h4 id="函数默认参数"><a href="#函数默认参数" class="headerlink" title="函数默认参数"></a>函数默认参数</h4><p><img src="http://static.zxinc520.com/blog/20190804/rDHBLwq6djzQ.png?imageslim" alt="mark"></p>
-<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p><img src="http://static.zxinc520.com/blog/20190804/26aXyJj3eE8M.png?imageslim" alt="mark"></p>
+<h4 id="letconst"><a class="markdownIt-Anchor" href="#letconst">#</a> let/const</h4>
+<p><img src="http://static.zxinc520.com/blog/20190804/IjRCPysI3ja5.png?imageslim" alt="mark"></p>
+<h4 id="多行字符串模板变量"><a class="markdownIt-Anchor" href="#多行字符串模板变量">#</a> 多行字符串 / 模板变量</h4>
+<p><img src="http://static.zxinc520.com/blog/20190804/cmkreCVTvB3f.png?imageslim" alt="mark"></p>
+<h4 id="解构赋值"><a class="markdownIt-Anchor" href="#解构赋值">#</a> 解构赋值</h4>
+<p><img src="http://static.zxinc520.com/blog/20190804/tkv3jll7XPJG.png?imageslim" alt="mark"></p>
+<h4 id="块级作用域"><a class="markdownIt-Anchor" href="#块级作用域">#</a> 块级作用域</h4>
+<p><img src="http://static.zxinc520.com/blog/20190804/vqFw5Cyt1Okg.png?imageslim" alt="mark"></p>
+<h4 id="函数默认参数"><a class="markdownIt-Anchor" href="#函数默认参数">#</a> 函数默认参数</h4>
+<p><img src="http://static.zxinc520.com/blog/20190804/rDHBLwq6djzQ.png?imageslim" alt="mark"></p>
+<h4 id="箭头函数"><a class="markdownIt-Anchor" href="#箭头函数">#</a> 箭头函数</h4>
+<p><img src="http://static.zxinc520.com/blog/20190804/26aXyJj3eE8M.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190804/XppPYlgRUceY.png?imageslim" alt="mark"></p>
  
       <!-- reward -->
@@ -538,7 +564,7 @@ result<span class="token punctuation">.</span><span class="token function">then<
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "sunflower • All posts by \"hexo\" tag",
+    "description": "周琛的博客",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2020/10/30/hexo-%E6%97%A0%E6%B3%95%E6%90%9C%E7%B4%A2%E9%97%AE%E9%A2%98/",
+            "url": "http://example.com/2020/10/30/hexo-%E6%97%A0%E6%B3%95%E6%90%9C%E7%B4%A2%E9%97%AE%E9%A2%98/",
+            "title": "hexo 无法搜索问题",
+            "date_published": "2020-10-30T08:22:23.000Z",
+            "content_html": "<h2 id=\"一般hexo博客无法搜索主要有2种以下情况\"><a class=\"markdownIt-Anchor\" href=\"#一般hexo博客无法搜索主要有2种以下情况\">#</a> 一般 <code>Hexo</code>  博客无法搜索主要有 <code>2</code>  种以下情况:</h2>\n<ul>\n<li><code>搜索插件没有配置好</code></li>\n<li><code>文章中包含特殊字符</code></li>\n</ul>\n<h2 id=\"一-搜索插件的配置\"><a class=\"markdownIt-Anchor\" href=\"#一-搜索插件的配置\">#</a> 一、搜索插件的配置</h2>\n<p>编辑  <code>站点配置文件</code> ，新增以下内容到任意位置：</p>\n<pre class=\"line-numbers language-javascript\" data-language=\"javascript\"><code class=\"language-javascript\">search<span class=\"token operator\">:</span>\n  path<span class=\"token operator\">:</span> search<span class=\"token punctuation\">.</span>xml\n  field<span class=\"token operator\">:</span> post\n  format<span class=\"token operator\">:</span> html\n  limit<span class=\"token operator\">:</span> <span class=\"token number\">10000</span><span aria-hidden=\"true\" class=\"line-numbers-rows\"><span></span><span></span><span></span><span></span><span></span></span></code></pre>\n<p>编辑  <code>主题配置文件</code> ，启用本地搜索功能：</p>\n<pre class=\"line-numbers language-javascript\" data-language=\"javascript\"><code class=\"language-javascript\"># Local search\nlocal_search<span class=\"token operator\">:</span>\n  enable<span class=\"token operator\">:</span> <span class=\"token boolean\">true</span><span aria-hidden=\"true\" class=\"line-numbers-rows\"><span></span><span></span><span></span></span></code></pre>\n<p><strong>安装搜索插件</strong></p>\n<pre class=\"line-numbers language-javascript\" data-language=\"javascript\"><code class=\"language-javascript\"> npm install hexo<span class=\"token operator\">-</span>generator<span class=\"token operator\">-</span>searchdb <span class=\"token operator\">--</span>save\n\n<span class=\"token operator\">+</span> hexo<span class=\"token operator\">-</span>generator<span class=\"token operator\">-</span>searchdb@<span class=\"token number\">1.0</span><span class=\"token number\">.8</span>\nadded <span class=\"token number\">119</span> packages <span class=\"token keyword\">in</span> <span class=\"token number\">8.327</span>s<span aria-hidden=\"true\" class=\"line-numbers-rows\"><span></span><span></span><span></span><span></span></span></code></pre>\n<h2 id=\"二-文章中特殊字符\"><a class=\"markdownIt-Anchor\" href=\"#二-文章中特殊字符\">#</a> 二、文章中特殊字符</h2>\n<h3 id=\"检查-searchmxl-的状态\"><a class=\"markdownIt-Anchor\" href=\"#检查-searchmxl-的状态\">#</a> 检查 search.mxl 的状态</h3>\n<p><img src=\"http://static.zxinc520.com/uPic/ggSet1.png\" alt=\"ggSet1\"></p>\n<h3 id=\"浏览器直接访问searchxml文件看看\"><a class=\"markdownIt-Anchor\" href=\"#浏览器直接访问searchxml文件看看\">#</a> 浏览器直接访问 <code>search.xml</code>  文件看看:</h3>\n<p><img src=\"http://static.zxinc520.com/uPic/8ZPJND.png\" alt=\"8ZPJND\"></p>\n",
+            "tags": [
+                "blog",
+                "hexo"
+            ]
+        }
+    ]
+}

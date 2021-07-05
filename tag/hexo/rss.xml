@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;hexo&#34; tag</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Fri, 30 Oct 2020 16:22:23 +0800</pubDate>
+        <lastBuildDate>Fri, 30 Oct 2020 16:22:23 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2020/10/30/hexo-%E6%97%A0%E6%B3%95%E6%90%9C%E7%B4%A2%E9%97%AE%E9%A2%98/</guid>
+            <title>hexo 无法搜索问题</title>
+            <link>http://example.com/2020/10/30/hexo-%E6%97%A0%E6%B3%95%E6%90%9C%E7%B4%A2%E9%97%AE%E9%A2%98/</link>
+            <category>blog</category>
+            <category>hexo</category>
+            <pubDate>Fri, 30 Oct 2020 16:22:23 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;一般hexo博客无法搜索主要有2种以下情况&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一般hexo博客无法搜索主要有2种以下情况&#34;&gt;#&lt;/a&gt; 一般 &lt;code&gt;Hexo&lt;/code&gt;  博客无法搜索主要有 &lt;code&gt;2&lt;/code&gt;  种以下情况:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;搜索插件没有配置好&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;文章中包含特殊字符&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;一-搜索插件的配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-搜索插件的配置&#34;&gt;#&lt;/a&gt; 一、搜索插件的配置&lt;/h2&gt;
+&lt;p&gt;编辑  &lt;code&gt;站点配置文件&lt;/code&gt; ，新增以下内容到任意位置：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;search&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+  path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; search&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;xml
+  field&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; post
+  format&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; html
+  limit&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10000&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑  &lt;code&gt;主题配置文件&lt;/code&gt; ，启用本地搜索功能：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;# Local search
+local_search&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
+  enable&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;安装搜索插件&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt; npm install hexo&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;generator&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;searchdb &lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;save
+
+&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; hexo&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;generator&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;searchdb@&lt;span class=&#34;token number&#34;&gt;1.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.8&lt;/span&gt;
+added &lt;span class=&#34;token number&#34;&gt;119&lt;/span&gt; packages &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;8.327&lt;/span&gt;s&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;二-文章中特殊字符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二-文章中特殊字符&#34;&gt;#&lt;/a&gt; 二、文章中特殊字符&lt;/h2&gt;
+&lt;h3 id=&#34;检查-searchmxl-的状态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#检查-searchmxl-的状态&#34;&gt;#&lt;/a&gt; 检查 search.mxl 的状态&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/uPic/ggSet1.png&#34; alt=&#34;ggSet1&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;浏览器直接访问searchxml文件看看&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#浏览器直接访问searchxml文件看看&#34;&gt;#&lt;/a&gt; 浏览器直接访问 &lt;code&gt;search.xml&lt;/code&gt;  文件看看:&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/uPic/8ZPJND.png&#34; alt=&#34;8ZPJND&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

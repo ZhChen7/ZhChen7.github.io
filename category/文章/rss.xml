@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;文章&#34; category</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Thu, 01 Apr 2021 17:07:39 +0800</pubDate>
+        <lastBuildDate>Thu, 01 Apr 2021 17:07:39 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2021/04/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E5%89%8D%E7%9E%BB%E5%8D%9A%E6%96%87%E5%9C%B0%E5%9D%80/</guid>
+            <title>优质博客～收集</title>
+            <link>http://example.com/2021/04/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E5%89%8D%E7%9E%BB%E5%8D%9A%E6%96%87%E5%9C%B0%E5%9D%80/</link>
+            <category>博文</category>
+            <pubDate>Thu, 01 Apr 2021 17:07:39 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;博客收集&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#博客收集&#34;&gt;#&lt;/a&gt; 博客收集&lt;/h1&gt;
+&lt;h2 id=&#34;长期更新的前端-weekly&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#长期更新的前端-weekly&#34;&gt;#&lt;/a&gt; 长期更新的前端  &lt;code&gt;Weekly&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://fex.baidu.com/&#34;&gt;百度 &lt;code&gt;FEX&lt;/code&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://weekly.75team.com/&#34;&gt;奇舞周刊&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.infoq.cn/topic/33&#34;&gt; &lt;code&gt;InfoQ&lt;/code&gt;  前端专栏&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dt-fe/weekly&#34;&gt;阿里  &lt;code&gt;DT-FE Weekly&lt;/code&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;优秀技术官网&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#优秀技术官网&#34;&gt;#&lt;/a&gt; 优秀技术官网&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.aliued.com/?cat=14&#34;&gt;阿里 &lt;code&gt;UED&lt;/code&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/DDFE/DDFE-blog&#34;&gt;滴滴  &lt;code&gt;FE BLOG&lt;/code&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://techblog.toutiao.com/tag/%E5%89%8D%E7%AB%AF/&#34;&gt;头条前端&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tech.youzan.com/tag/front-end/page/2/&#34;&gt;有赞前端&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.alloyteam.com/page/0/&#34;&gt;腾讯  &lt;code&gt;AlloyTeam&lt;/code&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Tnfe/TNFE-Weekly&#34;&gt;腾讯  &lt;code&gt;TNFE&lt;/code&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://efe.baidu.com/&#34;&gt;百度  &lt;code&gt;EFE&lt;/code&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.rsuitejs.com/&#34;&gt;HYPERS 前端团队博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.infoq.cn/topic/33&#34;&gt;InfoQ 前端专栏&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://weekly.docschina.org/javascript&#34;&gt;印记中文周刊&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ruanyf/weekly&#34;&gt;阮一峰老师 weekly&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ProtoTeam/blog&#34;&gt;蚂蚁数据体验技术团队&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Tnfe/TNFE-Weekly&#34;&gt;TNFE-Weekly&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;优秀知乎专栏&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#优秀知乎专栏&#34;&gt;#&lt;/a&gt; 优秀知乎专栏&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/ElemeFE&#34;&gt;饿了么&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/mm-fe&#34;&gt;阿里妈妈&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/aliyun&#34;&gt;阿里云&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/org/mei-tuan-dian-ping-ji-shu-tuan-dui&#34;&gt;美团技术团队&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/org/xian-yu-ji-zhu&#34;&gt;闲鱼技术&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/tmallf2e&#34;&gt;淘系前端团队&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;国外其他优秀站点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#国外其他优秀站点&#34;&gt;#&lt;/a&gt; 国外其他优秀站点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/&#34;&gt;Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://frontendfoc.us/&#34;&gt;Frontend Focus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://javascriptweekly.com/&#34;&gt; &lt;code&gt;JavaScript Weekly&lt;/code&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodeweekly.com/&#34;&gt; &lt;code&gt;Node.js Weekly&lt;/code&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;列举长期更新的周刊源每周精选的主要来源&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#列举长期更新的周刊源每周精选的主要来源&#34;&gt;#&lt;/a&gt; 列举长期更新的周刊源，每周精选的主要来源。&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://weekly.75team.com/&#34;&gt;奇舞周刊&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.infoq.cn/topic/33&#34;&gt;InfoQ 前端专栏&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://javascriptweekly.com/latest&#34;&gt;javascript weekly&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://nodeweekly.com/latest&#34;&gt;nodejs weekly&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/sorrycc/zaobao/issues?page=1&amp;amp;q=is%3Aissue+is%3Aopen&#34;&gt;zaobao&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://indepth.dev/&#34;&gt;indepth&lt;/a&gt; &lt;a href=&#34;https://indepth.dev/search/?query=react&amp;amp;tags=react&#34;&gt;indepth-react&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.smashingmagazine.com/&#34;&gt;smashing magazine&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.infoq.com/cn/news/2018/03/arch-weekly-54?utm_source=news_about_Front-end&amp;amp;utm_medium=link&amp;amp;utm_campaign=Front-end&#34;&gt;InfoQ 前端周刊&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tuicool.com/mags&#34;&gt;推酷&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://medium.com/&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://news.ycombinator.com/&#34;&gt;Hacker News&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://weekly.techbridge.cc/&#34;&gt;TechBridge Weekly 技術週刊&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://weekly.codetengu.com/&#34;&gt;CodeTengu Weekly 碼天狗週刊&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://docschina.org/weekly/js/&#34;&gt;印记中文周刊&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.smashingmagazine.com/articles/&#34;&gt;Smashing Articles&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/web/updates/&#34;&gt;Google Updates&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Tnfe/TNFE-Weekly&#34;&gt;TNFE-Weekly&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;编程狂人&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#编程狂人&#34;&gt;#&lt;/a&gt; 编程狂人&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tuicool.com/mags&#34;&gt;https://www.tuicool.com/mags&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

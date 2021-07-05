@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>sunflower • Posts by &#34;加载过程&#34; tag</title>
+        <link>http://example.com</link>
+        <description>周琛的博客</description>
+        <language>en</language>
+        <pubDate>Fri, 19 Jul 2019 23:06:51 +0800</pubDate>
+        <lastBuildDate>Fri, 19 Jul 2019 23:06:51 +0800</lastBuildDate>
+        <category>blog</category>
+        <category>个人博客</category>
+        <category>rem</category>
+        <category>less</category>
+        <category>art-template</category>
+        <category>算法面试</category>
+        <category>算法</category>
+        <category>大 O？</category>
+        <category>复杂度分析</category>
+        <category>大二</category>
+        <category>数据库实训</category>
+        <category>IDE</category>
+        <category>Git</category>
+        <category>模块化</category>
+        <category>构建工具</category>
+        <category>上线和回滚</category>
+        <category>ES6 模块化语法</category>
+        <category>babel</category>
+        <category>webpack</category>
+        <category>rollup</category>
+        <category>ES6</category>
+        <category>hybrid</category>
+        <category>虚拟 DOM</category>
+        <category>知识点概述</category>
+        <category>JS</category>
+        <category>实用工具</category>
+        <category>面试全面总结</category>
+        <category>JS 三座大山</category>
+        <category>学习实训</category>
+        <category>性能优化</category>
+        <category>加载过程</category>
+        <category>promise</category>
+        <category>异步解决方案</category>
+        <category>回调地狱</category>
+        <category>React</category>
+        <category>React源码</category>
+        <category>Vue3</category>
+        <category>vue</category>
+        <category>跑马灯</category>
+        <category>父子组件间通信</category>
+        <category>路由</category>
+        <category>监听事件（keyup ，watch ，computed ）</category>
+        <category>nrm</category>
+        <category>Mint-UI</category>
+        <category>MUI</category>
+        <category>MVVM</category>
+        <category>响应式、模板解析、渲染</category>
+        <category>微信小程序</category>
+        <category>单线程</category>
+        <category>event loop</category>
+        <category>异步的 Deferred</category>
+        <category>Promise</category>
+        <category>html</category>
+        <category>hexo</category>
+        <category>redux</category>
+        <category>UTC时间问题</category>
+        <category>正则表达式</category>
+        <category>虚拟DOM</category>
+        <category>博文</category>
+        <category>React-Router</category>
+        <category>React-Hooks</category>
+        <category>DOM</category>
+        <category>BOM</category>
+        <category>事件绑定</category>
+        <category>ajax 请求</category>
+        <category>储存</category>
+        <category>进程调度</category>
+        <category>过滤器</category>
+        <category>按键修饰符</category>
+        <category>指令</category>
+        <category>生命周期</category>
+        <category>过渡效果</category>
+        <category>组件</category>
+        <category>webpack 后续问题</category>
+        <category>数组</category>
+        <category>API</category>
+        <category>跨域</category>
+        <category>动画</category>
+        <category>事件</category>
+        <category>React基础面试题-50</category>
+        <category>数组相关操作</category>
+        <category>手撕代码</category>
+        <category>牛人面试题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2019/07/19/OperationEnvironment/</guid>
+            <title>运行环境</title>
+            <link>http://example.com/2019/07/19/OperationEnvironment/</link>
+            <category>性能优化</category>
+            <category>加载过程</category>
+            <pubDate>Fri, 19 Jul 2019 23:06:51 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;运行环境&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运行环境&#34;&gt;#&lt;/a&gt; 运行环境&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;讲解 JS 代码在浏览器中运行的相关问题，例如 &lt;strong&gt;页面加载和渲染&lt;/strong&gt;，&lt;strong&gt;性能优化&lt;/strong&gt;，&lt;strong&gt;安全性&lt;/strong&gt; ，这些类别的题目。&lt;/p&gt;
+&lt;p&gt;知识点：&lt;/p&gt;
+&lt;p&gt;8-1 页面加载过程&lt;/p&gt;
+&lt;p&gt;8-2 性能优化&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器就可以通过访问链接来得到页面内容&lt;/li&gt;
+&lt;li&gt;通过绘制和渲染，显示出页面的最终的样子&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;整个过程中我们需要考虑什么问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#整个过程中我们需要考虑什么问题&#34;&gt;#&lt;/a&gt; 整个过程中，我们需要考虑什么问题？&lt;/h2&gt;
+&lt;h3 id=&#34;3-个重点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-个重点&#34;&gt;#&lt;/a&gt; 3 个重点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;页面加载过程&lt;/li&gt;
+&lt;li&gt;性能优化&lt;/li&gt;
+&lt;li&gt;安全性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;8-1-页面加载过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8-1-页面加载过程&#34;&gt;#&lt;/a&gt; 8-1 页面加载过程&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题目&lt;/p&gt;
+&lt;p&gt;知识点&lt;/p&gt;
+&lt;p&gt;解答&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;题目&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目&#34;&gt;#&lt;/a&gt; 题目&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;从输入 url 到得到 html 的详细过程&lt;/li&gt;
+&lt;li&gt;window.onload 和 DOMContentLoaded 的区别？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;知识点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#知识点&#34;&gt;#&lt;/a&gt; 知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;加载资源的形式&lt;/li&gt;
+&lt;li&gt;加载一个资源的过程&lt;/li&gt;
+&lt;li&gt;浏览器渲染页面的过程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;加载资源的形式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#加载资源的形式&#34;&gt;#&lt;/a&gt; 加载资源的形式&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;输入 url （或跳转页面）加载 html&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://www.imooc.com/&#34;&gt;https://www.imooc.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;加载 html 中的静态资源&lt;/li&gt;
+&lt;li&gt;script 标签中资源的加载: &amp;lt;&lt;strong&gt;script src=&amp;quot;/static/jsjquery.js&amp;quot;&amp;gt;&amp;lt;/script&lt;/strong&gt; &amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;加载一个资源的过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#加载一个资源的过程&#34;&gt;#&lt;/a&gt; 加载一个资源的过程&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器根据 DNS 服务器得到域名的 IP 地址&lt;/li&gt;
+&lt;li&gt;向这个 IP 的机器发送 http 请求&lt;/li&gt;
+&lt;li&gt;服务器收到、处理并返回 http 请求&lt;/li&gt;
+&lt;li&gt;浏览器得到返回内容&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;浏览器渲染页面的过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#浏览器渲染页面的过程&#34;&gt;#&lt;/a&gt; 浏览器渲染页面的过程：&lt;/h4&gt;
+&lt;p&gt;1. 根据 HTML 结构生成 DOM Tree 2. 根据 CSS 生成 CSSOM 3. 将 DOM 和 CSSOM 整合形成 RenderTree 4. 根据 RenderTree 开始渲染和展示 5. 遇到 &amp;lt;&lt;strong&gt;script&lt;/strong&gt; &amp;gt; 时，会执行并阻止渲染。&lt;/p&gt;
+&lt;h4 id=&#34;思考&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#思考&#34;&gt;#&lt;/a&gt; 思考&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;为何要把 css 放在 head 中？&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;css 放在 body 标签尾部时，DOMTree 构建完成之后便开始构建 RenderTree, 并计算布局渲染网页，等加载解析完 css 之后，开始构建 CSSOMTree, 并和 DOMTree 重新构建 RenderTree, 重新计算布局渲染网页&lt;/li&gt;
+&lt;li&gt;css 放在 head 标签中时，先加载 css, 之后解析 css 构建 CSSOMTree, 于此同时构建 DOMTree, CSSOMTree 和 DOMTree 都构建完毕之后开始构建 RenderTree, 计算布局渲染网页&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对比两者，css 放在 head 标签中比 css 放在 body 标签尾部少了一次构建 RenderTree, 一次计算布局和一次渲染网页，因此性能会更好；并且 css 放在 body 标签尾部时会在网页中短暂出现 &amp;quot;裸奔&amp;quot; 的 HTML, 这不利于用户体验&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;为何要把 js 放在 body 最下面？&lt;/strong&gt; ，&lt;u&gt;既然 Dom 树完全生成好后才能显示 “没有图片的首屏”，浏览器又必须读完全部 HTML 才能生成完整的 Dom 树，script 标签不放在 body 底部是不是也一样？&lt;/u&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;—— JS 放在底部可以保证让浏览器优先渲染完现有的 HTML 内容，让用户先看到内容，体验好。另外，JS 执行如果涉及 DOM 操作，得等待 DOM 解析完成才行，JS 放在底部执行时，HTML 肯定都解析成了 DOM 结构。JS 如果放在 HTML 顶部，JS 执行的时候 HTML 还没来得及转换为 DOM 结构，可能会报错。 &lt;a href=&#34;https://segmentfault.com/a/1190000004292479&#34;&gt;JS 一定要放在 Body 的最底部么？聊聊浏览器的渲染机制&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;windowonload-和-domcontentloaded&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#windowonload-和-domcontentloaded&#34;&gt;#&lt;/a&gt; window.onload 和 DOMContentLoaded&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190719/sSK9VYP2CSRd.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;解答&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解答&#34;&gt;#&lt;/a&gt; 解答&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;从输入 url 到得到 html 的详细过程&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器根据 DNS 服务器得到域名的 IP 地址&lt;/li&gt;
+&lt;li&gt;向这个 IP 的机器发送 http 请求&lt;/li&gt;
+&lt;li&gt;服务器收到、处理并返回 http 请求&lt;/li&gt;
+&lt;li&gt;浏览器得到返回内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;window.onload 和 DOMContentLoaded 的区别？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;window.onload： 页面的全部资源加载完才会执行，包括图片、视频等&lt;/li&gt;
+&lt;li&gt;DOMContentLoaded： DOM 渲染完即可执行，此时图片、视频还没有加载完&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;8-2-性能优化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8-2-性能优化&#34;&gt;#&lt;/a&gt; 8-2 性能优化&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/5a966bd16fb9a0635172a50a&#34;&gt;2018 前端性能优化清单&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;关于 &lt;strong&gt;性能优化&lt;/strong&gt; 是个大的面，这篇文章主要涉及到 &lt;strong&gt;前端&lt;/strong&gt; 的几个点，如 &lt;strong&gt;前端性能优化&lt;/strong&gt; 的流程、常见技术手段、工具等。&lt;/p&gt;
+&lt;p&gt;提及 &lt;strong&gt;前端性能优化&lt;/strong&gt; ，大家应该都会想到 &lt;strong&gt;雅虎军规&lt;/strong&gt;，本文会结合 &lt;strong&gt;雅虎军规&lt;/strong&gt; 融入自己的了解知识，进行的总结和梳理 😜&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;我们先来看看-雅虎军规-的-35-条&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#我们先来看看-雅虎军规-的-35-条&#34;&gt;#&lt;/a&gt; 我们先来看看 👀 雅虎军规 的 35 条 ：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;尽量减少 HTTP 请求个数 —— 须权衡&lt;/li&gt;
+&lt;li&gt;使用 &lt;strong&gt;CDN&lt;/strong&gt;（内容分发网络）&lt;/li&gt;
+&lt;li&gt;为文件头指定 Expires 或 Cache-Control ，使内容具有缓存性。&lt;/li&gt;
+&lt;li&gt;避免空的 src 和 href&lt;/li&gt;
+&lt;li&gt;使用 gzip 压缩内容&lt;/li&gt;
+&lt;li&gt;把 CSS 放到顶部&lt;/li&gt;
+&lt;li&gt;把 JS 放到底部&lt;/li&gt;
+&lt;li&gt;避免使用 CSS 表达式&lt;/li&gt;
+&lt;li&gt;将 CSS 和 JS 放到外部文件中&lt;/li&gt;
+&lt;li&gt;减少 DNS 查找次数&lt;/li&gt;
+&lt;li&gt;精简 CSS 和 JS&lt;/li&gt;
+&lt;li&gt;避免跳转&lt;/li&gt;
+&lt;li&gt;剔除重复的 JS 和 CSS&lt;/li&gt;
+&lt;li&gt;配置 ETags&lt;/li&gt;
+&lt;li&gt;使 AJAX 可缓存&lt;/li&gt;
+&lt;li&gt;尽早刷新输出缓冲&lt;/li&gt;
+&lt;li&gt;使用 GET 来完成 AJAX 请求&lt;/li&gt;
+&lt;li&gt;延迟加载&lt;/li&gt;
+&lt;li&gt;预加载&lt;/li&gt;
+&lt;li&gt;减少 DOM 元素个数&lt;/li&gt;
+&lt;li&gt;根据域名划分页面内容&lt;/li&gt;
+&lt;li&gt;尽量减少 iframe 的个数&lt;/li&gt;
+&lt;li&gt;避免 404&lt;/li&gt;
+&lt;li&gt;减少 Cookie 的大小&lt;/li&gt;
+&lt;li&gt;使用无 cookie 的域&lt;/li&gt;
+&lt;li&gt;减少 DOM 访问&lt;/li&gt;
+&lt;li&gt;开发智能事件处理程序&lt;/li&gt;
+&lt;li&gt;用 代替 @import&lt;/li&gt;
+&lt;li&gt;避免使用滤镜&lt;/li&gt;
+&lt;li&gt;优化图像&lt;/li&gt;
+&lt;li&gt;优化 CSS Spirite&lt;/li&gt;
+&lt;li&gt;不要在 HTML 中缩放图像 —— 须权衡&lt;/li&gt;
+&lt;li&gt;favicon.ico 要小而且可缓存&lt;/li&gt;
+&lt;li&gt;保持单个内容小于 25K&lt;/li&gt;
+&lt;li&gt;打包组件成复合文本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;这本身就是一个综合性的问题&lt;/li&gt;
+&lt;li&gt;没有标准答案，如果要非常全面，能写一本书&lt;/li&gt;
+&lt;li&gt;只关注核心点，针对面试&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;原则&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原则&#34;&gt;#&lt;/a&gt; 原则&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;多使用内存、缓存或其他方法&lt;/li&gt;
+&lt;li&gt;减少 CPU 计算、减少网络请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;从哪里入手&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#从哪里入手&#34;&gt;#&lt;/a&gt; 从哪里入手&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;加载页面和静态资源&lt;/li&gt;
+&lt;li&gt;页面渲染&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;加载资源优化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#加载资源优化&#34;&gt;#&lt;/a&gt; 加载资源优化&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;静态资源的压缩合并&lt;/li&gt;
+&lt;li&gt;静态资源缓存&lt;/li&gt;
+&lt;li&gt;使用 CDN 让资源加载更快&lt;/li&gt;
+&lt;li&gt;使用 SSR 后端渲染，数据直接输出到 HTML 中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;渲染优化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#渲染优化&#34;&gt;#&lt;/a&gt; 渲染优化&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;CSS 放前面 ，JS 放后面&lt;/li&gt;
+&lt;li&gt;懒加载 （图片懒加载、下拉加载更多）&lt;/li&gt;
+&lt;li&gt;减少 DOM 查询 ，对 DOM 查询做缓存&lt;/li&gt;
+&lt;li&gt;减少 DOM 操作，多个操作尽量合并 在一起执行&lt;/li&gt;
+&lt;li&gt;事件节流&lt;/li&gt;
+&lt;li&gt;尽早执行操作 （如 DOMContentLoaded）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;优化示例&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#优化示例&#34;&gt;#&lt;/a&gt; 优化示例&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;展示几个优化示例&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;资源合并&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#资源合并&#34;&gt;#&lt;/a&gt; 资源合并&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;a.js&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;b.js&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;c.js&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//资源合并&lt;/span&gt;
+&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;abc.js&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;缓存&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#缓存&#34;&gt;#&lt;/a&gt; 缓存&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;通过连接名字控制缓存&lt;/li&gt;
+&lt;li&gt;&amp;lt;&lt;strong&gt;script src=“adc_1.js”&amp;gt;&amp;lt;/script&lt;/strong&gt; &amp;gt;&lt;/li&gt;
+&lt;li&gt;只有内容改变的时候，连接名称才会改变&lt;/li&gt;
+&lt;li&gt;&amp;lt;&lt;strong&gt;script src=“adc_2.js”&amp;gt;&amp;lt;/script&lt;/strong&gt; &amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;cdn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cdn&#34;&gt;#&lt;/a&gt; CDN&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2 个在线的好用的 CDN 网站：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bootcdn.cn/&#34;&gt;https://www.bootcdn.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cdnjs.com/&#34;&gt;https://cdnjs.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190719/wqVaD4amGTnT.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;使用-ssr-后端渲染&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用-ssr-后端渲染&#34;&gt;#&lt;/a&gt; 使用 SSR 后端渲染&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;现在 Vue React 提出了这样的概念&lt;/li&gt;
+&lt;li&gt;其实 jsp php asp 都属于后端渲染&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;懒加载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#懒加载&#34;&gt;#&lt;/a&gt; 懒加载&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190719/dNHq1Xfe0Ep5.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;缓存-dom-查询&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#缓存-dom-查询&#34;&gt;#&lt;/a&gt; 缓存 DOM 查询&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190719/4xj98cKCzJh9.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;合并-dom-插入&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#合并-dom-插入&#34;&gt;#&lt;/a&gt; 合并 DOM 插入&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190719/S7Fvwi6QNApC.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;事件节流&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#事件节流&#34;&gt;#&lt;/a&gt; 事件节流&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190719/vHApgiVQan6S.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;尽早操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#尽早操作&#34;&gt;#&lt;/a&gt; 尽早操作&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;http://static.zxinc520.com/blog/20190719/q8SS7PiiaKI4.png?imageslim&#34; alt=&#34;mark&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

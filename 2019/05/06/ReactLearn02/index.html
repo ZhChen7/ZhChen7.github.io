@@ -114,18 +114,21 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="React-学习第二天"><a href="#React-学习第二天" class="headerlink" title="React 学习第二天"></a>React 学习第二天</h1><blockquote>
+  <h1 id="react-学习第二天"><a class="markdownIt-Anchor" href="#react-学习第二天">#</a> React 学习第二天</h1>
+<blockquote>
 <p>React 学习第二天</p>
 <p>创建组件的方式（ function 和 class）</p>
 <p>ES6 扩展运算符使用</p>
 <p>抽离 jsx 组件</p>
 <p>如何省略 <strong><u>jsx</u></strong> 后缀名？</p>
-<p>使用@别名表示路径</p>
+<p>使用 @别名表示路径</p>
 <p>两种创建组件方式的对比</p>
 <p>评论列表案例</p>
 <p>没有收拾残局的能力，就别放纵善变的情绪！！！</p>
 </blockquote>
-<h2 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h2><h3 id="第一种创建组件的方式"><a href="#第一种创建组件的方式" class="headerlink" title="第一种创建组件的方式"></a>第一种创建组件的方式</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//第一步：导入包</span>
+<h2 id="创建组件"><a class="markdownIt-Anchor" href="#创建组件">#</a> 创建组件</h2>
+<h3 id="第一种创建组件的方式"><a class="markdownIt-Anchor" href="#第一种创建组件的方式">#</a> 第一种创建组件的方式</h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//第一步：导入包</span>
 <span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
 <span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span> <span class="token comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span>
 
@@ -140,9 +143,9 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/tppNOX2JwhMa.png?imageslim" alt="mark"></p>
-<h4 id="接受外部传值"><a href="#接受外部传值" class="headerlink" title="接受外部传值"></a>接受外部传值</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Hello</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="接受外部传值"><a class="markdownIt-Anchor" href="#接受外部传值">#</a> 接受外部传值</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Hello</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
     <span class="token operator">&lt;</span>div<span class="token operator">></span>
@@ -163,13 +166,11 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/Ebp8WSqvYzTi.png?imageslim" alt="mark"></p>
 <!--注意：不论是 Vue 还是 React，组件中的props永远都是只读的，不能被赋值！-->
-
 <!--组件 首字母 必须为大写！-->
-
-<h4 id="改进：使用-ES6-扩展运算符"><a href="#改进：使用-ES6-扩展运算符" class="headerlink" title="改进：使用 ES6 扩展运算符"></a>改进：使用 ES6 扩展运算符</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Hello</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="改进使用-es6-扩展运算符"><a class="markdownIt-Anchor" href="#改进使用-es6-扩展运算符">#</a> 改进：使用 ES6 扩展运算符</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Hello</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
     <span class="token operator">&lt;</span>div<span class="token operator">></span>
@@ -190,8 +191,8 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="抽离-jsx-组件"><a href="#抽离-jsx-组件" class="headerlink" title="抽离 jsx 组件"></a>抽离 jsx 组件</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//第一步：导入包</span>
+<h4 id="抽离-jsx-组件"><a class="markdownIt-Anchor" href="#抽离-jsx-组件">#</a> 抽离 jsx 组件</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//第一步：导入包</span>
 <span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
 <span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span> <span class="token comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span>
 
@@ -209,7 +210,6 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/oiuJeOYjfvf4.png?imageslim" alt="mark"></p>
 <p><strong>Hello.jsx:</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
@@ -223,14 +223,14 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="如何省略-jsx-后缀名？"><a href="#如何省略-jsx-后缀名？" class="headerlink" title="如何省略 jsx 后缀名？"></a>如何省略 <strong><u>jsx</u></strong> 后缀名？</h4><p><img src="http://static.zxinc520.com/blog/20190506/Vt3JwXFKXg8w.png?imageslim" alt="mark"></p>
+<h4 id="如何省略-ujsxu-后缀名"><a class="markdownIt-Anchor" href="#如何省略-ujsxu-后缀名">#</a> 如何省略 <strong><u>jsx</u></strong> 后缀名？</h4>
+<p><img src="http://static.zxinc520.com/blog/20190506/Vt3JwXFKXg8w.png?imageslim" alt="mark"></p>
 <p><strong>配置 webpack.config.js 文件：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">resolve<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
   extensions<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">".js"</span><span class="token punctuation">,</span> <span class="token string">".jsx"</span><span class="token punctuation">,</span> <span class="token string">".json"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="使用-别名表示路径"><a href="#使用-别名表示路径" class="headerlink" title="使用@别名表示路径"></a>使用@别名表示路径</h4><p><img src="http://static.zxinc520.com/blog/20190506/1o1dm0J9gRPc.png?imageslim" alt="mark"></p>
+<h4 id="使用别名表示路径"><a class="markdownIt-Anchor" href="#使用别名表示路径">#</a> 使用 @别名表示路径</h4>
+<p><img src="http://static.zxinc520.com/blog/20190506/1o1dm0J9gRPc.png?imageslim" alt="mark"></p>
 <p><strong>配置 webpack.config.js 文件：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">resolve<span class="token operator">:</span><span class="token punctuation">&#123;</span>
     extensions<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'.js'</span><span class="token punctuation">,</span><span class="token string">'.jsx'</span><span class="token punctuation">,</span><span class="token string">'.json'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -238,12 +238,13 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
             <span class="token string">'@'</span><span class="token operator">:</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'./src'</span><span class="token punctuation">)</span> <span class="token comment">//这样，@ 就表示 项目根目录中的src 这一层路径</span>
         <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="第二种创建组件的方式"><a href="#第二种创建组件的方式" class="headerlink" title="第二种创建组件的方式"></a>第二种创建组件的方式</h3><blockquote>
+<h3 id="第二种创建组件的方式"><a class="markdownIt-Anchor" href="#第二种创建组件的方式">#</a> 第二种创建组件的方式</h3>
+<blockquote>
 <p>使用 class 关键字来创建自建</p>
 <p>ES6 中 class 关键字，是实现面向对象编程的新形式（语法糖）</p>
 </blockquote>
-<h4 id="了解-class"><a href="#了解-class" class="headerlink" title="了解 class"></a>了解 class</h4><ol>
+<h4 id="了解-class"><a class="markdownIt-Anchor" href="#了解-class">#</a> 了解 class</h4>
+<ol>
 <li>创建一个类并提供参数</li>
 </ol>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Animate</span> <span class="token punctuation">&#123;</span>
@@ -255,9 +256,9 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 
 <span class="token keyword">let</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animate</span><span class="token punctuation">(</span><span class="token string">"大黄"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/S8PirbufxcXt.png?imageslim" alt="mark"></p>
-<h4 id="挂载原型对象的实例方法（-function-和-class-方法对比）"><a href="#挂载原型对象的实例方法（-function-和-class-方法对比）" class="headerlink" title="挂载原型对象的实例方法（ function 和 class 方法对比）"></a>挂载原型对象的实例方法（ function 和 class 方法对比）</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="挂载原型对象的实例方法-function-和-class-方法对比"><a class="markdownIt-Anchor" href="#挂载原型对象的实例方法-function-和-class-方法对比">#</a> 挂载原型对象的实例方法（ function 和 class 方法对比）</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
@@ -284,9 +285,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token keyword">let</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animate</span><span class="token punctuation">(</span><span class="token string">"大黄"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/CfW0S1Lz9HP8.png?imageslim" alt="mark"></p>
-<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//使用 function创建对象</span>
+<h4 id="静态方法"><a class="markdownIt-Anchor" href="#静态方法">#</a> 静态方法</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//使用 function创建对象</span>
 <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
 
 <span class="token comment">//静态方法</span>
@@ -303,9 +304,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token keyword">static</span> info <span class="token operator">=</span> <span class="token string">"这是class方法创建的静态方法！"</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Animate<span class="token punctuation">.</span>info<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/JdrMb039jWqx.png?imageslim" alt="mark"></p>
-<h4 id="extends-继承"><a href="#extends-继承" class="headerlink" title="extends 继承"></a>extends 继承</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//这是父类</span>
+<h4 id="extends-继承"><a class="markdownIt-Anchor" href="#extends-继承">#</a> extends 继承</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//这是父类</span>
 <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
@@ -322,9 +323,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token keyword">const</span> c1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Chinese</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/9iKF2u3HOaF1.png?imageslim" alt="mark"></p>
-<h4 id="super-调用父类-constructor-可以参考"><a href="#super-调用父类-constructor-可以参考" class="headerlink" title="super 调用父类 constructor 可以参考"></a>super 调用父类 constructor <a target="_blank" rel="noopener" href="https://juejin.im/post/5b3f23066fb9a04fe820cdbe">可以参考</a></h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//这是父类</span>
+<h4 id="super-调用父类-constructor-可以参考"><a class="markdownIt-Anchor" href="#super-调用父类-constructor-可以参考">#</a> super 调用父类 constructor <a target="_blank" rel="noopener" href="https://juejin.im/post/5b3f23066fb9a04fe820cdbe">可以参考</a></h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//这是父类</span>
 <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
@@ -355,9 +356,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token keyword">const</span> c1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Chinese</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token string">"1213123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/dokRjyuJrlg5.png?imageslim" alt="mark"></p>
-<h4 id="子类没有定义-constructor，会默认添加"><a href="#子类没有定义-constructor，会默认添加" class="headerlink" title="子类没有定义 constructor，会默认添加"></a>子类没有定义 constructor，会默认添加</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Chinese</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<h4 id="子类没有定义-constructor会默认添加"><a class="markdownIt-Anchor" href="#子类没有定义-constructor会默认添加">#</a> 子类没有定义 constructor，会默认添加</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Chinese</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
 
 <span class="token comment">// 等同于</span>
 <span class="token keyword">class</span> <span class="token class-name">Chinese</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
@@ -365,8 +366,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="使用-class-关键字创建组件"><a href="#使用-class-关键字创建组件" class="headerlink" title="使用 class 关键字创建组件"></a>使用 class 关键字创建组件</h3><h4 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
+<h3 id="使用-class-关键字创建组件"><a class="markdownIt-Anchor" href="#使用-class-关键字创建组件">#</a> 使用 class 关键字创建组件</h3>
+<h4 id="基本结构"><a class="markdownIt-Anchor" href="#基本结构">#</a> 基本结构</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
 <span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span> <span class="token comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span>
 
 <span class="token comment">//如果使用class 定义组件，必须让自己的组件，继承自 React.Component</span>
@@ -385,9 +387,9 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/pUNFRBHpnlsL.png?imageslim" alt="mark"></p>
-<h4 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
+<h4 id="传递参数"><a class="markdownIt-Anchor" href="#传递参数">#</a> 传递参数</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
 <span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span> <span class="token comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Movie</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
@@ -415,11 +417,11 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/3McvjLR2OU4B.png?imageslim" alt="mark"></p>
-<h2 id="这两种创建组件方式的对比"><a href="#这两种创建组件方式的对比" class="headerlink" title="这两种创建组件方式的对比"></a>这两种创建组件方式的对比</h2><blockquote>
+<h2 id="这两种创建组件方式的对比"><a class="markdownIt-Anchor" href="#这两种创建组件方式的对比">#</a> 这两种创建组件方式的对比</h2>
+<blockquote>
 <p>注意：使用 <strong>function</strong> 创建的组件只有 props，没有自己的私有数据 和生命周期 函数</p>
-<p>注意：使用 **class 关键字 **创建的组件，有自己的私有数据；</p>
+<p>注意：使用 **class 关键字 ** 创建的组件，有自己的私有数据；</p>
 </blockquote>
 <ol>
 <li>用 <strong>构造函数</strong> 创建出来的组件：叫做 “ <u>无状态组件</u> ”</li>
@@ -463,9 +465,10 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>​ <img src="http://static.zxinc520.com/blog/20190506/6hl8wJm5c3p4.png?imageslim" alt="mark"></p>
-<h2 id="评论列表案例"><a href="#评论列表案例" class="headerlink" title="评论列表案例"></a>评论列表案例</h2><h5 id="初步实现："><a href="#初步实现：" class="headerlink" title="初步实现："></a>初步实现：</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
+<h2 id="评论列表案例"><a class="markdownIt-Anchor" href="#评论列表案例">#</a> 评论列表案例</h2>
+<h5 id="初步实现"><a class="markdownIt-Anchor" href="#初步实现">#</a> 初步实现：</h5>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span> <span class="token comment">//创建组件，虚拟DOM元素，生命周期</span>
 <span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span> <span class="token comment">//把创建好的 组件 和 虚拟DOM 放到页面上展示的</span>
 
 <span class="token comment">//使用 function 定义 普通的无状态组件</span>
@@ -511,9 +514,9 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">,</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/1Ql2PHx2l6B3.png?imageslim" alt="mark"></p>
-<h4 id="抽离各模块"><a href="#抽离各模块" class="headerlink" title="抽离各模块"></a>抽离各模块</h4><blockquote>
+<h4 id="抽离各模块"><a class="markdownIt-Anchor" href="#抽离各模块">#</a> 抽离各模块</h4>
+<blockquote>
 <p>便于减少一个文件的代码量，并且符合一种模块化思想</p>
 </blockquote>
 <p><img src="http://static.zxinc520.com/blog/20190506/57OxaxsjtBwa.png?imageslim" alt="mark"></p>
@@ -527,7 +530,6 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>div<span class="token operator">></span>
     <span class="token operator">&lt;</span>CmtList<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>CmtList<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'app'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>CmtList.jsx:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> CmtItem <span class="token keyword">from</span> <span class="token string">"@/components/CmtItem"</span><span class="token punctuation">;</span>
@@ -557,7 +559,6 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>CmtItem.jsx：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token comment">//使用 function 定义 普通的无状态组件</span>
@@ -569,7 +570,6 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190506/pSXgFJCzlL44.png?imageslim" alt="mark"></p>
  
       <!-- reward -->
@@ -810,7 +810,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">3k</span>
+            <span class="post-count">3.1k</span>
         </span>
     </span>
 
@@ -114,12 +114,16 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Vue-第五天"><a href="#Vue-第五天" class="headerlink" title="Vue 第五天"></a>Vue 第五天</h1><blockquote>
+  <h1 id="vue-第五天"><a class="markdownIt-Anchor" href="#vue-第五天">#</a> Vue 第五天</h1>
+<blockquote>
 <p>监听事件（keyup ，watch ，computed ）</p>
 <p>nrm （简单介绍了下）</p>
 <p>webpack （很重要！很关键！很实用！重点中的重点！知识点有点多，得慢慢品味！）</p>
 </blockquote>
-<h2 id="监听事件"><a href="#监听事件" class="headerlink" title="监听事件"></a>监听事件</h2><h4 id="需求：实现名称监听案例"><a href="#需求：实现名称监听案例" class="headerlink" title="需求：实现名称监听案例"></a>需求：实现名称监听案例</h4><h4 id="1-keyup-事件监听"><a href="#1-keyup-事件监听" class="headerlink" title="1.keyup 事件监听"></a>1.keyup 事件监听</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h2 id="监听事件"><a class="markdownIt-Anchor" href="#监听事件">#</a> 监听事件</h2>
+<h4 id="需求实现名称监听案例"><a class="markdownIt-Anchor" href="#需求实现名称监听案例">#</a> 需求：实现名称监听案例</h4>
+<h4 id="1keyup-事件监听"><a class="markdownIt-Anchor" href="#1keyup-事件监听">#</a> 1.keyup 事件监听</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>firstName<span class="token punctuation">"</span></span> <span class="token attr-name">@keyup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>getFullName<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lastName<span class="token punctuation">"</span></span> <span class="token attr-name">@keyup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>getFullName<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fullName<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -139,8 +143,8 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="2-使用-watch-监听-（-更常用-–-用途更广-）"><a href="#2-使用-watch-监听-（-更常用-–-用途更广-）" class="headerlink" title="2.使用 watch 监听 （ 更常用 – 用途更广 ）"></a>2.使用 watch 监听 （ 更常用 – 用途更广 ）</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h4 id="2使用-watch-监听-更常用-用途更广"><a class="markdownIt-Anchor" href="#2使用-watch-监听-更常用-用途更广">#</a> 2. 使用 watch 监听 （ 更常用 – 用途更广 ）</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>firstName<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lastName<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fullName<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -166,10 +170,11 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190412/4gxmjjUxK2At.gif" alt="mark"></p>
 <ul>
-<li><h5 id="watch-监听-路由-改变"><a href="#watch-监听-路由-改变" class="headerlink" title="watch 监听 路由 改变"></a>watch 监听 路由 改变</h5></li>
+<li>
+<h5 id="watch-监听-路由-改变"><a class="markdownIt-Anchor" href="#watch-监听-路由-改变">#</a> watch 监听 路由 改变</h5>
+</li>
 </ul>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/login<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>登录<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">></span></span>
@@ -214,9 +219,9 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190412/6V2XPG6gVhim.gif" alt="mark"></p>
-<h4 id="3-computed-监听"><a href="#3-computed-监听" class="headerlink" title="3. computed 监听"></a>3. computed 监听</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h4 id="3-computed-监听"><a class="markdownIt-Anchor" href="#3-computed-监听">#</a> 3. computed 监听</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>firstName<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lastName<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fullName<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -238,74 +243,93 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="methods-watch-computed-的区别"><a href="#methods-watch-computed-的区别" class="headerlink" title="methods,watch,computed 的区别"></a><strong>methods,watch,computed 的区别</strong></h4><ol>
-<li><code>computed</code> 属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算。主要当作属性来使用；</li>
-<li><code>methods</code> 方法表示一个具体的操作，主要书写业务逻辑；</li>
-<li><code>watch</code> 一个对象，键是需要观察的表达式，值是对应回调函数。主要用来监听某些特定数据的变化，从而进行某些具体的业务逻辑操作；可以看作是 computed 和 methods 的结合体；</li>
+<h4 id="methodswatchcomputed-的区别"><a class="markdownIt-Anchor" href="#methodswatchcomputed-的区别">#</a> <strong>methods,watch,computed 的区别</strong></h4>
+<ol>
+<li><code>computed</code>  属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算。主要当作属性来使用；</li>
+<li><code>methods</code>  方法表示一个具体的操作，主要书写业务逻辑；</li>
+<li><code>watch</code>  一个对象，键是需要观察的表达式，值是对应回调函数。主要用来监听某些特定数据的变化，从而进行某些具体的业务逻辑操作；可以看作是 computed 和 methods 的结合体；</li>
 </ol>
-<h2 id="nrm"><a href="#nrm" class="headerlink" title="nrm"></a>nrm</h2><ul>
-<li><p>什么是 nrm?</p>
-<p><strong>nrm</strong> 是一个 <code>npm</code> 源管理器，允许你快速地在 <code>npm</code> 源间切换</p>
+<h2 id="nrm"><a class="markdownIt-Anchor" href="#nrm">#</a> nrm</h2>
+<ul>
+<li>
+<p>什么是 nrm?</p>
+<p><strong>nrm</strong> 是一个  <code>npm</code>  源管理器，允许你快速地在  <code>npm</code>  源间切换</p>
 </li>
-<li><p>安装 nrm</p>
-<p>在命令行执行命令，<code>npm install -g nrm</code>，全局安装 nrm。</p>
+<li>
+<p>安装 nrm</p>
+<p>在命令行执行命令， <code>npm install -g nrm</code> ，全局安装 nrm。</p>
 </li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190412/2eNadQOmpWKL.png?imageslim" alt="mark"></p>
 <ul>
-<li><p>切换</p>
-<p>如果要切换到<code>taobao</code>源，执行命令<code>nrm use taobao</code>。</p>
+<li>
+<p>切换</p>
+<p>如果要切换到 <code>taobao</code>  源，执行命令 <code>nrm use taobao</code> 。</p>
 </li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190412/4BzzVOzz2ER5.png?imageslim" alt="mark"></p>
-<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><h4 id="1-在网页中会引用哪些常见的静态资源？"><a href="#1-在网页中会引用哪些常见的静态资源？" class="headerlink" title="1.在网页中会引用哪些常见的静态资源？"></a>1.在网页中会引用哪些常见的静态资源？</h4><ul>
-<li>JS<ul>
+<h2 id="webpack"><a class="markdownIt-Anchor" href="#webpack">#</a> webpack</h2>
+<h4 id="1在网页中会引用哪些常见的静态资源"><a class="markdownIt-Anchor" href="#1在网页中会引用哪些常见的静态资源">#</a> 1. 在网页中会引用哪些常见的静态资源？</h4>
+<ul>
+<li>JS
+<ul>
 <li>.js .jsx .coffee .ts（TypeScript 类 C# 语言）</li>
 </ul>
 </li>
-<li>CSS<ul>
+<li>CSS
+<ul>
 <li>.css .less .sass .scss</li>
 </ul>
 </li>
-<li>Images<ul>
+<li>Images
+<ul>
 <li>.jpg .png .gif .bmp .svg</li>
 </ul>
 </li>
-<li>字体文件（Fonts）<ul>
+<li>字体文件（Fonts）
+<ul>
 <li>.svg .ttf .eot .woff .woff2</li>
 </ul>
 </li>
-<li>模板文件<ul>
+<li>模板文件
+<ul>
 <li>.ejs .jade .vue【这是在 webpack 中定义组件的方式，推荐这么用】</li>
 </ul>
 </li>
 </ul>
-<h4 id="2-网页中引入的静态资源多了以后有什么问题？？？"><a href="#2-网页中引入的静态资源多了以后有什么问题？？？" class="headerlink" title="2.网页中引入的静态资源多了以后有什么问题？？？"></a>2.网页中引入的静态资源多了以后有什么问题？？？</h4><ol>
+<h4 id="2网页中引入的静态资源多了以后有什么问题"><a class="markdownIt-Anchor" href="#2网页中引入的静态资源多了以后有什么问题">#</a> 2. 网页中引入的静态资源多了以后有什么问题？？？</h4>
+<ol>
 <li>网页加载速度慢， 因为 我们要发起很多的二次请求；</li>
 <li>要处理错综复杂的依赖关系</li>
 </ol>
-<h4 id="3-如何解决上述两个问题"><a href="#3-如何解决上述两个问题" class="headerlink" title="3.如何解决上述两个问题"></a>3.如何解决上述两个问题</h4><ol>
+<h4 id="3如何解决上述两个问题"><a class="markdownIt-Anchor" href="#3如何解决上述两个问题">#</a> 3. 如何解决上述两个问题</h4>
+<ol>
 <li>合并、压缩、精灵图、图片的 Base64 编码</li>
 <li>可以使用之前学过的 requireJS、也可以使用 webpack 可以解决各个包之间的复杂依赖关系；</li>
 </ol>
-<h4 id="4-什么是-webpack"><a href="#4-什么是-webpack" class="headerlink" title="4.什么是 webpack?"></a>4.什么是 webpack?</h4><p>webpack 是前端的一个项目构建工具，它是基于 Node.js 开发出来的一个前端工具；</p>
-<h4 id="5-如何完美实现上述的-2-种解决方案"><a href="#5-如何完美实现上述的-2-种解决方案" class="headerlink" title="5.如何完美实现上述的 2 种解决方案"></a>5.如何完美实现上述的 2 种解决方案</h4><ol>
+<h4 id="4什么是-webpack"><a class="markdownIt-Anchor" href="#4什么是-webpack">#</a> 4. 什么是 webpack?</h4>
+<p>webpack 是前端的一个项目构建工具，它是基于 Node.js 开发出来的一个前端工具；</p>
+<h4 id="5如何完美实现上述的-2-种解决方案"><a class="markdownIt-Anchor" href="#5如何完美实现上述的-2-种解决方案">#</a> 5. 如何完美实现上述的 2 种解决方案</h4>
+<ol>
 <li>使用 <a target="_blank" rel="noopener" href="https://www.gulpjs.com.cn/">Gulp</a>， 是基于 task 任务的；</li>
-<li>使用 <a target="_blank" rel="noopener" href="https://webpack.github.io/">Webpack</a>， 是基于整个项目进行构建的；<ul>
+<li>使用 <a target="_blank" rel="noopener" href="https://webpack.github.io/">Webpack</a>， 是基于整个项目进行构建的；
+<ul>
 <li>借助于 webpack 这个前端自动化构建工具，可以完美实现资源的合并、打包、压缩、混淆等诸多功能。</li>
 <li>根据官网的图片介绍 webpack 打包的过程</li>
 <li><a target="_blank" rel="noopener" href="http://webpack.github.io/">webpack 官网</a></li>
 </ul>
 </li>
 </ol>
-<h4 id="6-webpack-安装的两种方式"><a href="#6-webpack-安装的两种方式" class="headerlink" title="6.webpack 安装的两种方式"></a>6.webpack 安装的两种方式</h4><ol>
-<li>运行<code>npm i webpack -g </code> 全局安装 webpack，这样就能在全局使用 webpack 的命令</li>
-<li>在项目根目录中运行<code>npm i webpack --save-dev</code>安装到项目依赖中</li>
+<h4 id="6webpack-安装的两种方式"><a class="markdownIt-Anchor" href="#6webpack-安装的两种方式">#</a> 6.webpack 安装的两种方式</h4>
+<ol>
+<li>运行 <code>npm i webpack -g </code>  全局安装 webpack，这样就能在全局使用 webpack 的命令</li>
+<li>在项目根目录中运行 <code>npm i webpack --save-dev</code>  安装到项目依赖中</li>
 </ol>
-<h2 id="webpack-小案例"><a href="#webpack-小案例" class="headerlink" title="webpack 小案例"></a>webpack 小案例</h2><p><strong>最终实现效果图：</strong></p>
+<h2 id="webpack-小案例"><a class="markdownIt-Anchor" href="#webpack-小案例">#</a> webpack 小案例</h2>
+<p><strong>最终实现效果图：</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190413/Nhxhjre7JLIk.gif" alt="mark"></p>
-<h2 id="第一阶段：用-webpack-打包-main-js-文件生成-bundle-js-文件"><a href="#第一阶段：用-webpack-打包-main-js-文件生成-bundle-js-文件" class="headerlink" title="第一阶段：用 webpack 打包 main.js 文件生成 bundle.js 文件"></a>第一阶段：用 webpack 打包 main.js 文件生成 bundle.js 文件</h2><p><strong><em>目录结构</em></strong>：</p>
+<h2 id="第一阶段用-webpack-打包-mainjs-文件生成-bundlejs-文件"><a class="markdownIt-Anchor" href="#第一阶段用-webpack-打包-mainjs-文件生成-bundlejs-文件">#</a> 第一阶段：用 webpack 打包 main.js 文件生成 bundle.js 文件</h2>
+<p><strong><em>目录结构</em></strong>：</p>
 <p><img src="http://static.zxinc520.com/blog/20190412/lCOHlyRXWvxs.png?imageslim" alt="mark"></p>
 <p><strong>index.html</strong>：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
@@ -330,7 +354,6 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>main.js:</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// main.js 是我们项目的JS的入口文件</span>
 
@@ -349,17 +372,18 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>1.安装完相关包之后，在根目录下运行 <code>webpack .\src\main.js -o .\dist\bundle.js</code></p>
+<p>1. 安装完相关包之后，在根目录下运行  <code>webpack .\src\main.js -o .\dist\bundle.js</code></p>
 <p><img src="http://static.zxinc520.com/blog/20190412/VN1klW9vTlKk.png?imageslim" alt="mark"></p>
 <p>运行结果：</p>
 <p><img src="http://static.zxinc520.com/blog/20190412/cCQTanNAophR.png?imageslim" alt="mark"></p>
-<h2 id="第二阶段：配置-webpack-config-js"><a href="#第二阶段：配置-webpack-config-js" class="headerlink" title="第二阶段：配置 webpack.config.js"></a>第二阶段：配置 webpack.config.js</h2><blockquote>
-<p>Webpack 在执行的时候，除了在 <strong>命令行传入参数</strong>，还可以通过指定的 <strong>配置文件</strong> 来执行。默认情况下，会搜索当前目录的 <code>webpack.config.js</code> 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 <code>--config</code> 选项来指定配置文件。</p>
+<h2 id="第二阶段配置-webpackconfigjs"><a class="markdownIt-Anchor" href="#第二阶段配置-webpackconfigjs">#</a> 第二阶段：配置 webpack.config.js</h2>
+<blockquote>
+<p>Webpack 在执行的时候，除了在 <strong>命令行传入参数</strong>，还可以通过指定的 <strong>配置文件</strong> 来执行。默认情况下，会搜索当前目录的  <code>webpack.config.js</code>  文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过  <code>--config</code>  选项来指定配置文件。</p>
 </blockquote>
-<h5 id="当我们在-控制台，直接输入-webpack-命令执行的时候，webpack-做了以下几步："><a href="#当我们在-控制台，直接输入-webpack-命令执行的时候，webpack-做了以下几步：" class="headerlink" title="当我们在 控制台，直接输入 webpack 命令执行的时候，webpack 做了以下几步："></a>当我们在 控制台，直接输入 <strong>webpack</strong> 命令执行的时候，webpack 做了以下几步：</h5><ol>
+<h5 id="当我们在-控制台直接输入-webpack-命令执行的时候webpack-做了以下几步"><a class="markdownIt-Anchor" href="#当我们在-控制台直接输入-webpack-命令执行的时候webpack-做了以下几步">#</a> 当我们在 控制台，直接输入 <strong>webpack</strong> 命令执行的时候，webpack 做了以下几步：</h5>
+<ol>
 <li>首先，webpack 发现，我们并没有通过命令的形式，给它指定入口和出口</li>
-<li>webpack 就会去 项目的 根目录中，查找一个叫做 <code>webpack.config.js</code> 的配置文件</li>
+<li>webpack 就会去 项目的 根目录中，查找一个叫做  <code>webpack.config.js</code>  的配置文件</li>
 <li>当找到配置文件后，webpack 会去解析执行这个 配置文件，当解析执行完配置文件后，就得到了 配置文件中，导出的配置对象</li>
 <li>当 webpack 拿到 配置对象后，就拿到了 配置对象中，指定的 入口 和 出口，然后进行打包构建；</li>
 </ol>
@@ -374,13 +398,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     filename<span class="token operator">:</span> <span class="token string">"bundle.js"</span><span class="token punctuation">,</span> <span class="token comment">// 这是指定 输出的文件的名称</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>然后再根目录下运行 webpack</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190412/Jtcry4FyA52b.png?imageslim" alt="mark"></p>
-<h2 id="使用-webpack-dev-server-这个工具，来实现自动打包编译的功能"><a href="#使用-webpack-dev-server-这个工具，来实现自动打包编译的功能" class="headerlink" title="使用 webpack-dev-server 这个工具，来实现自动打包编译的功能"></a>使用 webpack-dev-server 这个工具，来实现自动打包编译的功能</h2><ol>
-<li>运行 <code>npm i webpack-dev-server -D</code> 把这个工具安装到项目的本地开发依赖 <a target="_blank" rel="noopener" href="https://blog.csdn.net/wangguoyu1996/article/details/80443861">npm install –save 和 npm install -d 的区别</a></li>
+<h2 id="使用-webpack-dev-server-这个工具来实现自动打包编译的功能"><a class="markdownIt-Anchor" href="#使用-webpack-dev-server-这个工具来实现自动打包编译的功能">#</a> 使用 webpack-dev-server 这个工具，来实现自动打包编译的功能</h2>
+<ol>
+<li>运行  <code>npm i webpack-dev-server -D</code>  把这个工具安装到项目的本地开发依赖 <a target="_blank" rel="noopener" href="https://blog.csdn.net/wangguoyu1996/article/details/80443861">npm install --save 和 npm install -d 的区别</a></li>
 <li>安装完毕后，这个 工具的用法， 和 webpack 命令的用法，完全一样</li>
 <li>由于，我们是在项目中，本地安装的 webpack-dev-server ， 所以，无法把它当作 脚本命令，在 powershell 终端中直接运行；（只有那些 安装到 全局 -g 的工具，才能在 终端中正常执行）</li>
 <li>注意： webpack-dev-server 这个工具，如果想要正常运行，要求，在本地项目中，必须安装 webpack</li>
@@ -388,18 +412,22 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <li>我们可以认为， webpack-dev-server 把打包好的 文件，以一种虚拟的形式，托管到了 咱们项目的 根目录中，虽然我们看不到它，但是，可以认为， 和 dist src node_modules 平级，有一个看不见的文件，叫做 bundle.js</li>
 </ol>
 <ul>
-<li>再 package.json 文件中 配置 <code>webpack-dev-server </code></li>
+<li>再 package.json 文件中 配置  <code>webpack-dev-server </code></li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190413/0mEiuATRmg4V.png?imageslim" alt="mark"></p>
 <ul>
-<li>在根目录下运行命令：<code>npm run dev</code></li>
+<li>在根目录下运行命令： <code>npm run dev</code></li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190413/01rkpce0a7ou.png?imageslim" alt="mark"></p>
-<h4 id="自动编译（保存代码即自动刷新浏览器）"><a href="#自动编译（保存代码即自动刷新浏览器）" class="headerlink" title="自动编译（保存代码即自动刷新浏览器）"></a>自动编译（保存代码即自动刷新浏览器）</h4><p><img src="http://static.zxinc520.com/blog/20190413/sEKMRkaMQOuX.png?imageslim" alt="mark"></p>
-<h2 id="运行-npm-run-dev-后-自动-打开对应端口号的浏览器窗口-改端口号-显示内容"><a href="#运行-npm-run-dev-后-自动-打开对应端口号的浏览器窗口-改端口号-显示内容" class="headerlink" title="运行 npm run dev 后 自动 打开对应端口号的浏览器窗口 改端口号 显示内容"></a>运行 npm run dev 后 自动 <strong>打开对应端口号</strong>的浏览器窗口 改端口号 显示内容</h2><h3 id="方式一：配置-package-json-文件"><a href="#方式一：配置-package-json-文件" class="headerlink" title="方式一：配置 package.json 文件"></a>方式一：配置 <code>package.json</code> 文件</h3><p>优点：——-推荐，简单，直接。在开发中更常用。</p>
+<h4 id="自动编译保存代码即自动刷新浏览器"><a class="markdownIt-Anchor" href="#自动编译保存代码即自动刷新浏览器">#</a> 自动编译（保存代码即自动刷新浏览器）</h4>
+<p><img src="http://static.zxinc520.com/blog/20190413/sEKMRkaMQOuX.png?imageslim" alt="mark"></p>
+<h2 id="运行-npm-run-dev-后-自动-打开对应端口号的浏览器窗口-改端口号-显示内容"><a class="markdownIt-Anchor" href="#运行-npm-run-dev-后-自动-打开对应端口号的浏览器窗口-改端口号-显示内容">#</a> 运行 npm run dev 后 自动 <strong>打开对应端口号</strong>的浏览器窗口 改端口号 显示内容</h2>
+<h3 id="方式一配置-packagejson-文件"><a class="markdownIt-Anchor" href="#方式一配置-packagejson-文件">#</a> 方式一：配置  <code>package.json</code>  文件</h3>
+<p>优点：------- 推荐，简单，直接。在开发中更常用。</p>
 <p><strong>package.json:</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190413/bhRisI6Rkma4.png?imageslim" alt="mark"></p>
-<h3 id="方式二：配置-webpack-config-js-文件"><a href="#方式二：配置-webpack-config-js-文件" class="headerlink" title="方式二：配置 webpack.config.js 文件"></a>方式二：配置 webpack.config.js 文件</h3><ul>
+<h3 id="方式二配置-webpackconfigjs-文件"><a class="markdownIt-Anchor" href="#方式二配置-webpackconfigjs-文件">#</a> 方式二：配置 webpack.config.js 文件</h3>
+<ul>
 <li>相比之下 麻烦一点</li>
 </ul>
 <p><strong>webpack.config.js：</strong></p>
@@ -426,38 +454,46 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>HotModuleReplacementPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// new 一个热更新的 模块对象， 这是 启用热更新的第 3 步</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="使用-html-webpack-plugin-插件"><a href="#使用-html-webpack-plugin-插件" class="headerlink" title="使用 html-webpack-plugin 插件"></a>使用 html-webpack-plugin 插件</h2><blockquote>
-<p>配合 <code>webpack-dev-server</code> 工具使用</p>
+<h2 id="使用-html-webpack-plugin-插件"><a class="markdownIt-Anchor" href="#使用-html-webpack-plugin-插件">#</a> 使用 html-webpack-plugin 插件</h2>
+<blockquote>
+<p>配合  <code>webpack-dev-server</code>  工具使用</p>
 <p>作用：为 html 文件中引入的外部资源</p>
 </blockquote>
 <p><strong>这个插件的两个作用：</strong></p>
 <ul>
-<li>为 html 文件中引入的外部资源如<code>script</code>、<code>link</code>动态添加每次 compile 后的 hash，防止引用缓存的外部文件问题</li>
-<li>可以生成创建 html 入口文件，比如单页面可以生成一个 html 文件入口，配置<strong>N</strong>个<code>html-webpack-plugin</code>可以生成<strong>N</strong>个页面入口</li>
+<li>为 html 文件中引入的外部资源如 <code>script</code> 、 <code>link</code>  动态添加每次 compile 后的 hash，防止引用缓存的外部文件问题</li>
+<li>可以生成创建 html 入口文件，比如单页面可以生成一个 html 文件入口，配置<strong> N</strong> 个 <code>html-webpack-plugin</code>  可以生成<strong> N</strong> 个页面入口</li>
 </ul>
 <p><strong>实例作用（简单来说）</strong>：</p>
 <ol>
-<li><p>自动在内存中根据指定页面生成一个内存的页面</p>
+<li>
+<p>自动在内存中根据指定页面生成一个内存的页面</p>
 </li>
-<li><p>自动，把打包好的 bundle.js 追加到页面中去</p>
+<li>
+<p>自动，把打包好的 bundle.js 追加到页面中去</p>
 <p><img src="http://static.zxinc520.com/blog/20190413/A77bGaRpNnBK.png?imageslim" alt="mark"></p>
 </li>
 </ol>
-<h6 id="安装使用如下："><a href="#安装使用如下：" class="headerlink" title="安装使用如下："></a><strong>安装使用如下：</strong></h6><p>一、首先安装 html-webpack-plugin 插件</p>
-<p>​ 在 cmd 中打开项目，输入 <code>npm i html-webpack-plugin -D</code></p>
+<h6 id="安装使用如下"><a class="markdownIt-Anchor" href="#安装使用如下">#</a> <strong>安装使用如下：</strong></h6>
+<p>一、首先安装 html-webpack-plugin 插件</p>
+<p>​ 在 cmd 中打开项目，输入  <code>npm i html-webpack-plugin -D</code></p>
 <p>二、在 webpack-config.js 的 plugins 里面添加 信息，如下图</p>
 <p><img src="http://static.zxinc520.com/blog/20190413/FtRgDnktWRwG.png?imageslim" alt="mark"></p>
-<p>然后在 cmd 中输入 <code>npm run dev</code> ，即可以在项目文件夹下自动生成 index.html。如果报错，则表示，未安装 html-webpack-plugin 插件。</p>
-<p>注：不配置任何选项的<code>html-webpack-plugin</code>插件，他会默认将 webpack 中的<code>entry</code>配置所有入口 thunk 和<code>extract-text-webpack-plugin</code>抽取的 css 样式都插入到文件指定的位置</p>
-<h2 id="webpack-处理第三方文件类型的过程"><a href="#webpack-处理第三方文件类型的过程" class="headerlink" title="webpack 处理第三方文件类型的过程"></a>webpack 处理第三方文件类型的过程</h2><h4 id="需求：打包处理-css-文件"><a href="#需求：打包处理-css-文件" class="headerlink" title="需求：打包处理 css 文件"></a>需求：打包处理 css 文件</h4><p><strong>注意：</strong></p>
+<p>然后在 cmd 中输入  <code>npm run dev</code>  ，即可以在项目文件夹下自动生成 index.html。如果报错，则表示，未安装 html-webpack-plugin 插件。</p>
+<p>注：不配置任何选项的 <code>html-webpack-plugin</code>  插件，他会默认将 webpack 中的 <code>entry</code>  配置所有入口 thunk 和 <code>extract-text-webpack-plugin</code>  抽取的 css 样式都插入到文件指定的位置</p>
+<h2 id="webpack-处理第三方文件类型的过程"><a class="markdownIt-Anchor" href="#webpack-处理第三方文件类型的过程">#</a> webpack 处理第三方文件类型的过程</h2>
+<h4 id="需求打包处理-css-文件"><a class="markdownIt-Anchor" href="#需求打包处理-css-文件">#</a> 需求：打包处理 css 文件</h4>
+<p><strong>注意：</strong></p>
 <ul>
-<li><p>webpack, 默认只能打包处理 JS 类型的文件，无法处理 其它的非 JS 类型的文件； 如果要处理 非 JS 类型的文件，我们需要手动安装一些 合适 第三方 loader 加载器；</p>
+<li>
+<p>webpack, 默认只能打包处理 JS 类型的文件，无法处理 其它的非 JS 类型的文件； 如果要处理 非 JS 类型的文件，我们需要手动安装一些 合适 第三方 loader 加载器；</p>
 </li>
-<li><p>1.如果想要打包处理 css 文件，需要安装 <code>npm i style-loader css-loader -D</code></p>
+<li>
+<p>1. 如果想要打包处理 css 文件，需要安装  <code>npm i style-loader css-loader -D</code></p>
 <p><img src="http://static.zxinc520.com/blog/20190413/oqXTmYRoKMoA.png?imageslim" alt="mark"></p>
 </li>
-<li><p>2.打开 webpack.config.js 这个配置文件，在 里面，新增一个 配置节点，叫做 module, 它是一个对象；在 这个 module 对象身上，有个 rules 属性，这个 rules 属性是个 数组；这个数组中，存放了，所有第三方文件的 匹配和 处理规则；</p>
+<li>
+<p>2. 打开 webpack.config.js 这个配置文件，在 里面，新增一个 配置节点，叫做 module, 它是一个对象；在 这个 module 对象身上，有个 rules 属性，这个 rules 属性是个 数组；这个数组中，存放了，所有第三方文件的 匹配和 处理规则；</p>
 <p><img src="http://static.zxinc520.com/blog/20190413/Xu64lPnxIQLS.png?imageslim" alt="mark"></p>
 </li>
 </ul>
@@ -468,18 +504,21 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <li>在调用 loader 的时候，是从后往前调用的；</li>
 <li>当最后的一个 loader 调用完毕，会把 处理的结果，直接交给 webpack 进行 打包合并，最终输出到 bundle.js 中去</li>
 </ol>
-<h2 id="打包-less-文件"><a href="#打包-less-文件" class="headerlink" title="打包 less 文件"></a>打包 less 文件</h2><p><strong>第一步：安装包：</strong></p>
+<h2 id="打包-less-文件"><a class="markdownIt-Anchor" href="#打包-less-文件">#</a> 打包 less 文件</h2>
+<p><strong>第一步：安装包：</strong></p>
 <ol>
-<li><p>安装 <code>npm i less-loader -D</code></p>
+<li>
+<p>安装  <code>npm i less-loader -D</code></p>
 <p><img src="http://static.zxinc520.com/blog/20190413/0bSMpt6TO1EJ.png?imageslim" alt="mark"></p>
 </li>
-<li><p>less-loader 内部依赖 less 包，所以安装 <code>npm i less -D</code></p>
+<li>
+<p>less-loader 内部依赖 less 包，所以安装  <code>npm i less -D</code></p>
 </li>
 </ol>
 <p><img src="http://static.zxinc520.com/blog/20190413/5RJ7elAXllGf.png?imageslim" alt="mark"></p>
 <p><strong>第二步：配置 webpack.config.js 文件</strong></p>
 <p><img src="http://static.zxinc520.com/blog/20190413/qjRV20IM5XiU.png?imageslim" alt="mark"></p>
-<p>第三步：根目录下 运行 <code>npm run dev</code></p>
+<p>第三步：根目录下 运行  <code>npm run dev</code></p>
 <p><img src="http://static.zxinc520.com/blog/20190413/Nhxhjre7JLIk.gif" alt="mark"></p>
  
       <!-- reward -->
@@ -720,7 +759,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

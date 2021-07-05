@@ -114,13 +114,16 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="Vue-第四天"><a href="#Vue-第四天" class="headerlink" title="Vue 第四天"></a>Vue 第四天</h2><blockquote>
+  <h2 id="vue-第四天"><a class="markdownIt-Anchor" href="#vue-第四天">#</a> Vue 第四天</h2>
+<blockquote>
 <p>父子组件间通信</p>
 <p>ref 获取 DOM 元素 和 组件</p>
 <p>路由</p>
 </blockquote>
-<h3 id="父组件向子组件传值"><a href="#父组件向子组件传值" class="headerlink" title="父组件向子组件传值"></a>父组件向子组件传值</h3><h5 id="1-子组件使用父组件中的数据"><a href="#1-子组件使用父组件中的数据" class="headerlink" title="1.子组件使用父组件中的数据"></a>1.子组件使用父组件中的数据</h5><ul>
-<li>初步尝试—（错误分析）</li>
+<h3 id="父组件向子组件传值"><a class="markdownIt-Anchor" href="#父组件向子组件传值">#</a> 父组件向子组件传值</h3>
+<h5 id="1子组件使用父组件中的数据"><a class="markdownIt-Anchor" href="#1子组件使用父组件中的数据">#</a> 1. 子组件使用父组件中的数据</h5>
+<ul>
+<li>初步尝试 —（错误分析）</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blogimage/20190408/mHq7etHeHLPb.png?imageslim" alt="mark"></p>
 <ul>
@@ -146,9 +149,9 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190408/mUupYQNPh2hG.png?imageslim" alt="mark"></p>
-<h5 id="2-子组件使用父组件中的方法"><a href="#2-子组件使用父组件中的方法" class="headerlink" title="2.子组件使用父组件中的方法"></a>2.子组件使用父组件中的方法</h5><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h5 id="2子组件使用父组件中的方法"><a class="markdownIt-Anchor" href="#2子组件使用父组件中的方法">#</a> 2. 子组件使用父组件中的方法</h5>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>com1</span> <span class="token attr-name">@func</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>com1</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 
@@ -182,9 +185,9 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190408/bmsCo9BvmEsC.gif" alt="mark"></p>
-<h3 id="子组件向父组件传值"><a href="#子组件向父组件传值" class="headerlink" title="子组件向父组件传值"></a>子组件向父组件传值</h3><ul>
+<h3 id="子组件向父组件传值"><a class="markdownIt-Anchor" href="#子组件向父组件传值">#</a> 子组件向父组件传值</h3>
+<ul>
 <li>设置参数（ 供子组件传递参数 ）</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blogimage/20190408/nbHBhOYbCy7g.png?imageslim" alt="mark"></p>
@@ -232,9 +235,9 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190408/PgXfzpoRW7u9.png?imageslim" alt="mark"></p>
-<h2 id="组件案例-发表评论"><a href="#组件案例-发表评论" class="headerlink" title="组件案例-发表评论"></a>组件案例-发表评论</h2><blockquote>
+<h2 id="组件案例-发表评论"><a class="markdownIt-Anchor" href="#组件案例-发表评论">#</a> 组件案例 - 发表评论</h2>
+<blockquote>
 <p>发表评论案例</p>
 <p>所需知识点： 父子组件传值，localStorage 本地储存</p>
 </blockquote>
@@ -318,9 +321,10 @@
                 commentBox<span class="token operator">:</span> commentBox
             <span class="token punctuation">&#125;</span>
     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190409/Xoa1oQoFqxaT.gif" alt="mark"></p>
-<h2 id="ref-获取-DOM-元素和组件"><a href="#ref-获取-DOM-元素和组件" class="headerlink" title="ref 获取 DOM 元素和组件"></a>ref 获取 DOM 元素和组件</h2><h4 id="ref-获取-DOM-元素"><a href="#ref-获取-DOM-元素" class="headerlink" title="ref 获取 DOM 元素"></a>ref 获取 DOM 元素</h4><ul>
+<h2 id="ref-获取-dom-元素和组件"><a class="markdownIt-Anchor" href="#ref-获取-dom-元素和组件">#</a> ref 获取 DOM 元素和组件</h2>
+<h4 id="ref-获取-dom-元素"><a class="markdownIt-Anchor" href="#ref-获取-dom-元素">#</a> ref 获取 DOM 元素</h4>
+<ul>
 <li>基本使用</li>
 </ul>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -339,9 +343,9 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190409/yp3VYrRba9dD.gif" alt="mark"></p>
-<h4 id="ref-获取组件"><a href="#ref-获取组件" class="headerlink" title="ref 获取组件"></a>ref 获取组件</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h4 id="ref-获取组件"><a class="markdownIt-Anchor" href="#ref-获取组件">#</a> ref 获取组件</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>getElement<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>获取元素<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>myh3<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>myh3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>今天阳光明媚<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span> <span class="token punctuation">/></span></span>
@@ -377,12 +381,13 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190409/4uo8wLRXKSxg.gif" alt="mark"></p>
-<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><h3 id="什么是路由？"><a href="#什么是路由？" class="headerlink" title="什么是路由？"></a>什么是路由？</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/deaidai/article/details/80351187">可以参考</a></p>
+<h2 id="路由"><a class="markdownIt-Anchor" href="#路由">#</a> 路由</h2>
+<h3 id="什么是路由"><a class="markdownIt-Anchor" href="#什么是路由">#</a> 什么是路由？</h3>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/deaidai/article/details/80351187">可以参考</a></p>
 <blockquote>
 <p>后端路由：对于普通的网站，所有的超链接都是 URL 地址，所有的 URL 地址都对应服务器上对应的资源；</p>
-<p>前端路由：对于单页面应用程序来说，主要通过 URL 中的 hash(#号)来实现不同页面之间的切换，同时，hash 有一个特点：HTTP 请求中不会包含 hash 相关的内容；所以，单页面程序中的页面跳转主要用 hash 实现；</p>
+<p>前端路由：对于单页面应用程序来说，主要通过 URL 中的 hash (# 号) 来实现不同页面之间的切换，同时，hash 有一个特点：HTTP 请求中不会包含 hash 相关的内容；所以，单页面程序中的页面跳转主要用 hash 实现；</p>
 <p>在单页面应用程序中，这种通过 hash 改变来切换页面的方式，称作前端路由（区别于后端路由）；URL 中的 hash（井号）</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://router.vuejs.org/installation.html#direct-download-cdn">Vue Router</a></p>
@@ -434,7 +439,6 @@
     router<span class="token operator">:</span> routerobj<span class="token punctuation">,</span> <span class="token comment">//将路由规则对象，注册到 vm 实例上，用来监听 URL 地址的变化，然后展示对应的组件</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blogimage/20190409/4t7CscuJJf8F.gif" alt="mark"></p>
 <ul>
 <li>router-link 的使用（替代 a 标签）：</li>
@@ -455,7 +459,8 @@
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190409/Boq0wxt3SD6W.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190409/x9en06UnaelG.gif" alt="mark"></p>
-<h4 id="路由规则中定义参数"><a href="#路由规则中定义参数" class="headerlink" title="路由规则中定义参数"></a>路由规则中定义参数</h4><ul>
+<h4 id="路由规则中定义参数"><a class="markdownIt-Anchor" href="#路由规则中定义参数">#</a> 路由规则中定义参数</h4>
+<ul>
 <li>传参方式一：</li>
 </ul>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -493,21 +498,21 @@
     router<span class="token operator">:</span> routerobj<span class="token punctuation">,</span> <span class="token comment">//将路由规则对象，注册到 vm 实例上，用来监听 URL 地址的变化，然后展示对应的组件</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190409/fPdxBv6111Wc.png?imageslim" alt="mark"></p>
 <ul>
 <li>拿到参数渲染到组件上</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190409/4nCicLNRvHdI.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190409/0ljG17fNlXkA.png?imageslim" alt="mark"></p>
-<p>或者：==&gt;更简洁，直观！</p>
+<p>或者：==&gt; 更简洁，直观！</p>
 <p><img src="http://static.zxinc520.com/blog/20190409/qBOfGm2x0N46.png?imageslim" alt="mark"></p>
 <ul>
 <li>传值方式二：</li>
 </ul>
 <p><img src="http://static.zxinc520.com/blog/20190409/XX9MBioYl1Cu.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190409/crPnx2YQN3Hl.png?imageslim" alt="mark"></p>
-<h4 id="路由的嵌套"><a href="#路由的嵌套" class="headerlink" title="路由的嵌套"></a>路由的嵌套</h4><ul>
+<h4 id="路由的嵌套"><a class="markdownIt-Anchor" href="#路由的嵌套">#</a> 路由的嵌套</h4>
+<ul>
 <li>children 的使用</li>
 </ul>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -559,9 +564,9 @@
     router<span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190410/gPhEsa53qYkp.gif" alt="mark"></p>
-<h2 id="路由-命名视图实现经典布局"><a href="#路由-命名视图实现经典布局" class="headerlink" title="路由-命名视图实现经典布局"></a>路由-命名视图实现经典布局</h2><ul>
+<h2 id="路由-命名视图实现经典布局"><a class="markdownIt-Anchor" href="#路由-命名视图实现经典布局">#</a> 路由 - 命名视图实现经典布局</h2>
+<ul>
 <li>命名视图实现经典布局</li>
 </ul>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
@@ -630,7 +635,6 @@
     router<span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190410/kLyVGLuGTNQU.png?imageslim" alt="mark"></p>
  
       <!-- reward -->
@@ -871,7 +875,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

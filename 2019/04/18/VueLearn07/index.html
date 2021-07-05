@@ -114,16 +114,19 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Vue-第七天学习"><a href="#Vue-第七天学习" class="headerlink" title="Vue 第七天学习"></a>Vue 第七天学习</h1><blockquote>
+  <h1 id="vue-第七天学习"><a class="markdownIt-Anchor" href="#vue-第七天学习">#</a> Vue 第七天学习</h1>
+<blockquote>
 <p>Mint-UI 学习</p>
 <p>MUI</p>
 </blockquote>
-<h2 id="Mint-UI"><a href="#Mint-UI" class="headerlink" title="Mint-UI"></a>Mint-UI</h2><h3 id="基于-Vue-js-的移动端组件库"><a href="#基于-Vue-js-的移动端组件库" class="headerlink" title="基于 Vue.js 的移动端组件库"></a>基于 Vue.js 的移动端组件库</h3><p><strong>特性介绍：</strong><a target="_blank" rel="noopener" href="http://mint-ui.github.io/#!/zh-cn">Mint-UI 官网</a></p>
+<h2 id="mint-ui"><a class="markdownIt-Anchor" href="#mint-ui">#</a> Mint-UI</h2>
+<h3 id="基于-vuejs-的移动端组件库"><a class="markdownIt-Anchor" href="#基于-vuejs-的移动端组件库">#</a> 基于 Vue.js 的移动端组件库</h3>
+<p><strong>特性介绍：</strong><a target="_blank" rel="noopener" href="http://mint-ui.github.io/#!/zh-cn">Mint-UI 官网</a></p>
 <ol>
 <li>Mint UI 包含丰富的 CSS 和 JS 组件，能够满足日常的移动端开发需要。通过它，可以快速构建出风格统一的页面，提升开发效率。</li>
 <li>真正意义上的按需加载组件。可以只加载声明过的组件及其样式文件，无需再纠结文件体积过大。</li>
 <li>考虑到移动端的性能门槛，Mint UI 采用 CSS3 处理各种动效，避免浏览器进行不必要的重绘和重排，从而使用户获得流畅顺滑的体验。</li>
-<li>依托 Vue.js 高效的组件化方案，Mint UI 做到了轻量化。即使全部引入，压缩后的文件体积也仅有 ~30kb (JS + CSS) gzip。</li>
+<li>依托 Vue.js 高效的组件化方案，Mint UI 做到了轻量化。即使全部引入，压缩后的文件体积也仅有～30kb (JS + CSS) gzip。</li>
 </ol>
 <p><strong>安装：</strong></p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&#x2F;&#x2F; 安装
@@ -131,7 +134,6 @@
 npm install mint-ui@1 -S
 # Vue 2.0
 npm install mint-ui -S<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>来自官网</strong>：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 引入全部组件</span>
 <span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span>
@@ -141,8 +143,8 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Cell<span class="token punctuation">,</span> Checklist <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"minu-ui"</span><span class="token punctuation">;</span>
 Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>Cell<span class="token punctuation">.</span>name<span class="token punctuation">,</span> Cell<span class="token punctuation">)</span><span class="token punctuation">;</span>
 Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>Checklist<span class="token punctuation">.</span>name<span class="token punctuation">,</span> Checklist<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="项目演示："><a href="#项目演示：" class="headerlink" title="项目演示："></a><strong>项目演示：</strong></h3><p>项目目录：</p>
+<h3 id="项目演示"><a class="markdownIt-Anchor" href="#项目演示">#</a> <strong>项目演示：</strong></h3>
+<p>项目目录：</p>
 <p><img src="http://static.zxinc520.com/blog/20190418/udiBT1HHpIk4.png?imageslim" alt="mark"></p>
 <p><strong>main.js:</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span>
@@ -170,7 +172,6 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
   <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">c</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">c</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">,</span>
   router<span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>App.vue:</strong></p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
@@ -185,9 +186,10 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 &lt;script&gt;&lt;&#x2F;script&gt;
 
 &lt;style&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190418/L8Aec7UwlBhj.png?imageslim" alt="mark"></p>
-<h2 id="JS-components-使用"><a href="#JS-components-使用" class="headerlink" title="JS components 使用"></a>JS components 使用</h2><h4 id="例如：使用-Toast-组件"><a href="#例如：使用-Toast-组件" class="headerlink" title="例如：使用 Toast 组件"></a>例如：使用 <strong>Toast 组件</strong></h4><p>App.vue:</p>
+<h2 id="js-components-使用"><a class="markdownIt-Anchor" href="#js-components-使用">#</a> JS components 使用</h2>
+<h4 id="例如使用-toast-组件"><a class="markdownIt-Anchor" href="#例如使用-toast-组件">#</a> 例如：使用 <strong>Toast 组件</strong></h4>
+<p>App.vue:</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
     &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;
@@ -218,26 +220,27 @@ export default &#123;
 &lt;&#x2F;script&gt;
 
 &lt;style&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190418/4i9Jbv1iwEGP.gif" alt="mark"></p>
-<h2 id="使用-bootstrap-图标-配合-Toast-组件-使用"><a href="#使用-bootstrap-图标-配合-Toast-组件-使用" class="headerlink" title="使用 bootstrap 图标 配合 **Toast 组件 **使用"></a>使用 <strong>bootstrap 图标</strong> 配合 **Toast 组件 **使用</h2><ol>
+<h2 id="使用-bootstrap-图标-配合-toast-组件-使用"><a class="markdownIt-Anchor" href="#使用-bootstrap-图标-配合-toast-组件-使用">#</a> 使用 <strong>bootstrap 图标</strong> 配合 **Toast 组件 ** 使用</h2>
+<ol>
 <li>安装 bootstrap 包</li>
 </ol>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm i bootstrap@3.3.7 -S<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <ol start="2">
 <li>在 main.js 文件</li>
 </ol>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token string">"bootstrap/dist/css/bootstrap.min.css"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <ol start="3">
 <li>在 App.vue 文件里</li>
 </ol>
 <p><img src="http://static.zxinc520.com/blog/20190418/07pVWBGzLVEB.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190418/9NNEMXf71zIY.gif" alt="mark"></p>
-<h4 id="自定义图标颜色"><a href="#自定义图标颜色" class="headerlink" title="自定义图标颜色"></a>自定义图标颜色</h4><p><img src="http://static.zxinc520.com/blog/20190418/7x5iyU8lwDzL.png?imageslim" alt="mark"></p>
+<h4 id="自定义图标颜色"><a class="markdownIt-Anchor" href="#自定义图标颜色">#</a> 自定义图标颜色</h4>
+<p><img src="http://static.zxinc520.com/blog/20190418/7x5iyU8lwDzL.png?imageslim" alt="mark"></p>
 <p><img src="http://static.zxinc520.com/blog/20190418/IX8tRWh9aU8d.gif" alt="mark"></p>
-<h2 id="模拟-完成接收数据-Toast-组件消失需求"><a href="#模拟-完成接收数据-Toast-组件消失需求" class="headerlink" title="模拟 完成接收数据 Toast 组件消失需求"></a>模拟 完成接收数据 Toast 组件消失需求</h2><h3 id="需求：-1s-后-Toast-组件消失需求"><a href="#需求：-1s-后-Toast-组件消失需求" class="headerlink" title="需求： 1s 后 Toast 组件消失需求"></a>需求： 1s 后 Toast 组件消失需求</h3><p><strong>App.vue:</strong></p>
+<h2 id="模拟-完成接收数据-toast-组件消失需求"><a class="markdownIt-Anchor" href="#模拟-完成接收数据-toast-组件消失需求">#</a> 模拟 完成接收数据 Toast 组件消失需求</h2>
+<h3 id="需求-1s-后-toast-组件消失需求"><a class="markdownIt-Anchor" href="#需求-1s-后-toast-组件消失需求">#</a> 需求： 1s 后 Toast 组件消失需求</h3>
+<p><strong>App.vue:</strong></p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
     &lt;h1&gt;这是app组件&lt;&#x2F;h1&gt;
@@ -282,16 +285,16 @@ export default &#123;
 &lt;&#x2F;script&gt;
 
 &lt;style&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190418/qPQ3yPDUEMHo.gif" alt="mark"></p>
-<h2 id="babel-plugin-component-插件"><a href="#babel-plugin-component-插件" class="headerlink" title="babel-plugin-component 插件"></a>babel-plugin-component 插件</h2><p><strong>作用</strong>：为了项目整体内容不过于庞大，按需加载是许多第三方的库和插件必不可少的，于是使用了官方提供的按需加载插件<a href="https://link.juejin.im/?target=https://github.com/ElementUI/babel-plugin-component">babel-plugin-component</a></p>
-<h3 id="按需导入："><a href="#按需导入：" class="headerlink" title="按需导入："></a>按需导入：</h3><ol>
-<li>1.安装：</li>
+<h2 id="babel-plugin-component-插件"><a class="markdownIt-Anchor" href="#babel-plugin-component-插件">#</a> babel-plugin-component 插件</h2>
+<p><strong>作用</strong>：为了项目整体内容不过于庞大，按需加载是许多第三方的库和插件必不可少的，于是使用了官方提供的按需加载插件<a href="https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2FElementUI%2Fbabel-plugin-component"> babel-plugin-component</a></p>
+<h3 id="按需导入"><a class="markdownIt-Anchor" href="#按需导入">#</a> 按需导入：</h3>
+<ol>
+<li>1. 安装：</li>
 </ol>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm install babel-plugin-component -D<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <ol start="2">
-<li>2.修改 <strong>.babelrc</strong> 里面的 <strong>plugins</strong> ：</li>
+<li>2. 修改 <strong>.babelrc</strong> 里面的 <strong>plugins</strong> ：</li>
 </ol>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
   <span class="token property">"presets"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"env"</span><span class="token punctuation">,</span> <span class="token string">"stage-0"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -308,14 +311,14 @@ export default &#123;
     <span class="token punctuation">]</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="项目改造"><a href="#项目改造" class="headerlink" title="项目改造"></a>项目改造</h2><h4 id="按需导入"><a href="#按需导入" class="headerlink" title="按需导入"></a>按需导入</h4><p><strong>mian.js:</strong></p>
+<h2 id="项目改造"><a class="markdownIt-Anchor" href="#项目改造">#</a> 项目改造</h2>
+<h4 id="按需导入-2"><a class="markdownIt-Anchor" href="#按需导入-2">#</a> 按需导入</h4>
+<p><strong>mian.js:</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token string">"mint-ui/lib/style.css"</span><span class="token punctuation">;</span>
 
 <span class="token comment">//按需导入</span>
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Button <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"mint-ui"</span><span class="token punctuation">;</span>
 Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"mybtn"</span><span class="token punctuation">,</span> Button<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//导入自定义的 mybtn 按钮组件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>App.vue:</strong></p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
     &lt;div&gt;
@@ -326,25 +329,27 @@ Vue<span class="token punctuation">.</span><span class="token function">componen
         &lt;router-view&gt;&lt;&#x2F;router-view&gt;
     &lt;&#x2F;div&gt;
 &lt;&#x2F;templat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190418/Kh82KQyT57d4.png?imageslim" alt="mark"></p>
-<h2 id="MUI"><a href="#MUI" class="headerlink" title="MUI"></a>MUI</h2><blockquote>
-<p>注意： MUI 不同于 Mint-UI，MUI 只是开发出来的一套好用的代码片段，里面提供了配套的样式、配套的 HTML 代码段，类似于 Bootstrap； 而 Mint-UI，是真正的组件库，是使用 Vue 技术封装出来的 成套的组件，可以无缝的和 VUE 项目进行集成开发；<br>因此，从体验上来说， Mint-UI 体验更好，因为这是别人帮我们开发好的现成的 Vue 组件；<br>从体验上来说， MUI 和 Bootstrap 类似；<br>理论上，任何项目都可以使用 MUI 或 Bootstrap，但是，MInt-UI 只适用于 Vue 项目；</p>
+<h2 id="mui"><a class="markdownIt-Anchor" href="#mui">#</a> MUI</h2>
+<blockquote>
+<p>注意： MUI 不同于 Mint-UI，MUI 只是开发出来的一套好用的代码片段，里面提供了配套的样式、配套的 HTML 代码段，类似于 Bootstrap； 而 Mint-UI，是真正的组件库，是使用 Vue 技术封装出来的 成套的组件，可以无缝的和 VUE 项目进行集成开发；<br>
+因此，从体验上来说， Mint-UI 体验更好，因为这是别人帮我们开发好的现成的 Vue 组件；<br>
+从体验上来说， MUI 和 Bootstrap 类似；<br>
+理论上，任何项目都可以使用 MUI 或 Bootstrap，但是，MInt-UI 只适用于 Vue 项目；</p>
 </blockquote>
-<p><strong>mui 框架：</strong>性能和体验的差距，一直是 mobile app 开发者放弃 HTML5 的首要原因。 浏览器天生的切页白屏、不忍直视的转页动画、浮动元素的抖动、无法流畅下拉刷新等问题，这些都让 HTML5 开发者倍感挫败，尤其拿到 Android 低端机运行，摔手机的心都有； 另一方面，浏览器默认控件样式又少又丑，制作一个漂亮的控件非常麻烦，也有一些制作简单的 ui 框架但性能低下。</p>
+<p>**mui 框架：** 性能和体验的差距，一直是 mobile app 开发者放弃 HTML5 的首要原因。 浏览器天生的切页白屏、不忍直视的转页动画、浮动元素的抖动、无法流畅下拉刷新等问题，这些都让 HTML5 开发者倍感挫败，尤其拿到 Android 低端机运行，摔手机的心都有； 另一方面，浏览器默认控件样式又少又丑，制作一个漂亮的控件非常麻烦，也有一些制作简单的 ui 框架但性能低下。</p>
 <p>mui 框架有效的解决了这些问题，这是一个可以方便开发出高性能 App 的框架，也是目前最接近原生 App 效果的框架。</p>
 <p><strong>注意：</strong> MUI 并不能使用 npm 去下载，需要自己手动从 github 上，下载现成的包，自己解压出来，然后手动拷贝到项目中使用；</p>
 <ol>
 <li>下载 MUI 包 从 github 上</li>
 </ol>
-<h3 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h3><p><strong>在 main.js 导入 MUI 包:</strong></p>
+<h3 id="使用"><a class="markdownIt-Anchor" href="#使用">#</a> 使用：</h3>
+<p><strong>在 main.js 导入 MUI 包:</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token string">"./lib/dist/css/mui.min.css"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p><strong>在 App.vue 中使用（例如一个 按钮）：</strong></p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mui-btn mui-btn-royal<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   Badge button <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mui-badge mui-badge-royal<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>999<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="http://static.zxinc520.com/blog/20190418/TxVONoruT7Xq.png?imageslim" alt="mark"></p>
  
       <!-- reward -->
@@ -585,7 +590,7 @@ Vue<span class="token punctuation">.</span><span class="token function">componen
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">

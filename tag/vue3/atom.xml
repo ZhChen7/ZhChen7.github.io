@@ -1,0 +1,1168 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>sunflower • Posts by &#34;vue3&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2020-09-24T13:44:38.000Z</updated>
+    <category term="blog" />
+    <category term="个人博客" />
+    <category term="rem" />
+    <category term="less" />
+    <category term="art-template" />
+    <category term="算法面试" />
+    <category term="算法" />
+    <category term="大 O？" />
+    <category term="复杂度分析" />
+    <category term="大二" />
+    <category term="数据库实训" />
+    <category term="IDE" />
+    <category term="Git" />
+    <category term="模块化" />
+    <category term="构建工具" />
+    <category term="上线和回滚" />
+    <category term="ES6 模块化语法" />
+    <category term="babel" />
+    <category term="webpack" />
+    <category term="rollup" />
+    <category term="ES6" />
+    <category term="hybrid" />
+    <category term="虚拟 DOM" />
+    <category term="知识点概述" />
+    <category term="JS" />
+    <category term="实用工具" />
+    <category term="面试全面总结" />
+    <category term="JS 三座大山" />
+    <category term="学习实训" />
+    <category term="性能优化" />
+    <category term="加载过程" />
+    <category term="promise" />
+    <category term="异步解决方案" />
+    <category term="回调地狱" />
+    <category term="React" />
+    <category term="React源码" />
+    <category term="Vue3" />
+    <category term="vue" />
+    <category term="跑马灯" />
+    <category term="父子组件间通信" />
+    <category term="路由" />
+    <category term="监听事件（keyup ，watch ，computed ）" />
+    <category term="nrm" />
+    <category term="Mint-UI" />
+    <category term="MUI" />
+    <category term="MVVM" />
+    <category term="响应式、模板解析、渲染" />
+    <category term="微信小程序" />
+    <category term="单线程" />
+    <category term="event loop" />
+    <category term="异步的 Deferred" />
+    <category term="Promise" />
+    <category term="html" />
+    <category term="hexo" />
+    <category term="redux" />
+    <category term="UTC时间问题" />
+    <category term="正则表达式" />
+    <category term="虚拟DOM" />
+    <category term="博文" />
+    <category term="React-Router" />
+    <category term="React-Hooks" />
+    <category term="DOM" />
+    <category term="BOM" />
+    <category term="事件绑定" />
+    <category term="ajax 请求" />
+    <category term="储存" />
+    <category term="进程调度" />
+    <category term="过滤器" />
+    <category term="按键修饰符" />
+    <category term="指令" />
+    <category term="生命周期" />
+    <category term="过渡效果" />
+    <category term="组件" />
+    <category term="webpack 后续问题" />
+    <category term="数组" />
+    <category term="API" />
+    <category term="跨域" />
+    <category term="动画" />
+    <category term="事件" />
+    <category term="React基础面试题-50" />
+    <category term="数组相关操作" />
+    <category term="手撕代码" />
+    <category term="牛人面试题" />
+    <entry>
+        <id>http://example.com/2020/09/24/Vue3%20%E7%BB%84%E5%90%88%E5%BC%8F%20API/</id>
+        <title>Vue3 组合式 API</title>
+        <link rel="alternate" href="http://example.com/2020/09/24/Vue3%20%E7%BB%84%E5%90%88%E5%BC%8F%20API/"/>
+        <content type="html">&lt;h1 id=&#34;基本范例&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本范例&#34;&gt;#&lt;/a&gt; 基本范例&lt;/h1&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;template&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;button @click&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;increment&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+    Count is&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; state&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;count &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; double is&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; state&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;double &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+  &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;button&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;template&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; reactive&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; computed &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;vue&#39;&lt;/span&gt;
+
+  &lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;setup&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; state &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;reactive&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        count&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+        double&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;computed&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; state&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;count &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+
+      &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;increment&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        state&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;count&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+      &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        state&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+        increment&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;vue-组合式-api&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vue-组合式-api&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://vue3js.cn/vue-composition-api/&#34;&gt;Vue 组合式 API&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id=&#34;setup&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#setup&#34;&gt;#&lt;/a&gt;  &lt;code&gt;setup&lt;/code&gt;&lt;/h2&gt;
+</content>
+        <category term="Vue3" />
+        <updated>2020-09-24T13:44:38.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2020/09/23/vue3-%E7%9A%84%E4%BC%98%E5%8A%BF/</id>
+        <title>vue3 比 vue2.x 版本的优势</title>
+        <link rel="alternate" href="http://example.com/2020/09/23/vue3-%E7%9A%84%E4%BC%98%E5%8A%BF/"/>
+        <content type="html">&lt;blockquote&gt;
+&lt;p&gt;—— 先学习 Vue2.x&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vue3.0 并不是推倒从来，很多 2.x 内容依然被保存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;—— 先学习 Typescript&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vue3.0 采用 TS 重写，必须学 TS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;一-vue30-的六大亮点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-vue30-的六大亮点&#34;&gt;#&lt;/a&gt; 一、Vue3.0 的六大亮点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Performance：&lt;strong&gt;性能比 Vue2.x 快 1.2 ～ 2 倍&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Tree shaking support：&lt;strong&gt;按需编译，体积比 Vue2.x 更小&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Composition API &lt;strong&gt;*&lt;/strong&gt;：&lt;strong&gt;组合式 API（类似 React Hooks）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Better Typescript support：&lt;strong&gt;更好的 TS 支持&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Custom Renderer API：&lt;strong&gt;暴露了自定义渲染 API&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Fragment，Teleport（Protal），Suspense：&lt;strong&gt;更先进的组件&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;二-vue30-是如何变快的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二-vue30-是如何变快的&#34;&gt;#&lt;/a&gt; 二、Vue3.0 是如何变快的&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vue3 源码编译工具：&lt;a href=&#34;https://vue-next-template-explorer.netlify.app/#%7B%22src%22%3A%22%3Cdiv%20id%3D%5C%22app%5C%22%3E%5Cn%20%20%20%20%3Ch1%3E%E6%8A%80%E6%9C%AF%E6%91%B8%E9%B1%BC%3C%2Fh1%3E%5Cn%20%20%20%20%3Cp%3E%E4%BB%8A%E5%A4%A9%E5%A4%A9%E6%B0%94%E7%9C%9F%E4%B8%8D%E9%94%99%3C%2Fp%3E%5Cn%5Cn%20%20%20%20%3Cdiv%3E%7B%7Bname%7D%7D%3C%2Fdiv%3E%5Cn%20%20%20%20%3Cdiv%20%3Aclass%3D%5C%22%7Bred%3AisRed%7D%5C%22%3E%E6%91%B8%E9%B1%BC%E7%AC%A6%3C%2Fdiv%3E%5Cn%20%20%20%20%3Cbutton%20%40click%3D%5C%22handleClick%5C%22%3E%E6%88%B3%E6%88%91%3C%2Fbutton%3E%5Cn%20%20%20%20%5Cn%20%20%20%20%5Cn%3C%2Fdiv%3E%22%2C%22ssr%22%3Afalse%2C%22options%22%3A%7B%22mode%22%3A%22module%22%2C%22prefixIdentifiers%22%3Afalse%2C%22optimizeImports%22%3Afalse%2C%22hoistStatic%22%3Afalse%2C%22cacheHandlers%22%3Afalse%2C%22scopeId%22%3Anull%2C%22ssrCssVars%22%3A%22%7B%20color%20%7D%22%2C%22bindingMetadata%22%3A%7B%22TestComponent%22%3A%22setup%22%2C%22foo%22%3A%22setup%22%2C%22bar%22%3A%22props%22%7D%2C%22optimizeBindings%22%3Afalse%7D%7D&#34;&gt;Vue3 模版编译工具&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Vue2.x 模版编译工具：&lt;a href=&#34;https://template-explorer.vuejs.org/#%3Cdiv%20id%3D%22app%22%3E%7B%7B%20msg%20%7D%7D%3C%2Fdiv%3E&#34;&gt;Vue2.x 模版编译工具&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;1-diff-方法优化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-diff-方法优化&#34;&gt;#&lt;/a&gt; 1、diff 方法优化&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Vue2 中的虚拟 DOM 是进行全亮的对比&lt;/li&gt;
+&lt;li&gt;Vue3 新增了静态标记（PatchFlag）
+&lt;ul&gt;
+&lt;li&gt;在与上次虚拟节点进行对比的时候，只对比带有 patch flag 的节点&lt;/li&gt;
+&lt;li&gt;并且可以通过 flag 的信息得知当前节点要对比的具体内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;div id&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;app&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;h1&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;技术摸鱼&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;h1&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;p&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;今天天气真不错&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;p&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;div&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;div&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;div&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; createVNode &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _createVNode&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; toDisplayString &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _toDisplayString&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; openBlock &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _openBlock&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; createBlock &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _createBlock &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue&#34;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;render&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;_ctx&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; _cache&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $props&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $setup&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $options&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;_openBlock&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;_createBlock&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;div&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; id&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;app&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;h1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;技术摸鱼&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;p&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;今天天气真不错&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;div&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;_toDisplayString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;_ctx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* TEXT */&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;div&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;red&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;_ctx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;isRed&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;摸鱼符&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* CLASS */&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;button&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; onClick&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; _ctx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;handleClick &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;戳我&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* PROPS */&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;onClick&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;2-hoiststatic-静态提升&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-hoiststatic-静态提升&#34;&gt;#&lt;/a&gt; 2、hoistStatic 静态提升&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Vue2 中无论元素是否参与更新，每次都会重新创建&lt;/li&gt;
+&lt;li&gt;Vue3 中对于不参与更新的元素，只会被创建一次，之后会在每次渲染时被不停的复用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;div id&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;app&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;h1&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;技术摸鱼&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;h1&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;p&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;今天天气真不错&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;p&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;div&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;div&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;div &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&amp;#123;red:isRed&amp;#125;&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;摸鱼符&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;div&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;button @click&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;handleClick&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;戳我&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;button&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;div&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+
+
+&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;
+
+
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; createVNode &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _createVNode&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; toDisplayString &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _toDisplayString&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; openBlock &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _openBlock&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; createBlock &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _createBlock &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue&#34;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; _hoisted_1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; id&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;app&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; _hoisted_2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/*#__PURE__*/&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;h1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;技术摸鱼&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* HOISTED */&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; _hoisted_3 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/*#__PURE__*/&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;p&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;今天天气真不错&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* HOISTED */&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;render&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;_ctx&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; _cache&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $props&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $setup&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $options&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;_openBlock&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;_createBlock&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;div&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; _hoisted_1&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+    _hoisted_2&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    _hoisted_3&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;div&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;_toDisplayString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;_ctx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* TEXT */&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;div&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;red&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;_ctx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;isRed&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;摸鱼符&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* CLASS */&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;button&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; onClick&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; _ctx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;handleClick &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;戳我&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* PROPS */&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;onClick&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;// Check the console for the AST&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;3-cachehandlers-事件侦听器缓存&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-cachehandlers-事件侦听器缓存&#34;&gt;#&lt;/a&gt; 3、cacheHandlers 事件侦听器缓存&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;默认情况下 onClick 会被视为动态绑定，所以每次都会去追踪它的变化&lt;/li&gt;
+&lt;li&gt;但是因为是同一个函数，所以没有追踪变化，直接缓存起来复用即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;div id&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;app&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;button @click&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;handleClick&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;戳我&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;button&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;div&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
+
+
+
+&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;
+
+
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; createVNode &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _createVNode&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; openBlock &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _openBlock&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; createBlock &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _createBlock &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue&#34;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;render&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;_ctx&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; _cache&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $props&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $setup&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $options&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;_openBlock&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;_createBlock&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;div&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; id&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;app&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;button&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+      onClick&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; _cache&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;_cache&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;&lt;span class=&#34;token operator&#34;&gt;...&lt;/span&gt;args&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;_ctx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;handleClick&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;...&lt;/span&gt;args&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;戳我&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;// Check the console for the AST&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;4-ssr-渲染&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-ssr-渲染&#34;&gt;#&lt;/a&gt; 4、SSR 渲染&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;当有大量静态的内容的时候，这些内容会被当作纯字符串推进一个 buffer 里面；即使存在动态绑定，会通过模版值嵌入进去，这样会比通过虚拟 dom 来渲染快上很多很多&lt;/li&gt;
+&lt;li&gt;当静态内容大到一定的量级时候，会用_createStaticVNode 方法在客户端去生成一个 static node，这些静态 node，会被直接 innerHtml，就不需要创建对象，然后根据对象渲染&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-js&#34; data-language=&#34;js&#34;&gt;&lt;code class=&#34;language-js&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  createVNode &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _createVNode&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  openBlock &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _openBlock&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  createBlock &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _createBlock&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;render&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;_ctx&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; _cache&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $props&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $setup&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; $options&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;_openBlock&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;_createBlock&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;div&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; id&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;app&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;
+      &lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;h1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;技术摸鱼&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;token function&#34;&gt;_createVNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;p&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;今天天气真不错&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token constant&#34;&gt;SSR&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;SSR&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; mergeProps &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _mergeProps &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  ssrResolveCssVars &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _ssrResolveCssVars&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  ssrRenderAttrs &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; _ssrRenderAttrs&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;@vue/server-renderer&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;ssrRender&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;
+  &lt;span class=&#34;token parameter&#34;&gt;_ctx&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  _push&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  _parent&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  _attrs&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  $props&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  $setup&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  $data&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+  $options&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; _cssVars &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;_ssrResolveCssVars&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; color&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; _ctx&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;color &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;token function&#34;&gt;_push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;
+    &lt;span class=&#34;token template-string&#34;&gt;&lt;span class=&#34;token template-punctuation string&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&amp;lt;div&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token interpolation-punctuation punctuation&#34;&gt;$&amp;#123;&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;_ssrRenderAttrs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;
+      &lt;span class=&#34;token function&#34;&gt;_mergeProps&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; id&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;app&#34;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; _attrs&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; _cssVars&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token interpolation-punctuation punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&gt;&amp;lt;h1&gt;技术摸鱼&amp;lt;/h1&gt;&amp;lt;p&gt;今天天气真不错&amp;lt;/p&gt;&amp;lt;/div&gt;&lt;/span&gt;&lt;span class=&#34;token template-punctuation string&#34;&gt;`&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;// Check the console for the AST&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="Vue3" />
+        <updated>2020-09-23T14:29:51.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2020/09/22/Vue3+%20&amp;%20Vue-CLI3+%20%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81%E5%9C%88%E8%B5%84%E8%AE%AF/</id>
+        <title>Vue3+ Vue-CLI3+ 开发生态圈资讯</title>
+        <link rel="alternate" href="http://example.com/2020/09/22/Vue3+%20&amp;%20Vue-CLI3+%20%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81%E5%9C%88%E8%B5%84%E8%AE%AF/"/>
+        <content type="html">&lt;p&gt;🚀 欢迎 &lt;code&gt;Star&lt;/code&gt; ，后续会不断更新。&lt;br&gt;
+🇨🇳 最后更新日期：2️⃣0️⃣2️⃣0️⃣ &lt;code&gt;/&lt;/code&gt; 0️⃣9️⃣ &lt;code&gt;/&lt;/code&gt; 1️⃣9️⃣&lt;/p&gt;
+&lt;p&gt;【2020】 ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡--------------- 【2021】&lt;/p&gt;
+&lt;p&gt;Twitter vue3: &lt;strong&gt;vue 3 will be available by the end of Q2.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;9 月 18 日星期五，Vue 的作者尤雨溪发表主题演讲，正式发布 Vue3.0 并回应一些大家关切的问题。表示不建议大家立刻升级到 Vue3.0 版本，之前项目中某些依赖项可能还不支持新版，等社区完善后再进行迁移也不迟。&lt;/p&gt;
+&lt;p&gt;Vue3.0 正式发布，尤雨溪在线全球发布会：【&lt;a href=&#34;https://mp.weixin.qq.com/s/ZECNJYe1_zNwdX9tUWnMFA?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;戳这里&lt;/a&gt;】&lt;/p&gt;
+&lt;p&gt;想了解更多有关 Vue 3.0 的信息，请大胆访问：&lt;a href=&#34;https://v3.vuejs.org/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;v3.vuejs.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;除了单独 Vue3 资讯，欢迎查看更多 vue.js 资讯：【&lt;a href=&#34;https://github.com/itemsets/vue2&#34;&gt;【🔥Vue.js 资讯 📚】目前 web 前端开发非常火爆的框架；定时更新，欢迎 Star 一下。&lt;/a&gt;】&lt;/p&gt;
+&lt;h2 id=&#34;目录&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#目录&#34;&gt;#&lt;/a&gt; 目录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News#-%E4%B8%8B%E5%8D%8A%E5%B9%B4%E6%92%B8-vue3-%E7%9A%84%E5%A7%BF%E5%8A%BF-&#34;&gt;下半年撸 vue3 的霸气姿势&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News#Vue3-CheatSheet&#34;&gt;Vue 3 Cheat Sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News#%E5%86%8D%E8%B0%88vue3&#34;&gt;再谈 vue3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News#%E5%B0%A4%E5%A4%A7%E6%8E%A8%E5%87%BAvue3-beta%E4%B9%8B%E5%90%8E&#34;&gt;尤大推出 &lt;code&gt;vue3 beta&lt;/code&gt;  之后&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News#%E8%BF%8E%E6%8E%A5Vue3.0%E7%B3%BB%E5%88%97&#34;&gt;迎接 Vue3.0 系列&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News#%E6%9C%80%E6%96%B0%E8%B5%84%E8%AE%AF-%E7%BB%A7%E7%BB%AD%E5%89%8D%E8%BF%9B&#34;&gt;最新资讯 - 继续前进 ╰(&lt;em&gt;°▽°&lt;/em&gt;)╯&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News#%E8%8B%B1%E6%96%87%E8%B5%84%E6%96%99&#34;&gt;英文资料&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News#2019%E5%B9%B4%E4%B8%AD%E6%97%AC&#34;&gt;2019 年中旬&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News#2019%E5%B9%B4%E4%B8%8A%E6%97%AC&#34;&gt;2019 年上旬&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News#2018%E5%B9%B4%E9%A2%84%E5%91%8A&#34;&gt;2018 年预告&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;🐣 关于旧版本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Vue CLI 的包名称由 vue-cli 改成了 @vue/cli。 如果你已经全局安装了旧版本的 vue-cli (1.x 或 2.x)，你需要先通过 npm uninstall vue-cli -g 或 yarn global remove vue-cli 卸载它。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;🐥Node 版本要求&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Vue CLI 需要 Node.js 8.9 或更高版本 (推荐 8.11.0+)。你可以使用 nvm 或 nvm-windows 在同一台电脑中管理多个 Node 版本。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;🐓Vue 3.0 源代码&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;当大多数国人还在庆祝国庆节的时候，尤雨溪大大在昨天凌晨发布了 Vue 3.0 源代码，源码地址：&lt;a href=&#34;https://github.com/vuejs/vue-next&#34;&gt;https://github.com/vuejs/vue-next&lt;/a&gt; 。虽然目前还 处于 Pre-Alpha 版本，但是可以预见后面的 Alpha、Beta 等版本应该不会太遥远。&lt;br&gt;
+之前，就有预言，除了性能优化、脚手架和新功能外，TypeScript 绝对是一个重点，因此，在 Vue 3.0 源代码版本中，98% 代码由 Typescript 编写，相信后面会是 100%。&lt;br&gt;
+通过本次发布的源代码可以了解到针对 Vue 3 计划并已实现的主要架构改进和新功能。&lt;br&gt;
+Vue 3 中最主要的新特性：组合式 API，已经可以借助 &lt;a href=&#34;https://github.com/vuejs/composition-api&#34;&gt;https://github.com/vuejs/composition-api&lt;/a&gt; （在 Vue 2 项目中作为插件使用）体验到。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://avatars2.githubusercontent.com/u/499550?s=40&amp;amp;v=4&#34;&gt;&lt;img src=&#34;https://avatars2.githubusercontent.com/u/499550?s=40&amp;amp;v=4&#34; alt=&#34;yyx990803&#34;&gt;&lt;/a&gt; yyx990803&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;v3.0.0 One Piece&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://user-images.githubusercontent.com/499550/93624428-53932780-f9ae-11ea-8d16-af949e16a09f.png&#34;&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/499550/93624428-53932780-f9ae-11ea-8d16-af949e16a09f.png&#34; alt=&#34;v3.0.0 One Piece&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Today we are proud to announce the official release of Vue.js 3.0 “One Piece”. This new major version of the framework provides improved performance, smaller bundle sizes, better TypeScript integration, new APIs for tackling large scale use cases, and a solid foundation for long-term future iterations of the framework.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News/issues/21&#34;&gt;One Piece. Vuejs 3.0 正式版发布！代号：海贼王&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;进入了 rc 版本阶段：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.0.0-rc.12 (2020-09-16)&lt;/strong&gt;&lt;br&gt;
+…&lt;br&gt;
+&lt;strong&gt;3.0.0-rc.1 (2020-07-17)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;– Alpha (α)：预览版，或者叫内部测试版；一般不向外部发布，会有很多 Bug；一般只有测试人员使用。&lt;br&gt;
+– Beta (β)：测试版，或者叫公开测试版；这个阶段的版本会一直加入新的功能；在 Alpha 版之后推出。&lt;br&gt;
+– RC (Release Candidate)：最终测试版本；可能成为最终产品的候选版本，如果未出现问题则可发布成为正式版本。&lt;/p&gt;
+&lt;p&gt;多数开源软件会推出两个 RC 版本，最后的 RC2 则成为正式版本。&lt;br&gt;
+我们的 vue3 就不一样，慢慢来，好东西，就要慢慢品！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.0.0-beta.20 (2020-07-08)&lt;/strong&gt;&lt;br&gt;
+@ github-actions released this 5 days ago · 37 commits to master since this release Please refer to &lt;a href=&#34;https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md&#34;&gt;CHANGELOG.md&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;…&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;v3.0.0-beta.2&lt;/strong&gt;&lt;br&gt;
+released this 6 days ago · 29 commits to master since this release&lt;br&gt;
+release: v3.0.0-beta.2&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;v3.0.0-beta.1&lt;/strong&gt;&lt;br&gt;
+released this 7 days ago · 40 commits to master since this release&lt;br&gt;
+release: v3.0.0-beta.1&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;🔥🐔2020 前端面试秘籍&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News/issues/9?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;【吐血整理清单一】前端面试全攻略，为您保驾护航，金三银四&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/vue3/vue3-News/issues/10?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;【吐血整理清单二】前端面试全攻略，为您保驾护航，金三银四&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/vue3/vue3-News/issues/11?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;【吐血整理清单三】前端面试全攻略，为您保驾护航，金三银四&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;秘籍在手，天下我有； 只要你想进，那么世界就是你的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;🐔 前端整理之道&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News/issues/8?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;【整理】前端优化得有个好手段，比如看这个清单 🍑🍒🍓🍆🌽&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/vue3/vue3-News/issues/7?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;【整理】前端学习笔记总结清单，应有尽有 🍇🍈🍉🍊🍋&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;🦃 关于 TypeScript&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News/issues/6?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;【2020-Q1-News】TypeScript 新鲜一波流，自己品尝？&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/vue3/vue3-News/issues/4?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;【最新】TypeScript 梳理知识点列表，可否一战？&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/vue3/vue3-News/issues/3?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;【必会】都已经 9102 年底了，你必须会 TypeScript。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;为什么要学习它？&lt;br&gt;
+因为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;按需输出 JavaScript 版本&lt;/li&gt;
+&lt;li&gt;代码标准化利于团队开发&lt;/li&gt;
+&lt;li&gt;主流框架及最新特性的支持&lt;/li&gt;
+&lt;li&gt;便于重构和主流 IDE 支持&lt;/li&gt;
+&lt;li&gt;更多友好特性和检测&lt;br&gt;
+…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;哈哈哈，并不是，是因为都已经 2020 了，大公司和你们都在用。&lt;/p&gt;
+&lt;h2 id=&#34;vue3-cheatsheet&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vue3-cheatsheet&#34;&gt;#&lt;/a&gt; Vue3-CheatSheet&lt;/h2&gt;
+&lt;p&gt;由 Vue Mastery 网站归纳的 Vue 3 Cheat Sheet， 直观地概况了其主要特性。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Vue3 Cheat Sheet&lt;/th&gt;
+&lt;th&gt;Vue3 Cheat Sheet&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News/blob/master/asset/Vue3-CheatSheet02.jpeg&#34;&gt;&lt;img src=&#34;https://github.com/vue3/vue3-News/raw/master/asset/Vue3-CheatSheet02.jpeg&#34; alt=&#34;img&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News/blob/master/asset/Vue3-CheatSheet01.jpeg&#34;&gt;&lt;img src=&#34;https://github.com/vue3/vue3-News/raw/master/asset/Vue3-CheatSheet01.jpeg&#34; alt=&#34;img&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;vueuse&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vueuse&#34;&gt;#&lt;/a&gt; vueuse&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/antfu/vueuse?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;antfu/vueuse&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;like React hooks.&lt;br&gt;
+Collection of essential Vue Composition API utils works for Vue 2.x and 3.x &lt;a href=&#34;https://vueuse.js.org/&#34;&gt;https://vueuse.js.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Collection of essential Vue Composition API (inspired by react-use)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;🚀 Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⚡ 0 dependencies: No worry about your bundle size&lt;/li&gt;
+&lt;li&gt;🌴 Fully tree shakable: Only take what you want&lt;/li&gt;
+&lt;li&gt;🦋 Type Strong: Written in Typescript&lt;/li&gt;
+&lt;li&gt;🕶 Seamless migration: Works for both Vue 3 and 2&lt;/li&gt;
+&lt;li&gt;🌎 Browser compatible: Use it though CDN&lt;/li&gt;
+&lt;li&gt;🎪 Interactive docs &amp;amp; demos: Check out the Storybook!&lt;/li&gt;
+&lt;li&gt;🔌 Optional Add-ons: Firebase, vue-i18n, etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News/raw/master/asset/pretty-cat.png&#34;&gt;&lt;img src=&#34;https://github.com/vue3/vue3-News/raw/master/asset/pretty-cat.png&#34; alt=&#34;img&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;下半年撸-vue3-的姿势&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#下半年撸-vue3-的姿势&#34;&gt;#&lt;/a&gt; 💃🏻 下半年撸 vue3 的姿势 💃🏻&lt;/h2&gt;
+&lt;p&gt;🐯 🦁 🐮 🐷 🐹 🦊&lt;/p&gt;
+&lt;p&gt;霸气姿势观望  &lt;code&gt;vue3&lt;/code&gt;  核心技术 ing&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Proxy：不只是解决了 defineProperty 的局限性。&lt;/li&gt;
+&lt;li&gt;Performance：性能更比 Vue 2.0 强。&lt;/li&gt;
+&lt;li&gt;Tree shaking support：可以将无用模块 “剪辑”，仅打包需要的。&lt;/li&gt;
+&lt;li&gt;Composition API：组合 API。&lt;/li&gt;
+&lt;li&gt;Fragment, Teleport, Suspense：“碎片”，Teleport 即 Protal 传送门，“悬念”。&lt;/li&gt;
+&lt;li&gt;Better TypeScript support：更优秀的 Ts 支持。&lt;/li&gt;
+&lt;li&gt;Custom Renderer API：暴露了自定义渲染 API。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;TODOLIST：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 Docs &amp;amp; Migration Guides&lt;/li&gt;
+&lt;li&gt;2 Router&lt;/li&gt;
+&lt;li&gt;3 Vuex&lt;/li&gt;
+&lt;li&gt;4 CLI&lt;/li&gt;
+&lt;li&gt;5 新工具：vite（法语 “快”）&lt;/li&gt;
+&lt;li&gt;6 vue-test-utils&lt;/li&gt;
+&lt;li&gt;7 DevTools&lt;/li&gt;
+&lt;li&gt;8 IDE Support (Vetur)&lt;/li&gt;
+&lt;li&gt;9 Nuxt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;介绍 Vue.js 以及 Vue-next 源码分析文章，希望通过学习 Vue.js 源码获得更好的知识和收获。&lt;br&gt;
+&lt;a href=&#34;https://github.com/vue3/vue3-News/issues/16?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;【这是入口】你要找的 vue 源码 全宇宙的都在这！&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/vue3/vue3-News/master/asset/one-piece.png?sanitize=true&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/vue3/vue3-News/master/asset/one-piece.png?sanitize=true&#34; alt=&#34;v3.0.0 One Piece&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;「我是要成为海贼王的男人」&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV14k4y117LL/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;【李南江】Vue3.0 正式版教程 2020 年 9 月 19 号全网首发 - Vue3 One Piece 持续更新中…&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/qq_30640671/article/details/108679708?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vuejs 3 Release：One Piece. Vuejs 3.0 正式版发布！代号：海贼王&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_36065510/article/details/108679867?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 正式发布，本次发布所有总结，一起看看！&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;vue =&amp;gt; Q3 2020&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3.0: Release Management&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Regression testing for 3.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Automated nightly release&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Formalize release lifecycle&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;setup CLA process&lt;/p&gt;
+&lt;p&gt;3.0: IE11 compat build&lt;br&gt;
+3.0 Official Release&lt;/p&gt;
+&lt;p&gt;2.7&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Backport compatible 3.x features to 2.x&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Deprecation warnings for 3.x changes&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;This will be the last minor release for 2.x and be offered as LTS (long-term support) for 18 months. It will continue to receive critical security updates even after the LTS period.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1rC4y187Vw?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3 Deep Dive with Evan You 【中英字幕】- Vue Mastery&lt;/a&gt;&lt;br&gt;
+ 课程中提到的预备课程是&lt;a href=&#34;https://www.bilibili.com/video/BV1SZ4y1x7a9?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;《Vue3 响应式原理》&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1qC4y18721?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 之父尤雨溪深度解读 Vue3.0 的开发思路（上）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1yK4y1s7Xh?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 之父尤雨溪深度解读 Vue3.0 的开发思路（中）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1ai4y137pg?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 之父尤雨溪深度解读 Vue3.0 的开发思路（下）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;里面评论区和弹幕有在调侃尤大大的：&lt;/p&gt;
+&lt;p&gt;=》尤雨溪就是个写前端的，懂什么 vue！&lt;br&gt;
+=》你一点都不懂 vue&lt;br&gt;
+=》他懂个锤子的 vue&lt;br&gt;
+=》他根本不懂 vue&lt;/p&gt;
+&lt;p&gt;=&amp;gt; 兄弟姐妹们，你们的饿了么升级为 vue3 了，在紧急构建中，很多大佬都在。&lt;br&gt;
+【&lt;a href=&#34;https://github.com/element-plus/element-plus/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;🎉 A Vue.js 3.0 UI Library element-plus.org/&lt;/a&gt;】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kkbjs/element3?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;A Vue.js 3.0 UI Toolkit for Web.（WIP）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://my.oschina.net/u/4326664/blog/4557649?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue 3 组件库（基于 element-ui 修改）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/blacksonic/awesome-vue-3?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;blacksonic/awesome-vue-3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/komavideo/LearnVue3?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3.0 初学入门使用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000024479742?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 源码入门，实现简易版 reactivity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/guoqiankunmiss/article/details/108537593?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.x API config&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/av499614417?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 最美餐厅点餐系统 APP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6870627817009184776?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 设计背后的思考&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6871669209445695495?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;用 Vue3 写一个 swipe-cell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6872235455824265229?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;尝鲜 vue3.0-tyepscript 开发组件 (3)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6867515263672123399?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;首个 Vue 3 组件库发布&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.vuemastery.com/courses-path/vue3?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Learn the fundamentals of Vue 3 in this course that starts with the very basics.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/antfu/vue-demi?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Creates Universal Library for Vue 2 &amp;amp; 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/blacksonic/vue-3-playground?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3 Playground packed with all the new features&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/blacksonic/awesome-vue-3?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;A curated list of awesome things related to Vue 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6865842981618843656?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 项目–让我们更快开发 vue（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6867125503007375373?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 项目–让我们更快开发 vue（二）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/212210282?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 面向对象编程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/418076382?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 reactivity 这个地方是不是循环引用了？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/150732926?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 Compiler 优化细节，如何手写高性能渲染函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/781e5c49bf23?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 列表渲染&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/054c4d2e699b?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 Event 事件处理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/c68d65a8f973?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vite+vue3.x&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/2ee1ae40cc1b?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;期待已久的鹅厂面试题来咯，Vue3 实现递归菜单组件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/angel648/p/13582226.html?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;快速了解 vue 3.x&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/origin-zy/p/13584519.html?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;基于 Vue3+ElementUI-BootStrap4_前端实战&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/dudududadada/p/13608208.html?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 项目打包 app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/lxz-blogs/p/13595094.html?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3-reactive (响应式对象) 和 toRefs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&#34;https://juejin.im/post/6865863765863677960?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;译] Vue 3 迁移策略 —— 过滤器（移除）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6867114456762679309?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 全家桶最全入门指南 - 快速搭建 (1/4)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6867123074148335624?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 全家桶最全入门指南 - vue3.0 新特性 (2/4)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6867114456762679309?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 全家桶最全入门指南 - vue-router@4.x 和 vuex@4.x (3/4)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6867123749565497358?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 全家桶最全入门指南 - 3.x 跟 2.x 的其他差异 (4/4)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;从 Vue 2 到 Vue 3 的迁移指南&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/6859427370080665613?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;从 Vue 2 到 Vue 3 的迁移指南之破坏性特性（一、全局 API）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/6860178370928312328?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;从 Vue 2 到 Vue 3 的迁移指南之破坏性特性（二、全局 API 的 tree-shaking）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/6860522009881739271?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;从 Vue 2 到 Vue 3 的迁移指南之破坏性特性（三、v-model）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/6861104265419571207?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;从 Vue 2 到 Vue 3 的迁移指南之破坏性特性（四、渲染函数 API）&lt;/a&gt;&lt;br&gt;
+🐬🐘🦒🐏🦥🦍&lt;br&gt;
+&lt;a href=&#34;https://juejin.im/user/1195873128420968?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;翻译官网文档列表如下:&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vue3 指南 —01 安装&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vue3 指南 —02 介绍&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vue3 指南 - 03 应用实例&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vue3 指南 - 04 Template Syntax template 语法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vue3 指南 —05 Computed 属性 (property) 和侦听器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vue3 指南 - 06 Class and Style Bindings 类名和样式值绑定&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vue3 指南 - 07 Conditional Rendering 条件渲染&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vue3 指南 - 08 List Rendering 列表渲染&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://vue3js.cn/vue-composition/&#34;&gt;Vue 组合式 API&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/chenxeed/be-prepared-to-migrate-your-vue-app-to-vue-3-eom?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Be prepared to migrate your Vue app to Vue 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/pikax/how-to-test-your-library-for-vue-2-and-vue-next-42ao?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;How to test your library for Vue 2.x and Vue 3.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/blacksonic/awesome-vue-3?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;GitHub - blacksonic/awesome-vue-3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/nkoehring/vue3-typescript-app-starter?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;GitHub - nkoehring/vue3-typescript-app-starter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vuejsdevelopers.com/2020/07/13/vue-async-components-suspense/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3 UX Wins with Async Components &amp;amp; Suspense&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@martinmalinda/handling-asynchrony-in-vue-3-composition-api-part-1-managing-async-state-e993842ebf8f?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Handling Asynchrony in Vue 3 / Composition API — Part 1: Managing Async state&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.logrocket.com/build-better-higher-order-components-with-vue-3/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Build better higher-order components with Vue 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/summer_zhh/article/details/108080930?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 中的性能优化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/maqingyuan/p/13523757.html?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 + Element ui 后台管理系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yisu.com/zixun/159186.html?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 数据响应式原理详解&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.w3cschool.cn/article/87ff96bda80956?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;学习 Vue3.0，你需要先了解一下 Proxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.w3cschool.cn/article/9bcaca84c6ee7f?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;学习 Vue3.0，先从搭建环境开始&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hkc452/slamdunk-the-vue3?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 源码全面解读&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.codenong.com/s1190000023669309/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;浅谈 Vue3 的 watchEffect 用途&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vuetifyjs/vuetify/tree/next?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vuetify 正在开发的 v3 分支，ts + vue3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/qq_31126175/article/details/108106717?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 源码学习 ——computed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/qq_31126175/article/details/108007446?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 源码学习 —— 响应式 reactive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/one-pupil/study/tree/master/vue_3.x?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3.x 组件式 API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000023586788?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 + Vite 使用 Bootstrap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000023594560?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 模板编译原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000023589518?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;VUE3 来了，你用了 NestJS 了吗？（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000023699377?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;程序员为什么要学习源码 | Vue3 源码系列开篇词&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[Vue3 + TS + Egg 重构自己的小项目&lt;a href=&#34;https://juejin.im/post/6862582779419459598?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;总结]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6860290630435012621?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3+Ts 可视化开发的研究，实战拖拽基础，组件动态生成，远程加载组件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6859541760797442062?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 变动简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[使用 Vue3 构建更好的高阶组件&lt;a href=&#34;https://juejin.im/post/6859571758362525704?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;译]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6864396298394189832?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 响应式原理剖析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6862560722531352583?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;进阶高级前端，这 9 种 Vue 技术你掌握了吗？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.e-learn.cn/topic/3777376?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 教程，抢先学习&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/416652570?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 composition-api 有哪些劣势？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6858558735695937544?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 文档【Vue2 迁移 Vue3】&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6859271079764951047?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3.x reactive、effect、computed、watch 依赖关系及实现原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/168589606?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 最全知识点（基础到进阶，覆盖 vue3.0，欢迎补充讨论）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/170573874?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 浪潮下，没有一个平庸的程序员是无辜的，此刻，你需要把握这些？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/170623237?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 + router + tsx + vite 试用报告&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wuqiang.blog.csdn.net/article/details/107871795?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;学习 vue3 系列 watch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/gufudhn/article/details/107938423?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;使用 Vue3 构建更好的高阶组件译&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/l_ppp/article/details/107820234?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;紧跟尤大的脚步提前体验 Vue3 新特性，你不会还没了解过 Vue3 吧&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/NES_8rV5DM5eqHROxJUmpA?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;使用 Vue 3.0，你可能不再需要 Vuex 了&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_42281031/article/details/107824088?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;使用 vite 搭建 Vue3 项目&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/wangjikuen/article/details/107789109?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 相对于 2 系列的升级（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/qq_40340478/article/details/107902452?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 为何放弃 defineProperty，使用 Proxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/viniciuskneves/go-async-in-vue-3-with-suspense-4860?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Go async in Vue 3 with Suspense&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/pikax/how-to-test-your-library-for-vue-2-and-vue-next-42ao?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;How to test your library for vue 2 and vue-next&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/shawnwildermuth/a-month-with-vue-3-51p6?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;A Month with Vue 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/nonso/shared-state-management-with-vue-composition-api-2938?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Shared State Management with Vue Composition Api&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/koehr/a-store-implementation-from-scratch-using-vue3-s-composition-api-3p16?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;A store implementation from scratch using Vue3’s composition API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/aelbore/headless-testing-with-vite-vue-test-utils-3jd1?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Headless Testing with Vite + Vue-Test-Utils&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/vuetraining/vuejs-quick-tip-vue-router-next-in-the-composition-api-1i0l?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;VueJS Quick Tip: Vue-router-next in the Composition API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/chenxeed/be-prepared-to-migrate-your-vue-app-to-vue-3-eom?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Be prepared to migrate your Vue app to Vue 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/jfet97/do-vue-3-refs-admit-a-monad-instance-5fan?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Do Vue 3 refs admit a monad instance?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/vuelancer/vite-no-bundle-setup-for-vuejs-react-and-preact-3bo3?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vite - No Bundle Setup for Vuejs, React and Preact&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/wangwei0514/articles/vue_create.html?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3.0 搭建教程 (ui 界面创建项目，帮你快速搭建所需模块，非常 nice)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/sorrowrain/p/13443641.html?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;大前端：前端全栈加强版！前端全栈 + 全周期 + 多端 (升级 Vue3.0) 完整版&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ershicimi.com/p/a0f8308d8b0fb2783dbdceea9e9a46d4?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;官方给出的 Vue3 性能优化数据，其实很保守？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/HcySunYang/vue-next-jsx?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;A babel plugin that provides jsx syntax for vue3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hugheschoi/web-/blob/f4a1afbde36b94937b4871309e903b7f7b857abc/%E8%BF%9B%E9%98%B6%E6%8C%87%E5%8D%97.md?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;高级前端开发成长路线总结 - 进阶指南&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sl1673495/blogs?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;sl1673495 前端技术博客，不定时更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/NervJS/taro-rfcs/blob/35b0709660f08000fd18083ab44bc0c947e412f0/rfcs/0001-vue-3-support.md?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Taro 中实现 Vue 3 的支持&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/cuixiaorui/vue3-think?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3-think 记录学习思考 vue3 的所有&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/roberto-butti/vue3-demo-rollthedice?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 Demo: Roll the dice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gangking/PersonalBlog/tree/b03cfe85cf034068074e3ccb0cce590f1b091b71/docs/vue?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3.0 实战喵喵电影&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://hcysun.me/vue-design/zh/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue-design 渲染器 - 江山父老能容我 不使人间造孽钱&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vuejs/vue/projects/6?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 Roadmap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000023465134?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 响应式原理 + 手写 reactive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000023462922?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3 到底有什么不同：v-model 升级了&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000023462887?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3 到底有什么不同：全局 API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6855129007412346888?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue2.x 与 Vue3 响应式实现核心代码对比&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6855517117778198542?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;深入 TypeScript 中的子类型、逆变、协变，进阶 Vue3 源码前必须搞懂的。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6856718746694713352?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;【译】为什么不需要在 Vue3 中使用 Vuex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6856950924502532104?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 源码解析之组件渲染，vnode 到真实 DOM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6856011196224126989?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;一文看懂 Vue 3 到底有什么不同&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/6856661502053744654?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 响应式原理&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🚴🏻 🚴🏻‍♂️ 🚴🏻‍♀️ 🚵🏻 🚵🏻‍♂️ 🚵🏻‍♀️&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/RBL3/vue3-demo&#34;&gt;vue3.0 Composition API 入门教程&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;vue3.0 Composition API 上手初体验 构建基本项目开发环境&lt;br&gt;
+ vue3.0 Composition API 上手初体验 构建 vue 基础代码&lt;br&gt;
+ vue3.0 Composition API 上手初体验 使用 vue-router 构建多页面应用&lt;br&gt;
+ vue3.0 Composition API 上手初体验 神奇的 setup 函数 (一) 响应数据的绑定&lt;br&gt;
+ vue3.0 Composition API 上手初体验 神奇的 setup 函数 (二) 响应对象数据的绑定&lt;br&gt;
+ vue3.0 Composition API 上手初体验 神奇的 setup 函数 (三) 生命周期函数&lt;br&gt;
+ vue3.0 Composition API 上手初体验 神奇的 setup 函数 (四) 计算属性 computed&lt;br&gt;
+vue3.0 Composition API 上手初体验 普通组件的开发与使用&lt;br&gt;
+ vue3.0 Composition API 上手初体验 vue 组件的具名插槽 slot 的变化&lt;br&gt;
+ vue3.0 Composition API 上手初体验 函数组件的开发与使用&lt;br&gt;
+ vue3.0 Composition API 上手初体验 用路由循环，做个导航菜单&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://gitee.com/kennana/vue_next_learning/tree/master?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;李金文 /vue-next 学习&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;vue-next 贡献指南（谷歌翻译版）&lt;br&gt;
+《Vue3.0 抢先学》系列之：网友们都惊呆了！&lt;br&gt;
+《Vue3.0 抢先学》系列之：一个简单的例子&lt;br&gt;
+《Vue3.0 抢先学》系列之：使用 Composition API&lt;br&gt;
+《Vue3.0 抢先学》系列之：响应式之 Ref vs. Reactive&lt;br&gt;
+《Vue3.0 抢先学》系列之：使用 render 函数&lt;br&gt;
+《Vue3.0 抢先学》vue-next 学习总结&lt;br&gt;
+《Vue3.0 抢先学》系列之：组件属性 Props&lt;br&gt;
+《Vue3.0 抢先学》系列之：组件生命周期&lt;br&gt;
+《Vue3.0 抢先学》系列之：更多响应式 API 示例（watch,computed 的变种）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/407326156/answer/1342974146?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;如果 ElementUI 不维护了，也不再支持 Vue 3 了我们该怎么办呢？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5f18f5ebf265da22e27a9a87?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.x 深入浅出系列（连载三）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5f1941cb5188252e685d492f?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;基于 Vue3.0 开发知乎日报实战&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/161308974?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 全家桶 + Vite + TS + TSX 尝鲜，先人一步！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5f1969705188257109551d8a?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;也许是最清楚的 Vue3.x Reactive 响应式原理讲解&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5f1805e55188252e974f0be9?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3.0 初步使用和原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5f16d75de51d4534c14dc768?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;千字文看 Vue3.0 变化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5f166297f265da23020a9ca5?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 响应式数据最全最细致解析，vue3 源码解析持续更新中&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5f16540de51d4534c6543c35?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;除了 composition API，vue3.0 文档又带来了什么新东西？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5f1650ae5188252e884e8ed0?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;从 Vue 源码中学到的 28 个编程好习惯&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.tencent.com/developer/article/1603056?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 Composition API 教程及示例&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.javascriptcn.com/read-e-commerce-mall-project-imitating-jingdong-taobao-based-on-vue3-0.1-beta.html?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;基于 vue3.0.1 beta 搭建仿京东淘宝的电商商城项目！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.javascriptcn.com/read-detailed-analysis-of-optimization-details-of-vue3-diff-algorithm-in-live-broadcast.html?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;细致分析，尤雨溪直播中提到 vue3.0 diff 算法优化细节&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/e1IVKZ5FF80yGTN8yecfBg?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;顺藤摸瓜：用单元测试读懂 Vue 3 watch 函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ef8acb4f265da23004b0a8e?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;electron-vue 开发笔记（3）多窗口多页面入口配置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5efc419af265da22fa615dff?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;基于项目实战阐述 vue3.0 新型状态管理和逻辑复用方式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000023074260?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 源码逐行解析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/woniuppp/vue3/reactivity?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 生态技术内幕&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/wuhaosky/vue3/vue-reactivity#galNADP9?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 响应式系统技术原理和 Vue3 响应式系统的优点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000023009604?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 之 —— 和 Vite 不得不说的事&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/148937064?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 的 Proxy 能做到哪些精确的拦截操作？原理揭秘&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ee9847ce51d45789f23fdb0?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;顺藤摸瓜：用单元测试读懂 vue3 watch 函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ef6ed175188252e8272bbbf?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;学习一波 Vue3 新特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ef6c527e51d45347c1b66c3?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;用 Vue.js 3 Composition API 创建 i18n 插件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ee7705cf265da771169beba?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3.0 初探 – 组合式 API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI0MDIwNTQ1Mg==&amp;amp;mid=2676493889&amp;amp;idx=1&amp;amp;sn=bf85d210efffb7952d0753bd9cd4d6e8?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 技巧 | 在 Vue3 中使元素在滚动视图时淡入&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eec7f416fb9a0585663f9a5?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue1.x 2.x 3.x 的响应式实现&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/146097763?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;深入理解 Vue3 Reactivity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eecdd8a6fb9a058b51e63d4?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3.x 项目环境搭建&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eedd9776fb9a058b10aa8af?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;好消息，Vue3 官方文档出中文版的啦&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/mnsI8MxBmhomttV0UXWSyg?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;深入理解 Vue3 Reactivity API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.maiyewang.com/archives/97732?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue 3.x 如何高效学成？本文详解&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&#34;https://juejin.im/post/5ee11db86fb9a047f338cf48?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue 源码 03] watch 侦听属性 – 初始化和更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI0MDIwNTQ1Mg==&amp;amp;mid=2676493889&amp;amp;idx=1&amp;amp;sn=bf85d210efffb7952d0753bd9cd4d6e8?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 技巧 | 在 Vue3 中使元素在滚动视图时淡入&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/146097763?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 Reactivity API 基础&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022871354?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3 响应式原理及实现&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5edb93caf265da771526eeda?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3 响应式系统流程分析与实现&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://increment.com/frontend/making-vue-3/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;The process: Making Vue 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.maiyewang.com/archives/96583?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3.0 beta 已出，来快速实践一下吧&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/csdnsevenn/article/details/106512677?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;尤雨溪：重头来过的 Vue 3 带来了什么？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ecce0f96fb9a047d1126978?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3.0 创建项目及 API 讲解（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI0MDIwNTQ1Mg==&amp;amp;mid=2676493487&amp;amp;idx=1&amp;amp;sn=039828f234eca95a689a12d03e0f4777?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3 教程（适用于 Vue 2 用户）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/wuhuacong/p/12986166.html?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;循序渐进 VUE+Element 前端应用开发 (4）— 获取后端数据及产品信息页面的处理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022781069?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;「中文翻译」Vue3 的诞生之路&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI2NTk2NzUxNg==&amp;amp;mid=2247486033&amp;amp;idx=1&amp;amp;sn=383bb32d6162a7f794950dfc95c0b83e?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;1.1 万字从零解读 Vue3.0 源码响应式系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.eventbrite.com/e/vue-global-meetup-tickets-101090117262?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue Global Meetup, Tue, Apr 14, 2020 at 5:00 PM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vuejs/rfcs/pull/148?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;New Async Component API by yyx990803 · vuejs/rfcs · Vue 3.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://css-tricks.com/how-the-vue-composition-api-replaces-vue-mixins/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;How the Vue Composition API Replaces Vue Mixins – Anthony Gore – CSS-Tricks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vuejs/vue-class-component/issues/406?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3.0 Changes for @Component decorator and Vue base class · vuejs/vue-class-component&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vuejs/composition-api/releases/tag/v0.5.0?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Release v0.5.0 · vuejs/composition-api · GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.vuemastery.com/conferences/vueconf-us-2020/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;VueConf US 2020 – Vue Mastery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue.js Amsterdam 2020 - YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/fdietz/vue-js-headless-component-10ag?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue.js Headless Component - Frederik Dietz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/fdietz/vue-js-functional-components-2495?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue.js Functional Components - Frederik Dietz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://vueschool.io/articles/news/what-you-will-love-in-vue-3-video/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;What you will love in Vue 3&lt;/a&gt;&lt;br&gt;
+Prepare yourself for what to expect in Vue 3 with Alex Kyriakidis’ presentation from the Vue.js Amsterdam conference.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vitejs/vite?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;GitHub - vuejs/vite: Make Web Dev Fast Again&lt;/a&gt;&lt;br&gt;
+Vite is an opinionated web dev build tool that serves your code via native ES Module imports during dev and bundles it with Rollup for production.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vuejs-course.com/screencasts/vue-3-async-components-and-bundle-splitting?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue.js 3 Course - Composition API, TypeScript, Testing&lt;/a&gt;&lt;br&gt;
+Vue.js 3 introduces some changes to the Async Component API - find out the changes, and how you can use Async Components with Webpack 5’s bundle splitting to make your apps load faster than ever.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://logaretm.com/blog/the-case-for-hoc-vs-composition-api/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;The case for HOC vs The Composition API&lt;/a&gt;&lt;br&gt;
+In this article Abdelrahman compares Higher-Order Components (using scoped-slots?content_source_url=https://github.com/vue3/vue3-News) with the upcoming Composition API. I especially enjoyed the Vee-Validate v4 comparison. Check it out!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stegosource.com/vuetensils-0-6-simpler-forms-better-accessibility-useful-filters/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vuetensils 0.6: Simpler Forms, Better Accessibility, &amp;amp; Useful Filters!&lt;/a&gt;&lt;br&gt;
+The latest version of Vuetensils has some really cool features: improvements to form authoring, accessibility updates, and new filters to make life easier.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vuejs/vitepress?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;GitHub - vuejs/vitepress&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/Akryum/vue-mention?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;GitHub - Akryum/vue-mention&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/alvarosaburido/vue-dynamic-forms?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;GitHub - alvarosaburido/vue-dynamic-forms&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;再谈-vue3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#再谈-vue3&#34;&gt;#&lt;/a&gt; 再谈 vue3&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ebe92cee51d454dc6176ec7?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 源码学习 3.9：深入 Props&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ebfcc275188256d95626d22?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;真・vue3.0 全家桶 + ts 尝鲜、过坑&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022684511?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;超级详细的 Vue-cli3 使用教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ec3675ee51d454dcf457d22?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;15 分钟上手 vue3.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.maiyewang.com/archives/95339?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue-cli3.0 读取外部化配置文件来修改公共路径&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ec78ec451882543345e7fb9?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3.x 结合 typescript 初体验&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI1NDU3NzM5Mg==&amp;amp;mid=2247484668&amp;amp;idx=1&amp;amp;sn=29958c55e0df19d7920dae100f91697c?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;几道我今年跳槽遇到的 Vue3.0 面试题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ec68bc8518825434980044e?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 源码分析 —— 数据侦测&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022719461?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;记一次 vue3.0 技术分享会&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ec68c426fb9a047a96a684e?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 源码解析 —— 整体流程和组合式 API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9d81b851882573866ba89c?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue2.x To Vue3.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eb766296fb9a0432f0ff8c7?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;搭建一个 vue-cli4+webpack 移动端框架（开箱即用）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eb0d6dde51d454de20d7a80?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3.0 实战从 0 到 1 实战电商管理系统（第三天）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eb17a0fe51d454dd60cfe0f?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;简明扼要聊聊 Vue3.0 的 Composition API 是啥东东&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eb28bfa5188256d83468092?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue (2.x 和 3.0?content_source_url=https://github.com/vue3/vue3-News) 双向绑定原理及实现（Object.defineProperty 和 Proxy）以及常见错误区分&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eb2d7bdf265da7bb708be3d?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3.0 实战电商系统：高解耦式 mock 订单列表查询（第四天）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/QHYOtxlpRkBJyzNQCXTiBA?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;如何在 Vue 3 中使用生命周期函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eb433175188256d976dfed4?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 中 Object.defineProperty 的代替方案 Proxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/rWgo9elB0dAIKFfINj04RA?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3 中的 Vue Router 初探&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eb766296fb9a0432f0ff8c7?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;搭建一个 vue-cli4+webpack 移动端框架（开箱即用）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022612964?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;通过 10 个实例小练习，快速入门熟练 Vue3.0 核心新特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022616689?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 究竟好在哪里？（和 React Hook 的详细对比）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eb6619c6fb9a043890a2e8f?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;使用 Vue3 composition-api 重写一个抽象可复用的增删改查页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eba7388f265da7bb21b4698?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 源码学习 3.8：组件更新 &amp;amp; diff 算法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022512358?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;一份关于 vue-cli3 项目常用项配置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eaa878d5188256d473f3209?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue-cli4 从零开始搭建 Vue 项目&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ea97600f265da7b983b9e76?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;手拉手带你开启 Vue3 世界的鬼斧神工&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eae5d92e51d451b2e03255c?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3.0 从 0 到 1 实战电商管理系统（第一天）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5eb0d6dde51d454de20d7a80?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3.0 实战从 0 到 1 实战电商管理系统（第三天）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ea550e66fb9a03c692042f4?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue CLI3 移动端适配 【px2rem 或 postcss-plugin-px2rem】&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ea7d10ff265da7bfa190262?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;告别无聊的 undefined 判断，让老 vue-cli3 支持 🚀&amp;quot;可选链&amp;quot; 等 &amp;quot;ES2020&amp;quot; 特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ea63864f265da47bf17d94f?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 的’奇技淫巧’&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ea8399c5188256d3f2b7eac?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;基于 vue3.0+TypeScript 的简易日历&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ea99e135188256d9b085784?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;vue3.0 尝鲜，写一个 win10 日历&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ea97600f265da7b983b9e76?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;手拉手带你开启 Vue3 世界的鬼斧神工&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9faa8fe51d4546fe263eda?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 直播虚拟 Dom 总结 (和 React 对比？content_source_url=https://github.com/vue3/vue3-News)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9fb4ece51d4547170aafe4?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 Beta 笔记（侧重 Performance 提升原因和 Composition API）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022434893?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue Cli 3 打包配置–自动忽略 console.log 语句&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9fc11051882573b436203f?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;尤雨溪在 vue3.0 bate 上推荐的 no webpack 小工具 vite&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9ffe6fe51d4528521588d3?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;尤雨溪谈 Vue3.0 新特性直播后的个人理解&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://iiong.com/vue3-use-notes/?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 使用学习&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ea1c1cae51d4546ff700c80?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3.0 Beta–有牛优刘尤老师上课笔记&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ea10905e51d4546e716ee7c?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3.0 bate 版尝鲜&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022442171?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue3 中对 VDOM 的改进&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022451034?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;一份 vue3-beta.3 相关文集前来报告，请您收下&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ea27779e51d4546f940d77d?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;如何在 Vue2 与 Vue3 中构建相同的组件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022451034?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue 3-beta 相关文集&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ea550e66fb9a03c692042f4?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;Vue CLI3 移动端适配 【px2rem 或 postcss-plugin-px2rem】&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/KEnDabcOFaEh3Foasxncbw?content_source_url=https://github.com/vue3/vue3-News&#34;&gt;迎接 Vue 3.0：在 Vue 2 与 Vue 3 中构建相同的组件&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;尤大推出vue3-beta之后&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#尤大推出vue3-beta之后&#34;&gt;#&lt;/a&gt; 尤大推出 &lt;code&gt;vue3 beta&lt;/code&gt;  之后&lt;/h2&gt;
+&lt;p&gt;🍁 🍄 🌾 💐 🌷 🌹 🥀 🌺 🌸 🌼 🌻&lt;br&gt;
+各位亲 (づ￣ 3 ￣) づ ╭❤ ～，悠着点、悠着点。&lt;br&gt;
+🍁 🍄 🌾 💐 🌷 🌹 🥀 🌺 🌸 🌼 🌻&lt;/p&gt;
+&lt;p&gt;vue 官方提供的尝鲜库：&lt;a href=&#34;https://github.com/vuejs/composition-api&#34;&gt;https://github.com/vuejs/composition-api&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9f6b3251882573a855cd52&#34;&gt;抄笔记：尤雨溪在 Vue3.0 Beta 直播里聊到了这些…&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9faa8fe51d4546fe263eda&#34;&gt;尤大 Vue3.0 直播虚拟 Dom 总结 (和 React 对比)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9ce011f265da47b8450c11&#34;&gt;Vue 3.0 这个迷人的小妖精，到底好在哪里？（更新原理对比）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/134177889&#34;&gt;技术周刊 2020-04-21：Vue 3.0 Beta 来啦！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9f6b3251882573a855cd52&#34;&gt;抄笔记：尤雨溪在 Vue3.0 Beta 直播里聊到了这些…&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9c2508e51d4546cd2ff33b&#34;&gt;vue3.0 Beta 发布了&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e99681f6fb9a03c69203278&#34;&gt;好消息，vue 3 进入 beta 阶段！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e99206c6fb9a03c576cbe57&#34;&gt;今日凌晨 Vue3 beta 版震撼发布，竟然公开支持脚手架项目！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022345673&#34;&gt;vue cli3 适配所有端方案&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022402496&#34;&gt;Vue 3.0 Beta 版本发布，你还学的动么？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022409256&#34;&gt;Vue 3.0-beta.1 发布&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e99681f6fb9a03c69203278&#34;&gt;好消息，vue 3 进入 beta 阶段&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9b1d056fb9a03c8966e908&#34;&gt;vue3 reactive 思路引导&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e92d863f265da47e57fe065&#34;&gt;Vue3 的响应式和以前有什么区别，Proxy 无敌？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e94595c6fb9a03c341daa75&#34;&gt;Vue3 跟着尤雨溪学 TypeScript 之 Ref 类型从零实现&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9ab44bf265da47b27d9ceb&#34;&gt;vue2.0 与 3.0 对比以及 vue3.0 API 入门&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e99c21b6fb9a03c590dfea8&#34;&gt;Vue 3.0 全家桶抢先体验&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e80c1f0e51d4546d961e575&#34;&gt;解析 Vue2.0 和 3.0 的响应式原理和异同 (带源码)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e8010e26fb9a03c947cb98d&#34;&gt;VUE 3.0 学习探索入门系列 - Vue3.x 生命周期 和 Composition API 核心语法理解（6）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e8842aa5188257367220f6f&#34;&gt;VUE 3.0 学习探索入门系列 - Vue3.x 令人期待的新特性（7）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e54aeb76fb9a07ce31ee70b&#34;&gt;Vue3.0 (Vue-cli4) 项目打包性能优化实践&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e944010f265da47aa3f68db&#34;&gt;Vue.js CLI4 Vue.config.js 标准配置 （最全注释）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;迎接-vue30-系列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#迎接-vue30-系列&#34;&gt;#&lt;/a&gt; 迎接 Vue3.0 系列&lt;/h2&gt;
+&lt;p&gt;👹 👺 💀 👻 👽 🤖&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.toutiao.com/a6817358466407989772/&#34;&gt;迎接 Vue3.0 系列 | Vue3 Composition API 中的提取和重用逻辑&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.toutiao.com/i6817269208544444936&#34;&gt;迎接 Vue3.0 系列 | Vue Composition API 如何替换 Vue Mixins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.toutiao.com/i6810618652442755592&#34;&gt;准备迎接 Vue3，使用 Vue Composition API 生成干净可扩展的表单&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.toutiao.com/i6817006554387055112&#34;&gt;迎接 Vue3.0 系列 | 如何在 Vue3 中使用生命周期钩子函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.toutiao.com/i6816710905481396748&#34;&gt;迎接 Vue3.0 系列 | 如何在 Vue2 与 Vue3 中构建相同的组件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.toutiao.com/i6817067452875145731&#34;&gt;迎接 Vue3.0 系列 | Vue3 中的 Vue 路由器初探&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;最新资讯-继续前进&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最新资讯-继续前进&#34;&gt;#&lt;/a&gt; 最新资讯 - 继续前进 ╰(&lt;em&gt;°▽°&lt;/em&gt;)╯&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e32502ae51d450268661152&#34;&gt;重拳出击：打造 Vue3.0 + Typescript + TSX 开 (乞) 发 (丐) 模式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e8a9b1ae51d45470720bdfa&#34;&gt;10 个 Vue 开发技巧助力成为更好的工程师&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e9024f46fb9a03c64230a74&#34;&gt;2020 年的 12 个 Vue.js 开发技巧和窍门&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e8064c551882573a13777e2&#34;&gt;高级前端开发者必会的 34 道 Vue 面试题解析（三）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e7577816fb9a07c83350011&#34;&gt;（4.2 万字 🔥🔥🔥 重启 2020）“从零到部署” Vue 全栈电商应用系列教程 — 正式完结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e8b5fa6f265da47ff7cc139&#34;&gt;Vue 进阶必学之高阶组件 HOC（保姆式教学，冲击 20k 必备）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e81b7e5e51d4546bf26fb87&#34;&gt;VUE CLI3 结合 cross-env 配置环境变量（含环境变量源码解析）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022198316&#34;&gt;4k+ 字分析 Vue 3.0 响应式原理（依赖收集和派发更新）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022229159&#34;&gt;解析 Vue2.0 和 3.0 的响应式原理和异同 (带源码)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e83caab6fb9a03c6675b367&#34;&gt;vue 刷新页面出现 404 错误&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e8593d26fb9a03c37302dc1&#34;&gt;【你不知道的 React】当 React Hooks 遇见 Vue3 Composition API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e8842aa5188257367220f6f&#34;&gt;VUE 3.0 学习探索入门系列 – Vue3.x 令人期待的新特性（7）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022271723&#34;&gt;Vue3.0 的 reactive API 定义和源码实现&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e8fdba06fb9a03c48577620&#34;&gt;基于 vue-cli3 搭建一个后台管理系统框架&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e7de415e51d4546ca3098c1&#34;&gt;Vue 3.0 diff 算法及原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e69ed1af265da573d61baaf&#34;&gt;基于 vue-cli3/cli4 解决前端使用 axios 跨域问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e69de93f265da570c75453e&#34;&gt;使用 vue-cli3 搭建 Vue+TypeScript 项目&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000021991591&#34;&gt;简单通俗的理解 Vue3.0 中的 Proxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e6c96a0f265da5716712164&#34;&gt;vue 源码分析 - 14-dom 异步更新机制 (nextTick)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e71d5f751882549003d3900&#34;&gt;谈谈 vue3.0 要更新的内容相关笔记&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e1bc92bf265da3e0640b6b7&#34;&gt;Vue3.0 尝试&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e4eb264f265da575c16bc14&#34;&gt;vue3.0 源码速读&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e54c9d06fb9a07cd614d2a0&#34;&gt;记一次 vue-cli3 webpack 简单性能优化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000021709647&#34;&gt;手摸手带你使用 Vue-Cli3 搭建前端开发环境&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e3f722ee51d4527223e4550&#34;&gt;vue2.x+vue-cli3.0 地图 demo 踩过的坑&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e427febe51d45270d530227&#34;&gt;用 Vue3 (Vue-Composition API) 写一个疫情查询小工具&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e21196fe51d454d523be084&#34;&gt;TypeScript 从零实现基于 Proxy 的响应式库，带你彻底搞懂 Vue3 的响应式原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e23b20f51882510073eb571&#34;&gt;带你彻底搞懂 Vue3 的 Proxy 响应式原理基于函数劫持实现 Map 和 Set 的响应式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e2fdf29e51d45026866107d&#34;&gt;深度解析：Vue3 如何巧妙的实现强大的 computed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e32502ae51d450268661152&#34;&gt;重拳出击：打造 Vue3.0 + Typescript + TSX 开 (乞) 发 (丐) 模式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e2d0d016fb9a02fc05da472&#34;&gt;在 React 中引入 Vue3 的 reactivity 分包来实现最强大的状态管理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/zce/dashboard&#34;&gt;A dashboard scaffolding based on vue.js created by vuejs/vue-cli 4.x.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/staven630/vue-cli4-config&#34;&gt;vue-cli4 全面配置 (持续更新)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5dea0423f265da33c24fe18a&#34;&gt;基于 vue-cli4 脚手架搭建的 cesium 所踩的坑&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e13ecbe6fb9a04846508ab2&#34;&gt;Vue3 尝鲜&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e1451385188253ab54142e9&#34;&gt;Vue3 体验卡～&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000021531553&#34;&gt;【思否编程公开课】限时免费 迎接 Vue 3.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e16e800f265da3e1824b72c&#34;&gt;Vue3 之 Composition API 对比 Vue2.x 用法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e1d28d1f265da3e4412b052&#34;&gt;带你了解 vue-next（Vue 3.0）之 炉火纯青&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hujiulong/blog/issues/11&#34;&gt;Vue 3.0 实践：使用 Vue 3.0 做 JSX (TSX) 风格的组件开发&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e1d28b96fb9a02fbf37a7cc&#34;&gt;带你了解 vue-next（Vue 3.0）之 小试牛刀&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e1d289c5188254dfd43d0c8&#34;&gt;带你了解 vue-next（Vue 3.0）之 初入茅庐&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e0da5606fb9a048483ecf64&#34;&gt;Vue3 Composition-Api + TypeScript + 新型状态管理模式探索&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e0af74be51d4541035450c7&#34;&gt;Vue3 源码之响应系统 Reactive 模块解读 (干货满满，不容错过～)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.daozhao.com/8809.html&#34;&gt;从 vuecli3 学习 webpack 记录（零）整体流程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5e12a2e95188253ab321aa8d&#34;&gt;Vue3 中不止 composition-api，其他的提案 (RFC) 也很精彩&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.fullstackradio.com/129&#34;&gt;Evan You - What’s Coming in Vue.js 3.0 | Full Stack Radio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.vuemastery.com/blog/top-ways-to-learn-Vue-3/&#34;&gt;Top ways to learn Vue 3 – Dan Vega&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vueschool.io/articles/vuejs-tutorials/portal-a-new-feature-in-vue-3/&#34;&gt;Portal - a new feature in Vue 3 - Filip Rakowski&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vuedose.tips/tips/access-template-refs-in-composition-api-in-vuejs-3/&#34;&gt;Access template refs in Composition API in Vue.js 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vuedose.tips/tips/&#34;&gt;Use old instance properties in Composition API in Vue.js 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://vuetoronto.com/videos/design-principles-of-vue-3-evan-you/&#34;&gt;Design Principles of Vue 3.0 – Evan You @VueConfTO 2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5dfcc030f265da33d039dda5&#34;&gt;VUE 3.0 API 尝鲜体验&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/95010735&#34;&gt;Vue 3.x 响应式原理 ——ref 源码分析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/95012874&#34;&gt;Vue 3.x 响应式原理 ——effect 源码分析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5de75a476fb9a01658358720&#34;&gt;Vue3 源码学习 (问题总结)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5dd234635188254a1f44646a&#34;&gt;Vue CLI3 搭建组件库并实现按需引入实战操作&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5dca71f8f265da4cef191581&#34;&gt;vue 3.0 pre-alpha&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[为 Vue3 学点 TypeScript, 什么是声明文件 (declare)? &lt;a href=&#34;https://juejin.im/post/5dcbc9e2e51d451bcb39f123&#34;&gt;全局声明篇]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5dccf61a51882510cc093207&#34;&gt;Vue 3.0 响应式方法解析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000021003414&#34;&gt;从 Object.defineProperty 到 Proxy 深入理解 Vue 3.0 响应系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.tuicool.com/articles/hit/RVruAbU&#34;&gt;Vue3.0 响应式系统二三事&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/89940326&#34;&gt;Vue 3.x 源码初探 ——reactive 原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5dc27287e51d4561f259811b&#34;&gt;Vue2.X 和 Vue3.0 数据响应原理变化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000020922487&#34;&gt;Vue 3 对 Web 应用性能的改进&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000020933028&#34;&gt;Vue 3 中令人兴奋的新功能&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5dafe42451882576534d3858&#34;&gt;Vue.js 3.x 源码解析先导&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/yExhLfBAivNbTbI5oX0h-A&#34;&gt;Vue 3 Cheat Sheet 下载（中文版）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/88385908&#34;&gt;vue3 响应式源码解析 - Effect 篇&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5db551ed51882564477b1817&#34;&gt;Vue 3.0 —— Watch 与 Reactivity 代码走读&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5db64128f265da4d23758b3c&#34;&gt;Vue3.0 数据响应系统分析 (主要针对于 reactive)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/88996118&#34;&gt;vue3 源码解读之 time slicing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zoo.team/article/vue3&#34;&gt;茶余饭后聊聊 Vue3.0 响应式数据那些事儿&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5dbd5fe36fb9a0208b12058f&#34;&gt;Vue3 都要上的 TypeScript 之工程实践&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://learnku.com/articles/28813&#34;&gt;vue_cli3.x 跨域访问&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d4faef0e51d45621479acba&#34;&gt;【译】Vue.js 3: 面向未来编程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/46269528&#34;&gt;全面改革：解读 Vue 3.0 的变化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/xjh22222228/vue-cnode&#34;&gt;基于 vue3 function-based 构建 cnode 社区&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/calvin008/weimumu-admin-web&#34;&gt;vue3.0 后台管理框架基于 typescript（支持 pc\ 手机，抖音 rank 数据分析、Tiktok 数据)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5dab320851882565f7660c5e&#34;&gt;从 WebPack 4.X 到 Vue-Cli 3.X 一篇就够&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5dac69bf5188252b51183982&#34;&gt;从 vue2.0 响应数据到 vue3.0 响应数据&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5da91fcff265da5b852928e1&#34;&gt;Vue 3.0 源码逐行解析（一）：响应式模块（1）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5da9049c518825502a445a53&#34;&gt;Vue3 数据驱动源码解读&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5dab12996fb9a04e247c9e8a&#34;&gt;看 vue3 源码可以学到什么：一 、README&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5daa195de51d4524a131b359&#34;&gt;你为什么看不懂源码之 Vue 3.0 囊中取物&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000020598857&#34;&gt;Vue 3 源码开放，今天你学习了吗？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/85343099&#34;&gt;Vue 3.0 源码开放，看看都有哪些新特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/_9XaMyAv0NjJRvwKEEleuw&#34;&gt;Vue 3.0 公开代码之后……&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5da2f98c6fb9a04e127152f1&#34;&gt;Vue3.0 响应式系统完全讲解 (逐行)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d996e3e6fb9a04e3043cc5b&#34;&gt;Vue 3 原理剖析：数据响应系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d99d9a0f265da5b8601264c&#34;&gt;Vue3.x 源码调试&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5da29a87518825094e37301c&#34;&gt;为什么 Vue3.0 使用 Proxy 实现数据监听？defineProperty 表示不背这个锅&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/85678790&#34;&gt;Vue 3 响应式系统源码解析（单测篇）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5da442bb6fb9a04de42f76cf&#34;&gt;浏览器中如何断点调试 Vue3 源码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5da2e6ad518825200b2d4d59&#34;&gt;简析 vue 3 的数据响应系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5da43211518825646c50f315&#34;&gt;代理模式 Proxy 和 Vue3 数据响应系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d9c9891f265da5b6b630151&#34;&gt;Vue3.0 数据响应式原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d9c9a135188252e097569bd&#34;&gt;Vue3 响应式系统源码解析 (上)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000020629159&#34;&gt;一张图理清 Vue 3.0 的响应式系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d9eff686fb9a04de04d8367&#34;&gt;Vue3 响应式系统源码解析 - Ref 篇&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d9dc63451882571e202cd58&#34;&gt;五分钟看懂 Vue3 - 数据绑定&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d9ecf17f265da5bb065dba5&#34;&gt;浅析 Vue3 中的响应式原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000020636103&#34;&gt;vue3 的数据响应原理和实现&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d9c41436fb9a04def4e5b1c&#34;&gt;给 vue3 源码添加注释：数据响应式部分&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jungahuang.com/2019/10/11/about-vue3-proxy/&#34;&gt;浅析 Vue3 数据响应系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d9f5090e51d4578502c24b1&#34;&gt;vue3 中 effect 与 computed 的亲密关系&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d9edb225188253e3377537c&#34;&gt;Vue3.0 中的 monorepo 管理模式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d99b5fb5188257377312c82&#34;&gt;Vue3 watch 函数执行过程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d99be7c6fb9a04e1e7baa34&#34;&gt;Vue3.0 中的数据侦测&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d9ae2415188256eee1639e3&#34;&gt;使用 Proxy 实现 Vue.js 3 中的响应式思想&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d836458f265da03d871f6e9&#34;&gt;Vue 3.0 最新进展：Composition API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.oschina.net/news/110356/vuejs-v3-pre-alpha-released&#34;&gt;公布了尚处于 Pre-Alpha 状态的 Vue 3 源码&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;英文资料&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#英文资料&#34;&gt;#&lt;/a&gt; 英文资料&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://alligator.io/vuejs/vue-styleguidist-3/&#34;&gt;What’s New in vue-styleguidist 3.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.logrocket.com/hooks-are-coming-to-vue/&#34;&gt;Hooks are coming to Vue.js version 3.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@mattmaribojoc/what-does-vue-3-0-mean-for-web-development-851052fc0138&#34;&gt;what does vue 3 0 mean for web development&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/LinusBorg/composition-api-demos&#34;&gt;A Vue.js app demonstarting various use cases for the new composition API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.vuemastery.com/courses/vue-3-essentials/why-the-composition-api/&#34;&gt;Why the Composition API - Vue 3 Essentials – Vue Mastery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://madewithvuejs.com/blog/vue-3-roundup&#34;&gt;Vue 3 – A roundup of infos about the new version of Vue.js - Made with Vue.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/LinusBorg/composition-api-demos&#34;&gt;GitHub - LinusBorg/composition-api-demos: A Vue.js app demonstarting various use cases for the new composition API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/ycmjason/thought-on-vue-3-composition-api-reactive-considered-harmful-j8c&#34;&gt;Thought on Vue 3 Composition API -  &lt;code&gt;reactive()&lt;/code&gt;  considered harmful&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/localeai/architecting-http-clients-in-vue-js-applications-for-effective-network-communication-1eec&#34;&gt;Architecting HTTP clients in Vue.js applications for efficient network communication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/simonholdorf/10-free-resources-to-kickoff-your-career-as-a-vue-developer-4mg2&#34;&gt;10 Free resources to kickoff your career as a Vue Developer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/simonholdorf/10-vue-directives-that-make-your-dev-lives-easier-5dm7&#34;&gt;10 Vue Directives that make your dev lives easier!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/simonholdorf/10-tips-tricks-to-make-you-a-better-vuejs-developer-4n4d&#34;&gt;10 Tips &amp;amp; Tricks to make you a better VueJS Developer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/simonholdorf/9-projects-you-can-do-to-become-a-frontend-master-in-2020-n2h&#34;&gt;9 Projects you can do to become a Frontend Master in 2020&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2019-年中旬&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2019-年中旬&#34;&gt;#&lt;/a&gt; 2019 年中旬&lt;/h2&gt;
+&lt;p&gt;天王盖地虎，宝塔镇河妖&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文章列表标题&lt;/th&gt;
+&lt;th&gt;介绍&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;I_am_a_placeholder_placeholder_placeholder&lt;/td&gt;
+&lt;td&gt;nothing&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000019925865&#34;&gt;为 vue3 学点 typescript, 解读高级类型&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;第一课，体验 typescript; 第二课，基础类型和入门高级类型；第三课，泛型；第四课，解读高级类型；第五课，什么是命名空间 (namespace);&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://juejin.im/post/5d70d03751882554841c4357&#34;&gt;Vue 3.0：更快、更小、让开发者更轻松&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;在 11 月 14 日 - 16 日于多伦多举办的 VueConf TO 2018 大会上，尤雨溪发表了名为 “Vue 3.0 Updates” 的主题演讲，对 Vue 3.0 的更新计划、方向进行了详细阐述。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000020038527&#34;&gt;Vue 3.0 前瞻，体验 Vue Function API&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;最近 Vue 官方公布了 Vue 3.0 最重要的 RFC：Function-based component API，并发布了兼容 Vue 2.0 版本的 plugin：vue-function-api，可用于提前体验 Vue 3.0 版本的 Function-based component API。笔者出于学习的目的，提前在项目中尝试了 vue-function-api。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/7a7PjKmpMDObGkP_XBEi-Q&#34;&gt;Vue 3.0 之前你必须知道的 TypeScript 实战技巧&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;很多人对 TypeScript 的使用还停留在基本操作上，其实 TypeScript 的特性非常强大，我们利用好这些特性可以有效地提高代码质量、加速开发效率，今天就介绍 9 个非常实用的 TypeScript 技巧或者特性.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://juejin.im/post/5d4d2fc3f265da03c23ec246&#34;&gt;Vue CLI 3.x 与 2.x 的区别&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;cli3 新增模式概念，每个模式在项目中都有对应的配置文件，项目启动时，对应的文件就会加载，与环境变量不同，一个模式可以包括多个环境变量。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://juejin.im/post/5d54eb45e51d4561c02a251f&#34;&gt;Vue 3.0 RFC API 的实现&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Vue3.0 的 RFC 已经发布了几个月了，Vue 底层几乎没有变动，还是沿用原来响应式的。所以一直在思考能不能使用现在的版本，实现 RFC 中的 API，直到看到了 Vue Function API 这个库，这个库让开发者提前尝鲜到了 RFC 中的 API，当然作为 RFC，所以最终 3.0 的 API 还是未知的，以及底层的实现也还未知。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://juejin.im/post/5d5623936fb9a06ac824417e&#34;&gt;Vue.js 3：面向未来编程（function-based API）&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;如果你在使用 Vue.js，那么可能知道这个框架的第 3 版就要出来了（如果你是在本篇文章发布后的一段时间看到这段话的话，我希望我的说法还是中肯的 😉）。新版本目前正在积极开发中，所以可能要加入的特性都可以在官方的 RFC（request for comments）仓库中看到：&lt;a href=&#34;http://github.com/vuejs/rfcs&#34;&gt;github.com/vuejs/rfcs&lt;/a&gt; 。其中有一个特性 function-api，将会在很大程度上影响我们未来 Vue 项目的编写方式。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000020205747&#34;&gt;来自 Vue 3.0 的 Composition API 尝鲜&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;前段时间，Vue 官方释出了 Composition API RFC 的文档，我也在收到消息的第一时间上手尝鲜。虽然 Vue 3.0 尚未发布，但是其处于 RFC 阶段的 Composition API 已经可以通过插件 @vue/composition-api 进行体验了。接下来的内容我将以构建一个 TODO LIST 应用来体验 Composition API 的用法。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://juejin.im/post/5d664e5f6fb9a06b317b731f&#34;&gt;vue-cli 3.0 脚手架，从入门到放弃（二）&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;想写好代码，和用好一个工具是离不开的， 一般我们使用的工具有 HuilderX,sublimetext3，vscode，webstorm 等，个人目前使用的是 hb，和 vscode，可以根据个人爱好各自选择，但一定要熟练。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://juejin.im/post/5d67a791518825284734623c&#34;&gt;vue-cli 3.0 脚手架，从入门到放弃（三）&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;来总结下流程， 从我们 npm run serve 开始，打开 localhost:8080 端口，首先会加载 index.html。然后去 app.vue 里查找路由组件，这是会调动 router.js 里的配置，选择首先要打开哪个文件，找到我们的那个 path：’/&#39; 的页面，浏览器显示。完成。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;2019-年上旬&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2019-年上旬&#34;&gt;#&lt;/a&gt; 2019 年上旬&lt;/h2&gt;
+&lt;p&gt;不要叫我达芬奇&lt;/p&gt;
+&lt;p&gt;2019.01-2019.07&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000019391756&#34;&gt;尤雨溪大大在 6 月 4 日的 Vue3.0 的技术分享&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5cf8b51ae51d45590a445b0d&#34;&gt;你了解 vue3.0 响应式数据怎么实现吗？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI1NDU3NzM5Mg==&amp;amp;mid=2247483764&amp;amp;idx=1&amp;amp;sn=df7dbf5c4e910a6e1893a0b57b0dd727&#34;&gt;Vue 3.0 前的 TypeScript 最佳入门实践&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d03140a5188253d592e070e&#34;&gt;Vue 3.0 的重大改动暴露了哪些问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=Mzg2NDAzMjE5NQ==&amp;amp;mid=2247484394&amp;amp;idx=1&amp;amp;sn=9d929ffcc9172a102f1718926e721123&#34;&gt;尤雨溪关于 VUE3.0 进展的重磅分享&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5d1705e65188255ca21e607e&#34;&gt;提前使用 Vue 3.0 新特性，vue-function-api 尝鲜&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000019631849&#34;&gt;为 vue3 学点 typescript (1), 体验 typescript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000019625934&#34;&gt;精读《Vue3.0 Function API》&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/11900000196&#34;&gt;为 vue3 学点 typescript, 基础类型和入门高级类型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/TwUubgCH0c0tue12CBNTzg&#34;&gt;揭秘 Vue 3.0 最具潜力的 API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[面向未来编程，如何在 Vue2 中使用 Vue3 的语法&lt;a href=&#34;https://juejin.im/post/5d25b6dde51d45775c73dd70&#34;&gt;实践篇]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.poetries.top/2019/06/01/vue-cli3/&#34;&gt;Vue CLI 3 项目构建基础&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5cf8b51ae51d45590a445b0d&#34;&gt;你了解 vue3.0 响应式数据怎么实现吗？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000019457171&#34;&gt;模拟 vue3.0 rfcs  &lt;code&gt;createComponent&lt;/code&gt;  api 中的 &lt;code&gt;props&lt;/code&gt;  类型推导&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000018531202&#34;&gt;Vue-cli 3.5.1 + Webstorm 使用手机访问演示页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5cbc7a06f265da03587bfad0&#34;&gt;用 vue3 公开的思路从 0 实现最简化的 vue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5c9477ad6fb9a070ce31b050&#34;&gt;在 WebStorm 中，配置能够识别 Vue CLI 3 创建的项目的别名 alias @&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5cc18abdf265da039e1ff5fb&#34;&gt;配置一个 vue3.0 项目&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000018989241&#34;&gt;快速上手最新的 Vue CLI 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000018729701&#34;&gt;Vue-CLI 3.x 自动部署项目至服务器&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5ccd4580f265da038932a461&#34;&gt;Vue-Cli 3.0 从 0 开始搭建项目（篇 1）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000018833999&#34;&gt;入手 vue-cli 3.x&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000018531202&#34;&gt;Vue-cli 3.5.1 + Webstorm 使用手机访问演示页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5cbc40ea6fb9a068b65e2aa6&#34;&gt;关于 vue-cli 3 配置打包优化要点&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2018-年预告&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2018-年预告&#34;&gt;#&lt;/a&gt; 2018 年预告&lt;/h2&gt;
+&lt;p&gt;天寒之时必封初冬&lt;/p&gt;
+&lt;h3 id=&#34;1-vue-cli-3-搭建-vuevuex-最全分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-vue-cli-3-搭建-vuevuex-最全分析&#34;&gt;#&lt;/a&gt; 1、&lt;a href=&#34;https://yq.aliyun.com/articles/646152&#34;&gt;Vue CLI 3 搭建 vue+vuex 最全分析&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;介绍 Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统。有三个组件： CLI：@vue/cli 全局安装的 npm 包，提供了终端里的 vue 命令（如：vue create 、vue serve 、vue ui 等命令） CLI 服务：@vue/cli-service 是一个开发环境依赖。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;2-vuejs-2-vs-vuejs-3-的实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-vuejs-2-vs-vuejs-3-的实现&#34;&gt;#&lt;/a&gt; 2、&lt;a href=&#34;https://www.cnblogs.com/wwhhq/p/8196251.html&#34;&gt;Vue.js 2 vs Vue.js 3 的实现&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;vue.js 核心团队已经讨论过将在 Vue3 实现的变化。虽然 API 不会改变，但是数据响应机制（译者注：对数据改变的监听和通知）发生了变化。这意味着什么呢，同时它对你意味着什么呢？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;3-vue30-快速创建项目&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-vue30-快速创建项目&#34;&gt;#&lt;/a&gt; 3、&lt;a href=&#34;https://blog.csdn.net/xuqipeter/article/details/80452271&#34;&gt;vue3.0 快速创建项目&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;vue3.0 使用了 cli3 快捷搭建的技巧和配搭&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;4-vuejs-30-ppt附部分中文翻译&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-vuejs-30-ppt附部分中文翻译&#34;&gt;#&lt;/a&gt; 4、&lt;a href=&#34;https://juejin.im/post/5bed9c31e51d4516f64d528a&#34;&gt;Vue.js 3.0 PPT（附部分中文翻译）&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Evan You 刚刚发布了最新的 Vue 3 和他在 Vue Toronto 的演讲内容：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;5-vue30-初体验有哪些实用新功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5-vue30-初体验有哪些实用新功能&#34;&gt;#&lt;/a&gt; 5、&lt;a href=&#34;https://www.jianshu.com/p/0d78ff9fe6ed&#34;&gt;vue3.0 初体验有哪些实用新功能&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;关于项目创建，除了命令创建 3.x 还增加了图形化界面创建以及管理 vue 项目 在创建新项目时还可以混合选用多种集成&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;6-vue-30-的生命周期&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-vue-30-的生命周期&#34;&gt;#&lt;/a&gt; 6、&lt;a href=&#34;https://www.cnblogs.com/weihengblog/p/9241136.html&#34;&gt;Vue 3.0 的生命周期&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ue 3.0 的生命周期多了哪些东西和其中又改变了什么&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;7-vue-cli-30-初体验&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-vue-cli-30-初体验&#34;&gt;#&lt;/a&gt; 7、&lt;a href=&#34;http://www.imooc.com/article/79631&#34;&gt;Vue-cli 3.0 初体验&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如今上 Vue 官网一看，脚手架都早已出 3.0 版了。唉，果然干这行一天不学习都感觉要落伍……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;8-重磅vue-cli-30-正式发布带来多项重大更新&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8-重磅vue-cli-30-正式发布带来多项重大更新&#34;&gt;#&lt;/a&gt; 8、&lt;a href=&#34;https://baijiahao.baidu.com/s?id=1608931885589870861&#34;&gt;重磅！Vue CLI 3.0 正式发布，带来多项重大更新&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;近日，Vue 的作者尤雨溪在 Medium 上宣布正式发布 Vue CLI 3.0，它也将为很多开发者带来期待已久的新特性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;9-译文vuejs-30-开发计划&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#9-译文vuejs-30-开发计划&#34;&gt;#&lt;/a&gt; 9、&lt;a href=&#34;https://www.toutiao.com/a6611073486846689795/&#34;&gt;译文：Vue.js 3.0 开发计划&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在上周的 Vue.js 伦敦会议上我简短地透露了下个版本的 Vue 的新特性。这篇文章讲深入地阐述&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;10-vue-下个版本的计划-vue-cli-23-下的项目优化实践cdn-gzip-prerender&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#10-vue-下个版本的计划-vue-cli-23-下的项目优化实践cdn-gzip-prerender&#34;&gt;#&lt;/a&gt; 10、&lt;a href=&#34;https://www.toutiao.com/a6613157936636101127/&#34;&gt;Vue 下个版本的计划。Vue CLI 2&amp;amp;3 下的项目优化实践：CDN + Gzip + Prerender&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这些优化方案适用于 Vue CLI 2 和 Vue CLI 3 , 文章主要基于 Vue CLI 2 进行介绍，关于如何在 Vue CLI 3 中进行相关的 webpack 调整，我已经放在了 vue-cli3-optimization 这个仓库下，并配有详细的注释，且额外添加方便 Sass 使用的 loader，使用 Sass 时无需再在每个需要引入变量和 mixin 的地方，每次都很麻烦的 @import。下面将详细介绍这些优化方案的实践方式和效果。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;11-vue-cli-3-发布精简配置增加图形界面还有这些新功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#11-vue-cli-3-发布精简配置增加图形界面还有这些新功能&#34;&gt;#&lt;/a&gt; 11、&lt;a href=&#34;https://www.toutiao.com/a6589191783790412301/&#34;&gt;Vue CLI 3 发布：精简配置，增加图形界面，还有这些新功能&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不同的项目往往有不同的需求，所以 webpack 这种高可配的打包工具才会火起来，但同时也被骂太复杂了。所以很多人就想简化或者封装配置，例如 facebook/create-react-app 将所有的配置脚本封装为 NPM 软件包。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;12-专访-vue-作者尤雨溪vue-cli-30-重构的原因&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#12-专访-vue-作者尤雨溪vue-cli-30-重构的原因&#34;&gt;#&lt;/a&gt; 12、&lt;a href=&#34;https://www.toutiao.com/a6598367147800396295/&#34;&gt;专访 Vue 作者尤雨溪：Vue CLI 3.0 重构的原因&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上个月，Vue CLI 3.0 正式发布，为很多开发者带来期待已久的新特性，尤雨溪也说 Vue CLI 3.0 经历了重构，旨在尽可能减少现代前端工具在配置上的烦恼，并尽可能在工具链中加入最佳实践，让其成为 Vue 应用程序的默认实践。为了获取更多细节，InfoQ 采访了尤雨溪，以下是对采访内容的整理。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;13-重磅尤雨溪发布-vue-30-开发路线&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#13-重磅尤雨溪发布-vue-30-开发路线&#34;&gt;#&lt;/a&gt; 13、&lt;a href=&#34;https://www.toutiao.com/a6607650510172324365/&#34;&gt;重磅！尤雨溪发布 Vue 3.0 开发路线&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在上周的 Vue.js 伦敦大会上，尤雨溪简要介绍了 Vue 下一个主要版本要发布的内容，9 月 30 日，尤雨溪在 medium 个人博客上发布了 Vue 3.0 的开发路线，全文如下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;卖艺不卖身&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#卖艺不卖身&#34;&gt;#&lt;/a&gt; 卖艺不卖身&lt;/h2&gt;
+&lt;p&gt;博学之，审问之，慎思之，明辨之，笃行之。&lt;/p&gt;
+&lt;p&gt;作者：&lt;a href=&#34;https://github.com/bluezhan&#34;&gt;蓝少 (@bluezhan)&lt;/a&gt; 版权声明：自由转载 - 非商用 - 非衍生 - 保持署名（&lt;a href=&#34;http://creativecommons.org/licenses/by/4.0/&#34;&gt;创意共享 3.0 许可证&lt;/a&gt;）&lt;/p&gt;
+&lt;h2 id=&#34;license&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#license&#34;&gt;#&lt;/a&gt; License&lt;/h2&gt;
+&lt;p&gt;Released under the MIT License.&lt;/p&gt;
+&lt;h2 id=&#34;about&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#about&#34;&gt;#&lt;/a&gt; About&lt;/h2&gt;
+&lt;p&gt;🎯Find the latest breaking √vue3 &amp;amp; vue-cli 3+ News.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vue3.github.io/vue3-News/&#34;&gt;vue3.github.io/vue3-news/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;topics&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#topics&#34;&gt;#&lt;/a&gt; Topics&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/topics/vue3&#34;&gt;vue3&lt;/a&gt; &lt;a href=&#34;https://github.com/topics/vue-router&#34;&gt;vue-router&lt;/a&gt; &lt;a href=&#34;https://github.com/topics/vue-components&#34;&gt;vue-components&lt;/a&gt; &lt;a href=&#34;https://github.com/topics/weekly&#34;&gt;weekly&lt;/a&gt; &lt;a href=&#34;https://github.com/topics/news&#34;&gt;news&lt;/a&gt; &lt;a href=&#34;https://github.com/topics/vue&#34;&gt;vue&lt;/a&gt; &lt;a href=&#34;https://github.com/topics/vue-cli&#34;&gt;vue-cli&lt;/a&gt; &lt;a href=&#34;https://github.com/topics/typescript&#34;&gt;typescript&lt;/a&gt; &lt;a href=&#34;https://github.com/topics/vue-composition-api&#34;&gt;vue-composition-api&lt;/a&gt; &lt;a href=&#34;https://github.com/topics/vue-mastery&#34;&gt;vue-mastery&lt;/a&gt; &lt;a href=&#34;https://github.com/topics/vite&#34;&gt;vite&lt;/a&gt; &lt;a href=&#34;https://github.com/topics/vue3-cheatsheet&#34;&gt;vue3-cheatsheet&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;resources&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#resources&#34;&gt;#&lt;/a&gt; Resources&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News#readme&#34;&gt; Readme&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;license-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#license-2&#34;&gt;#&lt;/a&gt; License&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News/blob/master/LICENSE&#34;&gt; MIT License&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;releases&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#releases&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://github.com/vue3/vue3-News/releases&#34;&gt;Releases&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;No releases published&lt;/p&gt;
+&lt;h2 id=&#34;packages&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#packages&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://github.com/vue3/vue3-News/packages&#34;&gt;Packages&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;No packages published&lt;/p&gt;
+&lt;h2 id=&#34;languages&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#languages&#34;&gt;#&lt;/a&gt; Languages&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News/search?l=vue&#34;&gt;Vue93.4%&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vue3/vue3-News/search?l=typescript&#34;&gt;TypeScript4.8%&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Other1.8%&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;© 2020 GitHub, Inc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/site/terms&#34;&gt;Terms&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/site/privacy&#34;&gt;Privacy&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/security&#34;&gt;Security&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://githubstatus.com/&#34;&gt;Status&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.github.com/&#34;&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/contact&#34;&gt;Contact GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/pricing&#34;&gt;Pricing&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.github.com/&#34;&gt;API&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://services.github.com/&#34;&gt;Training&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.blog/&#34;&gt;Blog&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/about&#34;&gt;About&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Octotree&lt;/p&gt;
+&lt;p&gt;IMPORTANT: OCTOTREE 6.0&lt;/p&gt;
+&lt;p&gt;Login with GitHub&lt;/p&gt;
+</content>
+        <category term="Vue3" />
+        <updated>2020-09-22T14:14:58.000Z</updated>
+    </entry>
+</feed>

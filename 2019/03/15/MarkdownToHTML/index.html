@@ -114,21 +114,26 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="MarkdownToHtml"><a href="#MarkdownToHtml" class="headerlink" title="MarkdownToHtml"></a>MarkdownToHtml</h1><blockquote>
+  <h1 id="markdowntohtml"><a class="markdownIt-Anchor" href="#markdowntohtml">#</a> MarkdownToHtml</h1>
+<blockquote>
 <p>将 Markdown 文档转换为 HTML 显示</p>
 </blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<h2 id="说明"><a class="markdownIt-Anchor" href="#说明">#</a> 说明</h2>
+<blockquote>
 <p>本应用是采用 node.js + Express 搭建的</p>
 <p>运用的模板：art-template</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://aui.github.io/art-template/zh-cn/docs/index.html">art-template</a> 是一个简约、超快的模板引擎。</li>
 </ul>
 </blockquote>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>我把 <em>MarkdownToHTML.md</em> 放在目录 <strong>public/doc</strong> 下（放在那里看你心情咯！）</p>
-<h2 id="安装-marked"><a href="#安装-marked" class="headerlink" title="安装 marked"></a>安装 marked</h2><blockquote>
-<p>npm install marked –save</p>
+<h1 id="准备工作"><a class="markdownIt-Anchor" href="#准备工作">#</a> 准备工作</h1>
+<p>我把 <em><a target="_blank" rel="noopener" href="http://MarkdownToHTML.md">MarkdownToHTML.md</a></em> 放在目录 <strong>public/doc</strong> 下（放在那里看你心情咯！）</p>
+<h2 id="安装-marked"><a class="markdownIt-Anchor" href="#安装-marked">#</a> 安装 marked</h2>
+<blockquote>
+<p>npm install marked --save</p>
 </blockquote>
-<h1 id="关键步骤"><a href="#关键步骤" class="headerlink" title="关键步骤"></a>关键步骤</h1><p>路由部分关键代码：router.js （ 里面的部分代码是关键 ）</p>
+<h1 id="关键步骤"><a class="markdownIt-Anchor" href="#关键步骤">#</a> 关键步骤</h1>
+<p>路由部分关键代码：router.js （ 里面的部分代码是关键 ）</p>
 <pre class="line-numbers language-Javascript" data-language="Javascript"><code class="language-Javascript">src
 
 router.get(&quot;&#x2F;:docName&quot;, function (req, res, next) &#123;
@@ -162,8 +167,7 @@ router.get(&quot;&#x2F;:docName&quot;, function (req, res, next) &#123;
         &#125;);
     &#125;)
 &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>##</p>
+<h2 id=""><a class="markdownIt-Anchor" href="#">#</a> </h2>
 <p>MainBody.html: 用 art-template 模板渲染后台传来的数据</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">&lt;!--
    &#123;&#123;@ doc &#125;&#125;或者  &lt;%- doc %&gt;
@@ -172,8 +176,8 @@ router.get(&quot;&#x2F;:docName&quot;, function (req, res, next) &#123;
 &lt;div id&#x3D;&quot;markfs&quot;&gt;
     &#123;&#123;@ doc &#125;&#125; &lt;!-- 或者  &lt;%- doc %&gt; --&gt;
 &lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="http://static.zxinc520.com/blogimage/20190314/x6s26FzHS5go.png?imageslim" alt="g"></p>
+<h2 id="效果展示"><a class="markdownIt-Anchor" href="#效果展示">#</a> 效果展示</h2>
+<p><img src="http://static.zxinc520.com/blogimage/20190314/x6s26FzHS5go.png?imageslim" alt="g"></p>
  
       <!-- reward -->
       
@@ -408,7 +412,7 @@ router.get(&quot;&#x2F;:docName&quot;, function (req, res, next) &#123;
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://zxinc520.com">个人博客</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://vercel-demo-ten.vercel.app/#/">个人博客</a>
     </li>
     
     <li class="nav-item">
